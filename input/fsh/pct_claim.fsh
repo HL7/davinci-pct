@@ -8,7 +8,7 @@ Description: "PCT Claim"
 * provider only Reference(PractitionerRole)
 
 // extension GFESender
-* extension contains GFESender named gfeSender 1..1 MS
+* extension contains GFESubmitter named gfeSubmitter 1..1 MS
 
 //extension Claim.extension(InterTransIdentifier) GFE Service Identifier for Transmission Intermediaries
 * extension contains InterTransIdentifier named interTransIdentifier 0..1
@@ -22,7 +22,7 @@ Description: "PCT Claim"
 // for sale tax billing codes using new value set 
 * item.detail.productOrService from PCTClaimBillingCode (extensible)
 
-Extension: GFESender
+Extension: GFESubmitter
 Description: "Submitter of GFE request"
 * value[x] only Reference(Organization)
 
