@@ -11,6 +11,8 @@ version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2021+
 releaseLabel: ci-build
+dependencies:
+  hl7.fhir.us.core: 3.1.1   # updated from 3.1.0 on 9/23/20
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
