@@ -1,7 +1,7 @@
 Profile: PCTGoodFaithEstimate
 Parent: Claim
 Id: davinci-pct-gfe
-Title: "DaVinci PCT Good Faith Estimate"
+Title: "Da Vinci PCT Good Faith Estimate"
 Description: "PCT Good Faith Estimate is a profile..."
 
 * insurer 1..1
