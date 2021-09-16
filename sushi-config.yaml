@@ -9,12 +9,34 @@ title: DaVinci Patient Cost Transparency Implementation Guide
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
+dependencies:
+  hl7.fhir.us.core: 3.1.1
+
 copyrightYear: 2021+
 releaseLabel: ci-build
+jurisdiction: urn:iso:std:iso:3166#US
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# menu:
+#   Home: index.html
+#   Artifacts: artifacts.html
+
 menu:
   Home: index.html
-  Artifacts: artifacts.html
+  Table of Contents: toc.html
+#  Guidance:
+#  Use Cases: use_cases.html
+#  Security: security.html
+  Underlying Technologies: underlying_technologies.html
+  Credits: credits.html
+  FHIR Artifacts:
+#    Capability Statement: CapabilityStatement-padi.html
+#    Search Parameters: artifacts.html#2
+    Profiles: artifacts.html#1
+    Extensions: artifacts.html#2
+    Value Sets: artifacts.html#3
+    Code Systems: artifacts.html#4
+    Examples: artifacts.html#5
+#  Downloads: downloads.html
