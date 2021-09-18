@@ -1,7 +1,7 @@
 Profile: PCTGoodFaithEstimate
 Parent: Claim
 Id: davinci-pct-gfe
-Title: "Da Vinci PCT Good Faith Estimate"
+Title: "PCT Good Faith Estimate"
 Description: "PCT Good Faith Estimate is a profile..."
 
 * insurer 1..1
@@ -15,7 +15,7 @@ Description: "PCT Good Faith Estimate is a profile..."
 
 //// Profile entension elements ////
 
-// extension GFESender
+// extension GFESubmitter
 * extension contains GFESubmitter named gfeSubmitter 1..1 MS
 
 // Billing provider as Organization
@@ -33,7 +33,7 @@ Description: "PCT Good Faith Estimate is a profile..."
 
 //// Entension definitions ////
 Extension: GFESubmitter
-Description: "Submitter of GFE request"
+Description: "Submitter of the GFE request ..."
 * value[x] only Reference(PCTOrganization)
 
 Extension: InterTransIdentifier
