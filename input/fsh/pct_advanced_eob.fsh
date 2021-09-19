@@ -12,17 +12,62 @@ Description: "PCT Advanced EOB is a profile ..."
 
 * extension contains GFEReference named gfeReference 1..* MS
 
+* insurance.coverage only Reference(PCTCoverage)
+
 * item 1..* MS
 * item.extension contains PCTProposedDateOfService named proposedDateOfService 1..1 MS
+* item.revenue MS
+* item.revenue from $AHANUBCRevenueCodes (required)
+* item.modifier 1..4 MS
+* item.modifier from $AMACPTCMSHCPCSModifiers (required)
+* item.productOrService from $C4BBEOBInstitutionalProcedureCodes (required)
+// Need to make item.productOrService required when item.revenue is provided ??
+//* item.productOrService obeys EOB-out-inst-item-productorservice
+//* item.productOrService ^comment = "Put the comment here for item.productOrService here"
+* item.net 1..1 MS
+* item.quantity MS
+* item.adjudication 1..* MS
+* item.adjudication.category from $C4BBAdjudication (required)
+// * insert EOBHeaderItemAdjudicationInvariant
+// * insert ItemAdjudicationInvariant
+// * insert ItemAdjudicationSlicing
+// * item.adjudication contains
+//    adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
+//    denialreason 0..* MS and
+//    allowedunits 0..1 MS
+// * item.adjudication[allowedunits].category = C4BBAdjudicationDiscriminator#allowedunits
+// * item.adjudication[allowedunits].value only decimal
+// // FHIR-30807 - Change cardinality in EOB Inpatient and Outpatient Institutional Profiles
+// * item.adjudication[allowedunits].value 1..1 MS
+// * item.adjudication[denialreason].category = C4BBAdjudicationDiscriminator#denialreason
+// * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
+// * item.adjudication[denialreason].reason 1..1 MS
+// * item.adjudication[adjudicationamounttype].category from C4BBAdjudication
+// * item.adjudication[adjudicationamounttype].amount MS
+// * item.adjudication[adjudicationamounttype].amount 1..1
 
-* extension contains SubjectToMedicalMgmtCondition named subjectToMedicalMgmtCondition 0..1 MS
+* item.adjudication.extension contains SubjectToMedicalMgmtCondition named subjectToMedicalMgmtCondition 0..1 MS
+
+* extension contains SubjectToMedicalMgmtDisclaimer named subjectToMedicalMgmtDisclaimer 0..1 MS
 * extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
 * extension contains ExpirationDate named expirationDate 1..1 MS
 
-* benefitBalance 1..* MS
+* total 1..* MS
+// * insert TotalSlicing
+// * total.category from C4BBTotalCategoryDiscriminator (extensible)
+// * total contains
+//    adjudicationamounttype 1..* MS and
+//    benefitpaymentstatus 1..1 MS
+// * total[benefitpaymentstatus].category from C4BBPayerBenefitPaymentStatus (required)
+// * total[adjudicationamounttype].category from C4BBAdjudication  (required)
+// * total[adjudicationamounttype].amount MS
+// //* total[adjudicationamounttype].amount 1..1
 
 
+//////////////////////////////////////////
 //// Standalone Extension Definitions ////
+//////////////////////////////////////////
+
 Extension: ProviderContractingStatus
 Id: provider-contracting-status
 Title: "Provider Contracting Status"
@@ -57,10 +102,18 @@ Description: "Proposed Date of Service is an extentsion ..."
 Extension: SubjectToMedicalMgmtCondition
 Id: subject-to-medical-mgmt-condition
 Title: "Subject To Medical Management Condition"
-Description: "PCT Disclaimer is an extentsion ..."
-* value[x] ^short = "The estimate may change subject to medical management"
+Description: "Subject To Medical Management Condition is an extentsion ..."
+* value[x] only Coding
+* value[x] from PCTSubjectToMedicalMgmtConditionVS (extensible)
+* value[x] ^short = "The estimate may change subject to medical management with this type of condition"
+
+Extension: SubjectToMedicalMgmtDisclaimer
+Id: subject-to-medical-mgmt-disclaimer
+Title: "Subject To Medical Management Disclaimer"
+Description: "Subject To Medical Management is an extentsion ..."
 * value[x] only Coding
 //* extension[subjectToMedicalMgmt].valueCoding from PCTSubjectToMedicalMgmtDisclaimerVS (extensible)
+* value[x] ^short = "The estimate may change subject to medical management"
 
 Extension: EstimateOnlyDisclaimer
 Id: estimate-only-disclaimer

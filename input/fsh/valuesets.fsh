@@ -9,3 +9,16 @@ Description: "Codes to specify the type of identifiers for organizations to indi
 * include codes from valueset $IdentifierTypeVS
 * include codes from system PCTOrgIdentifierTypeCS
 * ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTCoverageCopayTypeVS
+Title: "PCT Coverage Copay Type Value Set"
+Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the CoverageCopayTypeCodes value set"
+Id: pct-coverage-copay-codes
+* include codes from valueset $CoverageCopayTypeCodes
+* include codes from system PCTCoverageCopayTypeCS
+
+ValueSet: PCTSubjectToMedicalMgmtConditionVS
+Title: "PCT Subject-To-Medical-Management Condition Value Set"
+Description: "Codes for the classification of subject-to-medical-management conditions"
+Id: pct-medical-mgmt-condition-codes
+* codes from system PCTSubjectToMedicalMgmtConditionCS

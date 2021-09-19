@@ -1,8 +1,8 @@
 Profile: PCTOrganization
 Parent: $USCoreOrganization
 Id: davinci-pct-organization
-Title: "PCT Orgaization"
-Description: "PCT Organization"
+Title: "PCT Organization"
+Description: "PCT Organization is a profile ..."
 
 * identifier contains ETIN 0..1 MS
 
