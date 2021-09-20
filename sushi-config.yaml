@@ -19,24 +19,36 @@ jurisdiction: urn:iso:std:iso:3166#US
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-# menu:
-#   Home: index.html
-#   Artifacts: artifacts.html
 
 menu:
+  
   Home: index.html
-  Table of Contents: toc.html
-#  Guidance:
-#  Use Cases: use_cases.html
-#  Security: security.html
-  Underlying Technologies: underlying_technologies.html
-  Credits: credits.html
-  FHIR Artifacts:
-#    Capability Statement: CapabilityStatement-padi.html
-#    Search Parameters: artifacts.html#2
+
+  Background:       
+    Relation to Other IGs: background.html#relation-to-other-IGs
+    Underlying Technologies: underlying_technologies.html    
+  
+  Use Case:   
+    Use Case: use_case.html#use-case   
+    System Actors: use_case.html#system-actors
+    Terms and Concepts: use_case.html#terms-and-concepts
+  
+  Specification and Guidance:
+    Specification: specification.html   
+    General Guidance: general_guidance.html        
+    Terminology Licensure: terminology_licensure.html 
+  
+  FHIR Artifacts:              
     Profiles: artifacts.html#1
     Extensions: artifacts.html#2
     Value Sets: artifacts.html#3
-    Code Systems: artifacts.html#4
+    Code Systems: artifacts.html#4   
     Examples: artifacts.html#5
-#  Downloads: downloads.html
+    #Search Parameters: artifacts.html#6
+    #Downloads: downloads.html#7
+
+  Security:
+    SMART on FHIR Application Launch (tentative): authorization_authentication_and_registration.html#smart-on-fhir-application-launch
+    Authorization and Authentication: authorization_authentication_and_registration.html#authorization-and-authentication   
+  
+  Credits: credits.html
