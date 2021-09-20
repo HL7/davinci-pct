@@ -61,6 +61,7 @@ Description: "An instance of Practitioner"
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization"
+* type = #Institutional-submitter "Institutional GFE Submitter"
 * name = "GFE Service Help INC."
 * identifier[ETIN].value = "ETIN-10010001"
 * active = true
@@ -68,6 +69,7 @@ Description: "An instance of PCTOrganization"
 Instance: Insurer-Org-1
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization"
+* type = #pay "Payer"
 * name = "Blue Cross Blue Shield"
 * identifier[ETIN].value = "ETIN-70010001"
 * active = true
@@ -75,6 +77,7 @@ Description: "An instance of PCTOrganization"
 Instance: Provider-Org-1
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization"
+* type = #prov "Healthcare Provider"
 * name = "Neuro Care INC."
 * active = true
 
@@ -91,7 +94,7 @@ Description: "An instance of Coverage"
 * subscriber = Reference(patientBSJ1)
 * beneficiary = Reference(patientBSJ1)
 * status = #active
-* class.type = #plan
+* class.type = #plan "Plan"
 * class.value = "Blue Advantage HMO"
 * period.start = "2020-12-01"
 * period.end = "2021-11-30"
