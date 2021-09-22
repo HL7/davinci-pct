@@ -9,19 +9,36 @@ Extension: GFESubmitter
 Description: "Submitter of the GFE request ..."
 * value[x] only Reference(PCTOrganization)
 
-// Extension: SubscriberEmployeeIdentifier
-// Description: "Insurance Coverage Subscriber Employee Identifier"
-// * value[x] only Identifier
+Extension: GFEServiceLinkingInfo
+Description: "GFE Service Linking Information"
+* extension contains
+    estimatedDateOfService 0..* MS and
+    linkingIdentifier 0..* MS
+* extension[estimatedDateOfService] ^short = "This could be the scheduled date of admission or service."
+* extension[estimatedDateOfService].value[x] only date or Period
+* extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
+* extension[linkingIdentifier].value[x] only string
 
-// Extension: EmployeeID
-// Description: "Insurance Coverage Subscriber Employee Identifier"
-// * value[x] only Identifier
+Extension: ReferralNumber
+Id: referral-number
+Description: "Referral Number"
+* value[x] only string
+
+
+Extension: ProviderGrouperMethodology
+Id: provider-grouper-methodology
+Description: "Provider Grouper Methodology"
+* value[x] only string
+
+Extension: ProductOrServiceDate
+Description: "Estimated Date or dates of service or product delivery"
+* value[x] only date or Period
 
 Extension: InterTransIdentifier
 Description: "GFE Service Identifier for Transmission Intermediaries"
 * value[x] only Identifier
 
-Extension: GFECoordinatingProviderLineItemControlNumber
+Extension: GFECoordinatingProviderLineItemCtrlNum
 Description: "GFE Coordinating Provider Line Item Control Number"
 * value[x] only Identifier
 

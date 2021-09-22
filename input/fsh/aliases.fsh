@@ -23,3 +23,4 @@ Alias:   $AMACPTCMSHCPCSModifiers = http://hl7.org/fhir/us/carin-bb/ValueSet/AMA
 Alias:   $C4BBEOBInstitutionalProcedureCodes = http://hl7.org/fhir/us/carin-bb/ValueSet/C4BBEOBInstitutionalProcedureCodes
 Alias:   $C4BBAdjudication = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication
 Alias:   $FDANationalDrugCode = http://hl7.org/fhir/us/carin-bb/ValueSet/FDANationalDrugCode
+Alias:   $C4BBSupportingInfoType =	http://hl7.org/fhir/us/carin-bb/ValueSet/C4BBSupportingInfoType
