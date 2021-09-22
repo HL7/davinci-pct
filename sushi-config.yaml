@@ -29,7 +29,9 @@ menu:
     Underlying Technologies: underlying_technologies.html    
   
   Use Case:   
-    Use Case: use_case.html#use-case   
+    Use Case: use_case.html#use-case 
+    Create AEOB: use_case.html#submit-aeob-request-to-payer
+    Get AEOB: use_case.html#get-completed-aeob-from-payer      
     System Actors: use_case.html#system-actors
     Terms and Concepts: use_case.html#terms-and-concepts
   
