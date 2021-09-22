@@ -46,6 +46,7 @@ The IG is organized into the following sections:
 * [Credits](credits.html) Identifies the individuals and organizations involved in developing this IG.
 
 ### Downloads
-* The full [PCT Implementation Guide](full-ig.zip)
-* [FHIR R4 PCT Resource Definitions](definitions.json.zip)
-* [FHIR R4 PCT IG Validator Pack](validator-davinci-pct.pack)
+* The full [FHIR PCT Implementation Guide](full-ig.zip)
+* [FHIR PCT Resource Definitions (JSON)](definitions.json.zip)
+* [FHIR PCT IG Profile Examples (JSON)](examples.json.zip)
+* [FHIR PCT IG Validator Pack](validator-davinci-pct.pack)

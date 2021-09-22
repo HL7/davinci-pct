@@ -51,7 +51,7 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * item.detail.productOrService from $FDANationalDrugCode (required)
 * item.detail.quantity MS
 
-//item.detail.extension  Compound Drug Linking Number
+* item.detail.extension contains ProductOrServiceBillingCode named productOrServiceBillingCode 0..1 MS
 * item.detail.extension contains CompoundDrugLinkingNumber named compoundDrugLinkingNumber 0..1 MS
 
 * total 1..1

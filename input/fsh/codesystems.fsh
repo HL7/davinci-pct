@@ -25,7 +25,7 @@ CodeSystem: PCTGFEBillingCS
 Title: "PCT GFE Billing Code System"
 Description: "Claim Billing Code System"
 * #salesTax "Sales Tax" "The billing is for sales tax"
-* #other "Other"  "Other billing codes"
+* #other "Other Charge"  "The billing is for other charge"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTSubjectToMedicalMgmtConditionCS

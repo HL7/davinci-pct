@@ -42,6 +42,11 @@ Extension: GFECoordinatingProviderLineItemCtrlNum
 Description: "GFE Coordinating Provider Line Item Control Number"
 * value[x] only Identifier
 
+Extension: ProductOrServiceBillingCode
+Description: "ProductOrService Billing Code"
+* value[x] only Coding
+* value[x] from PCTGFEBillingCodeVS (extensible)
+
 Extension: CompoundDrugLinkingNumber
 Description: "Compound Drug Linking Number"
 * value[x] only string
