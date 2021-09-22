@@ -11,6 +11,9 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * extension contains ProviderGrouperMethodology named providerGrouperMethodology 0..1 MS
 * extension contains InterTransIdentifier named interTransIdentifier 0..1 MS
 
+* patient MS
+* patient only Reference(PCTPatient)
+
 // Billing provider as Organization
 * provider only Reference($USCorePractitionerRole)
 

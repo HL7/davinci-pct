@@ -49,4 +49,4 @@ The IG is organized into the following sections:
 * The full [FHIR PCT Implementation Guide](full-ig.zip)
 * [FHIR PCT Resource Definitions (JSON)](definitions.json.zip)
 * [FHIR PCT IG Profile Examples (JSON)](examples.json.zip)
-* [FHIR PCT IG Validator Pack](validator-davinci-pct.pack)
+* [FHIR PCT IG Validator Pack](validator-hl7.fhir.us.davinci-pct.pack)
