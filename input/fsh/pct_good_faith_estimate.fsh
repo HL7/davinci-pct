@@ -29,9 +29,28 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * diagnosis MS
 //* diagnosis 1..* MS <<<<<<<<<<<<<<<<<<<<commented out for now
 
+* procedure.procedure[x] MS
+* procedure.procedure[x] only CodeableConcept
+
+* insert SupportingInfoSlicing
+* supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
+* supportingInfo contains
+   placeOfService 0..1 MS and
+   typeOfBill 0..1 MS
+* supportingInfo[placeOfService].category MS
+* supportingInfo[placeOfService].category = PCTSupportingInfoType#cmspos "CMS Place of Service"
+* supportingInfo[placeOfService].code 1..1 MS
+* supportingInfo[placeOfService].code from $CMSPOS (required)
+* supportingInfo[typeOfBill].category MS
+* supportingInfo[typeOfBill].category = $C4BBSupportingInfoType#typeofbill "Type of Bill"
+* supportingInfo[typeOfBill].code 1..1 MS
+* supportingInfo[typeOfBill].code from $AHANUBCTypeOfBill (required)
+
+
+
 * item MS
-//* item 1..999 MS <<<<<<<<<<<<<<<<<<<<commented out for now
-* item.extension contains ProductOrServiceDate named productOrServiceDate 0..1 MS
+//* item 1..* MS <<<<<<<<<<<<<<<<<<<<commented out for now
+* item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension contains GFECoordinatingProviderLineItemCtrlNum named gfeCoordinatingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue MS
@@ -48,6 +67,7 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * item.net 1..1 MS
 * item.quantity MS
 
+* item.encounter MS
 
 * item.detail MS
 //ISSUE: use FDANDCOrCompound or FDANationalDrugCode from CARIN BB??
@@ -55,6 +75,7 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * item.detail.quantity MS
 
 * item.detail.extension contains ProductOrServiceBillingCode named productOrServiceBillingCode 0..1 MS
+* item.detail.extension contains ProductOrServiceOtherCharge named productOrServiceOtherCharge 0..1 MS
 * item.detail.extension contains CompoundDrugLinkingNumber named compoundDrugLinkingNumber 0..1 MS
 
 * total 1..1

@@ -37,3 +37,9 @@ Description: "Defining codes for the classification of subject-to-medical-manage
 * #step-therapy "Step Therapy" "Step Therapy"
 * #fail-first "Fail-First" "Fail-First"
 * ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTSupportingInfoType
+Title: "PCT GFE Supporting Info Type Code System"
+Description: "Defining codes for the classification of the supplied supporting information"
+* #cmspos "CMS Place of Service" "Place of Service Codes are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided. The Centers for Medicare & Medicaid Services (CMS) maintain POS codes used throughout the health care industry."
+* ^copyright = "This CodeSystem is not copyrighted."

@@ -12,10 +12,10 @@ Description: "Submitter of the GFE request ..."
 Extension: GFEServiceLinkingInfo
 Description: "GFE Service Linking Information"
 * extension contains
-    estimatedDateOfService 0..* MS and
+    plannedPeriodOfService 0..* MS and
     linkingIdentifier 0..* MS
-* extension[estimatedDateOfService] ^short = "This could be the scheduled date of admission or service."
-* extension[estimatedDateOfService].value[x] only date or Period
+* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+* extension[plannedPeriodOfService].value[x] only date or Period
 * extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier].value[x] only string
 
@@ -30,7 +30,7 @@ Id: provider-grouper-methodology
 Description: "Provider Grouper Methodology"
 * value[x] only string
 
-Extension: ProductOrServiceDate
+Extension: EstimatedDateOfService
 Description: "Estimated Date or dates of service or product delivery"
 * value[x] only date or Period
 
@@ -46,6 +46,10 @@ Extension: ProductOrServiceBillingCode
 Description: "ProductOrService Billing Code"
 * value[x] only Coding
 * value[x] from PCTGFEBillingCodeVS (extensible)
+
+Extension: ProductOrServiceOtherCharge
+Description: "ProductOrService Other Charge"
+* value[x] only Money
 
 Extension: CompoundDrugLinkingNumber
 Description: "Compound Drug Linking Number"

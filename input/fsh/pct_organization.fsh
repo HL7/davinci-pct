@@ -5,7 +5,7 @@ Title: "PCT Organization"
 Description: "PCT Organization is a profile ..."
 
 * identifier contains ETIN 0..1 MS
-* identifier[ETIN] ^patternIdentifier.type  = PCTOrgIdentifierTypeCS#ETIN
+* identifier[ETIN] ^patternIdentifier.type  = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
 
 * type 1..* MS
 * type from PCTOrganizationTypeVS (extensible)

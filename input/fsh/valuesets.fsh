@@ -30,3 +30,10 @@ Title: "PCT Subject-To-Medical-Management Condition Value Set"
 Description: "Codes for the classification of subject-to-medical-management conditions"
 Id: pct-medical-mgmt-condition-codes
 * codes from system PCTSubjectToMedicalMgmtConditionCS
+
+ValueSet: PCTSupportingInfoTypeVS
+Title: "PCT Supporting Info Type Value Set"
+Description: "Codes to specify the type of the supplied supporting information"
+* include codes from valueset $C4BBSupportingInfoTypeVS
+* include codes from system PCTSupportingInfoType
+* ^copyright = "This Valueset is not copyrighted."
