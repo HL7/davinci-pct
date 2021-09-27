@@ -31,9 +31,11 @@ This specification makes significant use of [FHIR profiles]({{site.data.fhir.pat
 The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](artifacts.html) page.
 
 #### Integration with other Implementation Guides
-* Implementations of the PCT implementation guide SHALL support the US Core R4 profiles for USCoreOrganizationProfile and USCorePatientProfile. They SHOULD support any other profiles relevant to the types of AEOBs they process* 
-* Clients and Servers supporting this implementation guide SHOULD comply with the [Security and Privacy page in the Da Vinci HRex guide](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
-* Clients and Servers supporting this implementation guide SHOULD comply with value sets referenced in this IG that are at this time also used by the [CARIN IG for Blue Button®](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html#terminology-value-sets). 
+* Implementations of the PCT implementation guide SHALL support the [US Core R4 IG]({{site.data.fhir.ver.hl7_fhir_us_core}}) profiles for USCoreOrganizationProfile and USCorePatientProfile. They SHOULD support any other profiles relevant to the types of AEOBs they process. 
+* Clients and Servers supporting this implementation guide SHOULD comply with the Security and Privacy page in the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
+* Clients and Servers supporting this implementation guide SHOULD comply with some value sets that are referenced in this IG that are also used by the [CARIN for Blue Button® IG](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html#terminology-value-sets). 
+
+>Note: At this time the use of the CARIN for Blue Button® IG value sets are under discussion. It is possible and probable similar or equivalent value sets will be used instead and they will be hosted by another steward / author.    
 
 ### Detailed Requirements 
 
