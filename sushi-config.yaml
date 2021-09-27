@@ -24,7 +24,7 @@ menu:
   
   Home: index.html
 
-  Background:       
+  Technical Background:       
     Relation to Other IGs: background.html#relation-to-other-IGs
     Underlying Technologies: underlying_technologies.html    
   
@@ -38,7 +38,8 @@ menu:
   Specification and Guidance:
     Specification: specification.html   
     General Guidance: general_guidance.html        
-    Terminology Licensure: terminology_licensure.html 
+    Terminology Licensure: terminology_licensure.html
+    Formal Specication: formal_specification.html 
   
   FHIR Artifacts:              
     Profiles: artifacts.html#1
