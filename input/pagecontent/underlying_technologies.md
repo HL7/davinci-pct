@@ -10,7 +10,6 @@ The process that Da Vinci has adopted includes:
 
 Additional information about Da Vinci, its members, the use cases and the implementation guides being developed can all be found on the [HL7 website](http://www.hl7.org/about/davinci). Meeting minutes and other materials can be found on the [Da Vinci Confluence page](https://confluence.hl7.org/display/DVP).
 
-
 ### FHIR
 This IG uses terminology, notations and design principles that are specific to FHIR. It's important to be familiar with some of the basic principles of FHIR as well
 as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read the following prior to reading the rest of this IG.
@@ -34,13 +33,8 @@ This IG supports the [R4](http://hl7.org/fhir/R4/index.html) version of the FHIR
 
 Implementers should also familiarize themselves with the FHIR resources used within this IG.
 
-| Resources |
-| ------------ |
-
-
 ### US Core
 Clinical systems SHALL use the specification defined by [US Core](http://www.hl7.org/fhir/us/core/) in exchanging information with payers. Implementers should be familiar with this specification.
-
 
 This IG also references the [US Core IG](http://www.hl7.org/fhir/us/core/). Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support](http://hl7.org/fhir/us/core/general-guidance.html#must-support) Guidance where US Core IG resources are used.
 

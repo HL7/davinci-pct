@@ -5,7 +5,7 @@
 id: hl7.fhir.us.davinci-pct
 canonical: http://hl7.org/fhir/us/davinci-pct
 name: DaVinciPatientCostTransparency
-title: DaVinci Patient Cost Transparency Implementation Guide
+title: Da Vinci Patient Cost Transparency Implementation Guide
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -20,38 +20,37 @@ jurisdiction: urn:iso:std:iso:3166#US
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-menu:
+menu: 
   
-  Home: index.html
+  Table of Contents: toc.html
 
-  Technical Background:       
-    Relation to Other IGs: background.html#relation-to-other-IGs
-    Underlying Technologies: underlying_technologies.html    
-  
-  Use Case:   
-    Use Case: use_case.html#use-case 
-    Create AEOB: use_case.html#submit-aeob-request-to-payer
-    Get AEOB: use_case.html#get-completed-aeob-from-payer      
-    System Actors: use_case.html#system-actors
-    Terms and Concepts: use_case.html#terms-and-concepts
-  
-  Specification and Guidance:
-    Specification: specification.html   
-    General Guidance: general_guidance.html        
-    Terminology Licensure: terminology_licensure.html
-    Formal Specication: formal_specification.html 
+  Technical Background:          
+    Underlying Technologies: underlying_technologies.html          
+    Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides
+    Terminology Licensure: terminology_licensure.html  
+    
+  PCT Specification:   
+    Use Cases and Overview: use_case.html
+    Technical Background: background.html
+    Formal Specification: formal_specification.html 
+    #Downloads: downloads.html
+    Credits: credits.html 
   
   FHIR Artifacts:              
     Profiles: artifacts.html#1
     Extensions: artifacts.html#2
     Value Sets: artifacts.html#3
     Code Systems: artifacts.html#4   
-    Examples: artifacts.html#5
-    #Search Parameters: artifacts.html#6
-    #Downloads: downloads.html#7
+    Examples: artifacts.html#5   
+    
+  Base Specs:
+    FHIR R4 Spec: new-tab {{site.data.fhir.path}}
+    US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
 
-  Security:
-    SMART on FHIR Application Launch (tentative): authorization_authentication_and_registration.html#smart-on-fhir-application-launch
-    Authorization and Authentication: authorization_authentication_and_registration.html#authorization-and-authentication   
+  History: http://hl7.org/fhir/us/davinci-pct/history.html
+
   
-  Credits: credits.html
+
+
+  
+  
