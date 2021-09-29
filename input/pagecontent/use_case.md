@@ -23,7 +23,7 @@ The ID Generator generates unique IDs for the GFE Bundle and returns the GFE Bun
 
 The payer begins processing the GFE Bundle asynchronously and immediately returns the AEOBResponseID to the calling client. Clients can now poll the payer endpoint for status updates.
 
->Note: At this time the AEOB Request Template and Validation Service decribed above are not required to be conformant with this IG. 
+>Note: At this time the AEOB Request Template, and Validation Service, and ID Generator decribed above are not required to be conformant with this IG. 
 
 #### Get completed AEOB from payer
 
