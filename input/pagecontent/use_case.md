@@ -6,26 +6,24 @@ The below describes the process of initiating the creation of an AEOB and the re
 
 ![Submit AEOB Request to Payer (draft)](SubmitAEOB.drawio.png){:style="float: none;"}
 
-The Provider submits an AEOB Request on behalf of the Patient.  The Payer AEOB Processor returns the AEOBResponseID which is the unique identifier that can be used to check the status.
+The provider submits an AEOB Request based on a request or scheduled service. The payer AEOB Processor returns an AEOBResponseID which is the unique identifier that can be used to check the AEOB status.
 
-The ordering provider initiates the process of obtaining an AEOB by scheduling a service or other action.
+The process begins with an AEOB Request Template. The AEOB RequestTemplate is FHIR based and does not include patient specific data. The AEOB Request Template is a bundle that contains all the GFEs needed to provide the set of services or items, including relevant codes, addresses, and contact information for providers, identifiers for the providers, as well as other status information.   
 
-The process begins with an AEOBRequestTemplate. The AEOBRequestTemplate is FHIR based and does not include patient specific data. The AEOBRequestTemplate is a bundle that contains all the GFEs needed to provide the set of services or items, including relevant codes, addresses, and contact information for providers, identifiers for the providers, a list of return addresses (e.g., email, text) specifying where to send notifications that the AEOB is ready as well as other status information.   
+The provider customizes the AEOB Request Template by editing the template and adding the specific information for this patient, including the dates and location of the services. The client software generates an GFE Bundle and submits it to the Validation Service.
 
-The provider customizes the AEOBRequestTemplate by editing the template and adding the specific information for this patient, including the dates and location of the services. The client software generates an AEOBRequestBundle and submits it to the Validation Service.
+The Validation Service does a syntactic and semantic check on the GFEBundle. This includes verifying the identifiers for the providers, Tax IDs, and other information. If the validation checks fail, the Validation Service returns a list of error messages, otherwise it returns the bundle with an outcome of success. 
 
-The Validation Service does a syntactic and semantic check on the AEOBRequestBundle. This includes verifying the identifiers for the providers, Tax IDs, and addresses and contact information. If the validation checks fail, the Validation Service returns a list of error messages, otherwise it returns the bundle with an outcome of success. The validation service can look up the payer endpoint in the endpoint directory and add the payer endpoint for AEOB submission to the bundle.
+The provider submits the GFE Bundle to the payer endpoint (Payer AEOB Processor).
 
-The provider submits the bundle to the payer endpoint (Payer AEOB Processor).
+The Payer AEOB Processor validates the bundle against its own rules (including eligibility and coverage) and in case of errors returns a list of errors to the provider along with the GFE Bundle.
+If the validation succeeds, the payer submits the GFE Bundle to the ID Generator.
 
-The Payer AEOB Processor validates the bundle against its own rules (including eligibility and coverage) and in case of errors returns a list of errors to the provider along with the Bundle.
-If the validation succeeds, the payer submits the AEOBRequest to the ID Generator.
+The ID Generator generates unique IDs for the GFE Bundle and returns the GFE Bundle with those IDs.   
 
-The ID Generator generates unique IDs for the AEOBRequestBundle and the GFEs and returns the Bundle with those IDs.   
+The payer begins processing the GFE Bundle asynchronously and immediately returns the AEOBResponseID to the calling client. Clients can now poll the payer endpoint for status updates.
 
-The payer begins processing the AEOBRequestBundle asynchronously and immediately returns the AEOBResponseID to the list of return addresses specified in the AEOBRequestBundle. clients can poll the payer endpoint for status updates.
-
->Note: The AEOBRequestTemplate decribed above is not required by this IG, but it is described to potentially help in the process of creating AEOBs in an efficient and consistent fashion.  
+>Note: At this time the AEOB Request Template and Validation Service decribed above are not required to be conformant with this IG. 
 
 #### Get completed AEOB from payer
 
@@ -35,11 +33,11 @@ The recipient (e.g., patient) is notified (e.g., via email or text) that the AEO
 
  1. The recipient/client (e.g., patient or provider) receives a notification that AEOB is complete along with the AEOBResponseID which identifies the AEOB. 
 
-2. The recipient/client authenticates/authorizes and receives an access token
+2. The recipient/client authorizes/authenticates and receives an access token
 
-3. The recipient/client requests the AEOB by using an access token and AEOBResponseID.
+3. The recipient/client requests the AEOB by using the access token and AEOBResponseID.
 
-4. The recipient receives the AEOB  
+4. The recipient/client is now able to receive the AEOB Bundle via API  
 
 #### System Actors
 
