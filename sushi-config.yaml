@@ -30,8 +30,7 @@ menu:
     Terminology Licensure: terminology_licensure.html  
     
   PCT Specification:   
-    Use Cases and Overview: use_case.html
-    Technical Background: background.html
+    Use Cases and Overview: use_case.html    
     Formal Specification: formal_specification.html 
     #Downloads: downloads.html
     Credits: credits.html 
