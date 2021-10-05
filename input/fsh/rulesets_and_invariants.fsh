@@ -24,6 +24,14 @@ RuleSet: Procedurelicing
 * procedure ^slicing.description = "Slice based on $this pattern"
 * procedure MS
 
+RuleSet: OrgContactSlicing
+* contact ^slicing.discriminator.type = #pattern
+* contact ^slicing.discriminator.path = "purpose"
+* contact ^slicing.rules = #open
+* contact ^slicing.ordered = false   // can be omitted, since false is the default
+* contact ^slicing.description = "Slice based on $this pattern"
+* contact MS
+
 //// NOTE: based on CARIN-BB IG -- see C4BBExplanationOfBenefit profile
 //// Invariants
 

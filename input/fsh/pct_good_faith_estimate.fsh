@@ -15,8 +15,9 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * patient MS
 * patient only Reference(PCTPatient)
 
-// Billing provider as Organization
+// Billing provider--get Taxonomy Code and Organization from PractitionerRole
 * provider only Reference($USCorePractitionerRole)
+* provider ^short = "Billing provider - party responsible for the GFE"
 
 * insurer 1..1
 * insurer only Reference(PCTOrganization)
@@ -79,8 +80,7 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * supportingInfo[typeOfBill].code 1..1 MS
 * supportingInfo[typeOfBill].code from $AHANUBCTypeOfBill (required)
 
-* item MS
-//* item 1..* MS <<<<<<<<<<<<<<<<<<<<commented out for now
+* item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension contains GFECoordinatingProviderLineItemCtrlNum named gfeCoordinatingProviderLineItemCtrlNum 0..1 MS
 

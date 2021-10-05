@@ -15,6 +15,7 @@ Alias:   $CMSPOS = urn:oid:2.16.840.1.113883.15.5
 Alias:   $ISO3166-P1-ALPHA2 = http://terminology.hl7.org/CodeSystem/iso3166-1edition2alpha2
 Alias:   $ISO3166-P2-CSC = 	urn:iso:std:iso:3166:-2
 Alias:   $CARETEAMROLECS = http://terminology.hl7.org/CodeSystem/claimcareteamrole
+Alias:   $ContactPurposeCS = http://terminology.hl7.org/CodeSystem/contactentity-type
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

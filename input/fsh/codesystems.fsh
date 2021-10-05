@@ -28,10 +28,10 @@ Description: "Claim Billing Code System"
 * #other "Other Charge"  "The billing is for other charge"
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTSubjectToMedicalMgmtConditionCS
-Title: "PCT Subject-To-Medical-Management Condition Code System"
+CodeSystem: PCTSubjectToMedicalMgmtReasonCS
+Title: "PCT Subject-To-Medical-Management Reason Code System"
 Id: pct-medical-mgmt-condition-type
-Description: "Defining codes for the classification of subject-to-medical-management condition types"
+Description: "Defining codes for the classification of subject-to-medical-management reason types"
 * #concurrent-review "Concurrent Review" "Concurrent Review"
 * #prior-auth "Prior Authorization" "Prior Authorization"
 * #step-therapy "Step Therapy" "Step Therapy"
@@ -52,4 +52,10 @@ Description: "PCT code system for defining the functional roles of the care team
 * #operating "Operating physician" "The operating physician"
 * #otheroperating "Other Operating physician" "The other operating physician"
 * #rendering "Rendering provider" "The rendering/performing provider"
+* ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTOrgContactPurposeType
+Title: "PCT Organization Contact Purpose Type Code System"
+Description: "Organization Contact Purpose Type Code System"
+* #GFE-RELATED "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 * ^copyright = "This CodeSystem is not copyrighted."

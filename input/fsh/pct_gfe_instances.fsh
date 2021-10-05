@@ -1,6 +1,8 @@
 Alias: ICD10 = http://hl7.org/fhir/sid/icd-10-cm
 Alias: PKGCODE = http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup
 
+////////////////////////////////////////////
+
 Instance: PCT-Good-Faith-Estimate-1
 InstanceOf: PCTGoodFaithEstimate
 Description: "An instance of the PCTGoodFaithEstimate Profile"
@@ -11,9 +13,9 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 * extension[InterTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
-* use = #predetermination
+* use = #claim
 * patient = Reference(patientBSJ1)
-* created = "2021-09-07"
+* created = "2021-10-05"
 
 * insurer = Reference(Insurer-Org-1)
 
@@ -29,10 +31,18 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 * diagnosis[primary].diagnosisCodeableConcept = ICD10#J44.9 "Chronic obstructive pulmonary disease, unspecified"
 * diagnosis[primary].packageCode = PKGCODE#500 "Chronic obstructive pulmonary disease"
 
-* total.value = 600.00
+* item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
+* item.sequence = 1
+* item.revenue = NUBC#1212 "Some revenue code description"
+* item.productOrService = CPT4#1010 "Some CPT-4 code description"
+* item.modifier = CPT4#1020 "Some CPT-4 code description"
+* item.net.value = 2000.00
+* item.net.currency = #USD
+
+* total.value = 2000.00
 * total.currency = #USD
 
-////
+///////////////////////////////////////////
 
 Instance: patientBSJ1
 Description: "An instance of Patient"

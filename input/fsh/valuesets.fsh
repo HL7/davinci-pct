@@ -25,11 +25,11 @@ Id: pct-coverage-copay-codes
 * include codes from valueset $CoverageCopayTypeCodes
 * include codes from system PCTCoverageCopayTypeCS
 
-ValueSet: PCTSubjectToMedicalMgmtConditionVS
-Title: "PCT Subject-To-Medical-Management Condition Value Set"
-Description: "Codes for the classification of subject-to-medical-management conditions"
-Id: pct-medical-mgmt-condition-codes
-* codes from system PCTSubjectToMedicalMgmtConditionCS
+ValueSet: PCTSubjectToMedicalMgmtReasonVS
+Title: "PCT Subject-To-Medical-Management Reason Value Set"
+Description: "Codes for the classification of subject-to-medical-management reasons"
+Id: pct-medical-mgmt-reason-codes
+* codes from system PCTSubjectToMedicalMgmtReasonCS
 
 ValueSet: PCTSupportingInfoTypeVS
 Title: "PCT Supporting Info Type Value Set"
@@ -44,3 +44,9 @@ Description: "Codes to specify the the functional roles of the care team members
 * $CARETEAMROLECS#primary "Primary provider"
 * include codes from system PCTInstitutionalCareTeamRole
 * ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTOrgContactPurposeTypeVS
+Title: "PCT Organization Contact Purpose Value Set"
+Description: "Codes for the classification of organization contact purposes"
+* codes from system $ContactPurposeCS
+* codes from system PCTOrgContactPurposeType

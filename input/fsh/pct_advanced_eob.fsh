@@ -4,13 +4,16 @@ Id: davinci-pct-aeob
 Title: "PCT Advanced EOB"
 Description: "PCT Advanced EOB is a profile ..."
 
-* provider only Reference(PCTOrganization)
-
-* extension contains ProviderContractingStatus named providerContractingStatus 1..1 MS
-* extension contains ProviderContractingRate named providerContractingRate 0..1 MS
-* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
-
 * extension contains GFEReference named gfeReference 1..* MS
+// * extension contains ProviderContractingStatus named providerContractingStatus 1..1 MS
+// * extension contains ProviderContractingRate named providerContractingRate 0..1 MS
+//* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
+
+// need provider's TAX ID
+* provider only Reference(PCTOrganization)
+* provider.extension contains ProviderContractingStatus named contractingStatus 1..1 MS
+* provider.extension contains ProviderContractingRate named contractingRate 0..1 MS
+* provider.extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 * insurance.coverage only Reference(PCTCoverage)
 
@@ -46,10 +49,13 @@ Description: "PCT Advanced EOB is a profile ..."
 // * item.adjudication[adjudicationamounttype].amount MS
 // * item.adjudication[adjudicationamounttype].amount 1..1
 
-* item.adjudication.extension contains SubjectToMedicalMgmtCondition named subjectToMedicalMgmtCondition 0..1 MS
+* item.adjudication.extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 0..* MS
 
-* extension contains SubjectToMedicalMgmtDisclaimer named subjectToMedicalMgmtDisclaimer 0..1 MS
-* extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
+
+* extension contains Disclaimer named disclaimer 1..* MS
+// * extension contains SubjectToMedicalMgmtDisclaimer named subjectToMedicalMgmtDisclaimer 0..1 MS
+// * extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
+
 * extension contains ExpirationDate named expirationDate 1..1 MS
 
 * total 1..* MS

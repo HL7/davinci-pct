@@ -8,6 +8,7 @@
 Extension: GFESubmitter
 Description: "Submitter of the GFE request ..."
 * value[x] only Reference(PCTOrganization)
+* value[x] ^short = "The organization submitting the GFE"
 
 Extension: GFEAssignedServiceIdentifier
 Id: gfeAssignedServiceIdentifier
@@ -53,7 +54,9 @@ Description: "ProductOrService Billing Code"
 
 Extension: ProductOrServiceOtherCharge
 Description: "ProductOrService Other Charge"
-* value[x] only Money
+////WORKAROUND for this error: org.apache.commons.lang3.NotImplementedException: type org.hl7.fhir.r5.model.Money not handled - should not be here
+//* value[x] only Money
+* value[x] only decimal
 
 Extension: CompoundDrugLinkingNumber
 Description: "Compound Drug Linking Number"
@@ -63,17 +66,19 @@ Description: "Compound Drug Linking Number"
 //// For PCTAdvancedEOB Profile ////
 
 Extension: ProviderContractingStatus
-Id: provider-contracting-status
+Id: contracting-status
 Title: "Provider Contracting Status"
 Description: "Provider Contracting Status is an extentsion ..."
 * value[x] only Coding
 * value[x] from NetworkTypeCodes (required)
 
 Extension: ProviderContractingRate
-Id: provider-contracting-rate
+Id: contracting-rate
 Title: "Provider Contracting Rate"
 Description: "Provider Contracting Rate is an extentsion ..."
-* value[x] only Money
+////WORKAROUND for this error: org.apache.commons.lang3.NotImplementedException: type org.hl7.fhir.r5.model.Money not handled - should not be here
+//* value[x] only Money
+* value[x] only decimal
 
 Extension: OutOfNetworkProviderInfo
 Id: out-of-network-provider-info
@@ -91,30 +96,32 @@ Extension: PCTProposedDateOfService
 Id: proposed-date-of-service
 Title: "Proposed Date of Service"
 Description: "Proposed Date of Service is an extentsion ..."
-* value[x] only date
+* value[x] only date or Period
 
-Extension: SubjectToMedicalMgmtCondition
-Id: subject-to-medical-mgmt-condition
-Title: "Subject To Medical Management Condition"
-Description: "Subject To Medical Management Condition is an extentsion ..."
-* value[x] only Coding
-* value[x] from PCTSubjectToMedicalMgmtConditionVS (extensible)
-* value[x] ^short = "The estimate may change subject to medical management with this type of condition"
+//TODO: make sure date is full date
 
-Extension: SubjectToMedicalMgmtDisclaimer
-Id: subject-to-medical-mgmt-disclaimer
-Title: "Subject To Medical Management Disclaimer"
+Extension: SubjectToMedicalMgmt
+Id: subject-to-medical-mgmt
+Title: "Subject To Medical Management"
 Description: "Subject To Medical Management is an extentsion ..."
 * value[x] only Coding
-//* extension[subjectToMedicalMgmt].valueCoding from PCTSubjectToMedicalMgmtDisclaimerVS (extensible)
-* value[x] ^short = "The estimate may change subject to medical management"
+* value[x] from PCTSubjectToMedicalMgmtReasonVS (extensible)
+* value[x] ^short = "The estimate may change subject to medical management with this reason"
 
-Extension: EstimateOnlyDisclaimer
-Id: estimate-only-disclaimer
-Title: "Estimate Only Disclaimer"
-Description: "Estimate Only Disclaimer is an extentsion ..."
-* value[x] ^short = "Estimate Only Disclaimer"
-* value[x] only string
+// Extension: SubjectToMedicalMgmtDisclaimer
+// Id: subject-to-medical-mgmt-disclaimer
+// Title: "Subject To Medical Management Disclaimer"
+// Description: "Subject To Medical Management is an extentsion ..."
+// * value[x] only Coding
+// //* extension[subjectToMedicalMgmt].valueCoding from PCTSubjectToMedicalMgmtDisclaimerVS (extensible)
+// * value[x] ^short = "The estimate may change subject to medical management"
+
+Extension: Disclaimer
+Id: disclaimer
+Title: "Disclaimer"
+Description: "Disclaimer is an extentsion ..."
+* value[x] ^short = "Estimate-Only or other type of disclaimer"
+* value[x] only string or CodeableConcept or url
 //* value[x] from PCTEstimateOnlyDisclaimerVS (extensible)
 
 Extension: ExpirationDate

@@ -17,11 +17,21 @@ Description: "PCT Organization is a profile ..."
 * address.country from $ISO3166-P1-ALPHA2-VS (required)
 
 //need these for Professional GFE Submitter??
-* contact 0..* MS
-* contact.name 1..1 MS
+* insert OrgContactSlicing
+//* contact 0..* MS
+
+//* contact.purpose from PCTOrgContactPurposeTypeVS (extensible)
+* contact contains
+   gfeServiceHotline 0..1 MS
+* contact[gfeServiceHotline].name 1..1 MS
+* contact[gfeServiceHotline].telecom 1..* MS
+* contact[gfeServiceHotline].purpose MS
+* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#GFE-RELATED "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 
 //TODO: slice contact for defining PAY-TO
 //* contact[payToAddress]
 
 //TODO: slice telcom to require phone and email
-* contact.telecom MS
+//* contact.telecom MS
+
+* endpoint MS
