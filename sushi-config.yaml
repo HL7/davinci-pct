@@ -16,6 +16,28 @@ copyrightYear: 2021+
 releaseLabel: ci-build
 jurisdiction: urn:iso:std:iso:3166#US
 
+
+
+
+
+pages:
+  index.md:
+    title: Patient Cost Transperency Implementation Guide Home Page
+  use_cases.md:
+    title: Use Cases and Overview
+  underlying_technologies.md:
+    title: Technical Background and Underlying Technologies
+  formal_specification.md:
+    title: Formal Specification
+  #terminology_licensure.md:
+  #  title: Terminology Licensure
+  #downloads.md:
+  #  title: Downloads
+  credits.md:
+    title: Credits
+  #artifacts.md:
+  #  title: FHIR Artifacts  
+
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
@@ -24,16 +46,15 @@ menu:
   
   Table of Contents: toc.html
 
-  Technical Background:          
-    Underlying Technologies: underlying_technologies.html          
-    Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides
-    Terminology Licensure: terminology_licensure.html  
-    
-  PCT Specification:   
-    Use Cases and Overview: use_case.html    
+  PCT Specification:
+    PCT Home Page: index.html      
+    Technical Background and Underlying Technologies: underlying_technologies.html          
+    Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides  
+    Use Cases and Overview: use_cases.html      
     Formal Specification: formal_specification.html 
+    #Terminology Licensure: terminology_licensure.html   
     #Downloads: downloads.html
-    Credits: credits.html 
+    Credits: credits.html
   
   FHIR Artifacts:              
     Profiles: artifacts.html#1
