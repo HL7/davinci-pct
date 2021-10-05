@@ -1,10 +1,14 @@
+Alias: ICD10 = http://hl7.org/fhir/sid/icd-10-cm
+Alias: PKGCODE = http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup
+
 Instance: PCT-Good-Faith-Estimate-1
 InstanceOf: PCTGoodFaithEstimate
 Description: "An instance of the PCTGoodFaithEstimate Profile"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * extension[GFESubmitter].valueReference = Reference(Submitter-Org-1)
-* extension[InterTransIdentifier].valueIdentifier.value = "GFEService0001"
+* extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0001"
+* extension[InterTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
 * use = #predetermination
@@ -17,11 +21,13 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 
 * priority = #normal
 
-* payee.type.coding = #subscriber
+* payee.type.coding = #provider
 
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(BSJ-Coverage-1)
+* diagnosis[primary].diagnosisCodeableConcept = ICD10#J44.9 "Chronic obstructive pulmonary disease, unspecified"
+* diagnosis[primary].packageCode = PKGCODE#500 "Chronic obstructive pulmonary disease"
 
 * total.value = 600.00
 * total.currency = #USD

@@ -8,6 +8,21 @@ RuleSet: SupportingInfoSlicing
 * supportingInfo ^slicing.description = "Slice based on $this pattern"
 * supportingInfo MS
 
+RuleSet: Diagnosislicing
+* diagnosis ^slicing.discriminator.type = #pattern
+* diagnosis ^slicing.discriminator.path = "type"
+* diagnosis ^slicing.rules = #open
+* diagnosis ^slicing.ordered = false   // can be omitted, since false is the default
+* diagnosis ^slicing.description = "Slice based on $this pattern"
+* diagnosis MS
+
+RuleSet: Procedurelicing
+* procedure ^slicing.discriminator.type = #pattern
+* procedure ^slicing.discriminator.path = "type"
+* procedure ^slicing.rules = #open
+* procedure ^slicing.ordered = false   // can be omitted, since false is the default
+* procedure ^slicing.description = "Slice based on $this pattern"
+* procedure MS
 
 //// NOTE: based on CARIN-BB IG -- see C4BBExplanationOfBenefit profile
 //// Invariants

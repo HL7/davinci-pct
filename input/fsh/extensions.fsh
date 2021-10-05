@@ -9,6 +9,11 @@ Extension: GFESubmitter
 Description: "Submitter of the GFE request ..."
 * value[x] only Reference(PCTOrganization)
 
+Extension: GFEAssignedServiceIdentifier
+Id: gfeAssignedServiceIdentifier
+Description: "This is the Provider's Assigned GFE Service Identifier"
+* value[x] only Identifier
+
 Extension: GFEServiceLinkingInfo
 Description: "GFE Service Linking Information"
 * extension contains
@@ -23,7 +28,6 @@ Extension: ReferralNumber
 Id: referral-number
 Description: "Referral Number"
 * value[x] only string
-
 
 Extension: ProviderGrouperMethodology
 Id: provider-grouper-methodology
@@ -119,3 +123,10 @@ Title: "Expiration Date"
 Description: "Expiration Date is an extentsion ..."
 * value[x] ^short = "The AEOB is considered obsolete after this date"
 * value[x] only date
+
+
+/// For PCTOrganization Profile ////
+Extension: CountrySubdivisionCode
+Description: "Country Subdivision Code - from Part 2 of ISO 3166"
+* value[x] only string
+* value[x] from $ISO3166-P2-CSC-VS (required)

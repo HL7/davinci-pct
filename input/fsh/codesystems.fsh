@@ -43,3 +43,13 @@ Title: "PCT GFE Supporting Info Type Code System"
 Description: "Defining codes for the classification of the supplied supporting information"
 * #cmspos "CMS Place of Service" "Place of Service Codes are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided. The Centers for Medicare & Medicaid Services (CMS) maintain POS codes used throughout the health care industry."
 * ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTInstitutionalCareTeamRole
+Title: "PCT Institutional Care Team Role"
+Description: "PCT code system for defining the functional roles of the care team members."
+* #attending "Attending provider" "The attending provider"
+* #referring "Referring provider" "The referring provider"
+* #operating "Operating physician" "The operating physician"
+* #otheroperating "Other Operating physician" "The other operating physician"
+* #rendering "Rendering provider" "The rendering/performing provider"
+* ^copyright = "This CodeSystem is not copyrighted."
