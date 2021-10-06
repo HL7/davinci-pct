@@ -16,10 +16,6 @@ copyrightYear: 2021+
 releaseLabel: ci-build
 jurisdiction: urn:iso:std:iso:3166#US
 
-
-
-
-
 pages:
   index.md:
     title: Patient Cost Transperency Implementation Guide Home Page
@@ -30,9 +26,7 @@ pages:
   formal_specification.md:
     title: Formal Specification
   #terminology_licensure.md:
-  #  title: Terminology Licensure
-  #downloads.md:
-  #  title: Downloads
+  #  title: Terminology Licensure 
   credits.md:
     title: Credits
   #artifacts.md:
@@ -53,7 +47,7 @@ menu:
     Use Cases and Overview: use_cases.html      
     Formal Specification: formal_specification.html 
     #Terminology Licensure: terminology_licensure.html   
-    #Downloads: downloads.html
+    Downloads: index.html#downloads
     Credits: credits.html
   
   FHIR Artifacts:              

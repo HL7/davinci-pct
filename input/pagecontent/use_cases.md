@@ -65,8 +65,8 @@ A healthcare provider organization contains medical providers such as hospitals,
         <td>The maximum amount a plan will pay for a covered health care service. May also be called “eligible expense,” “payment allowance,” “negotiated rate", "contractual amount", or "covered amount."</td>
     </tr>
     <tr>
-        <td>BFE<br/>GFE</td>
-        <td>Best Faith Estimate<br/>Good Faith Estimate</td>
+        <td>GFE</td>
+        <td>Good Faith Estimate</td>
     </tr>
     <tr>
         <td>CAA<br/>Consolidated Appropriations Act</td>

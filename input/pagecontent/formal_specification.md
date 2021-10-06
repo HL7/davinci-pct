@@ -1,13 +1,13 @@
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide. The bulk of it focuses on the GFE $submit operation and AEOB $query AEOB operations, though it also provides guidance on privacy, security, and other implementation requirements.
+This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide. The bulk of it focuses on the GFE $submit and AEOB $query operations, though it also provides guidance on privacy, security, and other implementation requirements.
 
 ### Context
 
 #### Pre-reading
 Before reading this formal specification, implementers should first familiarize themselves with two other key portions of the specification:
 
-* The [Use Case](usecases.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
+* The [Use Case](use_cases.html) page provides context for what this formal specification is trying to accomplish and will give a sense of both the business context and general process flow enabled by the formal specification below.
 
-* The [Technical Background](background.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have the necessary foundation to understand the constraints and usage guidance described here.
+* The [Technical Background and Underlying Technologies]( underlying_technologies.html) page provides information about the underlying specifications and indicates what portions of them should be read and understood to have the necessary foundation to understand the constraints and usage guidance described here.
 
 #### Conventions
 This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
@@ -35,14 +35,14 @@ The full set of profiles defined in this implementation guide can be found by fo
 * Clients and Servers supporting this implementation guide SHOULD comply with the Security and Privacy page in the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
 * Clients and Servers supporting this implementation guide SHOULD comply with some value sets that are referenced in this IG that are also used by the [CARIN for Blue Button® IG](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html#terminology-value-sets). 
 
->Note: At this time the use of the CARIN for Blue Button® IG value sets are under discussion. It is possible and probable similar or equivalent value sets will be used instead and they will be hosted by another steward / author.    
+>Note: At this time the use of the CARIN for Blue Button® IG value sets are under review. It is possible and probable similar or equivalent value sets will be used instead.    
 
 ### Detailed Requirements 
 
 #### Summary
 NOTE FHIR uses a pair of resources called Claim and EOB for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this implementation guide are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
-The primary interaction supported by this implementation guide is submitting a AEOB request and receiving back a response. To perform this, a [PCTBundle](StructureDefinition-davinci-pct-request-bundle.html) resource is constructed by the client (e.g., EHR) system. That Bundle will contain a [GFE](StructureDefinition-davinci-pct-gfe.html) resource (which FHIR uses to submit AEOB requests). 
+The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back a response. To perform this, a [PCTBundle](StructureDefinition-davinci-pct-request-bundle.html) resource is constructed by the client (e.g., EHR) system. That Bundle will contain a [GFE](StructureDefinition-davinci-pct-gfe.html) resource (which FHIR uses to submit AEOB requests). 
 
 TODO - PCT Bundle Content graphic
 
@@ -88,7 +88,7 @@ The project is seeking feedback on whether these maximum frequency requirements 
 </blockquote>
 
 Notes:
-* The returned davinci-pct-aeob SHALL include the current results for all submitted items. 
+* The returned davinci-pct-aeob SHALL include the current results for all submitted items and/or services. 
 
 ##### Full Request 
 
@@ -119,7 +119,7 @@ An example of a changed full request can be found at [MRI Scenario](Bundle-MRISc
 ### Privacy & Security Considerations
 The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process an AEOB request is context and business-rule-specific. Implementers submitting AEOB requests are not required to use X12. X12 has only been used to inform the FHIR based data elements in this IG.
 
-The sharing of information from provider to payer for determining an AEOB is not subject to HIPAA's "minimum necessary" regulations (specifically 45 CFR 164.514(d)(3) and (d)(4)). Payers are responsible for ensuring that only information necessary to create an AEOB is solicited, and providers are responsible for ensuring that only data that is reasonably relevant to creating an AEOB is transmitted.
+The sharing of information from provider to payer for determining an AEOB is subject to HIPAA's "minimum necessary" regulations (specifically 45 CFR 164.514(d)(3) and (d)(4)). Payers are responsible for ensuring that only information necessary to create an AEOB is solicited, and providers are responsible for ensuring that only data that is reasonably relevant to creating an AEOB is transmitted.
 
 Some of the data shared as part of the AEOB process may have associated constraints on the use of that information for other purposes, including subsequent disclosure to other payers, practitioners, policyholders, etc. While HL7 FHIR supports conveying this information via security labels on transmitted resources, this information is not currently mappable (and thus findable) in the X12 837 transactions. Payers who do not view the FHIR version of the transmitted information should be aware of the possibility of these limitations and ensure they have policies that enforce appropriate sharing constraints on data.
 
@@ -139,5 +139,4 @@ It is the intent of this implementation guide to provide specifications for the 
 Add missing graphics and artifacts
 
 -->
-
 
