@@ -136,7 +136,7 @@ It is the intent of this implementation guide to provide specifications for the 
 
 <!--### TODO
 
-Add missing graphics and artifacts
+ Add missing graphics and artifacts
 
 -->
 

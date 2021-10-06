@@ -1,7 +1,3 @@
-ValueSet: PCTGFEBillingCodeVS
-Title: "PCT GFE Billing Code Value Set"
-Description: "GFE billing codes ..."
-* codes from system PCTGFEBillingCS
 
 ValueSet: PCTOrgIdentifierTypeVS
 Title: "PCT Organization Identifier Type Value Set"
@@ -9,3 +5,48 @@ Description: "Codes to specify the type of identifiers for organizations to indi
 * include codes from valueset $IdentifierTypeVS
 * include codes from system PCTOrgIdentifierTypeCS
 * ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTOrganizationTypeVS
+Title: "PCT Organization Type Value Set"
+Description: "Codes to specify the type of entity involved in the PCT GFE process"
+* include codes from valueset $OrganizationType
+* include codes from system PCTOrganizationTypeCS
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTGFEBillingCodeVS
+Title: "PCT GFE Billing Code Value Set"
+Description: "GFE billing codes ..."
+* codes from system PCTGFEBillingCS
+
+ValueSet: PCTCoverageCopayTypeVS
+Title: "PCT Coverage Copay Type Value Set"
+Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the CoverageCopayTypeCodes value set"
+Id: pct-coverage-copay-codes
+* include codes from valueset $CoverageCopayTypeCodes
+* include codes from system PCTCoverageCopayTypeCS
+
+ValueSet: PCTSubjectToMedicalMgmtReasonVS
+Title: "PCT Subject-To-Medical-Management Reason Value Set"
+Description: "Codes for the classification of subject-to-medical-management reasons"
+Id: pct-medical-mgmt-reason-codes
+* codes from system PCTSubjectToMedicalMgmtReasonCS
+
+ValueSet: PCTSupportingInfoTypeVS
+Title: "PCT Supporting Info Type Value Set"
+Description: "Codes to specify the type of the supplied supporting information"
+* include codes from valueset $C4BBSupportingInfoTypeVS
+* include codes from system PCTSupportingInfoType
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTInstitutionalCareTeamRoleVS
+Title: "PCT Institutional Care Team Role Value Set"
+Description: "Codes to specify the the functional roles of the care team members."
+* $CARETEAMROLECS#primary "Primary provider"
+* include codes from system PCTInstitutionalCareTeamRole
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTOrgContactPurposeTypeVS
+Title: "PCT Organization Contact Purpose Value Set"
+Description: "Codes for the classification of organization contact purposes"
+* codes from system $ContactPurposeCS
+* codes from system PCTOrgContactPurposeType

@@ -1,3 +1,16 @@
+<blockquote class="stu-note">
+<p>
+This specification is a proposed Standard for Trial Use. It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters. 
+Note: This is an early draft or "work in progress". Therefore, changes can be expected to happen quite often and without notice. 
+</p>
+<p>
+Feedback is welcome and may be submitted through <a href="https://chat.fhir.org/#narrow/stream/301151-Da-Vinci.20PCT">PCT Zulip</a> indicating "US Da Vinci PCT" as the specification.
+</p>
+<p>
+Individuals interested in participating in the Patient Cost Transparency project or other HL7 Da Vinci projects can find information about Da Vinci <a href="http://www.hl7.org/about/davinci">here</a>.
+</p>
+</blockquote>
+
 ### Overview
 This implementation guide (IG) defines an exchange for providers to request and receive cost information from a payer regarding a service or item. This exchange will result in an Advanced Explanation of Benefits (AEOB) which will enable a clinician and patient cost conversation. Note: This exchange will be triggered via a “request” or “scheduled service”. Also, the AEOB will include the GFE(s) (Good Faith Estimate) used to inform AEOB generation.
 
@@ -24,6 +37,7 @@ As this is a FHIR based use case and X12 is not required. X12 will only be used 
 ![AEOB Interaction Diagram (draft)](AEOB-interaction.png){:style="float: none;"}
 
 ### Downloads
-* The full [PCT Implementation Guide](full-ig.zip)
-* [FHIR R4 PCT Resource Definitions](definitions.json.zip)
-* [FHIR R4 PCT IG Validator Pack](validator-davinci-pct.pack)
+* The full [FHIR PCT Implementation Guide](full-ig.zip)
+* [FHIR PCT Resource Definitions (JSON)](definitions.json.zip)
+* [FHIR PCT IG Profile Examples (JSON)](examples.json.zip)
+* [FHIR PCT IG Validator Pack](validator-hl7.fhir.us.davinci-pct.pack)

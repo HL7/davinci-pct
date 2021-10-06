@@ -1,15 +1,21 @@
+Alias: ICD10 = http://hl7.org/fhir/sid/icd-10-cm
+Alias: PKGCODE = http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup
+
+////////////////////////////////////////////
+
 Instance: PCT-Good-Faith-Estimate-1
 InstanceOf: PCTGoodFaithEstimate
 Description: "An instance of the PCTGoodFaithEstimate Profile"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * extension[GFESubmitter].valueReference = Reference(Submitter-Org-1)
-* extension[InterTransIdentifier].valueIdentifier.value = "GFEService0001"
+* extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0001"
+* extension[InterTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
-* use = #predetermination
+* use = #claim
 * patient = Reference(patientBSJ1)
-* created = "2021-09-07"
+* created = "2021-10-05"
 
 * insurer = Reference(Insurer-Org-1)
 
@@ -17,16 +23,26 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 
 * priority = #normal
 
-* payee.type.coding = #subscriber
+* payee.type.coding = #provider
 
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(BSJ-Coverage-1)
+* diagnosis[primary].diagnosisCodeableConcept = ICD10#J44.9 "Chronic obstructive pulmonary disease, unspecified"
+* diagnosis[primary].packageCode = PKGCODE#500 "Chronic obstructive pulmonary disease"
 
-* total.value = 600.00
+* item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
+* item.sequence = 1
+* item.revenue = NUBC#1212 "Some revenue code description"
+* item.productOrService = CPT4#1010 "Some CPT-4 code description"
+* item.modifier = CPT4#1020 "Some CPT-4 code description"
+* item.net.value = 2000.00
+* item.net.currency = #USD
+
+* total.value = 2000.00
 * total.currency = #USD
 
-////
+///////////////////////////////////////////
 
 Instance: patientBSJ1
 Description: "An instance of Patient"
@@ -61,6 +77,7 @@ Description: "An instance of Practitioner"
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization"
+* type = #Institutional-submitter "Institutional GFE Submitter"
 * name = "GFE Service Help INC."
 * identifier[ETIN].value = "ETIN-10010001"
 * active = true
@@ -68,6 +85,7 @@ Description: "An instance of PCTOrganization"
 Instance: Insurer-Org-1
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization"
+* type = #pay "Payer"
 * name = "Blue Cross Blue Shield"
 * identifier[ETIN].value = "ETIN-70010001"
 * active = true
@@ -75,6 +93,7 @@ Description: "An instance of PCTOrganization"
 Instance: Provider-Org-1
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization"
+* type = #prov "Healthcare Provider"
 * name = "Neuro Care INC."
 * active = true
 
@@ -91,7 +110,7 @@ Description: "An instance of Coverage"
 * subscriber = Reference(patientBSJ1)
 * beneficiary = Reference(patientBSJ1)
 * status = #active
-* class.type = #plan
+* class.type = #plan "Plan"
 * class.value = "Blue Advantage HMO"
 * period.start = "2020-12-01"
 * period.end = "2021-11-30"
