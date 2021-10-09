@@ -9,21 +9,21 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * extension contains GFEAssignedServiceIdentifier named gfeAssignedServiceIdentifier 1..1 MS
 * extension contains GFEServiceLinkingInfo named GFEServiceLinkingInfo 0..1 MS
 * extension contains ReferralNumber named referralNumber 0..1 MS
-//* extension contains ProviderGrouperMethodology named providerGrouperMethodology 0..1 MS
+* extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
 * extension contains InterTransIdentifier named interTransIdentifier 0..1 MS
 
 * patient MS
 * patient only Reference(PCTPatient)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
-* provider only Reference($USCorePractitionerRole)
+* provider only Reference(PCTPractitionerRole)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
 * insurer 1..1
 * insurer only Reference(PCTOrganization)
 
 * payee MS
-* payee.party only Reference($USCorePractitioner or PCTOrganization)
+* payee.party only Reference(PCTPractitioner or PCTOrganization)
 
 * facility MS
 * facility only Reference(PCTLocation)
@@ -60,10 +60,11 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * careTeam 0..* MS
 * careTeam.provider 1..1 MS
 // ISSUE: does the qualification code give the taxonomy code? If so, no need to have PractitionerRole??
-* careTeam.provider only Reference($USCorePractitioner or PCTOrganization)
+* careTeam.provider only Reference(PCTPractitioner or PCTOrganization)
 //* careTeam.provider ^short = ""
 * careTeam.role 1..1 MS
 * careTeam.role from PCTInstitutionalCareTeamRoleVS
+* careTeam.qualification 1..1 MS
 * careTeam.qualification from $USCSPECIALTY (required)
 
 * insert SupportingInfoSlicing
@@ -105,8 +106,8 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * item.detail.productOrService from $FDANationalDrugCode (required)
 * item.detail.quantity MS
 
-* item.detail.extension contains ProductOrServiceBillingCode named productOrServiceBillingCode 0..1 MS
-* item.detail.extension contains ProductOrServiceOtherCharge named productOrServiceOtherCharge 0..1 MS
+// * item.detail.extension contains ProductOrServiceBillingCode named productOrServiceBillingCode 0..1 MS
+// * item.detail.extension contains ProductOrServiceOtherCharge named productOrServiceOtherCharge 0..1 MS
 * item.detail.extension contains CompoundDrugLinkingNumber named compoundDrugLinkingNumber 0..1 MS
 
 * total 1..1

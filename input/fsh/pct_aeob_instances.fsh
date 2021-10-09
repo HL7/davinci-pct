@@ -42,7 +42,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * insurance.focal = true
 * insurance.coverage = Reference(BSJ-Coverage-1)
 
-* item.extension[proposed-date-of-service].valueDate = "2021-10-31"
+* item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = NUBC#1212 "Some revenue code description"
 * item.productOrService = CPT4#1010 "Some CPT-4 code description"

@@ -16,6 +16,7 @@ Alias:   $ISO3166-P1-ALPHA2 = http://terminology.hl7.org/CodeSystem/iso3166-1edi
 Alias:   $ISO3166-P2-CSC = 	urn:iso:std:iso:3166:-2
 Alias:   $CARETEAMROLECS = http://terminology.hl7.org/CodeSystem/claimcareteamrole
 Alias:   $ContactPurposeCS = http://terminology.hl7.org/CodeSystem/contactentity-type
+Alias:   $USNPI = http://hl7.org/fhir/sid/us-npi
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

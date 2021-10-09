@@ -11,14 +11,14 @@ Description: "PCT Advanced EOB is a profile ..."
 
 // need provider's TAX ID
 * provider only Reference(PCTOrganization)
-* provider.extension contains ProviderContractingStatus named contractingStatus 1..1 MS
-* provider.extension contains ProviderContractingRate named contractingRate 0..1 MS
+// * provider.extension contains ProviderContractingStatus named contractingStatus 1..1 MS
+// * provider.extension contains ProviderContractingRate named contractingRate 0..1 MS
 * provider.extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 * insurance.coverage only Reference(PCTCoverage)
 
 * item 1..* MS
-* item.extension contains PCTProposedDateOfService named proposedDateOfService 1..1 MS
+* item.extension contains EstimatedDateOfService named estimatedDateOfService 1..1 MS
 * item.revenue MS
 * item.revenue from $AHANUBCRevenueCodes (required)
 * item.modifier 1..4 MS

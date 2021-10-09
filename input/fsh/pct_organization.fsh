@@ -5,7 +5,13 @@ Title: "PCT Organization"
 Description: "PCT Organization is a profile ..."
 
 * identifier contains ETIN 0..1 MS
-* identifier[ETIN] ^patternIdentifier.type  = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
+* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
+//* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
+//* identifier[ETIN] ^short = "The Electronic Transmitter Identification Number assigned to the provider."
+
+* identifier[NPI].type = $V2-0203#NPI "National provider identifier"
+//* identifier[NPI].value 1..1
+//* identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
 * type 1..* MS
 * type from PCTOrganizationTypeVS (extensible)

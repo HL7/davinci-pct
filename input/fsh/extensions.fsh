@@ -30,9 +30,9 @@ Id: referral-number
 Description: "Referral Number"
 * value[x] only string
 
-Extension: ProviderGrouperMethodology
-Id: provider-grouper-methodology
-Description: "Provider Grouper Methodology"
+Extension: ProviderEventMethodology
+Id: providerEventMethodology
+Description: "This is how the provider determined the number of providers involved, internal experience/analysis - an external methodology"
 * value[x] only string
 
 Extension: EstimatedDateOfService
@@ -92,11 +92,11 @@ Title: "GFE Reference"
 Description: "GFE Reference is an extentsion ..."
 * value[x] only Reference(PCTGoodFaithEstimate)
 
-Extension: PCTProposedDateOfService
-Id: proposed-date-of-service
-Title: "Proposed Date of Service"
-Description: "Proposed Date of Service is an extentsion ..."
-* value[x] only date or Period
+// Extension: PCTProposedDateOfService
+// Id: proposed-date-of-service
+// Title: "Proposed Date of Service"
+// Description: "Proposed Date of Service is an extentsion ..."
+// * value[x] only date or Period
 
 //TODO: make sure date is full date
 
