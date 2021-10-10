@@ -24,38 +24,43 @@ Description: "PCT Good Faith Estimate is a profile ..."
 
 * payee MS
 * payee.party only Reference(PCTPractitioner or PCTOrganization)
+//TODO: create vS for payee.type like https://build.fhir.org/ig/HL7/carin-bb/ValueSet-C4BBPayeeType.html
+//TODO: for now put in a placeholder statement about formal VS to be created...
 
 * facility MS
 * facility only Reference(PCTLocation)
 
 //* supportingInfo.category from $C4BBSupportingInfoType (extensible)
 
-* insurance MS
+* insurance.coverage MS
 * insurance.coverage only Reference(PCTCoverage)
 * insurance.preAuthRef MS
 
 * insert Diagnosislicing
 * diagnosis 1..*
-* diagnosis.diagnosis[x] MS
-* diagnosis.diagnosis[x] only CodeableConcept
+//* diagnosis.diagnosis[x] MS
+//* diagnosis.diagnosis[x] only CodeableConcept
 //* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
 * diagnosis contains
-   primary 1..1 MS
-* diagnosis[primary].type = #primary
-* diagnosis[primary].sequence = 1
-* diagnosis[primary].packageCode MS
-* diagnosis[primary].diagnosis[x] only CodeableConcept
-* diagnosis[primary].packageCode ^short = "For PCT it is a bundle code to specify the Provider Grouper Methodology."
-* diagnosis[primary].packageCode ^comment = "For PCT it is a bundle code to specify the Provider Grouper Methodology."
+   principal 1..1 MS
+* diagnosis[principal].type = #principal
+* diagnosis[principal].sequence = 1
+* diagnosis[principal].diagnosis[x] MS
+* diagnosis[principal].diagnosis[x] only CodeableConcept
+* diagnosis[principal].diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
+* diagnosis[principal].packageCode MS
+* diagnosis[principal].packageCode ^short = "For PCT it is a bundle code to specify the Provider Grouper Methodology."
+* diagnosis[principal].packageCode ^comment = "For PCT it is a bundle code to specify the Provider Grouper Methodology."
 
 * insert Procedurelicing
-* procedure.procedure[x] MS
-* procedure.procedure[x] only CodeableConcept
+//* procedure.procedure[x] MS
+//* procedure.procedure[x] only CodeableConcept
 * procedure contains
-   primary 0..1 MS
-* procedure[primary].type = #primary
-* procedure[primary].sequence = 1
-* procedure[primary].procedure[x] only CodeableConcept
+   principal 0..1 MS
+* procedure[principal].type = #principal
+* procedure[principal].sequence = 1
+* procedure[principal].procedure[x] MS
+* procedure[principal].procedure[x] only CodeableConcept
 
 * careTeam 0..* MS
 * careTeam.provider 1..1 MS
@@ -63,7 +68,7 @@ Description: "PCT Good Faith Estimate is a profile ..."
 * careTeam.provider only Reference(PCTPractitioner or PCTOrganization)
 //* careTeam.provider ^short = ""
 * careTeam.role 1..1 MS
-* careTeam.role from PCTInstitutionalCareTeamRoleVS
+* careTeam.role from PCTCareTeamRoleVS
 * careTeam.qualification 1..1 MS
 * careTeam.qualification from $USCSPECIALTY (required)
 

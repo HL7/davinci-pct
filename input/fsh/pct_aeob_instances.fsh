@@ -17,9 +17,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * extension[provider-contracting-rate].valueMoney.value = 2000.00
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
-* extension[gfe-reference].valueReference = Reference(PCT-Good-Faith-Estimate-1)
+* extension[gfeReference].valueReference = Reference(PCT-Good-Faith-Estimate-1)
 * extension[disclaimer].valueString = "Estimate Only ..."
-* extension[expiration-date].valueDate = "2021-10-31"
+* extension[expirationDate].valueDate = "2021-10-31"
 
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
@@ -30,8 +30,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * insurer = Reference(Insurer-Org-1)
 
 * provider = Reference(Provider-Org-1)
-* provider.extension[contracting-status].valueCoding = #in "In Network"
-* provider.extension[contracting-rate].valueDecimal = 2000.00
+// * provider.extension[contracting-status].valueCoding = #in "In Network"
+// * provider.extension[contracting-rate].valueDecimal = 2000.00
 
 * priority = #normal
 

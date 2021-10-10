@@ -8,9 +8,9 @@ InstanceOf: PCTGoodFaithEstimate
 Description: "An instance of the PCTGoodFaithEstimate Profile"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
-* extension[GFESubmitter].valueReference = Reference(Submitter-Org-1)
+* extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 * extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0001"
-* extension[InterTransIdentifier].valueIdentifier.value = "InterTransID0001"
+* extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
 * use = #claim
@@ -28,10 +28,10 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(BSJ-Coverage-1)
-* diagnosis[primary].diagnosisCodeableConcept = ICD10#J44.9 "Chronic obstructive pulmonary disease, unspecified"
-* diagnosis[primary].packageCode = PKGCODE#500 "Chronic obstructive pulmonary disease"
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#J44.9 "Chronic obstructive pulmonary disease, unspecified"
+* diagnosis[principal].packageCode = PKGCODE#500 "Chronic obstructive pulmonary disease"
 
-* item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
+* item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = NUBC#1212 "Some revenue code description"
 * item.productOrService = CPT4#1010 "Some CPT-4 code description"

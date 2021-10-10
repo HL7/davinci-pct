@@ -38,11 +38,11 @@ Description: "Codes to specify the type of the supplied supporting information"
 * include codes from system PCTSupportingInfoType
 * ^copyright = "This Valueset is not copyrighted."
 
-ValueSet: PCTInstitutionalCareTeamRoleVS
+ValueSet: PCTCareTeamRoleVS
 Title: "PCT Institutional Care Team Role Value Set"
 Description: "Codes to specify the the functional roles of the care team members."
 * $CARETEAMROLECS#primary "Primary provider"
-* include codes from system PCTInstitutionalCareTeamRole
+* include codes from system PCTCareTeamRole
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTOrgContactPurposeTypeVS

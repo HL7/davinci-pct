@@ -7,7 +7,7 @@ Description: "PCT Organization is a profile ..."
 * identifier contains ETIN 0..1 MS
 * identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
-//* identifier[ETIN] ^short = "The Electronic Transmitter Identification Number assigned to the provider."
+* identifier[ETIN] ^short = "The submitter's Electronic Transmitter Identification Number."
 
 * identifier[NPI].type = $V2-0203#NPI "National provider identifier"
 //* identifier[NPI].value 1..1

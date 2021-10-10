@@ -14,7 +14,7 @@ Description: "PCT PractitionerRole is a profile ..."
 //    uniquememberid 0..* MS
 // * identifier[memberid].type = $IdentifierType#MB
 // * identifier[uniquememberid].type = C4BBIdentifierType#um
-* identifier contains NPI 1..1 MS
+* identifier contains NPI 0..1 MS
 * identifier[NPI].type  = $V2-0203#NPI "National provider identifier"
 * identifier[NPI].system = $USNPI
 * identifier[NPI].value 1..1 MS

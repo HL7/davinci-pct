@@ -5,6 +5,7 @@ Title: "PCT Advanced EOB"
 Description: "PCT Advanced EOB is a profile ..."
 
 * extension contains GFEReference named gfeReference 1..* MS
+* extension[gfeReference] ^short = "The GFE submitted by an entity that started the process for obtaining an Advanced EOB."
 // * extension contains ProviderContractingStatus named providerContractingStatus 1..1 MS
 // * extension contains ProviderContractingRate named providerContractingRate 0..1 MS
 //* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
@@ -57,6 +58,7 @@ Description: "PCT Advanced EOB is a profile ..."
 // * extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
 
 * extension contains ExpirationDate named expirationDate 1..1 MS
+* extension[expirationDate] ^short = "The AEOB is good until this date."
 
 * total 1..* MS
 // * insert TotalSlicing

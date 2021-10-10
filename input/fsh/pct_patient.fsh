@@ -19,4 +19,4 @@ Description: "PCT Patient is a profile ..."
 
 * birthDate 1..1 MS
 
-* address.district MS
+//* address.district MS
