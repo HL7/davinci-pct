@@ -2,7 +2,7 @@ Profile: PCTOrganization
 Parent: $USCoreOrganization
 Id: davinci-pct-organization
 Title: "PCT Organization"
-Description: "PCT Organization is a profile ..."
+Description: "The PCT Organization profile builds upon the US Core Organization profile. It is used to convey a payer, provider, payee or service facility organization."
 
 * identifier contains ETIN 0..1 MS
 * identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"

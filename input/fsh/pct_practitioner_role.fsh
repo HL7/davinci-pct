@@ -2,7 +2,7 @@ Profile: PCTPractitionerRole
 Parent: $USCorePractitionerRole
 Id: davinci-pct-practitionerrole
 Title: "PCT PractitionerRole"
-Description: "PCT PractitionerRole is a profile ..."
+Description: "The PCT PractitionerRole profile builds upon the US Core PractitionerRole profile. It is used to convey information about the practitioner who will be providing services to the patient as described on the GFE."
 
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open

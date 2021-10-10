@@ -2,7 +2,7 @@ Profile: PCTGoodFaithEstimate
 Parent: Claim
 Id: davinci-pct-gfe
 Title: "PCT Good Faith Estimate"
-Description: "PCT Good Faith Estimate is a profile ..."
+Description: "PCT Good Faith Estimate is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB."
 
 //// Profile entension elements ////
 * extension contains GFESubmitter named gfeSubmitter 1..1 MS

@@ -1,8 +1,8 @@
-Profile: PCTRelatedPerson
+Profile: PCTSubscriber
 Parent: RelatedPerson
-Id: davinci-pct-related-person
-Title: "PCT RelatedPerson"
-Description: "PCT RelatedPerson is a profile ..."
+Id: davinci-pct-subscriber
+Title: "PCT Subscriber"
+Description: "The PCT Subscriber profile builds upon the RelatedPerson resource. It is used to convey the party who is entitled to the benefits under the policy."
 
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
@@ -21,4 +21,4 @@ Description: "PCT RelatedPerson is a profile ..."
 * gender 1..1 MS
 * birthDate 1..1 MS
 
-* address.district MS
+//* address.district MS

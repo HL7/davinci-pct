@@ -2,7 +2,7 @@ Profile: PCTPatient
 Parent: $USCorePatient
 Id: davinci-pct-patient
 Title: "PCT Patient"
-Description: "PCT Patient is a profile ..."
+Description: "The PCT Patient profile builds upon the US Core Patient profile. It is used to convey information about the patient who will be receiving the services as described on the GFE."
 
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open

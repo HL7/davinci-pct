@@ -12,16 +12,21 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 // * meta.profile[supportedProfile] = Canonical(PCTCoverage|0.1.0)
 
 //* identifier MS
-//* subscriber 0..1
+
+* subscriber MS
+* subscriber only Reference(PCTPatient or PCTSubscriber)
 * subscriberId 1..1 MS
 //* extension contains SubscriberEmployeeIdentifier named subscriberEmployeeIdentifier 0..1 MS
-* subscriber only Reference(PCTPatient or PCTRelatedPerson)
+
 * beneficiary 1..1 MS
 * beneficiary only Reference(PCTPatient)
+
 * relationship 1..1 MS
 //* relationship from $SubscriberRelationiship (required)
+
 * payor 1..1 MS
 * payor only Reference (PCTOrganization)
+
 * class 1..* MS
 * class.name 1..1 MS
 // * class ^slicing.discriminator.type = #pattern
