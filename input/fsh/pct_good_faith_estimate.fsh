@@ -6,11 +6,17 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 
 //// Profile entension elements ////
 * extension contains GFESubmitter named gfeSubmitter 1..1 MS
+* extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 * extension contains GFEAssignedServiceIdentifier named gfeAssignedServiceIdentifier 1..1 MS
-* extension contains GFEServiceLinkingInfo named GFEServiceLinkingInfo 0..1 MS
+* extension[gfeAssignedServiceIdentifier] ^short = "Provider's GFE Assigned Service Identifier"
+* extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
+* extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
 * extension contains ReferralNumber named referralNumber 0..1 MS
+* extension[referralNumber] ^short = "Referral Number"
 * extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
+* extension[providerEventMethodology] ^short = "Provider Event Methodology - a way for determining the number of providers involved"
 * extension contains InterTransIdentifier named interTransIdentifier 0..1 MS
+* extension[interTransIdentifier] ^short = "GFE Service Identifier for Transmission Intermediaries"
 
 * patient MS
 * patient only Reference(PCTPatient)
@@ -88,6 +94,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 
 * item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
+* item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFECoordinatingProviderLineItemCtrlNum named gfeCoordinatingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue MS

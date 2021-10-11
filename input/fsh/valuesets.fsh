@@ -13,10 +13,10 @@ Description: "Codes to specify the type of entity involved in the PCT GFE proces
 * include codes from system PCTOrganizationTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
-ValueSet: PCTGFEBillingCodeVS
-Title: "PCT GFE Billing Code Value Set"
-Description: "GFE billing codes ..."
-* codes from system PCTGFEBillingCS
+// ValueSet: PCTGFEBillingCodeVS
+// Title: "PCT GFE Billing Code Value Set"
+// Description: "GFE billing codes ..."
+// * codes from system PCTGFEBillingCS
 
 ValueSet: PCTCoverageCopayTypeVS
 Title: "PCT Coverage Copay Type Value Set"

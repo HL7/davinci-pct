@@ -21,12 +21,12 @@ Description: "Defining codes for the classification of insurance coverage copay 
 * #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTGFEBillingCS
-Title: "PCT GFE Billing Code System"
-Description: "Claim Billing Code System"
-* #salesTax "Sales Tax" "The billing is for sales tax"
-* #other "Other Charge"  "The billing is for other charge"
-* ^copyright = "This CodeSystem is not copyrighted."
+// CodeSystem: PCTGFEBillingCS
+// Title: "PCT GFE Billing Code System"
+// Description: "Claim Billing Code System"
+// * #salesTax "Sales Tax" "The billing is for sales tax"
+// * #other "Other Charge"  "The billing is for other charge"
+// * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
 Title: "PCT Subject-To-Medical-Management Reason Code System"

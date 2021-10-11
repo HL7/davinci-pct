@@ -54,11 +54,12 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 * extension contains Disclaimer named disclaimer 1..* MS
+* extension[disclaimer] ^short = "One or more disclaimers made by the payer concerning the estimated costs provided in the AEOB"
 // * extension contains SubjectToMedicalMgmtDisclaimer named subjectToMedicalMgmtDisclaimer 0..1 MS
 // * extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
 
 * extension contains ExpirationDate named expirationDate 1..1 MS
-* extension[expirationDate] ^short = "The AEOB is good until this date."
+* extension[expirationDate] ^short = "Once the AEOB is complete and formally issued it is good until this date."
 
 * total 1..* MS
 // * insert TotalSlicing

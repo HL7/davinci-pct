@@ -7,18 +7,18 @@
 
 Extension: GFESubmitter
 Id: gfeSubmitter
-Description: "Submitter of the GFE request ..."
+Description: "This extension is used to indicate the scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB."
 * value[x] only Reference(PCTOrganization or PCTPractitioner)
-* value[x] ^short = "The organization submitting the GFE"
+* value[x] ^short = "The scheduling entity submitting the GFE"
 
 Extension: GFEAssignedServiceIdentifier
 Id: gfeAssignedServiceIdentifier
-Description: "This is the Provider's Assigned GFE Service Identifier"
+Description: "This extension is used to indicate the Provider's Assigned GFE Service Identifier."
 * value[x] only Identifier
 
 Extension: GFEServiceLinkingInfo
 Id: gfeServiceLinkingInfo
-Description: "GFE Service Linking Information"
+Description: "This extension is used to provide the GFE Service Linking Information."
 * extension contains
     plannedPeriodOfService 0..* MS and
     linkingIdentifier 0..* MS
@@ -29,27 +29,27 @@ Description: "GFE Service Linking Information"
 
 Extension: ReferralNumber
 Id: referralNumber
-Description: "Referral Number"
+Description: "This extension is used to provide the Referral Number."
 * value[x] only string
 
 Extension: ProviderEventMethodology
 Id: providerEventMethodology
-Description: "This is how the provider determined the number of providers involved, internal experience/analysis - an external methodology"
+Description: "This extension is used for indicating how the provider determined the number of providers involved--through internal experience/analysis or an external methodology."
 * value[x] only string
 
 Extension: EstimatedDateOfService
 Id: estimatedDateOfService
-Description: "Estimated Date or dates of service or product delivery"
+Description: "This extension is used to provide the estimated date or dates of service or product delivery"
 * value[x] only date or Period
 
 Extension: InterTransIdentifier
 Id: interTransIdentifier
-Description: "GFE Service Identifier for Transmission Intermediaries"
+Description: "This extension is used to provide the GFE Service Identifier for Transmission Intermediaries."
 * value[x] only Identifier
 
 Extension: GFECoordinatingProviderLineItemCtrlNum
 Id: gfeCoordinatingProviderLineItemCtrlNum
-Description: "GFE Coordinating Provider Line Item Control Number"
+Description: "This extension is used to provide the GFE Coordinating Provider Line Item Control Number."
 * value[x] only Identifier
 
 // Extension: ProductOrServiceBillingCode
@@ -65,7 +65,7 @@ Description: "GFE Coordinating Provider Line Item Control Number"
 
 Extension: CompoundDrugLinkingNumber
 Id: compoundDrugLinkingNum
-Description: "Compound Drug Linking Number"
+Description: "This extension is used to provide the Compound Drug Linking Number."
 * value[x] only string
 
 
@@ -89,13 +89,13 @@ Description: "Compound Drug Linking Number"
 Extension: OutOfNetworkProviderInfo
 Id: outOfNetworkProviderInfo
 Title: "Out Of Network Provider Info"
-Description: "Out Of Network Provider Info is an extentsion ..."
+Description: "This extension is used to provide a reference to a web site for finding information on the out-of-network provider."
 * value[x] only url
 
 Extension: GFEReference
 Id: gfeReference
 Title: "GFE Reference"
-Description: "GFE Reference is an extentsion ..."
+Description: "This extension is used to reference the GFE submitted by an entity that started the process for obtaining an Advanced EOB."
 * value[x] only Reference(PCTGoodFaithEstimate)
 
 // Extension: PCTProposedDateOfService
@@ -109,7 +109,7 @@ Description: "GFE Reference is an extentsion ..."
 Extension: SubjectToMedicalMgmt
 Id: subjectToMedicalMgmt
 Title: "Subject To Medical Management"
-Description: "Subject To Medical Management is an extentsion ..."
+Description: "This extension is used to provide a reason to explain how the estimate may change subject to medical management."
 * value[x] only Coding
 * value[x] from PCTSubjectToMedicalMgmtReasonVS (extensible)
 * value[x] ^short = "The estimate may change subject to medical management with this reason"
@@ -125,15 +125,15 @@ Description: "Subject To Medical Management is an extentsion ..."
 Extension: Disclaimer
 Id: disclaimer
 Title: "Disclaimer"
-Description: "Disclaimer is an extentsion ..."
-* value[x] ^short = "Estimate-Only or other type of disclaimer"
+Description: "This extension allows the payer to declare a disclaimer concerning the estimated costs provided in the AEOB."
+* value[x] ^short = "A disclaimer declared by the payer concerning the estimated costs provided in the AEOB"
 * value[x] only string or CodeableConcept or url
 //* value[x] from PCTEstimateOnlyDisclaimerVS (extensible)
 
 Extension: ExpirationDate
 Id: expirationDate
 Title: "Expiration Date"
-Description: "Expiration Date is an extentsion ..."
+Description: "This extension is used to indicate a specific date after which the issued AEOB is considered obsolete."
 * value[x] ^short = "The AEOB is considered obsolete after this date"
 * value[x] only date
 
@@ -141,6 +141,6 @@ Description: "Expiration Date is an extentsion ..."
 /// For PCTOrganization Profile ////
 Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
-Description: "Country Subdivision Code - from Part 2 of ISO 3166"
+Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
 * value[x] only string
 * value[x] from $ISO3166-P2-CSC-VS (required)
