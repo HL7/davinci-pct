@@ -88,9 +88,9 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * supportingInfo[placeOfService].code 1..1 MS
 * supportingInfo[placeOfService].code from $CMSPOSVS (required)
 * supportingInfo[typeOfBill].category MS
-* supportingInfo[typeOfBill].category = $C4BBSupportingInfoType#typeofbill "Type of Bill"
+* supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill "Type of Bill"
 * supportingInfo[typeOfBill].code 1..1 MS
-* supportingInfo[typeOfBill].code from $AHANUBCTypeOfBill (required)
+* supportingInfo[typeOfBill].code from PCTGFETypeOfBillVS (required)
 
 * item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
@@ -98,12 +98,12 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * item.extension contains GFECoordinatingProviderLineItemCtrlNum named gfeCoordinatingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue MS
-* item.revenue from $AHANUBCRevenueCodes (required)
+* item.revenue from PCTGFEItemRevenueVS (required)
 
 * item.modifier 0..4 MS
-* item.modifier from $AMACPTCMSHCPCSModifiers (required)
+* item.modifier from PCTGFEItemCptHcpcsVS (required)
 
-* item.productOrService from $C4BBEOBInstitutionalProcedureCodes (required)
+* item.productOrService from PCTGFEItemCptHcpcsVS (required)
 // Need to make item.productOrService required when item.revenue is provided ??
 //* item.productOrService obeys EOB-out-inst-item-productorservice
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
@@ -114,8 +114,10 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * item.encounter MS
 
 * item.detail MS
+* item.detail ^short = "Drug Pricing Information"
 //ISSUE: use FDANDCOrCompound or FDANationalDrugCode from CARIN BB??
-* item.detail.productOrService from $FDANationalDrugCode (required)
+* item.detail.productOrService from PCTGFEItemNDCVS (required)
+
 * item.detail.quantity MS
 
 // * item.detail.extension contains ProductOrServiceBillingCode named productOrServiceBillingCode 0..1 MS

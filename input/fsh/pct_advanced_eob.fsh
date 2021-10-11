@@ -21,17 +21,17 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 1..1 MS
 * item.revenue MS
-* item.revenue from $AHANUBCRevenueCodes (required)
+* item.revenue from PCTGFEItemRevenueVS (required)
 * item.modifier 1..4 MS
-* item.modifier from $AMACPTCMSHCPCSModifiers (required)
-* item.productOrService from $C4BBEOBInstitutionalProcedureCodes (required)
+* item.modifier from PCTGFEItemCptHcpcsVS (required)
+* item.productOrService from PCTGFEItemCptHcpcsVS (required)
 // Need to make item.productOrService required when item.revenue is provided ??
 //* item.productOrService obeys EOB-out-inst-item-productorservice
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
 * item.net 1..1 MS
 * item.quantity MS
 * item.adjudication 1..* MS
-* item.adjudication.category from $C4BBAdjudication (required)
+* item.adjudication.category from PCTGFEItemAdjudicationVS (required)
 // * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
 // * insert ItemAdjudicationSlicing

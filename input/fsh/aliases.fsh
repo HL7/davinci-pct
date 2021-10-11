@@ -17,6 +17,10 @@ Alias:   $ISO3166-P2-CSC = 	urn:iso:std:iso:3166:-2
 Alias:   $CARETEAMROLECS = http://terminology.hl7.org/CodeSystem/claimcareteamrole
 Alias:   $ContactPurposeCS = http://terminology.hl7.org/CodeSystem/contactentity-type
 Alias:   $USNPI = http://hl7.org/fhir/sid/us-npi
+Alias:   $TOBFL-04 = https://www.nubc.org/CodeSystem/TypeOfBill
+Alias:   $CPT = http://www.ama-assn.org/go/cpt
+Alias:   $HCPCS = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+Alias:   $NDC = http://hl7.org/fhir/sid/ndc
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type
@@ -28,6 +32,8 @@ Alias:   $USCSPECIALTY = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-s
 
 Alias:   $ISO3166-P1-ALPHA2-VS = http://hl7.org/fhir/ValueSet/iso3166-1-2
 Alias:   $ISO3166-P2-CSC-VS = http://terminology.hl7.org/ValueSet/v2-notAllCodes-0347
+Alias:   $REVENUEVS = http://hl7.org/fhir/ValueSet/ex-revenue-center
+Alias:   $ADJUDVS = http://hl7.org/fhir/ValueSet/adjudication
 
 //// CARIN-BB ////
 Alias:   $AHANUBCRevenueCodes = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCRevenueCodes

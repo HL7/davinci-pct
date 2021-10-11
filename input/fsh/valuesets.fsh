@@ -2,47 +2,70 @@
 ValueSet: PCTOrgIdentifierTypeVS
 Title: "PCT Organization Identifier Type Value Set"
 Description: "Codes to specify the type of identifiers for organizations to indicate usage for a specific purpose"
-* include codes from valueset $IdentifierTypeVS
-* include codes from system PCTOrgIdentifierTypeCS
+* codes from valueset $IdentifierTypeVS
+* codes from system PCTOrgIdentifierTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTOrganizationTypeVS
 Title: "PCT Organization Type Value Set"
 Description: "Codes to specify the type of entity involved in the PCT GFE process"
-* include codes from valueset $OrganizationType
-* include codes from system PCTOrganizationTypeCS
+* codes from valueset $OrganizationType
+* codes from system PCTOrganizationTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
-// ValueSet: PCTGFEBillingCodeVS
-// Title: "PCT GFE Billing Code Value Set"
-// Description: "GFE billing codes ..."
-// * codes from system PCTGFEBillingCS
+ValueSet: PCTGFETypeOfBillVS
+Title: "PCT GFE Type Of Bill Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "Codes to indicate the specific Type of Bill (TOB), e.g., hospital inpatient, outpatient, replacements, voids, etc. The first digit is a leading zero*. The fourth digit defines the frequency of the bill for the institutional and electronic professional claim."
+* codes from system $TOBFL-04
+* codes from system PCTGFETypeOfBillCS
+
+ValueSet: PCTGFEItemRevenueVS
+Title: "PCT GFE Item Revenue Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "Sample Revenue Center codes"
+* codes from valueset $REVENUEVS
+
+ValueSet: PCTGFEItemCptHcpcsVS
+Title: "PCT GFE Item CPT and HCPCS Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "Codes to report medical procedures and services under public and private health insurance programs"
+* codes from system $CPT
+* codes from system $HCPCS
+* codes from system PCTGFEItemCptHcpcsCS
+
+ValueSet: PCTGFEItemNDCVS
+Title: "PCT GFE Item NDC Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "The FDA published list of NDC codes for finished drug products"
+* codes from system $NDC
+
+ValueSet: PCTGFEItemAdjudicationVS
+Title: "PCT GFE Item Adjudication Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "Sample Adjudication codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc."
+* codes from valueset $ADJUDVS
 
 ValueSet: PCTCoverageCopayTypeVS
 Title: "PCT Coverage Copay Type Value Set"
 Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the CoverageCopayTypeCodes value set"
 Id: pct-coverage-copay-codes
-* include codes from valueset $CoverageCopayTypeCodes
-* include codes from system PCTCoverageCopayTypeCS
+* codes from valueset $CoverageCopayTypeCodes
+* codes from system PCTCoverageCopayTypeCS
 
 ValueSet: PCTSubjectToMedicalMgmtReasonVS
 Title: "PCT Subject-To-Medical-Management Reason Value Set"
 Description: "Codes for the classification of subject-to-medical-management reasons"
-Id: pct-medical-mgmt-reason-codes
+//Id: pct-medical-mgmt-reason-codes
 * codes from system PCTSubjectToMedicalMgmtReasonCS
 
 ValueSet: PCTSupportingInfoTypeVS
-Title: "PCT Supporting Info Type Value Set"
+Title: "PCT Supporting Info Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to specify the type of the supplied supporting information"
-* include codes from valueset $C4BBSupportingInfoTypeVS
-* include codes from system PCTSupportingInfoType
+* codes from valueset $C4BBSupportingInfoTypeVS
+* codes from system PCTSupportingInfoType
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTCareTeamRoleVS
-Title: "PCT Institutional Care Team Role Value Set"
+Title: "PCT Care Team Role Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to specify the the functional roles of the care team members."
 * $CARETEAMROLECS#primary "Primary provider"
-* include codes from system PCTCareTeamRole
+* codes from system PCTCareTeamRole
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTOrgContactPurposeTypeVS

@@ -15,22 +15,29 @@ Description: "Organization Type codes for describing the type of organizations i
 
 CodeSystem: PCTCoverageCopayTypeCS
 Title: "PCT Coverage Copay Type Code System"
-Id: pct-coverage-copay-type
+//Id: pct-coverage-copay-type
 Description: "Defining codes for the classification of insurance coverage copay types for patient"
 * #pharmacy-deductible "Pharmacy-Deductible" "The accumulated amount of patient payment before the coverage begins to pay for medicines."
 * #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
 * ^copyright = "This CodeSystem is not copyrighted."
 
-// CodeSystem: PCTGFEBillingCS
-// Title: "PCT GFE Billing Code System"
-// Description: "Claim Billing Code System"
-// * #salesTax "Sales Tax" "The billing is for sales tax"
-// * #other "Other Charge"  "The billing is for other charge"
-// * ^copyright = "This CodeSystem is not copyrighted."
+CodeSystem: PCTGFETypeOfBillCS
+Title: "PCT GFE Type Of Bill Code System"
+Description: "Defining codes to indicate the specific Type of Bill (TOB)"
+* #012133 "Hospital Inpatient" "This mock code is for testing purpose only"
+* #013144 "Outpatient"  "This mock code is for testing purpose only"
+* ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTGFEItemCptHcpcsCS
+Title: "PCT GFE Item CPT and HCPCS Code System"
+Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
+* #33502 "Some CPT Code 1" "This mock code is for testing purpose only"
+* #34503 "Some CPT Code 2"  "This mock code is for testing purpose only"
+* ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
 Title: "PCT Subject-To-Medical-Management Reason Code System"
-Id: pct-medical-mgmt-condition-type
+//Id: pct-medical-mgmt-condition-type
 Description: "Defining codes for the classification of subject-to-medical-management reason types"
 * #concurrent-review "Concurrent Review" "Concurrent Review"
 * #prior-auth "Prior Authorization" "Prior Authorization"
@@ -42,6 +49,7 @@ CodeSystem: PCTSupportingInfoType
 Title: "PCT GFE Supporting Info Type Code System"
 Description: "Defining codes for the classification of the supplied supporting information"
 * #cmspos "CMS Place of Service" "Place of Service Codes are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided. The Centers for Medicare & Medicaid Services (CMS) maintain POS codes used throughout the health care industry."
+* #typeofbill "Type of Bill"  "UB-04 Type of Bill (FL-04) provides specific information for payer purposes."
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTCareTeamRole
