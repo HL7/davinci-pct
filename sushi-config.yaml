@@ -4,10 +4,20 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pct
 canonical: http://hl7.org/fhir/us/davinci-pct
-name: DaVinciPatientCostTransparency
-title: Da Vinci Patient Cost Transparency Implementation Guide
+name: PatientCostTransparency
+title: Patient Cost Transparency Implementation Guide
 status: draft
 version: 0.1.0
+publisher:
+  name: HL7 International - Financial Management Work Group
+  url: http://hl7.org/Special/committees/fm
+  email: fmlists@lists.hl7.org
+contact:
+  - name: TBD
+    telecom:
+      - system: email
+        value: mailto:TBD@exmple.org
+
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core: 3.1.1
@@ -36,12 +46,12 @@ pages:
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-menu: 
-  
+menu:
+  IG Home: index.html
+
   Table of Contents: toc.html
 
   PCT Specification:
-    PCT Home Page: index.html      
     Technical Background and Underlying Technologies: underlying_technologies.html          
     Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides  
     Use Cases and Overview: use_cases.html      
