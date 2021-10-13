@@ -87,6 +87,14 @@ A healthcare provider organization contains medical providers such as hospitals,
         <td>Coinsurance</td>
         <td>The percentage of costs of a covered health care service you pay (20%, for example) after a member has paid the deductible.</td>
     </tr>
+     <tr>
+        <td>Copayment</td>
+        <td>A fixed amount ($20, for example) you pay for a covered health care service after you've paid your deductible. Let's say your health insurance plan's allowable cost for a doctor's office visit is $100. Your copayment for a doctor visit is $20.</td>
+    </tr>
+     <tr>
+        <td>Deductible</td>
+        <td>The amount you pay for covered health care services before your insurance plan starts to pay. With a $2,000 deductible, for example, you pay the first $2,000 of covered services yourself. After you pay your deductible, you usually pay only a copayment or coinsurance for covered services.</td>
+    </tr>
     <tr>
         <td>Cost</td>
         <td>To providers: the expense incurred to deliver health care services to patients.<p>To payers: the amount they pay to providers for services rendered.</p>
@@ -107,11 +115,7 @@ A healthcare provider organization contains medical providers such as hospitals,
     <tr>
         <td>De-identified maximum negotiated charge</td>
         <td>The highest charge that a hospital has negotiated with all third-party payers for an item or service.</td>
-    </tr>
-    <tr>
-        <td>Discounted Cash Price</td>
-        <td>The charge that applies to an individual who pays cash, or cash equivalent, for a hospital item or service.</td>
-    </tr>
+    </tr>    
     <tr>
         <td>EOB<br/>Explanation of Benefits</td>
         <td>An EOB is a statement from a health insurance plan describing what costs it will cover for medical care or products received.</td>

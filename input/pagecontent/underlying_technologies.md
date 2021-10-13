@@ -1,5 +1,5 @@
 ### Da Vinci
-Da Vinci is an HL7-sponsored project that brings together the U.S. payer, providers, and technology suppliers (including EHR vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as Connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
+Da Vinci is an HL7-sponsored project that brings together the U.S. payer, providers, and technology suppliers (including Billing Management System vendors)  to help payers and providers to positively impact clinical, quality, cost, and care management outcomes using FHIR-related technologies. The project organizes meetings (face-to-face and conference calls) as well as Connectathons to find ways to leverage FHIR technologies to support and integrate value-based care (VBC) data exchange across communities. Da Vinci identifies value-based care use cases of interest to its member and the community as a whole.
 
 The process that Da Vinci has adopted includes:
 1. identify business, clinical, technical and testing requirements,
@@ -23,7 +23,7 @@ as general guidance on how to read FHIR specifications. Readers who are unfamili
 * [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
 * [Base resource]({{site.data.fhir.path}}resource.html)
 
-This IG leverages and builds on the [US Core](http://hl7.org/fhir/us/core/) IG defined by HL7 for sharing human EHR data in the US.  Implementers need to familiarize themselves with the profiles in [US Core](http://hl7.org/fhir/us/core/). 
+This IG leverages and builds on the [US Core](http://hl7.org/fhir/us/core/) IG defined by HL7 for sharing human data in the US.  Implementers need to familiarize themselves with the profiles in [US Core](http://hl7.org/fhir/us/core/). 
 
 This IG supports the [R4](http://hl7.org/fhir/R4/index.html) version of the FHIR standard.
 
@@ -34,7 +34,7 @@ This IG supports the [R4](http://hl7.org/fhir/R4/index.html) version of the FHIR
 Implementers should also familiarize themselves with the FHIR resources used within this IG.
 
 ### US Core
-Clinical systems SHALL use the specification defined by [US Core](http://www.hl7.org/fhir/us/core/) in exchanging information with payers. Implementers should be familiar with this specification.
+Provider billing and payer claims adjudication systems SHALL use the specification defined by [US Core](http://www.hl7.org/fhir/us/core/) in exchanging information with payers. Implementers should be familiar with this specification.
 
 This IG also references the [US Core IG](http://www.hl7.org/fhir/us/core/). Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support](http://hl7.org/fhir/us/core/general-guidance.html#must-support) Guidance where US Core IG resources are used.
 
