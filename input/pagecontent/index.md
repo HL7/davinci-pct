@@ -24,7 +24,7 @@ As this is a FHIR based use case and X12 is not required. X12 will only be used 
 
 **AEOB Interaction Diagram Steps**
 
-1.  A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. </em>
+1.  A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words the means by which the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
 2.  The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted to the payer’s intermediary or payer’s endpoint for AEOB creation.  
 

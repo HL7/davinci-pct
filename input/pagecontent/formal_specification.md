@@ -22,8 +22,8 @@ This implementation guide uses specific terminology to flag statements that have
 
 This implementation guide sets expectations for two types of systems:
 
-* **Client** systems are electronic medical records, pharmacy systems (for drugs that are part of a medical benefit) and other clinical and administrative systems responsible for requesting AEOBs
-* **Payer** systems are systems run by insurers, clearing houses and other organizations that are responsible for relaying or responding to requests for patient cost information
+* **Client** systems are electronic medical records, pharmacy systems (for drugs that are part of a medical benefit) and other clinical and administrative systems responsible for requesting AEOBs.
+* **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. The systems determine if a provider is in or out of network, verify patient eligibility, apply contracted amounts the provider’s network status needs to be confirmed, patient eligibility verified, and apply member cost sharing amounts. 
 
 #### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of AEOB requests and responses.
@@ -42,7 +42,7 @@ The full set of profiles defined in this implementation guide can be found by fo
 #### Summary
 NOTE FHIR uses a pair of resources called Claim and EOB for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this implementation guide are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
-The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back a response. To perform this, a [PCTBundle](StructureDefinition-davinci-pct-request-bundle.html) resource is constructed by the client (e.g., EHR) system. That Bundle will contain a [GFE](StructureDefinition-davinci-pct-gfe.html) resource (which FHIR uses to submit AEOB requests). 
+The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back a response. To perform this, a [PCTBundle](StructureDefinition-davinci-pct-request-bundle.html) resource is constructed by the client (e.g., Billing Management System) system. That Bundle will contain a [GFE](StructureDefinition-davinci-pct-gfe.html) resource (which FHIR uses to submit AEOB requests). 
 
 TODO - PCT Bundle Content graphic
 
@@ -54,7 +54,7 @@ TODO - PCT Submission Interaction Diagram graphic
 The GFE/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/GFE/$submit endpoint. The Bundle SHALL be encoded in JSON. The first entry in the Bundle SHALL be a GFE resource complying with the [GFE profile](StructureDefinition-davinci-pct-gfe.html)          
 defined in this IG. Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. Bundle.entry.fullUrl values SHALL be:
 
-• the URL at which the resource is available from the EHR if exposed via the client’s REST interface; or
+• the URL at which the resource is available from the Billing Management System if exposed via the client’s REST interface; or
 
 • the form “urn:uuid:[some guid]”
 
