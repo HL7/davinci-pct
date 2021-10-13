@@ -20,19 +20,19 @@ The project team plans to work with existing FHIR artifacts where possible. If c
 
 This project will reference, where possible the 'standards' defined by the Health Record exchange (HRex) Library/Framework Implementation Guide and other FHIR IGs where applicable.
 
-As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not HIPPA mandate to do so.
+As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not an HIPPA mandate to do so.
 
-**AEOB Interaction Diagram Steps (draft)**
+**AEOB Interaction Diagram Steps**
 
 1.  A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. </em>
 
-2.  The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is sent to the create AEOB API endpoint hosted by the payer after being validated.
+2.  The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted to the payer’s intermediary or payer’s endpoint for AEOB creation.  
 
-3.  The GFE Bundle is validated. <em>Note: During this process, the payer might convert the collection of GFEs to X12, but this is not required to be conformant with this IG.</em> 
+3.  The payer’s intermediary or payer might convert the collection of GFEs to X12.  <em>Note: Converting the GFE bundle to X12 or any other format is not required to be conformant with this IG. </em> 
 
-4.  The payer would then process, adjudicate, and produce the AEOB. 
+4.  The payer would then process, adjudicate, and produce the AEOB bundle. 
 
-5.  Once the payer has completed the adjudication of the GFEs and the creation of the AEOB. The patient and provider can be notified that the AEOB is ready. The payer can then deliver the AEOB to the patient and provider via a delivery mechanism of choice (e.g., mail, email, web portal). Also, the AEOB can be received via API in a FHIR based format. <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the API used to retrieve the AEOB bundle.</em>      
+5.  Once the payer has completed the adjudication of the GFEs and the creation of the AEOB. The patient (and optionally the provider) can be notified that the AEOB is ready. The payer can then deliver the AEOB to the patient (and optionally the provider) via a delivery mechanism of choice (e.g., mail, email, web portal, or other). Also, the AEOB bundle can be received via API. <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the API used to retrieve the AEOB bundle. </em>      
 
 ![AEOB Interaction Diagram (draft)](AEOB-interaction.png){:style="float: none;"}
 
@@ -40,4 +40,5 @@ As this is a FHIR based use case and X12 is not required. X12 will only be used 
 * The full [FHIR PCT Implementation Guide](full-ig.zip)
 * [FHIR PCT Resource Definitions (JSON)](definitions.json.zip)
 * [FHIR PCT IG Profile Examples (JSON)](examples.json.zip)
-* [FHIR PCT IG Validator Pack](validator-hl7.fhir.us.davinci-pct.pack)
+* [FHIR PCT IG Validator Pack](validator-hl7.fhir.us.davinci-pct.pack
+
