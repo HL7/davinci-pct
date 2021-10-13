@@ -1,0 +1,27 @@
+{
+  "package-id": "hl7.fhir.us.davinci-pct",
+  "canonical": "http://hl7.org/fhir/us/davinci-pct",
+  "title": "Da Vinci Patient Cost Transparency Implementation Guide",
+  "introduction": "This implementation guide defines a mechanism for requesting cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.",
+  "category": "Financial",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Patient Cost Transparency Implementation Guide CI Build",
+      "path": "http://build.fhir.org/ig/HL7/davinci-pct",
+      "fhirversion": "4.0.1",
+      "status": "ci-build",
+      "current": true
+    },
+    {
+      "version": "0.1.0",
+      "date": "2021-10-12",
+      "desc": "Patient Cost Transparency Implementation Guide Release 1 - US Realm Pre-ballot",
+      "path": "http://build.fhir.org/ig/HL7/davinci-pct/v0.1.0",
+      "status": "draft",
+      "sequence": "STU 1",
+      "fhirversion": "4.0.1",
+      "current": true
+    }
+  ]
+}
