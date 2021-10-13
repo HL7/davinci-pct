@@ -24,12 +24,12 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
 * use = #claim
-* patient = Reference(patientBSJ1)
-* created = "2021-09-07"
+* patient = Reference(patient1001)
+* created = "2021-10-12"
 
-* insurer = Reference(Insurer-Org-1)
+* insurer = Reference(org1001)
 
-* provider = Reference(Provider-Org-1)
+* provider = Reference(org1002)
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
 
@@ -40,22 +40,22 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * outcome = #complete
 
 * insurance.focal = true
-* insurance.coverage = Reference(BSJ-Coverage-1)
+* insurance.coverage = Reference(coverage1001)
 
 * item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = NUBC#1212 "Some revenue code description"
-* item.productOrService = CPT4#1010 "Some CPT-4 code description"
-* item.modifier = CPT4#1020 "Some CPT-4 code description"
-* item.net.value = 2000.00
+* item.productOrService = CPT4#71010 "Some CPT code description"
+* item.modifier = CPT4#71020 "Some CPT code description"
+* item.net.value = 200.00
 * item.net.currency = #USD
 * item.adjudication.extension[subjectToMedicalMgmt].valueCoding = #concurrent-review "Concurrent Review"
 * item.adjudication.category = #paidtoprovider "Paid to provider"
-* item.adjudication.amount.value = 2000.00
+* item.adjudication.amount.value = 200.00
 * item.adjudication.amount.currency = #USD
 
 * total.category = #submitted "Submitted Amount"
-* total.amount.value = 2000.00
+* total.amount.value = 200.00
 * total.amount.currency = #USD
 
 ////////////////////////////////////////////
