@@ -2,7 +2,9 @@
 
 The below describes the process of initiating the creation of an AEOB and the process of receiving of an AEOB. Note: An AEOB includes all GFEs as well as other required information. 
 
-### Submit AEOB Request to Payer
+> Note: Conveying the AEOB to the patient via a FHIR API is optional and the work flow is contingent upon the payer opting to expose the API. 
+
+#### Submit AEOB Request to Payer
 
 ![Submit AEOB Request to Payer (draft)](SubmitAEOB.drawio.png){:style="float: none;"}
 
@@ -10,7 +12,9 @@ The below describes the process of initiating the creation of an AEOB and the pr
 
 2. The provider uses the submit operation to submit the GFE bundle to the payer or payer intermediary endpoint.
    
-3. The payer begins processing the GFE Bundle asynchronously and immediately returns the AEOBBundleID to the calling client. This AEOBBundleID can now be used to get the AEOB which is described below. Note: The AEOBBundleID can also be used to get the AEOB status. Also, the translation from FHIR to X12 is not required to be conformant with this IG.  
+3. The AEOB bundle is created asynchronously. Because of this an AEOBBundleID is returned to calling client with an empty AEOB bundle in a synchronous fashion. This AEOBBundleID can now be used to get the AEOB bundle which is described below. The AEOBBundleID can also be used to get the AEOB bundle status. 
+
+Note: The translation from FHIR to X12 and back FHIR is not required to be conformant with this IG.  
  
 #### Get completed AEOB from payer
 
@@ -54,17 +58,6 @@ Example bundles for the MRI scenario can be found here:
 
 [GFE Bundle](Claim-PCT-Good-Faith-Estimate-1.json.html)<br> 
 [AEOB Bundle](ExplanationOfBenefit-PCT-AEOB-1.json.html)
-
-#### System Actors
-
-#### Payers
-A Payer is an entity who pays for the service of providers. The majority of payers here are also referred to as health insurance companies.
-
-#### Payer Intermediary 
-The payer intermediary can assist a payer and respond to PCT queries in order to perform functionality such as x12 transformations.
-
-#### Healthcare Provider Organization
-A healthcare provider organization contains medical providers such as hospitals, doctors, etc.
 
 ### Terms and Concepts
 <table border="1">
