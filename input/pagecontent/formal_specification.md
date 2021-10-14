@@ -1,4 +1,4 @@
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide (IG). The bulk of it focuses on the GFE $submit operation and the AEOB query, though it also provides guidance on privacy, security, and other implementation requirements.
+This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide (IG). The bulk of it focuses on the GFE $submit operation and the AEOB query, though it also provides guidance on privacy, security, and other implementation requirements.
 
 ### Context
 
@@ -22,17 +22,17 @@ This implementation guide uses specific terminology to flag statements that have
 
 This implementation guide sets expectations for two types of systems:
 
-* **Client** systems are billing management systems, revenue cycle management systems, and other administrative systems responsible for requesting AEOBs.
+* **Client** systems are typically billing management systems, revenue cycle management systems, or other client systems responsible for requesting AEOBs. 
 
-* **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. The systems determine if a provider is in or out of network, verify patient eligibility, apply contracted amounts the provider’s network status needs to be confirmed, patient eligibility verified, and apply member cost sharing amounts. 
+* **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. These systems determine if a provider is in or out of network, verify patient eligibility, apply contracted amounts (the provider’s network status needs to be confirmed), and apply member cost sharing amounts. 
 
 #### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of AEOB requests and responses.
 
-The full set of profiles defined in this implementation guide can be found by following the links on the [Artifacts](artifacts.html) page.
+The full set of profiles defined in this IG can be found by following the links on the [Artifacts](artifacts.html) page.
 
 #### Integration with other Implementation Guides
-* Implementations of the PCT implementation guide SHALL support the [US Core R4 IG]({{site.data.fhir.ver.hl7_fhir_us_core}}) profiles for USCoreOrganizationProfile and USCorePatientProfile. They SHOULD support any other profiles relevant to the types of AEOBs they process. 
+* Implementations of the PCT implementation guide SHALL support the [US Core R4 IG]({{site.data.fhir.ver.hl7_fhir_us_core}}) profiles for USCoreOrganizationProfile, USCorePatientProfile, and USCorePractitionerProfile. They SHOULD support any other profiles relevant to the types of AEOBs they process. 
 * Clients and Servers supporting this implementation guide SHOULD comply with the Security and Privacy page in the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html).
 * Clients and Servers supporting this implementation guide SHOULD comply with some value sets that are referenced in this IG that are also used by the [CARIN for Blue Button® IG](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html#terminology-value-sets). 
 
@@ -40,28 +40,26 @@ The full set of profiles defined in this implementation guide can be found by fo
 
 ### Detailed Requirements 
 
-#### Summary – TODO replace GFE with GFE bundle
+#### Summary – TODO use new GFE and AEOB bundle
 FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this IG are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
-The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle]( StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. That Bundle will contain 1 or more [GFE](StructureDefinition-davinci-pct-gfe.html) resources (which FHIR uses in AEOB requests). 
+The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle]( StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. That Bundle will contain 1 or more [GFE](StructureDefinition-davinci-pct-gfe.html) resources. 
 
 TODO - PCT Bundle Content graphic
 
-This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be a FHIR Bundle which will contain an AEOB and a AEOBResponseID. 
+This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a AEOBBundleID. The AEOBBundleID is important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient, submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD used to determine if the AEOB is complete.   
 
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
 
-The client (or other interested systems - e.g., patient, submitting provider system) can then query the endpoint for the final results using a polling mechanism described below. 
-
-![Submit AEOB Request to Payer (draft)](SubmitAEOB.drawio.png){:style="float: none;"}
+The client (or other interested systems - e.g., patient, submitting provider system) can now query the endpoint the outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
 
 #### AEOB Request 
-The GFE/$submit operation is executed by POSTing a FHIR Bundle to the [base url]/GFE/$submit endpoint. The Bundle SHALL be encoded in JSON. The first entry in the Bundle SHALL be a GFE resource complying with the [GFE profile](StructureDefinition-davinci-pct-gfe.html) defined in this IG. Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
+The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The first entry in the Bundle SHALL be a GFE resource complying with the [GFE profile](StructureDefinition-davinci-pct-gfe.html) defined in this IG. Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
 
-Bundle.entry.fullUrl values SHALL be:
-• the URL at which the resource is available from the Billing Management System if exposed via the client’s REST interface; 
-or
+Bundle.entry.fullUrl values SHALL be:<br>
+• the URL at which the resource is available from the Billing Management System if exposed via the client’s REST interface;<br> 
+or<br>
 • the form “urn:uuid:[some guid]”
 
 All GUIDs used SHALL be unique, including across independent GFE submissions - with the exception that the same resource instance being referenced in distinct AEOB request Bundles can have the same GUID.
@@ -86,14 +84,18 @@ The project is seeking feedback on what errors should be returned in the Operati
 
 These errors are NOT the errors that are detected by the system processing the request and that can be conveyed in a AEOB Response via the error capability. The resulting AEOB Bundle is returned in the HTTP body of the POST response.
 
-#### AEOB Inquiry
+#### AEOB Query
 
 This is done by performing GET [base]/AEOBBundle/[id]
+
+Note: The id above is the AEOBBundleID.
 
 ##### Polling
 In this approach, the Client regularly queries the Server to see if the status of the AEOB bundle has changed. 
 
 This is done by performing: GET [base]/AEOBBundle/[id]
+
+Note: The id above is the AEOBBundleID.
 
 Clients SHALL perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. They SHOULD perform this query at least once every 12 hours. Clients SHALL support manual invocation of the query by users. There are no constraints on frequency of manual queries.
 
@@ -106,36 +108,9 @@ The project is seeking feedback on whether these maximum frequency requirements 
 Notes:
 * The returned AEOBBundle SHALL include the current results for all submitted items and/or services. 
 
-#### Full Request
+#### AEOB Request / Respnse example 
 
-**MRI Scenario**
-
-Assumptions: 
-• Patient has single commercial insurance coverage and plans to use it 
-• This is clinically appropriate (Clinical Decision Support (CDS) Score) 
-• Service Location is known (e.g., Address) 
-• All providers are in network - PCP, imaging facility, and reading radiologist 
-• If required, Prior Authorization is indicated as a disclaimer 
-
-1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headaches lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551). 
-2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department. 
-3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present. 
-4.  The next day, Eve calls the radiology facility (Office of Dr. Christine Curie, NPI - 1234567893) to schedule her brain MRI, CPT 70551 and provide her coverage information, which she plans to use. 
-5.  The MRI is scheduled for 9 days from today. This triggers the process for an Advanced EOB to be sent. 
-6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately. 
-7.  The ABC’s Radiology Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the Good Faith Estimate for costs and services. 
-8.  This information is sent to the payer. 
-9.  The payer receives the good faith estimate, adjudicates it to determine patient costs and sends the Advanced EOB (including the GFE) securely to Eve. 
-10. Optionally, the payer also sends a response to ABC’s Radiology Office Administrator with the same cost estimate information. 
-11. Eve receives the Advanced EOB from her payer based on the information provided by ABC Radiology. 
-
-##### Full Request Example – TODO use GFE and AEOB bundle
- 
-An example the MRI can be found here: 
-
-[GFE Bundle](Claim-PCT-Good-Faith-Estimate-1.json.html) 
-
-[AEOB Bundle](ExplanationOfBenefit-PCT-AEOB-1.json.html)
+Example bundles can be found [here](use_cases.html#example)
 
 ### Privacy & Security Considerations
 The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process an AEOB request is context and business-rule-specific. Implementers submitting AEOB requests are not required to use X12. X12 has only been used to inform the FHIR based data elements in this IG.
