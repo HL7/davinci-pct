@@ -28,7 +28,7 @@ jurisdiction: urn:iso:std:iso:3166#US
 
 pages:
   index.md:
-    title: Patient Cost Transperency Implementation Guide Home Page
+    title: Patient Cost Transparency Implementation Guide Home Page
   use_cases.md:
     title: Use Cases and Overview
   underlying_technologies.md:
