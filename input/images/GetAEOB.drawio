@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-        <mxGraphModel dx="1550" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1603" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -117,7 +117,7 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="26" value="AEOB Bundle" style="edgeLabel;html=1;align=center;verticalAlign=bottom;resizable=0;points=[];labelPosition=center;verticalLabelPosition=top;" parent="25" vertex="1" connectable="0">
+                <mxCell id="26" value="AEOB Bundle or AEOB" style="edgeLabel;html=1;align=center;verticalAlign=bottom;resizable=0;points=[];labelPosition=center;verticalLabelPosition=top;" parent="25" vertex="1" connectable="0">
                     <mxGeometry x="0.3212" y="-4" relative="1" as="geometry">
                         <mxPoint x="94" as="offset"/>
                     </mxGeometry>
@@ -128,7 +128,7 @@
                 <mxCell id="28" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="27" vertex="1">
                     <mxGeometry x="60" y="70" width="10" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="Query for AEOB Bundle using AEOB Response ID and Access Token" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;endSize=8;" parent="1" edge="1">
+                <mxCell id="30" value="Query for AEOB Bundle using AEOB Bundle id and Access Token" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;endSize=8;" parent="1" edge="1">
                     <mxGeometry x="-0.0435" y="10" relative="1" as="geometry">
                         <mxPoint x="80" y="440" as="sourcePoint"/>
                         <mxPoint x="540" y="440" as="targetPoint"/>
