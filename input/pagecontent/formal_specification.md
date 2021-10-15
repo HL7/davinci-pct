@@ -90,7 +90,7 @@ It is possible that the incoming Bundle cannot be processed due to validation er
 
 <blockquote class="stu-note">
 <p>
-The project is seeking feedback on what errors should be returned in the OperationOutcome. E.g., a value set based on X12 remittance-advice-remark-codes  
+The project is seeking feedback on what errors should be returned in the OperationOutcome. 
 </p>
 </blockquote>
 
