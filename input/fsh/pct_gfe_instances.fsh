@@ -6,12 +6,14 @@ Alias: LANGVALSET = urn:ietf:bcp:47
 Alias: PRO-ROLE = http://nucc.org/provider-taxonomy
 Alias: SPECIALTY = http://nucc.org/provider-taxonomy
 Alias: V2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: RELATE = http://terminology.hl7.org/CodeSystem/subscriber-relationship
+Alias: CONTRACTTYPE = http://terminology.hl7.org/CodeSystem/contract-type
 
 ////////////////////////////////////////////
 
-Instance: PCT-Good-Faith-Estimate-1
+Instance: PCT-GFE-Institutional-1
 InstanceOf: PCTGoodFaithEstimate
-Description: "An instance of the PCTGoodFaithEstimate Profile"
+Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
@@ -22,21 +24,15 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 * use = #claim
 * patient = Reference(patient1001)
 * created = "2021-10-05"
-
 * insurer = Reference(org1001)
-
 * provider = Reference(pracRole002)
-
 * priority = #normal
-
 * payee.type.coding = #provider
-
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
 * diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.3 "Focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
-
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = NUBC#1212 "Some revenue code description"
@@ -44,7 +40,36 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 * item.modifier = CPT4#71020 "Some CPT code description"
 * item.net.value = 200.00
 * item.net.currency = #USD
+* total.value = 200.00
+* total.currency = #USD
 
+Instance: PCT-GFE-Professional-1
+InstanceOf: PCTGoodFaithEstimate
+Description: "PCT Professional GFE Example 1"
+* extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
+* extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0002"
+* extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
+* status = #active
+* type = $ClaimTypeCS#Professional "Professional"
+* use = #claim
+* patient = Reference(patient1001)
+* created = "2021-10-05"
+* insurer = Reference(org1001)
+* provider = Reference(pracRole002)
+* priority = #normal
+* payee.type.coding = #provider
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(coverage1001)
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.3 "Focal traumatic brain injury"
+* diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* item.extension[estimatedDateOfService].valueDate = "2021-10-31"
+* item.sequence = 1
+* item.revenue = NUBC#1212 "Some revenue code description"
+* item.productOrService = CPT4#71010 "Some CPT code description"
+* item.modifier = CPT4#71020 "Some CPT code description"
+* item.net.value = 200.00
+* item.net.currency = #USD
 * total.value = 200.00
 * total.currency = #USD
 
@@ -52,13 +77,15 @@ Description: "An instance of the PCTGoodFaithEstimate Profile"
 
 Instance: patient1001
 Description: "An instance of Patient"
-InstanceOf: Patient
+InstanceOf: PCTPatient
 * name.given = "Eve"
 * name.family = "Betterhalf"
 * name.text = "Eve Betterhalf"
-* identifier.type = #MB
-* identifier.system = "http://www.acme.com/identifiers/patient"
-* identifier.value = "12345"
+//* identifier[memberID].type = #MB
+* identifier[memberID].system = "http://example.com/identifiers/member"
+* identifier[memberID].value = "12345"
+* identifier[employeeID].system = "http://example.com/identifiers/employee"
+* identifier[employeeID].value = "667788"
 * gender = Hl7FhirAdminGender#female
 * birthDate = "1955-07-23"
 * maritalStatus = Hl7V3MS#U "unmarried"
@@ -70,10 +97,10 @@ InstanceOf: Patient
 * communication.preferred = true
 
 Instance: prac001
-InstanceOf: Practitioner
-Description: "An instance of Practitioner"
-* identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567893"
+InstanceOf: PCTPractitioner
+Description: "An instance of PCTPractitioner"
+* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[NPI].value = "1234567893"
 * name.given = "Patricia"
 * name.family = "Primary"
 * name.text = "Patricia	Primary"
@@ -85,10 +112,10 @@ Description: "An instance of Practitioner"
 * address.text = "32 Fruit Street, Boston MA 02114"
 
 Instance: prac002
-InstanceOf: Practitioner
-Description: "An instance of Practitioner"
-* identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* identifier.value = "1234567893"
+InstanceOf: PCTPractitioner
+Description: "An instance of PCTPractitioner"
+* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[NPI].value = "1234567995"
 * name.given = "Christine"
 * name.family = "Curie"
 * name.text = "Christine Curie"
@@ -100,8 +127,8 @@ Description: "An instance of Practitioner"
 * address.text = "32 Fruit Street, Boston MA 02114"
 
 Instance: pracRole002
-InstanceOf: PractitionerRole
-Description: "An instance of PractitionerRole"
+InstanceOf: PCTPractitionerRole
+Description: "An instance of PCTPractitionerRole"
 * code = PRO-ROLE#247100000X
 * code.coding.display = "Radiologic Technologist"
 * specialty = SPECIALTY#261QM1200X
@@ -109,33 +136,47 @@ Description: "An instance of PractitionerRole"
 * active = true
 * practitioner = Reference(prac002)
 * organization = Reference(org1002)
-* location = Reference(Provider-Org-Loc-1)
+* location = Reference(Provider-Org-Loc-2)
 
-// Instance: prac002
-// InstanceOf: Practitioner
-// Description: "An instance of Practitioner"
-// * identifier.system = "http://hl7.org/fhir/sid/us-npi"
-// * identifier.value = "3668788925"
-// * name.given = "Nora"
-// * name.family = "Ologist"
-// * name.text = "Nora Ologist"
-// * active = true
-// * gender = #female
+Instance: Submitter-Practitioner-1
+InstanceOf: PCTPractitioner
+Description: "Professional GFE Submitter 1"
+* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[NPI].value = "6456789016"
+* identifier[ETIN].value = "ETIN-20020001"
+* identifier[ETIN].system = "http://example.com/us-etin"
+* name.given = "Nora"
+* name.family = "Ologist"
+* name.text = "Nora Ologist"
+* active = true
+* telecom.system = #phone
+* telecom.value = "860-547-3301"
+* telecom.use = #work
+* telecom[1].system = #email
+* telecom[1].value = "csender@GFEServiceHelp.com"
+* telecom[1].use = #work
 
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
-Description: "An instance of PCTOrganization"
+Description: "Institutional GFE Submitter 1"
 * type = #Institutional-submitter "Institutional GFE Submitter"
 * name = "GFE Service Help INC."
-* identifier[ETIN].value = "ETIN-10010001"
+* identifier[ETIN].value = "ETIN-10010301"
 * active = true
+* contact[gfeServiceHotline].name.text = "Clara Sender"
+* contact[gfeServiceHotline].telecom.system = #phone
+* contact[gfeServiceHotline].telecom.value = "781-632-3209"
+* contact[gfeServiceHotline].telecom.use = #work
+* contact[gfeServiceHotline].telecom[1].system = #email
+* contact[gfeServiceHotline].telecom[1].value = "csender@GFEServiceHelp.com"
+* contact[gfeServiceHotline].telecom[1].use = #work
 
 Instance: org1001
 InstanceOf: PCTOrganization
-Description: "An instance of PCTOrganization"
+Description: "An instance of PCTOrganization as a payer"
 * type = #pay "Payer"
 * name = "Umbrella Insurance Company"
-* identifier[ETIN].value = "ETIN-1001001"
+* identifier[ETIN].value = "ETIN-3200002"
 * active = true
 * telecom.system = #phone
 * telecom.value = "860-547-5001"
@@ -149,10 +190,10 @@ Description: "An instance of PCTOrganization"
 
 Instance: org1002
 InstanceOf: PCTOrganization
-Description: "An instance of PCTOrganization"
+Description: "An instance of PCTOrganization as a healthcare provider"
 * type = #prov "Healthcare Provider"
 * identifier.type = V2-0203#TAX "Tax ID number"
-* identifier.value = "TAX-1001001"
+* identifier.value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true
 * telecom.system = #phone
@@ -165,22 +206,36 @@ Description: "An instance of PCTOrganization"
 * address.country = "USA"
 * address.extension[countrySubdivisionCode].valueString = "US-MA"
 
-Instance: Provider-Org-Loc-1
-InstanceOf: Location
-Description: "An instance of Location"
+Instance: Provider-Org-Loc-2
+InstanceOf: PCTLocation
+Description: "An instance of PCTLocation"
 * status = #active
 * name = "Boston Radiology Center"
 * address.text = "32 Fruit Street, Boston MA 02114"
+* managingOrganization = Reference(org1002)
 
 Instance: coverage1001
-InstanceOf: Coverage
-Description: "An instance of Coverage"
+InstanceOf: PCTCoverage
+Description: "An instance of PCTCoverage"
 * subscriber = Reference(patient1001)
 * beneficiary = Reference(patient1001)
+* relationship = RELATE#self "Self"
 * status = #active
+* class.name = "Premim Family Plus Plan"
 * class.type = #plan "Plan"
 * class.value = "Premim Family Plus"
 * period.start = "2021-01-01"
 * period.end = "2022-01-01"
 * payor = Reference(org1001)
 * subscriberId = "PFP123450000"
+* costToBeneficiary.valueMoney.value = 200.00
+* costToBeneficiary.valueMoney.currency = #USD
+* contract = Reference(contract1001)
+
+Instance: contract1001
+InstanceOf: Contract
+Description: "An instance of Contract"
+* applies.start = "2021-01-01"
+* applies.end = "2022-01-01"
+* subject = Reference(patient1001)
+* type = CONTRACTTYPE#healthinsurance "Health Insurance"
