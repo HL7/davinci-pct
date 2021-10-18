@@ -1,13 +1,13 @@
 
 ValueSet: PCTOrgIdentifierTypeVS
-Title: "PCT Organization Identifier Type Value Set"
+Title: "PCT Organization Identifier Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to specify the type of identifiers for organizations to indicate usage for a specific purpose"
 * codes from valueset $IdentifierTypeVS
 * codes from system PCTOrgIdentifierTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTOrganizationTypeVS
-Title: "PCT Organization Type Value Set"
+Title: "PCT Organization Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to specify the type of entity involved in the PCT GFE process"
 * codes from valueset $OrganizationType
 * codes from system PCTOrganizationTypeCS
@@ -42,14 +42,14 @@ Description: "Sample Adjudication codes to indicate the amounts eligible under t
 * codes from valueset $ADJUDVS
 
 ValueSet: PCTCoverageCopayTypeVS
-Title: "PCT Coverage Copay Type Value Set"
+Title: "PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the CoverageCopayTypeCodes value set"
 Id: pct-coverage-copay-codes
 * codes from valueset $CoverageCopayTypeCodes
 * codes from system PCTCoverageCopayTypeCS
 
 ValueSet: PCTSubjectToMedicalMgmtReasonVS
-Title: "PCT Subject-To-Medical-Management Reason Value Set"
+Title: "PCT Subject-To-Medical-Management Reason Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes for the classification of subject-to-medical-management reasons"
 //Id: pct-medical-mgmt-reason-codes
 * codes from system PCTSubjectToMedicalMgmtReasonCS
@@ -69,7 +69,7 @@ Description: "Codes to specify the the functional roles of the care team members
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTOrgContactPurposeTypeVS
-Title: "PCT Organization Contact Purpose Value Set"
+Title: "PCT Organization Contact Purpose Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes for the classification of organization contact purposes"
 * codes from system $ContactPurposeCS
 * codes from system PCTOrgContactPurposeType
