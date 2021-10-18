@@ -8,6 +8,7 @@ Alias: SPECIALTY = http://nucc.org/provider-taxonomy
 Alias: V2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: RELATE = http://terminology.hl7.org/CodeSystem/subscriber-relationship
 Alias: CONTRACTTYPE = http://terminology.hl7.org/CodeSystem/contract-type
+Alias: COPAYTYPE = http://terminology.hl7.org/CodeSystem/coverage-copay-type
 
 ////////////////////////////////////////////
 
@@ -228,8 +229,9 @@ Description: "An instance of PCTCoverage"
 * period.end = "2022-01-01"
 * payor = Reference(org1001)
 * subscriberId = "PFP123450000"
-* costToBeneficiary.valueMoney.value = 200.00
-* costToBeneficiary.valueMoney.currency = #USD
+* costToBeneficiary.type = COPAYTYPE#copaypct "Copay Percentage"
+* costToBeneficiary.valueQuantity.value = 20.00
+//* costToBeneficiary.valueMoney.currency = #USD
 * contract = Reference(contract1001)
 
 Instance: contract1001
