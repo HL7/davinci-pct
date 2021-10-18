@@ -38,7 +38,7 @@ As this is a FHIR based use case and X12 is not required. X12 will only be used 
 
 ### Downloads
 * The full [FHIR PCT Implementation Guide](full-ig.zip)
-* [FHIR PCT Resource Definitions (JSON)](definitions.json.zip)
-* [FHIR PCT IG Profile Examples (JSON)](examples.json.zip)
+* FHIR PCT Resource Definitions [(JSON)](definitions.json.zip) [(XML)](definitions.xml.zip) [(TTL)](definitions.ttl.zip)
+* FHIR PCT IG Profile Examples [(JSON)](examples.json.zip) [(XML)](examples.xml.zip) [(TTL)](examples.ttl.zip)
 * [FHIR PCT IG Validator Pack](validator-hl7.fhir.us.davinci-pct.pack)
 
