@@ -15,7 +15,7 @@ Description: "Codes to specify the type of entity involved in the PCT GFE proces
 
 ValueSet: PCTDiagnosisTypeVS
 Title: "PCT Diagnosis Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Sample Adjudication codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc."
+Description: "Codes to specify the type of diagnosis"
 * include $DIAGTYPECS#principal
 * include $DIAGTYPECS#admitting
 * codes from system PCTDiagnosisType
@@ -23,7 +23,7 @@ Description: "Sample Adjudication codes to indicate the amounts eligible under t
 
 ValueSet: PCTProcedureTypeVS
 Title: "PCT Procedure Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Sample Adjudication codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc."
+Description: "Codes to specify the type of procedure"
 * include $PROCTYPECS#primary
 * codes from system PCTProcedureType
 * ^copyright = "This Valueset is not copyrighted."
