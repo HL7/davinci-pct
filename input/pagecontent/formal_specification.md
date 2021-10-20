@@ -100,14 +100,14 @@ These errors are NOT the errors that are detected by the system processing the r
 
 #### AEOB Query
 
-This is done by performing GET [base]/AEOBBundle/[id]
+This is done by performing GET [base]/Bundle/[id]
 
 Note: The id above is the AEOBBundleID.
 
 ##### Polling
 In this approach, the Client regularly queries the Server to see if the status of the AEOB bundle has changed. 
 
-This is done by performing: GET [base]/AEOBBundle/[id]
+This is done by performing: GET [base]/Bundle/[id]
 
 Note: The id above is the AEOBBundleID.
 
@@ -121,7 +121,7 @@ The project is seeking feedback on whether these maximum frequency requirements 
 
 Note: The returned AEOBBundle SHALL include the current results for all submitted items and/or services. 
 
-#### AEOB Request / Respnse example 
+#### AEOB Request / Response example 
 
 Example bundles can be found [here](use_cases.html#example)
 
