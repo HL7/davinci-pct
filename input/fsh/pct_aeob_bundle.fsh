@@ -18,14 +18,7 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOB. Org
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains ExplanationOfBenefit 1..1 MS
 * entry[ExplanationOfBenefit].resource only PCTAdvancedEOB
-* entry contains Claim 1..* MS
-* entry[Claim].resource only PCTGoodFaithEstimate
-* entry contains Patient 1..1 MS
-* entry[Patient].resource only PCTPatient
-* entry contains Organization 1..2 MS
-* entry[Organization].resource only PCTOrganization
-* entry contains Coverage 1..1 MS
-* entry[Coverage].resource only PCTCoverage
+
 
 
 
