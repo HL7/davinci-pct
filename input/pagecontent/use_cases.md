@@ -52,12 +52,11 @@ Assumptions:<br>
 10. Optionally, the payer also sends a response to ABC’s Radiology Office Administrator with the same cost estimate information. 
 11. Eve receives the Advanced EOB from her payer based on the information provided by ABC Radiology. 
 
-##### Example Bundles – TODO use new GFE and AEOB bundle
- 
-Example bundles for the MRI scenario can be found here: 
+##### MRI Examples  
 
-[GFE Bundle](Claim-PCT-Good-Faith-Estimate-1.json.html)<br> 
-[AEOB Bundle](ExplanationOfBenefit-PCT-AEOB-1.json.html)
+[GFE](Claim-PCT-Good-Faith-Estimate-1.json.html)<br> 
+
+[AEOB](ExplanationOfBenefit-PCT-AEOB-1.json.html)
 
 ### Terms and Concepts
 <table border="1">
