@@ -21,6 +21,22 @@ Description: "Defining codes for the classification of insurance coverage copay 
 * #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
 * ^copyright = "This CodeSystem is not copyrighted."
 
+CodeSystem: PCTDiagnosisType
+Title: "PCT Diagnosis Type"
+Description: "Defining codes for the classification of diagnosis types"
+* #patientReasonForVisit "Patient's Reason for Visit" "Identifies the patient's reason for the outpatient institutional visit"
+* #externalCauseOfInjury "External Cause of Injury"	  "Required when an external cause of injury is needed to describe the injury"
+* #other "Other" "Required when other conditions coexist or develop subsequently during the treatment"
+* #secondary "Secondary" "Required when necessary to report additional diagnoses on professional and non-clinician claims"
+* ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTProcedureType
+Title: "PCT Procedure Type"
+Description: "Defining codes for the classification of procedure types"
+* #procedureRequiringAnethesia  "Surgical procedure requiring anethesia" "Identifies the surgical procedure requiring anethesia"
+* #other "Other" "Other procedure information"
+* ^copyright = "This CodeSystem is not copyrighted."
+
 CodeSystem: PCTGFETypeOfBillCS
 Title: "PCT GFE Type Of Bill Code System"
 Description: "Defining codes to indicate the specific Type of Bill (TOB)"

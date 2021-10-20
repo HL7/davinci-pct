@@ -22,6 +22,8 @@ Alias:   $CPT = http://www.ama-assn.org/go/cpt
 Alias:   $HCPCS = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias:   $NDC = http://hl7.org/fhir/sid/ndc
 Alias:   $V2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias:   $DIAGTYPECS = http://terminology.hl7.org/CodeSystem/ex-diagnosistype
+Alias:   $PROCTYPECS = http://terminology.hl7.org/CodeSystem/ex-procedure-type
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

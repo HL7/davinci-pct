@@ -47,9 +47,9 @@ Id: interTransIdentifier
 Description: "This extension is used to provide the GFE Service Identifier for Transmission Intermediaries."
 * value[x] only Identifier
 
-Extension: GFECoordinatingProviderLineItemCtrlNum
-Id: gfeCoordinatingProviderLineItemCtrlNum
-Description: "This extension is used to provide the GFE Coordinating Provider Line Item Control Number."
+Extension: GFEBillingProviderLineItemCtrlNum
+Id: gfeBillingProviderLineItemCtrlNum
+Description: "This extension is used to provide the GFE Billing Provider Line Item Control Number."
 * value[x] only Identifier
 
 // Extension: ProductOrServiceBillingCode

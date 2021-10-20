@@ -47,9 +47,11 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 //* diagnosis.diagnosis[x] MS
 //* diagnosis.diagnosis[x] only CodeableConcept
 //* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
+* diagnosis.type MS
+* diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
    principal 1..1 MS
-* diagnosis[principal].type = #principal
+* diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x] MS
 * diagnosis[principal].diagnosis[x] only CodeableConcept
@@ -61,12 +63,14 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * insert Procedurelicing
 //* procedure.procedure[x] MS
 //* procedure.procedure[x] only CodeableConcept
+* procedure.type MS
+* procedure.type from PCTProcedureTypeVS
 * procedure contains
-   principal 0..1 MS
-* procedure[principal].type = #principal
-* procedure[principal].sequence = 1
-* procedure[principal].procedure[x] MS
-* procedure[principal].procedure[x] only CodeableConcept
+   primary 0..1 MS
+* procedure[primary].type = $PROCTYPECS#primary
+* procedure[primary].sequence = 1
+* procedure[primary].procedure[x] MS
+* procedure[primary].procedure[x] only CodeableConcept
 
 * careTeam 0..* MS
 * careTeam.provider 1..1 MS
@@ -95,7 +99,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
-* item.extension contains GFECoordinatingProviderLineItemCtrlNum named gfeCoordinatingProviderLineItemCtrlNum 0..1 MS
+* item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
@@ -110,6 +114,8 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 
 * item.net 1..1 MS
 * item.quantity MS
+
+* item.location[x]  from $CMSPOSVS (required)
 
 * item.encounter MS
 

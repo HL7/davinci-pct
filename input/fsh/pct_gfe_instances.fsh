@@ -66,7 +66,7 @@ Description: "PCT Professional GFE Example 1"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
-* item.revenue = NUBC#1212 "Some revenue code description"
+//* item.revenue = NUBC#1212 "Some revenue code description"
 * item.productOrService = CPT4#71010 "Some CPT code description"
 * item.modifier = CPT4#71020 "Some CPT code description"
 * item.net.value = 200.00
