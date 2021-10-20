@@ -52,12 +52,10 @@ The full set of profiles defined in this IG can be found by following the links 
 
 ### Detailed Requirements 
 
-#### Summary – TODO use new GFE and AEOB bundle
+#### Summary 
 FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this IG are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
-The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle]( StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. That Bundle will contain 1 or more [GFE](StructureDefinition-davinci-pct-gfe.html) resources. 
-
-TODO - PCT Bundle Content graphic
+The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle](StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOBBundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
 
 This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a AEOBBundleID. The AEOBBundleID is important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient, submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD used to determine if the AEOB is complete.   
 
@@ -65,6 +63,10 @@ The AEOB bundle will contain one of these **outcomes** [queued | complete | erro
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
 
 The client (or other interested systems - e.g., patient, submitting provider system) can now query the endpoint the outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
+
+**The below illustrates what is contained in the GFE and AEOB bundles.**
+
+![PCT Bundle](PCT_bundles.jpg){:style="float: none;"}
 
 #### AEOB Request 
 The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The first entry in the Bundle SHALL be a GFE resource complying with the [GFE profile](StructureDefinition-davinci-pct-gfe.html) defined in this IG. Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
@@ -117,8 +119,7 @@ The project is seeking feedback on whether these maximum frequency requirements 
 </p>
 </blockquote>
 
-Notes:
-* The returned AEOBBundle SHALL include the current results for all submitted items and/or services. 
+Note: The returned AEOBBundle SHALL include the current results for all submitted items and/or services. 
 
 #### AEOB Request / Respnse example 
 
