@@ -28,7 +28,7 @@ This implementation guide sets expectations for at least two types of systems:
 
 #### System Actors
 
-* **Client*** systems are typically billing management systems, revenue cycle management systems, or other client systems responsible for requesting AEOBs. 
+* **Client** systems are typically billing management systems, revenue cycle management systems, or other client systems responsible for requesting AEOBs. 
 
 * **Member** The health plan member / patient who is, or was, a member of a health plan.
 
