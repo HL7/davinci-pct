@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-        <mxGraphModel dx="1718" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1488" dy="742" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -82,13 +82,13 @@
                     <mxGeometry x="558" y="120" width="130" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="8" vertex="1">
-                    <mxGeometry x="60" y="69" width="10" height="431" as="geometry"/>
+                    <mxGeometry x="60" y="210" width="10" height="280" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="Payer" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fillColor=#e1d5e7;strokeColor=#9673a6;size=50;" parent="1" vertex="1" treatAsSingle="0">
                     <mxGeometry x="710" y="120" width="130" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="10" vertex="1">
-                    <mxGeometry x="60" y="69" width="10" height="341" as="geometry"/>
+                    <mxGeometry x="60" y="220" width="10" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="" style="group" parent="1" vertex="1" connectable="0">
                     <mxGeometry x="590" y="360" width="70" height="230" as="geometry"/>
