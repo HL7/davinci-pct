@@ -54,7 +54,8 @@ Assumptions:<br>
 
 ##### MRI Examples  
 
-[GFE](Claim-PCT-Good-Faith-Estimate-1.json.html)<br> 
+[GFE Professional](Claim-PCT-GFE-Professional-1.json.html)<br> 
+[GFE Institutional](Claim-PCT-GFE-Institutional-1.json.html)<br> 
 
 [AEOB](ExplanationOfBenefit-PCT-AEOB-1.json.html)
 
