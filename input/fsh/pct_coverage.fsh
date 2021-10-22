@@ -45,7 +45,7 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 * costToBeneficiary MS
 * costToBeneficiary.type from PCTCoverageCopayTypeVS (required)
 
-* contract 1..* MS
+//* contract 1..* MS
 
 // * meta.lastUpdated ^comment = "Defines the date the coverage that was effective as of the date of service or admission (163). The Coverage Reference Resource SHALL be returned with data that was effective as of the date of service or admission of the claim"
 // * meta.profile ^comment = "meta.profile is required as a matter of convenience of receiving systems. The meta.profile should be used by the Server to hint/assert/declare that this instance conforms to one (or more) stated profiles (with business versions). meta.profile does not capture any business logic, processing directives, or semantics (for example, inpatient or outpatient). Clients should not assume that the Server will exhaustively indicate all profiles with all versions that this instance conforms to. Clients can (and should) perform their own validation of conformance to the indicated profile(s) and to any other profiles of interest. CPCDS data element (190)"
