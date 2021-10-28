@@ -44,11 +44,18 @@ Description: "Defining codes to indicate the specific Type of Bill (TOB)"
 * #013144 "Outpatient"  "This mock code is for testing purpose only"
 * ^copyright = "This CodeSystem is not copyrighted."
 
+CodeSystem: PCTGFEItemRevenueCS
+Title: "PCT GFE Item Revenue Code System"
+Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
+* #2011 "Revenue Code 1" "This mock code is for testing purpose only"
+* #2012 "Revenue Code 2" "This mock code is for testing purpose only"
+* ^copyright = "This CodeSystem is not copyrighted."
+
 CodeSystem: PCTGFEItemCptHcpcsCS
 Title: "PCT GFE Item CPT and HCPCS Code System"
 Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
 * #33502 "Some CPT Code 1" "This mock code is for testing purpose only"
-* #34503 "Some CPT Code 2"  "This mock code is for testing purpose only"
+* #34503 "Some CPT Code 2" "This mock code is for testing purpose only"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
@@ -81,5 +88,18 @@ Description: "PCT code system for defining the functional roles of the care team
 CodeSystem: PCTOrgContactPurposeType
 Title: "PCT Organization Contact Purpose Type Code System"
 Description: "Organization Contact Purpose Type Code System"
-* #GFE-RELATED "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
+* #gferelated "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 * ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTAdjudicationCategoryType
+Title: "PCT Adjudication Category Type"
+Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
+* #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
+* #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
+* #priorpayerpaid "Prior payer paid" "The reduction in the payment amount to reflect the carrier as a secondary payor."
+* #paidbypatient "Paid by patient" "The amount paid by the patient at the point of service."
+* #paidtoprovider "Paid to provider" "The amount paid to the provider."
+* #paidtopatient "Paid to patient" "paid to patient"
+* #memberliability "Member liability" "The amount of the member's liability."
+* #discount "Discount" "The amount of the discount"
+* #drugcost "Drug cost" "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration"

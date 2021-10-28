@@ -55,7 +55,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x] MS
 * diagnosis[principal].diagnosis[x] only CodeableConcept
-* diagnosis[principal].diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
+* diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[principal].packageCode MS
 * diagnosis[principal].packageCode ^short = "For PCT it is a bundle code to specify the Provider Grouper Methodology."
 * diagnosis[principal].packageCode ^comment = "For PCT it is a bundle code to specify the Provider Grouper Methodology."
@@ -102,7 +102,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue MS
-* item.revenue from PCTGFEItemRevenueVS (required)
+* item.revenue from PCTGFEItemRevenueVS (example)
 
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
@@ -117,7 +117,8 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 
 * item.location[x]  from $CMSPOSVS (required)
 
-* item.encounter MS
+// ISSUE: need MS for encounter--note that Patient's Reason for Visit will be just a diagnosis.type code
+//* item.encounter MS
 
 * item.detail MS
 * item.detail ^short = "Drug Pricing Information"

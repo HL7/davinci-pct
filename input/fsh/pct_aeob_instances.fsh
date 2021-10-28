@@ -17,7 +17,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * extension[provider-contracting-rate].valueMoney.value = 2000.00
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
-* extension[gfeReference].valueReference = Reference(PCT-Good-Faith-Estimate-1)
+* extension[gfeReference].valueReference = Reference(PCT-GFE-Institutional-1)
 * extension[disclaimer].valueString = "Estimate Only ..."
 * extension[expirationDate].valueDate = "2021-10-31"
 
@@ -44,13 +44,15 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
-* item.revenue = NUBC#1212 "Some revenue code description"
-* item.productOrService = CPT4#71010 "Some CPT code description"
-* item.modifier = CPT4#71020 "Some CPT code description"
+* item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
+// * item.productOrService = CPT4#33502 "Some CPT Code 1"
+// * item.modifier = CPT4#34503 "Some CPT Code 2"
+* item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
 * item.net.value = 200.00
 * item.net.currency = #USD
 * item.adjudication.extension[subjectToMedicalMgmt].valueCoding = #concurrent-review "Concurrent Review"
-* item.adjudication.category = #paidtoprovider "Paid to provider"
+* item.adjudication.category = PCTAdjudicationCategoryType#paidtoprovider "Paid to provider"
 * item.adjudication.amount.value = 200.00
 * item.adjudication.amount.currency = #USD
 

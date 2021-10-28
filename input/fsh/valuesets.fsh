@@ -13,6 +13,12 @@ Description: "Codes to specify the type of entity involved in the PCT GFE proces
 * codes from system PCTOrganizationTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
+ValueSet: PCTDiagnosticCodes
+Title: "PCT Diagnostic Codes - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "Codes to specify the type of diagnosis"
+* codes from system $ICD10CM
+* ^copyright = "This Valueset is not copyrighted."
+
 ValueSet: PCTDiagnosisTypeVS
 Title: "PCT Diagnosis Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to specify the type of diagnosis"
@@ -39,6 +45,7 @@ ValueSet: PCTGFEItemRevenueVS
 Title: "PCT GFE Item Revenue Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Sample Revenue Center codes"
 * codes from valueset $REVENUEVS
+* codes from system PCTGFEItemRevenueCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFEItemCptHcpcsVS
@@ -58,7 +65,8 @@ Description: "The FDA published list of NDC codes for finished drug products"
 ValueSet: PCTGFEItemAdjudicationVS
 Title: "PCT GFE Item Adjudication Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Sample Adjudication codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc."
-* codes from valueset $ADJUDVS
+* codes from system $ADJUDCS
+* codes from system PCTAdjudicationCategoryType
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTCoverageCopayTypeVS

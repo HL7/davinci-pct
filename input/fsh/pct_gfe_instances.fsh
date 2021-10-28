@@ -32,13 +32,13 @@ Description: "PCT Institutional GFE Example 1"
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
-* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.3 "Focal traumatic brain injury"
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
-* item.revenue = NUBC#1212 "Some revenue code description"
-* item.productOrService = CPT4#71010 "Some CPT code description"
-* item.modifier = CPT4#71020 "Some CPT code description"
+* item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
+* item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
 * item.net.value = 200.00
 * item.net.currency = #USD
 * total.value = 200.00
@@ -51,7 +51,7 @@ Description: "PCT Professional GFE Example 1"
 * extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0002"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
 * status = #active
-* type = $ClaimTypeCS#Professional "Professional"
+* type = $ClaimTypeCS#professional "Professional"
 * use = #claim
 * patient = Reference(patient1001)
 * created = "2021-10-05"
@@ -62,13 +62,13 @@ Description: "PCT Professional GFE Example 1"
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
-* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.3 "Focal traumatic brain injury"
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 //* item.revenue = NUBC#1212 "Some revenue code description"
-* item.productOrService = CPT4#71010 "Some CPT code description"
-* item.modifier = CPT4#71020 "Some CPT code description"
+* item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
 * item.net.value = 200.00
 * item.net.currency = #USD
 * total.value = 200.00
@@ -133,11 +133,14 @@ Description: "An instance of PCTPractitionerRole"
 * code = PRO-ROLE#247100000X
 * code.coding.display = "Radiologic Technologist"
 * specialty = SPECIALTY#261QM1200X
-* specialty.coding.display = "Magnetic Resonance Imaging (MRI)"
+* specialty.coding.display = "Magnetic Resonance Imaging (MRI) Clinic/Center"
 * active = true
+* telecom.system = #phone
+* telecom.value = "781-232-3232"
 * practitioner = Reference(prac002)
 * organization = Reference(org1002)
 * location = Reference(Provider-Org-Loc-2)
+
 
 Instance: Submitter-Practitioner-1
 InstanceOf: PCTPractitioner
@@ -177,6 +180,7 @@ InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization as a payer"
 * type = #pay "Payer"
 * name = "Umbrella Insurance Company"
+//* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
 * identifier[ETIN].value = "ETIN-3200002"
 * active = true
 * telecom.system = #phone
@@ -186,8 +190,8 @@ Description: "An instance of PCTOrganization as a payer"
 * address.city = "Hartford"
 * address.state = "CT"
 * address.postalCode = "06155"
-* address.country = "USA"
-* address.extension[countrySubdivisionCode].valueString = "US-CT"
+* address.country = "US"
+* address.extension[countrySubdivisionCode].valueCoding = #US-CT
 
 Instance: org1002
 InstanceOf: PCTOrganization
@@ -204,8 +208,8 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * address.city = "Boston"
 * address.state = "MA"
 * address.postalCode = "02114"
-* address.country = "USA"
-* address.extension[countrySubdivisionCode].valueString = "US-MA"
+* address.country = "US"
+* address.extension[countrySubdivisionCode].valueCoding = #US-MA
 
 Instance: Provider-Org-Loc-2
 InstanceOf: PCTLocation

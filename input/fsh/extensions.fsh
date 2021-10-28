@@ -142,5 +142,5 @@ Description: "This extension is used to indicate a specific date after which the
 Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
-* value[x] only string
+* value[x] only Coding
 * value[x] from $ISO3166-P2-CSC-VS (required)

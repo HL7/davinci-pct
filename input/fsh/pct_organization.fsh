@@ -4,12 +4,18 @@ Id: davinci-pct-organization
 Title: "PCT Organization"
 Description: "The PCT Organization profile builds upon the US Core Organization profile. It is used to convey a payer, provider, payee, or service facility organization."
 
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.ordered = false   // can be omitted, since false is the default
+* identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains ETIN 0..1 MS
-* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
+* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
+//* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number" <<<<<WOULD CAUSE slicing errors
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
 * identifier[ETIN] ^short = "The submitter's Electronic Transmitter Identification Number."
 
-* identifier[NPI].type = $V2-0203#NPI "National provider identifier"
+* identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI "National provider identifier"
 //* identifier[NPI].value 1..1
 //* identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
@@ -33,7 +39,7 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * contact[gfeServiceHotline].name 1..1 MS
 * contact[gfeServiceHotline].telecom 1..* MS
 * contact[gfeServiceHotline].purpose MS
-* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#GFE-RELATED "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
+* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#gferelated "GFE-related"
 
 //TODO: slice contact for defining PAY-TO
 //* contact[payToAddress]

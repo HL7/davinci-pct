@@ -10,7 +10,7 @@ Usage: #definition
 * status = #draft
 * kind = #operation
 * code = #gfe-submit
-* base = "http://hl7.org/fhir/OperationDefinition/GFE-submit"
+* base = "http://hl7.org/fhir/us/davinci-pas/OperationDefinition/GFE-submit"
 * resource = #Claim
 * system = false
 * type = true
