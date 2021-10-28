@@ -30,7 +30,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 1..1 MS
 * item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
-* item.modifier 1..4 MS
+* item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
 * item.productOrService from PCTGFEItemCptHcpcsVS (required)
 // Need to make item.productOrService required when item.revenue is provided ??
