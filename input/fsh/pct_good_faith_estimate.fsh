@@ -7,8 +7,8 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 //// Profile entension elements ////
 * extension contains GFESubmitter named gfeSubmitter 1..1 MS
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
-* extension contains GFEAssignedServiceIdentifier named gfeAssignedServiceIdentifier 1..1 MS
-* extension[gfeAssignedServiceIdentifier] ^short = "Provider's GFE Assigned Service Identifier"
+* extension contains GFEProviderAssignedIdentifier named gfeProviderAssignedIdentifier 1..1 MS
+* extension[gfeProviderAssignedIdentifier] ^short = "GFE Provider Assigned Identifier"
 * extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
 * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
 * extension contains ReferralNumber named referralNumber 0..1 MS

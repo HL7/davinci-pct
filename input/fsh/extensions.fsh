@@ -11,9 +11,9 @@ Description: "This extension is used to indicate the scheduling entity that subm
 * value[x] only Reference(PCTOrganization or PCTPractitioner)
 * value[x] ^short = "The scheduling entity submitting the GFE"
 
-Extension: GFEAssignedServiceIdentifier
-Id: gfeAssignedServiceIdentifier
-Description: "This extension is used to indicate the Provider's Assigned GFE Service Identifier."
+Extension: GFEProviderAssignedIdentifier
+Id: gfeProviderAssignedIdentifier
+Description: "This extension is used to indicate the GFE Provider Assigned Identifier."
 * value[x] only Identifier
 
 Extension: GFEServiceLinkingInfo
@@ -145,4 +145,4 @@ Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
 * value[x] only Coding
-* value[x] from $ISO3166-P2-CSC-VS (required)
+* value[x] from $ISO3166-P2-CSC-VS (example)

@@ -19,7 +19,7 @@ Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
-* extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0001"
+* extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
@@ -49,7 +49,7 @@ Instance: PCT-GFE-Professional-1
 InstanceOf: PCTGoodFaithEstimate
 Description: "PCT Professional GFE Example 1"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
-* extension[gfeAssignedServiceIdentifier].valueIdentifier.value = "GFEAssignedServiceID0002"
+* extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0002"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
 * status = #active
 * type = $ClaimTypeCS#professional "Professional"
