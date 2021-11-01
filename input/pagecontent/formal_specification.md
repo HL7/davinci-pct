@@ -57,14 +57,16 @@ FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html
 
 The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle](StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOBBundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
 
-This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a AEOBBundleID. The AEOBBundleID is important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient, submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD used to determine if the AEOB is complete.   
+This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a AEOB Bundle id and AEOB Bundle identifier. The AEOB Bundle id and AEOB Bundle identifier are important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient, submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD used to determine if the AEOB is complete.   
 
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
 
 The client (or other interested systems - e.g., patient, submitting provider system) can now query the endpoint the outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
 
-**The below illustrates what is contained in the GFE and AEOB bundles.**
+Once the AEOB has an outcome equal to complete. The client (or other interested systems - e.g., patient, submitting provider system) can submit an aeob-inquiry (TODO) operation in order to receive the AEOB bundle.  
+
+**The below illustrates what is contained in the GFE and AEOB bundles. For full details see PCT [FHIR Artifacts](artifacts.html#1)**
 
 ![PCT Bundle](PCT_bundles.jpg){:style="float: none;"}
 
@@ -102,14 +104,18 @@ These errors are NOT the errors that are detected by the system processing the r
 
 This is done by performing GET [base]/Bundle/[id]
 
-Note: The id above is the AEOBBundleID.
+Note: The id above is the AEOB Bundle id.
+
+#### AEOB Inquiry Operation
+
+** aeob-inquiry TODO **
 
 ##### Polling
 In this approach, the Client regularly queries the Server to see if the status of the AEOB bundle has changed. 
 
 This is done by performing: GET [base]/Bundle/[id]
 
-Note: The id above is the AEOBBundleID.
+Note: The id above is the AEOB Bundle id.
 
 Clients SHALL perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. They SHOULD perform this query at least once every 12 hours. Clients SHALL support manual invocation of the query by users. There are no constraints on frequency of manual queries.
 

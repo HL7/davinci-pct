@@ -22,17 +22,19 @@ This project will reference, where possible the 'standards' defined by the Healt
 
 As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not an HIPPA mandate to do so.
 
-**AEOB Interaction Diagram Steps**
+**AEOB Interaction Diagram Steps (High Level View)**
 
-1.  A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words the means by which the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
+1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
-2.  The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted to the payer’s intermediary or payer’s endpoint for AEOB creation.  
+2. The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted (via the gfe-submit operation) to the payer’s intermediary or payer’s endpoint for AEOB creation.  
 
-3.  The payer’s intermediary or payer might convert the collection of GFEs to X12.  <em>Note: Converting the GFE bundle to X12 or any other format is not required to be conformant with this IG. </em> 
+3. The payer’s intermediary or payer might convert the collection of GFEs to X12.  <em>Note: Converting the GFE bundle to X12 or any other format is not required to be conformant with this IG. </em> 
 
-4.  The payer would then process, adjudicate, and produce the AEOB bundle. 
+4. The payer would then process, adjudicate, and produce the AEOB bundle. 
 
-5.  Once the payer has completed the adjudication of the GFEs and the creation of the AEOB. The patient (and optionally the provider) can be notified that the AEOB is ready. The payer can then deliver the AEOB to the patient (and optionally the provider) via a delivery mechanism of choice (e.g., mail, email, web portal, or other). Also, the AEOB bundle can be received via API. <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the API used to retrieve the AEOB bundle. </em>      
+5. Once the processing and adjudication of the GFE bundle is complete and the AEOB bundle has been created. The patient (and optionally the provider) can be notified that the AEOB is ready and the AEOB bundle can be received via (via the aeob-inquiry operation). **This would most likely be done via a payer web portal (not shown here).**The payer can also deliver the AEOB to the patient (and optionally the provider) via a delivery mechanism of choice (e.g., mail, email, web portal, or other). <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the API used to retrieve the AEOB bundle.</em> 
+  
+>Note: This is explained in more detail in the [Use Case section of this IG.](use_cases.html#use-case)    
 
 ![AEOB Interaction Diagram (draft)](AEOB-interaction.png){:style="float: none;"}
 

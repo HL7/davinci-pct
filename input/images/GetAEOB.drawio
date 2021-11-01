@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-        <mxGraphModel dx="1718" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1579" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -14,7 +14,7 @@
                     <mxGeometry x="352" y="120" width="130" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="SfCazmH2R6rvJbLZBPh0-4" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="SfCazmH2R6rvJbLZBPh0-3" vertex="1">
-                    <mxGeometry x="60" y="150" width="10" height="50" as="geometry"/>
+                    <mxGeometry x="60" y="150" width="10" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="SfCazmH2R6rvJbLZBPh0-21" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
                     <mxGeometry x="57" y="60" width="30" height="60" as="geometry"/>
@@ -28,7 +28,7 @@
                     <mxGeometry x="669" y="260" width="20" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="aAGMAaikRAZB5L4dtnXu-4" value="2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="170" y="285" width="20" height="20" as="geometry"/>
+                    <mxGeometry x="310" y="290" width="20" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="SfCazmH2R6rvJbLZBPh0-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fillColor=#E6E6E6;strokeColor=#E6E6E6;" parent="1" vertex="1">
                     <mxGeometry x="540" y="330" width="290" height="220" as="geometry"/>
@@ -98,15 +98,15 @@
                 </mxCell>
                 <mxCell id="19" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;labelBackgroundColor=none;endSize=8;" parent="1" edge="1">
                     <mxGeometry x="0.0192" y="-7" relative="1" as="geometry">
-                        <mxPoint x="410" y="310" as="sourcePoint"/>
-                        <mxPoint x="80" y="310" as="targetPoint"/>
+                        <mxPoint x="410" y="319" as="sourcePoint"/>
+                        <mxPoint x="80" y="319" as="targetPoint"/>
                         <Array as="points"/>
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="20" value="Access Token" style="edgeLabel;html=1;align=center;verticalAlign=bottom;resizable=0;points=[];labelPosition=center;verticalLabelPosition=top;" parent="19" vertex="1" connectable="0">
                     <mxGeometry x="0.3212" y="-4" relative="1" as="geometry">
-                        <mxPoint x="128" as="offset"/>
+                        <mxPoint x="128" y="34" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="25" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;labelBackgroundColor=none;endSize=8;" parent="1" edge="1">
@@ -117,18 +117,18 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="26" value="AEOB Bundle or AEOB" style="edgeLabel;html=1;align=center;verticalAlign=bottom;resizable=0;points=[];labelPosition=center;verticalLabelPosition=top;" parent="25" vertex="1" connectable="0">
+                <mxCell id="26" value="&lt;span style=&quot;font-size: 12px&quot;&gt;aeob-inquiry (FHIR) response&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=bottom;resizable=0;points=[];labelPosition=center;verticalLabelPosition=top;" parent="25" vertex="1" connectable="0">
                     <mxGeometry x="0.3212" y="-4" relative="1" as="geometry">
-                        <mxPoint x="74" y="34" as="offset"/>
+                        <mxPoint x="65" y="34" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="27" value="Submitting&#10;Provider / Facility" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" parent="1" vertex="1" treatAsSingle="0">
                     <mxGeometry x="171" y="120" width="130" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="27" vertex="1">
-                    <mxGeometry x="60" y="241" width="10" height="50" as="geometry"/>
+                    <mxGeometry x="60" y="69" width="10" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="Query for AEOB Bundle using AEOB Bundle id and Access Token" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;endSize=8;" parent="1" edge="1">
+                <mxCell id="30" value="aeob-inquiry (FHIR) request" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;endSize=8;fontSize=12;" parent="1" edge="1">
                     <mxGeometry x="-0.0435" y="10" relative="1" as="geometry">
                         <mxPoint x="80" y="451" as="sourcePoint"/>
                         <mxPoint x="540" y="451" as="targetPoint"/>
