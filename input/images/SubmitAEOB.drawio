@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-        <mxGraphModel dx="1718" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1579" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -100,14 +100,14 @@
                 <mxCell id="7" value="Compose AEOB" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="726.5" y="375" width="81" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="aAGMAaikRAZB5L4dtnXu-12" value=" AEOB Bundle id" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=0.9;entryY=0.863;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="3nuBFxr9cyL0pnOWT2aG-6" edge="1">
+                <mxCell id="aAGMAaikRAZB5L4dtnXu-12" value="gfe-submit (FHIR) response" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=0.9;entryY=0.863;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=13;" parent="1" target="3nuBFxr9cyL0pnOWT2aG-6" edge="1">
                     <mxGeometry x="0.1294" relative="1" as="geometry">
                         <mxPoint x="250" y="491" as="targetPoint"/>
                         <mxPoint x="570" y="491" as="sourcePoint"/>
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="SfCazmH2R6rvJbLZBPh0-5" value="Submit GFE FHIR Bundle" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;endSize=8;exitX=1.1;exitY=0.651;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-6" edge="1">
+                <mxCell id="SfCazmH2R6rvJbLZBPh0-5" value="gfe-submit (FHIR) request" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;endSize=8;exitX=1.1;exitY=0.651;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=12;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-6" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="250" y="418" as="sourcePoint"/>
                         <mxPoint x="570" y="418" as="targetPoint"/>

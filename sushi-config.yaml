@@ -36,8 +36,8 @@ pages:
     title: Technical Background and Underlying Technologies
   formal_specification.md:
     title: Formal Specification
-  #terminology_licensure.md:
-  #  title: Terminology Licensure 
+  terminology_licensure.md:
+    title: Terminology Licensure 
   credits.md:
     title: Credits
   #artifacts.md:
@@ -57,7 +57,7 @@ menu:
     Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides  
     Overview and Use Case: use_cases.html      
     Formal Specification: formal_specification.html 
-    #Terminology Licensure: terminology_licensure.html   
+    Terminology Licensure: terminology_licensure.html   
     Downloads: index.html#downloads
     Credits: credits.html
   

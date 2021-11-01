@@ -10,24 +10,25 @@ The below describes the process of initiating the creation of an AEOB and the pr
 
 1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, the means by which the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
-2. The provider uses the submit operation to submit the GFE bundle to the payer or payer intermediary endpoint.
-   
-3. The AEOB bundle is created asynchronously. Because of this an AEOBBundleID is returned to calling client with an empty AEOB bundle in a synchronous fashion. This AEOBBundleID can now be used to get the AEOB bundle which is described below. The AEOBBundleID can also be used to get the AEOB bundle status. 
+2. The provider uses the gfe-submit operation to submit the GFE bundle to the payer or payer intermediary endpoint. This is a POST request. 
 
-Note: The translation from FHIR to X12 and back FHIR is not required to be conformant with this IG.  
+3. The AEOB bundle is created asynchronously. The AEOB ExplanationOfBenefit.outcome is NOT 'complete'. This is because the adjudication has not taken place yet. The gfe-submit response will contain an AEOB Bundle identifier.
+     
+4. The AEOB Bundle identifier can now be used to run an inquiry operation to check the AEOB ExplanationOfBenefit.outcome and receive the completed bundle. The AEOB bundle is complete when ExplanationOfBenefit.outcome equal to ‘complete’. This process is explained in more detail in [Get completed AEOB from payer](use_cases.html#get-completed-aeob-from-payer) section.   
+
+Note: The translation from FHIR to X12 and back to FHIR is not required to be conformant with this IG.  
  
 #### Get completed AEOB from payer
 
-The recipient/client (e.g., patient) is notified (e.g., via email, text, or other) that the AEOB is ready with a message that contains a URL and the AEOBBundleID. The recipient authenticates, and then accesses the AEOB via the URL, access token, and AEOBBundleID.
+![Get completed AEOB from payer (draft)](GetAEOB.drawio.png){:style="float: none;"}
 
- ![Get completed AEOB from payer (draft)](GetAEOB.drawio.png){:style="float: none;"}
+1. The patient receives a notification that the AEOB is complete along with an AEOB bundle identifier which identifies their AEOB. 
 
-1. The recipient/client receives a notification that the AEOB is complete along with a AEOBBundleID which identifies their AEOB. 
+2. The patient authorizes/authenticates and receives an access token.
 
-2. The recipient/client authorizes/authenticates and receives an access token.
-
-3. The recipient/client requests the AEOB by using the access token and AEOBBundleID. The recipient/client receives the AEOB Bundle.
->Note: The recipient/client above could be a third-party portal or the provider.   
+3. The patient requests the AEOB by using the access token and AEOB bundle identifier. The patient receives the AEOB Bundle.
+   
+>Note: The patient above could be a third-party portal or provider portal.   
 
 #### Example
 
