@@ -26,6 +26,9 @@ Alias:   $DIAGTYPECS = http://terminology.hl7.org/CodeSystem/ex-diagnosistype
 Alias:   $PROCTYPECS = http://terminology.hl7.org/CodeSystem/ex-procedure-type
 Alias:   $ADJUDCS = http://terminology.hl7.org/CodeSystem/adjudication
 Alias:   $ICD10CM = http://hl7.org/fhir/sid/icd-10-cm
+Alias:   $ORGTYPE = http://terminology.hl7.org/CodeSystem/organization-type
+Alias:   $PAYEETYPE = http://terminology.hl7.org/CodeSystem/payeetype
+Alias:   $PROCPRIORITY = http://terminology.hl7.org/CodeSystem/processpriority
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type
@@ -38,6 +41,7 @@ Alias:   $ISO3166-P2-CSC-VS = http://terminology.hl7.org/ValueSet/v2-notAllCodes
 Alias:   $REVENUEVS = http://hl7.org/fhir/ValueSet/ex-revenue-center
 //Alias:   $ADJUDVS = http://hl7.org/fhir/ValueSet/adjudication
 Alias:   $EOBPRIORITY = http://hl7.org/fhir/ValueSet/process-priority
+Alias:   $AMACPTALL = http://hl7.org/fhir/ValueSet/cpt-all
 
 //// CARIN-BB ////
 Alias:   $AHANUBCRevenueCodes = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCRevenueCodes

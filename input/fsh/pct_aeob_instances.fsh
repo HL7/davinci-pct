@@ -33,7 +33,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
 
-* priority = #normal
+* priority = $PROCPRIORITY#normal
 
 //* payee.type.coding = #provider
 
@@ -51,12 +51,12 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
 * item.net.value = 200.00
 * item.net.currency = #USD
-* item.adjudication.extension[subjectToMedicalMgmt].valueCoding = #concurrent-review "Concurrent Review"
+* item.adjudication.extension[subjectToMedicalMgmt].valueCoding = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
 * item.adjudication.category = PCTAdjudicationCategoryType#paidtoprovider "Paid to provider"
 * item.adjudication.amount.value = 200.00
 * item.adjudication.amount.currency = #USD
 
-* total.category = #submitted "Submitted Amount"
+* total.category = $ADJUDCS#submitted "Submitted Amount"
 * total.amount.value = 200.00
 * total.amount.currency = #USD
 

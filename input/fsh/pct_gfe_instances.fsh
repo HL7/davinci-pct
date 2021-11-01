@@ -9,6 +9,7 @@ Alias: V2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: RELATE = http://terminology.hl7.org/CodeSystem/subscriber-relationship
 Alias: CONTRACTTYPE = http://terminology.hl7.org/CodeSystem/contract-type
 Alias: COPAYTYPE = http://terminology.hl7.org/CodeSystem/coverage-copay-type
+Alias: COVCLASS = http://terminology.hl7.org/CodeSystem/coverage-class
 
 ////////////////////////////////////////////
 
@@ -27,8 +28,8 @@ Description: "PCT Institutional GFE Example 1"
 * created = "2021-10-05"
 * insurer = Reference(org1001)
 * provider = Reference(pracRole002)
-* priority = #normal
-* payee.type.coding = #provider
+* priority = $PROCPRIORITY#normal
+* payee.type.coding = $PAYEETYPE#provider
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
@@ -57,8 +58,8 @@ Description: "PCT Professional GFE Example 1"
 * created = "2021-10-05"
 * insurer = Reference(org1001)
 * provider = Reference(pracRole002)
-* priority = #normal
-* payee.type.coding = #provider
+* priority = $PROCPRIORITY#normal
+* payee.type.coding = $PAYEETYPE#provider
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
@@ -163,7 +164,7 @@ Description: "Professional GFE Submitter 1"
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
 Description: "Institutional GFE Submitter 1"
-* type = #Institutional-submitter "Institutional GFE Submitter"
+* type = PCTOrganizationTypeCS#institutional-submitter "Institutional GFE Submitter"
 * name = "GFE Service Help INC."
 * identifier[ETIN].value = "ETIN-10010301"
 * active = true
@@ -178,7 +179,7 @@ Description: "Institutional GFE Submitter 1"
 Instance: org1001
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization as a payer"
-* type = #pay "Payer"
+* type = $ORGTYPE#pay "Payer"
 * name = "Umbrella Insurance Company"
 //* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
 * identifier[ETIN].value = "ETIN-3200002"
@@ -192,13 +193,15 @@ Description: "An instance of PCTOrganization as a payer"
 * address.postalCode = "06155"
 * address.country = "US"
 * address.extension[countrySubdivisionCode].valueCoding = #US-CT
+//* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-CT
 
 Instance: org1002
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization as a healthcare provider"
-* type = #prov "Healthcare Provider"
-* identifier.type = V2-0203#TAX "Tax ID number"
-* identifier.value = "TAX-3211001"
+* type = $ORGTYPE#prov "Healthcare Provider"
+* identifier[NPI].value = "1234568095"
+//* identifier.type = V2-0203#TAX "Tax ID number"
+* identifier[TAX].value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true
 * telecom.system = #phone
@@ -210,6 +213,7 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * address.postalCode = "02114"
 * address.country = "US"
 * address.extension[countrySubdivisionCode].valueCoding = #US-MA
+//* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
 
 Instance: Provider-Org-Loc-2
 InstanceOf: PCTLocation
@@ -227,7 +231,7 @@ Description: "An instance of PCTCoverage"
 * relationship = RELATE#self "Self"
 * status = #active
 * class.name = "Premim Family Plus Plan"
-* class.type = #plan "Plan"
+* class.type = COVCLASS#plan "Plan"
 * class.value = "Premim Family Plus"
 * period.start = "2021-01-01"
 * period.end = "2022-01-01"

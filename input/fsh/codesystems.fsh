@@ -8,7 +8,7 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 CodeSystem: PCTOrganizationTypeCS
 Title: "PCT Organization Type Code System"
 Description: "Organization Type codes for describing the type of organizations involved in the PCT GFE process"
-* #Institutional-submitter "Institutional GFE Submitter" "Institutional GFE Submitter"
+* #institutional-submitter "Institutional GFE Submitter" "Institutional GFE Submitter"
 * #professional-submitter "Professional GFE Submitter" "Professional GFE Submitter"
 * #billing-provider "Billing Provider" "Billing Provider"
 * ^copyright = "This CodeSystem is not copyrighted."
@@ -33,8 +33,16 @@ Description: "Defining codes for the classification of diagnosis types"
 CodeSystem: PCTProcedureType
 Title: "PCT Procedure Type"
 Description: "Defining codes for the classification of procedure types"
-* #procedureRequiringAnethesia  "Surgical procedure requiring anethesia" "Identifies the surgical procedure requiring anethesia"
+* #procedureRequiringAnesthesia  "Surgical procedure requiring anesthesia" "Identifies the surgical procedure requiring anesthesia"
 * #other "Other" "Other procedure information"
+* ^copyright = "This CodeSystem is not copyrighted."
+
+CodeSystem: PCTProcedureSurgicalCS
+Title: "PCT Procedure Surgical Code System"
+Description: "Defining codes for the classification of surgical procedure types"
+* #153001 "PROC-1" "Procedure 1"
+* #153002 "PROC-2" "Procedure 2"
+* #153003 "PROC-3" "Procedure 3"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTGFETypeOfBillCS

@@ -34,6 +34,15 @@ Description: "Codes to specify the type of procedure"
 * codes from system PCTProcedureType
 * ^copyright = "This Valueset is not copyrighted."
 
+ValueSet: PCTProcedureSurgicalCodes
+Title: "PCT Procedure Surgical Codes - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "Codes to specify the type of surgical procedure"
+//* include Combination of CMS HCPCS and AMA CPTs
+* codes from system $HCPCS
+* codes from valueset $AMACPTALL
+* codes from system PCTProcedureSurgicalCS
+* ^copyright = "This Valueset is not copyrighted."
+
 ValueSet: PCTGFETypeOfBillVS
 Title: "PCT GFE Type Of Bill Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to indicate the specific Type of Bill (TOB), e.g., hospital inpatient, outpatient, replacements, voids, etc. The first digit is a leading zero*. The fourth digit defines the frequency of the bill for the institutional and electronic professional claim."

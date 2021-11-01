@@ -8,7 +8,7 @@ RuleSet: SupportingInfoSlicing
 * supportingInfo ^slicing.description = "Slice based on $this pattern"
 * supportingInfo MS
 
-RuleSet: Diagnosislicing
+RuleSet: DiagnosisSlicing
 * diagnosis ^slicing.discriminator.type = #pattern
 * diagnosis ^slicing.discriminator.path = "type"
 * diagnosis ^slicing.rules = #open
@@ -16,13 +16,21 @@ RuleSet: Diagnosislicing
 * diagnosis ^slicing.description = "Slice based on $this pattern"
 * diagnosis MS
 
-RuleSet: Procedurelicing
+RuleSet: ProcedureSlicing
 * procedure ^slicing.discriminator.type = #pattern
 * procedure ^slicing.discriminator.path = "type"
 * procedure ^slicing.rules = #open
 * procedure ^slicing.ordered = false   // can be omitted, since false is the default
 * procedure ^slicing.description = "Slice based on $this pattern"
 * procedure MS
+
+RuleSet: CareTeamSlicing
+* careTeam ^slicing.discriminator.type = #pattern
+* careTeam ^slicing.discriminator.path = "role"
+* careTeam ^slicing.rules = #open
+* careTeam ^slicing.ordered = false   // can be omitted, since false is the default
+* careTeam ^slicing.description = "Slice based on $this pattern"
+* careTeam MS
 
 RuleSet: OrgContactSlicing
 * contact ^slicing.discriminator.type = #pattern

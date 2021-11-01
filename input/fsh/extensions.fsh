@@ -23,8 +23,10 @@ Description: "This extension is used to provide the GFE Service Linking Informat
     plannedPeriodOfService 0..* MS and
     linkingIdentifier 0..* MS
 * extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+* extension[plannedPeriodOfService] ^definition = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
 * extension[plannedPeriodOfService].value[x] only date or Period
 * extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
+* extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier].value[x] only string
 
 Extension: ReferralNumber
@@ -66,7 +68,7 @@ Description: "This extension is used to provide the GFE Billing Provider Line It
 Extension: CompoundDrugLinkingNumber
 Id: compoundDrugLinkingNum
 Description: "This extension is used to provide the Compound Drug Linking Number."
-* value[x] only string
+* value[x] only id or integer
 
 
 //// For PCTAdvancedEOB Profile ////
