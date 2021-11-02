@@ -69,9 +69,10 @@ to receive the AEOB bundle.
 
 > Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. 
 
-**The below illustrates what is contained in the GFE and AEOB bundles. For full details see PCT [FHIR Artifacts](artifacts.html#1)**
+#### GFE and AEOB Bundle Graphic
+The below illustrates what is contained in the GFE and AEOB bundles. For full details see the PCT [FHIR Artifacts](artifacts.html#1). Note: For brevity not all bundle elements are shown. Note the AEOB Bundle.identifier below which is needed in the [AEOB query]( formal_specification.html#aeob-query).
 
-![PCT Bundle](PCT_bundles.jpg){:style="float: none;"}
+![PCT Bundle](PCT_bundles.png){:style="float: none;"}
 
 #### AEOB Request 
 The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The first entry in the Bundle SHALL be a GFE resource complying with the [GFE profile](StructureDefinition-davinci-pct-gfe.html) defined in this IG. Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
