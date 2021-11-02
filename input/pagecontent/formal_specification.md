@@ -70,7 +70,7 @@ to receive the AEOB bundle.
 > Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. 
 
 #### GFE and AEOB Bundle Graphic
-The below illustrates what is contained in the GFE and AEOB bundles. For full details see the PCT [FHIR Artifacts](artifacts.html#1). Note: For brevity not all bundle elements are shown. Note the AEOB Bundle.identifier below which is needed in the [AEOB query]( formal_specification.html#aeob-query).
+The below illustrates what is contained in the GFE and AEOB bundles. For full details see the PCT [FHIR Artifacts](artifacts.html#1). Of note is the <em>AEOB Bundle.identifier</em> which is used in the [AEOB query]( formal_specification.html#aeob-query). Note: For brevity not all bundle data elements are shown below.
 
 ![PCT Bundle](PCT_bundles.png){:style="float: none;"}
 
