@@ -89,7 +89,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * careTeam.role 1..1 MS
 * careTeam.role from PCTCareTeamRoleVS
 * careTeam.qualification MS
-* careTeam.qualification from $USCSPECIALTY (required)
+* careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
    attending 0..1 MS and
    operating 0..1 MS and

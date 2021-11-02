@@ -21,7 +21,7 @@ contact:
 
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core: 3.1.1
+  hl7.fhir.us.core: 4.0.0
 
 copyrightYear: 2021+
 releaseLabel: ci-build
@@ -37,11 +37,11 @@ pages:
   formal_specification.md:
     title: Formal Specification
   terminology_licensure.md:
-    title: Terminology Licensure 
+    title: Terminology Licensure
   credits.md:
     title: Credits
   #artifacts.md:
-  #  title: FHIR Artifacts  
+  #  title: FHIR Artifacts
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -53,21 +53,22 @@ menu:
   Table of Contents: toc.html
 
   PCT Specification:
-    Technical Background and Underlying Technologies: underlying_technologies.html          
-    Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides  
-    Overview and Use Case: use_cases.html      
-    Formal Specification: formal_specification.html 
-    Terminology Licensure: terminology_licensure.html   
+    Technical Background and Underlying Technologies: underlying_technologies.html
+    Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides
+    Overview and Use Case: use_cases.html
+    Formal Specification: formal_specification.html
+    Terminology Licensure: terminology_licensure.html
     Downloads: index.html#downloads
     Credits: credits.html
-  
-  FHIR Artifacts:              
-    Profiles: artifacts.html#1
-    Extensions: artifacts.html#2
-    Value Sets: artifacts.html#3
-    Code Systems: artifacts.html#4   
-    Examples: artifacts.html#5   
-    
+
+  FHIR Artifacts:
+    Operations: artifacts.html#1
+    Profiles: artifacts.html#2
+    Extensions: artifacts.html#3
+    Value Sets: artifacts.html#4
+    Code Systems: artifacts.html#5
+    Examples: artifacts.html#6
+
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
     US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
