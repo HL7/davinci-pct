@@ -1,4 +1,4 @@
-This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide (IG). The bulk of it focuses on the GFE $submit operation and the AEOB query, though it also provides guidance on privacy, security, and other implementation requirements.
+This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide (IG). The bulk of it focuses on the GFE $submit operation and an AEOB query, though it also provides guidance on privacy, security, and other implementation requirements.
 
 ### Context
 
@@ -16,13 +16,13 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.
 
-* **MAY** describes optional behaviors that are free to consider but where the is no recommendation for or against adoption.
+* **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
 
 #### Systems 
 
 This implementation guide sets expectations for at least two types of systems:
 
-* **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. These systems determine if a provider is in or out of network, verify patient eligibility, apply contracted amounts (the provider’s network status needs to be confirmed), and apply member cost sharing amounts. 
+* **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. These systems determine if a provider is in or out of network, verifies patient eligibility, applies contracted amounts (the provider’s network status needs to be confirmed), and applies member cost sharing amounts. 
 
 * **Payer Intermediary** The payer intermediary can assist a payer and respond to PCT queries in order to perform functionality such as x12 transformations.
 
@@ -34,7 +34,7 @@ This implementation guide sets expectations for at least two types of systems:
 
 * **Provider** The practitioner or clinician, or their representative, that initiates a data access request to retrieve member data from a health plan.
 
-* **Third-Party Application** Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a Hospital or Health Plan to a third party of their choosing.
+* **Third-Party Application** Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a hospital or Health Plan to a third party of their choosing.
 
 There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the “member health history”.
 
@@ -55,9 +55,9 @@ The full set of profiles defined in this IG can be found by following the links 
 #### Summary 
 FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this IG are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
-The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle](StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOBBundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
+The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFEBundle](StructureDefinition-davinci-pct-gfe.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
 
-This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a AEOB Bundle id and AEOB Bundle identifier. The AEOB Bundle id and AEOB Bundle identifier are important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient, submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD used to determine if the AEOB is complete.   
+The GFE Bundle will be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain an AEOB Bundle.identifier. The AEOB Bundle.identifier is important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD be used to determine if the AEOB is complete.   
 
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
@@ -66,6 +66,8 @@ The client (or other interested systems - e.g., patient or submitting provider s
 
 Once the AEOB has an outcome equal to complete. The client (or other interested systems - e.g., patient or submitting provider system) can perform a FHIR query
 to receive the AEOB bundle.  
+
+> Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. 
 
 **The below illustrates what is contained in the GFE and AEOB bundles. For full details see PCT [FHIR Artifacts](artifacts.html#1)**
 
@@ -103,16 +105,14 @@ These errors are NOT the errors that are detected by the system processing the r
 
 #### AEOB Query
 
-This is done by performing GET [base]/Bundle/[id]
+This is done by performing GET [base]/Bundle?identifier=1234
 
-Note: The id above is the AEOB Bundle id.
+Note: 1234 is the AEOB Bundle.identifier.
 
 ##### Polling
 In this approach, the Client regularly queries the Server to see if the status of the AEOB bundle has changed. 
 
-This is done by performing: GET [base]/Bundle/[id]
-
-Note: The id above is the AEOB Bundle id.
+This is done by performing the [AEOB query]( formal_specification.html#aeob-query) several times. The details are described below.
 
 Clients SHALL perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. They SHOULD perform this query at least once every 12 hours. Clients SHALL support manual invocation of the query by users. There are no constraints on frequency of manual queries.
 
@@ -122,7 +122,7 @@ The project is seeking feedback on whether these maximum frequency requirements 
 </p>
 </blockquote>
 
-Note: The returned AEOBBundle SHALL include the current results for all submitted items and/or services. 
+Note: The returned AEOB bundle SHALL include the current results for all submitted items and/or services. 
 
 #### AEOB Request / Response example 
 
@@ -150,7 +150,6 @@ It is also the intent of this guide that any test scripts will include testing o
 
 <!--### TODO
 
- Add missing graphics and artifacts
-
+ 
 -->
 
