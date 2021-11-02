@@ -32,7 +32,7 @@ As this is a FHIR based use case and X12 is not required. X12 will only be used 
 
 4. The payer would then process, adjudicate, and produce the AEOB bundle. 
 
-5. Once the processing and adjudication of the GFE bundle is complete and the AEOB bundle has been created. The patient (and optionally the provider) can be notified that the AEOB is ready and the AEOB bundle can be received via (via the aeob-inquiry operation). **This would most likely be done via a payer web portal (not shown here).**The payer can also deliver the AEOB to the patient (and optionally the provider) via a delivery mechanism of choice (e.g., mail, email, web portal, or other). <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the API used to retrieve the AEOB bundle.</em> 
+5. Once the processing and adjudication of the GFE bundle is complete and the AEOB bundle has been created. The patient (and optionally the provider) can be notified that the AEOB is ready and the AEOB bundle can now be received via FHIR query. **For the patient this would most likely be done via a payer web portal (not shown here). ** The payer can also deliver the AEOB to the patient (and optionally the provider) via delivery mechanism of choice (e.g., mail, email, or other). <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the FHIR query used to retrieve the AEOB bundle. </em> 
   
 >Note: This is explained in more detail in the [Use Case section of this IG.](use_cases.html#use-case)    
 

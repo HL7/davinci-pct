@@ -62,9 +62,10 @@ This Bundle will then be sent as the sole payload of a [$gfe-submit]( https://bu
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
 
-The client (or other interested systems - e.g., patient, submitting provider system) can now query the endpoint the outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
+The client (or other interested systems - e.g., patient or submitting provider system) can now query the endpoint outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
 
-Once the AEOB has an outcome equal to complete. The client (or other interested systems - e.g., patient, submitting provider system) can submit an aeob-inquiry (TODO) operation in order to receive the AEOB bundle.  
+Once the AEOB has an outcome equal to complete. The client (or other interested systems - e.g., patient or submitting provider system) can perform a FHIR query
+to receive the AEOB bundle.  
 
 **The below illustrates what is contained in the GFE and AEOB bundles. For full details see PCT [FHIR Artifacts](artifacts.html#1)**
 
@@ -105,10 +106,6 @@ These errors are NOT the errors that are detected by the system processing the r
 This is done by performing GET [base]/Bundle/[id]
 
 Note: The id above is the AEOB Bundle id.
-
-#### AEOB Inquiry Operation
-
-** aeob-inquiry TODO **
 
 ##### Polling
 In this approach, the Client regularly queries the Server to see if the status of the AEOB bundle has changed. 
