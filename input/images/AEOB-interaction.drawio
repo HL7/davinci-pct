@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
-        <mxGraphModel dx="1579" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1670" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -108,14 +108,14 @@
                 <mxCell id="aAGMAaikRAZB5L4dtnXu-5" value="4" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="765" y="390" width="20" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="3nuBFxr9cyL0pnOWT2aG-7" value="aeob-inquiry (FHIR) response" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=0.9;entryY=0.923;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.014;exitY=0.897;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=12;" parent="1" source="4" target="3nuBFxr9cyL0pnOWT2aG-2" edge="1">
+                <mxCell id="3nuBFxr9cyL0pnOWT2aG-7" value="AEOB response (FHIR)" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=0.9;entryY=0.923;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.014;exitY=0.897;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=12;" parent="1" source="4" target="3nuBFxr9cyL0pnOWT2aG-2" edge="1">
                     <mxGeometry x="-0.0293" y="23" relative="1" as="geometry">
                         <mxPoint x="76" y="560.059" as="targetPoint"/>
                         <mxPoint x="560" y="560" as="sourcePoint"/>
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="SfCazmH2R6rvJbLZBPh0-5" value="gfe-submit (FHIR) request" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=-0.014;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;endSize=8;fontSize=12;" parent="1" edge="1">
+                <mxCell id="SfCazmH2R6rvJbLZBPh0-5" value="gfe-submit POST request (FHIR)" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;entryX=-0.014;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;endSize=8;fontSize=12;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="258" y="418" as="sourcePoint"/>
                         <mxPoint x="589.02" y="418.02666666666664" as="targetPoint"/>
@@ -138,14 +138,14 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="aeob-inquiry (FHIR) request" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=-0.043;entryY=0.78;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" parent="1" target="4" edge="1">
+                <mxCell id="12" value="AEOB GET request (FHIR)" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;entryX=-0.043;entryY=0.78;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" parent="1" target="4" edge="1">
                     <mxGeometry x="0.1294" relative="1" as="geometry">
                         <mxPoint x="558" y="559" as="targetPoint"/>
                         <mxPoint x="79.5" y="559" as="sourcePoint"/>
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="13" value="gfe-submit (FHIR) response" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;fontSize=12;" edge="1" parent="1">
+                <mxCell id="13" value="gfe-submit response (FHIR)" style="verticalAlign=bottom;endArrow=block;endSize=8;shadow=0;strokeWidth=1;endFill=1;fontSize=12;" parent="1" edge="1">
                     <mxGeometry x="-0.0293" y="23" relative="1" as="geometry">
                         <mxPoint x="262" y="450" as="targetPoint"/>
                         <mxPoint x="589" y="450" as="sourcePoint"/>
