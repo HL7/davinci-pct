@@ -24,7 +24,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * patient only Reference(PCTPatient)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
-* provider only Reference(PCTPractitionerRole)
+* provider only Reference(PCTOrganization or PCTPractitionerRole)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
 * insurer 1..1
@@ -52,7 +52,11 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * diagnosis.type MS
 * diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
-   principal 1..1 MS
+   principal 1..1 MS and
+   admitting 0..1 MS and
+   patientReasonForVisit 0..3 MS and
+   other-forInstUseOnly 0..24 MS and
+   other-forProfUseOnly 0..11 MS
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x] MS
@@ -61,6 +65,22 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * diagnosis[principal].packageCode MS
 * diagnosis[principal].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
 * diagnosis[principal].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
+* diagnosis[admitting].type = $DIAGTYPECS#admitting
+* diagnosis[admitting].diagnosis[x] MS
+* diagnosis[admitting].diagnosis[x] only CodeableConcept
+* diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[patientReasonForVisit].type = PCTDiagnosisType#patientReasonForVisit
+* diagnosis[patientReasonForVisit].diagnosis[x] MS
+* diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
+* diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[other-forInstUseOnly].type = PCTDiagnosisType#other
+* diagnosis[other-forInstUseOnly].diagnosis[x] MS
+* diagnosis[other-forInstUseOnly].diagnosis[x] only CodeableConcept
+* diagnosis[other-forInstUseOnly].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[other-forProfUseOnly].type = PCTDiagnosisType#other
+* diagnosis[other-forProfUseOnly].diagnosis[x] MS
+* diagnosis[other-forProfUseOnly].diagnosis[x] only CodeableConcept
+* diagnosis[other-forProfUseOnly].diagnosis[x] from PCTDiagnosticCodes (required)
 
 * insert ProcedureSlicing
 //* procedure.procedure[x] MS
@@ -69,7 +89,8 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * procedure.type from PCTProcedureTypeVS
 * procedure contains
    primary 0..1 MS and
-   anesthesiaRelated 0..2 MS
+   anesthesiaRelated 0..2 MS and
+   other 0..24 MS
 * procedure[primary].type = $PROCTYPECS#primary
 * procedure[primary].sequence = 1
 * procedure[primary].procedure[x] MS
@@ -79,6 +100,9 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * procedure[anesthesiaRelated].procedure[x] MS
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
+* procedure[other].procedure[x] MS
+* procedure[other].procedure[x] only CodeableConcept
+* procedure[other].procedure[x] from PCTProcedureSurgicalCodes
 
 * insert CareTeamSlicing
 //* careTeam 0..* MS
@@ -92,7 +116,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
    attending 0..1 MS and
-   operating 0..1 MS and
+   operating 0..2 MS and
    rendering 0..1 MS
    // referring 0..1 MS
 * careTeam[attending].role = PCTCareTeamRole#attending
@@ -120,7 +144,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * supportingInfo[typeOfBill].code 1..1 MS
 * supportingInfo[typeOfBill].code from PCTGFETypeOfBillVS (required)
 
-* item 1..* MS
+* item 1..999 MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
@@ -138,7 +162,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
 
 * item.net 1..1 MS
-* item.quantity MS
+* item.quantity 1..1 MS
 
 * item.locationCodeableConcept MS
 * item.locationCodeableConcept from $CMSPOSVS (required)

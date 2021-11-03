@@ -40,6 +40,7 @@ Description: "PCT Institutional GFE Example 1"
 * item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
 * item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
 * item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* item.quantity.value = 1
 * item.net.value = 200.00
 * item.net.currency = #USD
 * total.value = 200.00
@@ -70,6 +71,7 @@ Description: "PCT Professional GFE Example 1"
 //* item.revenue = NUBC#1212 "Some revenue code description"
 * item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
 * item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* item.quantity.value = 1
 * item.net.value = 200.00
 * item.net.currency = #USD
 * total.value = 200.00

@@ -25,9 +25,9 @@ CodeSystem: PCTDiagnosisType
 Title: "PCT Diagnosis Type"
 Description: "Defining codes for the classification of diagnosis types"
 * #patientReasonForVisit "Patient's Reason for Visit" "Identifies the patient's reason for the outpatient institutional visit"
-* #externalCauseOfInjury "External Cause of Injury"	  "Required when an external cause of injury is needed to describe the injury"
+//* #externalCauseOfInjury "External Cause of Injury"	  "Required when an external cause of injury is needed to describe the injury"
 * #other "Other" "Required when other conditions coexist or develop subsequently during the treatment"
-* #secondary "Secondary" "Required when necessary to report additional diagnoses on professional and non-clinician claims"
+//* #secondary "Secondary" "Required when necessary to report additional diagnoses on professional and non-clinician claims"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTProcedureType
