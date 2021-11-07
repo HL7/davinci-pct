@@ -14,7 +14,7 @@ Alias: COVCLASS = http://terminology.hl7.org/CodeSystem/coverage-class
 ////////////////////////////////////////////
 
 Instance: PCT-GFE-Institutional-1
-InstanceOf: PCTGoodFaithEstimate
+InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
@@ -22,12 +22,12 @@ Description: "PCT Institutional GFE Example 1"
 * extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * status = #active
-* type = $ClaimTypeCS#institutional "Institutional"
+//* type = $ClaimTypeCS#institutional "Institutional"
 * use = #claim
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
-* provider = Reference(pracRole002)
+* provider = Reference(org1002)
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * insurance.sequence = 1
@@ -47,13 +47,13 @@ Description: "PCT Institutional GFE Example 1"
 * total.currency = #USD
 
 Instance: PCT-GFE-Professional-1
-InstanceOf: PCTGoodFaithEstimate
+InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
 * extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0002"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
 * status = #active
-* type = $ClaimTypeCS#professional "Professional"
+//* type = $ClaimTypeCS#professional "Professional"
 * use = #claim
 * patient = Reference(patient1001)
 * created = "2021-10-05"

@@ -18,7 +18,7 @@ Description: "PCT GFE Bundle that contains necessary resources to submit a AEOB 
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains Claim 1..* MS
 * entry[Claim].resource 1..1 MS
-* entry[Claim].resource only PCTGoodFaithEstimate
+* entry[Claim].resource only PCTGFEInstitutional or PCTGFEProfessional
 
 
 
