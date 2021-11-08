@@ -1,5 +1,5 @@
 Profile: PCTCoverage
-Parent: Coverage
+Parent: HRexCoverage
 Id: davinci-pct-coverage
 Title: "PCT Coverage"
 Description: "PCT Coverage is a profile for capturing data that reflect a payerâ€™s coverage that was effective as of the proposed date of service or the date of admission of the GFE."
@@ -14,7 +14,8 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 //* identifier MS
 
 * subscriber MS
-* subscriber only Reference(PCTPatient or PCTSubscriber)
+* subscriber only Reference(PCTPatient)
+//* subscriber only Reference(PCTPatient or PCTSubscriber)
 * subscriberId 1..1 MS
 //* extension contains SubscriberEmployeeIdentifier named subscriberEmployeeIdentifier 0..1 MS
 
