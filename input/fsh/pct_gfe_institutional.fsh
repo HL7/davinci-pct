@@ -1,11 +1,12 @@
-Profile: PCTGoodFaithEstimate
+Profile: PCTGFEInstitutional
 Parent: Claim
-Id: davinci-pct-gfe
-Title: "PCT Good Faith Estimate"
-Description: "PCT Good Faith Estimate is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB."
+Id: pct-gfe-Institutional
+Title: "PCT Good Faith Estimate Institutional"
+Description: "PCT Good Faith Estimate Institutional is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for an institutional GFE submission."
 
 //// Profile entension elements ////
 * extension contains GFESubmitter named gfeSubmitter 1..1 MS
+* extension[gfeSubmitter].value[x] only Reference(PCTOrganization)
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 * extension contains GFEProviderAssignedIdentifier named gfeProviderAssignedIdentifier 1..1 MS
 * extension[gfeProviderAssignedIdentifier] ^short = "GFE Provider Assigned Identifier"
@@ -20,11 +21,13 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * extension[interTransIdentifier] ^short = "Intermediary Transmission Identifier"
 * extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifer for the services in this claim resource to be used in back-end processes."
 
+* type = $ClaimTypeCS#institutional "Institutional"
+
 * patient MS
 * patient only Reference(PCTPatient)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
-* provider only Reference(PCTOrganization or PCTPractitionerRole)
+* provider only Reference(PCTOrganization)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
 * insurer 1..1
@@ -32,13 +35,10 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 
 * payee MS
 * payee.party only Reference(PCTPractitioner or PCTOrganization)
-//TODO: create vS for payee.type like https://build.fhir.org/ig/HL7/carin-bb/ValueSet-C4BBPayeeType.html
-//TODO: for now put in a placeholder statement about formal VS to be created...
+//TODO: create VS for payee.type like https://build.fhir.org/ig/HL7/carin-bb/ValueSet-C4BBPayeeType.html ???
 
 * facility MS
 * facility only Reference(PCTLocation)
-
-//* supportingInfo.category from $C4BBSupportingInfoType (extensible)
 
 * insurance.coverage MS
 * insurance.coverage only Reference(PCTCoverage)
@@ -55,8 +55,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
    principal 1..1 MS and
    admitting 0..1 MS and
    patientReasonForVisit 0..3 MS and
-   other-forInstUseOnly 0..24 MS and
-   other-forProfUseOnly 0..11 MS
+   other 0..24 MS
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x] MS
@@ -69,18 +68,23 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * diagnosis[admitting].diagnosis[x] MS
 * diagnosis[admitting].diagnosis[x] only CodeableConcept
 * diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[admitting].packageCode MS
+* diagnosis[admitting].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
+* diagnosis[admitting].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
 * diagnosis[patientReasonForVisit].type = PCTDiagnosisType#patientReasonForVisit
 * diagnosis[patientReasonForVisit].diagnosis[x] MS
 * diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
 * diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[other-forInstUseOnly].type = PCTDiagnosisType#other
-* diagnosis[other-forInstUseOnly].diagnosis[x] MS
-* diagnosis[other-forInstUseOnly].diagnosis[x] only CodeableConcept
-* diagnosis[other-forInstUseOnly].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[other-forProfUseOnly].type = PCTDiagnosisType#other
-* diagnosis[other-forProfUseOnly].diagnosis[x] MS
-* diagnosis[other-forProfUseOnly].diagnosis[x] only CodeableConcept
-* diagnosis[other-forProfUseOnly].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[patientReasonForVisit].packageCode MS
+* diagnosis[patientReasonForVisit].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
+* diagnosis[patientReasonForVisit].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
+* diagnosis[other].type = PCTDiagnosisType#other
+* diagnosis[other].diagnosis[x] MS
+* diagnosis[other].diagnosis[x] only CodeableConcept
+* diagnosis[other].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[other].packageCode MS
+* diagnosis[other].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
+* diagnosis[other].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
 
 * insert ProcedureSlicing
 //* procedure.procedure[x] MS
@@ -89,17 +93,12 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * procedure.type from PCTProcedureTypeVS
 * procedure contains
    primary 0..1 MS and
-   anesthesiaRelated 0..2 MS and
    other 0..24 MS
 * procedure[primary].type = $PROCTYPECS#primary
 * procedure[primary].sequence = 1
 * procedure[primary].procedure[x] MS
 * procedure[primary].procedure[x] only CodeableConcept
-* procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
-//* procedure[anesthesiaRelated].sequence = 1
-* procedure[anesthesiaRelated].procedure[x] MS
-* procedure[anesthesiaRelated].procedure[x] only CodeableConcept
-* procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
+* procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x] MS
 * procedure[other].procedure[x] only CodeableConcept
 * procedure[other].procedure[x] from PCTProcedureSurgicalCodes
@@ -120,25 +119,19 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
    rendering 0..1 MS
    // referring 0..1 MS
 * careTeam[attending].role = PCTCareTeamRole#attending
-* careTeam[attending] ^short = "May be used for the Institutional case only"
+//* careTeam[attending] ^short = "May be used for the Institutional case only"
 * careTeam[attending].qualification 1..1
 * careTeam[operating].role = PCTCareTeamRole#operating
-* careTeam[operating] ^short = "May be used for the Institutional case only"
+//* careTeam[operating] ^short = "May be used for the Institutional case only"
 * careTeam[rendering].role = PCTCareTeamRole#rendering
-* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
-* careTeam[rendering].qualification ^short = "Practitioner credential or specialization - must provide a taxonomy code for the Professional case"
+//* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
 // * careTeam[referring].role = PCTCareTeamRole#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
 
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   placeOfService 0..1 MS and
    typeOfBill 0..1 MS
-* supportingInfo[placeOfService].category MS
-* supportingInfo[placeOfService].category = PCTSupportingInfoType#cmspos "CMS Place of Service"
-* supportingInfo[placeOfService].code 1..1 MS
-* supportingInfo[placeOfService].code from $CMSPOSVS (required)
 * supportingInfo[typeOfBill].category MS
 * supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill "Type of Bill"
 * supportingInfo[typeOfBill].code 1..1 MS
@@ -149,7 +142,7 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 
-* item.revenue MS
+* item.revenue 1..1 MS
 * item.revenue from PCTGFEItemRevenueVS (example)
 * item.revenue ^short = "Revenue or cost center code - must provide a value for the Institutional case"
 
@@ -157,18 +150,14 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
 
 * item.productOrService from PCTGFEItemCptHcpcsVS (required)
-// Need to make item.productOrService required when item.revenue is provided ??
-//* item.productOrService obeys EOB-out-inst-item-productorservice
-//* item.productOrService ^comment = "Put the comment here for item.productOrService here"
+//* item.productOrService obeys GFE-inst-item-productorservice
+* item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."
 
 * item.net 1..1 MS
 * item.quantity 1..1 MS
 
 * item.locationCodeableConcept MS
 * item.locationCodeableConcept from $CMSPOSVS (required)
-
-// ISSUE: need MS for encounter--note that Patient's Reason for Visit will be just a diagnosis.type code
-//* item.encounter MS
 
 * item.detail MS
 * item.detail ^short = "Drug Pricing Information"
@@ -177,8 +166,6 @@ Description: "PCT Good Faith Estimate is a profile for capturing submission data
 
 * item.detail.quantity MS
 
-// * item.detail.extension contains ProductOrServiceBillingCode named productOrServiceBillingCode 0..1 MS
-// * item.detail.extension contains ProductOrServiceOtherCharge named productOrServiceOtherCharge 0..1 MS
 * item.detail.extension contains CompoundDrugLinkingNumber named compoundDrugLinkingNumber 0..1 MS
 * item.detail.extension[compoundDrugLinkingNumber] ^short = "Compound Drug Linking Number"
 * item.detail.extension[compoundDrugLinkingNumber] ^definition = "Way of linking multiple components of a drug. Could be a prescription number or a identifier created by the  provider if no prescription number is available."

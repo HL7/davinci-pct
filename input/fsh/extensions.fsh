@@ -3,7 +3,7 @@
 //// Standalone Extension Definitions ////
 //////////////////////////////////////////
 
-//// For PCTGoodFaithEstimate Profile ////
+//// For PCTGFEProfessional/PCTGFEProfessional Profile ////
 
 Extension: GFESubmitter
 Id: gfeSubmitter
@@ -98,7 +98,7 @@ Extension: GFEReference
 Id: gfeReference
 Title: "GFE Reference"
 Description: "This extension is used to reference the GFE submitted by an entity that started the process for obtaining an Advanced EOB."
-* value[x] only Reference(PCTGoodFaithEstimate)
+* value[x] only Reference(PCTGFEInstitutional or PCTGFEProfessional)
 
 // Extension: PCTProposedDateOfService
 // Id: proposed-date-of-service
@@ -141,8 +141,23 @@ Description: "This extension is used to indicate a specific date after which the
 
 
 /// For PCTOrganization Profile ////
+
+Extension: ProviderRole
+Id: providerRole
+Description: "This extension is used to indicate the role of the provider."
+* value[x] only CodeableConcept
+* value[x] from $USCPROCROLE (extensible)
+
 Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
 * value[x] only Coding
 * value[x] from $ISO3166-P2-CSC-VS (example)
+
+
+//// For PCTPractitioner Profile ////
+
+Extension: PCTEndpoint
+Id: endpoint
+Description: "This extension is used to provide an endpoint."
+* value[x] only Reference(Endpoint)
