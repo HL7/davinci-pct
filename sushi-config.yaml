@@ -22,6 +22,7 @@ contact:
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core: 4.0.0
+  hl7.fhir.us.davinci-hrex: 0.2.0     # NOTE: Da Vinci HRex depends on US Core 3.1.0
 
 copyrightYear: 2021+
 releaseLabel: ci-build

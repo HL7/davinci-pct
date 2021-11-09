@@ -160,7 +160,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.locationCodeableConcept from $CMSPOSVS (required)
 
 * item.detail MS
-* item.detail ^short = "Drug Pricing Information"
+* item.detail ^short = "Drug Identification Information"
 //ISSUE: use FDANDCOrCompound or FDANationalDrugCode from CARIN BB??
 * item.detail.productOrService from PCTGFEItemNDCVS (required)
 

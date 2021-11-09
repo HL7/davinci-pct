@@ -113,6 +113,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
    placeOfService 0..1 MS
+//    serviceFacility 0..1 MS  Need this?? See C4BB-ExplanationOfBenefit-Professional-NonClinician
 * supportingInfo[placeOfService].category MS
 * supportingInfo[placeOfService].category = PCTSupportingInfoType#cmspos "CMS Place of Service"
 * supportingInfo[placeOfService].code 1..1 MS
@@ -140,7 +141,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.locationCodeableConcept from $CMSPOSVS (required)
 
 * item.detail MS
-* item.detail ^short = "Drug Pricing Information"
+* item.detail ^short = "Drug Identification Information"
 //ISSUE: use FDANDCOrCompound or FDANationalDrugCode from CARIN BB??
 * item.detail.productOrService from PCTGFEItemNDCVS (required)
 

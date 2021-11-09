@@ -1,5 +1,5 @@
 Profile: PCTOrganization
-Parent: $USCoreOrganization
+Parent: HRexOrganization
 Id: davinci-pct-organization
 Title: "PCT Organization"
 Description: "The PCT Organization profile builds upon the US Core Organization profile. It is used to convey a payer, provider, payee, or service facility organization."
