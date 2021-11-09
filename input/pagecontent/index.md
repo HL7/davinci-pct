@@ -32,13 +32,11 @@ The No Surprises Act specifically requires that providers share GFE(s) with a pa
 
 2. The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted (via the gfe-submit operation) to the payer’s intermediary or payer’s endpoint for AEOB creation.  
 
-3. The payer’s intermediary or payer might convert the collection of GFEs to X12.  <em>Note: Converting the GFE bundle to X12 or any other format is not required to be conformant with this IG. </em> 
+3. The payer’s intermediary (or payer) can translate the GFE Bundle to X12. The payer would then process, adjudicate, and produce the AEOB bundle. <em>Note: Translating the GFE bundle to X12 or any other format is not required to be conformant with this IG. </em> 
 
-4. The payer would then process, adjudicate, and produce the AEOB bundle. 
-
-5. Once the processing and adjudication of the GFE bundle is complete and the AEOB bundle has been created. The patient (and optionally the provider) can be notified that the AEOB is ready and the AEOB bundle can now be received via FHIR query. **For the patient this would most likely be done via a payer web portal (not shown here). ** The payer can also deliver the AEOB to the patient (and optionally the provider) via delivery mechanism of choice (e.g., mail, email, or other). <em>Note: The delivery mechanisms mentioned above are not in scope for this IG, only the FHIR query used to retrieve the AEOB bundle. </em> 
-  
->Note: This is explained in more detail in the [Use Case section of this IG.](use_cases.html#use-case)    
+4. The patient can now request and receive the AEOB Bundle via FHIR query.
+   
+>Note: The patient below could be a third-party web portal or provider web portal.     
 
 ![AEOB Interaction Diagram (draft)](AEOB-interaction.drawio.png){:style="float: none;"}
 
