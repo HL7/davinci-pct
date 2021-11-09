@@ -74,6 +74,8 @@ The below illustrates what is contained in the GFE and AEOB bundles. For full de
 
 ![PCT Bundle](PCT_bundles.png){:style="float: none;"}
 
+> Note: The AEOB bundle SHALL reference the original GFE bundle.
+
 #### AEOB Request 
 The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The first entries in the Bundle SHALL be one or more of the GFE profiles [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
 
