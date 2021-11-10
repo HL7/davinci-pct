@@ -9,8 +9,10 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 * extension contains GFEProviderAssignedIdentifier named gfeProviderAssignedIdentifier 1..1 MS
 * extension[gfeProviderAssignedIdentifier] ^short = "GFE Provider Assigned Identifier"
-* extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
-* extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
+* extension contains PlannedPeriodOfService named plannedPeriodOfService 0..* MS
+* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+// * extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
+// * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
 * extension contains ReferralNumber named referralNumber 0..1 MS
 * extension[referralNumber] ^short = "Referral Number"
 * extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
@@ -21,6 +23,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifer for the services in this claim resource to be used in back-end processes."
 
 * type = $ClaimTypeCS#professional "Professional"
+* use = #predetermination
 
 * patient MS
 * patient only Reference(PCTPatient)
