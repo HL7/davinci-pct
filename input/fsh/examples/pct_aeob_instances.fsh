@@ -32,7 +32,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * provider = Reference(org1002)
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
-
+* provider.extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 * priority = $PROCPRIORITY#normal
 
 //* payee.type.coding = #provider
@@ -62,9 +62,50 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 ////////////////////////////////////////////
 
+Instance: PCT-AEOB-Bundle-1
+InstanceOf: PCTAEOBBundle
+Description: "PCT AEOB Bundle Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-1234567"
+* timestamp = "2021-11-10T11:01:00+05:00"
+* entry[ExplanationOfBenefit].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
+* entry[ExplanationOfBenefit].id = "PCT-AEOB-1"
+* entry[ExplanationOfBenefit].resource.resourceType = "ExplanationOfBenefit"
+* entry[ExplanationOfBenefit].resource.extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
+* entry[ExplanationOfBenefit].resource.extension[disclaimer].valueString = "Estimate Only ..."
+* entry[ExplanationOfBenefit].resource.extension[expirationDate].valueDate = "2021-10-31"
 
+* entry[ExplanationOfBenefit].resource.status = #active
+* entry[ExplanationOfBenefit].resource.type = $ClaimTypeCS#institutional "Institutional"
+* entry[ExplanationOfBenefit].resource.use = #claim
+* entry[ExplanationOfBenefit].resource.patient = Reference(patient1001)
+* entry[ExplanationOfBenefit].resource.created = "2021-11-10"
 
+* entry[ExplanationOfBenefit].resource.insurer = Reference(org1001)
 
+* entry[ExplanationOfBenefit].resource.provider = Reference(org1002)
+* entry[ExplanationOfBenefit].resource.provider.extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
+* entry[ExplanationOfBenefit].resource.priority = $PROCPRIORITY#normal
 
+* entry[ExplanationOfBenefit].resource.outcome = #complete
+
+* entry[ExplanationOfBenefit].resource.insurance.focal = true
+* entry[ExplanationOfBenefit].resource.insurance.coverage = Reference(coverage1001)
+
+* entry[ExplanationOfBenefit].resource.item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
+* entry[ExplanationOfBenefit].resource.item.sequence = 1
+* entry[ExplanationOfBenefit].resource.item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
+* entry[ExplanationOfBenefit].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* entry[ExplanationOfBenefit].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[ExplanationOfBenefit].resource.item.net.value = 200.00
+* entry[ExplanationOfBenefit].resource.item.net.currency = #USD
+* entry[ExplanationOfBenefit].resource.item.adjudication.extension[subjectToMedicalMgmt].valueCoding = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
+* entry[ExplanationOfBenefit].resource.item.adjudication.category = PCTAdjudicationCategoryType#paidtoprovider "Paid to provider"
+* entry[ExplanationOfBenefit].resource.item.adjudication.amount.value = 200.00
+* entry[ExplanationOfBenefit].resource.item.adjudication.amount.currency = #USD
+
+* entry[ExplanationOfBenefit].resource.total.category = $ADJUDCS#submitted "Submitted Amount"
+* entry[ExplanationOfBenefit].resource.total.amount.value = 200.00
+* entry[ExplanationOfBenefit].resource.total.amount.currency = #USD
 ///////////////////////////////////////////
 

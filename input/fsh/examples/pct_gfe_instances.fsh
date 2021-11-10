@@ -10,6 +10,8 @@ Alias: RELATE = http://terminology.hl7.org/CodeSystem/subscriber-relationship
 Alias: CONTRACTTYPE = http://terminology.hl7.org/CodeSystem/contract-type
 Alias: COPAYTYPE = http://terminology.hl7.org/CodeSystem/coverage-copay-type
 Alias: COVCLASS = http://terminology.hl7.org/CodeSystem/coverage-class
+Alias: PAYLOADTYPE = http://hl7.org/fhir/resource-types
+Alias: ENDPOINTCONNECTIONTYPE = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
 
 ////////////////////////////////////////////
 
@@ -78,6 +80,7 @@ Description: "PCT Professional GFE Example 1"
 * item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
 * item.quantity.value = 1
 * item.net.value = 200.00
+* item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001" 
 * item.net.currency = #USD
 * total.value = 200.00
 * total.currency = #USD
@@ -194,6 +197,7 @@ Description: "An instance of PCTPractitioner"
 * telecom.system = #phone
 * telecom.value = "781-232-3231"
 * address.text = "32 Fruit Street, Boston MA 02114"
+* extension[PCTEndpoint].valueReference = Reference(endpoint001)
 
 Instance: prac002
 InstanceOf: PCTPractitioner
@@ -274,8 +278,7 @@ Description: "An instance of PCTOrganization as a payer"
 * address.state = "CT"
 * address.postalCode = "06155"
 * address.country = "US"
-* address.extension[countrySubdivisionCode].valueCoding = #US-CT
-//* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-CT
+* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-CT
 
 Instance: org1002
 InstanceOf: PCTOrganization
@@ -286,6 +289,7 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * identifier[TAX].value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true
+* extension[ProviderRole].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * telecom.system = #phone
 * telecom.value = "781-232-3200"
 * telecom.use = #work
@@ -294,8 +298,7 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * address.state = "MA"
 * address.postalCode = "02114"
 * address.country = "US"
-* address.extension[countrySubdivisionCode].valueCoding = #US-MA
-//* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
+* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
 
 Instance: Provider-Org-Loc-2
 InstanceOf: PCTLocation
@@ -331,3 +334,14 @@ Description: "An instance of Contract"
 * applies.end = "2022-01-01"
 * subject = Reference(patient1001)
 * type = CONTRACTTYPE#healthinsurance "Health Insurance"
+
+Instance: endpoint001
+InstanceOf: Endpoint
+Description: "An instance of Endpoint"
+* status = #active
+* payloadType = PAYLOADTYPE#CarePlan
+* connectionType = ENDPOINTCONNECTIONTYPE#hl7-fhir-rest
+* identifier.system = "http://example.org/enpoint-identifier"
+* identifier.value = "epid-1"
+* address = "http://fhir3.healthintersections.com.au/open/CarePlan"
+
