@@ -20,10 +20,13 @@ Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].value = "ETIN-10010001"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 * extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
+* extension[referralNumber].valueString = "REF12022002-121"
+* extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
+* extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 //* type = $ClaimTypeCS#institutional "Institutional"
-* use = #claim
+//* use = #claim
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
@@ -51,10 +54,13 @@ InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
 * extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0002"
+* extension[referralNumber].valueString = "REF12022002-122"
+* extension[providerEventMethodology].valueString = "EEMM1022"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
+* extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 //* type = $ClaimTypeCS#professional "Professional"
-* use = #claim
+//* use = #claim
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
@@ -68,7 +74,6 @@ Description: "PCT Professional GFE Example 1"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
-//* item.revenue = NUBC#1212 "Some revenue code description"
 * item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
 * item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
 * item.quantity.value = 1
@@ -79,43 +84,78 @@ Description: "PCT Professional GFE Example 1"
 
 ///////////////////////////////////////////
 
-Instance: PCT-GFE-Bundle-1
-InstanceOf: PCTGFEBundle
-Description: "PCT GFE Bundle Example 1"
+Instance: PCT-GFE-Bundle-Inst-1
+InstanceOf: PCTGFEBundleInstitutional
+Description: "PCT GFE Bundle Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
-* entry[institutionalGFE].fullUrl = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/pct-gfe-Institutional"
-//* entry[institutionalGFE].fullUrl = "http://example.org/fhir/Claim/PCTGFEExample"
-* entry[institutionalGFE].resource.resourceType = "Claim"
-* entry[institutionalGFE].resource.id = "PCT-GFE-Institutional-1"
-//* entry[institutionalGFE].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/pct-gfe-Institutional"
-* entry[institutionalGFE].resource.extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
-* entry[institutionalGFE].resource.extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
-* entry[institutionalGFE].resource.extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
-* entry[institutionalGFE].resource.status = #active
-* entry[institutionalGFE].resource.use = #claim
-* entry[institutionalGFE].resource.patient = Reference(patient1001)
-* entry[institutionalGFE].resource.created = "2021-10-05"
-* entry[institutionalGFE].resource.insurer = Reference(org1001)
-* entry[institutionalGFE].resource.provider = Reference(org1002)
-* entry[institutionalGFE].resource.priority = $PROCPRIORITY#normal
-* entry[institutionalGFE].resource.payee.type.coding = $PAYEETYPE#provider
-* entry[institutionalGFE].resource.insurance.sequence = 1
-* entry[institutionalGFE].resource.insurance.focal = true
-* entry[institutionalGFE].resource.insurance.coverage = Reference(coverage1001)
-* entry[institutionalGFE].resource.diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
-* entry[institutionalGFE].resource.diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
-* entry[institutionalGFE].resource.item.extension[estimatedDateOfService].valueDate = "2021-10-31"
-* entry[institutionalGFE].resource.item.sequence = 1
-* entry[institutionalGFE].resource.item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
-* entry[institutionalGFE].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* entry[institutionalGFE].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
-* entry[institutionalGFE].resource.item.quantity.value = 1
-* entry[institutionalGFE].resource.item.net.value = 200.00
-* entry[institutionalGFE].resource.item.net.currency = #USD
-* entry[institutionalGFE].resource.total.value = 200.00
-* entry[institutionalGFE].resource.total.currency = #USD
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
+* entry[Claim].id = "PCT-GFE-Inst-Example-1"
+* entry[Claim].resource.resourceType = "Claim"
+* entry[Claim].resource.id = "PCT-GFE-Institutional-1"
+//* entry[Claim].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/pct-gfe-institutional"
+* entry[Claim].resource.extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
+* entry[Claim].resource.extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
+* entry[Claim].resource.extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
+* entry[Claim].resource.status = #active
+* entry[Claim].resource.patient = Reference(patient1001)
+* entry[Claim].resource.created = "2021-10-05"
+* entry[Claim].resource.insurer = Reference(org1001)
+* entry[Claim].resource.provider = Reference(org1002)
+* entry[Claim].resource.priority = $PROCPRIORITY#normal
+* entry[Claim].resource.payee.type.coding = $PAYEETYPE#provider
+* entry[Claim].resource.insurance.sequence = 1
+* entry[Claim].resource.insurance.focal = true
+* entry[Claim].resource.insurance.coverage = Reference(coverage1001)
+* entry[Claim].resource.diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* entry[Claim].resource.diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* entry[Claim].resource.item.extension[estimatedDateOfService].valueDate = "2021-10-31"
+* entry[Claim].resource.item.sequence = 1
+* entry[Claim].resource.item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
+* entry[Claim].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* entry[Claim].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[Claim].resource.item.quantity.value = 1
+* entry[Claim].resource.item.net.value = 200.00
+* entry[Claim].resource.item.net.currency = #USD
+* entry[Claim].resource.total.value = 200.00
+* entry[Claim].resource.total.currency = #USD
+
+Instance: PCT-GFE-Bundle-Prof-1
+InstanceOf: PCTGFEBundleProfessional
+Description: "PCT GFE Bundle Professional Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-23473847"
+* timestamp = "2021-11-09T11:01:00+05:00"
+* entry[Claim].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Prof-Example-1"
+* entry[Claim].id = "PCT-GFE-Prof-Example-1"
+* entry[Claim].resource.resourceType = "Claim"
+* entry[Claim].resource.id = "PCT-GFE-Professional-1"
+//* entry[Claim].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/pct-gfe-professional"
+* entry[Claim].resource.extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
+* entry[Claim].resource.extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
+* entry[Claim].resource.extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
+* entry[Claim].resource.status = #active
+* entry[Claim].resource.patient = Reference(patient1001)
+* entry[Claim].resource.created = "2021-10-05"
+* entry[Claim].resource.insurer = Reference(org1001)
+* entry[Claim].resource.provider = Reference(org1002)
+* entry[Claim].resource.priority = $PROCPRIORITY#normal
+* entry[Claim].resource.payee.type.coding = $PAYEETYPE#provider
+* entry[Claim].resource.insurance.sequence = 1
+* entry[Claim].resource.insurance.focal = true
+* entry[Claim].resource.insurance.coverage = Reference(coverage1001)
+* entry[Claim].resource.diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* entry[Claim].resource.diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* entry[Claim].resource.item.extension[estimatedDateOfService].valueDate = "2021-10-31"
+* entry[Claim].resource.item.sequence = 1
+* entry[Claim].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* entry[Claim].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[Claim].resource.item.quantity.value = 1
+* entry[Claim].resource.item.net.value = 200.00
+* entry[Claim].resource.item.net.currency = #USD
+* entry[Claim].resource.total.value = 200.00
+* entry[Claim].resource.total.currency = #USD
 
 ///////////////////////////////////////////
 

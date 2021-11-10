@@ -16,18 +16,23 @@ Id: gfeProviderAssignedIdentifier
 Description: "This extension is used to indicate the GFE Provider Assigned Identifier."
 * value[x] only Identifier
 
-Extension: GFEServiceLinkingInfo
-Id: gfeServiceLinkingInfo
-Description: "This extension is used to provide the GFE Service Linking Information."
-* extension contains
-    plannedPeriodOfService 0..* MS and
-    linkingIdentifier 0..* MS
-* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
-* extension[plannedPeriodOfService] ^definition = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
-* extension[plannedPeriodOfService].value[x] only date or Period
-* extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
-* extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
-* extension[linkingIdentifier].value[x] only string
+Extension: PlannedPeriodOfService
+Id: plannedPeriodOfService
+Description: "This extension is used to provide the planned date or dates of service."
+* value[x] only date or Period
+
+// Extension: GFEServiceLinkingInfo
+// Id: gfeServiceLinkingInfo
+// Description: "This extension is used to provide the GFE Service Linking Information."
+// * extension contains
+//     plannedPeriodOfService 0..* MS and
+//     linkingIdentifier 0..* MS
+// * extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+// * extension[plannedPeriodOfService] ^definition = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+// * extension[plannedPeriodOfService].value[x] only date or Period
+// * extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
+// * extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
+// * extension[linkingIdentifier].value[x] only string
 
 Extension: ReferralNumber
 Id: referralNumber
@@ -98,7 +103,7 @@ Extension: GFEReference
 Id: gfeReference
 Title: "GFE Reference"
 Description: "This extension is used to reference the GFE submitted by an entity that started the process for obtaining an Advanced EOB."
-* value[x] only Reference(PCTGFEInstitutional or PCTGFEProfessional)
+* value[x] only Reference(PCTGFEBundleInstitutional or PCTGFEBundleProfessional)
 
 // Extension: PCTProposedDateOfService
 // Id: proposed-date-of-service

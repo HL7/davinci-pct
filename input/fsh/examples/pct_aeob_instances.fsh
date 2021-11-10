@@ -17,7 +17,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * extension[provider-contracting-rate].valueMoney.value = 2000.00
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
-* extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-1)
+* extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
 * extension[disclaimer].valueString = "Estimate Only ..."
 * extension[expirationDate].valueDate = "2021-10-31"
 
