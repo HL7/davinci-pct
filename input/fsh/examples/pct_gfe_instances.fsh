@@ -79,6 +79,46 @@ Description: "PCT Professional GFE Example 1"
 
 ///////////////////////////////////////////
 
+Instance: PCT-GFE-Bundle-1
+InstanceOf: PCTGFEBundle
+Description: "PCT GFE Bundle Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-23473847"
+* timestamp = "2021-11-09T11:01:00+05:00"
+* entry[institutionalGFE].fullUrl = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/pct-gfe-Institutional"
+//* entry[institutionalGFE].fullUrl = "http://example.org/fhir/Claim/PCTGFEExample"
+* entry[institutionalGFE].resource.resourceType = "Claim"
+* entry[institutionalGFE].resource.id = "PCT-GFE-Institutional-1"
+//* entry[institutionalGFE].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/pct-gfe-Institutional"
+* entry[institutionalGFE].resource.extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
+* entry[institutionalGFE].resource.extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
+* entry[institutionalGFE].resource.extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
+* entry[institutionalGFE].resource.status = #active
+* entry[institutionalGFE].resource.use = #claim
+* entry[institutionalGFE].resource.patient = Reference(patient1001)
+* entry[institutionalGFE].resource.created = "2021-10-05"
+* entry[institutionalGFE].resource.insurer = Reference(org1001)
+* entry[institutionalGFE].resource.provider = Reference(org1002)
+* entry[institutionalGFE].resource.priority = $PROCPRIORITY#normal
+* entry[institutionalGFE].resource.payee.type.coding = $PAYEETYPE#provider
+* entry[institutionalGFE].resource.insurance.sequence = 1
+* entry[institutionalGFE].resource.insurance.focal = true
+* entry[institutionalGFE].resource.insurance.coverage = Reference(coverage1001)
+* entry[institutionalGFE].resource.diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* entry[institutionalGFE].resource.diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* entry[institutionalGFE].resource.item.extension[estimatedDateOfService].valueDate = "2021-10-31"
+* entry[institutionalGFE].resource.item.sequence = 1
+* entry[institutionalGFE].resource.item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
+* entry[institutionalGFE].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
+* entry[institutionalGFE].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[institutionalGFE].resource.item.quantity.value = 1
+* entry[institutionalGFE].resource.item.net.value = 200.00
+* entry[institutionalGFE].resource.item.net.currency = #USD
+* entry[institutionalGFE].resource.total.value = 200.00
+* entry[institutionalGFE].resource.total.currency = #USD
+
+///////////////////////////////////////////
+
 Instance: patient1001
 Description: "An instance of Patient"
 InstanceOf: PCTPatient
