@@ -45,7 +45,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 * insurance.coverage MS
 * insurance.coverage only Reference(PCTCoverage)
-* insurance.preAuthRef MS
+* insurance.preAuthRef 0..1 MS
 
 * insert DiagnosisSlicing
 * diagnosis 1..*
@@ -119,8 +119,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * careTeam contains
    attending 0..1 MS and
    operating 0..2 MS and
-   rendering 0..1 MS
-   // referring 0..1 MS
+   rendering 0..1 MS and
+   referring 0..1 MS
 * careTeam[attending].role = PCTCareTeamRole#attending
 //* careTeam[attending] ^short = "May be used for the Institutional case only"
 * careTeam[attending].qualification 1..1
@@ -128,7 +128,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 //* careTeam[operating] ^short = "May be used for the Institutional case only"
 * careTeam[rendering].role = PCTCareTeamRole#rendering
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
-// * careTeam[referring].role = PCTCareTeamRole#referring
+* careTeam[referring].role = PCTCareTeamRole#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
 
 * insert SupportingInfoSlicing
@@ -152,6 +152,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
 
+//TODO: need to include HIPPS for institutional
 * item.productOrService from PCTGFEItemCptHcpcsVS (required)
 //* item.productOrService obeys GFE-inst-item-productorservice
 * item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."
@@ -160,7 +161,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.quantity 1..1 MS
 
 * item.locationCodeableConcept MS
-* item.locationCodeableConcept from $CMSPOSVS (required)
+* item.locationCodeableConcept from PCTGFECMSPOS (required)
 
 * item.detail MS
 * item.detail ^short = "Drug Identification Information"

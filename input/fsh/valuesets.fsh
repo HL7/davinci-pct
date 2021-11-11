@@ -65,6 +65,13 @@ Description: "Codes to report medical procedures and services under public and p
 * codes from system PCTGFEItemCptHcpcsCS
 * ^copyright = "This Valueset is not copyrighted."
 
+ValueSet: PCTGFECMSPOS
+Title: "PCT GFE CMS Place of Service Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Description: "CMS Place of Service codes"
+* codes from system $CMSPOSOID
+//* codes from system PCTGFEPOSCS
+* ^copyright = "This Valueset is not copyrighted."
+
 ValueSet: PCTGFEItemNDCVS
 Title: "PCT GFE Item NDC Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "The FDA published list of NDC codes for finished drug products"

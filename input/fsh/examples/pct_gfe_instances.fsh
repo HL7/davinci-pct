@@ -81,6 +81,7 @@ Description: "PCT Professional GFE Example 1"
 * item.sequence = 1
 * item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
 * item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* item.locationCodeableConcept = $CMSPOSOID#21 "Inpatient Hospital"
 * item.quantity.value = 1
 * item.net.value = 200.00
 * item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001" 
@@ -157,6 +158,7 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[Claim].resource.item.sequence = 1
 * entry[Claim].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
 * entry[Claim].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[Claim].resource.item.locationCodeableConcept = $CMSPOSOID#21 "Inpatient Hospital"
 * entry[Claim].resource.item.quantity.value = 1
 * entry[Claim].resource.item.net.value = 200.00
 * entry[Claim].resource.item.net.currency = #USD

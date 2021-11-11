@@ -13,7 +13,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
 // * extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
 // * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
-* extension contains ReferralNumber named referralNumber 0..1 MS
+* extension contains ReferralNumber named referralNumber 0..2 MS
 * extension[referralNumber] ^short = "Referral Number"
 * extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
 * extension[providerEventMethodology] ^short = "Provider event collection methodology"
@@ -47,7 +47,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 * insurance.coverage MS
 * insurance.coverage only Reference(PCTCoverage)
-* insurance.preAuthRef MS
+* insurance.preAuthRef 0..2 MS
 
 * insert DiagnosisSlicing
 * diagnosis 1..*
@@ -103,13 +103,13 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * careTeam.qualification MS
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
-   rendering 0..2 MS
-   // referring 0..1 MS
+   rendering 0..2 MS and
+   referring 0..1 MS
 * careTeam[rendering].role = PCTCareTeamRole#rendering
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
 * careTeam[rendering].qualification 1..1
 * careTeam[rendering].qualification ^short = "Practitioner credential or specialization - must provide a taxonomy code for the Professional case"
-// * careTeam[referring].role = PCTCareTeamRole#referring
+* careTeam[referring].role = PCTCareTeamRole#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
 
 * insert SupportingInfoSlicing
@@ -120,16 +120,16 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * supportingInfo[placeOfService].category MS
 * supportingInfo[placeOfService].category = PCTSupportingInfoType#cmspos "CMS Place of Service"
 * supportingInfo[placeOfService].code 1..1 MS
-* supportingInfo[placeOfService].code from $CMSPOSVS (required)
+* supportingInfo[placeOfService].code from PCTGFECMSPOS (required)
 
 * item 1..50 MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 
-* item.revenue MS
-* item.revenue from PCTGFEItemRevenueVS (example)
-* item.revenue ^short = "Revenue or cost center code - must provide a value for the Institutional case"
+// * item.revenue MS
+// * item.revenue from PCTGFEItemRevenueVS (example)
+// * item.revenue ^short = "Revenue or cost center code - must provide a value for the Institutional case"
 
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
@@ -140,8 +140,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.net 1..1 MS
 * item.quantity 1..1 MS
 
-* item.locationCodeableConcept MS
-* item.locationCodeableConcept from $CMSPOSVS (required)
+* item.locationCodeableConcept 1..1 MS
+* item.locationCodeableConcept from PCTGFECMSPOS (required)
 
 * item.detail MS
 * item.detail ^short = "Drug Identification Information"

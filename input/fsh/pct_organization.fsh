@@ -41,13 +41,13 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * insert OrgContactSlicing
 //* contact 0..* MS
 
-//* contact.purpose from PCTOrgContactPurposeTypeVS (extensible)
+* contact.purpose from PCTOrgContactPurposeTypeVS (extensible)
 * contact contains
    gfeServiceHotline 0..1 MS
 * contact[gfeServiceHotline].name 1..1 MS
 * contact[gfeServiceHotline].telecom 1..* MS
 * contact[gfeServiceHotline].purpose MS
-* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#gferelated "GFE-related"
+* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#GFERELATED "GFE-related"
 
 //TODO: slice contact for defining PAY-TO
 //* contact[payToAddress]

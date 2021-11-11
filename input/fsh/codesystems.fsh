@@ -96,7 +96,7 @@ Description: "PCT code system for defining the functional roles of the care team
 CodeSystem: PCTOrgContactPurposeType
 Title: "PCT Organization Contact Purpose Type Code System"
 Description: "Organization Contact Purpose Type Code System"
-* #gferelated "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
+* #GFERELATED "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTAdjudicationCategoryType
