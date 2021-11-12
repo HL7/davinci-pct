@@ -47,8 +47,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
 // * item.productOrService = CPT4#33502 "Some CPT Code 1"
 // * item.modifier = CPT4#34503 "Some CPT Code 2"
-* item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * item.net.value = 200.00
 * item.net.currency = #USD
 * item.adjudication.extension[subjectToMedicalMgmt].valueCoding = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
@@ -95,8 +95,8 @@ Description: "PCT AEOB Bundle Example 1"
 * entry[ExplanationOfBenefit].resource.item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
 * entry[ExplanationOfBenefit].resource.item.sequence = 1
 * entry[ExplanationOfBenefit].resource.item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
-* entry[ExplanationOfBenefit].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* entry[ExplanationOfBenefit].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[ExplanationOfBenefit].resource.item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* entry[ExplanationOfBenefit].resource.item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * entry[ExplanationOfBenefit].resource.item.net.value = 200.00
 * entry[ExplanationOfBenefit].resource.item.net.currency = #USD
 * entry[ExplanationOfBenefit].resource.item.adjudication.extension[subjectToMedicalMgmt].valueCoding = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"

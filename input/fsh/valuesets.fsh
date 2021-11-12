@@ -14,8 +14,8 @@ Description: "Codes to specify the type of entity involved in the PCT GFE proces
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTDiagnosticCodes
-Title: "PCT Diagnostic Codes - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes to specify the type of diagnosis"
+Title: "PCT ICD-10 Diagnostic Codes"
+Description: "ICD-10 Codes to specify the type of diagnosis"
 * codes from system $ICD10CM
 * ^copyright = "This Valueset is not copyrighted."
 
@@ -35,8 +35,8 @@ Description: "Codes to specify the type of procedure"
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTProcedureSurgicalCodes
-Title: "PCT Procedure Surgical Codes - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes to specify the type of surgical procedure"
+Title: "PCT CMS HCPCS and AMA CPT Procedure Surgical Codes"
+Description: "Combination of CMS HCPCS and AMA CPT codes to specify the type of surgical procedure"
 //* include Combination of CMS HCPCS and AMA CPTs
 * codes from system $HCPCS
 * codes from valueset $AMACPTALL
@@ -44,36 +44,45 @@ Description: "Codes to specify the type of surgical procedure"
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFETypeOfBillVS
-Title: "PCT GFE Type Of Bill Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes to indicate the specific Type of Bill (TOB), e.g., hospital inpatient, outpatient, replacements, voids, etc. The first digit is a leading zero*. The fourth digit defines the frequency of the bill for the institutional and electronic professional claim."
+Title: "PCT GFE NUBC Uniform Billing (UB-04) Type of Bill Value Set"
+Description: "NUBC Uniform Billing (UB-04) codes to indicate the specific Type of Bill (TOB), e.g., hospital inpatient, outpatient, replacements, voids, etc. The first digit is a leading zero*. The fourth digit defines the frequency of the bill for the institutional and electronic professional claim."
 * codes from system $TOBFL-04
 * codes from system PCTGFETypeOfBillCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFEItemRevenueVS
-Title: "PCT GFE Item Revenue Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Sample Revenue Center codes"
-* codes from valueset $REVENUEVS
+Title: "PCT GFE NUBC Revenue Value Set"
+Description: "NUBC UB-04 Revenue codes"
+* codes from system $NUBCREVENUE
 * codes from system PCTGFEItemRevenueCS
 * ^copyright = "This Valueset is not copyrighted."
 
-ValueSet: PCTGFEItemCptHcpcsVS
-Title: "PCT GFE Item CPT and HCPCS Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes to report medical procedures and services under public and private health insurance programs"
+ValueSet: PCTGFEItemCptHcpcsHippsVS
+Title: "PCT GFE Item CPT - HCPCS - HIPPS Value Set"
+Description: "CPT - HCPCS - HIPPS codes to report medical procedures and services under public and private health insurance programs"
 * codes from system $CPT
 * codes from system $HCPCS
-* codes from system PCTGFEItemCptHcpcsCS
+* codes from system $HIPPS
+* codes from system PCTGFEItemProcedureCodes
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PCTGFEItemCptHcpcsVS
+Title: "PCT GFE Item CPT - HCPCS Value Set"
+Description: "CPT - HCPCS codes to report medical procedures and services under public and private health insurance programs"
+* codes from system $CPT
+* codes from system $HCPCS
+* codes from system PCTGFEItemProcedureCodes
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFECMSPOS
-Title: "PCT GFE CMS Place of Service Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT GFE CMS Place of Service Value Set"
 Description: "CMS Place of Service codes"
 * codes from system $CMSPOSOID
 //* codes from system PCTGFEPOSCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFEItemNDCVS
-Title: "PCT GFE Item NDC Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT GFE Item NDC Value Set"
 Description: "The FDA published list of NDC codes for finished drug products"
 * codes from system $NDC
 * ^copyright = "This Valueset is not copyrighted."

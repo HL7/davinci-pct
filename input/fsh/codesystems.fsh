@@ -40,30 +40,30 @@ Description: "Defining codes for the classification of procedure types"
 CodeSystem: PCTProcedureSurgicalCS
 Title: "PCT Procedure Surgical Code System"
 Description: "Defining codes for the classification of surgical procedure types"
-* #153001 "PROC-1" "Procedure 1"
-* #153002 "PROC-2" "Procedure 2"
-* #153003 "PROC-3" "Procedure 3"
+* #153001 "PROC-1" "This is for testing purpose only - WILL BE REMOVED"
+* #153002 "PROC-2" "This is for testing purpose only - WILL BE REMOVED"
+* #153003 "PROC-3" "This is for testing purpose only - WILL BE REMOVED"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTGFETypeOfBillCS
 Title: "PCT GFE Type Of Bill Code System"
 Description: "Defining codes to indicate the specific Type of Bill (TOB)"
-* #012133 "Hospital Inpatient" "This mock code is for testing purpose only"
-* #013144 "Outpatient"  "This mock code is for testing purpose only"
+* #012133 "Hospital Inpatient" "This is for testing purpose only - WILL BE REMOVED"
+* #013144 "Outpatient"  "This is for testing purpose only - WILL BE REMOVED"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTGFEItemRevenueCS
 Title: "PCT GFE Item Revenue Code System"
 Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
-* #2011 "Revenue Code 1" "This mock code is for testing purpose only"
-* #2012 "Revenue Code 2" "This mock code is for testing purpose only"
+* #2011 "Revenue Code 1" "This is for testing purpose only - WILL BE REMOVED"
+* #2012 "Revenue Code 2" "This is for testing purpose only - WILL BE REMOVED"
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTGFEItemCptHcpcsCS
-Title: "PCT GFE Item CPT and HCPCS Code System"
+CodeSystem: PCTGFEItemProcedureCodes
+Title: "PCT GFE Item Procedure Code System"
 Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
-* #33502 "Some CPT Code 1" "This mock code is for testing purpose only"
-* #34503 "Some CPT Code 2" "This mock code is for testing purpose only"
+* #33502 "Some CPT Code 1" "This is for testing purpose only - WILL BE REMOVED"
+* #34503 "Some CPT Code 2" "This is for testing purpose only - WILL BE REMOVED"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS

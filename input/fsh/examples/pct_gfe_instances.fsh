@@ -43,8 +43,8 @@ Description: "PCT Institutional GFE Example 1"
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
-* item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * item.quantity.value = 1
 * item.net.value = 200.00
 * item.net.currency = #USD
@@ -79,8 +79,8 @@ Description: "PCT Professional GFE Example 1"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
-* item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * item.locationCodeableConcept = $CMSPOSOID#21 "Inpatient Hospital"
 * item.quantity.value = 1
 * item.net.value = 200.00
@@ -120,8 +120,8 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * entry[Claim].resource.item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * entry[Claim].resource.item.sequence = 1
 * entry[Claim].resource.item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
-* entry[Claim].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* entry[Claim].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[Claim].resource.item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* entry[Claim].resource.item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * entry[Claim].resource.item.quantity.value = 1
 * entry[Claim].resource.item.net.value = 200.00
 * entry[Claim].resource.item.net.currency = #USD
@@ -156,8 +156,8 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[Claim].resource.diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * entry[Claim].resource.item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * entry[Claim].resource.item.sequence = 1
-* entry[Claim].resource.item.productOrService = PCTGFEItemCptHcpcsCS#33502 "Some CPT Code 1"
-* entry[Claim].resource.item.modifier = PCTGFEItemCptHcpcsCS#34503 "Some CPT Code 2"
+* entry[Claim].resource.item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* entry[Claim].resource.item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * entry[Claim].resource.item.locationCodeableConcept = $CMSPOSOID#21 "Inpatient Hospital"
 * entry[Claim].resource.item.quantity.value = 1
 * entry[Claim].resource.item.net.value = 200.00

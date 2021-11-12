@@ -146,14 +146,14 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue 1..1 MS
-* item.revenue from PCTGFEItemRevenueVS (example)
+* item.revenue from PCTGFEItemRevenueVS (required)
 * item.revenue ^short = "Revenue or cost center code - must provide a value for the Institutional case"
 
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
 
 //TODO: need to include HIPPS for institutional
-* item.productOrService from PCTGFEItemCptHcpcsVS (required)
+* item.productOrService from PCTGFEItemCptHcpcsHippsVS (required)
 //* item.productOrService obeys GFE-inst-item-productorservice
 * item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."
 
