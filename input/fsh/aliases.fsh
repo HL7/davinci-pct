@@ -43,7 +43,7 @@ Alias:   $ISO3166-P1-ALPHA2-VS = http://hl7.org/fhir/ValueSet/iso3166-1-2
 Alias:   $ISO3166-P2-CSC-VS = http://terminology.hl7.org/ValueSet/v2-notAllCodes-0347
 //Alias:   $REVENUEVS = http://hl7.org/fhir/ValueSet/ex-revenue-center
 //Alias:   $ADJUDVS = http://hl7.org/fhir/ValueSet/adjudication
-Alias:   $EOBPRIORITY = http://hl7.org/fhir/ValueSet/process-priority
+Alias:   $PROCPRIORITYVS = http://hl7.org/fhir/ValueSet/process-priority
 Alias:   $AMACPTALL = http://hl7.org/fhir/ValueSet/cpt-all
 
 //// CARIN-BB ////

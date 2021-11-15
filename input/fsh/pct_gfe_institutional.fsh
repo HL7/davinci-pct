@@ -33,6 +33,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * provider only Reference(PCTOrganization)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
+* priority MS
+* priority from $PROCPRIORITYVS (required)
+
 * insurer 1..1
 * insurer only Reference(PCTOrganization)
 

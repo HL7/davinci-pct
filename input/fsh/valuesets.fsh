@@ -13,6 +13,12 @@ Description: "Codes to specify the type of entity involved in the PCT GFE proces
 * codes from system PCTOrganizationTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
+// ValueSet: PCTGFEProcessPriorityVS
+// Title: "PCT GFE Process Priority Value Set"
+// Description: "Codes to specify the urgency of processing the request"
+// * codes from system $PROCPRIORITY
+// * ^copyright = "This Valueset is not copyrighted."
+
 ValueSet: PCTDiagnosticCodes
 Title: "PCT ICD-10 Diagnostic Codes"
 Description: "ICD-10 Codes to specify the type of diagnosis"

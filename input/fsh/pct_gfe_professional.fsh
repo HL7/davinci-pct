@@ -32,6 +32,9 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * provider only Reference(PCTOrganization or PCTPractitionerRole)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
+* priority MS
+* priority from $PROCPRIORITYVS (required)
+
 * insurer 1..1
 * insurer only Reference(PCTOrganization)
 
