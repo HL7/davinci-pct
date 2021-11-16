@@ -38,7 +38,7 @@ The No Surprises Act specifically requires that providers share GFE(s) with a pa
    
 >Note: The patient below could be a third-party web portal or provider web portal.     
 
-![AEOB Interaction Diagram (draft)](AEOB-interaction.drawio.png){:style="float: none;"}
+![AEOB Interaction Diagram](AEOB-interaction.drawio.png){:style="float: none;"}
 
 ### Downloads
 * The full [FHIR PCT Implementation Guide](full-ig.zip)

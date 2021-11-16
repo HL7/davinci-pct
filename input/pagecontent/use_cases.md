@@ -4,7 +4,7 @@ The below describes the process of initiating the creation of an AEOB and the pr
 
 #### Submit AEOB Request to Payer
 
-![Submit AEOB Request to Payer (draft)](SubmitAEOB.drawio.png){:style="float: none;"}
+![Submit AEOB Request to Payer](SubmitAEOB.drawio.png){:style="float: none;"}
 
 1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
@@ -18,7 +18,7 @@ Note: The translation from FHIR to X12 and back to FHIR is not required to be co
  
 #### Get completed AEOB from payer
 
-![Get completed AEOB from payer (draft)](GetAEOB.drawio.png){:style="float: none;"}
+![Get completed AEOB from payer](GetAEOB.drawio.png){:style="float: none;"}
 
 1. The patient receives a notification that the AEOB is complete along with an AEOB Bundle.identifier which identifies their AEOB. 
 
