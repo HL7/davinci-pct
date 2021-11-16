@@ -8,7 +8,7 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOB. Org
 * timestamp 1..1 MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS
-* entry.resource 1..1 MS
+//* entry.resource 1..1 MS
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0

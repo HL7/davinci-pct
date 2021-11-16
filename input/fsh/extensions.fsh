@@ -103,7 +103,7 @@ Extension: GFEReference
 Id: gfeReference
 Title: "GFE Reference"
 Description: "This extension is used to reference the GFE submitted by an entity that started the process for obtaining an Advanced EOB."
-* value[x] only Reference(PCTGFEBundleInstitutional or PCTGFEBundleProfessional)
+* value[x] only Reference(PCTGFEBundle)
 
 // Extension: PCTProposedDateOfService
 // Id: proposed-date-of-service
