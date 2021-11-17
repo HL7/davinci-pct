@@ -135,7 +135,11 @@ Assumptions:<br>
     </tr>
     <tr>
         <td>Gross Charge</td>
-        <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts. </td>
+        <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts.</td>
+    </tr>
+    <tr>
+        <td>GFE Submitter</td>
+        <td>The provider that is the submitter of the Good Faith Estimate (GFE) bundle to the Payer.</td>
     </tr>
     <tr>
         <td>HIPAA</td>
