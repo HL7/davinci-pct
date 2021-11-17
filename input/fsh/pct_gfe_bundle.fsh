@@ -6,6 +6,7 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * identifier 1..1 MS
 * type = #collection (exactly)
 * timestamp 1..1 MS
+//TODO: create a FHIRPath invariant to enforce that at least one entry.resource must be either PCTGFEInstitutional or PCTGFEProfessional
 * entry 1..* MS
 * entry.fullUrl 1..1 MS
 //* entry.resource 1..1 MS

@@ -25,7 +25,8 @@ Description: "PCT Institutional GFE Example 1"
 * extension[referralNumber].valueString = "REF12022002-121"
 * extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
-* extension[plannedPeriodOfService].valueDate = "2021-10-31"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 * patient = Reference(patient1001)
 * created = "2021-10-05"
@@ -60,7 +61,8 @@ Description: "PCT Professional GFE Example 1"
 * extension[referralNumber].valueString = "REF12022002-122"
 * extension[providerEventMethodology].valueString = "EEMM1022"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
-* extension[plannedPeriodOfService].valueDate = "2021-10-31"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 * patient = Reference(patient1001)
 * created = "2021-10-05"
