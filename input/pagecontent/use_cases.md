@@ -66,8 +66,8 @@ Assumptions:<br>
         <th><b>Proposed Definition</b></th>
     </tr>
     <tr>
-        <td>Advanced EOB</td>
-        <td>The No Surprises Act requires that group health plans and insurers provide advance cost estimates, called advanced explanations of benefits (advanced EOBs), for scheduled services. </td>
+        <td>AEOB</td>
+        <td>The No Surprises Act requires that group health plans and insurers provide advance cost estimates, called Advanced Explanations of Benefits (AEOBs), for scheduled services. </td>
     </tr>
     <tr>
         <td>Allowed Amount</td>
@@ -135,7 +135,15 @@ Assumptions:<br>
     </tr>
     <tr>
         <td>Gross Charge</td>
-        <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts. </td>
+        <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts.</td>
+    </tr>
+    <tr>
+        <td>GFE Submitter</td>
+        <td>The provider that is the submitter of the Good Faith Estimate (GFE) bundle to the Payer.</td>
+    </tr>
+    <tr>
+        <td>HIPAA</td>
+        <td>The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that required the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge. The US Department of Health and Human Services (HHS) issued the HIPAA Privacy Rule to implement the requirements of HIPAA. The HIPAA Security Rule protects a subset of information covered by the Privacy Rule.</td>
     </tr>
 </table>
 
