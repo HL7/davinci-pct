@@ -22,7 +22,6 @@ Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].value = "ETIN-10010001"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 * extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
-* extension[referralNumber].valueString = "REF12022002-121"
 * extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
@@ -34,6 +33,8 @@ Description: "PCT Institutional GFE Example 1"
 * provider = Reference(org1002)
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
+* referral.extension[referralNumber].valueString = "REF12022002-121"
+* referral.display = "Referral Number"
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
@@ -58,7 +59,6 @@ InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
 * extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0002"
-* extension[referralNumber].valueString = "REF12022002-122"
 * extension[providerEventMethodology].valueString = "EEMM1022"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
@@ -70,6 +70,8 @@ Description: "PCT Professional GFE Example 1"
 * provider = Reference(pracRole002)
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
+* referral.extension[referralNumber].valueString = "REF12022002-122"
+* referral.display = "Referral Number"
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)

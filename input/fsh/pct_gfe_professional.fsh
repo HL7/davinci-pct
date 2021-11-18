@@ -43,6 +43,9 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 //TODO: create vS for payee.type like https://build.fhir.org/ig/HL7/carin-bb/ValueSet-C4BBPayeeType.html
 //TODO: for now put in a placeholder statement about formal VS to be created...
 
+* referral.extension contains ReferralNumber named referralNumber 1..1 MS
+* referral.extension[referralNumber] ^short = "Referral Number"
+
 * facility MS
 * facility only Reference(PCTLocation)
 
@@ -126,6 +129,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * supportingInfo[placeOfService].code from PCTGFECMSPOS (required)
 
 * item 1..50 MS
+* item.extension contains ReferralNumber named referralNumber 0..11 MS
+* item.extension[referralNumber] ^short = "Referral Number"
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS

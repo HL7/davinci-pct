@@ -16,7 +16,7 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOB. Org
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
-* entry contains ExplanationOfBenefit 1..1 MS
+* entry contains ExplanationOfBenefit 1..* MS
 * entry[ExplanationOfBenefit].resource only PCTAdvancedEOB
 
 
