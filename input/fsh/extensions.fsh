@@ -147,9 +147,9 @@ Description: "This extension is used to indicate a specific date after which the
 
 /// For PCTOrganization Profile ////
 
-Extension: ProviderRole
-Id: providerRole
-Description: "This extension is used to indicate the role of the provider."
+Extension: ProviderTaxonomy
+Id: providerTaxonomy
+Description: "This extension is used to indicate the taxonomy code of the provider."
 * value[x] only CodeableConcept
 * value[x] from $USCPROCROLE (extensible)
 

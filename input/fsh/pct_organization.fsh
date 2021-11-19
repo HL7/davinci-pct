@@ -4,8 +4,8 @@ Id: davinci-pct-organization
 Title: "PCT Organization"
 Description: "The PCT Organization profile builds upon the US Core Organization profile. It is used to convey a payer, provider, payee, or service facility organization."
 
-* extension contains ProviderRole named providerRole 0..1 MS
-* extension[providerRole] ^short = "Provider role codes consisting of NUCC Health Care Provider Taxonomy Code Set for providers"
+* extension contains ProviderTaxonomy named providerTaxonomy 0..1 MS
+* extension[providerTaxonomy] ^short = "Provider taxonomy codes consisting of NUCC Health Care Provider Taxonomy Code Set for providers"
 
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open

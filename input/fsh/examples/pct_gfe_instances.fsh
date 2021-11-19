@@ -239,7 +239,7 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * identifier[TAX].value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true
-* extension[ProviderRole].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * telecom.system = #phone
 * telecom.value = "781-232-3200"
 * telecom.use = #work
