@@ -20,7 +20,11 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry contains
     gfeInstitutional 0..* MS and
     gfeProfessional 0..* MS
+* entry[gfeInstitutional] ^short = "Entry in the bundle - will have a PCTGFEInstitutional resource"
 * entry[gfeInstitutional].resource 1..1 MS
 * entry[gfeInstitutional].resource only PCTGFEInstitutional
+* entry[gfeInstitutional].resource ^short = "Pre-determination"
+* entry[gfeProfessional] ^short = "Entry in the bundle - will have a PCTGFEProfessional resource"
 * entry[gfeProfessional].resource 1..1 MS
 * entry[gfeProfessional].resource only PCTGFEProfessional
+* entry[gfeProfessional].resource ^short = "Pre-determination"
