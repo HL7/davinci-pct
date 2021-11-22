@@ -145,5 +145,9 @@ Assumptions:<br>
         <td>HIPAA</td>
         <td>The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that required the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge. The US Department of Health and Human Services (HHS) issued the HIPAA Privacy Rule to implement the requirements of HIPAA. The HIPAA Security Rule protects a subset of information covered by the Privacy Rule.</td>
     </tr>
+    <tr>
+        <td>GFE Submitter</td>
+        <td>Any provider and/or facility that sends a Good Faith Estimate (GFE) to a payer to facilitate the creation of an advanced Explanation of Benefits (AEOB).</td>
+    </tr>
 </table>
 
