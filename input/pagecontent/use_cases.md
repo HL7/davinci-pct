@@ -72,11 +72,7 @@ Assumptions:<br>
     <tr>
         <td>Allowed Amount</td>
         <td>The maximum amount a plan will pay for a covered health care service. May also be called “eligible expense,” “payment allowance,” “negotiated rate", "contractual amount", or "covered amount."</td>
-    </tr>
-    <tr>
-        <td>GFE</td>
-        <td>Good Faith Estimate</td>
-    </tr>
+    </tr>    
     <tr>
         <td>CAA<br/>Consolidated Appropriations Act</td>
         <td>Also called "H.R. 133". <p>The CARES (Coronavirus Aid, Relief, and Economic Security) Act implemented a variety of programs to address issues related to the onset of the COVID-19 pandemic. </p>
@@ -86,29 +82,25 @@ Assumptions:<br>
     <tr>
         <td>CDM<br/>Chargemaster</td>
         <td>Also called the Charge Description Master. <p>A comprehensive listing of items billable to a hospital patient or a patient's health insurance provider. ... The chargemaster typically serves as the starting point for negotiations with patients and health insurance providers of what amount of money will actually be paid to the hospital. It is described as "the central mechanism of the revenue cycle" of a hospital. </p></td>
+    </tr>   
+    <tr>
+        <td>Coinsurance</td>
+        <td>The percentage of costs of a covered health care service you pay (20%, for example) after a member has paid the deductible. </td>
     </tr>
     <tr>
         <td>Collection of Services</td>
         <td>The list of services expected to be performed as part of gathering the good faith estimate. <p>Note: Purposely not using loaded words like "grouper" or "episode"</p>
             <p>Note: this may span across Providers (NPIs)</p></td>
     </tr>
-    <tr>
-        <td>Coinsurance</td>
-        <td>The percentage of costs of a covered health care service you pay (20%, for example) after a member has paid the deductible. </td>
-    </tr>
      <tr>
         <td>Copayment</td>
         <td>A fixed amount ($20, for example) you pay for a covered health care service after you've paid your deductible. Let's say your health insurance plan's allowable cost for a doctor's office visit is $100. Your copayment for a doctor visit is $20. </td>
-    </tr>
-     <tr>
-        <td>Deductible</td>
-        <td>The amount you pay for covered health care services before your insurance plan starts to pay. With a $2,000 deductible, for example, you pay the first $2,000 of covered services yourself. After you pay your deductible, you usually pay only a copayment or coinsurance for covered services. </td>
     </tr>
     <tr>
         <td>Cost</td>
         <td>To providers: the expense incurred to deliver health care services to patients. <p>To payers: the amount they pay to providers for services rendered.</p>
             <p>To patients: the amount they pay out-of-pocket for health care services. </p></td>
-    </tr>
+    </tr>    
     <tr>
         <td>Data Exchange Method</td>
         <td>The mechanism for sending and receiving the data (e.g. standard "transactions", APIs, fax, email). </td>
@@ -118,12 +110,16 @@ Assumptions:<br>
         <td>The bundle of data or collection of the data elements being sent. </td>
     </tr>
     <tr>
-        <td>De-identified minimum negotiated charge</td>
-        <td>The lowest charge that a hospital has negotiated with all third-party payers for an item or service. </td>
-    </tr>
-    <tr>
+        <td>Deductible</td>
+        <td>The amount you pay for covered health care services before your insurance plan starts to pay. With a $2,000 deductible, for example, you pay the first $2,000 of covered services yourself. After you pay your deductible, you usually pay only a copayment or coinsurance for covered services. </td>
+    </tr>   
+     <tr>
         <td>De-identified maximum negotiated charge</td>
         <td>The highest charge that a hospital has negotiated with all third-party payers for an item or service. </td>
+    </tr>  
+    <tr>
+        <td>De-identified minimum negotiated charge</td>
+        <td>The lowest charge that a hospital has negotiated with all third-party payers for an item or service. </td>
     </tr>    
     <tr>
         <td>EOB<br/>Explanation of Benefits</td>
@@ -133,13 +129,17 @@ Assumptions:<br>
         <td>Fee Schedule</td>
         <td>A complete listing of fees used by Medicare and commercial payers to pay doctors or other providers/suppliers. This comprehensive listing of fee maximums is used to reimburse a physician and/or other providers on a fee-for-service basis. </td>
     </tr>
-    <tr>
-        <td>Gross Charge</td>
-        <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts. </td>
+     <tr>
+        <td>GFE</td>
+        <td>Good Faith Estimate</td>
     </tr>
     <tr>
         <td>GFE Submitter</td>
         <td>Any provider and/or facility that sends a Good Faith Estimate (GFE) to a payer to facilitate the creation of an advanced Explanation of Benefits (AEOB).</td>
     </tr>
+    <tr>
+        <td>Gross Charge</td>
+        <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts. </td>
+    </tr>   
 </table>
 
