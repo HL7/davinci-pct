@@ -137,5 +137,9 @@ Assumptions:<br>
         <td>Gross Charge</td>
         <td>The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts. </td>
     </tr>
+    <tr>
+        <td>GFE Submitter</td>
+        <td>Any provider and/or facility that sends a Good Faith Estimate (GFE) to a payer to facilitate the creation of an advanced Explanation of Benefits (AEOB).</td>
+    </tr>
 </table>
 
