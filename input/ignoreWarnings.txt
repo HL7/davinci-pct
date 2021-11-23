@@ -19,6 +19,3 @@ Error from server: Unable to provide support for code system http://www.ama-assn
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
-
-# Warning: This is happening 
-ValueSet http://terminology.hl7.org/CodeSystem/processpriority not found by validator
