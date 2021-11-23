@@ -3,3 +3,19 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+
+
+# Information: We are not sure why this cannot be validated (it is a child of https://oidref.com/2.16.840.1.113883.15)
+Code System URI 'urn:oid:2.16.840.1.113883.15.5' is unknown so the code cannot be validated
+
+# Warning: This is happening because the code system cannot be validated (see Information above) 
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.113883.15.5' is unknown so the code cannot be validated]
+
+# Warning: We are not sure why support cannot be provided for these code systems
+Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.15.5
+Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
+Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
+Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
