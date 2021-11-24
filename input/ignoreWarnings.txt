@@ -4,8 +4,6 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-
-
 # Information: We are not sure why this cannot be validated (it is a child of https://oidref.com/2.16.840.1.113883.15)
 # Code System URI 'urn:oid:2.16.840.1.113883.15.5' is unknown so the code cannot be validated
 
@@ -20,3 +18,5 @@ Error from server: Unable to provide support for code system http://www.ama-assn
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+
+# Error: Found a reference to a CodeSystem (http://terminology.hl7.org/CodeSystem/processpriority) where a ValueSet belongs. Have raised FHIR-34371 per Lloyd's request.
