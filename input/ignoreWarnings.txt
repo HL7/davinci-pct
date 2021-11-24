@@ -11,8 +11,7 @@
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS because the value set or a code system it depends on is not known to the validator, Code System URI 'urn:oid:2.16.840.1.113883.15.5' is unknown so the code cannot be validated]
 
 # Warning: We are not sure why support cannot be provided for these code systems
-# Error from server: Unable to provide support for code system urn:oid:2.16.840.1.113883.15.5
-Error from server: Unable to provide support for code system http://example.org/cmspos
+Error from server: Unable to provide support for code system https://oidref.com/2.16.840.1.113883.15.5
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
