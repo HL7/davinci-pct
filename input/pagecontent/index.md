@@ -28,11 +28,11 @@ This project will reference, where possible the 'standards' defined by the Healt
 
 As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not an HIPAA mandate to do so.
 
-<blockquote class="stu-note">
-<ul> 
-    <li>At this time, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers, to the payer, to a patient. Subsequent iterations of this IG will take into consideration any relevant future regulation or legislation, as appropriate or upon request. We welcome feedback on this topic.</li>
+At this time, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers, to the payer, to a patient. Subsequent iterations of this IG will take into consideration any relevant future regulation or legislation, as appropriate or upon request. We welcome feedback on this topic.
 
-    <li>We ask the reader to please review all data elements. Are all the data elements in this IG required to produce an AEOB? Note: This IG was not produced to handle claims, but it was informed by X12 837 data elements. We welcome feedback on this topic.</li>
+<blockquote class="stu-note">
+<ul>  
+    <li>We ask the reader to please review all data elements. Are all the data elements in this IG required to produce an AEOB? Note: This IG was not produced to handle claims, but it was informed by X12 837 data elements. We are soliciting feedback on this topic.</li>
 
     <li>During the develop of this IG the question arose on how related GFEs should be linked. Especially if they arrive at different times. If a linking ID is used at the GFE level, how should it be used? We are looking for feedback on this topic.</li> 
 </ul>
