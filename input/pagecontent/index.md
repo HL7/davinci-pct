@@ -1,11 +1,17 @@
 <blockquote class="stu-note">
 <p>
-This specification is a proposed Standard for Trial Use. It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters. 
-Note: This is an early draft or "work in progress". Therefore, changes can be expected to happen quite often and without notice. 
+This specification is a Standard for Trial Use. It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
 </p>
 <p>
-Feedback is welcome and may be submitted through <a href="https://chat.fhir.org/#narrow/stream/301151-Da-Vinci.20PCT">PCT Zulip</a> indicating "US Da Vinci PCT" as the specification.
+Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PCT" as the specification.
 </p>
+<p>
+This implementation guide is dependent on other specifications. Please submit any comments you have on these base specifications as follows:
+</p>
+<ul>  
+  <li>Feedback on the FHIR core specification should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "FHIR Core" as the specification. </li>
+  <li>Feedback on the US core profiles should be submitted to the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> with "US Core" as the specification. </li>
+</ul>
 <p>
 Individuals interested in participating in the Patient Cost Transparency project or other HL7 Da Vinci projects can find information about Da Vinci <a href="http://www.hl7.org/about/davinci">here</a>.
 </p>
@@ -22,9 +28,15 @@ This project will reference, where possible the 'standards' defined by the Healt
 
 As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not an HIPAA mandate to do so.
 
-At this time, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. 
+<blockquote class="stu-note">
+<ul> 
+    <li>At this time, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers, to the payer, to a patient. Subsequent iterations of this IG will take into consideration any relevant future regulation or legislation, as appropriate or upon request. We welcome feedback on this topic.</li>
 
-The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers, to the payer, to a patient. Subsequent iterations of this IG will take into consideration any relevant future regulation or legislation, as appropriate or upon request.
+    <li>We ask the reader to please review all data elements. Are all the data elements in this IG required to produce an AEOB? Note: This IG was not produced to handle claims, but it was informed by X12 837 data elements. We welcome feedback on this topic.</li>
+
+    <li>During the develop of this IG the question arose on how related GFEs should be linked. Especially if they arrive at different times. If a linking ID is used at the GFE level, how should it be used? We are looking for feedback on this topic.</li> 
+</ul>
+</blockquote>
 
 Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG.
 
