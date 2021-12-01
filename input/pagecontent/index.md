@@ -18,15 +18,14 @@ Individuals interested in participating in the Patient Cost Transparency project
 </blockquote>
 
 ### Overview
-This implementation guide (IG) defines an exchange for providers to request an Advanced Explanation of Benefits (AEOB) from a payer (or payer intermediary) for a service or item. Once the AEOB is created the patient (and optionally the provider) can receive the AEOB. This exchange will result in an AEOB which will enable a clinician and patient cost conversation. Note: This exchange will be triggered via a “request” or “scheduled service”. Also, the AEOB will include a reference to the original GFE (Good Faith Estimate) used to inform the AEOB creation.
+This implementation guide (IG) defines an exchange mechanism for providers to request and receive cost information from a payer regarding a service or item. This exchange will result in an Advanced Explanation of Benefits (AEOB) which will help inform a clinician and patient cost conversation. Note: This exchange will be triggered via a “request” or “scheduled service”. The AEOB will also include the GFE(s) (Good Faith Estimate) used to inform the AEOB generation.
 
-The goal of this IG is to support the request for cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.
+The goal of this IG is to support the request for cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the ‘ordering’ provider.
+The project team plans to work with existing FHIR artifacts where possible. If changes are necessary the project team will work with the responsible Work Group to review and implement (via Jira items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles.
 
-The project team plans to work with existing FHIR artifacts where possible. If changes are necessary, the project team will work with the responsible Work Group to review and implement (via Jira items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles.
+This project will reference where possible the ‘standards’ defined by the Health Record exchange (HRex) Library/Framework Implementation Guide and other FHIR IGs where applicable.
 
-This project will reference, where possible the 'standards' defined by the Health Record exchange (HRex) Library/Framework Implementation Guide and other FHIR IGs where applicable.
-
-As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not an HIPAA mandate to do so.
+Since this IG describes a series of FHIR based use cases the use of X12 standards is not required. X12 will only be used to inform the PCT APIs. An implementer is not required to use X12 and there is no HIPAA mandate to do so.
 
 Currently, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers to the payer, to a patient. Subsequent iterations of this IG or other IGs will take into consideration any relevant future regulation or legislation, as appropriate or upon request. We welcome feedback on this topic.
 

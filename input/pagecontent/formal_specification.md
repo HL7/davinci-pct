@@ -66,8 +66,7 @@ The AEOB bundle will contain one of these **outcomes** [queued | complete | erro
 
 The client (or other interested systems - e.g., patient or submitting provider system) can now query the endpoint outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
 
-Once the AEOB has an outcome equal to complete. The client (or other interested systems - e.g., patient or submitting provider system) can perform a FHIR query
-to receive the AEOB bundle.  
+Once the AEOB has an outcome equal to complete, the client (or other interested systems - e.g., patient or submitting provider system) can perform a FHIR query to receive the AEOB bundle.  
 
 > Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. 
 
