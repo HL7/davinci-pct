@@ -1,4 +1,4 @@
-This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) implementation guide (IG). The bulk of it focuses on the GFE $submit operation and an AEOB query, though it also provides guidance on privacy, security, and other implementation requirements.
+This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG. The bulk of it focuses on the GFE $submit operation and an AEOB query, though it also provides guidance on privacy, security, and other implementation requirements.
 
 ### Context
 
@@ -57,7 +57,9 @@ FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html
 
 The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
 
-The GFE Bundle will be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain an AEOB Bundle.identifier. The AEOB Bundle.identifier is important because the response will happen in an asychonous fashion. Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD be used to determine if the AEOB is complete.   
+The GFE Bundle will be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a Bundle.identifier. The Bundle.identifier is important because the response will happen in an asynchronous fashion.
+
+Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD be used to determine if the AEOB is complete.   
 
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
@@ -70,16 +72,16 @@ to receive the AEOB bundle.
 > Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. 
 
 #### GFE and AEOB Bundle Graphics
-The below illustrates what is contained in the GFE and AEOB bundles. For full details see the PCT [FHIR Artifacts](artifacts.html#1). Of note is the <em>AEOB Bundle.identifier</em> which is used in the [AEOB query]( formal_specification.html#aeob-query). Note: For brevity not all bundle data elements are shown below.
+The below illustrates what is contained in the GFE and AEOB bundles. For full details see the PCT [FHIR Artifacts](artifacts.html#1). Of note is the <em>Bundle.identifier</em> which is used in the [AEOB query]( formal_specification.html#aeob-query). Note: For brevity not all bundle data elements are shown below.
 
 ![GFE Bundles](GFE_Bundle.png){:style="float: none;"}
 
 ![AEOB Bundle](AEOB_Bundle.png){:style="float: none;"}
 
-> Note: The AEOB bundle SHALL reference the original GFE bundle(s).
+> Note: The AEOB bundle SHALL contain one or more AEOBs. Each AEOB SHALL contain a reference to the original GFE bundle.
 
 #### AEOB Request 
-The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The first entries in the Bundle SHALL be one or more of the GFE profiles [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
+The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The GFE FHIR Bundle will include one or more claim resources. The GFE profiles used for the claim resources can be [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. 
 
 Bundle.entry.fullUrl values SHALL be:<br>
 • the URL at which the resource is available from the Billing Management System if exposed via the client’s REST interface;<br> 
@@ -112,7 +114,7 @@ These errors are NOT the errors that are detected by the system processing the r
 
 This is done by performing GET [base]/Bundle?identifier=1234
 
-Note: 1234 is the AEOB Bundle.identifier.
+Note: 1234 is the Bundle.identifier.
 
 ##### Polling
 In this approach, the Client regularly queries the Server to see if the status of the AEOB bundle has changed. 

@@ -18,7 +18,7 @@ Individuals interested in participating in the Patient Cost Transparency project
 </blockquote>
 
 ### Overview
-This implementation guide (IG) defines an exchange for providers to request and receive cost information from a payer regarding a service or item. This exchange will result in an Advanced Explanation of Benefits (AEOB) which will enable a clinician and patient cost conversation. Note: This exchange will be triggered via a “request” or “scheduled service”. Also, the AEOB will include the GFE(s) (Good Faith Estimate) used to inform AEOB generation.
+This implementation guide (IG) defines an exchange for providers to request an Advanced Explanation of Benefits (AEOB) from a payer (or payer intermediary) for a service or item. Once the AEOB is created the patient (and optionally the provider) can receive the AEOB. This exchange will result in an AEOB which will enable a clinician and patient cost conversation. Note: This exchange will be triggered via a “request” or “scheduled service”. Also, the AEOB will include a reference to the original GFE (Good Faith Estimate) used to inform the AEOB creation.
 
 The goal of this IG is to support the request for cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.
 
@@ -28,12 +28,11 @@ This project will reference, where possible the 'standards' defined by the Healt
 
 As this is a FHIR based use case and X12 is not required. X12 will only be used to inform the PCT APIs. In other words, the implementer is not required to use X12 as there is not an HIPAA mandate to do so.
 
-At this time, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers, to the payer, to a patient. Subsequent iterations of this IG will take into consideration any relevant future regulation or legislation, as appropriate or upon request. We welcome feedback on this topic.
+Currently, there is no specific mandate dictating the Da Vinci Price Transparency IG work. Instead, this IG is informed by the No Surprises Act, which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that providers share GFE(s) with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement. While rulemaking has not yet addressed how specifically this general requirement will need to be implemented, this IG is being developed to support the flow of the necessary information from providers to the payer, to a patient. Subsequent iterations of this IG or other IGs will take into consideration any relevant future regulation or legislation, as appropriate or upon request. We welcome feedback on this topic.
 
 <blockquote class="stu-note">
 <ul>  
     <li>We ask the reader to please review all data elements. Are all the data elements in this IG required to produce an AEOB? Note: This IG was not produced to handle claims, but it was informed by X12 837 data elements. We are soliciting feedback on this topic.</li>
-
     <li>During the develop of this IG the question arose on how related GFEs should be linked. Especially if they arrive at different times. If a linking ID is used at the GFE level, how should it be used? We are looking for feedback on this topic.</li> 
 </ul>
 </blockquote>
