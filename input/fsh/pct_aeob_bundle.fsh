@@ -2,7 +2,7 @@ Profile: PCTAEOBBundle
 Parent: Bundle
 Id: davinci-pct-aeob-bundle
 Title: "PCT AEOB Bundle"
-Description: "PCT AEOB Bundle that contains necessary resources for an AEOB. Organizations for both the payer and provider SHALL be included."
+Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Organizations for both the payer and provider SHALL be included."
 * identifier 1..1 MS
 * type = #collection (exactly)
 * timestamp 1..1 MS
