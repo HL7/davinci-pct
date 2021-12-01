@@ -55,18 +55,18 @@ The full set of profiles defined in this IG can be found by following the links 
 #### Summary 
 FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this IG are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
-The primary interaction supported by this implementation guide is submitting an AEOB request and receiving back an AEOB response. To perform this, a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
+The primary interaction supported by this implementation guide is submitting an AEOB request and receiving an AEOB response. To perform this, a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
 
 The GFE Bundle will be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a Bundle.identifier. The Bundle.identifier is important because the response will happen in an asynchronous fashion.
 
-Meaning the AEOB will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB is complete. Below are the outcomes to that SHOULD be used to determine if the AEOB is complete.   
+The AEOB(s) will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB(s) are complete. Below are the outcomes that SHOULD be used to determine if the AEOB(s) are complete.   
 
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
 
 The client (or other interested systems - e.g., patient or submitting provider system) can now query the endpoint outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
 
-Once the AEOB has an outcome equal to complete, the client (or other interested systems - e.g., patient or submitting provider system) can perform a FHIR query to receive the AEOB bundle.  
+Once all the AEOB(s) have an outcome equal to `complete`, the client (or other interested systems - e.g., patient or submitting provider system) can perform a FHIR query to receive the completed AEOB bundle.  
 
 > Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. 
 
