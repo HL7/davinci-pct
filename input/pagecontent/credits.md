@@ -11,10 +11,10 @@
 
 **Da Vinci Project coordination and core team:**
 *	Viet Nguyen (Stratametrics, LLC)
-*	Jocelyn Keegan (Point of Care Partners)
+*	Jocelyn Keegan (Point-of-Care Partners)
 *	Robert Dieterle (EnableCare, LLC)
-*	Vanessa Candelora (Point of Care Partners)
-*	Phung Matthews (Point of Care Partners)
+*	Vanessa Candelora (Point-of-Care Partners)
+*	Phung Matthews (Point-of-Care Partners)
 *	Mary Kay McDaniel (Markam)
 *	Denise St. Clair (Acumen, LLC)
 
