@@ -70,7 +70,7 @@ Description: "CPT - HCPCS - HIPPS codes to report medical procedures and service
 * codes from system $HCPCS
 * codes from system $HIPPS
 * codes from system PCTGFEItemProcedureCodes
-* ^copyright = "This Valueset is not copyrighted."
+* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 
 ValueSet: PCTGFEItemCptHcpcsVS
 Title: "PCT GFE Item CPT - HCPCS Value Set"
@@ -78,7 +78,7 @@ Description: "CPT - HCPCS codes to report medical procedures and services under 
 * codes from system $CPT
 * codes from system $HCPCS
 * codes from system PCTGFEItemProcedureCodes
-* ^copyright = "This Valueset is not copyrighted."
+* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 
 ValueSet: PCTGFECMSPOS
 Title: "PCT GFE CMS Place of Service Value Set"
