@@ -20,7 +20,8 @@
       "path": "http://hl7.org/fhir/us/davinci-pct/2022Jan",
       "status": "draft",
       "sequence": "STU 1",
-      "fhirversion": "4.0.1"      
+      "fhirversion": "4.0.1",    
+      "current": false    
     }
   ]
 }
