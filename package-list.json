@@ -7,21 +7,19 @@
   "list": [    
     {
       "version": "current",
-      "desc": "Patient Cost Transparency Implementation Guide CI Build",
-      "path": "http://hl7.org/fhir/us/davinci-pct",
-      "fhirversion": "4.0.1",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "http://build.fhir.org/ig/HL7/davinci-pct",
       "status": "ci-build",
-      "current": true       
+      "current": true
     },
     {
       "version": "0.1.0",
-      "date": "2021-12-03",
-      "desc": "Patient Cost Transparency Implementation Guide Release 1 - US Realm",
+      "date": "2022-12-04",
+      "desc": "First public ballot - see (http://hl7.org/fhir/us/davinci-pct/2022Jan/index.html)",
       "path": "http://hl7.org/fhir/us/davinci-pct/2022Jan",
-      "status": "draft",
-      "sequence": "STU 1",
-      "fhirversion": "4.0.1",    
-      "current": false    
+      "status": "ballot",
+      "fhirversion": "4.0.1",
+      "sequence": "STU 1"
     }
   ]
 }
