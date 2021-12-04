@@ -1,7 +1,7 @@
 == Suppressed Messages ==
-
-# This error is a tooling issue:
-# Error Found a reference to a CodeSystem (http://terminology.hl7.org/CodeSystem/processpriority) where a ValueSet belongs. Have raised FHIR-34371 per Lloyd's request on Zulip.
+ 
+# Have raised Jira FHIR-34371 per Lloyd's request. See Zulip from Lloyd: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Unsupported.20code.20systems
+Found a reference to a CodeSystem (http://terminology.hl7.org/CodeSystem/processpriority) where a ValueSet belongs
 
 # Warning: Code Systems and Value Sets that are referenced in the guide but not freely available
 Error from server: Unable to provide support for code system https://oidref.com/2.16.840.1.113883.15.5
