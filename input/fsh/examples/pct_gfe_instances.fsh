@@ -89,6 +89,39 @@ Description: "PCT Professional GFE Example 1"
 * total.value = 200.00
 * total.currency = #USD
 
+Instance: PCT-GFE-Institutional-MRI
+InstanceOf: PCTGFEInstitutional
+Description: "PCT Institutional GFE for MRI"
+* extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
+* extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0001"
+* extension[providerEventMethodology].valueString = "EEMM1021"
+* extension[interTransIdentifier].valueIdentifier.value = "InterTransID0001"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
+* extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2022-02-02"
+* status = #active
+* patient = Reference(patient1001)
+* created = "2022-02-02"
+* insurer = Reference(org1001)
+* provider = Reference(org1002)
+* priority = $PROCPRIORITY#normal
+* payee.type.coding = $PAYEETYPE#provider
+* referral.extension[referralNumber].valueString = "REF12022002-122"
+* referral.display = "Referral Number"
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(coverage1001)
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* item.extension[estimatedDateOfService].valueDate = "2022-02-20"
+* item.sequence = 1
+* item.revenue = PCTGFEItemRevenueCS#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
+* item.productOrService = PCTGFEItemProcedureCodes#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.quantity.value = 1
+* item.net.value = 266.00
+* item.net.currency = #USD
+* total.value = 266.00
+* total.currency = #USD
+
 ///////////////////////////////////////////
 
 Instance: PCT-GFE-Bundle-Inst-1
