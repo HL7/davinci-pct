@@ -12,7 +12,7 @@ Alias: COPAYTYPE = http://terminology.hl7.org/CodeSystem/coverage-copay-type
 Alias: COVCLASS = http://terminology.hl7.org/CodeSystem/coverage-class
 Alias: PAYLOADTYPE = http://hl7.org/fhir/resource-types
 Alias: ENDPOINTCONNECTIONTYPE = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
-Alias: CT-ROLE = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTCareTeamRole
+Alias: CTROLE = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTCareTeamRole
 
 ////////////////////////////////////////////
 
@@ -318,10 +318,10 @@ Description: "PCT Institutional GFE Example - Infusion Therapy"
 * referral.display = "Referral Number"
 * careTeam[0].sequence = 1
 * careTeam[0].provider = Reference(prac003)
-* careTeam[0].role = CT-ROLE#referring
+* careTeam[0].role = CTROLE#referring
 * careTeam[1].sequence = 2
 * careTeam[1].provider = Reference(org1005)
-* careTeam[1].role = CT-ROLE#rendering
+* careTeam[1].role = CTROLE#rendering
 * careTeam[1].qualification = NUCC#261QI0500X "Infusion Therapy Clinic/Center"
 * insurance.sequence = 1
 * insurance.focal = true
@@ -383,10 +383,10 @@ Description: "PCT Professional GFE Example - Infusion Therapy"
 * referral.display = "Referral Number"
 * careTeam[0].sequence = 1
 * careTeam[0].provider = Reference(prac003)
-* careTeam[0].role = CT-ROLE#referring
+* careTeam[0].role = CTROLE#referring
 * careTeam[1].sequence = 2
 * careTeam[1].provider = Reference(org1005)
-* careTeam[1].role = CT-ROLE#rendering
+* careTeam[1].role = CTROLE#rendering
 * careTeam[1].qualification = NUCC#261QI0500X "Infusion Therapy Clinic/Center"
 * insurance.sequence = 1
 * insurance.focal = true
