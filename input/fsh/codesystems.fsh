@@ -65,6 +65,7 @@ Description: "Defining codes to report medical procedures and services under pub
 * ^caseSensitive = true
 * #2011 "Revenue Code 1" "This is for testing purpose only - WILL BE REMOVED"
 * #2012 "Revenue Code 2" "This is for testing purpose only - WILL BE REMOVED"
+* #0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTGFEItemProcedureCodes
@@ -73,6 +74,7 @@ Description: "Defining codes to report medical procedures and services under pub
 * ^caseSensitive = true
 * #33502 "Some CPT Code 1" "This is for testing purpose only - WILL BE REMOVED"
 * #34503 "Some CPT Code 2" "This is for testing purpose only - WILL BE REMOVED"
+* #70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)" 
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
