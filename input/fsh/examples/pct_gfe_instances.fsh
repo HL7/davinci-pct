@@ -646,3 +646,100 @@ Description: "An instance of Endpoint"
 * identifier.system = "http://example.org/enpoint-identifier"
 * identifier.value = "epid-1"
 * address = "http://fhir3.healthintersections.com.au/open/CarePlan"
+
+////////////////////////////////////////////
+
+Instance: PCT-GFE-Professional-At-Home-Infusion
+InstanceOf: PCTGFEProfessional
+Description: "PCT Professional GFE Example - At Home Infusion Therapy"
+* extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-2)
+* extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0004"
+* extension[providerEventMethodology].valueString = "EEMM1022"
+* extension[interTransIdentifier].valueIdentifier.value = "InterTransID0004"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
+* status = #active
+* patient = Reference(patient1002)
+* created = "2022-01-07"
+* insurer = Reference(org1003)
+* provider = Reference(org1007)
+* priority = $PROCPRIORITY#normal
+* payee.type.coding = $PAYEETYPE#provider
+* referral.extension[referralNumber].valueString = "REF12022002-122"
+* referral.display = "Referral Number"
+* careTeam[0].sequence = 1
+* careTeam[0].provider = Reference(prac003)
+* careTeam[0].role = CTROLE#referring
+* careTeam[1].sequence = 2
+* careTeam[1].provider = Reference(org1007)
+* careTeam[1].role = CTROLE#rendering
+* careTeam[1].qualification = NUCC#251F00000X "Home Infusion Agency"
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(coverage1002)
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#M06.9 "Rheumatoid arthritis, unspecified"
+* item[0].extension[estimatedDateOfService].valueDate = "2021-10-31"
+* item[0].sequence = 1
+//* item[0].productOrService = PCTGFEItemProcedureCodes#96413 "Chemo administration, intravenous infusion; up to 1 hour, single or initial substance or drug"
+* item[0].productOrService = $HCPCS#G0090 "Adm iv chemo 1st home visit"
+* item[0].locationCodeableConcept = $CMSPOSOID#12 "Home"
+* item[0].quantity.value = 6
+* item[0].unitPrice.value = 319.00
+* item[0].net.value = 1914.00
+* item[0].extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001" 
+* item[0].net.currency = #USD
+* item[1].extension[estimatedDateOfService].valueDate = "2021-10-31"
+* item[1].sequence = 2
+//* item[1].productOrService = PCTGFEItemProcedureCodes#J9312 "Inj., Rituximab, 10 Mg"
+* item[1].productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* item[1].locationCodeableConcept = $CMSPOSOID#12 "Home"
+* item[1].quantity.value = 75
+* item[1].unitPrice.value = 182.70
+* item[1].net.value = 13702.00
+* item[1].extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0002" 
+* item[1].net.currency = #USD
+* item[2].extension[estimatedDateOfService].valueDate = "2021-10-31"
+* item[2].sequence = 3
+//* item[2].productOrService = PCTGFEItemProcedureCodes#J9260 "Methotrexate sodium, 50 mg"
+* item[2].productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
+* item[2].locationCodeableConcept = $CMSPOSOID#12 "Home"
+* item[2].quantity.value = 1
+* item[2].unitPrice.value = 23.00
+* item[2].net.value = 23.00
+* item[2].extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0003" 
+* item[2].net.currency = #USD
+* total.value = 15639.00
+* total.currency = #USD
+
+///////////////////////////////////////////
+
+Instance: PCT-GFE-Bundle-Prof-At-Home-Infusion
+InstanceOf: PCTGFEBundle
+Description: "PCT GFE Bundle Professional Example - At Home Infusion Therapy"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-34584958"
+* timestamp = "2022-01-07T11:01:00+05:00"
+* entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Prof-At-Home-Example-Inf"
+* entry[gfeProfessional].id = "PCT-GFE-Prof-At-Home-Example-Inf"
+* entry[gfeProfessional].resource = PCT-GFE-Professional-At-Home-Infusion
+
+///////////////////////////////////////////
+
+Instance: org1007
+InstanceOf: PCTOrganization
+Description: "An instance of PCTOrganization as a healthcare provider"
+* type = $ORGTYPE#prov "Healthcare Provider"
+* identifier[NPI].value = "9998887653"
+* name = "Happy Harry’s Home Infusion Services"
+* active = true
+* extension[ProviderTaxonomy].valueCodeableConcept = NUCC#251F00000X "Home Infusion Agency"
+* telecom.system = #phone
+* telecom.value = "781-232-4207"
+* telecom.use = #work
+* address.line = "137 Fruit Street"
+* address.city = "Boston"
+* address.state = "MA"
+* address.postalCode = "02114"
+* address.country = "US"
+* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
+* partOf = Reference(org1006)
