@@ -63,7 +63,7 @@ Assumptions:<br>
 <table border="1">
     <tr>
         <th><b>Term</b></th>
-        <th><b>Proposed Definition</b></th>
+        <th><b>Definition</b></th>
     </tr>
     <tr>
         <td>AEOB</td>
