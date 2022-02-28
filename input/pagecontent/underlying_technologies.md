@@ -33,3 +33,11 @@ Provider billing and payer claims adjudication systems SHALL use the specificati
 
 Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support](http://hl7.org/fhir/us/core/general-guidance.html#must-support) Guidance where US Core IG resources are used.
 
+<blockquote class="stu-note">
+<p>
+This has been updated to reflect Jira ticket <a href="https://jira.hl7.org/browse/FHIR-34976">FHIR-34976</a> which is pending a block vote as of 2-28-2022.
+</p>
+</blockquote>
+### Da Vinci HRex
+Provider billing and payer systems SHALL use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/) when exchanging information, as defined by [the Privacy and Security section of this IG](formal_specification.html#privacy--security-considerations). Implementers should be familiar with this specification.
+
