@@ -39,6 +39,8 @@ pages:
     title: Formal Specification
   terminology_licensure.md:
     title: Terminology Licensure
+  downloads.md:
+    title: Downloads
   credits.md:
     title: Credits
   #artifacts.md:
@@ -60,7 +62,6 @@ menu:
     Formal Specification: formal_specification.html    
     Terms and Concepts: use_cases.html#terms-and-concepts    
     Terminology Licensure: terminology_licensure.html
-    Downloads: index.html#downloads
     Credits: credits.html
 
   FHIR Artifacts:
@@ -71,8 +72,12 @@ menu:
     Code Systems: artifacts.html#5
     Examples: artifacts.html#6
 
+  Downloads:
+    Downloads: downloads.html
+ 
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
     US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
+    HRex: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci_hrex}}
 
   History: http://hl7.org/fhir/us/davinci-pct/history.html
