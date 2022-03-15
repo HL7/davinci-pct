@@ -17,7 +17,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * insurer only Reference(PCTOrganization)
 
 // need provider's TAX ID
-* provider only Reference(PCTOrganization)
+* provider only Reference(PCTOrganization or PCTPractitionerRole)
 // * provider.extension contains ProviderContractingStatus named contractingStatus 1..1 MS
 // * provider.extension contains ProviderContractingRate named contractingRate 0..1 MS
 * provider.extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
