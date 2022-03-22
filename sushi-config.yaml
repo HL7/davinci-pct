@@ -28,6 +28,9 @@ copyrightYear: 2021+
 releaseLabel: STU 1 Ballot 
 jurisdiction: urn:iso:std:iso:3166#US
 
+parameters:   
+  show-inherited-invariants: false
+
 pages:
   index.md:
     title: Patient Cost Transparency Implementation Guide Home Page

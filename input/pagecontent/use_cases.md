@@ -112,23 +112,11 @@ Assumptions:<br>
      <tr>
         <td>Deductible</td>
         <td>The amount you pay for covered health care services before your insurance plan starts to pay. With a $2,000 deductible, for example, you pay the first $2,000 of covered services yourself. After you pay your deductible, you usually pay only a copayment or coinsurance for covered services. </td>
-    </tr>   
-    <tr>
-        <td>De-identified minimum negotiated charge</td>
-        <td>The lowest charge that a hospital has negotiated with all third-party payers for an item or service. </td>
-    </tr>
-    <tr>
-        <td>De-identified maximum negotiated charge</td>
-        <td>The highest charge that a hospital has negotiated with all third-party payers for an item or service. </td>
-    </tr>    
+    </tr>     
     <tr>
         <td>EOB<br/>Explanation of Benefits</td>
         <td>An EOB is a statement from a health insurance plan describing what costs it will cover for medical care or products received. </td>
-    </tr>
-    <tr>
-        <td>Fee Schedule</td>
-        <td>A complete listing of fees used by Medicare and commercial payers to pay doctors or other providers/suppliers. This comprehensive listing of fee maximums is used to reimburse a physician and/or other providers on a fee-for-service basis. </td>
-    </tr>   
+    </tr> 
     <tr>
         <td>GFE</td>
         <td>Good Faith Estimate</td>
