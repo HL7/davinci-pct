@@ -147,8 +147,6 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * supportingInfo[typeOfBill].code from PCTGFETypeOfBillVS (required)
 
 * item 1..999 MS
-* item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
-* item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 
 * item.revenue 1..1 MS

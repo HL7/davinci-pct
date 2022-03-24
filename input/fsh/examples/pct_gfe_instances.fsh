@@ -40,7 +40,6 @@ Description: "PCT Institutional GFE Example 1"
 * insurance.coverage = Reference(coverage1001)
 * diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
-* item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
 * item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
@@ -112,7 +111,6 @@ Description: "PCT Institutional GFE for MRI"
 * insurance.coverage = Reference(coverage1001)
 * diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
-* item.extension[estimatedDateOfService].valueDate = "2022-02-20"
 * item.sequence = 1
 * item.revenue = PCTGFEItemRevenueCS#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = PCTGFEItemProcedureCodes#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
