@@ -23,7 +23,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
-* use = #claim
+* use = #predetermination
 * patient = Reference(patient1001)
 * created = "2021-10-12"
 

@@ -10,6 +10,11 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * extension contains ProviderContractingRate named providerContractingRate 0..1 MS
 //* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
+* status MS
+* use MS
+// * use from $CLAIMUSEVS (required)
+* use = $CLAIMUSECS#predetermination "predetermination"
+
 * patient MS
 * patient only Reference(PCTPatient)
 
@@ -17,7 +22,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * insurer only Reference(PCTOrganization)
 
 // need provider's TAX ID
-* provider only Reference(PCTOrganization or PCTPractitionerRole)
+* provider only Reference(PCTPractitioner or PCTOrganization or PCTPractitionerRole)
 // * provider.extension contains ProviderContractingStatus named contractingStatus 1..1 MS
 // * provider.extension contains ProviderContractingRate named contractingRate 0..1 MS
 * provider.extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
@@ -67,8 +72,8 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * extension contains SubjectToMedicalMgmtDisclaimer named subjectToMedicalMgmtDisclaimer 0..1 MS
 // * extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
 
-* extension contains ExpirationDate named expirationDate 1..1 MS
-* extension[expirationDate] ^short = "Once the AEOB is complete and formally issued it is good until this date."
+// * extension contains ExpirationDate named expirationDate 1..1 MS
+// * extension[expirationDate] ^short = "Once the AEOB is complete and formally issued it is good until this date."
 
 * total 1..* MS
 // * insert TotalSlicing

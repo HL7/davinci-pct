@@ -43,7 +43,7 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 
 * period 1..1 MS
 
-* costToBeneficiary MS
+* costToBeneficiary
 * costToBeneficiary.type from PCTCoverageCopayTypeVS (required)
 
 //* contract 1..* MS

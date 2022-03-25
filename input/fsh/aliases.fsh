@@ -33,6 +33,7 @@ Alias:   $ORGTYPE = http://terminology.hl7.org/CodeSystem/organization-type
 Alias:   $PAYEETYPE = http://terminology.hl7.org/CodeSystem/payeetype
 Alias:   $PROCPRIORITY = http://terminology.hl7.org/CodeSystem/processpriority
 Alias:   $NUBCREVENUE = https://www.nubc.org/CodeSystem/RevenueCodes
+Alias:   $CLAIMUSECS = http://hl7.org/fhir/claim-use
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type
@@ -46,6 +47,7 @@ Alias:   $ISO3166-P2-CSC-VS = http://terminology.hl7.org/ValueSet/v2-notAllCodes
 //Alias:   $ADJUDVS = http://hl7.org/fhir/ValueSet/adjudication
 Alias:   $PROCPRIORITYVS = http://hl7.org/fhir/ValueSet/process-priority
 Alias:   $AMACPTALL = http://hl7.org/fhir/ValueSet/cpt-all
+Alias:   $CLAIMUSEVS = http://hl7.org/fhir/ValueSet/claim-use
 
 //// CARIN-BB ////
 Alias:   $AHANUBCRevenueCodes = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCRevenueCodes
