@@ -81,7 +81,7 @@ Assumptions:<br>
     </tr>
      <tr>
         <td>Coinsurance</td>
-        <td>The percentage of costs of a covered health care service you pay (20%, for example) after a member has paid the deductible. </td>
+        <td>The percentage of costs of a covered health care service that is paid (20%, for example) after a member has paid the deductible. </td>
     </tr>
     <tr>
         <td>Collection of Services</td>
@@ -89,7 +89,7 @@ Assumptions:<br>
     </tr>    
      <tr>
         <td>Copayment</td>
-        <td>A fixed amount ($20, for example) you pay for a covered health care service after you've paid your deductible. Let's say your health insurance plan's allowable cost for a doctor's office visit is $100. Your copayment for a doctor visit is $20. </td>
+        <td>A fixed amount ($20, for example) that is paid for a covered health care service after the deductible has been paid. For example, a health insurance plan's allowable cost for a doctor's office visit is $100 and the copayment for a doctor visit is $20. </td>
     </tr>
      <tr>
         <td>Cost</td>
@@ -106,7 +106,7 @@ Assumptions:<br>
     </tr>
      <tr>
         <td>Deductible</td>
-        <td>The amount you pay for covered health care services before your insurance plan starts to pay. With a $2,000 deductible, for example, you pay the first $2,000 of covered services yourself. After you pay your deductible, you usually pay only a copayment or coinsurance for covered services. </td>
+        <td>The amount that is paid for covered health care services before the insurance plan starts to pay. With a $2,000 deductible, for example, the first $2,000 of covered services is paid by the member out-of-pocket. After the deductible is paid, the member usually pays only a copayment or coinsurance for covered services. </td>
     </tr>     
     <tr>
         <td>EOB<br/>Explanation of Benefits</td>
