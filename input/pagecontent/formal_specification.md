@@ -24,7 +24,7 @@ This implementation guide sets expectations for at least two types of systems:
 
 * **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. These systems determine if a provider is in or out of network, verifies patient eligibility, applies contracted amounts (the provider’s network status needs to be confirmed), and applies member cost sharing amounts. 
 
-* **Payer Intermediary** The payer intermediary can assist a payer and respond to PCT queries in order to perform functionality such as x12 transformations.
+* **Intermediary** The payer or the provider may have the relationship with the intermediary.  Some payers do not contract with a clearinghouse; others do.  Providers can either contract with a Practice Management system who has the relationship with the clearinghouse or in some cases contracts directly with the clearinghouse through their Practice Management software.
 
 #### System Actors
 
