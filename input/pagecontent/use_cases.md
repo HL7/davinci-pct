@@ -85,8 +85,7 @@ Assumptions:<br>
     </tr>
     <tr>
         <td>Collection of Services</td>
-        <td>The list of services expected to be performed as part of gathering the good faith estimate. <p>Note: Purposely not using loaded words like "grouper" or "episode"</p>
-            <p>Note: this may span across Providers (NPIs)</p></td>
+        <td>The list of services expected to be performed during the period of care as part of gathering the Good Faith Estimate for the expected charges, billing and diagnostic codes for one or multiple providers.</td>
     </tr>    
      <tr>
         <td>Copayment</td>
