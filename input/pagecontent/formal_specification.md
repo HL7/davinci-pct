@@ -143,18 +143,3 @@ Some of the data shared as part of the AEOB process may have associated constrai
 In order to access information about an AEOB, the provider system will need to access the payor system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication are covered is handled within the Da Vinci HRex Implementation guide. PCT Servers SHOULD support server-server OAuth and MAY support mutually authenticated TLS. In a future release of this guide, direction will limit the option to server-server OAuth. Every system claiming conformance to this IG SHALL meet the requirements defined in the [Security and Privacy section of the Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html). The FHIR implementer’s [Safety Checklist](http://hl7.org/fhir/R4/safety.html) helps implementers be sure that they have considered all the parts of FHIR that impact their system design regarding privacy, security, provenance, and safety.
 
 Once the system authentication has occurred, the payer will perform any authorization required for the provider to see the current state of the AEOB.
-
-### Testing Requirements
-It is the intent of this implementation guide to provide specifications for the exchange of patient costs in a way that is conducive to developing test scripts and a reference implementation (RI) that can be used to validate/exercise the IG at Connectathons, during piloting, and production deployment. 
-
-It is also the intent of this guide that any test scripts will include testing of: 
-
-1. resources and profiles defined in this guide
-2. artifacts use from referenced IGs and
-3. testing of conformance to the underlying FHIR standards for the associated release (e.g., FHIR R4). 
-
-<!--### TODO
-
- 
--->
-
