@@ -37,7 +37,7 @@ Assumptions:<br>
 • This is clinically appropriate (Clinical Decision Support (CDS) Score) <br> 
 • Service Location is known (e.g., Address) <br> 
 • All providers are in network - PCP, imaging facility, and reading radiologist<br> 
-• If a medical management technique, such as Prior Authorization is required, a disclaimer indicating this will be included in the Advanced EOB and does not impact the GFE, per the No Surprises Act (Section 111(a)(f)(1)(F)).
+• While medical management techniques (such as prior auth) will be included as a disclaimer when applicable in the AEOB returned to the member, the actual process of meeting medical management requirements is separate from the process of creating an AEOB. For details see the Terms and Concepts section of this IG.
 
 1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551). 
 2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department. 
