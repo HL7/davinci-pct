@@ -52,13 +52,13 @@ This has been updated to reflect Jira ticket <a href="https://jira.hl7.org/brows
 ### Detailed Requirements 
 
 #### Summary 
-FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These are distinguished by the Claim.use code. All references to Claim and EOB in this IG are using it for the Advanced Explanation of Benefits (AEOB) purpose.
+FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These uses are distinguished by the Claim.use and ExplanationOfBenefit.use code. All references to Claim and EOB in this IG are using it for the Advanced Explanation of Benefits (AEOB) purpose.
 
 The primary interaction supported by this implementation guide is submitting an AEOB request and receiving an AEOB response. To perform this, a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html). 
 
 The GFE Bundle will be sent as the sole payload of a [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation. The response will be an AEOB Bundle which will contain a Bundle.identifier. The Bundle.identifier is important because the response will happen in an asynchronous fashion.
 
-The AEOB(s) will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB(s) are complete. Below are the outcomes that SHOULD be used to determine if the AEOB(s) are complete.   
+The AEOB(s) will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server in order to determine if the AEOB(s) are complete. Below are the outcomes that **SHOULD** be used to determine if the AEOB(s) are complete.   
 
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome). 
@@ -76,29 +76,29 @@ The below illustrates what is contained in the GFE and AEOB bundles. For full de
 
 ![AEOB Bundle](AEOB_Bundle.png){:style="float: none;"}
 
-> Note: The AEOB bundle SHALL contain one or more AEOBs. Each AEOB SHALL contain a reference to the original GFE bundle.
+> Note: The AEOB bundle **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original GFE bundle.
 
 #### AEOB Request 
-The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle SHALL be encoded in JSON. The GFE FHIR Bundle will include one or more claim resources. The GFE profiles used for the claim resources can be [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries SHALL be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it SHALL only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance is created - referenced from multiple places as appropriate. 
+The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle **SHALL** be encoded in JSON. The GFE FHIR Bundle will include one or more claim resources. The GFE profiles used for the claim resources can be [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries **SHALL** be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance is created - referenced from multiple places as appropriate. 
 
-Bundle.entry.fullUrl values SHALL be:<br>
+Bundle.entry.fullUrl values **SHALL** be:<br>
 • the URL at which the resource is available from the Billing Management System if exposed via the client’s REST interface;<br> 
 or<br>
 • the form “urn:uuid:[some guid]”
 
-All GUIDs used SHALL be unique, including across independent GFE submissions - with the exception that the same resource instance being referenced in distinct AEOB request Bundles can have the same GUID.
+All GUIDs used **SHALL** be unique, including across independent GFE submissions - with the exception that the same resource instance being referenced in distinct AEOB request Bundles can have the same GUID.
 
-In addition to these core elements, any “supporting information” resources needed to process the AEOB request must also be included in the Bundle. Relevant resources referenced by those “supporting information” resources SHALL also be included. Any such resource that has a US Core profile SHALL comply with the relevant US Core profiles. All “supporting information” resources included in the Bundle SHALL be pointed to by the GFE resource using the GFE.supportingInfo.valueReference element. 
+In addition to these core elements, any “supporting information” resources needed to process the AEOB request must also be included in the Bundle. Relevant resources referenced by those “supporting information” resources **SHALL** also be included. Any such resource that has a US Core profile **SHALL** comply with the relevant US Core profiles. All “supporting information” resources included in the Bundle **SHALL** be pointed to by the GFE resource using the GFE.supportingInfo.valueReference element. 
 
-To attach PDFs, CDAs, JPGs, a DocumentReference instance should be used. The GFE.supportingInfo.sequence for each entry SHALL be unique within the GFE.
+To attach PDFs, CDAs, JPGs, a DocumentReference instance should be used. The GFE.supportingInfo.sequence for each entry **SHALL** be unique within the GFE.
 
-All resources SHALL comply with their respective profiles. FHIR elements not marked as ‘must support’ MAY be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made. Systems that do not process such elements SHALL ignore unsupported elements unless they are ‘modifier’ elements, in which case the system MAY treat the presence of the element as an error.
+All resources **SHALL** comply with their respective profiles. FHIR elements not marked as ‘must support’ **MAY** be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made. Systems that do not process such elements **SHALL** ignore unsupported elements unless they are ‘modifier’ elements, in which case the system **MAY** treat the presence of the element as an error.
 This IG treats everything that happens beyond the defined operations endpoint receiving the FHIR bundle as a black box. This black box includes any business associate(s), clearinghouse(s), payers, contracted review entities, and other intermediaries that may be involved in the AEOB request and response. It is up to that black box to ensure that any other requirements are met and to perform all processing within the allowed timeframe.
 
 #### AEOB response
-Just like the AEOB request, additional Bundle entries must be present for all resources referenced by the AEOB Response or descendent references. When converting additional Bundle entries, the conversion process SHALL ensure that only one resource is created for a given combination of content. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. When echoing back resources that are the same as were present in the AEOB request, the system SHALL ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
+Just like the AEOB request, additional Bundle entries must be present for all resources referenced by the AEOB Response or descendent references. When converting additional Bundle entries, the conversion process **SHALL** ensure that only one resource is created for a given combination of content. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. When echoing back resources that are the same as were present in the AEOB request, the system **SHALL** ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
 
-It is possible that the incoming Bundle cannot be processed due to validation errors or other non-business-errors. In these instances, the receiving system SHALL return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB Response will be returned. 
+It is possible that the incoming Bundle cannot be processed due to validation errors or other non-business-errors. In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB Response will be returned. 
 
 <blockquote class="stu-note">
 <p>
@@ -119,7 +119,7 @@ In this approach, the Client regularly queries the Server to see if the status o
 
 This is done by performing the [AEOB query]( formal_specification.html#aeob-query) several times. The details are described below.
 
-Clients SHALL perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. They SHOULD perform this query at least once every 12 hours. Clients SHALL support manual invocation of the query by users. There are no constraints on frequency of manual queries.
+Clients **SHALL** perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. They **SHOULD** perform this query at least once every 12 hours. Clients **SHALL** support manual invocation of the query by users. There are no constraints on frequency of manual queries.
 
 <blockquote class="stu-note">
 <p>
@@ -127,7 +127,7 @@ The project is seeking feedback on whether these maximum frequency requirements 
 </p>
 </blockquote>
 
-Note: The returned AEOB bundle SHALL include the current results for all submitted items and/or services. 
+Note: The returned AEOB bundle **SHALL** include the current results for all submitted items and/or services. 
 
 #### AEOB Request / Response example 
 
@@ -140,6 +140,6 @@ The sharing of information from provider to payer for determining an AEOB is sub
 
 Some of the data shared as part of the AEOB process may have associated constraints on the use of that information for other purposes, including subsequent disclosure to other payers, practitioners, policyholders, etc. While HL7 FHIR supports conveying this information via security labels on transmitted resources, this information is not currently mappable (and thus findable) in the X12 837 transactions. Payers who do not view the FHIR version of the transmitted information should be aware of the possibility of these limitations and ensure they have policies that enforce appropriate sharing constraints on data.
 
-In order to access information about an AEOB, the provider system will need to access the payor system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication are covered is handled within the Da Vinci HRex Implementation guide. PCT Servers SHOULD support server-server OAuth and MAY support mutually authenticated TLS. In a future release of this guide, direction will limit the option to server-server OAuth. Every system claiming conformance to this IG SHALL meet the requirements defined in the [Security and Privacy section of the Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html). The FHIR implementer’s [Safety Checklist](http://hl7.org/fhir/R4/safety.html) helps implementers be sure that they have considered all the parts of FHIR that impact their system design regarding privacy, security, provenance, and safety.
+In order to access information about an AEOB, the provider system will need to access the payer system. This will require that the provider system authenticates to the payer system or an intermediary. The specifics of how this authentication are covered is handled within the Da Vinci HRex Implementation guide. PCT Servers **SHOULD** support server-server OAuth and **MAY** support mutually authenticated TLS. In a future release of this guide, direction will limit the option to server-server OAuth. Every system claiming conformance to this IG **SHALL** meet the requirements defined in the [Security and Privacy section of the Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html). The FHIR implementer’s [Safety Checklist](http://hl7.org/fhir/R4/safety.html) helps implementers be sure that they have considered all the parts of FHIR that impact their system design regarding privacy, security, provenance, and safety.
 
 Once the system authentication has occurred, the payer will perform any authorization required for the provider to see the current state of the AEOB.
