@@ -145,7 +145,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.productOrService from PCTGFEItemCptHcpcsVS (required)
 * item.productOrService ^comment = "Must be provided with an actual CPT/HCPCS value. Can’t be null or N/A or data absent reason."
 
-* item.net 1..1 MS
+* item.unitPrice 1..1 MS
+* item.net 0..1
 * item.quantity 1..1 MS
 
 * item.locationCodeableConcept 1..1 MS
@@ -163,5 +164,5 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.detail.extension[compoundDrugLinkingNumber] ^definition = "Way of linking multiple components of a drug. Could be a prescription number or a identifier created by the  provider if no prescription number is available."
 * item.detail.extension[compoundDrugLinkingNumber] ^comment = "Allows the sender to link multiple drug components together for billing purposes."
 
-* total 1..1
+* total 1..1 MS
 * total ^short = "Total GFE Charges Submitted"

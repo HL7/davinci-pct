@@ -161,7 +161,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 //* item.productOrService obeys GFE-inst-item-productorservice
 * item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."
 
-* item.net 1..1 MS
+* item.unitPrice MS
+* item.net 0..1
 * item.quantity 1..1 MS
 
 * item.locationCodeableConcept MS
@@ -179,5 +180,5 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.detail.extension[compoundDrugLinkingNumber] ^definition = "Way of linking multiple components of a drug. Could be a prescription number or a identifier created by the  provider if no prescription number is available."
 * item.detail.extension[compoundDrugLinkingNumber] ^comment = "Allows the sender to link multiple drug components together for billing purposes."
 
-* total 1..1
+* total 1..1 MS
 * total ^short = "Total GFE Charges Submitted"
