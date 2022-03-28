@@ -79,10 +79,6 @@ Assumptions:<br>
             <p>The Consolidated Appropriations Act continued many of these programs by adding new phases, new allocations, and new guidance to address issues related to the continuation of the COVID-19 pandemic. </p>
             <p>The Consolidated Appropriations Act (2021) was passed by Congress on December 21, 2020 and signed into law on December 27, 2020. </p></td>
     </tr>
-    <tr>
-        <td>CDM<br/>Chargemaster</td>
-        <td>Also called the Charge Description Master. <p>A comprehensive listing of items billable to a hospital patient or a patient's health insurance provider. ... The chargemaster typically serves as the starting point for negotiations with patients and health insurance providers of what amount of money will actually be paid to the hospital. It is described as "the central mechanism of the revenue cycle" of a hospital. </p></td>
-    </tr>
      <tr>
         <td>Coinsurance</td>
         <td>The percentage of costs of a covered health care service you pay (20%, for example) after a member has paid the deductible. </td>
