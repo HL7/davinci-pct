@@ -82,6 +82,7 @@ Description: "PCT Professional GFE Example 1"
 * item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
 * item.locationCodeableConcept = $CMSPOSOID#21 "Inpatient Hospital"
 * item.quantity.value = 1
+* item.unitPrice.value = 200.00
 * item.net.value = 200.00
 * item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001" 
 * item.net.currency = #USD

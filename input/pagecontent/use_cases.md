@@ -37,7 +37,7 @@ Assumptions:<br>
 • This is clinically appropriate (Clinical Decision Support (CDS) Score) <br> 
 • Service Location is known (e.g., Address) <br> 
 • All providers are in network - PCP, imaging facility, and reading radiologist<br> 
-• If a medical management technique, such as Prior Authorization is required, a disclaimer indicating this will be included in the Advanced EOB and does not impact the GFE, per the No Surprises Act (Section 111(a)(f)(1)(F)).
+• While medical management techniques (such as prior auth) will be included as a disclaimer when applicable in the AEOB returned to the member, the actual process of meeting medical management requirements is separate from the process of creating an AEOB. For details see the Terms and Concepts section of this IG.
 
 1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551). 
 2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department. 
@@ -79,22 +79,17 @@ Assumptions:<br>
             <p>The Consolidated Appropriations Act continued many of these programs by adding new phases, new allocations, and new guidance to address issues related to the continuation of the COVID-19 pandemic. </p>
             <p>The Consolidated Appropriations Act (2021) was passed by Congress on December 21, 2020 and signed into law on December 27, 2020. </p></td>
     </tr>
-    <tr>
-        <td>CDM<br/>Chargemaster</td>
-        <td>Also called the Charge Description Master. <p>A comprehensive listing of items billable to a hospital patient or a patient's health insurance provider. ... The chargemaster typically serves as the starting point for negotiations with patients and health insurance providers of what amount of money will actually be paid to the hospital. It is described as "the central mechanism of the revenue cycle" of a hospital. </p></td>
-    </tr>
      <tr>
         <td>Coinsurance</td>
-        <td>The percentage of costs of a covered health care service you pay (20%, for example) after a member has paid the deductible. </td>
+        <td>The percentage of costs of a covered health care service that is paid (20%, for example) after a member has paid the deductible. </td>
     </tr>
     <tr>
         <td>Collection of Services</td>
-        <td>The list of services expected to be performed as part of gathering the good faith estimate. <p>Note: Purposely not using loaded words like "grouper" or "episode"</p>
-            <p>Note: this may span across Providers (NPIs)</p></td>
+        <td>The list of services expected to be performed during the period of care as part of gathering the Good Faith Estimate for the expected charges, billing and diagnostic codes for one or multiple providers.</td>
     </tr>    
      <tr>
         <td>Copayment</td>
-        <td>A fixed amount ($20, for example) you pay for a covered health care service after you've paid your deductible. Let's say your health insurance plan's allowable cost for a doctor's office visit is $100. Your copayment for a doctor visit is $20. </td>
+        <td>A fixed amount ($20, for example) that is paid for a covered health care service after the deductible has been paid. For example, a health insurance plan's allowable cost for a doctor's office visit is $100 and the copayment for a doctor visit is $20. </td>
     </tr>
      <tr>
         <td>Cost</td>
@@ -111,7 +106,7 @@ Assumptions:<br>
     </tr>
      <tr>
         <td>Deductible</td>
-        <td>The amount you pay for covered health care services before your insurance plan starts to pay. With a $2,000 deductible, for example, you pay the first $2,000 of covered services yourself. After you pay your deductible, you usually pay only a copayment or coinsurance for covered services. </td>
+        <td>The amount that is paid for covered health care services before the insurance plan starts to pay. With a $2,000 deductible, for example, the first $2,000 of covered services is paid by the member out-of-pocket. After the deductible is paid, the member usually pays only a copayment or coinsurance for covered services. </td>
     </tr>     
     <tr>
         <td>EOB<br/>Explanation of Benefits</td>

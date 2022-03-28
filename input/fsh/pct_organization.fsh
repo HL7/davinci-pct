@@ -20,7 +20,7 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
 * identifier[ETIN] ^short = "Electronic Transmitter Identification Number."
 
-* identifier[TAX] ^patternIdentifier.type = V2-0203#TAX "Tax ID number"
+* identifier[TAX] ^patternIdentifier.type = $V2-0203#TAX "Tax ID number"
 * identifier[TAX] ^short = "Tax ID Number"
 
 * identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI "National provider identifier"
