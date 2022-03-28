@@ -12,7 +12,6 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * status MS
 * use MS
-// * use from $CLAIMUSEVS (required)
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 * patient MS
