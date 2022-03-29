@@ -47,7 +47,6 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * referral.extension[referralNumber] ^short = "Referral Number"
 
 * facility MS
-* facility only Reference(PCTLocation)
 
 * insurance.coverage MS
 * insurance.coverage only Reference(PCTCoverage)
