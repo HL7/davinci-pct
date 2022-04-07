@@ -93,10 +93,6 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * procedure[anesthesiaRelated].procedure[x] MS
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
-* procedure[other].type = PCTProcedureType#other
-* procedure[other].procedure[x] MS
-* procedure[other].procedure[x] only CodeableConcept
-* procedure[other].procedure[x] from PCTProcedureSurgicalCodes
 
 * insert CareTeamSlicing
 //* careTeam 0..* MS
