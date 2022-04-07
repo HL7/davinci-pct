@@ -67,7 +67,7 @@ Assumptions:<br>
     </tr>
     <tr>
         <td>AEOB</td>
-        <td>The No Surprises Act requires that group health plans and insurers provide advance cost estimates, called Advanced Explanations of Benefits (AEOBs), for scheduled services. </td>
+        <td>The Consolidated Appropriations Act includes provisions whereby group health plans and health insurance issuers, based on charges, billing and diagnostic codes provided by the provider(s), provide an Advanced EOB for scheduled services or upon request to give patients transparency into their estimated healthcare costs. AEOBs need to include which providers are expected to provide treatment, the network status of providers, good faith estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates; for example a disclaimer that the information provided in the notification is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) and is subject to change. For a complete breakdown of what needs to be included in the AEOB see 42 U.S. Code 300gg-111(f)(1)(A) through (H).</td>
     </tr>
     <tr>
         <td>Allowed Amount</td>
