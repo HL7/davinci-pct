@@ -268,7 +268,7 @@ InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization as a healthcare provider"
 * type = $ORGTYPE#prov "Healthcare Provider"
 * identifier[NPI].value = "1234568095"
-* identifier[TAX].value = "TAX-3211001"
+* identifier[tin].value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true
 * extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"

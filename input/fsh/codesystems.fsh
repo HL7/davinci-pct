@@ -4,6 +4,7 @@ Title: "PCT Organization Identifier Type Code System"
 Description: "Identifier Type codes for defining the type of identifier payers and providers assign to organizations"
 * ^caseSensitive = true
 * #ETIN "Electronic Transmitter Identification Number" "Electronic Transmitter Identification Number"
+* #tin "TAX ID Number" "TAX ID Number"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTOrganizationTypeCS

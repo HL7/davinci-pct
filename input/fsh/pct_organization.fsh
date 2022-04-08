@@ -13,15 +13,14 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier ^slicing.ordered = false   // can be omitted, since false is the default
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
-   ETIN 0..1 MS and
-   TAX 0..1 MS
+   ETIN 0..1 MS
 * identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
 //* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number" <<<<<WOULD CAUSE slicing errors
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
 * identifier[ETIN] ^short = "Electronic Transmitter Identification Number."
 
-* identifier[TAX] ^patternIdentifier.type = $V2-0203#TAX "Tax ID number"
-* identifier[TAX] ^short = "Tax ID Number"
+* identifier[tin] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#tin "Tax ID number"
+* identifier[tin] ^short = "Tax ID Number"
 
 * identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI "National provider identifier"
 //* identifier[NPI].value 1..1
