@@ -134,8 +134,6 @@ Note: The returned AEOB bundle **SHALL** include the current results for all sub
 Example bundles can be found [here](use_cases.html#example)
 
 ### Privacy & Security Considerations
-The profiles in this IG are defined to ensure sufficient information to properly populate the X12 specifications, though they also allow for additional data to be present. As well, the data elements in the X12 specifications are allowed to be omitted - what data is required by the payer to process an AEOB request is context and business-rule-specific. Implementers submitting AEOB requests are not required to use X12. X12 has only been used to inform the FHIR based data elements in this IG.
-
 The sharing of information from provider to payer for determining an AEOB is subject to HIPAA's "minimum necessary" regulations (specifically 45 CFR 164.514(d)(3) and (d)(4)). Payers are responsible for ensuring that only information necessary to create an AEOB is solicited, and providers are responsible for ensuring that only data that is reasonably relevant to creating an AEOB is transmitted.
 
 Some of the data shared as part of the AEOB process may have associated constraints on the use of that information for other purposes, including subsequent disclosure to other payers, practitioners, policyholders, etc. While HL7 FHIR supports conveying this information via security labels on transmitted resources, this information is not currently mappable (and thus findable) in the X12 837 transactions. Payers who do not view the FHIR version of the transmitted information should be aware of the possibility of these limitations and ensure they have policies that enforce appropriate sharing constraints on data.

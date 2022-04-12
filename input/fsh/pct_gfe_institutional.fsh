@@ -24,7 +24,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifer for the services in this claim resource to be used in back-end processes."
 
 * type = $ClaimTypeCS#institutional "Institutional"
-* use = #predetermination
+* status MS
+* use MS
+* use = $CLAIMUSECS#predetermination "predetermination"
 
 * patient MS
 * patient only Reference(PCTPatient)
