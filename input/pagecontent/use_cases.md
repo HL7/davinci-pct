@@ -42,15 +42,15 @@ Assumptions:<br>
 1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551). 
 2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department. 
 3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present. 
-4.  The next day, Eve calls the radiology facility (Office of Dr. Christine Curie, NPI - 1234567893) to schedule her brain MRI, CPT 70551 and provide her coverage information, which she plans to use. 
+4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551 and provide her coverage information, which she plans to use. 
 5.  The MRI is scheduled for 9 days from today. This triggers the process for an Advanced EOB (AEOB) to be created. 
 6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately. 
-7.  The ABC’s Radiology Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the Good Faith Estimate (GFE) for costs and services. 
+7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the Good Faith Estimate (GFE) for the expected charges with the expected billing and diagnostic codes. 
 8.  This information is sent to the payer. 
-9.  The payer receives the GFE, adjudicates it to determine patient costs and sends the AEOB (including the GFE) securely to Eve. 
+9.  The payer receives the GFE. Within one business day the payer adjudicates it and sends the Good Faith Estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates as an AEOB securely to Eve. 
 10. Optionally, the payer also sends a response to ABC’s Radiology Office Administrator with the same cost estimate information. 
 11. Eve receives the AEOB from her payer based on the information provided by ABC Radiology. 
-12. Optionally, Eve or any interested party could query for the AEOB using the Bundle.identifier and auth token. 
+12. Optionally, Eve or an authorized user could use their 3rd party app to query for the AEOB via API (if supported by their payer). 
 
 ##### MRI Examples  
 
