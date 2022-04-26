@@ -52,5 +52,7 @@ Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts).
 
 ![AEOB Interaction Diagram](AEOB-interaction.drawio.png){:style="float: none;"}
 
+**Figure 1: Advanced EOB Interactions**
+
 
 

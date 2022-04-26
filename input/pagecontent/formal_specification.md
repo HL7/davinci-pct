@@ -74,7 +74,11 @@ The below illustrates what is contained in the GFE and AEOB bundles. For full de
 
 ![GFE Bundles](GFE_Bundle.png){:style="float: none;"}
 
+**Figure 1: GFE Bundles**
+
 ![AEOB Bundle](AEOB_Bundle.png){:style="float: none;"}
+
+**Figure 2: AEOB Bundle**
 
 > Note: The AEOB bundle **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original GFE bundle.
 

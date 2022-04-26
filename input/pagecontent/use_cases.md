@@ -6,6 +6,8 @@ The below describes the process of initiating the creation of an AEOB and the pr
 
 ![Submit AEOB Request to Payer](SubmitAEOB.drawio.png){:style="float: none;"}
 
+**Figure 1: Submit AEOB Request**
+
 1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
 2. The provider uses the gfe-submit operation to submit the GFE bundle to the payer or payer intermediary endpoint. This is a POST request. 
@@ -19,6 +21,8 @@ Note: The translation from FHIR to X12 and back to FHIR is not required to be co
 #### Get completed AEOB from payer
 
 ![Get completed AEOB from payer](GetAEOB.drawio.png){:style="float: none;"}
+
+**Figure 2: Get Completed AEOB from Payer**
 
 1. The patient receives a notification that the AEOB is complete along with an Bundle.identifier which identifies their AEOB. 
 
