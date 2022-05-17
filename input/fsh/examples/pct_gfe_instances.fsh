@@ -84,7 +84,7 @@ Description: "PCT Professional GFE Example 1"
 * item.quantity.value = 1
 * item.unitPrice.value = 200.00
 * item.net.value = 200.00
-* item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001" 
+* item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001"
 * item.net.currency = #USD
 * total.value = 200.00
 * total.currency = #USD
@@ -155,8 +155,8 @@ InstanceOf: PCTPatient
 //* identifier[memberID].type = #MB
 * identifier[memberID].system = "http://example.com/identifiers/member"
 * identifier[memberID].value = "12345"
-* identifier[employeeID].system = "http://example.com/identifiers/employee"
-* identifier[employeeID].value = "667788"
+//* identifier[employeeID].system = "http://example.com/identifiers/employee"
+//* identifier[employeeID].value = "667788"
 * gender = Hl7FhirAdminGender#female
 * birthDate = "1955-07-23"
 * maritalStatus = Hl7V3MS#U "unmarried"
@@ -326,4 +326,3 @@ Description: "An instance of Endpoint"
 * identifier.system = "http://example.org/enpoint-identifier"
 * identifier.value = "epid-1"
 * address = "http://fhir3.healthintersections.com.au/open/CarePlan"
-

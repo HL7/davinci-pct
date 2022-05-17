@@ -10,10 +10,8 @@ Description: "The PCT Patient profile builds upon the US Core Patient profile. I
 * identifier ^slicing.ordered = false   // can be omitted, since false is the default
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
-   memberID 0..* MS and
-   employeeID 0..* MS
+   memberID 0..* MS
 * identifier[memberID].type = $V2-0203#MB "Member Number"
-* identifier[employeeID].type = $V2-0203#EI "Employee number"
 
 * birthDate 1..1 MS
 
