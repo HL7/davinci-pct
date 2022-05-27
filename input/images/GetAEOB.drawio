@@ -122,7 +122,7 @@
                         <mxPoint x="65" y="34" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="27" value="Submitting&#10;Provider / Facility" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" parent="1" vertex="1" treatAsSingle="0">
+                <mxCell id="27" value="Convening&#10;Provider / Facility" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" parent="1" vertex="1" treatAsSingle="0">
                     <mxGeometry x="171" y="120" width="130" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="27" vertex="1">
