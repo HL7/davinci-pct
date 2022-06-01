@@ -48,6 +48,9 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * referral.extension contains ReferralNumber named referralNumber 1..1 MS
 * referral.extension[referralNumber] ^short = "Referral Number"
 
+* accident.location[x] only Address
+// * accident.location[x] from $ISO3166-P1-ALPHA2-VS {required}
+
 * facility MS
 * facility only Reference(PCTLocation)
 

@@ -52,6 +52,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * insurance.coverage only Reference(PCTCoverage)
 * insurance.preAuthRef 0..1 MS
 
+* accident.location[x] only Address
+
 * insert DiagnosisSlicing
 * diagnosis 1..*
 //* diagnosis.diagnosis[x] MS
