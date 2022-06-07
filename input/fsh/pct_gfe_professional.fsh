@@ -51,9 +51,6 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * accident.location[x] only Address
 * accident.location[x].country from $ISO3166-P1-ALPHA2-VS (required)
 
-* facility MS
-* facility only Reference(PCTLocation)
-
 //* supportingInfo.category from $C4BBSupportingInfoType (extensible)
 
 * insurance.coverage MS
@@ -122,12 +119,20 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   placeOfService 0..1 MS
-//    serviceFacility 0..1 MS  Need this?? See C4BB-ExplanationOfBenefit-Professional-NonClinician
+   placeOfService 0..1 MS and
+   serviceFacility 0..1 MS
+
 * supportingInfo[placeOfService].category MS
 * supportingInfo[placeOfService].category = PCTSupportingInfoType#cmspos "CMS Place of Service"
 * supportingInfo[placeOfService].code 1..1 MS
 * supportingInfo[placeOfService].code from PCTGFECMSPOS (required)
+
+* supportingInfo[serviceFacility] ^short = "Service facility"
+* supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility "Service Facility"
+* supportingInfo[serviceFacility].category MS
+* supportingInfo[serviceFacility].valueReference 1..1 MS
+* supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
+
 
 * item 1..50 MS
 * item.extension contains ReferralNumber named referralNumber 0..11 MS

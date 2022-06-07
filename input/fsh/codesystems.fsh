@@ -94,6 +94,7 @@ Description: "Defining codes for the classification of the supplied supporting i
 * ^caseSensitive = true
 * #cmspos "CMS Place of Service" "Place of Service Codes are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided. The Centers for Medicare & Medicaid Services (CMS) maintain POS codes used throughout the health care industry."
 * #typeofbill "Type of Bill"  "UB-04 Type of Bill (FL-04) provides specific information for payer purposes."
+* #servicefacility "Service Facility" "The facility where the service occurred. Examples include hospitals, nursing homes, laboratories or homeless shelters."
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTCareTeamRole
