@@ -128,6 +128,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * supportingInfo[placeOfService].code from PCTGFECMSPOS (required)
 
 * supportingInfo[serviceFacility] ^short = "Service facility"
+* supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
 * supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility "Service Facility"
 * supportingInfo[serviceFacility].category MS
 * supportingInfo[serviceFacility].valueReference 1..1 MS
