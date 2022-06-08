@@ -66,7 +66,7 @@ Description: "PCT Professional GFE Example 1"
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
-* provider = Reference(pracRole002)
+* provider = Reference(prac002)
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-122"
@@ -197,21 +197,6 @@ Description: "An instance of PCTPractitioner"
 * telecom.system = #phone
 * telecom.value = "781-232-3232"
 * address.text = "32 Fruit Street, Boston MA 02114"
-
-Instance: pracRole002
-InstanceOf: PCTPractitionerRole
-Description: "An instance of PCTPractitionerRole"
-* code = PRO-ROLE#247100000X
-* code.coding.display = "Radiologic Technologist"
-* specialty = SPECIALTY#261QM1200X
-* specialty.coding.display = "Magnetic Resonance Imaging (MRI) Clinic/Center"
-* active = true
-* telecom.system = #phone
-* telecom.value = "781-232-3232"
-* practitioner = Reference(prac002)
-* organization = Reference(org1002)
-* location = Reference(Provider-Org-Loc-2)
-
 
 Instance: Submitter-Practitioner-1
 InstanceOf: PCTPractitioner
