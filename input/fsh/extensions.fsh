@@ -56,7 +56,7 @@ Description: "This extension is used to provide the GFE Service Identifier for T
 
 Extension: GFEBillingProviderLineItemCtrlNum
 Id: gfeBillingProviderLineItemCtrlNum
-Description: "This extension is used to provide the GFE Billing Provider Line Item Control Number."
+Description: "This extension is used by the provider to assign a unique identifier to this item. The intent of this element is to allow the provider to assign something other than 'line number' for their purposes (e.g. tracking and troubleshooting)."
 * value[x] only Identifier
 
 // Extension: ProductOrServiceBillingCode
