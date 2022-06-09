@@ -103,12 +103,12 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * procedure.type MS
 * procedure.type from PCTProcedureTypeVS
 * procedure contains
-   primary 0..1 MS and
+   principal 0..1 MS and
    other 0..24 MS
-* procedure[primary].type = $PROCTYPECS#primary
-* procedure[primary].sequence = 1
-* procedure[primary].procedure[x] MS
-* procedure[primary].procedure[x] only CodeableConcept
+* procedure[principal].type = PCTProcedureType#principal
+* procedure[principal].sequence = 1
+* procedure[principal].procedure[x] MS
+* procedure[principal].procedure[x] only CodeableConcept
 * procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x] MS
 * procedure[other].procedure[x] only CodeableConcept

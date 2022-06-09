@@ -38,6 +38,7 @@ CodeSystem: PCTProcedureType
 Title: "PCT Procedure Type"
 Description: "Defining codes for the classification of procedure types"
 * ^caseSensitive = true
+* #principal "Pricipal" "Principal procedure information"
 * #procedureRequiringAnesthesia  "Surgical procedure requiring anesthesia" "Identifies the surgical procedure requiring anesthesia"
 * #other "Other" "Other procedure information"
 * ^copyright = "This CodeSystem is not copyrighted."
