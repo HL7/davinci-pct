@@ -21,7 +21,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * extension[providerEventMethodology] ^definition = "How the provider determined the number of claims and the number and type of billing providers to include in the GFE. Examples include provider episodes of care experience, PACES, order set based on clinical guidelines, payor suggested grouping, or some other method of determination."
 * extension contains InterTransIdentifier named interTransIdentifier 0..1 MS
 * extension[interTransIdentifier] ^short = "Intermediary Transmission Identifier"
-* extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifer for the services in this claim resource to be used in back-end processes."
+* extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifier for the services in this claim resource to be used in back-end processes."
 
 * type = $ClaimTypeCS#institutional "Institutional"
 * status MS
@@ -103,12 +103,13 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * procedure.type MS
 * procedure.type from PCTProcedureTypeVS
 * procedure contains
-   primary 0..1 MS and
+   principal 0..1 MS and
    other 0..24 MS
-* procedure[primary].type = $PROCTYPECS#primary
-* procedure[primary].sequence = 1
-* procedure[primary].procedure[x] MS
-* procedure[primary].procedure[x] only CodeableConcept
+* procedure[principal].type = $PROCTYPECS#principal
+* procedure[principal].sequence = 1
+* procedure[principal].procedure[x] MS
+* procedure[principal].procedure[x] only CodeableConcept
+* procedure[principal] ^short = "Principal clinical procedure performed"
 * procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x] MS
 * procedure[other].procedure[x] only CodeableConcept
