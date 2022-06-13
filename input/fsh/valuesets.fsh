@@ -53,7 +53,6 @@ ValueSet: PCTGFETypeOfBillVS
 Title: "PCT GFE NUBC Uniform Billing (UB-04) Type of Bill Value Set"
 Description: "NUBC Uniform Billing (UB-04) codes to indicate the specific Type of Bill (TOB), e.g., hospital inpatient, outpatient, replacements, voids, etc. The first digit is a leading zero*. The fourth digit defines the frequency of the bill for the institutional and electronic professional claim."
 * codes from system $TOBFL-04
-* codes from system PCTGFETypeOfBillCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFEItemRevenueVS
