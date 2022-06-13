@@ -52,14 +52,6 @@ Description: "Defining codes for the classification of surgical procedure types"
 * #153003 "PROC-3" "This is for testing purpose only - WILL BE REMOVED"
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTGFETypeOfBillCS
-Title: "PCT GFE Type Of Bill Code System"
-Description: "Defining codes to indicate the specific Type of Bill (TOB)"
-* ^caseSensitive = true
-* #012133 "Hospital Inpatient" "This is for testing purpose only - WILL BE REMOVED"
-* #013144 "Outpatient"  "This is for testing purpose only - WILL BE REMOVED"
-* ^copyright = "This CodeSystem is not copyrighted."
-
 CodeSystem: PCTGFEItemRevenueCS
 Title: "PCT GFE Item Revenue Code System"
 Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
