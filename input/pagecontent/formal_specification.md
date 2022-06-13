@@ -63,7 +63,7 @@ The AEOB(s) will often not be complete and the calling client (or other interest
 The AEOB bundle will contain one of these **outcomes** [queued | complete | error | partial
 ](https://build.fhir.org/ig/HL7/davinci-pct/StructureDefinition-davinci-pct-aeob-definitions.html#ExplanationOfBenefit.outcome).
 
-The client (or other interested systems - e.g., patient or convening provider system) can now query the endpoint outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling). 
+The client (or other interested systems - e.g., patient or convening provider system) can now query the endpoint outcome status using the [polling mechanism](https://build.fhir.org/ig/HL7/davinci-pct/formal_specification.html#polling).
 
 Once all the AEOB(s) have an outcome equal to `complete`, the client (or other interested systems - e.g., patient or convening provider system) can perform a FHIR query to receive the completed AEOB bundle.  
 
@@ -82,8 +82,8 @@ The below illustrates what is contained in the GFE and AEOB bundles. For full de
 
 > Note: The AEOB bundle **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original GFE bundle.
 
-#### AEOB Request 
-The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle **SHALL** be encoded in JSON. The GFE FHIR Bundle will include one or more GFE resources for one patient. The GFE profiles used for the claim resources can be [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries **SHALL** be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance is created - referenced from multiple places as appropriate. 
+#### AEOB Request
+The [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) operation is executed by POSTing a GFE FHIR Bundle to the [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) endpoint. The Bundle **SHALL** be encoded in JSON. The GFE FHIR Bundle will include one or more GFE resources for one patient. The GFE profiles used for the claim resources can be [found here](artifacts.html#structures-resource-profiles). Additional Bundle entries **SHALL** be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once. E.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance is created - referenced from multiple places as appropriate.
 
 Bundle.entry.fullUrl values **SHALL** be:<br>
 • the URL at which the resource is available from the Billing Management System if exposed via the client’s REST interface;<br>
@@ -123,7 +123,12 @@ In this approach, the Client regularly queries the Server to see if the status o
 
 This is done by performing the [AEOB query]( formal_specification.html#aeob-query) several times. The details are described below.
 
-Clients **SHALL** perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. They **SHOULD** perform this query at least once every 12 hours. Clients **SHALL** support manual invocation of the query by users. There are no constraints on frequency of manual queries.
+Clients **SHALL** perform this operation in an automated/background manner no more frequently than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that.
+
+Servers **MAY** provide a response that includes a [Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) response HTTP header that indicates how long to wait before making the same request again. Clients **SHOULD** wait until the Retry-After indicated period has elapse before reattempting the operation.
+They **SHOULD** perform this query at least once every 12 hours.
+
+Clients **SHALL** support manual invocation of the query by users. There are no constraints on frequency of manual queries.
 
 <blockquote class="stu-note">
 <p>
