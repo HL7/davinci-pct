@@ -267,14 +267,6 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * address.country = "US"
 * address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
 
-Instance: Provider-Org-Loc-2
-InstanceOf: PCTLocation
-Description: "An instance of PCTLocation"
-* status = #active
-* name = "Boston Radiology Center"
-* address.text = "32 Fruit Street, Boston MA 02114"
-* managingOrganization = Reference(org1002)
-
 Instance: coverage1001
 InstanceOf: PCTCoverage
 Description: "An instance of PCTCoverage"
