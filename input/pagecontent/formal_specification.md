@@ -126,7 +126,9 @@ This is done by performing the [AEOB query]( formal_specification.html#aeob-quer
 Clients **SHALL** perform this operation in an automated/background manner no more frequently than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that.
 
 Servers **MAY** provide a response that includes a [Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) response HTTP header that indicates how long to wait before making the same request again. Clients **SHOULD** wait until the Retry-After indicated period has elapse before reattempting the operation.
-They **SHOULD** perform this query at least once every 12 hours. Clients **SHALL** support manual invocation of the query by users. There are no constraints on frequency of manual queries.
+They **SHOULD** perform this query at least once every 12 hours.
+
+Clients **SHALL** support manual invocation of the query by users. There are no constraints on frequency of manual queries.
 
 <blockquote class="stu-note">
 <p>
