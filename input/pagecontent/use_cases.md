@@ -58,8 +58,8 @@ Assumptions:<br>
 
 ##### MRI Examples  
 
-[GFE Professional](Claim-PCT-GFE-Professional-1.json.html)<br> 
-[GFE Institutional](Claim-PCT-GFE-Institutional-1.json.html)<br> 
+[GFE Professional](Claim-PCT-GFE-Professional-MRI.json.html)<br> 
+[GFE Institutional](Claim-PCT-GFE-Institutional-MRI.json.html)<br> 
 
 [AEOB](ExplanationOfBenefit-PCT-AEOB-1.json.html)
 

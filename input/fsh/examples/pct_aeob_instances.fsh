@@ -44,11 +44,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
-* item.revenue = PCTGFEItemRevenueCS#2011 "Revenue Code 1"
-// * item.productOrService = CPT4#33502 "Some CPT Code 1"
-// * item.modifier = CPT4#34503 "Some CPT Code 2"
-* item.productOrService = PCTGFEItemProcedureCodes#33502 "Some CPT Code 1"
-* item.modifier = PCTGFEItemProcedureCodes#34503 "Some CPT Code 2"
+* item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.net.value = 200.00
 * item.net.currency = #USD
 * item.adjudication.extension[subjectToMedicalMgmt].valueCoding = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"

@@ -43,33 +43,6 @@ Description: "Defining codes for the classification of procedure types"
 * #other "Other" "Other procedure information"
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTProcedureSurgicalCS
-Title: "PCT Procedure Surgical Code System"
-Description: "Defining codes for the classification of surgical procedure types"
-* ^caseSensitive = true
-* #153001 "PROC-1" "This is for testing purpose only - WILL BE REMOVED"
-* #153002 "PROC-2" "This is for testing purpose only - WILL BE REMOVED"
-* #153003 "PROC-3" "This is for testing purpose only - WILL BE REMOVED"
-* ^copyright = "This CodeSystem is not copyrighted."
-
-CodeSystem: PCTGFEItemRevenueCS
-Title: "PCT GFE Item Revenue Code System"
-Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
-* ^caseSensitive = true
-* #2011 "Revenue Code 1" "This is for testing purpose only - WILL BE REMOVED"
-* #2012 "Revenue Code 2" "This is for testing purpose only - WILL BE REMOVED"
-* #0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
-* ^copyright = "This CodeSystem is not copyrighted."
-
-CodeSystem: PCTGFEItemProcedureCodes
-Title: "PCT GFE Item Procedure Code System"
-Description: "Defining codes to report medical procedures and services under public and private health insurance programs"
-* ^caseSensitive = true
-* #33502 "Some CPT Code 1" "This is for testing purpose only - WILL BE REMOVED"
-* #34503 "Some CPT Code 2" "This is for testing purpose only - WILL BE REMOVED"
-* #70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)" 
-* ^copyright = "This CodeSystem is not copyrighted."
-
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
 Title: "PCT Subject-To-Medical-Management Reason Code System"
 //Id: pct-medical-mgmt-condition-type

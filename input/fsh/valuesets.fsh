@@ -46,7 +46,6 @@ Description: "Combination of CMS HCPCS and AMA CPT codes to specify the type of 
 //* include Combination of CMS HCPCS and AMA CPTs
 * codes from system $HCPCS
 * codes from valueset $AMACPTALL
-* codes from system PCTProcedureSurgicalCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFETypeOfBillVS
@@ -59,7 +58,6 @@ ValueSet: PCTGFEItemRevenueVS
 Title: "PCT GFE NUBC Revenue Value Set"
 Description: "NUBC UB-04 Revenue codes"
 * codes from system $NUBCREVENUE
-* codes from system PCTGFEItemRevenueCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTGFEItemCptHcpcsHippsVS
@@ -68,7 +66,6 @@ Description: "CPT - HCPCS - HIPPS codes to report medical procedures and service
 * codes from system $CPT
 * codes from system $HCPCS
 * codes from system $HIPPS
-* codes from system PCTGFEItemProcedureCodes
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 
 ValueSet: PCTGFEItemCptHcpcsVS
@@ -76,7 +73,6 @@ Title: "PCT GFE Item CPT - HCPCS Value Set"
 Description: "CPT - HCPCS codes to report medical procedures and services under public and private health insurance programs"
 * codes from system $CPT
 * codes from system $HCPCS
-* codes from system PCTGFEItemProcedureCodes
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 
 ValueSet: PCTGFECMSPOS
