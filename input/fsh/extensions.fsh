@@ -41,7 +41,7 @@ Description: "This extension is used to provide the Referral Number."
 
 Extension: ProviderEventMethodology
 Id: providerEventMethodology
-Description: "This extension is used for indicating how the provider determined the number of providers involved--through internal experience/analysis or an external methodology."
+Description: "This extension is used for indicating the method a provider used to group services, and those providing such services, beyond what may be indicated through DRGs that the payer or patient may find helpful (e.g. grouping services by a standardized episode of care definition)."
 * value[x] only string
 
 Extension: EstimatedDateOfService
