@@ -1,6 +1,6 @@
 ### Use Case
 
-The below describes the process of initiating the creation of an AEOB and the process of receiving or retrieving an AEOB. Note: An AEOB includes all GFEs as well as other required information. 
+The below describes the process of initiating the creation of an AEOB and the process of receiving or retrieving an AEOB. Note: An AEOB includes all GFEs as well as other required information.
 
 #### Submit AEOB Request to Payer
 
@@ -10,56 +10,56 @@ The below describes the process of initiating the creation of an AEOB and the pr
 
 1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
-2. The provider uses the gfe-submit operation to submit the GFE bundle to the payer or payer intermediary endpoint. This is a POST request. 
+2. The provider uses the gfe-submit operation to submit the GFE bundle to the payer or payer intermediary endpoint. This is a POST request.
 
 3. The AEOB bundle is created asynchronously. Because of this the AEOB bundle is not complete at this point. This is because the GFE processing and adjudication has not taken place yet. Therefore, each AEOB instance in the bundle should now contain one of these `ExplanationOfBenefit.outcome`: `queued`, `error`, or `partial`. The gfe-submit response will also contain a Bundle.identifier.
 
 4. The Bundle.identifier can now be used to run a AEOB FHIR query to check the AEOB `ExplanationOfBenefit.outcome`(s) and receive the completed bundle. The AEOB is complete when `ExplanationOfBenefit.outcome` is equal to `complete`. This process is explained in more detail in the [Get completed AEOB from payer](use_cases.html#get-completed-aeob-from-payer) section.      
 
 Note: The translation from FHIR to X12 and back to FHIR is not required to be conformant with this IG.  
- 
+
 #### Get completed AEOB from payer
 
 ![Get completed AEOB from payer](GetAEOB.drawio.png){:style="float: none;"}
 
 **Figure 2: Get Completed AEOB from Payer**
 
-1. The patient receives a notification that the AEOB is complete along with an Bundle.identifier which identifies their AEOB. 
+1. The patient receives a notification that the AEOB is complete along with an Bundle.identifier which identifies their AEOB.
 
 2. The patient authorizes/authenticates and receives an access token.
 
 3. The patient requests the AEOB by using the access token and Bundle.identifier. The patient receives the AEOB Bundle.
-   
->Note: The patient above could be a third-party portal or provider portal.   
+
+>Note: The AEOB could be accessed via a web portal, mobile app, or other technology that is authorized to connect to the AEOB API.
 
 #### Example
 
 **MRI Scenario**
 
-Assumptions:<br> 
-• Patient has single commercial insurance coverage and plans to use it<br> 
-• This is clinically appropriate (Clinical Decision Support (CDS) Score) <br> 
-• Service Location is known (e.g., Address) <br> 
-• All providers are in network - PCP, imaging facility, and reading radiologist<br> 
+Assumptions:<br>
+• Patient has single commercial insurance coverage and plans to use it<br>
+• This is clinically appropriate (Clinical Decision Support (CDS) Score) <br>
+• Service Location is known (e.g., Address) <br>
+• All providers are in network - PCP, imaging facility, and reading radiologist<br>
 • While medical management techniques (such as prior auth) will be included as a disclaimer when applicable in the AEOB returned to the member, the actual process of meeting medical management requirements is separate from the process of creating an AEOB. For details see the Terms and Concepts section of this IG.
 
-1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551). 
-2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department. 
-3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present. 
-4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551 and provide her coverage information, which she plans to use. 
-5.  The MRI is scheduled for 9 days from today. This triggers the process for an Advanced EOB (AEOB) to be created. 
-6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately. 
-7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the Good Faith Estimate (GFE) for the expected charges with the expected billing and diagnostic codes. 
-8.  This information is sent to the payer. 
-9.  The payer receives the GFE. Within one business day the payer adjudicates it and sends the Good Faith Estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates as an AEOB securely to Eve. 
-10. Optionally, the payer also sends a response to ABC’s Radiology Office Administrator with the same cost estimate information. 
-11. Eve receives the AEOB from her payer based on the information provided by ABC Radiology. 
-12. Optionally, Eve or an authorized user could use their 3rd party app to query for the AEOB via API (if supported by their payer). 
+1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551).
+2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department.
+3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present.
+4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551 and provide her coverage information, which she plans to use.
+5.  The MRI is scheduled for 9 days from today. This triggers the process for an Advanced EOB (AEOB) to be created.
+6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately.
+7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the Good Faith Estimate (GFE) for the expected charges with the expected billing and diagnostic codes.
+8.  This information is sent to the payer.
+9.  The payer receives the GFE. Within one business day the payer adjudicates it and sends the Good Faith Estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates as an AEOB securely to Eve.
+10. Optionally, the payer also sends a response to ABC’s Radiology Office Administrator with the same cost estimate information.
+11. Eve receives the AEOB from her payer based on the information provided by ABC Radiology.
+12. Optionally, Eve or an authorized user could use their 3rd party app to query for the AEOB via API (if supported by their payer).
 
 ##### MRI Examples  
 
-[GFE Professional](Claim-PCT-GFE-Professional-MRI.json.html)<br> 
-[GFE Institutional](Claim-PCT-GFE-Institutional-MRI.json.html)<br> 
+[GFE Professional](Claim-PCT-GFE-Professional-MRI.json.html)<br>
+[GFE Institutional](Claim-PCT-GFE-Institutional-MRI.json.html)<br>
 
 [AEOB](ExplanationOfBenefit-PCT-AEOB-1.json.html)
 
