@@ -144,11 +144,20 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   typeOfBill 0..1 MS
+   typeOfBill 0..1 MS and
+   serviceFacility 0..1 MS
+
 * supportingInfo[typeOfBill].category MS
 * supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill "Type of Bill"
 * supportingInfo[typeOfBill].code 1..1 MS
 * supportingInfo[typeOfBill].code from PCTGFETypeOfBillVS (required)
+
+* supportingInfo[serviceFacility] ^short = "Service Facility"
+* supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
+* supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility "Service Facility"
+* supportingInfo[serviceFacility].category MS
+* supportingInfo[serviceFacility].valueReference 1..1 MS
+* supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
 
 * item 1..999 MS
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
