@@ -15,7 +15,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
 // * extension contains ReferralNumber named referralNumber 0..2 MS
 // * extension[referralNumber] ^short = "Referral Number"
-* extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
+* extension contains ProviderEventMethodology named providerEventMethodology 0..1
 * extension[providerEventMethodology] ^short = "Provider event collection methodology"
 * extension[providerEventMethodology] ^definition = "How the provider determined the number of claims and the number and type of billing providers to include in the GFE. Examples include provider episodes of care experience, PACES, order set based on clinical guidelines, payor suggested grouping, or some other method of determination."
 * extension contains InterTransIdentifier named interTransIdentifier 0..1 MS
