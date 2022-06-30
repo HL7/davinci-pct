@@ -20,11 +20,13 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * insurer MS
 * insurer only Reference(PCTOrganization)
 
+* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
+
 // need provider's TAX ID
 * provider only Reference(PCTPractitioner or PCTOrganization)
 // * provider.extension contains ProviderContractingStatus named contractingStatus 1..1 MS
 // * provider.extension contains ProviderContractingRate named contractingRate 0..1 MS
-* provider.extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
+//* provider.extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 * priority MS
 * priority from $PROCPRIORITYVS (required)

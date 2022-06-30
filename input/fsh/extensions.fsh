@@ -94,9 +94,9 @@ Description: "This extension is used to provide the Compound Drug Linking Number
 // * value[x] only decimal
 
 Extension: OutOfNetworkProviderInfo
-Id: outOfNetworkProviderInfo
-Title: "Out Of Network Provider Info"
-Description: "This extension is used to provide a reference to a web site for finding information on the out-of-network provider."
+Id: inNetworkProviderOptionsLink
+Title: "In Network Provider Options Link"
+Description: "This extension provides a payer link to information enabling the patient to find providers that are in network for the requested services."
 * value[x] only url
 
 Extension: GFEReference
