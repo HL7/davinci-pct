@@ -123,7 +123,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 //* careTeam.provider ^short = ""
 * careTeam.role 1..1 MS
 * careTeam.role from PCTCareTeamRoleVS
-* careTeam.qualification MS
+* careTeam.qualification
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
    attending 0..1 MS and
@@ -132,7 +132,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
    referring 0..1 MS
 * careTeam[attending].role = PCTCareTeamRole#attending
 //* careTeam[attending] ^short = "May be used for the Institutional case only"
-* careTeam[attending].qualification 1..1
+* careTeam[attending].qualification 1..1 MS
 * careTeam[operating].role = PCTCareTeamRole#operating
 * careTeam[operating].provider only Reference(PCTPractitioner)
 //* careTeam[operating] ^short = "May be used for the Institutional case only"
