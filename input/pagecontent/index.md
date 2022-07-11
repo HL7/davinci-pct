@@ -41,9 +41,9 @@ Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts).
 
 1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
 
-2. The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html) to the payer’s intermediary or payer’s endpoint for AEOB creation.  
+2. The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html) to the payer’s endpoint for AEOB creation.  
 
-3. The payer’s intermediary (or payer) can translate the GFE Bundle to X12. The payer would then process, adjudicate, and produce the AEOB bundle. <em>Note: Translating the GFE bundle to X12 or any other format is not required to be conformant with this IG. </em>
+3. The payer would then process, adjudicate, and produce the AEOB bundle. 
 
 4. The patient can now request and receive the AEOB Bundle via FHIR query.
 
