@@ -42,10 +42,13 @@ pages:
     title: Formal Specification
   terminology_licensure.md:
     title: Terminology Licensure
+  security.md:
+    title: Security
   downloads.md:
     title: Downloads
   credits.md:
     title: Credits
+  
   #artifacts.md:
   #  title: FHIR Artifacts
 
@@ -74,9 +77,10 @@ menu:
     Value Sets: artifacts.html#4
     Code Systems: artifacts.html#5
     Examples: artifacts.html#6
-
-  Downloads:
-    Downloads: downloads.html
+    
+  Secuirty: security.html
+    
+  Downloads: downloads.html
  
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
