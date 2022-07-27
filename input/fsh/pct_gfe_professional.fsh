@@ -72,16 +72,10 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * diagnosis[principal].diagnosis[x] MS
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[principal].packageCode MS
-* diagnosis[principal].packageCode ^short = "For the Professional case this is the Provider GFE Grouper Methodology"
-* diagnosis[principal].packageCode ^comment = "The GFE Grouper Methodology submitted by the provider."
 * diagnosis[other].type = PCTDiagnosisType#other
 * diagnosis[other].diagnosis[x] MS
 * diagnosis[other].diagnosis[x] only CodeableConcept
 * diagnosis[other].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[other].packageCode MS
-* diagnosis[other].packageCode ^short = "For the Professional case this is the Provider GFE Grouper Methodology"
-* diagnosis[other].packageCode ^comment = "The GFE Grouper Methodology submitted by the provider."
 
 * insert ProcedureSlicing
 //* procedure.procedure[x] MS
@@ -119,13 +113,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   placeOfService 0..1 MS and
    serviceFacility 0..1 MS
-
-* supportingInfo[placeOfService].category MS
-* supportingInfo[placeOfService].category = PCTSupportingInfoType#cmspos "CMS Place of Service"
-* supportingInfo[placeOfService].code 1..1 MS
-* supportingInfo[placeOfService].code from PCTGFECMSPOS (required)
 
 * supportingInfo[serviceFacility] ^short = "Service Facility"
 * supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
@@ -156,6 +144,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.net 0..1
 * item.quantity 1..1 MS
 
+* item.location[x] only CodeableConcept
 * item.locationCodeableConcept 1..1 MS
 * item.locationCodeableConcept from PCTGFECMSPOS (required)
 

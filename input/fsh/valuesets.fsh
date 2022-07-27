@@ -78,7 +78,7 @@ Description: "CPT - HCPCS codes to report medical procedures and services under 
 ValueSet: PCTGFECMSPOS
 Title: "PCT GFE CMS Place of Service Value Set"
 Description: "CMS Place of Service codes"
-* codes from system $CMSPOSOID
+* codes from system $CMSPOSCS
 //* codes from system PCTGFEPOSCS
 * ^copyright = "This Valueset is not copyrighted."
 
