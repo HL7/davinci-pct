@@ -134,7 +134,7 @@ Id: disclaimer
 Title: "Disclaimer"
 Description: "This extension allows the payer to declare a disclaimer concerning the estimated costs provided in the AEOB."
 * value[x] ^short = "A disclaimer declared by the payer concerning the estimated costs provided in the AEOB"
-* value[x] only string or CodeableConcept or url
+* value[x] only string or CodeableConcept or url or markdown
 //* value[x] from PCTEstimateOnlyDisclaimerVS (extensible)
 
 Extension: ExpirationDate

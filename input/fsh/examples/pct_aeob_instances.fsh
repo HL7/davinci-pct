@@ -42,6 +42,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
 
+* benefitPeriod.start = "2022-01-01"
+* benefitPeriod.end = "2023-01-01"
+
 * item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"

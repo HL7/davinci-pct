@@ -33,6 +33,8 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * insurance.coverage only Reference(PCTCoverage)
 
+* benefitPeriod 1..1
+
 * item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 1..1 MS
 * item.revenue MS
