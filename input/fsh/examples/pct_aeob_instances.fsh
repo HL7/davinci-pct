@@ -46,6 +46,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * benefitPeriod.end = "2023-01-01"
 
 * item.extension[EstimatedDateOfService].valueDate = "2021-10-31"
+* item.extension[serviceDescription].valueString = "Imaging"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"

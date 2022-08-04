@@ -82,6 +82,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 //* procedure.procedure[x] only CodeableConcept
 * procedure.type MS
 * procedure.type from PCTProcedureTypeVS
+* procedure.extension contains ServiceDescription named serviceDescription 1..1
 * procedure contains
    anesthesiaRelated 0..2 MS and
    other 0..24 MS
@@ -89,6 +90,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * procedure[anesthesiaRelated].procedure[x] MS
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
+
 
 * insert CareTeamSlicing
 //* careTeam 0..* MS
@@ -129,6 +131,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
 * item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
+* item.extension contains ServiceDescription named serviceDescription 1..1
 
 // * item.revenue MS
 // * item.revenue from PCTGFEItemRevenueVS (example)

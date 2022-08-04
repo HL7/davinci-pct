@@ -166,3 +166,10 @@ Extension: PCTEndpoint
 Id: endpoint
 Description: "This extension is used to provide an endpoint."
 * value[x] only Reference(Endpoint)
+
+Extension: ServiceDescription
+Id: serviceDescription
+Title: "Service Description"
+Description: "This extension is used to communicate a plain language description of the procedure, product, or service."
+* value[x] ^short = "The description of a procedure, product, or service"
+* value[x] only string

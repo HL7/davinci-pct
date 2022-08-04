@@ -35,8 +35,12 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * benefitPeriod 1..1
 
+* created ^short = "The date and time this estimate was calculated."
+* created ^comment = "The date and time this estimate was calculated based on what was known at that point in time."
+
 * item 1..* MS
 * item.extension contains EstimatedDateOfService named estimatedDateOfService 1..1 MS
+* item.extension contains ServiceDescription named serviceDescription 1..1
 * item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
 * item.modifier 0..4 MS

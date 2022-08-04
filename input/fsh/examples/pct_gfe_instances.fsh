@@ -43,6 +43,7 @@ Description: "PCT Institutional GFE Example 1"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.extension[ServiceDescription].valueString = "Imaging"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.quantity.value = 1
 * item.net.value = 200.00
@@ -80,6 +81,7 @@ Description: "PCT Professional GFE Example 1"
 * item.sequence = 1
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.extension[ServiceDescription].valueString.value = "Imaging"
 * item.locationCodeableConcept = $CMSPOSCS#21 "Inpatient Hospital"
 * item.quantity.value = 1
 * item.unitPrice.value = 200.00
@@ -115,6 +117,7 @@ Description: "PCT Institutional GFE for MRI"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.extension[ServiceDescription].valueString = "Imaging"
 * item.quantity.value = 1
 * item.net.value = 266.00
 * item.net.currency = #USD

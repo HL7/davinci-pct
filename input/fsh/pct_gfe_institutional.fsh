@@ -102,6 +102,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 //* procedure.procedure[x] only CodeableConcept
 * procedure.type MS
 * procedure.type from PCTProcedureTypeVS
+* procedure.extension contains ServiceDescription named serviceDescription 1..1
 * procedure contains
    principal 0..1 MS and
    other 0..24 MS
@@ -162,6 +163,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 * item 1..999 MS
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
+* item.extension contains ServiceDescription named serviceDescription 1..1
 
 * item.revenue 1..1 MS
 * item.revenue from PCTGFEItemRevenueVS (required)
