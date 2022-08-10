@@ -11,7 +11,7 @@ Description: "The PCT Patient profile builds upon the US Core Patient profile. I
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
    memberID 0..* MS
-* identifier[memberID].type = $V2-0203#MB "Member Number"
+* identifier[memberID].type = $V2-0203#MB 
 
 * birthDate 1..1 MS
 

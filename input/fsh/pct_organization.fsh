@@ -14,15 +14,15 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
    ETIN 0..1 MS
-* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
+* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN 
 //* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number" <<<<<WOULD CAUSE slicing errors
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
 * identifier[ETIN] ^short = "Electronic Transmitter Identification Number."
 
-* identifier[tin] ^patternIdentifier.type = $V2-0203#TAX "Tax ID number"
+* identifier[tin] ^patternIdentifier.type = $V2-0203#TAX 
 * identifier[tin] ^short = "Tax ID Number"
 
-* identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI "National provider identifier"
+* identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI
 //* identifier[NPI].value 1..1
 //* identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
@@ -46,7 +46,7 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * contact[gfeServiceHotline].name 1..1 MS
 * contact[gfeServiceHotline].telecom 1..* MS
 * contact[gfeServiceHotline].purpose MS
-* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#GFERELATED "GFE-related"
+* contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#GFERELATED
 
 //TODO: slice contact for defining PAY-TO
 //* contact[payToAddress]

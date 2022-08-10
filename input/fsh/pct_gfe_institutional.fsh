@@ -23,7 +23,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * extension[interTransIdentifier] ^short = "Intermediary Transmission Identifier"
 * extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifier for the services in this claim resource to be used in back-end processes."
 
-* type = $ClaimTypeCS#institutional "Institutional"
+* type = $ClaimTypeCS#institutional
 * status MS
 * use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
@@ -150,13 +150,13 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
    serviceFacility 0..1 MS
 
 * supportingInfo[typeOfBill].category MS
-* supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill "Type of Bill"
+* supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill 
 * supportingInfo[typeOfBill].code 1..1 MS
 * supportingInfo[typeOfBill].code from PCTGFETypeOfBillVS (required)
 
 * supportingInfo[serviceFacility] ^short = "Service Facility"
 * supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
-* supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility "Service Facility"
+* supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility
 * supportingInfo[serviceFacility].category MS
 * supportingInfo[serviceFacility].valueReference 1..1 MS
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)

@@ -22,7 +22,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * extension[interTransIdentifier] ^short = "Intermediary Transmission Identifier"
 * extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifer for the services in this claim resource to be used in back-end processes."
 
-* type = $ClaimTypeCS#professional "Professional"
+* type = $ClaimTypeCS#professional
 * status MS
 * use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
@@ -119,7 +119,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 * supportingInfo[serviceFacility] ^short = "Service Facility"
 * supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
-* supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility "Service Facility"
+* supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility
 * supportingInfo[serviceFacility].category MS
 * supportingInfo[serviceFacility].valueReference 1..1 MS
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)

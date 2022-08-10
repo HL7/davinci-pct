@@ -14,13 +14,13 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 // * identifier ^slicing.description = "Slice based on $this pattern"
 
 * identifier contains ETIN 0..1 MS
-* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number"
+* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN 
 * identifier[ETIN].value 1..1 MS
 * identifier[ETIN] ^short = "The submitter's Electronic Transmitter Identification Number."
 
 //* identifier contains NPI 0..1 MS
 * identifier[NPI] 0..1 MS
-* identifier[NPI] ^patternIdentifier.type  = $V2-0203#NPI "National provider identifier"
+* identifier[NPI] ^patternIdentifier.type  = $V2-0203#NPI 
 * identifier[NPI].value 1..1 MS
 * identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
