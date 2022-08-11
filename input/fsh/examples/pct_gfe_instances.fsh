@@ -31,6 +31,7 @@ Description: "PCT Institutional GFE Example 1"
 * created = "2021-10-05"
 * insurer = Reference(org1001)
 * provider = Reference(org1002)
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-121"
@@ -68,6 +69,7 @@ Description: "PCT Professional GFE Example 1"
 * created = "2021-10-05"
 * insurer = Reference(org1001)
 * provider = Reference(prac002)
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-122"
@@ -105,6 +107,7 @@ Description: "PCT Institutional GFE for MRI"
 * created = "2022-02-02"
 * insurer = Reference(org1001)
 * provider = Reference(org1002)
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-122"
@@ -259,7 +262,6 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 * identifier[tin].value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true
-* extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * telecom.system = #phone
 * telecom.value = "781-232-3200"
 * telecom.use = #work

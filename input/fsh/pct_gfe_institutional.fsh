@@ -35,6 +35,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * provider only Reference(PCTOrganization)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
+* provider.extension contains ProviderTaxonomy named providerTaxonomy 1..1 MS
+* provider.extension[providerTaxonomy] ^short = "Provider taxonomy codes consisting of NUCC Health Care Provider Taxonomy Code Set for providers"
+
 * priority MS
 * priority from $PROCPRIORITYVS (required)
 
