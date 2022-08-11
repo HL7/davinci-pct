@@ -29,9 +29,9 @@ as general guidance on how to read FHIR specifications. Readers who are unfamili
 Implementers should also familiarize themselves with the FHIR resources used within this IG.
 
 ### US Core
-Provider billing and payer claims adjudication systems for those profiles defined by US Core SHALL use the specification defined by [US Core](http://hl7.org/fhir/us/core/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
+Provider billing and payer claims adjudication systems for those profiles defined by US Core **SHALL** use the specification defined by [US Core](http://hl7.org/fhir/us/core/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
 
-Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support](http://hl7.org/fhir/us/core/general-guidance.html#must-support) Guidance where US Core IG resources are used.
+Da Vinci PCT implementations **SHALL** conform to the US Core IG [Must Support](http://hl7.org/fhir/us/core/general-guidance.html#must-support) Guidance where US Core IG resources are used.
 
 <blockquote class="stu-note">
 <p>
@@ -39,5 +39,5 @@ This has been updated to reflect Jira ticket <a href="https://jira.hl7.org/brows
 </p>
 </blockquote>
 ### Da Vinci HRex
-Provider billing and payer systems SHALL use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/) when exchanging information, as defined by [the Privacy and Security section of this IG](formal_specification.html#privacy--security-considerations). Implementers should be familiar with this specification.
+Provider billing and payer systems **SHALL** use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/) when exchanging information, as defined by [the Privacy and Security section of this IG](formal_specification.html#privacy--security-considerations). Implementers should be familiar with this specification.
 
