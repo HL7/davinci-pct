@@ -31,6 +31,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * patient only Reference(PCTPatient)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
+* provider MS
 * provider only Reference(PCTOrganization or PCTPractitioner)
 * provider ^short = "Billing provider - party responsible for the GFE"
 * provider.extension contains ProviderTaxonomy named providerTaxonomy 1..1 MS
