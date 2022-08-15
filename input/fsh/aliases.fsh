@@ -32,6 +32,7 @@ Alias:   $PAYEETYPE = http://terminology.hl7.org/CodeSystem/payeetype
 Alias:   $PROCPRIORITY = http://terminology.hl7.org/CodeSystem/processpriority
 Alias:   $NUBCREVENUE = https://www.nubc.org/CodeSystem/RevenueCodes
 Alias:   $CLAIMUSECS = http://hl7.org/fhir/claim-use
+Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

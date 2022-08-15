@@ -13,7 +13,7 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 // * identifier ^slicing.ordered = false   // can be omitted, since false is the default
 // * identifier ^slicing.description = "Slice based on $this pattern"
 
-* identifier contains ETIN 0..1 MS
+* identifier contains ETIN 0..1 MS and tin 0..1 MS
 * identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN 
 * identifier[ETIN].value 1..1 MS
 * identifier[ETIN] ^short = "The submitter's Electronic Transmitter Identification Number."
@@ -23,6 +23,10 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 * identifier[NPI] ^patternIdentifier.type  = $V2-0203#NPI 
 * identifier[NPI].value 1..1 MS
 * identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
+
+* identifier[tin] ^patternIdentifier.type = $V2-0203#TAX 
+* identifier[tin] ^short = "Tax ID Number"
+* identifier[tin].value 1..1
 
 * name.given 1..1 MS
 

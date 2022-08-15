@@ -60,12 +60,14 @@ Description: "NUBC UB-04 Revenue codes"
 * codes from system $NUBCREVENUE
 * ^copyright = "This Valueset is not copyrighted."
 
+// TODO: replace with THO VS 
 ValueSet: PCTGFEItemCptHcpcsHippsVS
 Title: "PCT GFE Item CPT - HCPCS - HIPPS Value Set"
 Description: "CPT - HCPCS - HIPPS codes to report medical procedures and services under public and private health insurance programs"
 * codes from system $CPT
 * codes from system $HCPCS
 * codes from system $HIPPS
+* codes from system $DAR
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 
 ValueSet: PCTGFEItemCptHcpcsVS
