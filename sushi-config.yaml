@@ -22,7 +22,7 @@ contact:
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core: 3.1.1
-  hl7.fhir.us.davinci-hrex: 0.2.0     # NOTE: Da Vinci HRex depends on US Core 3.1.0
+  hl7.fhir.us.davinci-hrex: 1.0.0     # NOTE: Da Vinci HRex depends on US Core 3.1.0
 
 copyrightYear: 2021+
 releaseLabel: STU 1 Ballot 

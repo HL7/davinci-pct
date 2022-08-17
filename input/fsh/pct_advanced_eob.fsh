@@ -15,7 +15,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 * patient MS
-* patient only Reference(PCTPatient)
+* patient only Reference(HRexPatientDemographics)
 
 * insurer MS
 * insurer only Reference(PCTOrganization)

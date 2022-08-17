@@ -29,7 +29,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 * patient MS
-* patient only Reference(PCTPatient)
+* patient only Reference(HRexPatientDemographics)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
 * provider only Reference(PCTOrganization)

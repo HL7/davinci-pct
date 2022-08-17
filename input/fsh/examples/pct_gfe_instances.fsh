@@ -154,13 +154,11 @@ Description: "PCT GFE Bundle Professional Example 1"
 
 Instance: patient1001
 Description: "An instance of Patient"
-InstanceOf: PCTPatient
+InstanceOf: HRexPatientDemographics
 * name.given = "Eve"
 * name.family = "Betterhalf"
 * name.text = "Eve Betterhalf"
 //* identifier[memberID].type = #MB
-* identifier[memberID].system = "http://example.com/identifiers/member"
-* identifier[memberID].value = "12345"
 //* identifier[employeeID].system = "http://example.com/identifiers/employee"
 //* identifier[employeeID].value = "667788"
 * gender = Hl7FhirAdminGender#female
