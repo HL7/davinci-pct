@@ -23,6 +23,9 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 //* identifier[NPI].value 1..1
 //* identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
+* identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
+* identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
+
 * type 1..* MS
 * type from PCTOrganizationTypeVS (extensible)
 
