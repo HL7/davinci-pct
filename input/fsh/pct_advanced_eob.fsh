@@ -45,7 +45,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.revenue from PCTGFEItemRevenueVS (required)
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
-* item.productOrService from PCTGFEItemCptHcpcsVS (required)
+* item.productOrService from USClaimMedicalProductOrServiceCodes (required)
 // Need to make item.productOrService required when item.revenue is provided ??
 //* item.productOrService obeys EOB-out-inst-item-productorservice
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
