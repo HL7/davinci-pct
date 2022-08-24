@@ -10,6 +10,7 @@ Id: gfeSubmitter
 Description: "This extension is used to indicate the scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB."
 * value[x] only Reference(PCTOrganization or PCTPractitioner)
 * value[x] ^short = "The scheduling entity submitting the GFE"
+* valueReference 1..1
 
 Extension: GFEProviderAssignedIdentifier
 Id: gfeProviderAssignedIdentifier
