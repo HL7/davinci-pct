@@ -40,6 +40,11 @@ RuleSet: OrgContactSlicing
 * contact ^slicing.description = "Slice based on $this pattern"
 * contact MS
 
+Invariant: GFEBundle-one-submitter-for-all-gfe 
+Description: "All GFEs must have the same GFE submitter"
+Expression: "(Bundle.entry.resource.ofType(Claim).extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeSubmitter').valueReference.reference.distinct().count() = 1)"
+Severity: #error
+
 //// NOTE: based on CARIN-BB IG -- see C4BBExplanationOfBenefit profile
 //// Invariants
 
