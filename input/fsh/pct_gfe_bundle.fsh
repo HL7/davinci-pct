@@ -13,7 +13,7 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
-* entry obeys GFEBundle-one-submitter-for-all-gfe
+* obeys GFEBundle-one-submitter-for-all-gfe
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open

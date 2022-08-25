@@ -138,6 +138,9 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
 * entry[gfeInstitutional].id = "PCT-GFE-Inst-Example-1"
 * entry[gfeInstitutional].resource = PCT-GFE-Institutional-MRI
+* entry[1].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[1].id = "Submitter-Org-1"
+* entry[1].resource = Submitter-Org-1
 
 Instance: PCT-GFE-Bundle-Prof-1
 InstanceOf: PCTGFEBundle
@@ -148,6 +151,9 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Prof-Example-1"
 * entry[gfeProfessional].id = "PCT-GFE-Prof-Example-1"
 * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
+* entry[1].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[1].id = "Submitter-Org-1"
+* entry[1].resource = Submitter-Org-1
 
 
 ///////////////////////////////////////////
