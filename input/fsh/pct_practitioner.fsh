@@ -28,6 +28,10 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 * identifier[tin] ^short = "Tax ID Number"
 * identifier[tin].value 1..1
 
+* identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
+* identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
+
+
 * name.given 1..1 MS
 
 //TODO: add slices for phone and email
