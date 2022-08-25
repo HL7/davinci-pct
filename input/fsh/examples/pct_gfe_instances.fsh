@@ -229,7 +229,7 @@ Description: "Professional GFE Submitter 1"
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
 Description: "Institutional GFE Submitter 1"
-* type = PCTOrganizationTypeCS#institutional-submitter "Institutional GFE Submitter"
+* type = $ORGTYPE#bus
 * name = "GFE Service Help INC."
 * identifier[ETIN].value = "ETIN-10010301"
 * active = true
