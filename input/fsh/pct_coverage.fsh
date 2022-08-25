@@ -27,16 +27,17 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 * class 1..* MS
 * class[group].name 1..1
 * class.name 1..1 MS
-// * class ^slicing.discriminator.type = #pattern
-// * class ^slicing.discriminator.path = "type"
-// * class ^slicing.rules = #open
-// * class ^slicing.ordered = false   // can be omitted, since false is the default
-// * class ^slicing.description = "Slice based on value pattern"
-// * class contains
-//    group 0..1  MS and
-//    plan 0..1 MS
-// * class[group].type = $CoverageClassCS#group
-// * class[plan].type = $CoverageClassCS#plan
+* class ^slicing.discriminator.type = #pattern
+* class ^slicing.discriminator.path = "type"
+* class ^slicing.rules = #open
+* class ^slicing.ordered = false   // can be omitted, since false is the default
+* class ^slicing.description = "Slice based on value pattern"
+* class contains
+    plan 0..1 MS
+
+* class[plan].type.coding 1..*
+* class[plan].type = COVCLASS#plan
+* class[plan].value 1..1 MS
 
 * period 1..1 MS
 
