@@ -33,6 +33,9 @@ Alias:   $PROCPRIORITY = http://terminology.hl7.org/CodeSystem/processpriority
 Alias:   $NUBCREVENUE = https://www.nubc.org/CodeSystem/RevenueCodes
 Alias:   $CLAIMUSECS = http://hl7.org/fhir/claim-use
 Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason
+Alias:   MSDRG =  https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
+Alias:   APDRG =  http://uri.hddaccess.com/cs/apdrg
+Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

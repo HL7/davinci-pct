@@ -10,7 +10,6 @@ ValueSet: PCTOrganizationTypeVS
 Title: "PCT Organization Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
 Description: "Codes to specify the type of entity involved in the PCT GFE process"
 * codes from valueset $OrganizationType
-* codes from system PCTOrganizationTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 
 // ValueSet: PCTGFEProcessPriorityVS
@@ -132,3 +131,11 @@ Description: "CPT - HCPCS - HIPPS codes to report medical procedures and service
 * codes from system $HIPPS
 * codes from system $DAR
 * ^copyright = "This Valueset is not copyrighted."
+
+// TODO replace with THO VS
+ValueSet: USClaimDRGCodes
+Title: "US Claim DRG Codes"
+Description: "US Claim Diagnosis Related Group Codes. All codes from MS-DRGs - AP-DRGs - APR-DRGs"
+* codes from system MSDRG
+* codes from system APDRG
+* codes from system APRDRG 

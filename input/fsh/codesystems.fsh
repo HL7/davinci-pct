@@ -8,15 +8,6 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 * #naiccode "NAIC Code" "An identifier assigned to licensed and authorized insurance companies by the National Association of Insurance Commissioners (NAIC)"
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTOrganizationTypeCS
-Title: "PCT Organization Type Code System"
-Description: "Organization Type codes for describing the type of organizations involved in the PCT GFE process"
-* ^caseSensitive = true
-* #institutional-submitter "Institutional GFE Submitter" "Institutional GFE Submitter"
-* #professional-submitter "Professional GFE Submitter" "Professional GFE Submitter"
-* #billing-provider "Billing Provider" "Billing Provider"
-* ^copyright = "This CodeSystem is not copyrighted."
-
 CodeSystem: PCTCoverageCopayTypeCS
 Title: "PCT Coverage Copay Type Code System"
 //Id: pct-coverage-copay-type
@@ -63,6 +54,7 @@ Description: "Defining codes for the classification of the supplied supporting i
 * #cmspos "CMS Place of Service" "Place of Service Codes are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided. The Centers for Medicare & Medicaid Services (CMS) maintain POS codes used throughout the health care industry."
 * #typeofbill "Type of Bill"  "UB-04 Type of Bill (FL-04) provides specific information for payer purposes."
 * #servicefacility "Service Facility" "The facility where the service occurred. Examples include hospitals, nursing homes, laboratories or homeless shelters."
+* #drg "DRG" "DRG (Diagnosis Related Group), including the code system, the DRG version and the code value"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTCareTeamRole
@@ -96,3 +88,4 @@ Description: "Describes the various amount fields used when payers receive and a
 * #memberliability "Member liability" "The amount of the member's liability."
 * #discount "Discount" "The amount of the discount"
 * #drugcost "Drug cost" "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration"
+

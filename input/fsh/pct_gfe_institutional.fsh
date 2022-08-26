@@ -75,30 +75,18 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * diagnosis[principal].diagnosis[x] MS
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[principal].packageCode MS
-* diagnosis[principal].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
-* diagnosis[principal].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
 * diagnosis[admitting].type = $DIAGTYPECS#admitting
 * diagnosis[admitting].diagnosis[x] MS
 * diagnosis[admitting].diagnosis[x] only CodeableConcept
 * diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[admitting].packageCode MS
-* diagnosis[admitting].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
-* diagnosis[admitting].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
 * diagnosis[patientReasonForVisit].type = PCTDiagnosisType#patientReasonForVisit
 * diagnosis[patientReasonForVisit].diagnosis[x] MS
 * diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
 * diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[patientReasonForVisit].packageCode MS
-* diagnosis[patientReasonForVisit].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
-* diagnosis[patientReasonForVisit].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
 * diagnosis[other].type = PCTDiagnosisType#other
 * diagnosis[other].diagnosis[x] MS
 * diagnosis[other].diagnosis[x] only CodeableConcept
 * diagnosis[other].diagnosis[x] from PCTDiagnosticCodes (required)
-* diagnosis[other].packageCode MS
-* diagnosis[other].packageCode ^short = "For the Institutional case this is the Provider GFE DRG"
-* diagnosis[other].packageCode ^comment = "The Diagnosis Related Grouper (DRG) submitted by the provider."
 
 * insert ProcedureSlicing
 //* procedure.procedure[x] MS
@@ -150,7 +138,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
    typeOfBill 0..1 MS and
-   serviceFacility 0..1 MS
+   serviceFacility 0..1 MS and
+   drg 0..1
 
 * supportingInfo[typeOfBill].category MS
 * supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill 
@@ -163,6 +152,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * supportingInfo[serviceFacility].category MS
 * supportingInfo[serviceFacility].valueReference 1..1 MS
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
+
+* supportingInfo[drg].category = PCTSupportingInfoType#drg
+* supportingInfo[drg].code from USClaimDRGCodes (required)
 
 * item 1..999 MS
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
