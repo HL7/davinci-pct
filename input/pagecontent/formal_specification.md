@@ -38,6 +38,42 @@ This implementation guide sets expectations for at least two types of systems:
 
 There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the “member health history”.
 
+#### Business Actors
+
+* **Payer** – An organization that pays for administered medical services and products and can process provider cost estimations to calculate member specific cost sharing amounts, liabilities, payments, and expenses for use in member health care decision making.
+
+* **Provider** – A practitioner, clinician, or organization providing healthcare related services or products to a member and submitting an estimation of charges (Good Faith Estimate) to a payer for processing and may access payer processed estimations.
+
+* **Member** – A health plan member / patient who accesses a provider estimation and a payer processed estimation of costs for products or services they may receive in the future.
+
+There are different terms used for individual actors involved in health plan coverage. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual who will ultimately receive the care.
+
+#### Technical Actors ####
+
+* **Primary Participating Entity** – A business actor sending or receiving resources conforming to this implementation guide inclusive of all systems functionally acting on behalf of the actor, including intermediaries.
+
+* **Sender** – A primary participating entity sending resources conforming to this guide.
+
+* **Receiver** – A primary participating entity receiving resources conforming to this guide.
+
+#### Must Support ####
+
+The following rules regarding Must support elements apply to all Profiles in this guide. The Must Support definitions are not inherited from other implementation guides, including when a profile in this guide is derived from another guide.
+
+Sender:
+* The sender SHALL send the data element if the sender maintains the data element and is authorized to share it.
+    * Data elements that the sender maintains includes data elements available in the systems under the sender’s control.
+
+    * If the sender does not capture/store the data, the data is not available, or sharing of the data is not authorized, the system SHOULD NOT send the element if the element is not marked as mandatory (lower cardinality of 0).
+ 
+Receiver:
+
+* The receiver SHALL be capable of processing resource instances containing must-support data elements without generating an error or causing the application to fail.
+* The receiver SHOULD be capable of displaying must support data elements for human use.
+* The receiver SHALL be able to process resource instances containing must-support data elements asserting missing information (data absent reason extension).
+
+This guide uses technical actors to define [Must Support](formal_specification.html#must-support) conformance requirements.
+
 #### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of AEOB requests and responses.
 
