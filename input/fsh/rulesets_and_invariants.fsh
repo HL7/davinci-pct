@@ -40,6 +40,12 @@ RuleSet: OrgContactSlicing
 * contact ^slicing.description = "Slice based on $this pattern"
 * contact MS
 
+RuleSet: IdentfierSlicing
+* identifier ^slicing.discriminator.path = "type"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.description = "Slice based on type pattern"
+
 Invariant: GFEBundle-one-submitter-for-all-gfe 
 Description: "All GFEs must have the same GFE submitter"
 Expression: "(Bundle.entry.resource.ofType(Claim).extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeSubmitter').valueReference.reference.distinct().count() = 1)"

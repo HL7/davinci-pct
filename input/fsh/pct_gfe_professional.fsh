@@ -4,10 +4,7 @@ Id: davinci-pct-gfe-professional
 Title: "PCT Good Faith Estimate Professional"
 Description: "PCT Good Faith Estimate Professional is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for a professional GFE submission."
 
-* identifier ^slicing.discriminator.path = "type"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.description = "Slice based on $this pattern"
+* insert IdentfierSlicing
 * identifier contains
    PLAC 1..1 and
    INTER 0..*

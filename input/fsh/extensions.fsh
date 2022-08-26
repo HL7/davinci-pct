@@ -12,11 +12,6 @@ Description: "This extension is used to indicate the scheduling entity that subm
 * value[x] ^short = "The scheduling entity submitting the GFE"
 * valueReference 1..1
 
-Extension: GFEProviderAssignedIdentifier
-Id: gfeProviderAssignedIdentifier
-Description: "This extension is used to indicate the GFE Provider Assigned Identifier."
-* value[x] only Identifier
-
 // Extension: PlannedPeriodOfService
 // Id: plannedPeriodOfService
 // Description: "This extension is used to provide the planned date or dates of service."
@@ -44,11 +39,6 @@ Extension: ProviderEventMethodology
 Id: providerEventMethodology
 Description: "This extension is used for indicating the method a provider used to group services, and those providing such services, beyond what may be indicated through DRGs that the payer or patient may find helpful (e.g. grouping services by a standardized episode of care definition)."
 * value[x] only string
-
-Extension: InterTransIdentifier
-Id: interTransIdentifier
-Description: "This extension is used to provide the GFE Service Identifier for Transmission Intermediaries."
-* value[x] only Identifier
 
 Extension: GFEBillingProviderLineItemCtrlNum
 Id: gfeBillingProviderLineItemCtrlNum
