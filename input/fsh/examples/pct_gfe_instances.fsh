@@ -58,8 +58,9 @@ Description: "PCT Institutional GFE Example 1"
 Instance: PCT-GFE-Professional-MRI
 InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
+* identifier[PLAC].system = V2-0203
+* identifier[PLAC].value = "GFEProviderAssignedID0002"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
-* extension[gfeProviderAssignedIdentifier].valueIdentifier.value = "GFEProviderAssignedID0002"
 * extension[providerEventMethodology].valueString = "EEMM1022"
 * extension[interTransIdentifier].valueIdentifier.value = "InterTransID0002"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
