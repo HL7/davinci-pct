@@ -79,7 +79,6 @@ Description: "PCT Professional GFE Example 1"
 * insurance.coverage = Reference(coverage1001)
 * diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
-* item.extension[estimatedDateOfService].valueDate = "2021-10-31"
 * item.sequence = 1
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"

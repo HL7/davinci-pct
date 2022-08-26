@@ -131,8 +131,6 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item 1..50 MS
 * item.extension contains ReferralNumber named referralNumber 0..11 MS
 * item.extension[referralNumber] ^short = "Referral Number"
-* item.extension contains EstimatedDateOfService named estimatedDateOfService 0..1 MS
-* item.extension[estimatedDateOfService] ^comment = "This could be the scheduled date of admission or service."
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 * item.extension contains ServiceDescription named serviceDescription 1..1
 
@@ -165,6 +163,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.detail.extension[compoundDrugLinkingNumber] ^short = "Compound Drug Linking Number"
 * item.detail.extension[compoundDrugLinkingNumber] ^definition = "Way of linking multiple components of a drug. Could be a prescription number or a identifier created by the  provider if no prescription number is available."
 * item.detail.extension[compoundDrugLinkingNumber] ^comment = "Allows the sender to link multiple drug components together for billing purposes."
+
+* item.serviced[x] MS
 
 * total 1..1 MS
 * total ^short = "Total GFE Charges Submitted"

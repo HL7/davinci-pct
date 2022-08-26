@@ -1,6 +1,6 @@
 Profile: PCTGFEInstitutional
 Parent: Claim
-Id: pct-gfe-Institutional
+Id: davinci-pct-gfe-Institutional
 Title: "PCT Good Faith Estimate Institutional"
 Description: "PCT Good Faith Estimate Institutional is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for an institutional GFE submission."
 
@@ -22,6 +22,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * extension contains InterTransIdentifier named interTransIdentifier 0..1 MS
 * extension[interTransIdentifier] ^short = "Intermediary Transmission Identifier"
 * extension[interTransIdentifier] ^definition = "Transmission identifier for Intermediaries. Allows a third party transmission intermediary to assign a unique identifier for the services in this claim resource to be used in back-end processes."
+
+* billablePeriod MS
 
 * type = $ClaimTypeCS#institutional
 * status MS
@@ -190,6 +192,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.detail.extension[compoundDrugLinkingNumber] ^short = "Compound Drug Linking Number"
 * item.detail.extension[compoundDrugLinkingNumber] ^definition = "Way of linking multiple components of a drug. Could be a prescription number or a identifier created by the  provider if no prescription number is available."
 * item.detail.extension[compoundDrugLinkingNumber] ^comment = "Allows the sender to link multiple drug components together for billing purposes."
+
+* item.serviced[x] MS
 
 * total 1..1 MS
 * total ^short = "Total GFE Charges Submitted"
