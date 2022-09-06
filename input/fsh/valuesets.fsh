@@ -129,7 +129,7 @@ Description: "CPT - HCPCS - HIPPS codes to report medical procedures and service
 * codes from system $CPT
 * codes from system $HCPCS
 * codes from system $HIPPS
-* codes from system $DAR
+* $DAR#not-applicable "Not Applicable"
 * ^copyright = "This Valueset is not copyrighted."
 
 // TODO replace with THO VS
