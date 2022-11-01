@@ -40,7 +40,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * item 1..* MS
 * item.extension contains ServiceDescription named serviceDescription 1..1
-* item.revenue MS
+//* item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
