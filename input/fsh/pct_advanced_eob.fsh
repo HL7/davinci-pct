@@ -57,7 +57,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // Need to make item.productOrService required when item.revenue is provided ??
 //* item.productOrService obeys EOB-out-inst-item-productorservice
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
-* item.net 1..1 MS
+//* item.net 1..1 MS
 * item.quantity MS
 * item.adjudication 1..* MS
 * item.adjudication.category from PCTGFEItemAdjudicationVS (required)
