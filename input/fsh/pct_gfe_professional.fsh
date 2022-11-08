@@ -62,7 +62,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 * insurance.coverage MS
 * insurance.coverage only Reference(PCTCoverage)
-* insurance.preAuthRef 0..2 MS
+* insurance.preAuthRef 0..2
 
 * insert DiagnosisSlicing
 * diagnosis 1..*
