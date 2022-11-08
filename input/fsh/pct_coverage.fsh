@@ -13,8 +13,8 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 
 //* identifier MS
 
-* subscriber MS
-* subscriber ^short = "Required if subscriber is a person that is not the beneficiary"
+* subscriber
+* subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
 * subscriberId 1..1 MS
 //* extension contains SubscriberEmployeeIdentifier named subscriberEmployeeIdentifier 0..1 MS
 

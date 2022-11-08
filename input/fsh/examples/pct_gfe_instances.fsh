@@ -48,11 +48,11 @@ Description: "PCT Institutional GFE Example 1"
 * item.quantity.value = 1
 * item.net.value = 200.00
 * item.net.currency = #USD
-* total.value = 200.00
-* total.currency = #USD
 * item.detail.sequence = 1
 * item.detail.productOrService = $NDC#47781-457
 * item.detail.extension[compoundDrugLinkingNumber].valueInteger = 123456
+* total.value = 200.00
+* total.currency = #USD
 
 Instance: PCT-GFE-Professional-MRI
 InstanceOf: PCTGFEProfessional
