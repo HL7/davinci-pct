@@ -35,6 +35,9 @@ Description: "PCT Institutional GFE Example 1"
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-121"
 * referral.display = "Referral Number"
+* supportingInfo[typeOfBill].sequence = 1
+* supportingInfo[typeOfBill].category = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTSupportingInfoType#typeofbill
+* supportingInfo[typeOfBill].code = https://www.nubc.org/CodeSystem/TypeOfBill#example-bill-type
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
@@ -109,6 +112,9 @@ Description: "PCT Institutional GFE for MRI"
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-122"
 * referral.display = "Referral Number"
+* supportingInfo[typeOfBill].sequence = 1
+* supportingInfo[typeOfBill].category = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTSupportingInfoType#typeofbill
+* supportingInfo[typeOfBill].code = https://www.nubc.org/CodeSystem/TypeOfBill#example-bill-type
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)

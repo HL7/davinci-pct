@@ -148,7 +148,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   typeOfBill 0..1 MS and
+   typeOfBill 1..1 MS and
    serviceFacility 0..1 MS and
    drg 0..1
 
