@@ -37,6 +37,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 //* payee.type.coding = #provider
 
+* claim.identifier.system = "http://example.com/identifiers/bundle"
+* claim.identifier.value = "59688475-2324-3242-23473847"
 * outcome = #complete
 
 * insurance.focal = true

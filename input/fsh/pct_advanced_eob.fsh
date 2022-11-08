@@ -31,6 +31,15 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * priority MS
 * priority from $PROCPRIORITYVS (required)
 
+
+* claim 1..1 MS
+* claim.identifier 1..1 MS
+* claim.identifier ^short = "GFE identifier of the originally submitted claim"
+* claim.identifier ^definition = "Matches the provider submitted GFE claim.identifier this Advance ExplanationOfBenefit is addressing where identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203|PLAC (with the identifier.value and identifier.system matching the original GFE identifier values)."
+* claim.identifier.system MS
+* claim.identifier.value 1..1 MS
+
+
 * insurance.coverage only Reference(PCTCoverage)
 
 * benefitPeriod 1..1

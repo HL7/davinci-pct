@@ -94,6 +94,7 @@ Description: "PCT Professional GFE Example 1"
 Instance: PCT-GFE-Institutional-MRI
 InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE for MRI"
+* identifier[PLAC].value = "GFEProviderAssignedID0001MRI"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 * extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"

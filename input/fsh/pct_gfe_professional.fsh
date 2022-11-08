@@ -9,6 +9,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
    PLAC 1..1 and
    INTER 0..*
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
+* identifier[PLAC].system MS
+* identifier[PLAC].value 1..1 MS
 * identifier[PLAC] ^short = "Provider Assigned Identifier for GFE Claim"
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
