@@ -53,7 +53,6 @@ Description: "PCT Institutional GFE Example 1"
 * item.net.currency = #USD
 * item.detail.sequence = 1
 * item.detail.productOrService = $NDC#47781-457
-* item.detail.extension[compoundDrugLinkingNumber].valueInteger = 123456
 * total.value = 200.00
 * total.currency = #USD
 

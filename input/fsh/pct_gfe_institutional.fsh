@@ -204,11 +204,6 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 * item.detail.quantity MS
 
-* item.detail.extension contains CompoundDrugLinkingNumber named compoundDrugLinkingNumber 0..1 MS
-* item.detail.extension[compoundDrugLinkingNumber] ^short = "Compound Drug Linking Number"
-* item.detail.extension[compoundDrugLinkingNumber] ^definition = "Way of linking multiple components of a drug. Could be a prescription number or a identifier created by the  provider if no prescription number is available."
-* item.detail.extension[compoundDrugLinkingNumber] ^comment = "Allows the sender to link multiple drug components together for billing purposes."
-
 * item.serviced[x] MS
 
 * total 1..1 MS

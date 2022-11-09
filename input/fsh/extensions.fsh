@@ -64,10 +64,10 @@ Description: "This extension is used by the provider to assign a unique identifi
 // //* value[x] only Money
 // * value[x] only decimal
 
-Extension: CompoundDrugLinkingNumber
-Id: compoundDrugLinkingNum
-Description: "This extension is used to provide the Compound Drug Linking Number."
-* value[x] only id or integer
+// Extension: CompoundDrugLinkingNumber
+// Id: compoundDrugLinkingNum
+// Description: "This extension is used to provide the Compound Drug Linking Number."
+// * value[x] only id or integer
 
 
 //// For PCTAdvancedEOB Profile ////
