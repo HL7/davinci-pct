@@ -30,8 +30,6 @@ To ensure the IG supports all potential flows of information, the IG supports an
 By using the FHIR standard and implementing this guide, providers and payers can enhance their existing technologies, where applicable, for estimating patient costs securely and efficiently using common open web technologies. The anticipated benefit of using FHIR APIs is to enable applications of the patients’ choice to give greater transparency into patient-specific estimated costs of expected healthcare services and items.
 
 FHIR is being used for consumer access to healthcare related data at significant scale today, and there are regulatory requirements in the form of the CMS Patient Access API for FHIR support for the related use case of post adjudicated claims. Use of an industry standard would keep the barrier to stakeholder adoption relatively low.
-Acronyms used in this IG can be found in the [Terms and Concepts](use_cases.html#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG.
-
 
 <blockquote class="stu-note">
 <ul>  
@@ -39,6 +37,9 @@ Acronyms used in this IG can be found in the [Terms and Concepts](use_cases.html
     <li>During the develop of this IG the question arose on how related GFEs should be linked. Especially if they arrive at different times. If a linking ID is used at the GFE level, how should it be used? We are looking for feedback on this topic.</li>
 </ul>
 </blockquote>
+
+By using the FHIR standard and implementing this guide, providers and payers can enhance their existing technologies, where applicable, for estimating patient costs securely and efficiently using common open web technologies. The anticipated benefit of using FHIR APIs is to enable applications of the Patients’ choice to give greater transparency into patient-specific estimated costs of expected healthcare services and items.
+ FHIR is being used for consumer access to healthcare related data at significant scale today, and there are regulatory requirements in the form of the CMS Patient Access API for FHIR support for the related use case of post adjudicated claims. Use of an aligned FHIR standard would keep the barrier to consumer adoption relatively low.
 
 Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG.
 
