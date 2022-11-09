@@ -141,6 +141,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * careTeam[operating].provider only Reference(PCTPractitioner)
 //* careTeam[operating] ^short = "May be used for the Institutional case only"
 * careTeam[rendering].role = PCTCareTeamRole#rendering
+* careTeam[rendering].provider only Reference(PCTPractitioner)
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
 * careTeam[referring].role = PCTCareTeamRole#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
