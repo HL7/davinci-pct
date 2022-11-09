@@ -12,6 +12,12 @@ Description: "This extension is used to indicate the scheduling entity that subm
 * value[x] ^short = "The scheduling entity submitting the GFE"
 * valueReference 1..1
 
+Extension: GFEDisclaimer
+Id: gfeDisclaimer
+Description: "Disclaimers the patient should be made aware of regarding the providers estimate"
+* value[x] only string
+* valueString 1..1
+
 // Extension: PlannedPeriodOfService
 // Id: plannedPeriodOfService
 // Description: "This extension is used to provide the planned date or dates of service."
@@ -34,6 +40,8 @@ Extension: ReferralNumber
 Id: referralNumber
 Description: "This extension is used to provide the Referral Number."
 * value[x] only string
+
+
 
 Extension: ProviderEventMethodology
 Id: providerEventMethodology
