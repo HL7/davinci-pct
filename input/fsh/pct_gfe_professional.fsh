@@ -151,7 +151,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.productOrService ^comment = "Must be provided with an actual CPT/HCPCS value. Can’t be null or N/A or data absent reason."
 
 * item.unitPrice 1..1 MS
-* item.net 0..1
+* item.net 1..1 MS
 * item.quantity 1..1 MS
 
 * item.location[x] only CodeableConcept
