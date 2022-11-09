@@ -1,6 +1,12 @@
 ### Use Case
 
-The below describes the process of initiating the creation of an AEOB and the process of receiving or retrieving an AEOB. Note: An AEOB includes all GFEs as well as other required information.
+This guide provides specifications enabling a provider to submit a Good Faith Estimate (GFE) Bundle including one or more Good Faith Estimates (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an Advanced Explanation of Benefit Bundle including one or more Advanced Explanation of Benefits (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and possibly the GFE Bundle submitting provider, can retrieve to get an estimation of costs.  
+
+The primary use case for this guide is to enable the patient to have access to AEOBs for potential future medical services or items. Sharing this information with the original submitting provider may also be useful in facilitating conversations between patients and providers about their care and options. If this capability is supported by the implementer, the patient’s AEOB will be provided to the submitting provider using the same profiles in this guide. 
+
+This guide does not currently specify a means for providers to update or cancel a GFE submission. Rather, if there is new information that may materially affect the estimation, the provider would submit a new GFE Bundle.
+
+The below describes the process of initiating the creation of an AEOB, through submitting a GFE Bundle, and the process of retrieving an AEOB. 
 
 #### Submit AEOB Request to Payer
 
