@@ -42,7 +42,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * insurance.coverage only Reference(PCTCoverage)
 
-* benefitPeriod 1..1
+* benefitPeriod 1..1 MS
 
 * created ^short = "The date and time this estimate was calculated."
 * created ^comment = "The date and time this estimate was calculated based on what was known at that point in time."
