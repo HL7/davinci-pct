@@ -111,9 +111,9 @@ Extension: SubjectToMedicalMgmt
 Id: subjectToMedicalMgmt
 Title: "Subject To Medical Management"
 Description: "This extension is used to provide a reason to explain how the estimate may change subject to medical management."
-* value[x] only Coding
-* value[x] from PCTSubjectToMedicalMgmtReasonVS (extensible)
+* value[x] only CodeableConcept or string
 * value[x] ^short = "The estimate may change subject to medical management with this reason"
+* valueCodeableConcept from PCTSubjectToMedicalMgmtReasonVS (extensible)
 
 // Extension: SubjectToMedicalMgmtDisclaimer
 // Id: subject-to-medical-mgmt-disclaimer

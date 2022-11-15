@@ -88,6 +88,7 @@ Description: "Describes the various amount fields used when payers receive and a
 * #memberliability "Member liability" "The amount of the member's liability."
 * #discount "Discount" "The amount of the discount"
 * #drugcost "Drug cost" "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration"
+* #medicalmanagement "Medical Management" "Medical management requirements, such as prior authorization, step therapy, and more."
 
 CodeSystem: PCTIdentifierType
 Title:  "PCT Identifier Type"

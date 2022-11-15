@@ -1,5 +1,21 @@
 //// Rulesets
 
+RuleSet: AdjudicationSlicing
+* adjudication ^slicing.discriminator.type = #pattern
+* adjudication ^slicing.discriminator.path = "category"
+* adjudication ^slicing.rules = #open
+* adjudication ^slicing.ordered = false   // can be omitted, since false is the default
+* adjudication ^slicing.description = "Slice based on $this pattern"
+* adjudication MS
+
+RuleSet: ItemAdjudicationSlicing
+* item.adjudication ^slicing.discriminator.type = #pattern
+* item.adjudication ^slicing.discriminator.path = "category"
+* item.adjudication ^slicing.rules = #open
+* item.adjudication ^slicing.ordered = false   // can be omitted, since false is the default
+* item.adjudication ^slicing.description = "Slice based on $this pattern"
+* item.adjudication 1.. MS
+
 RuleSet: SupportingInfoSlicing
 * supportingInfo ^slicing.discriminator.type = #pattern
 * supportingInfo ^slicing.discriminator.path = "category"

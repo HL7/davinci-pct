@@ -59,8 +59,19 @@ Description: "The No Surprises Act requires that group health plans and insurers
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
 //* item.net 1..1 MS
 * item.quantity MS
-* item.adjudication 1..* MS
+
+//* item.adjudication 1..* MS
+//* item.adjudication.category from PCTGFEItemAdjudicationVS (required)
+//* item.adjudication.extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 0..* MS
+
+* insert ItemAdjudicationSlicing
+* item.adjudication contains medicalmanagement 0..* MS 
 * item.adjudication.category from PCTGFEItemAdjudicationVS (required)
+* item.adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
+* item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryType#medicalmanagement
+* item.adjudication[medicalmanagement].amount 0..1 MS
+* item.adjudication[medicalmanagement].value 0..0
+
 // * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
 // * insert ItemAdjudicationSlicing
@@ -79,7 +90,6 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * item.adjudication[adjudicationamounttype].amount MS
 // * item.adjudication[adjudicationamounttype].amount 1..1
 
-* item.adjudication.extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 0..* MS
 
 
 * extension contains Disclaimer named disclaimer 1..* MS
@@ -89,6 +99,16 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 // * extension contains ExpirationDate named expirationDate 1..1 MS
 // * extension[expirationDate] ^short = "Once the AEOB is complete and formally issued it is good until this date."
+
+
+* insert AdjudicationSlicing
+* adjudication contains medicalmanagement 0..* MS 
+* adjudication.category from PCTGFEItemAdjudicationVS (required)
+* adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
+* adjudication[medicalmanagement].category = PCTAdjudicationCategoryType#medicalmanagement
+* adjudication[medicalmanagement].amount 0..1 MS
+* adjudication[medicalmanagement].value 0..0
+
 
 * total 1..* MS
 // * insert TotalSlicing

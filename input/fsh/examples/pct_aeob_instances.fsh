@@ -54,10 +54,13 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.net.value = 200.00
 * item.net.currency = #USD
-* item.adjudication.extension[subjectToMedicalMgmt].valueCoding = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
+* item.adjudication.extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
 * item.adjudication.category = PCTAdjudicationCategoryType#paidtoprovider "Paid to provider"
 * item.adjudication.amount.value = 200.00
 * item.adjudication.amount.currency = #USD
+
+* adjudication[medicalmanagement].category = PCTAdjudicationCategoryType#medicalmanagement "Medical Management"
+* adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
 
 * total.category = $ADJUDCS#submitted "Submitted Amount"
 * total.amount.value = 200.00
