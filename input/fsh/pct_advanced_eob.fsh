@@ -10,6 +10,11 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * extension contains ProviderContractingRate named providerContractingRate 0..1 MS
 //* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
+* insert IdentfierSlicing
+* identifier contains INTER 0..*
+* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary Identifier"
+* identifier[INTER] ^short = "Intermediary System Identifier"
+
 * status MS
 * use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
