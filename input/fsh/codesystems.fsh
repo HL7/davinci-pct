@@ -55,6 +55,8 @@ Description: "Defining codes for the classification of the supplied supporting i
 * #typeofbill "Type of Bill"  "UB-04 Type of Bill (FL-04) provides specific information for payer purposes."
 * #servicefacility "Service Facility" "The facility where the service occurred. Examples include hospitals, nursing homes, laboratories or homeless shelters."
 * #drg "DRG" "DRG (Diagnosis Related Group), including the code system, the DRG version and the code value"
+* #pointoforigin "Point of Origin" "UB-04 Source of Admission (FL-15) identifies the place where the patient is identified as needing admission to a facility."
+* #admtype "Admission Type" "UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled."
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTCareTeamRole

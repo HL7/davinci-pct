@@ -157,7 +157,10 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * supportingInfo contains
    typeOfBill 1..1 MS and
    serviceFacility 0..1 MS and
-   drg 0..1
+   drg 0..1 and
+   pointoforigin 0..1 and
+   admtype 0..1
+   
 
 * supportingInfo[typeOfBill].category MS
 * supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill 
@@ -173,6 +176,12 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 * supportingInfo[drg].category = PCTSupportingInfoType#drg
 * supportingInfo[drg].code from USClaimDRGCodes (required)
+
+* supportingInfo[pointoforigin].category = PCTSupportingInfoType#pointoforigin
+* supportingInfo[pointoforigin].code from AHANUBCPointOfOriginVS  (required)
+
+* supportingInfo[admtype].category = PCTSupportingInfoType#admtype
+* supportingInfo[admtype].code from AHANUBCPriorityTypeOfAdmissionOrVisitVS   (required)
 
 * item 1..999 MS
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS

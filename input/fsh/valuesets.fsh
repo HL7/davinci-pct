@@ -146,3 +146,50 @@ Description: "Codes to specify the type of AEOB"
 * include $ClaimTypeCS#institutional
 * include $ClaimTypeCS#professional
 * codes from system $ClaimTypeCS
+
+
+ValueSet: AHANUBCPointOfOriginVS
+Title: "NUBC Point Of Origin"
+Description: "The UB-04 Data File contains the complete set of NUBC codes. Every code in the range of possible codes is accounted for sequentially. 
+
+There are no gaps because all used and unused codes are identified. This value set consists of the following: 
+* FL 15 - Point of Origin for Admission or Visit for Non-newborn
+* FL 15 - Point of Origin for Admission or Visit for Newborn
+
+These codes are used to convey the patient point of origin for an admission or visit and are the property of the American Hospital Association.
+
+To obtain the underlying code systems, please see information [here](https://www.nubc.org/subscription-information)
+Statement of Understanding between AHA and HL7 can be found [here](http://www.hl7.org/documentcenter/public/mou/AHA%20HL7%20SOU%202020%20AHA%20Fully%20Executed.pdf). In particular see sections 4.1d and 4.2.
+
+The UB-04 Manual has a 12-month subscription period from June 30 through July 1.
+
+For frequently asked questions, see here [here](https://www.nubc.org/nubc-faqs)"
+* codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNonnewborn
+* codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNewborn 
+
+
+
+ValueSet: AHANUBCPriorityTypeOfAdmissionOrVisitVS
+Title: "NUBC Priority (Type) of Admission or Visit"
+Description: "The UB-04 Data File contains the complete set of NUBC codes. Every code in the range of possible codes is accounted for sequentially. There are no gaps because all used and unused codes are identified.
+
+This value set consists of the following:
+
+* FL 14 - Priority (Type) of Admission or Visit
+
+These codes are used to convey the priority of an admission or visit and are the property of the American Hospital Association.
+
+To obtain the underlying code systems, please see information [here](https://www.nubc.org/subscription-information)
+
+Statement of Understanding between AHA and HL7 can be found [here](http://www.hl7.org/documentcenter/public/mou/AHA%20HL7%20SOU%202020%20AHA%20Fully%20Executed.pdf). In particular see sections 4.1d and 4.2.
+
+The UB-04 Manual has a 12-month subscription period from June 30 through July 1.
+
+For frequently asked questions, see here [here](https://www.nubc.org/nubc-faqs)
+
+This Code system is referenced in the content logical definition of the following value sets:
+
+This CodeSystem is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+
+This code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit defines many codes, but they are not represented here"
+* codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPriorityTypeOfAdmitOrVisit 
