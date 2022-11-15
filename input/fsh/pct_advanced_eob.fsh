@@ -16,6 +16,8 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
 * status MS
+* type MS 
+* type from PCTAEOBTypeVS (required)
 * use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
 

@@ -139,3 +139,10 @@ Description: "US Claim Diagnosis Related Group Codes. All codes from MS-DRGs - A
 * codes from system MSDRG
 * codes from system APDRG
 * codes from system APRDRG 
+
+ValueSet: PCTAEOBTypeVS
+Title: "PCT Advance Explanation of Benefit Type Value Set"
+Description: "Codes to specify the type of AEOB"
+* include $ClaimTypeCS#institutional
+* include $ClaimTypeCS#professional
+* codes from system $ClaimTypeCS
