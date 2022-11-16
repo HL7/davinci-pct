@@ -58,7 +58,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * priority MS
 * priority from $PROCPRIORITYVS (required)
 
-* insurer 1..1
+* insurer 1..1 MS
 * insurer only Reference(PCTOrganization)
 
 * payee MS

@@ -50,7 +50,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * priority MS
 * priority from $PROCPRIORITYVS (required)
 
-* insurer 1..1
+* insurer 1..1 MS
 * insurer only Reference(PCTOrganization)
 
 * payee MS
