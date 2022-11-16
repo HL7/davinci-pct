@@ -135,10 +135,10 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * careTeam.qualification
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
-   attending 0..1 MS and
-   operating 0..2 MS and
-   rendering 0..1 MS and
-   referring 0..1 MS
+   attending 0..1 and
+   operating 0..* and
+   rendering 0..* and
+   referring 0..1
 * careTeam[attending].role = PCTCareTeamRole#attending
 //* careTeam[attending] ^short = "May be used for the Institutional case only"
 * careTeam[attending].provider only Reference(PCTPractitioner)
@@ -186,7 +186,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item 1..999 MS
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 * item.extension contains ServiceDescription named serviceDescription 1..1
-
+* item.careTeamSequence MS
 * item.revenue 1..1 MS
 * item.revenue from PCTGFEItemRevenueVS (required)
 * item.revenue ^short = "Revenue or cost center code - must provide a value for the Institutional case"
