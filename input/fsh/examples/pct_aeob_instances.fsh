@@ -55,11 +55,11 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * item.net.value = 200.00
 * item.net.currency = #USD
 * item.adjudication.extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
-* item.adjudication.category = PCTAdjudicationCategoryType#paidtoprovider "Paid to provider"
+* item.adjudication.category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
 * item.adjudication.amount.value = 200.00
 * item.adjudication.amount.currency = #USD
 
-* adjudication[medicalmanagement].category = PCTAdjudicationCategoryType#medicalmanagement "Medical Management"
+* adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
 * adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
 
 * total.category = $ADJUDCS#submitted "Submitted Amount"
