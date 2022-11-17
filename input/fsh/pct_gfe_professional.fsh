@@ -50,7 +50,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * priority MS
 * priority from $PROCPRIORITYVS (required)
 
-* insurer 1..1 MS
+* insurer 1..1
 * insurer only Reference(PCTOrganization)
 
 * payee MS
@@ -106,21 +106,21 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 
 * insert CareTeamSlicing
-//* careTeam 0..* MS
-* careTeam.provider 1..1 MS
+//* careTeam 0..*
+* careTeam.provider 1..1
 // ISSUE: does the qualification code give the taxonomy code? If so, no need to have PractitionerRole??
 * careTeam.provider only Reference(PCTPractitioner or PCTOrganization)
 //* careTeam.provider ^short = ""
-* careTeam.role 1..1 MS
+* careTeam.role 1..1
 * careTeam.role from PCTCareTeamRoleVS
 * careTeam.qualification
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
-   rendering 0..2 MS and
-   referring 0..1 MS
+   rendering 0..* and
+   referring 0..1
 * careTeam[rendering].role = PCTCareTeamRole#rendering
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
-* careTeam[rendering].qualification 1..1 MS
+* careTeam[rendering].qualification 1..1
 * careTeam[rendering].qualification ^short = "Practitioner credential or specialization - must provide a taxonomy code for the Professional case"
 * careTeam[referring].role = PCTCareTeamRole#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
@@ -143,6 +143,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.extension[referralNumber] ^short = "Referral Number"
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 * item.extension contains ServiceDescription named serviceDescription 1..1
+
+* item.careTeamSequence MS
 
 // * item.revenue MS
 // * item.revenue from PCTGFEItemRevenueVS (example)

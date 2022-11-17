@@ -113,6 +113,7 @@ Title: "PCT Care Team Role Value Set - locally defined for testing purpose; an e
 Description: "Codes to specify the the functional roles of the care team members."
 * $CARETEAMROLECS#primary "Primary provider"
 * codes from system PCTCareTeamRole
+* http://terminology.hl7.org/CodeSystem/claimcareteamrole#supervisor "Supervisor"
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTOrgContactPurposeTypeVS

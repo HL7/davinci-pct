@@ -63,11 +63,12 @@ CodeSystem: PCTCareTeamRole
 Title: "PCT Care Team Role"
 Description: "PCT code system for defining the functional roles of the care team members."
 * ^caseSensitive = true
-* #attending "Attending provider" "The attending provider"
-* #referring "Referring provider" "The referring provider"
-* #operating "Operating physician" "The operating physician"
-* #otheroperating "Other Operating physician" "The other operating physician"
-* #rendering "Rendering provider" "The rendering/performing provider"
+* #attending "Attending provider" "The attending physician."
+* #referring "Referring provider" "The referring provider."
+* #operating "Operating provider" "The operating physician."
+* #otheroperating "Other Operating" "The other operating physician."
+* #purchasedservice "Purchased service" "The provider from which a service was purchased by another provider."
+* #rendering "Rendering provider" "The rendering/performing provider."
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTOrgContactPurposeType
