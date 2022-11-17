@@ -72,13 +72,18 @@ Description: "The No Surprises Act requires that group health plans and insurers
 //* item.adjudication.extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 0..* MS
 
 * insert ItemAdjudicationSlicing
-* item.adjudication contains medicalmanagement 0..* MS 
-* item.adjudication.category from PCTGFEItemAdjudicationVS (required)
+* item.adjudication contains medicalmanagement 0..* MS and
+    benefitpaymentstatus 0..1 MS and
+    adjustmentreason 0..* MS
+* item.adjudication.category from PCTAdjudicationCategoryVS (extensible)
 * item.adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
-* item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryType#medicalmanagement
+* item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
 * item.adjudication[medicalmanagement].amount 0..1 MS
 * item.adjudication[medicalmanagement].value 0..0
-
+* item.adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status: Line level benefit payment status associated with professional claim estimates only."
+* item.adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
+* item.adjudication[adjustmentreason] ^short = "Adjustment Reason"
+* item.adjudication[adjustmentreason].reason from PCTPayerBenefitPaymentStatusVS (required)
 // * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
 // * insert ItemAdjudicationSlicing
@@ -109,12 +114,25 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 * insert AdjudicationSlicing
-* adjudication contains medicalmanagement 0..* MS 
-* adjudication.category from PCTGFEItemAdjudicationVS (required)
+* adjudication contains medicalmanagement 0..* MS and
+    billingnetworkstatus 0..1 MS and
+    renderingnetworkstatus 0..1 MS and
+    benefitpaymentstatus 0..1 MS and
+    adjustmentreason 0..* MS
+* adjudication.category 1..1 MS
+* adjudication.category from PCTAdjudicationCategoryVS (extensible)
 * adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
-* adjudication[medicalmanagement].category = PCTAdjudicationCategoryType#medicalmanagement
+* adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
 * adjudication[medicalmanagement].amount 0..1 MS
 * adjudication[medicalmanagement].value 0..0
+* adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
+* adjudication[billingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[renderingnetworkstatus] ^short = "Rendering Provider Network Status"
+* adjudication[renderingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status"
+* adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[adjustmentreason] ^short = "Adjustment Reason"
+* adjudication[adjustmentreason].reason from PCTAdjudicationCategoryVS (required)
 
 
 * total 1..* MS
