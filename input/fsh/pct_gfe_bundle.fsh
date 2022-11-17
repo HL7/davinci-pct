@@ -19,8 +19,13 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains
+    patient 1..2 MS and
+    coverage 1..1 MS and
+    organization 1..* MS and
     gfeInstitutional 0..* MS and
     gfeProfessional 0..* MS
+* entry[patient] ^short = "Entry in the bundle - will have the patient subject of care and may be a separate subscriber"
+* entry[patient].resource only PCTPatient
 * entry[gfeInstitutional] ^short = "Entry in the bundle - will have a PCTGFEInstitutional resource"
 * entry[gfeInstitutional].resource 1..1 MS
 * entry[gfeInstitutional].resource only PCTGFEInstitutional

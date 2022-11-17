@@ -25,6 +25,7 @@ Description: "Defining codes for the classification of diagnosis types"
 //* #externalCauseOfInjury "External Cause of Injury"	  "Required when an external cause of injury is needed to describe the injury"
 * #other "Other" "Required when other conditions coexist or develop subsequently during the treatment"
 //* #secondary "Secondary" "Required when necessary to report additional diagnoses on professional and non-clinician claims"
+* #externalCauseOfInjury "External Cause of Injury" "Required when an external cause of injury is needed to describe the injury"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTProcedureType

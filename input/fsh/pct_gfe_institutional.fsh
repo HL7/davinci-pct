@@ -86,6 +86,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
    principal 1..1 MS and
    admitting 0..1 MS and
    patientReasonForVisit 0..3 MS and
+   externalcauseofinjury 0..12 MS and
    other 0..24 MS
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
@@ -100,6 +101,10 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * diagnosis[patientReasonForVisit].diagnosis[x] MS
 * diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
 * diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[externalcauseofinjury].type = PCTDiagnosisType#externalCauseOfInjury
+* diagnosis[externalcauseofinjury].diagnosis[x] MS
+* diagnosis[externalcauseofinjury].diagnosis[x] only CodeableConcept
+* diagnosis[externalcauseofinjury].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[other].type = PCTDiagnosisType#other
 * diagnosis[other].diagnosis[x] MS
 * diagnosis[other].diagnosis[x] only CodeableConcept
