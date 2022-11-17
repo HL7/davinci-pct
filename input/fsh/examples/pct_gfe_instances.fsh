@@ -143,6 +143,9 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * entry[1].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[1].id = "Submitter-Org-1"
 * entry[1].resource = Submitter-Org-1
+* entry[2].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+* entry[2].id = "patient1001"
+* entry[2].resource = patient1001
 
 Instance: PCT-GFE-Bundle-Prof-1
 InstanceOf: PCTGFEBundle
@@ -156,6 +159,9 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[1].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[1].id = "Submitter-Org-1"
 * entry[1].resource = Submitter-Org-1
+* entry[2].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+* entry[2].id = "patient1001"
+* entry[2].resource = patient1001
 
 
 ///////////////////////////////////////////

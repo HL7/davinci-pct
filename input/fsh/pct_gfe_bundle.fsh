@@ -22,15 +22,30 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
     patient 1..2 MS and
     coverage 1..1 MS and
     organization 1..* MS and
+    practitioner 0..* MS and
     gfeInstitutional 0..* MS and
     gfeProfessional 0..* MS
+    
 * entry[patient] ^short = "Entry in the bundle - will have the patient subject of care and may be a separate subscriber"
-* entry[patient].resource only PCTPatient
-* entry[gfeInstitutional] ^short = "Entry in the bundle - will have a PCTGFEInstitutional resource"
+* entry[patient].resource 1..1 MS
+* entry[patient].resource only HRexPatientDemographics
+
+* entry[coverage] ^short = "Entry in the bundle - will have one Coverage"
+* entry[coverage].resource 1..1 MS
+* entry[coverage].resource only PCTCoverage
+
+* entry[organization] ^short = "Entry in the bundle - will have the payer organization and may have provider organization(s)"
+* entry[organization].resource 1..1 MS
+* entry[organization].resource only PCTOrganization
+
+* entry[practitioner] ^short = "Entry in the bundle - may have the provider Practitioner(s)"
+* entry[practitioner].resource 1..1 MS
+* entry[practitioner].resource only PCTPractitioner
+
+* entry[gfeInstitutional] ^short = "Entry in the bundle - may have PCTGFEInstitutional resource(s) and may have attachments as DocumentReference resource(s)"
 * entry[gfeInstitutional].resource 1..1 MS
-* entry[gfeInstitutional].resource only PCTGFEInstitutional
-* entry[gfeInstitutional].resource ^short = "Institutional Claim Resource for Predetermination"
-* entry[gfeProfessional] ^short = "Entry in the bundle - will have a PCTGFEProfessional resource"
+* entry[gfeInstitutional].resource only PCTGFEInstitutional or DocumentReference
+
+* entry[gfeProfessional] ^short = "Entry in the bundle - may have PCTGFEProfessional resource(s) and may have attachments as DocumentReference resource(s)"
 * entry[gfeProfessional].resource 1..1 MS
-* entry[gfeProfessional].resource only PCTGFEProfessional
-* entry[gfeProfessional].resource ^short = "Professional Claim Resource for Predetermination"
+* entry[gfeProfessional].resource only PCTGFEProfessional or DocumentReference
