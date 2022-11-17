@@ -79,11 +79,11 @@ Description: "The FDA published list of NDC codes for finished drug products"
 * codes from system $NDC
 * ^copyright = "This Valueset is not copyrighted."
 
-ValueSet: PCTGFEItemAdjudicationVS
+ValueSet: PCTAdjudicationCategoryVS
 Title: "PCT GFE Item Adjudication Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Sample Adjudication codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc."
+Description: "Value Set containing codes for the type of adjudication information provided."
 * codes from system $ADJUDCS
-* codes from system PCTAdjudicationCategoryType
+* codes from system PCTAdjudicationCategoryCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PCTCoverageCopayTypeVS
@@ -193,3 +193,24 @@ This CodeSystem is not used here; it may be used elsewhere (e.g. specifications 
 
 This code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit defines many codes, but they are not represented here"
 * codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPriorityTypeOfAdmitOrVisit 
+
+ValueSet: PCTPayerProviderNetworkStatusVS
+Title: "PCT Payer Provider Network Status"
+Description: "Indicates the Provider network status with the Payer as of the effective date of service or admission."
+* include PCTNetworkStatusCS#innetwork
+* include PCTNetworkStatusCS#outofnetwork
+* codes from system PCTNetworkStatusCS
+
+ValueSet: PCTPayerBenefitPaymentStatusVS
+Title: "PCT Payer Benefit Payment Status"
+Description: "Indicates the in network or out of network payment status of the claim or line item."
+* include PCTNetworkStatusCS#innetwork
+* include PCTNetworkStatusCS#outofnetwork
+* include PCTNetworkStatusCS#other
+* codes from system PCTNetworkStatusCS
+
+ValueSet: PCTAdjustmentReasonVS
+Title: "PCT Adjustment Reason"
+Description: "Codes indicating reasons why a claim or line item is adjusted."
+* codes from system https://x12.org/codes/claim-adjustment-reason-codes
+* codes from system https://x12.org/codes/remittance-advice-remark-codes
