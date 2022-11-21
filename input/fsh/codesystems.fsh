@@ -25,6 +25,7 @@ Description: "Defining codes for the classification of diagnosis types"
 //* #externalCauseOfInjury "External Cause of Injury"	  "Required when an external cause of injury is needed to describe the injury"
 * #other "Other" "Required when other conditions coexist or develop subsequently during the treatment"
 //* #secondary "Secondary" "Required when necessary to report additional diagnoses on professional and non-clinician claims"
+* #externalCauseOfInjury "External Cause of Injury" "Required when an external cause of injury is needed to describe the injury"
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTProcedureType
@@ -63,11 +64,12 @@ CodeSystem: PCTCareTeamRole
 Title: "PCT Care Team Role"
 Description: "PCT code system for defining the functional roles of the care team members."
 * ^caseSensitive = true
-* #attending "Attending provider" "The attending provider"
-* #referring "Referring provider" "The referring provider"
-* #operating "Operating physician" "The operating physician"
-* #otheroperating "Other Operating physician" "The other operating physician"
-* #rendering "Rendering provider" "The rendering/performing provider"
+* #attending "Attending provider" "The attending physician."
+* #referring "Referring provider" "The referring provider."
+* #operating "Operating provider" "The operating physician."
+* #otheroperating "Other Operating" "The other operating physician."
+* #purchasedservice "Purchased service" "The provider from which a service was purchased by another provider."
+* #rendering "Rendering provider" "The rendering/performing provider."
 * ^copyright = "This CodeSystem is not copyrighted."
 
 CodeSystem: PCTOrgContactPurposeType
@@ -77,22 +79,26 @@ Description: "Organization Contact Purpose Type Code System"
 * #GFERELATED "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 * ^copyright = "This CodeSystem is not copyrighted."
 
-CodeSystem: PCTAdjudicationCategoryType
-Title: "PCT Adjudication Category Type"
-Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
+CodeSystem: PCTAdjudicationCategoryCS
+Title: "PCT Adjudication Category CodeSystem"
+Description: "Codes indicating the type of adjudication information provided."
 * ^caseSensitive = true
-* #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
-* #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
-* #priorpayerpaid "Prior payer paid" "The reduction in the payment amount to reflect the carrier as a secondary payor."
-* #paidbypatient "Paid by patient" "The amount paid by the patient at the point of service."
-* #paidtoprovider "Paid to provider" "The amount paid to the provider."
-* #paidtopatient "Paid to patient" "paid to patient"
-* #memberliability "Member liability" "The amount of the member's liability."
-* #discount "Discount" "The amount of the discount"
-* #drugcost "Drug cost" "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration"
-* #medicalmanagement "Medical Management" "Medical management requirements, such as prior authorization, step therapy, and more."
+* #billingnetworkstatus "Billing Network Status" "Indicates the Billing Provider network status in relation to the patient's coverage."
+* #renderingnetworkstatus "Rendering Network Status" "Indicates the Rendering Provider network status in relation to the patient's coverage."
+* #benefitpaymentstatus "Benefit Payment Status" "Indicates the in network or out of network payment status of the claim."
+* #adjustmentreason "Adjustment Reason" "Defines the adjudication slice to identify the adjustment reason"
+* #medicalmanagement "Medical Management" "Defines the adjudication slice to identify medical management"
 
 CodeSystem: PCTIdentifierType
 Title:  "PCT Identifier Type"
 Description: "Defining codes for types of identifiers"
 * #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
+
+CodeSystem: PCTNetworkStatusCS
+Id: PCTNetworkStatusCS-TEMPORARY-TRIAL-USE
+Title: "PCT Network Status"
+* ^caseSensitive = true
+* ^copyright = "This CodeSystem is not copyrighted."
+* #innetwork "In Network" "Indicates an in network status in relation to a patient's coverage"
+* #outofnetwork "Out Of Network" "Indicates a not in network status in relation to a patient's coverage"
+* #other "Other" "Indicates other network status or when a network does not apply"
