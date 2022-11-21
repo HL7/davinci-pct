@@ -1,6 +1,6 @@
 Instance: GFESubmitOperation
 InstanceOf: OperationDefinition
-Description: "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource, (along with other referenced resources) and the only output is a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource."
+Description: "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The only output is a url for subsequent polling per [async pattern](http://build.fhir.org/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient and not to the provider."
 Usage: #definition
 
 * id = "GFE-submit"
@@ -9,6 +9,7 @@ Usage: #definition
 * title = "Submit a GFE resource for the creation of an AEOB"
 * status = #draft
 * kind = #operation
+* description = "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The only output is a url for subsequent polling per [async pattern](http://build.fhir.org/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient."
 * code = #gfe-submit
 * base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-submit"
 * resource = #Claim
@@ -25,8 +26,8 @@ Usage: #definition
 * parameter[1].use = #out
 * parameter[1].min = 1
 * parameter[1].max = "1"
-* parameter[1].documentation = "A Bundle containing a single AEOB resource plus referenced resources."
-* parameter[1].type = #Bundle
+* parameter[1].documentation = "A url for subsequent polling for an asyncronous response per the [async pattern](http://build.fhir.org/async-bundle.html)."
+* parameter[1].type = #url
 
 // Note: This is no longer needed. We will use FHIR queries instead. LD
 //
