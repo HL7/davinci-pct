@@ -142,7 +142,7 @@ Extension: ProcessNoteClass
 Id: processNoteClass
 Title: "ProcessNote Class"
 Description: "This extension is used to indicate a the class of AEOB Claim process notes"
-* value[x] ^short = "The class of AEOB Claim process note"
+* value[x] ^short = "The class of AEOB process note"
 * value[x] only CodeableConcept
 * value[x] from PCTAEOBProcessNoteVS (required)
 
