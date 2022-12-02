@@ -66,6 +66,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * total.amount.value = 200.00
 * total.amount.currency = #USD
 
+// * processNote.extension[processNoteClass].valueCoding = #disclaimer "Disclaimer"
+* processNote.text = "processNote disclaimer text"
+
 ////////////////////////////////////////////
 
 Instance: PCT-AEOB-Bundle-1

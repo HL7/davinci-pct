@@ -28,7 +28,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
 //* extension contains ReferralNumber named referralNumber 0..1 MS
 //* extension[referralNumber] ^short = "Referral Number"
-* extension contains ProviderEventMethodology named providerEventMethodology 0..1
+* extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
 * extension[providerEventMethodology] ^short = "Provider event collection methodology"
 * extension[providerEventMethodology] ^definition = "How the provider determined the number of claims and the number and type of billing providers to include in the GFE. Examples include provider episodes of care experience, PACES, order set based on clinical guidelines, payor suggested grouping, or some other method of determination."
 * extension contains GFEDisclaimer named gfeDisclaimer 0..* MS
@@ -191,6 +191,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item 1..999 MS
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 * item.extension contains ServiceDescription named serviceDescription 1..1
+* item.extension contains ProviderEventMethodology named ProviderEventMethodology 0..1 MS
+* item.extension[ProviderEventMethodology] ^short = "Provider Event Methodology"
+* item.extension[ProviderEventMethodology] ^comment = "The method a provider used to group services"
 
 * item.revenue 1..1 MS
 * item.revenue from PCTGFEItemRevenueVS (required)

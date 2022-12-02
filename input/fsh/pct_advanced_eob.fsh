@@ -104,8 +104,8 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 
-* extension contains Disclaimer named disclaimer 1..* MS
-* extension[disclaimer] ^short = "One or more disclaimers made by the payer concerning the estimated costs provided in the AEOB"
+// * extension contains Disclaimer named disclaimer 1..* MS
+// * extension[disclaimer] ^short = "One or more disclaimers made by the payer concerning the estimated costs provided in the AEOB"
 // * extension contains SubjectToMedicalMgmtDisclaimer named subjectToMedicalMgmtDisclaimer 0..1 MS
 // * extension contains EstimateOnlyDisclaimer named estimateOnlyDisclaimer 0..1 MS
 
@@ -145,3 +145,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * total[adjudicationamounttype].category from C4BBAdjudication  (required)
 // * total[adjudicationamounttype].amount MS
 // //* total[adjudicationamounttype].amount 1..1
+
+* processNote 1..* MS
+* processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"
+* processNote.extension contains ProcessNoteClass named processNoteClass 0..1
