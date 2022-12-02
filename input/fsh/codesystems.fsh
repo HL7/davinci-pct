@@ -7,6 +7,7 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 * #payerid "Payer ID" "Payer ID used in HIPAA covered claims submission transactions"
 * #naiccode "NAIC Code" "An identifier assigned to licensed and authorized insurance companies by the National Association of Insurance Commissioners (NAIC)"
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTCoverageCopayTypeCS
 Title: "PCT Coverage Copay Type Code System"
@@ -16,6 +17,7 @@ Description: "Defining codes for the classification of insurance coverage copay 
 * #pharmacy-deductible "Pharmacy-Deductible" "The accumulated amount of patient payment before the coverage begins to pay for medicines."
 * #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTDiagnosisType
 Title: "PCT Diagnosis Type"
@@ -27,6 +29,7 @@ Description: "Defining codes for the classification of diagnosis types"
 //* #secondary "Secondary" "Required when necessary to report additional diagnoses on professional and non-clinician claims"
 * #externalCauseOfInjury "External Cause of Injury" "Required when an external cause of injury is needed to describe the injury"
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTProcedureType
 Title: "PCT Procedure Type"
@@ -36,6 +39,7 @@ Description: "Defining codes for the classification of procedure types"
 * #procedureRequiringAnesthesia  "Surgical procedure requiring anesthesia" "Identifies the surgical procedure requiring anesthesia"
 * #other "Other" "Other procedure information"
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
 Title: "PCT Subject-To-Medical-Management Reason Code System"
@@ -47,6 +51,7 @@ Description: "Defining codes for the classification of subject-to-medical-manage
 * #step-therapy "Step Therapy" "Step Therapy"
 * #fail-first "Fail-First" "Fail-First"
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTSupportingInfoType
 Title: "PCT GFE Supporting Info Type Code System"
@@ -59,6 +64,7 @@ Description: "Defining codes for the classification of the supplied supporting i
 * #pointoforigin "Point of Origin" "UB-04 Source of Admission (FL-15) identifies the place where the patient is identified as needing admission to a facility."
 * #admtype "Admission Type" "UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled."
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTCareTeamRole
 Title: "PCT Care Team Role"
@@ -71,6 +77,7 @@ Description: "PCT code system for defining the functional roles of the care team
 * #purchasedservice "Purchased service" "The provider from which a service was purchased by another provider."
 * #rendering "Rendering provider" "The rendering/performing provider."
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTOrgContactPurposeType
 Title: "PCT Organization Contact Purpose Type Code System"
@@ -78,20 +85,24 @@ Description: "Organization Contact Purpose Type Code System"
 * ^caseSensitive = true
 * #GFERELATED "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 
 CodeSystem: PCTAdjudicationCategoryCS
 Title: "PCT Adjudication Category CodeSystem"
 Description: "Codes indicating the type of adjudication information provided."
 * ^caseSensitive = true
+* ^experimental = false
 * #billingnetworkstatus "Billing Network Status" "Indicates the Billing Provider network status in relation to the patient's coverage."
 * #renderingnetworkstatus "Rendering Network Status" "Indicates the Rendering Provider network status in relation to the patient's coverage."
 * #benefitpaymentstatus "Benefit Payment Status" "Indicates the in network or out of network payment status of the claim."
 * #adjustmentreason "Adjustment Reason" "Defines the adjudication slice to identify the adjustment reason"
 * #medicalmanagement "Medical Management" "Defines the adjudication slice to identify medical management"
 
+
 CodeSystem: PCTIdentifierType
 Title:  "PCT Identifier Type"
 Description: "Defining codes for types of identifiers"
+* ^experimental = false
 * #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
 
 CodeSystem: PCTNetworkStatusCS
@@ -99,6 +110,7 @@ Id: PCTNetworkStatusCS-TEMPORARY-TRIAL-USE
 Title: "PCT Network Status"
 * ^caseSensitive = true
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
 * #innetwork "In Network" "Indicates an in network status in relation to a patient's coverage"
 * #outofnetwork "Out Of Network" "Indicates a not in network status in relation to a patient's coverage"
 * #other "Other" "Indicates other network status or when a network does not apply"
