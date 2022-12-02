@@ -114,3 +114,12 @@ Title: "PCT Network Status"
 * #innetwork "In Network" "Indicates an in network status in relation to a patient's coverage"
 * #outofnetwork "Out Of Network" "Indicates a not in network status in relation to a patient's coverage"
 * #other "Other" "Indicates other network status or when a network does not apply"
+
+CodeSystem: PCTAEOBProcessNoteCS
+Id: PCTAEOBProcessNoteCS-TEMPORARY-TRIAL-USE
+Title: "PCT AEOB Process Note"
+* ^caseSensitive = true
+* ^copyright = "This CodeSystem is not copyrighted."
+* #disclaimer "In Network" "Indicates adisclaimer type of process note"
+* #adjudication-note "Adjudication Note" "Indicates an adjudication note type of process note"
+* #other "Other" "Indicates other type of AEOB process note"

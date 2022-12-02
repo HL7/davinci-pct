@@ -240,3 +240,12 @@ Description: "Codes indicating reasons why a claim or line item is adjusted."
 * codes from system https://x12.org/codes/claim-adjustment-reason-codes
 * codes from system https://x12.org/codes/remittance-advice-remark-codes
 * ^experimental = false
+
+ValueSet: PCTAEOBProcessNoteVS
+Title: "PCT AEOB Process Note Types"
+Description: "Indicates the type of .processNote for AEOB."
+* include PCTAEOBProcessNoteCS#disclaimer
+* include PCTAEOBProcessNoteCS#adjudication-note
+* include PCTAEOBProcessNoteCS#other
+* codes from system PCTAEOBProcessNoteCS
+* ^experimental = false

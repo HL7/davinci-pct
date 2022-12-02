@@ -45,7 +45,7 @@ Description: "This extension is used to provide the Referral Number."
 
 Extension: ProviderEventMethodology
 Id: providerEventMethodology
-Description: "This extension is used for indicating the method a provider used to group services, and those providing such services, beyond what may be indicated through DRGs that the payer or patient may find helpful (e.g. grouping services by a standardized episode of care definition)."
+Description: "This extension is used for indicating the method a provider used to group services, and those providing such services, beyond what may be indicated through DRGs that the payer or patient may find helpful (e.g. grouping services by a standardized episode of care definition). This is provider generated text and should not be modified by the payer."
 * value[x] only string
 
 Extension: GFEBillingProviderLineItemCtrlNum
@@ -137,6 +137,14 @@ Title: "Expiration Date"
 Description: "This extension is used to indicate a specific date after which the issued AEOB is considered obsolete."
 * value[x] ^short = "The AEOB is considered obsolete after this date"
 * value[x] only date
+
+Extension: ProcessNoteClass
+Id: processNoteClass
+Title: "ProcessNote Class"
+Description: "This extension is used to indicate a the class of AEOB Claim process notes"
+* value[x] ^short = "The class of AEOB process note"
+* value[x] only CodeableConcept
+* value[x] from PCTAEOBProcessNoteVS (required)
 
 
 /// For PCTOrganization Profile ////
