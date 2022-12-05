@@ -1,4 +1,4 @@
-### Use Case
+### Use Case Overview
 
 This guide provides specifications enabling a provider to submit a Good Faith Estimate (GFE) Bundle including one or more Good Faith Estimates (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an Advanced Explanation of Benefit Bundle including one or more Advanced Explanation of Benefits (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and possibly the GFE Bundle submitting provider, can retrieve to get an estimation of costs.  
 
@@ -6,35 +6,66 @@ The primary use case for this guide is to enable the patient to have access to A
 
 This guide does not currently specify a means for providers to update or cancel a GFE submission. Rather, if there is new information that may materially affect the estimation, the provider would submit a new GFE Bundle.
 
-The below describes the process of initiating the creation of an AEOB, through submitting a GFE Bundle, and the process of retrieving an AEOB. 
+### Payer Perspective: End-to-End Workflow
 
-#### Submit AEOB Request to Payer
+The workflow diagram below describes the process of receiving a GFE Bundle from the conviening provider and returning the completed AEOB asyncrhonously (or acknowledgement that the process was completed if the AEOB will not be returned to the provider), as well as the process for a patient to query for and retrieve their completed AEOB, if supported.
 
-![Submit AEOB Request to Payer](SubmitAEOB.drawio.png){:style="float: none;"}
+![Payer Perspective](PCTWorkflowPayer.png){:style="float: none;"}
 
-**Figure 1: Submit AEOB Request**
+**Figure 1: Payer Perspective: End-to-End Workflow**
 
-1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
+1. The provider uses the gfe-submit operation to submit the GFE bundle to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](http://build.fhir.org/async-bundle.html). Please refer to that page for more details. Note: that page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
+  * If the payer's FHIR aware endpoint does not receive the request (i.e. system is down, incorrect URL used, etc.) an HTTP status code of 4XX or 5XX will be returned. 
+  * If the gfe-submit operation was successfully invoked, the request will move to step 2. 
+2. The payer system will validate the GFE bundle against the FHIR R4 core specification and the GFE Bundle profile and other appropriate profiles in this guide, using the core FHIR [validate](http://hl7.org/fhir/resource-operation-validate.html) operation. 
+  * If any validation errors are received, an HTTP status code of 412 Precondition Failed will be returned along with an OperationOutcome resource containing the result of the validate operation. 
+  * If validation is successful, the request will move to step 3. 
+3. The payer system accepts the GFE bundle. An HTTP status code of 202 Accepted will be returned, and the Content-Location header will contain a URL for subsequent polling. 
+4. The payer system begins processing the GFE bundle asynchronously. This may take a substantial amount of time, up to the limits allowed by regulation. 
+5. GFE processing can result in success or failure. 
+  * In case of failure, the payer system will set the status of the request (identified by the unique URL returned in step 3) to error, and prepare an OperationOutcome resource with details and move to step 7. The payer should also notify the patient that the estimate was unable to be produced using existing business processes, though this is out of scope for this guide. 
+  * If successful, move to step 6. 
+6. GFE processing has completed successfully and produced an AEOB and related resources. 
+  * The payer system will set the status of the request (identified by the URL returned in step 3) to completed, prepare a batch-response Bundle resource, and move to 7 below. 
+  * If the payer system supports API access for the patient, the AEOB will be accessbile per the Patient Perspective section below. 
+7. The payer system will provide an endpoint at the URL provided in step 3 whereby the provide can poll for the status of GFE processing.   
+  * If the response is in-progress, the endpoint will return an HTTP status code of 202 Accepted, indicating that the provider should poll again later. The payer system should return a Retry-After header with each in-progress polling response, and the client should use this information to inform the timing of the next polling request. 
+  * If the response is an error, the endoint will return an HTTP status code of 4XX or 5XX, and the body of the response will be an OperationOutcome detailing the error. 
+  * If the response is successful, the endpoint will return an HTTP status code of 200 OK, and the body of the request will be a Bundle resource of type batch-response. This batch-response bundle SHOULD contain the completed AEOB Bundle and MAY contain one or more OperationOutcome resources with additional information regarding GFE/AOEB processing. If the batch-response Bundle does not contain an AEOB Bundle, then it SHALL contain at least one OperationOutcome resource detailing the reason why the AEOB Bundle is not present (e.g. the AEOB was sent directly to the patient and will not be returned to the provider). 
 
-2. The provider uses the gfe-submit operation to submit the GFE bundle to the payer endpoint. This is a POST request.
 
-3. The AEOB bundle is created asynchronously. Because of this the AEOB bundle is not complete at this point. This is because the GFE processing and adjudication has not taken place yet. Therefore, each AEOB instance in the bundle should now contain one of these `ExplanationOfBenefit.outcome`: `queued`, `error`, or `partial`. The gfe-submit response will also contain a Bundle.identifier.
+The individual steps from the provider and patient perspective are detailed in the sections below. 
 
-4. The Bundle.identifier can now be used to run a AEOB FHIR query to check the AEOB `ExplanationOfBenefit.outcome`(s) and receive the completed bundle. The AEOB is complete when `ExplanationOfBenefit.outcome` is equal to `complete`. This process is explained in more detail in the [Get completed AEOB from payer](use_cases.html#get-completed-aeob-from-payer) section.      
+### Provider Perspective: Submitting a GFE and Polling for a Completed AEOB
 
-#### Get completed AEOB from payer
+A patient schedules a service which triggers the composition of a collection of 1 or more GFEs, which the provider then submits to the payer for processing. Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. 
 
-![Get completed AEOB from payer](GetAEOB.drawio.png){:style="float: none;"}
+![Provider Perspective](PCTWorkflowProvider.png){:style="float: none;"}
 
-**Figure 2: Get Completed AEOB from Payer**
+**Figure 2: Provider Perspective**
 
-1. The patient receives a notification that the AEOB is complete along with an Bundle.identifier which identifies their AEOB.
+1. The provider uses the gfe-submit operation to submit the GFE bundle to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](http://build.fhir.org/async-bundle.html). Please refer to that page for more details. Note: that page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
+  * If successful this request will return an HTTP status code of 202 Accepted with a Content-Location header containing the absolute URL of an endpoint for subsequent status requests (polling location). 
+  * If the operation fails it will return an HTTP status code of 4XX or 5XX and an OperationOutcome resource containing the error details (such as a 412 Precondition Failed if the content of the POST was not a valid GFE Bundle), provided the operation was successfuly invoked (i.e. if the POST was submitted to a non-existant URL, the submitter would likely receive a 404 Not Found status code with no OperationOutcome). 
 
-2. The patient authorizes/authenticates and receives an access token.
+2. If step 1 resulted in a 202 Accepted return code and a valid URL in the Content-Location header, the provider may now poll for the status of the request. The AEOB bundle is created asynchronously since GFE processing and adjudication has not taken place yet. The url returned in step 1 can now be used to check the status of the AEOB process. 
+  * If the response is in-progress, this request will return an HTTP status code of 202 Accepted, indicating that the provider should poll again later. The payer system should return a Retry-After header with each in-progress polling response, and the client should use this information to inform the timing of the next polling request. 
+  * If the response is an error, this request will return an HTTP status code of 4XX or 5XX, and the body of the response will be an OperationOutcome detailing the error. 
+  * If the response is successful, this request will return an HTTP status code of 200 OK, and the body of the request will be a Bundle resource of type batch-response. This batch-response bundle SHOULD contain the completed AEOB Bundle and MAY contain one or more OperationOutcome resources with additional information regarding GFE/AOEB processing. If the batch-response Bundle does not contain an AEOB Bundle, then it SHALL contain at least one OperationOutcome resource detailing the reason why the AEOB Bundle is not present (e.g. the AEOB was sent directly to the patient and will not be returned to the provider). 
 
-3. The patient requests the AEOB by using the access token and Bundle.identifier. The patient receives the AEOB Bundle.
+### Patient Perspective: Get completed AEOB from payer
 
->Note: The AEOB could be accessed via a web portal, mobile app, or other technology that is authorized to connect to the AEOB API.
+The patient has finished scheduling the service(s) with the provider. The payer may return the completed AEOB to the patient in many ways such as via mail, the payer benefits portal, or via an API. The only method in scope for this guide is the FHIR-based API approach inspired by the Patient Access API defined in the [CARIN Consumer Directed Payer Data Exchange](https://build.fhir.org/ig/HL7/carin-bb/Use_Case.html#use-case---consumer-access-to-their-claims-data) guide. Note that use of an API is optional for the payer, and if the payer does implement both this API and the Patient Access API defined in the CARIN IG, it is up to the payer to decide if those APIs use the same or different endpoints. 
+
+![Patient Perspective](PCTWorkflowPatient.png){:style="float: none;"}
+
+**Figure 3: Patient Perspective**
+
+1. The a 3rd party app used by the patient authorizes/authenticates and receives an access token. The app requests the AEOB by using the access token using a GET request for ExplanationOfBenefit resources in the patient's compartment. For example, GET [base]/ExplanationOfBenefit?patient=[patient-id]. Payer systems SHALL implement appropriate access controls to ensure that AEOBs are only accessible by the the authenticated patient. 
+  * If successful, the system will return 200 OK and the body will contain a Bundle resource of type searchset, containing zero or more ExplanationOfBenefit resources. Once the desired AEOB is found, the 3rd part app may use the same API to query for other resources referenced by the AEOB, such as Patient, Practitioner, Organization, and Coverage resources if those referenced resources are not contained in the AEOB itself. 3rd party apps should keep track of prior AEOBs, and alert the patient is new ones are found. New AEOBs would have a different identifier, and a created date later than previous AEOBs. 
+  
+Note: If GFE processing fails, the payer may use existing business processes to notify the patient, but this is out of scope for this guide. 
+
 
 #### Example
 
