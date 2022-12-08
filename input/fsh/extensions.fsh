@@ -31,14 +31,17 @@ Description: "This extension is used to provide the GFE Service Linking Informat
     linkingIdentifier 0..* MS
 * extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
 * extension[plannedPeriodOfService] ^definition = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+* extension[plannedPeriodOfService].value[x] 1..1
 * extension[plannedPeriodOfService].value[x] only date or Period
 * extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
+* extension[linkingIdentifier].value[x] 1..1
 * extension[linkingIdentifier].value[x] only string
 
 Extension: ReferralNumber
 Id: referralNumber
 Description: "This extension is used to provide the Referral Number."
+* value[x] 1..1
 * value[x] only string
 
 
@@ -46,11 +49,13 @@ Description: "This extension is used to provide the Referral Number."
 Extension: ProviderEventMethodology
 Id: providerEventMethodology
 Description: "This extension is used for indicating the method a provider used to group services, and those providing such services, beyond what may be indicated through DRGs that the payer or patient may find helpful (e.g. grouping services by a standardized episode of care definition). This is provider generated text and should not be modified by the payer."
+* value[x] 1..1
 * value[x] only string
 
 Extension: GFEBillingProviderLineItemCtrlNum
 Id: gfeBillingProviderLineItemCtrlNum
 Description: "This extension is used by the provider to assign a unique identifier to this item. The intent of this element is to allow the provider to assign something other than 'line number' for their purposes (e.g. tracking and troubleshooting)."
+* value[x] 1..1
 * value[x] only Identifier
 
 // Extension: ProductOrServiceBillingCode
@@ -91,12 +96,14 @@ Extension: OutOfNetworkProviderInfo
 Id: inNetworkProviderOptionsLink
 Title: "In Network Provider Options Link"
 Description: "This extension provides a payer link to information enabling the patient to find providers that are in network for the requested services."
+* value[x] 1..1
 * value[x] only url
 
 Extension: GFEReference
 Id: gfeReference
 Title: "GFE Reference"
 Description: "This extension is used to reference the GFE submitted by an entity that started the process for obtaining an Advanced EOB."
+* value[x] 1..1
 * value[x] only Reference(PCTGFEBundle)
 
 // Extension: PCTProposedDateOfService
@@ -111,6 +118,7 @@ Extension: SubjectToMedicalMgmt
 Id: subjectToMedicalMgmt
 Title: "Subject To Medical Management"
 Description: "This extension is used to provide a reason to explain how the estimate may change subject to medical management."
+* value[x] 1..1
 * value[x] only CodeableConcept or string
 * value[x] ^short = "The estimate may change subject to medical management with this reason"
 * valueCodeableConcept from PCTSubjectToMedicalMgmtReasonVS (extensible)
@@ -127,24 +135,27 @@ Extension: Disclaimer
 Id: disclaimer
 Title: "Disclaimer"
 Description: "This extension allows the payer to declare a disclaimer concerning the estimated costs provided in the AEOB."
-* value[x] ^short = "A disclaimer declared by the payer concerning the estimated costs provided in the AEOB"
+* value[x] 1..1
 * value[x] only string or CodeableConcept or url or markdown
+* value[x] ^short = "A disclaimer declared by the payer concerning the estimated costs provided in the AEOB"
 //* value[x] from PCTEstimateOnlyDisclaimerVS (extensible)
 
 Extension: ExpirationDate
 Id: expirationDate
 Title: "Expiration Date"
 Description: "This extension is used to indicate a specific date after which the issued AEOB is considered obsolete."
-* value[x] ^short = "The AEOB is considered obsolete after this date"
+* value[x] 1..1
 * value[x] only date
+* value[x] ^short = "The AEOB is considered obsolete after this date"
 
 Extension: ProcessNoteClass
 Id: processNoteClass
 Title: "ProcessNote Class"
 Description: "This extension is used to indicate a the class of AEOB Claim process notes"
-* value[x] ^short = "The class of AEOB process note"
+* value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from PCTAEOBProcessNoteVS (required)
+* value[x] ^short = "The class of AEOB process note"
 
 
 /// For PCTOrganization Profile ////
@@ -152,12 +163,14 @@ Description: "This extension is used to indicate a the class of AEOB Claim proce
 Extension: ProviderTaxonomy
 Id: providerTaxonomy
 Description: "This extension is used to indicate the taxonomy code of the provider."
+* value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from $USCPROCROLE (extensible)
 
 Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
+* value[x] 1..1
 * value[x] only Coding
 * value[x] from $ISO3166-P2-CSC-VS (example)
 
@@ -167,11 +180,13 @@ Description: "This extension is used to provide the Country Subdivision Code - f
 Extension: PCTEndpoint
 Id: endpoint
 Description: "This extension is used to provide an endpoint."
+* value[x] 1..1
 * value[x] only Reference(Endpoint)
 
 Extension: ServiceDescription
 Id: serviceDescription
 Title: "Service Description"
 Description: "This extension is used to communicate a plain language description of the procedure, product, or service."
-* value[x] ^short = "The description of a procedure, product, or service"
+* value[x] 1..1
 * value[x] only string
+* value[x] ^short = "The description of a procedure, product, or service"
