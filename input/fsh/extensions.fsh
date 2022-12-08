@@ -7,7 +7,7 @@
 
 Extension: GFESubmitter
 Id: gfeSubmitter
-Description: "This extension is used to indicate the scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB."
+Description: "This extension is used to indicate the scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB. All submitters (Practitioners and Organizations) must have an ETIN."
 * value[x] only Reference(PCTOrganization or PCTPractitioner)
 * value[x] ^short = "The scheduling entity submitting the GFE"
 * valueReference 1..1
