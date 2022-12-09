@@ -64,7 +64,7 @@ menu:
   PCT Specification:
     Technical Background and Underlying Technologies: underlying_technologies.html
     #Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides
-    Overview and Use Case: use_cases.html
+    Use Cases and Overview: use_cases.html
     Formal Specification: formal_specification.html    
     Terms and Concepts: use_cases.html#terms-and-concepts    
     Terminology Licensure: terminology_licensure.html

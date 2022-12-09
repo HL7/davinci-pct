@@ -45,7 +45,7 @@ Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts).
 
 **AEOB Interaction Diagram Steps (High Level View)**
 
-1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG. In other words, how the scheduling provider coordinates with other providers is currently not in scope for this IG. </em>
+1. A patient schedules a service which triggers the composition of a collection of 1 or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG.</em>
 
 2. The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html) to the payer’s endpoint for AEOB creation.  
 
@@ -55,6 +55,6 @@ Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts).
 
 >Note: The patient below could be a third-party web portal or provider web portal.     
 
-![AEOB Interaction Diagram](AEOB-interaction.drawio.png){:style="float: none;"}
+![AEOB Interaction Diagram](AEOB-interaction.png){:style="float: none;"}
 
 **Figure 1: Advanced EOB Interactions**
