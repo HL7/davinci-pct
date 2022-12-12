@@ -1,9 +1,11 @@
 ### Credits
 <br>
 **Primary Authors:**
+*	Corey Spears (The MITRE Corporation)
 *	Larry Decelles (The MITRE Corporation)
 *   Gary Gryan (The MITRE Corporation)
 *	Caleb Wan (The MITRE Corporation)
+*	Rick Geimer (Lantana Consulting Group)
 
 **Technical Editing:**
 *	Yolanda Liu (The MITRE Corporation)
