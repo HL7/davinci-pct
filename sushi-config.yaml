@@ -60,15 +60,14 @@ menu:
   IG Home: index.html
 
   Table of Contents: toc.html
-
-  PCT Specification:
+  
+  Background:
     Technical Background and Underlying Technologies: underlying_technologies.html
-    #Relation to Other IGs: formal_specification.html#integration-with-other-implementation-guides
     Use Cases and Overview: use_cases.html
+
+  Specification:
     Formal Specification: formal_specification.html    
-    Terms and Concepts: use_cases.html#terms-and-concepts    
-    Terminology Licensure: terminology_licensure.html
-    Credits: credits.html
+
 
   FHIR Artifacts:
     Capability Statements: artifacts.html#1
@@ -76,16 +75,17 @@ menu:
     Profiles: artifacts.html#3
     Extensions: artifacts.html#4
     Value Sets: artifacts.html#5
-    Code Systems: artifacts.html#6
+    Code Systems: artifacts.html#6  
     Examples: artifacts.html#7
+    Terminology Licensure: terminology_licensure.html
     
   Security: security.html
     
   Downloads: downloads.html
  
-  Base Specs:
-    FHIR R4 Spec: new-tab {{site.data.fhir.path}}
-    US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
-    HRex: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci_hrex}}
+ # Base Specs:
+ #   FHIR R4 Spec: new-tab {{site.data.fhir.path}}
+ #   US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}
+ #   HRex: new-tab {{site.data.fhir.ver.hl7_fhir_us_davinci_hrex}}
 
-  History: http://hl7.org/fhir/us/davinci-pct/history.html
+ # History: http://hl7.org/fhir/us/davinci-pct/history.html
