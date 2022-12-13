@@ -16,9 +16,14 @@ Description: "The No Surprises Act requires that group health plans and insurers
 //* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 * insert IdentfierSlicing
-* identifier contains INTER 0..*
+* identifier contains 
+	INTER 0..* and 
+	uniqueclaimid 1..1 
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
+* identifier[uniqueclaimid] ^short = "Unique Claim Identifier"
+* identifier[uniqueclaimid].type = PCTIdentifierType#uc "Unique Claim ID"
+* identifier[uniqueclaimid] ^short = "Unique Claim ID"
 
 * status MS
 * type MS 

@@ -104,6 +104,7 @@ Title:  "PCT Identifier Type"
 Description: "Defining codes for types of identifiers"
 * ^experimental = false
 * #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
+* #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 
 CodeSystem: PCTNetworkStatusCS
 Id: PCTNetworkStatusCS-TEMPORARY-TRIAL-USE
