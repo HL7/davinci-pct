@@ -208,8 +208,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."
 
 * item.unitPrice MS
-* item.net 1..1 MS
-* item.quantity 1..1 MS
+* item.net 1..1 
+* item.net ^short = "Total charge amount for the service line"
+* item.quantity 1..1 
 
 * item.locationCodeableConcept MS
 * item.locationCodeableConcept from PCTGFECMSPOS (required)
