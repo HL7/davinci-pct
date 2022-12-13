@@ -18,43 +18,7 @@ This implementation guide uses specific terminology to flag statements that have
 
 * **MAY** describes optional behaviors that are free to consider but where there is no recommendation for or against adoption.
 
-#### Systems
 
-This implementation guide sets expectations for at least two types of systems:
-
-* **Payer** systems adjudicate GFEs that have been submitted by a healthcare provider. These systems determine if a provider is in or out of network, verifies patient eligibility, applies contracted amounts (the provider’s network status needs to be confirmed), and applies member cost sharing amounts.
-
-* **Intermediary** The payer or the provider may have the relationship with the intermediary.  Some payers do not contract with a clearinghouse; others do.  Providers can either contract with a Practice Management system who has the relationship with the clearinghouse or in some cases contracts directly with the clearinghouse through their Practice Management software.
-
-#### System Actors
-
-* **Client** systems are typically billing management systems, revenue cycle management systems, or other client systems responsible for requesting AEOBs.
-
-* **Member** The health plan member / patient who is, or was, a member of a health plan.
-
-* **Provider** The practitioner or clinician, or their representative, that initiates a data access request to retrieve member data from a health plan.
-
-* **Third-Party Application** Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a hospital or Health Plan to a third party of their choosing.
-
-There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the “member health history”.
-
-#### Business Actors
-
-* **Payer** – An organization that pays for administered medical services and products and can process provider cost estimations to calculate member specific cost sharing amounts, liabilities, payments, and expenses for use in member health care decision making.
-
-* **Provider** – A practitioner, clinician, or organization providing healthcare related services or products to a member and submitting an estimation of charges (Good Faith Estimate) to a payer for processing and may access payer processed estimations.
-
-* **Member** – A health plan member / patient who accesses a provider estimation and a payer processed estimation of costs for products or services they may receive in the future.
-
-There are different terms used for individual actors involved in health plan coverage. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual who will ultimately receive the care.
-
-#### Technical Actors ####
-
-* **Primary Participating Entity** – A business actor sending or receiving resources conforming to this implementation guide inclusive of all systems functionally acting on behalf of the actor, including intermediaries.
-
-* **Sender** – A primary participating entity sending resources conforming to this guide.
-
-* **Receiver** – A primary participating entity receiving resources conforming to this guide.
 
 #### Must Support ####
 
