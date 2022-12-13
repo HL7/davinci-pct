@@ -23,9 +23,9 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * extension[gfeSubmitter].value[x] only Reference(PCTPractitioner or PCTOrganization)
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 //* extension contains PlannedPeriodOfService named plannedPeriodOfService 0..* MS
-//* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+//* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services. This may span multiple claims, whereas billablePeriod is per claim."
 * extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
-* extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information"
+* extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information."
 //* extension contains ReferralNumber named referralNumber 0..1 MS
 //* extension[referralNumber] ^short = "Referral Number"
 * extension contains ProviderEventMethodology named providerEventMethodology 0..1 MS
@@ -39,6 +39,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 
 * billablePeriod MS
+* billablePeriod ^short = "Relevant time frame for the claim. This is per claim, whereas a planned period of service can span multiple claims."
 
 * type = $ClaimTypeCS#institutional
 * status MS

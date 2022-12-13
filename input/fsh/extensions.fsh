@@ -25,7 +25,7 @@ Description: "Disclaimers the patient should be made aware of regarding the prov
 
 Extension: GFEServiceLinkingInfo
 Id: gfeServiceLinkingInfo
-Description: "This extension is used to provide the GFE Service Linking Information."
+Description: "This extension is used to provide the GFE Service Linking Information. This allows implementers to have the same identifier on multiple GFEs that are part of one period of care's services. This would be needed for some of the workflow options that businesses may decide to use. "
 * extension contains
     plannedPeriodOfService 0..* MS and
     linkingIdentifier 0..* MS
