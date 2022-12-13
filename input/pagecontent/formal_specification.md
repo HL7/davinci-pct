@@ -80,6 +80,7 @@ The below illustrates what is contained in the GFE and AEOB bundles. For full de
 **Figure 1: GFE Bundles**
 
 ![AEOB Bundle](AEOB_Bundle.png){:style="float: none;"}
+> Note: All resources (supporting info, etc.) needed to process the GFE and produce the AEOB SHALL be included in the GFE Bundle. Relevant resources referenced by such resources SHALL also be included. 
 
 **Figure 2: AEOB Bundle**
 
