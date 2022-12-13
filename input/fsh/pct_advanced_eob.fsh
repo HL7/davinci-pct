@@ -78,7 +78,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.adjudication.category from PCTAdjudicationCategoryVS (extensible)
 * item.adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
 * item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
-* item.adjudication[medicalmanagement].amount 0..1 MS
+* item.adjudication[medicalmanagement].amount 0..0 
 * item.adjudication[medicalmanagement].value 0..0
 * item.adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status: Line level benefit payment status associated with professional claim estimates only."
 * item.adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
