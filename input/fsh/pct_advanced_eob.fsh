@@ -4,8 +4,13 @@ Id: davinci-pct-aeob
 Title: "PCT Advanced EOB"
 Description: "The No Surprises Act requires that group health plans and insurers provide advance cost estimates, called advanced explanations of benefits (advanced EOBs), for scheduled services. This profile is used for exchanging the Advanced EOB data."
 
+
+
 * extension contains GFEReference named gfeReference 1..* MS
 * extension[gfeReference] ^short = "The GFE Bundle submitted by an entity that started the process for obtaining an Advanced EOB."
+* extension contains ServiceDescription named serviceDescription 0..1 MS
+* extension[serviceDescription] obeys pct-aeob-1
+* extension[serviceDescription] ^condition = "pct-aeob-1"
 // * extension contains ProviderContractingStatus named providerContractingStatus 1..1 MS
 // * extension contains ProviderContractingRate named providerContractingRate 0..1 MS
 //* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
@@ -55,7 +60,9 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * created ^comment = "The date and time this estimate was calculated based on what was known at that point in time."
 
 * item 1..* MS
-* item.extension contains ServiceDescription named serviceDescription 1..1
+* item.extension contains ServiceDescription named serviceDescription 0..1 MS
+* item.extension[serviceDescription] obeys pct-aeob-1
+* item.extension[serviceDescription] ^condition = "pct-aeob-1"
 //* item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
 * item.modifier 0..4 MS
@@ -84,6 +91,9 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * item.adjudication[adjustmentreason] ^short = "Adjustment Reason"
 * item.adjudication[adjustmentreason].reason from PCTPayerBenefitPaymentStatusVS (required)
+
+
+
 // * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
 // * insert ItemAdjudicationSlicing
@@ -149,3 +159,9 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * processNote 1..* MS
 * processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
+
+
+Invariant: pct-aeob-1
+Description: "Institutional EOB:  Shall have serviceDescription at the item or header level (can be at both locations)"
+Expression: "(extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists() or item.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists())"
+Severity: #error
