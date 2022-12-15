@@ -1,7 +1,8 @@
 <blockquote class="stu-note">
 <p>
-This specification is a Standard for Trial Use. It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters.
+This specification is a Standard for Trial Use. It is expected to continue to evolve and improve through connectathon testing and feedback from early adopters. 
 </p>
+<p>Criteria regarding what payers must verify in a good faith estimate (GFE) will be evaluated during the next phase of the project after the project stakeholders receive feedback on error handling during testing and implementation.</p>
 <p>
 Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PCT" as the specification.
 </p>
