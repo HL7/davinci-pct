@@ -97,6 +97,8 @@ All GUIDs used **SHALL** be unique, including across independent GFE submissions
 
 In addition to these core elements, any “supporting information” resources needed to process the AEOB request must also be included in the Bundle. Relevant resources referenced by those “supporting information” resources **SHALL** also be included. Any such resource that has a US Core profile **SHALL** comply with the relevant US Core profiles. All “supporting information” resources included in the Bundle **SHALL** be pointed to by the GFE resource using the GFE.supportingInfo.valueReference element.
 
+Whenever possible, the AEOB should default to elements in the GFE (i.e. not include/repeat) unless there is a business reason to do so in order to reduce complexity for app developers or for patient clarifications. This is why many elements in the GFE profiles are not repeated in the AEOB profiles, since the original GFE **SHALL** be referenced from the AEOB. 
+
 To attach PDFs, CDAs, JPGs, a DocumentReference instance should be used. The GFE.supportingInfo.sequence for each entry **SHALL** be unique within the GFE.
 
 All resources **SHALL** comply with their respective profiles. FHIR elements not required (minimum cardinality of 1) or marked as ‘must support’ **MAY** be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made. Systems that do not process such elements **SHALL** ignore unsupported elements unless they are ‘modifier’ elements, in which case the system **MAY** treat the presence of the element as an error.
