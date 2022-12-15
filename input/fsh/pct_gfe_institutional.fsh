@@ -208,6 +208,10 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 //* item.productOrService obeys GFE-inst-item-productorservice
 * item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."
 
+* item.serviced[x] 1..1
+* item.serviced[x] ^short = "This is the planned or estimated date(s)s of service"
+* item.serviced[x] ^definition = "This is the planned or estimated dates of service. Use Revenue code to determine inpatient stays if needed for adjudication"
+
 * item.unitPrice MS
 * item.net 1..1 
 * item.net ^short = "Total charge amount for the service line"

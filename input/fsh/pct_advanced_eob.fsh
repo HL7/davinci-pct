@@ -76,9 +76,14 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // Need to make item.productOrService required when item.revenue is provided ??
 //* item.productOrService obeys EOB-out-inst-item-productorservice
 //* item.productOrService ^comment = "Put the comment here for item.productOrService here"
-//* item.net 1..1 MS
+
+* item.serviced[x] 1..1
+* item.serviced[x] ^short = "This is the planned or estimated date(s)s of service"
+* item.serviced[x] ^definition = "This is the planned or estimated dates of service. Use Revenue code to determine inpatient stays if needed for adjudication"
+
 * item.quantity MS
 
+//* item.net 1..1 MS
 //* item.adjudication 1..* MS
 //* item.adjudication.category from PCTGFEItemAdjudicationVS (required)
 //* item.adjudication.extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 0..* MS

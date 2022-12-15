@@ -43,11 +43,12 @@ Description: "PCT Institutional GFE Example 1"
 * insurance.coverage = Reference(coverage1001)
 * diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* item.extension[ServiceDescription].valueString = "Imaging"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
-* item.extension[ServiceDescription].valueString = "Imaging"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.servicedDate = 2021-10-31
 * item.quantity.value = 1
 * item.net.value = 200.00
 * item.net.currency = #USD
@@ -83,6 +84,7 @@ Description: "PCT Professional GFE Example 1"
 * item.sequence = 1
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.servicedDate = 2021-10-31
 * item.extension[ServiceDescription].valueString.value = "Imaging"
 * item.locationCodeableConcept = $CMSPOSCS#21 "Inpatient Hospital"
 * item.quantity.value = 1
@@ -122,6 +124,7 @@ Description: "PCT Institutional GFE for MRI"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.servicedDate = 2022-02-02
 * item.extension[ServiceDescription].valueString = "Imaging"
 * item.quantity.value = 1
 * item.net.value = 266.00

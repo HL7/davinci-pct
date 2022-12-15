@@ -72,11 +72,12 @@ menu:
   FHIR Artifacts:
     Capability Statements: artifacts.html#1
     Operations: artifacts.html#2
-    Profiles: artifacts.html#3
-    Extensions: artifacts.html#4
-    Value Sets: artifacts.html#5
-    Code Systems: artifacts.html#6  
-    Examples: artifacts.html#7
+    Search Parameters: artifacts.html#3
+    Profiles: artifacts.html#4
+    Extensions: artifacts.html#5
+    Value Sets: artifacts.html#6
+    Code Systems: artifacts.html#7
+    Examples: artifacts.html#8
     Terminology Licensure: terminology_licensure.html
     
   Security: security.html
