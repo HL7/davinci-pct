@@ -2,7 +2,7 @@ Profile: PCTGFEBundle
 Parent: Bundle
 Id: davinci-pct-gfe-bundle
 Title: "PCT GFE Bundle"
-Description: "PCT GFE Bundle that contains necessary resources as a GFE Submission for obtaining an AEOB. Organizations for both the provider and payer SHALL be included."
+Description: "PCT GFE Bundle that contains necessary resources as a GFE Submission for obtaining an AEOB. Organizations for both the provider and payer SHALL be included. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
 * identifier 1..1 MS
 * type = #collection (exactly)
 * timestamp 1..1 MS
