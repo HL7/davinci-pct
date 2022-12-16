@@ -97,6 +97,7 @@ Description: "Codes indicating the type of adjudication information provided."
 * #benefitpaymentstatus "Benefit Payment Status" "Indicates the in network or out of network payment status of the claim."
 * #adjustmentreason "Adjustment Reason" "Defines the adjudication slice to identify the adjustment reason"
 * #medicalmanagement "Medical Management" "Defines the adjudication slice to identify medical management"
+* #memberliability "Member Liability" "Defines the adjudication slice to identify member liability"
 
 
 CodeSystem: PCTIdentifierType
