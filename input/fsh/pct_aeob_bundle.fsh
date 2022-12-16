@@ -3,12 +3,14 @@ Parent: Bundle
 Id: davinci-pct-aeob-bundle
 Title: "PCT AEOB Bundle"
 Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Organizations for both the payer and provider SHALL be included."
+
+* obeys pct-aeob-bundle-1
+
 * identifier 1..1 MS
 * type = #collection (exactly)
 * timestamp 1..1 MS
 * entry 1..* MS
 * entry.fullUrl 1..1 MS
-//* entry.resource 1..1 MS
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -16,7 +18,46 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
-* entry contains ExplanationOfBenefit 1..* MS
-* entry[ExplanationOfBenefit] ^short = "Entry in the bundle - will have a PCTAdvancedEOB resource"
-* entry[ExplanationOfBenefit].resource 1..1 MS
-* entry[ExplanationOfBenefit].resource only PCTAdvancedEOB
+
+* entry contains
+	aeob 1..* and
+    patient 1..2 and
+    coverage 1..1 and
+    organization 1..* and
+    practitioner 0..* MS and
+    gfeBundle 0..* MS
+
+* entry[aeob] ^short = "SHALL have a PCTAdvancedEOB resource"
+* entry[aeob].resource 1..1 MS
+* entry[aeob].resource only PCTAdvancedEOB
+
+* entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
+* entry[patient].resource 1..1
+* entry[patient].resource only HRexPatientDemographics
+
+* entry[coverage] ^short = "SHALL have one Coverage"
+* entry[coverage].resource 1..1
+* entry[coverage].resource only PCTCoverage
+
+* entry[organization] obeys pct-aeob-bundle-2
+* entry[organization] ^short = "SHALL have the payer organization and may have provider organization(s)"
+* entry[organization].resource 1..1 
+* entry[organization].resource only PCTOrganization
+
+* entry[practitioner] ^short = "MAY have the provider Practitioner(s)"
+* entry[practitioner].resource 1..1 
+* entry[practitioner].resource only PCTPractitioner
+
+* entry[gfeBundle] ^short = "MAY have PCTGFEBundle resource"
+* entry[gfeBundle].resource 1..1 
+* entry[gfeBundle].resource only PCTGFEBundle
+
+
+Invariant: pct-aeob-bundle-1
+Description: "All references resources SHALL be contained within the Bundle with the exception of the PCT GFE Bundle (referenced from the gfeReference extension in the AEOB), which MAY be present"
+Severity: #error
+
+Invariant: pct-aeob-bundle-2
+Description: "SHALL have at least one entry for a payer organization."
+Expression: "entry.resource.Organization.where(type.coding.code='pay').exists()"
+Severity: #error

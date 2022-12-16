@@ -78,9 +78,14 @@ Description: "PCT AEOB Bundle Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234567"
 * timestamp = "2021-11-10T11:01:00+05:00"
-* entry[ExplanationOfBenefit].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
-* entry[ExplanationOfBenefit].id = "PCT-AEOB-1"
-* entry[ExplanationOfBenefit].resource = PCT-AEOB-1
+* entry[aeob].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
+* entry[aeob].resource = PCT-AEOB-1
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].resource = patient1001
+* entry[coverage].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[coverage].resource = coverage1001
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization].resource = org1001
 
 ///////////////////////////////////////////
 
