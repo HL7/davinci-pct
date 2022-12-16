@@ -65,23 +65,8 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * created ^comment = "The date and time this estimate was calculated based on what was known at that point in time."
 
 
-* insert AdjudicationSlicing
-* adjudication contains 
-	submitted 0..1 MS and
-	memberliability 0..1 MS and
-	eligible 0..1 MS and
-	benefit 0..1 MS
-* adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
-* adjudication[submitted] ^short = "Provider submitted amount"
-* adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability
-* adjudication[memberliability] ^short = "Member liability"
-* adjudication[memberliability] ^comment = "$0 is an acceptable value"
-* adjudication[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
-* adjudication[eligible] ^short = "Eligible amount"
-* adjudication[eligible] ^comment = "Eligible is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
-* adjudication[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* adjudication[benefit] ^short = "Benefit amount"
-* adjudication[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
+
+
 
 * item 1..* MS
 * item.extension contains ServiceDescription named serviceDescription 0..1 MS
@@ -140,6 +125,42 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.adjudication[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
 
 
+* insert AdjudicationSlicing
+* adjudication contains medicalmanagement 0..* MS and
+    billingnetworkstatus 0..1 MS and
+    renderingnetworkstatus 0..1 MS and
+    benefitpaymentstatus 0..1 MS and
+    adjustmentreason 0..* MS and 
+	submitted 0..1 MS and
+	memberliability 0..1 MS and
+	eligible 0..1 MS and
+	benefit 0..1 MS
+* adjudication.category 1..1 MS
+* adjudication.category from PCTAdjudicationCategoryVS (extensible)
+* adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
+* adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
+* adjudication[medicalmanagement].amount 0..1 MS
+* adjudication[medicalmanagement].value 0..0
+* adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
+* adjudication[billingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[renderingnetworkstatus] ^short = "Rendering Provider Network Status"
+* adjudication[renderingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status"
+* adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[adjustmentreason] ^short = "Adjustment Reason"
+* adjudication[adjustmentreason].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* adjudication[submitted] ^short = "Provider submitted amount"
+* adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability
+* adjudication[memberliability] ^short = "Member liability"
+* adjudication[memberliability] ^comment = "$0 is an acceptable value"
+* adjudication[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
+* adjudication[eligible] ^short = "Eligible amount"
+* adjudication[eligible] ^comment = "Eligible is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
+* adjudication[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
+* adjudication[benefit] ^short = "Benefit amount"
+* adjudication[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
+
 
 // * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
@@ -169,27 +190,6 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * extension contains ExpirationDate named expirationDate 1..1 MS
 // * extension[expirationDate] ^short = "Once the AEOB is complete and formally issued it is good until this date."
 
-
-* insert AdjudicationSlicing
-* adjudication contains medicalmanagement 0..* MS and
-    billingnetworkstatus 0..1 MS and
-    renderingnetworkstatus 0..1 MS and
-    benefitpaymentstatus 0..1 MS and
-    adjustmentreason 0..* MS
-* adjudication.category 1..1 MS
-* adjudication.category from PCTAdjudicationCategoryVS (extensible)
-* adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
-* adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
-* adjudication[medicalmanagement].amount 0..1 MS
-* adjudication[medicalmanagement].value 0..0
-* adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
-* adjudication[billingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
-* adjudication[renderingnetworkstatus] ^short = "Rendering Provider Network Status"
-* adjudication[renderingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
-* adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status"
-* adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
-* adjudication[adjustmentreason] ^short = "Adjustment Reason"
-* adjudication[adjustmentreason].reason from PCTAdjudicationCategoryVS (required)
 
 
 * total 1..* MS
