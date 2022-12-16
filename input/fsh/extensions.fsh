@@ -58,6 +58,12 @@ Description: "This extension is used by the provider to assign a unique identifi
 * value[x] 1..1
 * value[x] only Identifier
 
+Extension: GFEConsentForBalanceBilling
+Id: gfeConsentForBalanceBilling
+Description: "TBD"
+* value[x] 1..1
+* value[x] only boolean
+
 // Extension: ProductOrServiceBillingCode
 // Description: "ProductOrService Billing Code"
 // * value[x] only Coding
