@@ -15,6 +15,7 @@
 <artifact id="StructureDefinition/expirationDate" key="StructureDefinition-expirationDate" name="Expiration Date"/>
 <artifact id="StructureDefinition/gfeReference" key="StructureDefinition-gfeReference" name="GFE Reference"/>
 <artifact id="StructureDefinition/gfeBillingProviderLineItemCtrlNum" key="StructureDefinition-gfeBillingProviderLineItemCtrlNum" name="GFEBillingProviderLineItemCtrlNum"/>
+<artifact id="StructureDefinition/gfeConsentForBalanceBilling" key="StructureDefinition-gfeConsentForBalanceBilling" name="GFEConsentForBalanceBilling"/>
 <artifact id="StructureDefinition/gfeDisclaimer" key="StructureDefinition-gfeDisclaimer" name="GFEDisclaimer"/>
 <artifact deprecated="true" id="StructureDefinition/gfeProviderAssignedIdentifier" key="StructureDefinition-gfeProviderAssignedIdentifier" name="GFEProviderAssignedIdentifier"/>
 <artifact id="StructureDefinition/gfeServiceLinkingInfo" key="StructureDefinition-gfeServiceLinkingInfo" name="GFEServiceLinkingInfo"/>

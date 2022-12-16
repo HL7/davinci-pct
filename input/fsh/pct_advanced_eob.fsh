@@ -208,6 +208,20 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
 
 
+* benefitBalance 0..* MS
+* benefitBalance.category 1..1 // binding TBD
+* benefitBalance.unit 1..1 
+* benefitBalance.unit from http://hl7.org/fhir/ValueSet/benefit-unit (required)
+* benefitBalance.term 1..1
+* benefitBalance.term from 	http://hl7.org/fhir/ValueSet/benefit-term (required)
+* benefitBalance.financial 1..*
+* benefitBalance.financial.type 1..1 // binding TBD
+* benefitBalance.financial.allowed[x] MS
+* benefitBalance.financial.allowedMoney MS
+* benefitBalance.financial.used[x] MS
+* benefitBalance.financial.usedMoney MS
+
+
 Invariant: pct-aeob-1
 Description: "Institutional EOB:  SHALL have serviceDescription at the item or header level (can be at both locations)"
 Expression: "(extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists() or item.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists())"
