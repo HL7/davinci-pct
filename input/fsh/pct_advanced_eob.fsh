@@ -208,7 +208,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
 
 
-* benefitBalance 0..* MS
+* benefitBalance 1..* MS
 * benefitBalance.category 1..1 // binding TBD
 * benefitBalance.unit 1..1 
 * benefitBalance.unit from http://hl7.org/fhir/ValueSet/benefit-unit (required)
@@ -216,10 +216,10 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * benefitBalance.term from 	http://hl7.org/fhir/ValueSet/benefit-term (required)
 * benefitBalance.financial 1..*
 * benefitBalance.financial.type 1..1 // binding TBD
-* benefitBalance.financial.allowed[x] MS
-* benefitBalance.financial.allowedMoney MS
-* benefitBalance.financial.used[x] MS
-* benefitBalance.financial.usedMoney MS
+* benefitBalance.financial.allowed[x] 1..1
+* benefitBalance.financial.allowedMoney 1..1
+* benefitBalance.financial.used[x] 1..1
+* benefitBalance.financial.usedMoney 1..1
 
 
 Invariant: pct-aeob-1

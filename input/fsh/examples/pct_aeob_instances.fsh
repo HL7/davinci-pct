@@ -70,6 +70,18 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * processNote.extension[processNoteClass].valueCoding = #disclaimer "Disclaimer"
 * processNote.text = "processNote disclaimer text"
 
+* benefitBalance
+* benefitBalance.category = http://terminology.hl7.org/CodeSystem/ex-benefitcategory#1 "Medical Care"
+* benefitBalance.unit = http://terminology.hl7.org/CodeSystem/benefit-unit#individual
+* benefitBalance.term = http://terminology.hl7.org/CodeSystem/benefit-term#annual
+* benefitBalance.financial
+* benefitBalance.financial.type = http://terminology.hl7.org/CodeSystem/benefit-type#benefit
+* benefitBalance.financial.allowedMoney
+* benefitBalance.financial.allowedMoney.value = 1
+* benefitBalance.financial.allowedMoney.currency = #USD
+* benefitBalance.financial.usedMoney
+* benefitBalance.financial.usedMoney.value = 1
+* benefitBalance.financial.usedMoney.currency = #USD
 ////////////////////////////////////////////
 
 Instance: PCT-AEOB-Bundle-1
