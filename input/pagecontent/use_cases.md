@@ -105,7 +105,13 @@ The patient has scheduled the service(s) with the provider(s). The payer may ret
 Note: If GFE processing fails, the payer may use existing business processes to notify the patient, but this is out of scope for this guide. 
 
 
-#### Example
+#### Examples
+
+**Waive NSA Rights Consent Example Scenario**
+
+The diagram below shows examples of how a patient may provide or withhold consent for no surprises act protections, and how that could change the resulting AEOB from the payer.  
+
+![Balance Billing](GFEbalanceBilling.png){:style="float: none;"}
 
 **MRI Scenario**
 
@@ -133,5 +139,4 @@ Assumptions:<br>
 
 [GFE Professional](Claim-PCT-GFE-Professional-MRI.json.html)<br>
 [GFE Institutional](Claim-PCT-GFE-Institutional-MRI.json.html)<br>
-
 [AEOB](ExplanationOfBenefit-PCT-AEOB-1.json.html)
