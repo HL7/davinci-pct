@@ -10,6 +10,7 @@
 **Technical Editing:**
 *	Yolanda Liu (The MITRE Corporation)
 *	Joe Minieri (The MITRE Corporation)
+*	Kristin Schrock (Lantana Consulting Group)
 
 **Da Vinci Project coordination and core team:**
 *	Viet Nguyen (Stratametrics, LLC)

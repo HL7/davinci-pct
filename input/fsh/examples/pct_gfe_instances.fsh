@@ -31,6 +31,7 @@ Description: "PCT Institutional GFE Example 1"
 * insurer = Reference(org1001)
 * provider = Reference(org1002)
 * provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* provider.extension[consentForBalanceBilling].valueBoolean = true
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-121"

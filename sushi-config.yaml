@@ -62,8 +62,8 @@ menu:
   Table of Contents: toc.html
   
   Background:
-    Technical Background and Underlying Technologies: underlying_technologies.html
     Use Cases and Overview: use_cases.html
+    Technical Background and Underlying Technologies: underlying_technologies.html
 
   Specification:
     Formal Specification: formal_specification.html    
