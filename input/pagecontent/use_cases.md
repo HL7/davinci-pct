@@ -93,14 +93,14 @@ A patient schedules a service and this triggers the composition of a collection 
 
 ### Patient Perspective: Get Completed AEOB from Payer
 
-The patient has scheduled the service(s) with the provider(s). The payer may return the completed AEOB to the patient in many ways such as via mail, the payer patient portal, mobile app, or other technology to connect to the AEOB API. The only method in scope for this guide is the FHIR-based API approach inspired by the Patient Access API defined in the [CARIN Consumer Directed Payer Data Exchange](https://build.fhir.org/ig/HL7/carin-bb/Use_Case.html#use-case---consumer-access-to-their-claims-data) guide (CARIN IG for Blue Button). If the payer does implement both this API and the Patient Access API defined in the CARIN IG, it is up to the payer to decide if those APIs use the same or different endpoints. 
+The patient has scheduled the service(s) with the provider(s). The payer may return the completed AEOB to the patient in many ways such as via mail, the payer patient portal, mobile app, or other technology to connect to the AEOB API. The only method in scope for this guide is the FHIR-based API approach inspired by the Patient Access API defined in the [CARIN Consumer Directed Payer Data Exchange](https://build.fhir.org/ig/HL7/carin-bb/Use_Case.html#use-case---consumer-access-to-their-claims-data) guide (CARIN IG for Blue Button). If the payer does implement both this API and the Patient Access API defined in the CARIN IG, it is up to the payer to determine if those APIs use the same or different endpoints. 
 
 ![Patient Perspective](PCTWorkflowPatient.png){:style="float: none;"}
 
 **Figure 3: Patient Perspective**
 
 1. A third party app used by the patient authorizes/authenticates and receives an access token. The app requests the AEOB by using the access token using a GET request for ExplanationOfBenefit resources in the patient's compartment. For example, GET [base]/ExplanationOfBenefit?patient=[patient-id]. Payer systems SHALL implement appropriate access controls to ensure that AEOBs are only accessible by the authenticated patient. 
-  * If successful, the system will return 200 OK and the body will contain a [Bundle resource of type searchset](https://www.hl7.org/fhir/codesystem-bundle-type.html#bundle-type-searchset), containing zero or more ExplanationOfBenefit resources. Once the desired AEOB is found, the third party app may use the same API to query for other resources referenced by the AEOB, such as Patient, Practitioner, Organization, and Coverage resources if those referenced resources are not contained in the AEOB itself. New AEOBs (either for new services or new updates to an existing AEOB) would have a different identifier, and a created date later than previous AEOBs. 
+  * If successful, the system will return 200 OK, and the body will contain a [Bundle resource of type searchset](https://www.hl7.org/fhir/codesystem-bundle-type.html#bundle-type-searchset), containing zero or more ExplanationOfBenefit resources. Once the desired AEOB is found, the third-party app may use the same API to query for other resources referenced by the AEOB, such as Patient, Practitioner, Organization, and Coverage resources if those referenced resources are not contained in the AEOB itself. New AEOBs (either for new services or new updates to an existing AEOB) would have a different identifier and a created date later than previous AEOBs. 
   
 Note: If GFE processing fails, the payer may use existing business processes to notify the patient, but this is out of scope for this guide. 
 
@@ -109,31 +109,31 @@ Note: If GFE processing fails, the payer may use existing business processes to 
 
 **Waive NSA Rights Consent Example Scenario**
 
-The diagram below shows examples of how a patient may provide or withhold consent for no surprises act protections using the balanceBilling extension on the GFE, and how that could change the resulting AEOB from the payer.  
+The diagram below  shows examples of how a patient may provide or withhold consent for No Surprises act Act protections using the balanceBilling extension on the GFE and how that could change the resulting AEOB from the payer.  
 
 ![Balance Billing](GFEbalanceBilling.png){:style="float: none;"}
 
 **MRI Scenario**
 
 Assumptions:<br>
-• Patient has single commercial insurance coverage and plans to use it<br>
-• This is clinically appropriate (Clinical Decision Support (CDS) Score) <br>
-• Service Location is known (e.g., Address) <br>
-• All providers are in network - PCP, imaging facility, and reading radiologist<br>
-• While medical management techniques (such as prior auth) will be included as a disclaimer when applicable in the AEOB returned to the member, the actual process of meeting medical management requirements is separate from the process of creating an AEOB. For details see the Terms and Concepts section of this IG.
+• Patient has single commercial insurance coverage and plans to use it.<br>
+• This  is clinically appropriate (Clinical Decision Support [CDS] Score). <br>
+• Service location is known (e.g., address). <br>
+• All providers are in network - PCP, imaging facility, and reading radiologist.<br>
+• While medical management techniques (such as prior authorization) will be included as a disclaimer when applicable in the AEOB returned to the member, the actual process of meeting medical management requirements is separate from the process of creating an AEOB. For details, see the Terms and Concepts section of this IG.
 
-1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary says let's do a brain MRI (CPT 70551).
-2.  She walks to the PCP front desk, they enter the order into the EMR system, and direct the patient to ABC’s Radiology department.
+1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary recommends a brain MRI (CPT 70551).
+2.  She  walks to the PCP front desk; they  enter the order into the EMR system and direct the patient to ABC’s Radiology department.
 3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present.
-4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551 and provide her coverage information, which she plans to use.
-5.  The MRI is scheduled for 9 days from today. This triggers the process for an Advanced EOB (AEOB) to be created.
+4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551, and provide her coverage information, which she plans to use .
+5.  The MRI is scheduled for 9 days from today. This triggers the creation process for an AEOB.
 6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately.
-7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the Good Faith Estimate (GFE) for the expected charges with the expected billing and diagnostic codes.
+7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the GFE for the expected charges with the expected billing and diagnostic codes.
 8.  This information is sent to the payer.
-9.  The payer receives the GFE. Within one business day the payer adjudicates it and sends the Good Faith Estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates as an AEOB securely to Eve.
+9.  The payer receives the GFE. Within one business day, the payer adjudicates it and sends the GFEs of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates as an AEOB securely to Eve.
 10. Optionally, the payer also sends a response to ABC’s Radiology Office Administrator with the same cost estimate information.
-11. Eve receives the AEOB from her payer based on the information provided by ABC Radiology.
-12. Optionally, Eve or an authorized user could use their 3rd party app to query for the AEOB via API (if supported by their payer).
+11. Eve receives the AEOB from the payer based on the information provided by ABC Radiology.
+12. Optionally, Eve or an authorized user could use their third-party app to query for the AEOB via API (if supported by their payer).
 
 ##### MRI Examples  
 
