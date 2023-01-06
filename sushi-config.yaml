@@ -46,8 +46,8 @@ pages:
     title: Security
   downloads.md:
     title: Downloads
-  credits.md:
-    title: Credits
+#  credits.md:
+#    title: Credits
   
   #artifacts.md:
   #  title: FHIR Artifacts

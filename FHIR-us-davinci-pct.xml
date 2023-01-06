@@ -113,7 +113,7 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="credits" name="Credits"/>
+<page deprecated="true" key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="formal_specification" name="Formal Specification"/>
 <page key="index" name="Patient Cost Transparency Implementation Guide Home Page"/>
