@@ -14,7 +14,7 @@
  </li>
 
 <h4 class="x_MsoNormal">Examples</h4>
-<h5 class="x_MsoNormal">Example 1 – Estimation based on current plan year</h5>
+<h5 class="x_MsoNormal">Example 1 – Estimation based on current benefit period</h5>
 <ul>
 <li class="x_MsoNormal">Situation:
 <ul>
@@ -35,7 +35,7 @@
 </ul>
 
 
-<h5 class="x_MsoNormal">Example 2 – Estimation based on a future plan year</h5>
+<h5 class="x_MsoNormal">Example 2 – Estimation based on a future benefit period</h5>
 <ul>
 <li class="x_MsoNormal">Situation:
 <ul>
