@@ -60,7 +60,7 @@ Description: "This extension is used by the provider to assign a unique identifi
 
 Extension: GFEConsentForBalanceBilling
 Id: gfeConsentForBalanceBilling
-Description: "TBD"
+Description: "If the provider has received a written consent form indicating a patient has agreed to waive their protections and pay up to the full cost for the out-of-network item or service, this will be “true”. If the provider has not received written consent, this will be “false”. This is an attestation only. The billing provider is legally required to maintain the written notice and consent form."
 * value[x] 1..1
 * value[x] only boolean
 
