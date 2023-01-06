@@ -1,4 +1,4 @@
-### Credits
+### Credits 
 <br>
 **Primary Authors:**
 *	Corey Spears (The MITRE Corporation)
@@ -12,7 +12,7 @@
 *	Joe Minieri (The MITRE Corporation)
 *	Kristin Schrock (Lantana Consulting Group)
 
-**Da Vinci Project coordination and core team:**
+**Da Vinci Project Coordination and Core Team:**
 *	Viet Nguyen (Stratametrics, LLC)
 *	Jocelyn Keegan (Point-of-Care Partners)
 *	Robert Dieterle (EnableCare, LLC)
@@ -21,12 +21,12 @@
 *	Mary Kay McDaniel (Markam)
 *	Denise St. Clair (Acumen, LLC)
 
-**Da Vinci Member leadership provided by:**
+**Da Vinci Member Leadership Provided By:**
 *	Alice O'Carroll (Florida Blue)
 *	Jacob Woodford (Epic)
 *	Luke Rockenbach (Providence St. Joseph)
 
-**This IG was developed under the auspices of the Financial Management work group.**
+**This IG was developed under the auspices of the Financial Management Work Group.**
 
 Special thanks go to the numerous Da Vinci members and community who have participated on conference calls, provided reviews and feedback, supported sample data gathering, reference implementation development, and testing including, but not limited to:
 *	Blue Cross Blue Shield Association (Patricia B Taylor, Samuel Undine, Michael Gould, Gail Kocher)
