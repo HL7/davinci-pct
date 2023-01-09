@@ -16,7 +16,8 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
-* entry ^slicing.discriminator.type = #profile
+// * entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
@@ -26,7 +27,8 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
     organization 1..* MS and
     practitioner 0..* MS and
     gfeInstitutional 0..* MS and
-    gfeProfessional 0..* MS
+    gfeProfessional 0..* MS and
+    attachment 0..* MS
     
 * entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
 * entry[patient].resource 1..1
@@ -47,11 +49,15 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 
 * entry[gfeProfessional] ^short = "MAY have PCTGFEProfessional resource(s) and may have attachments as DocumentReference resource(s)"
 * entry[gfeProfessional].resource 1..1 
-* entry[gfeProfessional].resource only PCTGFEProfessional or DocumentReference
+* entry[gfeProfessional].resource only PCTGFEProfessional
 
 * entry[gfeInstitutional] ^short = "MAY have PCTGFEInstitutional resource(s) and may have attachments as DocumentReference resource(s)"
 * entry[gfeInstitutional].resource 1..1 
-* entry[gfeInstitutional].resource only PCTGFEInstitutional or DocumentReference
+* entry[gfeInstitutional].resource only PCTGFEInstitutional
+
+* entry[attachment] ^short = "MAY have attachments as DocumentReference resource(s)"
+* entry[attachment].resource 1..1 
+* entry[attachment].resource only DocumentReference
 
 Invariant: pct-gfe-bundle-1
 Description: "All GFEs must have the same GFE submitter"
