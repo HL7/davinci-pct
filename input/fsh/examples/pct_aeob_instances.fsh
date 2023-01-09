@@ -97,7 +97,7 @@ Description: "PCT AEOB Bundle Example 1"
 * entry[aeob].resource = PCT-AEOB-1
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].resource = patient1001
-* entry[coverage].fullUrl = "http://example.org/fhir/Patient/coverage1001"
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].resource = coverage1001
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization].resource = org1001

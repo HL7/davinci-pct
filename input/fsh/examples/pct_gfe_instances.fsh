@@ -173,6 +173,8 @@ Description: "PCT GFE Bundle Professional Example 1"
 Instance: patient1001
 Description: "An instance of Patient"
 InstanceOf: HRexPatientDemographics
+* identifier.system = "http://example.com/identifiers/patient"
+* identifier.value = "1001"
 * name.given = "Eve"
 * name.family = "Betterhalf"
 * name.text = "Eve Betterhalf"
