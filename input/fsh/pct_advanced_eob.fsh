@@ -108,20 +108,21 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.adjudication[medicalmanagement].amount 0..0 
 * item.adjudication[medicalmanagement].value 0..0
 * item.adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status: Line level benefit payment status associated with professional claim estimates only."
+* item.adjudication[benefitpaymentstatus].category = PCTAdjudicationCategoryCS#benefitpaymentstatus
 * item.adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * item.adjudication[adjustmentreason] ^short = "Adjustment Reason"
+* item.adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
 * item.adjudication[adjustmentreason].reason from PCTPayerBenefitPaymentStatusVS (required)
-
 * item.adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication[submitted] ^short = "Provider submitted amount"
-* item.adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability
 * item.adjudication[memberliability] ^short = "Member liability"
+* item.adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability
 * item.adjudication[memberliability] ^comment = "$0 is an acceptable value"
-* item.adjudication[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
 * item.adjudication[eligible] ^short = "Eligible amount"
+* item.adjudication[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
 * item.adjudication[eligible] ^comment = "Eligible is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
-* item.adjudication[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
 * item.adjudication[benefit] ^short = "Benefit amount"
+* item.adjudication[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
 * item.adjudication[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
 
 
@@ -142,12 +143,16 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * adjudication[medicalmanagement].amount 0..1 MS
 * adjudication[medicalmanagement].value 0..0
 * adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
+* adjudication[billingnetworkstatus].category = PCTAdjudicationCategoryCS#billingnetworkstatus
 * adjudication[billingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
 * adjudication[renderingnetworkstatus] ^short = "Rendering Provider Network Status"
+* adjudication[renderingnetworkstatus].category = PCTAdjudicationCategoryCS#renderingnetworkstatus
 * adjudication[renderingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
 * adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status"
+* adjudication[benefitpaymentstatus].category = PCTAdjudicationCategoryCS#benefitpaymentstatus
 * adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
 * adjudication[adjustmentreason] ^short = "Adjustment Reason"
+* adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
 * adjudication[adjustmentreason].reason from PCTAdjudicationCategoryVS (required)
 * adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * adjudication[submitted] ^short = "Provider submitted amount"
@@ -224,7 +229,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 Invariant: pct-aeob-1
 Description: "Institutional EOB:  SHALL have serviceDescription at the item or header level (can be at both locations)"
-Expression: "(extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists() or item.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists())"
+Expression: "extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists() or item.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists()"
 Severity: #error
 
 
@@ -234,6 +239,6 @@ Expression: "adjudication.where(category.coding.code='submitted').exists() or it
 Severity: #error
 
 Invariant: pct-aeob-3
-Description: "Institutional EOB:  SHALL have adjudication[memberliability ] at the item or header level (can be at both locations)"
+Description: "Institutional EOB:  SHALL have adjudication[memberliability] at the item or header level (can be at both locations)"
 Expression: "adjudication.where(category.coding.code='memberliability').exists() or item.adjudication.where(category.coding.code='memberliability').exists() "
 Severity: #error

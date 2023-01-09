@@ -18,8 +18,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
 * extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
-* extension[disclaimer].valueString = "Estimate Only ..."
-* extension[expirationDate].valueDate = "2021-10-31"
+* extension[serviceDescription].valueString = "Example service"
+// * extension[disclaimer].valueString = "Estimate Only ..."
+// * extension[expirationDate].valueDate = "2021-10-31"
 
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
@@ -55,13 +56,15 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * item.servicedDate = "2022-01-01"
 * item.net.value = 200.00
 * item.net.currency = #USD
-* item.adjudication.extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
-* item.adjudication.category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
-* item.adjudication.amount.value = 200.00
-* item.adjudication.amount.currency = #USD
+* item.adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
+* item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
+// * item.adjudication[medicalmanagement].amount.value = 200.00
+// * item.adjudication[medicalmanagement].amount.currency = #USD
 
 * adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
 * adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
+* adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted "Submitted"
+* adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability "Member Liability"
 
 * total.category = $ADJUDCS#submitted "Submitted Amount"
 * total.amount.value = 200.00

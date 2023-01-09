@@ -57,9 +57,9 @@ RuleSet: OrgContactSlicing
 * contact MS
 
 RuleSet: IdentfierSlicing
+* identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.description = "Slice based on type pattern"
 
 //// Invariants
