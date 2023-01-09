@@ -18,7 +18,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
 * extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
-* extension[serviceDescription].valueString = "Example service"
+// * extension[serviceDescription].valueString = "Example service"
 // * extension[disclaimer].valueString = "Estimate Only ..."
 // * extension[expirationDate].valueDate = "2021-10-31"
 
@@ -97,7 +97,7 @@ Description: "PCT AEOB Bundle Example 1"
 * entry[aeob].resource = PCT-AEOB-1
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].resource = patient1001
-* entry[coverage].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[coverage].fullUrl = "http://example.org/fhir/Patient/coverage1001"
 * entry[coverage].resource = coverage1001
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization].resource = org1001
