@@ -144,12 +144,14 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
 * entry[gfeInstitutional].id = "PCT-GFE-Inst-Example-1"
 * entry[gfeInstitutional].resource = PCT-GFE-Institutional-MRI
-* entry[1].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[1].id = "Submitter-Org-1"
-* entry[1].resource = Submitter-Org-1
-* entry[2].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
-* entry[2].id = "patient1001"
-* entry[2].resource = patient1001
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization].id = "Submitter-Org-1"
+* entry[organization].resource = Submitter-Org-1
+* entry[patient].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+* entry[patient].id = "patient1001"
+* entry[patient].resource = patient1001
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].resource = coverage1001
 
 Instance: PCT-GFE-Bundle-Prof-1
 InstanceOf: PCTGFEBundle
@@ -160,12 +162,14 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Prof-Example-1"
 * entry[gfeProfessional].id = "PCT-GFE-Prof-Example-1"
 * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
-* entry[1].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[1].id = "Submitter-Org-1"
-* entry[1].resource = Submitter-Org-1
-* entry[2].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
-* entry[2].id = "patient1001"
-* entry[2].resource = patient1001
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization].id = "Submitter-Org-1"
+* entry[organization].resource = Submitter-Org-1
+* entry[patient].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+* entry[patient].id = "patient1001"
+* entry[patient].resource = patient1001
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].resource = coverage1001
 
 
 ///////////////////////////////////////////
