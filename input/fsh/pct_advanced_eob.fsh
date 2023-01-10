@@ -4,12 +4,11 @@ Id: davinci-pct-aeob
 Title: "PCT Advanced EOB"
 Description: "The No Surprises Act requires that group health plans and insurers provide advance cost estimates, called advanced explanations of benefits (advanced EOBs), for scheduled services. This profile is used for exchanging the Advanced EOB data."
 
-* obeys pct-aeob-2 and pct-aeob-3
+* obeys pct-aeob-1 and pct-aeob-2 and pct-aeob-3
 
 * extension contains GFEReference named gfeReference 1..* MS
 * extension[gfeReference] ^short = "The GFE Bundle submitted by an entity that started the process for obtaining an Advanced EOB."
 * extension contains ServiceDescription named serviceDescription 0..1 MS
-* extension[serviceDescription] obeys pct-aeob-1
 * extension[serviceDescription] ^condition = "pct-aeob-1"
 // * extension contains ProviderContractingStatus named providerContractingStatus 1..1 MS
 // * extension contains ProviderContractingRate named providerContractingRate 0..1 MS

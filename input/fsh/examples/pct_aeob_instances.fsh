@@ -18,7 +18,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
 * extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
-// * extension[serviceDescription].valueString = "Example service"
+* extension[serviceDescription].valueString = "Example service"
 // * extension[disclaimer].valueString = "Estimate Only ..."
 // * extension[expirationDate].valueDate = "2021-10-31"
 
@@ -48,7 +48,6 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * benefitPeriod.start = "2022-01-01"
 * benefitPeriod.end = "2023-01-01"
 
-* item.extension[serviceDescription].valueString = "Imaging"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
@@ -63,7 +62,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
 * adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
-* adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted "Submitted"
+* adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted "Submitted Amount"
 * adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability "Member Liability"
 
 * total.category = $ADJUDCS#submitted "Submitted Amount"

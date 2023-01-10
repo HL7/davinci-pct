@@ -103,25 +103,30 @@ Description: "Codes indicating the type of adjudication information provided."
 CodeSystem: PCTIdentifierType
 Title:  "PCT Identifier Type"
 Description: "Defining codes for types of identifiers"
+* ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
+* ^caseSensitive = true
 * #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 
 CodeSystem: PCTNetworkStatusCS
-Id: PCTNetworkStatusCS-TEMPORARY-TRIAL-USE
+Id: PCTNetworkStatusCS
 Title: "PCT Network Status"
-* ^caseSensitive = true
+Description: "Defining codes for network status. This is for trial use."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
+* ^caseSensitive = true
 * #innetwork "In Network" "Indicates an in network status in relation to a patient's coverage"
 * #outofnetwork "Out Of Network" "Indicates a not in network status in relation to a patient's coverage"
 * #other "Other" "Indicates other network status or when a network does not apply"
 
 CodeSystem: PCTAEOBProcessNoteCS
-Id: PCTAEOBProcessNoteCS-TEMPORARY-TRIAL-USE
+Id: PCTAEOBProcessNoteCS
 Title: "PCT AEOB Process Note"
-* ^caseSensitive = true
+Description: "Defining codes for process notes. This is for trial use."
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+* ^caseSensitive = true
 * #disclaimer "In Network" "Indicates adisclaimer type of process note"
 * #adjudication-note "Adjudication Note" "Indicates an adjudication note type of process note"
 * #other "Other" "Indicates other type of AEOB process note"

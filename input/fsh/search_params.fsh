@@ -1,4 +1,4 @@
-Instance: AEOB-date-of-service
+Instance: aeob-date-of-service
 InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/aeob-date-of-service"

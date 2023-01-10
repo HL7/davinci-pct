@@ -143,7 +143,7 @@ Description: "Codes for the classification of organization contact purposes"
 // TODO replace with THO defined VS
 ValueSet: USClaimMedicalProductOrServiceCodes
 Title: "Claim Medical Product or Service Value Set"
-Description: "CPT - HCPCS - HIPPS codes to report medical procedures and services under public and private health insurance programs "
+Description: "CPT - HCPCS - HIPPS codes to report medical procedures and services under public and private health insurance programs"
 * codes from system $CPT
 * codes from system $HCPCS
 * codes from system $HIPPS

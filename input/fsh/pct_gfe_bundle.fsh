@@ -4,7 +4,7 @@ Id: davinci-pct-gfe-bundle
 Title: "PCT GFE Bundle"
 Description: "PCT GFE Bundle that contains necessary resources as a GFE Submission for obtaining an AEOB. Organizations for both the provider and payer SHALL be included. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
 
-* obeys pct-gfe-bundle-1 and pct-gfe-bundle-2 and pct-gfe-bundle-3 and pct-gfe-bundle-4
+* obeys pct-gfe-bundle-1 and pct-gfe-bundle-2 and pct-gfe-bundle-3
 
 * identifier 1..1 MS
 * type = #collection (exactly)
@@ -22,17 +22,30 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains
+	gfe 1..* MS and
     patient 1..2 MS and
     coverage 1..1 MS and
     organization 1..* MS and
     practitioner 0..* MS and
-    gfeInstitutional 0..* MS and
-    gfeProfessional 0..* MS and
+//    gfeInstitutional 0..* MS and
+//    gfeProfessional 0..* MS and
     attachment 0..* MS
 	
 
+
+* entry[gfe] ^short = "SHALL have one or more PCTGFEProfessional or PCTGFEInstitutional resource(s)"
+* entry[gfe].resource 1..1 
+* entry[gfe].resource only PCTGFEProfessional or PCTGFEInstitutional
+
+// * entry[gfeProfessional] ^short = "MAY have PCTGFEProfessional resource(s)"
+// * entry[gfeProfessional].resource 1..1 
+// * entry[gfeProfessional].resource only PCTGFEProfessional
+
+// * entry[gfeInstitutional] ^short = "MAY have PCTGFEInstitutional resource(s)"
+// * entry[gfeInstitutional].resource 1..1 
+// * entry[gfeInstitutional].resource only PCTGFEInstitutional
     
-* entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
+* entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
 * entry[patient].resource 1..1
 * entry[patient].resource only HRexPatientDemographics
 
@@ -49,14 +62,6 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
-* entry[gfeProfessional] ^short = "MAY have PCTGFEProfessional resource(s) and may have attachments as DocumentReference resource(s)"
-* entry[gfeProfessional].resource 1..1 
-* entry[gfeProfessional].resource only PCTGFEProfessional
-
-* entry[gfeInstitutional] ^short = "MAY have PCTGFEInstitutional resource(s) and may have attachments as DocumentReference resource(s)"
-* entry[gfeInstitutional].resource 1..1 
-* entry[gfeInstitutional].resource only PCTGFEInstitutional
-
 * entry[attachment] ^short = "MAY have attachments as DocumentReference resource(s)"
 * entry[attachment].resource 1..1 
 * entry[attachment].resource only DocumentReference
@@ -71,11 +76,12 @@ Description: "SHALL have at least one entry for a payer organization."
 Expression: "entry.resource.ofType(Organization).type.where(coding.code='pay').exists()"
 Severity: #error
 
-Invariant: pct-gfe-bundle-3
-Description: "SHALL contain at least one gfeInstitutional slice or gfeProfessional slice"
-Expression: "entry.resource.ofType(Claim).type.where(type.coding.code='institutional').exists() or entry.resource.ofType(Claim).type.where(coding.code='professional').exists()"
-Severity: #error
 
-Invariant: pct-gfe-bundle-4
+Invariant: pct-gfe-bundle-3
 Description: "All references resources SHALL be contained within the Bundle"
 Severity: #error
+
+// Invariant: pct-gfe-bundle-4
+// Description: "SHALL contain at least one gfeInstitutional slice or gfeProfessional slice"
+// Expression: "entry.resource.ofType(Claim).type.where(coding.code='institutional').exists() or entry.resource.ofType(Claim).type.where(coding.code='professional').exists()"
+// Severity: #error

@@ -144,9 +144,9 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
-* entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
-* entry[gfeInstitutional].id = "PCT-GFE-Institutional-1"
-* entry[gfeInstitutional].resource = PCT-GFE-Institutional-1
+* entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
+* entry[gfe].id = "PCT-GFE-Institutional-1"
+* entry[gfe].resource = PCT-GFE-Institutional-1
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization].id = "Submitter-Org-1"
 * entry[organization].resource = Submitter-Org-1
@@ -165,9 +165,9 @@ Description: "PCT GFE Bundle Professional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
-* entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Prof-Example-1"
-* entry[gfeProfessional].id = "PCT-GFE-Prof-Example-1"
-* entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
+* entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
+* entry[gfe].id = "PCT-GFE-Professional-MRI"
+* entry[gfe].resource = PCT-GFE-Professional-MRI
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization].id = "Submitter-Org-1"
 * entry[organization].resource = Submitter-Org-1
