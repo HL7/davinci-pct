@@ -26,6 +26,7 @@ Description: "PCT Institutional GFE Example 1"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
+* type = $ClaimTypeCS#institutional "Institutional"
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
@@ -68,6 +69,7 @@ Description: "PCT Professional GFE Example 1"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
+* type = $ClaimTypeCS#professional "Professional"
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
@@ -105,6 +107,7 @@ Description: "PCT Institutional GFE for MRI"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2022-02-02"
 * status = #active
+* type = $ClaimTypeCS#institutional "Institutional"
 * patient = Reference(patient1001)
 * created = "2022-02-02"
 * insurer = Reference(org1001)
@@ -141,13 +144,16 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
-* entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
-* entry[gfeInstitutional].id = "PCT-GFE-Inst-Example-1"
-* entry[gfeInstitutional].resource = PCT-GFE-Institutional-MRI
+* entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
+* entry[gfeInstitutional].id = "PCT-GFE-Institutional-1"
+* entry[gfeInstitutional].resource = PCT-GFE-Institutional-1
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization].id = "Submitter-Org-1"
 * entry[organization].resource = Submitter-Org-1
-* entry[patient].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization].id = "org1001"
+* entry[organization].resource = org1001
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
 * entry[patient].resource = patient1001
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
@@ -165,7 +171,10 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization].id = "Submitter-Org-1"
 * entry[organization].resource = Submitter-Org-1
-* entry[patient].fullUrl = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+* entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization].id = "org1001"
+* entry[organization].resource = org1001
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
 * entry[patient].resource = patient1001
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
