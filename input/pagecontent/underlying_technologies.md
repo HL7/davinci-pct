@@ -39,5 +39,5 @@ This has been updated to reflect Jira ticket <a href="https://jira.hl7.org/brows
 </p>
 </blockquote>
 ### Da Vinci HRex
-Provider billing and payer systems SHALL use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep/) when exchanging information, as defined by [the Privacy and Security section of this IG](formal_specification.html#privacy--security-considerations). Implementers should be familiar with this specification.
+Provider billing and payer systems SHALL use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex) when exchanging information, as defined by [the Privacy and Security section of this IG](security.html). Implementers should be familiar with this specification.
 

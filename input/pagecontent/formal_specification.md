@@ -74,7 +74,7 @@ If the payer system supports access via an API, then a third-party app used by t
   * If successful, the system will return 200 OK, and the body will contain a Bundle resource of type searchset, containing zero or more ExplanationOfBenefit resources. Once the desired AEOB is found, the third-party app may use the same API to query for other resources referenced by the AEOB, such as Patient, Practitioner, Organization, and Coverage resources if those referenced resources are not contained in the AEOB itself. Third-party apps should keep track of prior AEOBs and alert the patient if new ones are found. New AEOBs would have a different identifier and a created date later than previous AEOBs. 
 
 #### GFE and AEOB Bundle Graphics
-Figure 1 shows the components of the GFE and AEOB bundles. For full details, see the PCT [FHIR Artifacts](artifacts.html#1). Of note is the <em>Bundle.identifier</em> which is used in the [AEOB query]( formal_specification.html#aeob-query). Note: For brevity, not all bundle data elements are shown below.
+Figure 1 shows the components of the GFE and AEOB bundles. For full details, see the PCT [FHIR Artifacts](artifacts.html#1). Note: For brevity, not all bundle data elements are shown below.
 
 ![GFE Bundles](GFE_Bundle.png){:style="float: none;"}
 
@@ -113,4 +113,4 @@ It is possible that the incoming Bundle cannot be processed due to validation er
 
 #### AEOB Request / Response example
 
-Example bundles can be found [here](use_cases.html#example)
+Example bundles can be found [here](use_cases.html#examples)

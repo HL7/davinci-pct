@@ -3,7 +3,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/aeob-date-of-service"
 * version = "0.1.0"
-* name = "aeob date-of-service"
+* name = "AEOBDateOfService"
 * status = #active
 * date = "2022-12-15"
 * publisher = "HL7 International - Patient Administration Work Group"

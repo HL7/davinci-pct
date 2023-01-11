@@ -4,7 +4,7 @@ Id: davinci-pct-aeob-bundle
 Title: "PCT AEOB Bundle"
 Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Organizations for both the payer and provider SHALL be included."
 
-* obeys pct-aeob-bundle-1
+* obeys pct-aeob-bundle-1 and pct-aeob-bundle-2
 
 * identifier 1..1 MS
 * type = #collection (exactly)
@@ -39,7 +39,6 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
 * entry[coverage].resource 1..1
 * entry[coverage].resource only PCTCoverage
 
-* entry[organization] obeys pct-aeob-bundle-2
 * entry[organization] ^short = "SHALL have the payer organization and may have provider organization(s)"
 * entry[organization].resource 1..1 
 * entry[organization].resource only PCTOrganization
@@ -59,5 +58,5 @@ Severity: #error
 
 Invariant: pct-aeob-bundle-2
 Description: "SHALL have at least one entry for a payer organization."
-Expression: "entry.resource.Organization.where(type.coding.code='pay').exists()"
+Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
 Severity: #error

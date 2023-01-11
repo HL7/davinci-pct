@@ -15,7 +15,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1 MS
 * identifier[PLAC] ^short = "Provider Assigned Identifier for GFE Claim"
-* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary Identifier"
+* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
 //// Profile entension elements ////

@@ -1,14 +1,38 @@
 == Suppressed Messages ==
  
 # Have raised Jira FHIR-34371 per Lloyd's request. See Zulip from Lloyd: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Unsupported.20code.20systems
+
 Found a reference to a CodeSystem (http://terminology.hl7.org/CodeSystem/processpriority) where a ValueSet belongs
 
 # Warning: Code Systems and Value Sets that are referenced in the guide but not freely available
-Error from server: Unable to provide support for code system https://oidref.com/2.16.840.1.113883.15.5
+
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated]
+
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/USClaimMedicalProductOrServiceCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
+
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemCptHcpcsVS because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
+
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated]
+
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated]
+
+The valueSet reference http://nucc.org/provider-taxonomy on element Practitioner.qualification.code could not be resolved
+
+Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNonnewborn
+
+Error from server: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
+
+Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
+
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
-Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
+
 Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
+
 Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
-Code System URI 'https://oidref.com/2.16.840.1.113883.15.5' is unknown so the code cannot be validated
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://oidref.com/2.16.840.1.113883.15.5' is unknown so the code cannot be validated]
+
+Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
+
+
+

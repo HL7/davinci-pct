@@ -53,7 +53,6 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry[coverage].resource 1..1
 * entry[coverage].resource only PCTCoverage
 
-* entry[organization] obeys pct-gfe-bundle-2
 * entry[organization] ^short = "SHALL have the payer organization and may have provider organization(s)"
 * entry[organization].resource 1..1 
 * entry[organization].resource only PCTOrganization
@@ -73,7 +72,8 @@ Severity: #error
 
 Invariant: pct-gfe-bundle-2
 Description: "SHALL have at least one entry for a payer organization."
-Expression: "entry.resource.ofType(Organization).type.where(coding.code='pay').exists()"
+//Expression: "entry.resource.ofType(Organization).type.where(coding.code='pay').exists()"
+Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
 Severity: #error
 
 

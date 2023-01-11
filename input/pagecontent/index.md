@@ -33,7 +33,7 @@ By using the FHIR standard  and implementing this guide, providers and payers ca
 FHIR is being used for consumer access to healthcare related data at significant scale today, and there are regulatory requirements in the form of the CMS Patient Access API for FHIR support for the related use case of post adjudicated claims. Use of an industry standard would keep the barrier to stakeholder adoption relatively low. 
 
 
-Acronyms used in this IG can be found [here](use_cases.html#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG. 
+Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG. 
 
 **AEOB Interaction Diagram Steps (High Level View)**  
 
@@ -110,7 +110,7 @@ The scope of this guide does not include coordination of benefits or more than o
 | Data Payload | The bundle of data or collection of the data elements being sent. |
 | Deductible | The amount that is paid for covered healthcare services before the insurance plan starts to pay. With a \$2,000 deductible, for example, the first \$2,000 of covered services is paid by the member out-of-pocket. After the deductible is paid, the member usually pays only a copayment or coinsurance for covered services. |
 | EOB <br> Explanation of Benefits | An EOB is a statement from a health insurance plan describing what costs it will cover for medical care or products received. |
-| GFE | The Good Faith Estimate is a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. For a complete breakdown of what needs to be included in the GFE see [42 U.S. Code 300gg-136](#https://www.law.cornell.edu/uscode/text/42/300gg-136)|
+| GFE | The Good Faith Estimate is a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. For a complete breakdown of what needs to be included in the GFE see [42 U.S. Code 300gg-136](https://www.law.cornell.edu/uscode/text/42/300gg-136)|
 | GFE Submitter | Any provider and/or facility that sends a Good Faith Estimate (GFE) to a payer to facilitate the creation of an Advanced Explanation of Benefits (AEOB).|
 | Gross Charge | The charge for an individual item or service that is reflected on a hospital's chargemaster absent any discounts.|
 | HIPAA |The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that required the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge. The US Department of Health and Human Services (HHS) issued the HIPAA Privacy Rule to implement the requirements of HIPAA. The HIPAA Security Rule protects a subset of information covered by the Privacy Rule. |
