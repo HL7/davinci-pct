@@ -32,6 +32,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * patient MS
 * patient only Reference(HRexPatientDemographics)
+* patient ^type.aggregation = #bundled
 
 * insurer MS
 * insurer only Reference(PCTOrganization)

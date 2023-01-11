@@ -40,9 +40,11 @@
 <artifact id="ValueSet/PCTAEOBTypeVS" key="ValueSet-PCTAEOBTypeVS" name="PCT Advance Explanation of Benefit Type Value Set"/>
 <artifact id="ExplanationOfBenefit/PCT-AEOB-1" key="ExplanationOfBenefit-PCT-AEOB-1" name="PCT-AEOB-1"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-adjudication-error" key="StructureDefinition-davinci-pct-aeob-adjudication-error" name="PCT AEOB Adjudication Error"/>
+<artifact id="OperationOutcome/PCT-AEOB-Adjudication-Error-Example-1" key="OperationOutcome-PCT-AEOB-Adjudication-Error-Example-1" name="PCT-AEOB-Adjudication-Error-Example-1"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-bundle" key="StructureDefinition-davinci-pct-aeob-bundle" name="PCT AEOB Bundle"/>
 <artifact id="Bundle/PCT-AEOB-Bundle-1" key="Bundle-PCT-AEOB-Bundle-1" name="PCT-AEOB-Bundle-1"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-complete" key="StructureDefinition-davinci-pct-aeob-complete" name="PCT AEOB Complete"/>
+<artifact id="OperationOutcome/PCT-AEOB-Complete-Example-1" key="OperationOutcome-PCT-AEOB-Complete-Example-1" name="PCT-AEOB-Complete-Example-1"/>
 <artifact id="CodeSystem/PCTAEOBProcessNoteCS" key="CodeSystem-PCTAEOBProcessNoteCS" name="PCT AEOB Process Note"/>
 <artifact id="ValueSet/PCTAEOBProcessNoteVS" key="ValueSet-PCTAEOBProcessNoteVS" name="PCT AEOB Process Note Types"/>
 <artifact id="CodeSystem/PCTCareTeamRole" key="CodeSystem-PCTCareTeamRole" name="PCT Care Team Role"/>
@@ -73,6 +75,7 @@
 <artifact id="CodeSystem/PCTSupportingInfoType" key="CodeSystem-PCTSupportingInfoType" name="PCT GFE Supporting Info Type Code System"/>
 <artifact deprecated="true" id="CodeSystem/PCTGFETypeOfBillCS" key="CodeSystem-PCTGFETypeOfBillCS" name="PCT GFE Type Of Bill Code System"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-validation-error" key="StructureDefinition-davinci-pct-gfe-validation-error" name="PCT GFE Validation Error"/>
+<artifact id="OperationOutcome/PCT-GFE-Validation-Error-Example-1" key="OperationOutcome-PCT-GFE-Validation-Error-Example-1" name="PCT-GFE-Validation-Error-Example-1"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-institutional" key="StructureDefinition-pct-gfe-Institutional" name="PCT Good Faith Estimate Institutional"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-professional" key="StructureDefinition-davinci-pct-gfe-professional" name="PCT Good Faith Estimate Professional"/>
 <artifact id="ValueSet/PCTDiagnosticCodes" key="ValueSet-PCTDiagnosticCodes" name="PCT ICD-10 Diagnostic Codes"/>
