@@ -127,6 +127,6 @@ Description: "Defining codes for process notes. This is for trial use."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
-* #disclaimer "In Network" "Indicates adisclaimer type of process note"
+* #disclaimer "Disclaimer" "Indicates a disclaimer type of process note"
 * #adjudication-note "Adjudication Note" "Indicates an adjudication note type of process note"
 * #other "Other" "Indicates other type of AEOB process note"

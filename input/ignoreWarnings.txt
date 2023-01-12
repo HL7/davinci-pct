@@ -8,6 +8,10 @@ Found a reference to a CodeSystem (http://terminology.hl7.org/CodeSystem/process
 
 Reference is remote which isn't supported by the specified aggregation mode(s) for the reference (bundled)
 
+# Warning: Unable to find a FHIRPath expression to accomplish the goal of ensuring all referenced resources are present in a Bundle after reaching out on Zulip https://chat.fhir.org/#narrow/stream/179266-fhirpath/topic/FHIRPath.20asserting.20all.20references.20resources.20are.20in.20a.20Bundle
+
+Rule eld-21: 'Constraints should have an expression or else validators will not be able to enforce them' Failed
+
 # Warning: Code Systems and Value Sets that are referenced in the guide but not available
 
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated]

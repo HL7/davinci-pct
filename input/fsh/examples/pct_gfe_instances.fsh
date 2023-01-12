@@ -23,6 +23,7 @@ Description: "PCT Institutional GFE Example 1"
 * identifier[PLAC].value = "GFEProviderAssignedID0001"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 * extension[providerEventMethodology].valueString = "EEMM1021"
+* extension[gfeDisclaimer].valueString = "For estimation purposes only"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
@@ -147,6 +148,9 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
 * entry[gfe].id = "PCT-GFE-Institutional-1"
 * entry[gfe].resource = PCT-GFE-Institutional-1
+// * entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
+// * entry[gfeInstitutional].id = "PCT-GFE-Institutional-1"
+// * entry[gfeInstitutional].resource = PCT-GFE-Institutional-1
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization].id = "Submitter-Org-1"
 * entry[organization].resource = Submitter-Org-1
@@ -168,6 +172,9 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 * entry[gfe].id = "PCT-GFE-Professional-MRI"
 * entry[gfe].resource = PCT-GFE-Professional-MRI
+// * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
+// * entry[gfeProfessional].id = "PCT-GFE-Professional-MRI"
+// * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization].id = "Submitter-Org-1"
 * entry[organization].resource = Submitter-Org-1

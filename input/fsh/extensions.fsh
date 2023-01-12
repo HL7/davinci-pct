@@ -137,22 +137,23 @@ Description: "This extension is used to provide a reason to explain how the esti
 // //* extension[subjectToMedicalMgmt].valueCoding from PCTSubjectToMedicalMgmtDisclaimerVS (extensible)
 // * value[x] ^short = "The estimate may change subject to medical management"
 
-Extension: Disclaimer
-Id: disclaimer
-Title: "Disclaimer"
-Description: "This extension allows the payer to declare a disclaimer concerning the estimated costs provided in the AEOB."
-* value[x] 1..1
-* value[x] only string or CodeableConcept or url or markdown
-* value[x] ^short = "A disclaimer declared by the payer concerning the estimated costs provided in the AEOB"
+// Extension: Disclaimer
+// Id: disclaimer
+// Title: "Disclaimer"
+// Description: "This extension allows the payer to declare a disclaimer concerning the estimated costs provided in the AEOB."
+// * value[x] 1..1
+// * value[x] only string or CodeableConcept or url or markdown
+// * value[x] ^short = "A disclaimer declared by the payer concerning the estimated costs provided in the AEOB"
+
 //* value[x] from PCTEstimateOnlyDisclaimerVS (extensible)
 
-Extension: ExpirationDate
-Id: expirationDate
-Title: "Expiration Date"
-Description: "This extension is used to indicate a specific date after which the issued AEOB is considered obsolete."
-* value[x] 1..1
-* value[x] only date
-* value[x] ^short = "The AEOB is considered obsolete after this date"
+// Extension: ExpirationDate
+// Id: expirationDate
+// Title: "Expiration Date"
+// Description: "This extension is used to indicate a specific date after which the issued AEOB is considered obsolete."
+// * value[x] 1..1
+// * value[x] only date
+// * value[x] ^short = "The AEOB is considered obsolete after this date"
 
 Extension: ProcessNoteClass
 Id: processNoteClass

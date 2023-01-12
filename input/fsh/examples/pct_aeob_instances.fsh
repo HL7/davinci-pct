@@ -69,8 +69,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * total.amount.value = 200.00
 * total.amount.currency = #USD
 
-// * processNote.extension[processNoteClass].valueCoding = #disclaimer "Disclaimer"
+* processNote.extension[processNoteClass].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTAEOBProcessNoteCS#disclaimer "Disclaimer"
 * processNote.text = "processNote disclaimer text"
+
 
 * benefitBalance
 * benefitBalance.category = http://terminology.hl7.org/CodeSystem/ex-benefitcategory#1 "Medical Care"

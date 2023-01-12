@@ -23,12 +23,12 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains
 	gfe 1..* MS and
+//    gfeInstitutional 0..* MS and
+//    gfeProfessional 0..* MS and
     patient 1..2 MS and
     coverage 1..1 MS and
     organization 1..* MS and
     practitioner 0..* MS and
-//    gfeInstitutional 0..* MS and
-//    gfeProfessional 0..* MS and
     attachment 0..* MS
 	
 
