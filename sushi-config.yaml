@@ -46,6 +46,8 @@ pages:
     title: Security
   downloads.md:
     title: Downloads
+  change_log.md:
+    title: Change Log
 #  credits.md:
 #    title: Credits
   
@@ -83,6 +85,8 @@ menu:
   Security: security.html
     
   Downloads: downloads.html
+  
+  Change Log: change_log.html
  
  # Base Specs:
  #   FHIR R4 Spec: new-tab {{site.data.fhir.path}}

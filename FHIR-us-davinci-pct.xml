@@ -116,6 +116,7 @@
 <page key="many" name="(many)"/>
 <page key="NA" name="(NA)"/>
 <page key="artifacts" name="Artifacts Summary"/>
+<page key="change_log" name="Change Log"/>
 <page deprecated="true" key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="formal_specification" name="Formal Specification"/>

@@ -16,7 +16,7 @@ as general guidance on how to read FHIR specifications. Readers who are unfamili
 
 * [FHIR overview]({{site.data.fhir.path}}overview.html)
 * [Developer's introduction]({{site.data.fhir.path}}overview-dev.html)
-* (or [Clinical introduction]({{site.data.fhir.path}}overview-clinical.html))
+* [Clinical introduction]({{site.data.fhir.path}}overview-clinical.html)
 * [FHIR data types]({{site.data.fhir.path}}datatypes.html)
 * [Using codes]({{site.data.fhir.path}}terminologies.html)
 * [References between resources]({{site.data.fhir.path}}references.html)
@@ -30,9 +30,13 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 
 ## Relationship to Other Implementation Guides
 
+### Good Faith Estimate Relationships
+
 <figure>
 {% include gfe.svg %}
 </figure>
+
+### Advanced Explanation Of Benefit Relationships
 
 <figure>
 {% include aeob.svg %}

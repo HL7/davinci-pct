@@ -1,0 +1,28 @@
+@startuml
+    agent "PCT Organization" as pctorganization
+    agent "HRex Organization" as hrexorganization
+    agent "US Core Organization" as uscoreorganization
+    agent "PCT Practitioner" as pctpractitioner
+    agent "HRex Practitioner" as hrexpractitioner
+    agent "US Core Practitioner" as uscorepractitioner
+    agent "PCT Coverage" as pctcoverage
+    agent "HRex Coverage" as hrexcoverage
+    agent "US Core Patient" as uscorepatient
+    agent "HRex Patient Demographics" as hrexpatient
+    agent "Good Faith Estimate" as gfe
+	note top: professional or institutional
+    hrexcoverage <|-- pctcoverage
+    uscorepatient <|-- hrexpatient
+    uscorepractitioner <|-- hrexpractitioner
+    hrexpractitioner <|-- pctpractitioner
+    uscoreorganization <|-- hrexorganization
+    hrexorganization <|-- pctorganization
+	gfe --> hrexpatient: "patient 1..1"
+	gfe --> pctcoverage: "insurance.coverage 1..*"
+	gfe --> pctpractitioner: "provider 1..1"
+	gfe --> pctorganization: "provider 1..1"
+	gfe --> pctorganization: "insurer 1..1"
+	gfe --> pctpractitioner: "payee.party 0..1"
+	gfe --> pctorganization: "provider 0..1"
+	gfe --> pctorganization: "supportingInfo:serviceFacility 0..1"
+@enduml
