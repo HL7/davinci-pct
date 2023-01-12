@@ -30,6 +30,14 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 
 ## Relationship to Other Implementation Guides
 
+<figure>
+{% include gfe.svg %}
+</figure>
+
+<figure>
+{% include aeob.svg %}
+</figure>
+
 ### US Core
 Provider billing and payer claims adjudication systems for those profiles defined by US Core SHALL use the specification defined by [US Core](http://hl7.org/fhir/us/core/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
 
