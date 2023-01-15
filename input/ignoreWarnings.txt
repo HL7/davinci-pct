@@ -12,6 +12,10 @@ Reference is remote which isn't supported by the specified aggregation mode(s) f
 
 Rule eld-21: 'Constraints should have an expression or else validators will not be able to enforce them' Failed
 
+# Warning about using US Core Coverage, which is not available in US Core 3.1.1 which we are using
+
+US FHIR Usage rules require that all profiles on Coverage derive from the core US profile. Comparison with US Core Coverage Profile
+
 # Warning: Code Systems and Value Sets that are referenced in the guide but not available
 
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated]
