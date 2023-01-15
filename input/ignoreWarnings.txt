@@ -14,6 +14,8 @@ Rule eld-21: 'Constraints should have an expression or else validators will not 
 
 # Warning: Code Systems and Value Sets that are referenced in the guide but not available
 
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated]
+
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated]
 
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/USClaimMedicalProductOrServiceCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
@@ -59,6 +61,8 @@ Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot b
 Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated
 
 Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
+
+Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
 
 
 
