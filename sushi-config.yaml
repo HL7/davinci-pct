@@ -8,7 +8,7 @@ name: PatientCostTransparency
 title: Patient Cost Transparency Implementation Guide
 description: To support the request for cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.
 status: draft
-version: 0.1.0
+version: 0.1.1
 publisher:
   name: HL7 International - Financial Management Work Group
   url: http://hl7.org/Special/committees/fm

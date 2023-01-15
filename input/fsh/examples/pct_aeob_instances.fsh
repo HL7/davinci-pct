@@ -74,11 +74,11 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 
 * benefitBalance
-* benefitBalance.category = http://terminology.hl7.org/CodeSystem/ex-benefitcategory#1 "Medical Care"
+* benefitBalance.category = https://x12.org/codes/service-type-codes#1 "Medical Care"
 * benefitBalance.unit = http://terminology.hl7.org/CodeSystem/benefit-unit#individual
 * benefitBalance.term = http://terminology.hl7.org/CodeSystem/benefit-term#annual
 * benefitBalance.financial
-* benefitBalance.financial.type = http://terminology.hl7.org/CodeSystem/benefit-type#benefit
+* benefitBalance.financial.type = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTFinancialType#allowed
 * benefitBalance.financial.allowedMoney
 * benefitBalance.financial.allowedMoney.value = 1
 * benefitBalance.financial.allowedMoney.currency = #USD
