@@ -64,5 +64,7 @@ Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Plac
 
 Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
 
+Error from server: Unable to provide support for code system https://x12.org/codes/service-type-codes
+
 
 
