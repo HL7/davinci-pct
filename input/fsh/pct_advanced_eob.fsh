@@ -214,13 +214,15 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 * benefitBalance 1..* MS
-* benefitBalance.category 1..1 // binding TBD
+* benefitBalance.category 1..1 
+* benefitBalance.category from PCTBenefitBalanceCategoryVS 
 * benefitBalance.unit 1..1 
 * benefitBalance.unit from http://hl7.org/fhir/ValueSet/benefit-unit (required)
 * benefitBalance.term 1..1
 * benefitBalance.term from 	http://hl7.org/fhir/ValueSet/benefit-term (required)
 * benefitBalance.financial 1..*
-* benefitBalance.financial.type 1..1 // binding TBD
+* benefitBalance.financial.type 1..1
+* benefitBalance.financial.type from PCTFinancialTypeVS
 * benefitBalance.financial.allowed[x] 1..1
 * benefitBalance.financial.allowedMoney 1..1
 * benefitBalance.financial.used[x] 1..1
