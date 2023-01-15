@@ -137,7 +137,7 @@ Description: "Financial Type codes for benefitBalance.financial.type."
 * ^caseSensitive = true
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
-* #allowed "Allowed" "The maximum amount a plan will pay for a covered health care service. May also be called ""payment allowance,"" or ""negotiated rate."""
+* #allowed "Allowed" "The maximum amount a plan will pay for a covered health care service. May also be called \"payment allowance\", or \"negotiated rate\"."
 * #coinsurance "Co-Insurance" "The amount the insured individual pays, as a set percentage of the cost of covered services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
 * #copay "CoPay"  "A fixed amount ($20, for example) the insured individual pays for a covered health care service after the deductible is paid."
 * #deductible "Deductible" "The amount the insured individual pays for covered health care services before the insurance plan starts to pay."
