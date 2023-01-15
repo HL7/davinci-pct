@@ -253,9 +253,11 @@ Description: "Indicates the type of .processNote for AEOB."
 ValueSet: PCTFinancialTypeVS
 Title: "PCT Financial Type"
 Description: "Financial Type codes for benefitBalance.financial.type."
+* ^experimental = false
 * codes from system PCTFinancialType
 
 ValueSet: PCTBenefitBalanceCategoryVS
 Title: "PCT benefitBalance.category codes"
 Description: "Category codes for PCT benefitBalance.category from X12 service type."
+* ^experimental = false
 * codes from system https://x12.org/codes/service-type-codes
