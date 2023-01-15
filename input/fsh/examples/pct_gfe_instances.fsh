@@ -175,9 +175,9 @@ Description: "PCT GFE Bundle Professional Example 1"
 // * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].id = "PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[organization][=].id = "Submitter-Org-1"
-* entry[organization][=].resource = Submitter-Org-1
+* entry[practitioner][+].fullUrl = "http://example.org/fhir/Practitioner/Submitter-Practitioner-1"
+* entry[practitioner][=].id = "Submitter-Practitioner-1"
+* entry[practitioner][=].resource = Submitter-Practitioner-1
 * entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
 * entry[organization][=].resource = org1001
