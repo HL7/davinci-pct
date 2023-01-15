@@ -151,12 +151,12 @@ Description: "PCT GFE Bundle Institutional Example 1"
 // * entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
 // * entry[gfeInstitutional].id = "PCT-GFE-Institutional-1"
 // * entry[gfeInstitutional].resource = PCT-GFE-Institutional-1
-* entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[organization].id = "Submitter-Org-1"
-* entry[organization].resource = Submitter-Org-1
-* entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
-* entry[organization].id = "org1001"
-* entry[organization].resource = org1001
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization][=].id = "Submitter-Org-1"
+* entry[organization][=].resource = Submitter-Org-1
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
 * entry[patient].resource = patient1001
@@ -175,12 +175,12 @@ Description: "PCT GFE Bundle Professional Example 1"
 // * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].id = "PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
-* entry[organization].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[organization].id = "Submitter-Org-1"
-* entry[organization].resource = Submitter-Org-1
-* entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
-* entry[organization].id = "org1001"
-* entry[organization].resource = org1001
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization][=].id = "Submitter-Org-1"
+* entry[organization][=].resource = Submitter-Org-1
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
 * entry[patient].resource = patient1001
