@@ -130,3 +130,20 @@ Description: "Defining codes for process notes. This is for trial use."
 * #disclaimer "Disclaimer" "Indicates a disclaimer type of process note"
 * #adjudication-note "Adjudication Note" "Indicates an adjudication note type of process note"
 * #other "Other" "Indicates other type of AEOB process note"
+
+CodeSystem: PCTFinancialType
+Title: "PCT Financial Type"
+Description: "Financial Type codes for benefitBalance.financial.type."
+* ^caseSensitive = true
+* ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+* #allowed "Allowed" "The maximum amount a plan will pay for a covered health care service. May also be called ""payment allowance,"" or ""negotiated rate."""
+* #coinsurance "Co-Insurance" "The amount the insured individual pays, as a set percentage of the cost of covered services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
+* #copay "CoPay"  "A fixed amount ($20, for example) the insured individual pays for a covered health care service after the deductible is paid."
+* #deductible "Deductible" "The amount the insured individual pays for covered health care services before the insurance plan starts to pay."
+* #eligible "Eligible Amount" "Amount of the charge which is considered for adjudication."
+* #memberliability "Member Liability" "The amount of the member's liability."
+* #noncovered "Noncovered" "The portion of the cost of the service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
+* #out-of-pocket-maximum "Out-of-Pocket Maximum" "The most the insured individual has to pay for covered services in a plan year. After this amount is spent on deductibles, copayments, and coinsurance for in-network care and services, the health plan pays 100% of the costs of covered benefits."
+* #visit "Visit" "A medical visit means diagnostic, therapeutic, or consultative services provided to a client by a healthcare professional in an outpatient setting."
+* #penalty "Penalty" "Benefit penalty is an approach used by the insurance company to reduce their payment on a claim when the patient or medical provider does not satisfy the rules of the health plan. Benefit penalties may occur when a pre-authorization is not obtained, for example."
