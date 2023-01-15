@@ -31,7 +31,7 @@ Description: "PCT Institutional GFE Example 1"
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
-* provider = Reference(org1002)
+* provider = Reference(Submitter-Org-1)
 * provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * provider.extension[consentForBalanceBilling].valueBoolean = true
 * priority = $PROCPRIORITY#normal
@@ -74,7 +74,7 @@ Description: "PCT Professional GFE Example 1"
 * patient = Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
-* provider = Reference(prac002)
+* provider = Reference(Submitter-Practitioner-1)
 * provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
@@ -112,7 +112,7 @@ Description: "PCT Institutional GFE for MRI"
 * patient = Reference(patient1001)
 * created = "2022-02-02"
 * insurer = Reference(org1001)
-* provider = Reference(org1002)
+* provider = Reference(Submitter-Org-1)
 * provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
