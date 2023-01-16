@@ -313,7 +313,6 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 Instance: coverage1001
 InstanceOf: PCTCoverage
 Description: "An instance of PCTCoverage"
-* subscriber = Reference(patient1001)
 * beneficiary = Reference(patient1001)
 * relationship = RELATE#self "Self"
 * status = #active
@@ -323,6 +322,7 @@ Description: "An instance of PCTCoverage"
 * period.start = "2021-01-01"
 * period.end = "2022-01-01"
 * payor = Reference(org1001)
+//* subscriber = Reference(patient1001)
 * subscriberId = "PFP123450000"
 * costToBeneficiary.type = COPAYTYPE#copaypct "Copay Percentage"
 * costToBeneficiary.valueQuantity.value = 20.00

@@ -7,6 +7,9 @@ There were many changes to all the profiles, value sets, etc. since the last bal
 * The polling mechanism changed form polling based on Bundle.identifier to using the [asyncrhonous response pattern](http://build.fhir.org/async-bundle.html).
 * Updated workflow diagrams on the [Use Cases](use_cases.html) page.
 * Most code systems have been moved to the [HL7 terminology](https://terminology.hl7.org/) page, and their code system URLs changed as a result.
+* Harmonized with CARIN blue button EOB where possible to reduce implementation barriers
+* Added Must Support definition, and updated elements to align with MS definition, and removed MS from elements where the minimum cardinality is 1 since these are required anyway
+*  Updates to the AEOB profile to provide guidance and improve alignment with requirements for patient AEOBs including benefit period, benefit balance, adjudication and supporting info elements
 
 
 #### Detailed Changes (JIRA Change Requests)
