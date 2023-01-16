@@ -79,6 +79,7 @@ Severity: #error
 
 Invariant: pct-gfe-bundle-3
 Description: "All references resources SHALL be contained within the Bundle"
+Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
 Severity: #error
 
 // Invariant: pct-gfe-bundle-4

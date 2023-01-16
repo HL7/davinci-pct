@@ -1,4 +1,8 @@
 == Suppressed Messages ==
+
+# Error: 2 profiles listed in a type slice in a Bundle should be allowed per Grahame: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/2.20profiles.20found.20for.20entry.20resource
+
+https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/2.20profiles.20found.20for.20entry.20resource
  
 # Have raised Jira FHIR-34371 per Lloyd's request. See Zulip from Lloyd: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Unsupported.20code.20systems
 
@@ -10,7 +14,7 @@ Reference is remote which isn't supported by the specified aggregation mode(s) f
 
 # Warning: Unable to find a FHIRPath expression to accomplish the goal of ensuring all referenced resources are present in a Bundle after reaching out on Zulip https://chat.fhir.org/#narrow/stream/179266-fhirpath/topic/FHIRPath.20asserting.20all.20references.20resources.20are.20in.20a.20Bundle
 
-Rule eld-21: 'Constraints should have an expression or else validators will not be able to enforce them' Failed
+# Rule eld-21: 'Constraints should have an expression or else validators will not be able to enforce them' Failed
 
 # Warning about using US Core Coverage, which is not available in US Core 3.1.1 which we are using
 

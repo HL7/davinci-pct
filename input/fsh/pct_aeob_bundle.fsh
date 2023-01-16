@@ -54,6 +54,7 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
 
 Invariant: pct-aeob-bundle-1
 Description: "All references resources SHALL be contained within the Bundle with the exception of the PCT GFE Bundle (referenced from the gfeReference extension in the AEOB), which MAY be present"
+Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
 Severity: #error
 
 Invariant: pct-aeob-bundle-2
