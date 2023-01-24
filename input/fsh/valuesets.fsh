@@ -98,14 +98,14 @@ Description: "Value Set containing codes for the type of adjudication informatio
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
-ValueSet: PCTCoverageCopayTypeVS
-Title: "PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the CoverageCopayTypeCodes value set"
-Id: pct-coverage-copay-codes
-* codes from valueset $CoverageCopayTypeCodes
-* codes from system PCTCoverageCopayTypeCS
-* ^copyright = "This Valueset is not copyrighted."
-* ^experimental = false
+// ValueSet: PCTCoverageCopayTypeVS
+// Title: "PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created // through the HL7 Terminology (THO) process to replace this value set"
+// Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the // // // CoverageCopayTypeCodes value set"
+// Id: pct-coverage-copay-codes
+// * codes from valueset $CoverageCopayTypeCodes
+// * codes from system PCTCoverageCopayTypeCS
+// * ^copyright = "This Valueset is not copyrighted."
+// * ^experimental = false
 
 ValueSet: PCTSubjectToMedicalMgmtReasonVS
 Title: "PCT Subject-To-Medical-Management Reason Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"

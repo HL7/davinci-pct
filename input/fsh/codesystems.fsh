@@ -9,15 +9,15 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
-CodeSystem: PCTCoverageCopayTypeCS
-Title: "PCT Coverage Copay Type Code System"
-//Id: pct-coverage-copay-type
-Description: "Defining codes for the classification of insurance coverage copay types for patient"
-* ^caseSensitive = true
-* #pharmacy-deductible "Pharmacy-Deductible" "The accumulated amount of patient payment before the coverage begins to pay for medicines."
-* #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
-* ^copyright = "This CodeSystem is not copyrighted."
-* ^experimental = false
+// CodeSystem: PCTCoverageCopayTypeCS
+// Title: "PCT Coverage Copay Type Code System"
+// Id: pct-coverage-copay-type
+// Description: "Defining codes for the classification of insurance coverage copay types for patient"
+// * ^caseSensitive = true
+// * #pharmacy-deductible "Pharmacy-Deductible" "The accumulated amount of patient payment before the coverage begins to pay for medicines."
+// * #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
+// * ^copyright = "This CodeSystem is not copyrighted."
+// * ^experimental = false
 
 CodeSystem: PCTDiagnosisType
 Title: "PCT Diagnosis Type"

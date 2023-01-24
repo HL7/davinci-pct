@@ -40,7 +40,7 @@ Description: "PCT Institutional GFE Example 1"
 * referral.display = "Referral Number"
 * supportingInfo[typeOfBill].sequence = 1
 * supportingInfo[typeOfBill].category = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTSupportingInfoType#typeofbill
-* supportingInfo[typeOfBill].code = https://www.nubc.org/CodeSystem/TypeOfBill#example-bill-type
+* supportingInfo[typeOfBill].code = https://www.nubc.org/CodeSystem/TypeOfBill#011X "Hospital Inpatient (Part A)"
 * insurance.sequence = 1
 * insurance.focal = true
 * insurance.coverage = Reference(coverage1001)
