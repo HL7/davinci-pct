@@ -6,13 +6,12 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 
 * obeys pct-gfe-bundle-1 and pct-gfe-bundle-2 and pct-gfe-bundle-3
 
-* identifier 1..1 MS
+* identifier 1..1
 * type = #collection (exactly)
-* timestamp 1..1 MS
+* timestamp 1..1
 //TODO: create a FHIRPath invariant to enforce that at least one entry.resource must be either PCTGFEInstitutional or PCTGFEProfessional
-* entry 1..* MS
-* entry.fullUrl 1..1 MS
-//* entry.resource 1..1 MS
+* entry 1..*
+* entry.fullUrl 1..1
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -22,16 +21,12 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains
-	gfe 1..* MS and
-//    gfeInstitutional 0..* MS and
-//    gfeProfessional 0..* MS and
-    patient 1..2 MS and
-    coverage 1..1 MS and
-    organization 1..* MS and
+	gfe 1..* and
+    patient 1..2 and
+    coverage 1..1 and
+    organization 1..* and
     practitioner 0..* MS and
     attachment 0..* MS
-	
-
 
 * entry[gfe] ^short = "SHALL have one or more PCTGFEProfessional or PCTGFEInstitutional resource(s)"
 * entry[gfe].resource 1..1 

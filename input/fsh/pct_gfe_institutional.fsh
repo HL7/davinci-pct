@@ -13,13 +13,13 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
    INTER 0..*
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
-* identifier[PLAC].value 1..1 MS
+* identifier[PLAC].value 1..1
 * identifier[PLAC] ^short = "Provider Assigned Identifier for GFE Claim"
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
 //// Profile entension elements ////
-* extension contains GFESubmitter named gfeSubmitter 1..1 MS
+* extension contains GFESubmitter named gfeSubmitter 1..1
 * extension[gfeSubmitter].value[x] only Reference(PCTPractitioner or PCTOrganization)
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 //* extension contains PlannedPeriodOfService named plannedPeriodOfService 0..* MS
@@ -42,24 +42,19 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * billablePeriod ^short = "Relevant time frame for the claim. This is per claim, whereas a planned period of service can span multiple claims."
 
 * type = $ClaimTypeCS#institutional
-* status MS
-* use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
 
-* patient MS
 * patient only Reference(HRexPatientDemographics)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
 * provider only Reference(PCTOrganization)
 * provider ^short = "Billing provider - party responsible for the GFE"
 
-* provider.extension contains ProviderTaxonomy named providerTaxonomy 1..1 MS
+* provider.extension contains ProviderTaxonomy named providerTaxonomy 1..1
 * provider.extension[providerTaxonomy] ^short = "Provider taxonomy codes consisting of NUCC Health Care Provider Taxonomy Code Set for providers"
 
 * provider.extension contains GFEConsentForBalanceBilling named consentForBalanceBilling 0..1 MS
 
-
-* priority MS
 * priority from $PROCPRIORITYVS (required)
 
 * insurer 1..1
@@ -69,10 +64,10 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * payee.party only Reference(PCTPractitioner or PCTOrganization)
 //TODO: create VS for payee.type like https://build.fhir.org/ig/HL7/carin-bb/ValueSet-C4BBPayeeType.html ???
 
-* referral.extension contains ReferralNumber named referralNumber 1..1 MS
+* referral.extension contains ReferralNumber named referralNumber 1..1
 * referral.extension[referralNumber] ^short = "Referral Number"
 
-* insurance.coverage MS
+* insurance.coverage
 * insurance.coverage only Reference(PCTCoverage)
 * insurance.preAuthRef 0..1
 
@@ -87,26 +82,26 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * diagnosis.type MS
 * diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
-   principal 1..1 MS and
+   principal 1..1 and
    admitting 0..1 MS and
    patientReasonForVisit 0..3 MS and
    externalcauseofinjury 0..12 MS and
    other 0..24 MS
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
-* diagnosis[principal].diagnosis[x] MS
+* diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[admitting].type = $DIAGTYPECS#admitting
-* diagnosis[admitting].diagnosis[x] MS
+* diagnosis[admitting].diagnosis[x]
 * diagnosis[admitting].diagnosis[x] only CodeableConcept
 * diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[patientReasonForVisit].type = PCTDiagnosisType#patientReasonForVisit
-* diagnosis[patientReasonForVisit].diagnosis[x] MS
+* diagnosis[patientReasonForVisit].diagnosis[x]
 * diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
 * diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[externalcauseofinjury].type = PCTDiagnosisType#externalCauseOfInjury
-* diagnosis[externalcauseofinjury].diagnosis[x] MS
+* diagnosis[externalcauseofinjury].diagnosis[x]
 * diagnosis[externalcauseofinjury].diagnosis[x] only CodeableConcept
 * diagnosis[externalcauseofinjury].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[other].type = PCTDiagnosisType#other
@@ -125,24 +120,23 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
    other 0..24 MS
 * procedure[principal].type = PCTProcedureType#principal
 * procedure[principal].sequence = 1
-* procedure[principal].procedure[x] MS
+* procedure[principal].procedure[x]
 * procedure[principal].procedure[x] only CodeableConcept
 * procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
 * procedure[other].type = PCTProcedureType#other
-* procedure[other].procedure[x] MS
+* procedure[other].procedure[x]
 * procedure[other].procedure[x] only CodeableConcept
 * procedure[other].procedure[x] from PCTProcedureSurgicalCodes
 
 * insert CareTeamSlicing
 //* careTeam 0..* MS
-* careTeam.provider 1..1 MS
+* careTeam.provider 1..1
 // ISSUE: does the qualification code give the taxonomy code? If so, no need to have PractitionerRole??
 * careTeam.provider only Reference(PCTPractitioner or PCTOrganization)
 //* careTeam.provider ^short = ""
-* careTeam.role 1..1 MS
+* careTeam.role 1..1
 * careTeam.role from PCTCareTeamRoleVS
-* careTeam.qualification
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
    attending 0..1 MS and
@@ -152,7 +146,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * careTeam[attending].role = PCTCareTeamRole#attending
 //* careTeam[attending] ^short = "May be used for the Institutional case only"
 * careTeam[attending].provider only Reference(PCTPractitioner)
-* careTeam[attending].qualification 1..1 MS
+* careTeam[attending].qualification 1..1 
 * careTeam[operating].role = PCTCareTeamRole#operating
 * careTeam[operating].provider only Reference(PCTPractitioner)
 //* careTeam[operating] ^short = "May be used for the Institutional case only"
@@ -165,23 +159,23 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   typeOfBill 1..1 MS and
+   typeOfBill 1..1 and
    serviceFacility 0..1 MS and
    drg 0..1 and
    pointoforigin 0..1 and
    admtype 0..1
    
 
-* supportingInfo[typeOfBill].category MS
+* supportingInfo[typeOfBill].category
 * supportingInfo[typeOfBill].category = PCTSupportingInfoType#typeofbill 
-* supportingInfo[typeOfBill].code 1..1 MS
+* supportingInfo[typeOfBill].code 1..1
 * supportingInfo[typeOfBill].code from PCTGFETypeOfBillVS (required)
 
 * supportingInfo[serviceFacility] ^short = "Service Facility"
 * supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
 * supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility
-* supportingInfo[serviceFacility].category MS
-* supportingInfo[serviceFacility].valueReference 1..1 MS
+* supportingInfo[serviceFacility].category
+* supportingInfo[serviceFacility].valueReference 1..1
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
 
 * supportingInfo[drg].category = PCTSupportingInfoType#drg
@@ -193,14 +187,14 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * supportingInfo[admtype].category = PCTSupportingInfoType#admtype
 * supportingInfo[admtype].code from AHANUBCPriorityTypeOfAdmissionOrVisitVS   (required)
 
-* item 1..999 MS
+* item 1..999
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
 * item.extension contains ServiceDescription named serviceDescription 1..1
 * item.extension contains ProviderEventMethodology named ProviderEventMethodology 0..1 MS
 * item.extension[ProviderEventMethodology] ^short = "Provider Event Methodology"
 * item.extension[ProviderEventMethodology] ^comment = "The method a provider used to group services. The extension definition contains additional detail"
 
-* item.revenue 1..1 MS
+* item.revenue 1..1
 * item.revenue from PCTGFEItemRevenueVS (required)
 * item.revenue ^short = "Revenue or cost center code - must provide a value for the Institutional case"
 
@@ -216,10 +210,10 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.serviced[x] ^short = "This is the planned or estimated date(s)s of service"
 * item.serviced[x] ^definition = "This is the planned or estimated dates of service. Use Revenue code to determine inpatient stays if needed for adjudication"
 
-* item.unitPrice MS
+* item.unitPrice
 * item.net 1..1 
 * item.net ^short = "Total charge amount for the service line"
-* item.quantity 1..1 
+* item.quantity 1..1
 
 * item.locationCodeableConcept MS
 * item.locationCodeableConcept from PCTGFECMSPOS (required)
@@ -233,5 +227,5 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 * item.serviced[x] MS
 
-* total 1..1 MS
+* total 1..1
 * total ^short = "Total GFE Charges Submitted"
