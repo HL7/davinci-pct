@@ -39,8 +39,8 @@
 <artifact id="CodeSystem/PCTCareTeamRole" key="CodeSystem-PCTCareTeamRole" name="PCT Care Team Role"/>
 <artifact id="ValueSet/PCTCareTeamRoleVS" key="ValueSet-PCTCareTeamRoleVS" name="PCT Care Team Role Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
 <artifact id="StructureDefinition/davinci-pct-coverage" key="StructureDefinition-davinci-pct-coverage" name="PCT Coverage"/>
-<artifact id="CodeSystem/PCTCoverageCopayTypeCS" key="CodeSystem-PCTCoverageCopayTypeCS" name="PCT Coverage Copay Type Code System"/>
-<artifact id="ValueSet/pct-coverage-copay-codes" key="ValueSet-pct-coverage-copay-codes" name="PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
+<artifact deprecated="true" id="CodeSystem/PCTCoverageCopayTypeCS" key="CodeSystem-PCTCoverageCopayTypeCS" name="PCT Coverage Copay Type Code System"/>
+<artifact deprecated="true" id="ValueSet/pct-coverage-copay-codes" key="ValueSet-pct-coverage-copay-codes" name="PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
 <artifact id="CodeSystem/PCTDiagnosisType" key="CodeSystem-PCTDiagnosisType" name="PCT Diagnosis Type"/>
 <artifact id="ValueSet/PCTDiagnosisTypeVS" key="ValueSet-PCTDiagnosisTypeVS" name="PCT Diagnosis Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
 <artifact id="ValueSet/PCTFinancialTypeVS" key="ValueSet-PCTFinancialTypeVS" name="PCT Financial Type"/>

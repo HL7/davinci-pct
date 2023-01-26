@@ -261,3 +261,9 @@ Title: "PCT benefitBalance.category codes"
 Description: "Category codes for PCT benefitBalance.category from X12 service type."
 * ^experimental = false
 * codes from system https://x12.org/codes/service-type-codes
+
+ValueSet: ICD10ProcedureCodes
+Title: "ICD-10 Procedure Codes"
+Description: "Procedure Codes from https://www.cms.gov/Medicare/Coding/ICD10"
+* ^experimental = false
+* codes from system http://www.cms.gov/Medicare/Coding/ICD10

@@ -127,6 +127,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * procedure[principal].sequence = 1
 * procedure[principal].procedure[x] MS
 * procedure[principal].procedure[x] only CodeableConcept
+* procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
 * procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x] MS
