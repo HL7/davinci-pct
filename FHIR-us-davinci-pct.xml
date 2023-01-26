@@ -20,6 +20,7 @@
 <artifact id="StructureDefinition/gfeServiceLinkingInfo" key="StructureDefinition-gfeServiceLinkingInfo" name="GFEServiceLinkingInfo"/>
 <artifact id="OperationDefinition/GFE-submit" key="OperationDefinition-GFE-submit" name="GFESubmitOperation"/>
 <artifact id="StructureDefinition/gfeSubmitter" key="StructureDefinition-gfeSubmitter" name="GFESubmitter"/>
+<artifact id="ValueSet/ICD10ProcedureCodes" key="ValueSet-ICD10ProcedureCodes" name="ICD-10 Procedure Codes"/>
 <artifact id="StructureDefinition/inNetworkProviderOptionsLink" key="StructureDefinition-inNetworkProviderOptionsLink" name="In Network Provider Options Link"/>
 <artifact deprecated="true" id="StructureDefinition/interTransIdentifier" key="StructureDefinition-interTransIdentifier" name="InterTransIdentifier"/>
 <artifact id="ValueSet/AHANUBCPointOfOriginVS" key="ValueSet-AHANUBCPointOfOriginVS" name="NUBC Point Of Origin"/>

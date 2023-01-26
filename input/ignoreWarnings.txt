@@ -74,5 +74,7 @@ Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the cod
 
 Error from server: Unable to provide support for code system https://x12.org/codes/service-type-codes
 
+Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/ICD10
+
 
 

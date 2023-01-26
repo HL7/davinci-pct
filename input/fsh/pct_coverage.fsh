@@ -4,29 +4,20 @@ Id: davinci-pct-coverage
 Title: "PCT Coverage"
 Description: "PCT Coverage is a profile for capturing data that reflect a payerâ€™s coverage that was effective as of the proposed date of service or the date of admission of the GFE."
 
-//// based on C4BB-Coverage
-// * meta 1..1 MS
-// * meta.lastUpdated 1..1 MS
-// * meta.profile 1..*
-// * insert Metaprofile-supportedProfile-slice
-// * meta.profile[supportedProfile] = Canonical(PCTCoverage|0.1.0)
 
-//* identifier MS
 
 * subscriber
 * subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
-* subscriberId 1..1 MS
-//* extension contains SubscriberEmployeeIdentifier named subscriberEmployeeIdentifier 0..1 MS
+* subscriberId 1..1
 
-* relationship 1..1 MS
+* relationship 1..1
 //* relationship from $SubscriberRelationiship (required)
 
-* payor 1..1 MS
+* payor 1..1
 * payor only Reference (PCTOrganization)
 
-* class 1..* MS
-* class[group].name 1..1
-* class.name 1..1 MS
+* class 1..*
+* class.name 1..1
 * class ^slicing.discriminator.type = #pattern
 * class ^slicing.discriminator.path = "type"
 * class ^slicing.rules = #open
@@ -34,12 +25,12 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 * class ^slicing.description = "Slice based on value pattern"
 * class contains
     plan 0..1 MS
-
+	
 * class[plan].type.coding 1..*
 * class[plan].type = COVCLASS#plan
-* class[plan].value 1..1 MS
+* class[plan].value 1..1
 
-* period 1..1 MS
+* period 1..1
 
 * costToBeneficiary
 * costToBeneficiary.type from http://terminology.hl7.org/ValueSet/coverage-copay-type (required)
