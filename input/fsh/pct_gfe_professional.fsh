@@ -10,13 +10,13 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
    INTER 0..*
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
-* identifier[PLAC].value 1..1 MS
+* identifier[PLAC].value 1..1
 * identifier[PLAC] ^short = "Provider Assigned Identifier for GFE Claim"
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
 //// Profile entension elements ////
-* extension contains GFESubmitter named gfeSubmitter 1..1 MS
+* extension contains GFESubmitter named gfeSubmitter 1..1
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 //* extension contains PlannedPeriodOfService named plannedPeriodOfService 0..* MS
 //* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
@@ -33,22 +33,17 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 
 * type = $ClaimTypeCS#professional
-* status MS
-* use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
 
-* patient MS
 * patient only Reference(HRexPatientDemographics)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
-* provider MS
 * provider only Reference(PCTOrganization or PCTPractitioner)
 * provider ^short = "Billing provider - party responsible for the GFE"
-* provider.extension contains ProviderTaxonomy named providerTaxonomy 1..1 MS
+* provider.extension contains ProviderTaxonomy named providerTaxonomy 1..1
 * provider.extension[providerTaxonomy] ^short = "Provider taxonomy codes consisting of NUCC Health Care Provider Taxonomy Code Set for providers"
 * provider.extension contains GFEConsentForBalanceBilling named consentForBalanceBilling 0..1 MS
 
-* priority MS
 * priority from $PROCPRIORITYVS (required)
 
 * insurer 1..1
@@ -59,7 +54,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 //TODO: create vS for payee.type like https://build.fhir.org/ig/HL7/carin-bb/ValueSet-C4BBPayeeType.html
 //TODO: for now put in a placeholder statement about formal VS to be created...
 
-* referral.extension contains ReferralNumber named referralNumber 1..1 MS
+* referral.extension contains ReferralNumber named referralNumber 1..1
 * referral.extension[referralNumber] ^short = "Referral Number"
 
 * accident.location[x] only Address
@@ -67,7 +62,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 //* supportingInfo.category from $C4BBSupportingInfoType (extensible)
 
-* insurance.coverage MS
+
 * insurance.coverage only Reference(PCTCoverage)
 * insurance.preAuthRef 0..2
 
@@ -79,15 +74,15 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * diagnosis.type MS
 * diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
-   principal 1..1 MS and
+   principal 1..1 and
    other 0..11 MS
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
-* diagnosis[principal].diagnosis[x] MS
+* diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[other].type = PCTDiagnosisType#other
-* diagnosis[other].diagnosis[x] MS
+* diagnosis[other].diagnosis[x]
 * diagnosis[other].diagnosis[x] only CodeableConcept
 * diagnosis[other].diagnosis[x] from PCTDiagnosticCodes (required)
 
@@ -101,7 +96,6 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
    anesthesiaRelated 0..2 MS and
    other 0..24 MS
 * procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
-* procedure[anesthesiaRelated].procedure[x] MS
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
 
@@ -134,12 +128,12 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * supportingInfo[serviceFacility] ^short = "Service Facility"
 * supportingInfo[serviceFacility] ^comment = "Service Facility Location information conveys the name, full address and identifier of the facility where services were rendered when that is different from the Billing/Performing Provider."
 * supportingInfo[serviceFacility].category = PCTSupportingInfoType#servicefacility
-* supportingInfo[serviceFacility].category MS
-* supportingInfo[serviceFacility].valueReference 1..1 MS
+* supportingInfo[serviceFacility].category
+* supportingInfo[serviceFacility].valueReference 1..1
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
 
 
-* item 1..50 MS
+* item 1..50
 * item.extension contains ReferralNumber named referralNumber 0..11 MS
 * item.extension[referralNumber] ^short = "Referral Number"
 * item.extension contains GFEBillingProviderLineItemCtrlNum named gfeBillingProviderLineItemCtrlNum 0..1 MS
@@ -170,7 +164,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.quantity 1..1
 
 * item.location[x] only CodeableConcept
-* item.locationCodeableConcept 1..1 MS
+* item.locationCodeableConcept 1..1
 * item.locationCodeableConcept from PCTGFECMSPOS (required)
 
 * item.detail MS
@@ -182,5 +176,5 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 * item.serviced[x] MS
 
-* total 1..1 MS
+* total 1..1
 * total ^short = "Total GFE Charges Submitted"
