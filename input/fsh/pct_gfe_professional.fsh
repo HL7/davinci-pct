@@ -157,8 +157,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
 
-* item.productOrService from PCTGFEItemCptHcpcsVS (required)
-* item.productOrService ^comment = "Must be provided with an actual CPT/HCPCS value. Can’t be null or N/A or data absent reason."
+* item.productOrService from USClaimMedicalProductOrServiceCodes (required)
+// * item.productOrService ^comment = "Must be provided with an actual CPT/HCPCS value. Can’t be null or N/A or data absent reason."
 
 * item.serviced[x] 1..1
 * item.serviced[x] ^short = "This is the planned or estimated date(s)s of service"
@@ -176,7 +176,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * item.detail MS
 * item.detail ^short = "Drug Identification Information"
 //ISSUE: use FDANDCOrCompound or FDANationalDrugCode from CARIN BB??
-* item.detail.productOrService from PCTGFEItemNDCVS (required)
+* item.detail.productOrService from USClaimMedicalProductOrServiceCodes (required)
 
 * item.detail.quantity MS
 
