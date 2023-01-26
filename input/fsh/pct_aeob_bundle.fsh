@@ -6,11 +6,11 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
 
 * obeys pct-aeob-bundle-1 and pct-aeob-bundle-2
 
-* identifier 1..1 MS
+* identifier 1..1
 * type = #collection (exactly)
-* timestamp 1..1 MS
-* entry 1..* MS
-* entry.fullUrl 1..1 MS
+* timestamp 1..1
+* entry 1..*
+* entry.fullUrl 1..1
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -28,7 +28,7 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
     gfeBundle 0..* MS
 
 * entry[aeob] ^short = "SHALL have a PCTAdvancedEOB resource"
-* entry[aeob].resource 1..1 MS
+* entry[aeob].resource 1..1
 * entry[aeob].resource only PCTAdvancedEOB
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
