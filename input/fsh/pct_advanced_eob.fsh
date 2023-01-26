@@ -6,13 +6,11 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * obeys pct-aeob-1 and pct-aeob-2 and pct-aeob-3
 
-* extension contains GFEReference named gfeReference 1..* MS
+* extension contains GFEReference named gfeReference 1..*
 * extension[gfeReference] ^short = "The GFE Bundle submitted by an entity that started the process for obtaining an Advanced EOB."
 * extension contains ServiceDescription named serviceDescription 0..1 MS
 * extension[serviceDescription] ^condition = "pct-aeob-1"
-// * extension contains ProviderContractingStatus named providerContractingStatus 1..1 MS
-// * extension contains ProviderContractingRate named providerContractingRate 0..1 MS
-//* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
+* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 * insert IdentfierSlicing
 * identifier contains 
@@ -24,20 +22,13 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * identifier[uniqueclaimid].type = PCTIdentifierType#uc "Unique Claim ID"
 * identifier[uniqueclaimid] ^short = "Unique Claim ID"
 
-* status MS
-* type MS 
 * type from PCTAEOBTypeVS (required)
-* use MS
 * use = $CLAIMUSECS#predetermination "predetermination"
 
-* patient MS
+
 * patient only Reference(HRexPatientDemographics)
-// * patient ^type.aggregation = #bundled
 
-* insurer MS
 * insurer only Reference(PCTOrganization)
-
-* extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 // need provider's TAX ID
 * provider only Reference(PCTPractitioner or PCTOrganization)
@@ -49,26 +40,22 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * priority from $PROCPRIORITYVS (required)
 
 
-* claim 1..1 MS
-* claim.identifier 1..1 MS
+* claim 1..1
+* claim.identifier 1..1
 * claim.identifier ^short = "GFE identifier of the originally submitted claim"
 * claim.identifier ^definition = "Matches the provider submitted GFE claim.identifier this Advance ExplanationOfBenefit is addressing where identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203|PLAC (with the identifier.value and identifier.system matching the original GFE identifier values)."
 * claim.identifier.system MS
-* claim.identifier.value 1..1 MS
+* claim.identifier.value 1..1
 
 
 * insurance.coverage only Reference(PCTCoverage)
 
-* benefitPeriod 1..1 MS
+* benefitPeriod 1..1
 
 * created ^short = "The date and time this estimate was calculated."
 * created ^comment = "The date and time this estimate was calculated based on what was known at that point in time."
 
-
-
-
-
-* item 1..* MS
+* item 1..*
 * item.extension contains ServiceDescription named serviceDescription 0..1 MS
 * item.extension[serviceDescription] obeys pct-aeob-1
 * item.extension[serviceDescription] ^condition = "pct-aeob-1"
@@ -103,7 +90,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 	benefit 0..1 MS
 	
 * item.adjudication.category from PCTAdjudicationCategoryVS (extensible)
-* item.adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
+* item.adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1
 * item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
 * item.adjudication[medicalmanagement].amount 0..0 
 * item.adjudication[medicalmanagement].value 0..0
@@ -136,11 +123,11 @@ Description: "The No Surprises Act requires that group health plans and insurers
 	memberliability 0..1 MS and
 	eligible 0..1 MS and
 	benefit 0..1 MS
-* adjudication.category 1..1 MS
+* adjudication.category 1..1
 * adjudication.category from PCTAdjudicationCategoryVS (extensible)
-* adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1 MS
+* adjudication[medicalmanagement].extension contains SubjectToMedicalMgmt named subjectToMedicalMgmt 1..1
 * adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement
-* adjudication[medicalmanagement].amount 0..1 MS
+* adjudication[medicalmanagement].amount 0..0
 * adjudication[medicalmanagement].value 0..0
 * adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
 * adjudication[billingnetworkstatus].category = PCTAdjudicationCategoryCS#billingnetworkstatus
@@ -197,23 +184,14 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 
-* total 1..* MS
-// * insert TotalSlicing
-// * total.category from C4BBTotalCategoryDiscriminator (extensible)
-// * total contains
-//    adjudicationamounttype 1..* MS and
-//    benefitpaymentstatus 1..1 MS
-// * total[benefitpaymentstatus].category from C4BBPayerBenefitPaymentStatus (required)
-// * total[adjudicationamounttype].category from C4BBAdjudication  (required)
-// * total[adjudicationamounttype].amount MS
-// //* total[adjudicationamounttype].amount 1..1
+* total 1..*
 
-* processNote 1..* MS
+* processNote 1..*
 * processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
 
 
-* benefitBalance 1..* MS
+* benefitBalance 1..*
 * benefitBalance.category 1..1 
 * benefitBalance.category from PCTBenefitBalanceCategoryVS 
 * benefitBalance.unit 1..1 
