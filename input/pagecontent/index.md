@@ -45,7 +45,7 @@ Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of
 
 4. The patient can now request and receive the AEOB Bundle via FHIR query.
 
->Note: The patient below  could be a third-party web portal or provider web portal.     
+>Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer. 
 
 ![AEOB Interaction Diagram](AEOB-interaction.png){:style="float: none;"}
 
