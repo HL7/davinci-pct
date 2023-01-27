@@ -35,7 +35,7 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
 * identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
 
-* type 1..* MS
+* type 1..*
 * type from PCTOrganizationTypeVS (extensible)
 
 //TODO: add extension for countrySubdivisionCode
@@ -52,9 +52,9 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * contact.purpose from PCTOrgContactPurposeTypeVS (extensible)
 * contact contains
    gfeServiceHotline 0..1 MS
-* contact[gfeServiceHotline].name 1..1 MS
-* contact[gfeServiceHotline].telecom 1..* MS
-* contact[gfeServiceHotline].purpose MS
+* contact[gfeServiceHotline].name 1..1
+* contact[gfeServiceHotline].telecom 1..*
+* contact[gfeServiceHotline].purpose
 * contact[gfeServiceHotline].purpose = PCTOrgContactPurposeType#GFERELATED
 
 //TODO: slice contact for defining PAY-TO
@@ -62,5 +62,3 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 
 //TODO: slice telcom to require phone and email
 //* contact.telecom MS
-
-* endpoint MS
