@@ -43,12 +43,6 @@ This specification makes significant use of [FHIR profiles]({{site.data.fhir.pat
 
 The full set of profiles defined in this IG can be found by following the links on the [Artifacts](artifacts.html) page.
 
-<blockquote class="stu-note">
-<p>
-This has been updated to reflect Jira ticket <a href="https://jira.hl7.org/browse/FHIR-34976">FHIR-34976</a> which is pending a block vote as of 2-28-2022.
-</p>
-</blockquote>
-
 ### Detailed Requirements
 
 #### Summary
