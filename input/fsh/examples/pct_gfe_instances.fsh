@@ -20,6 +20,7 @@ InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
+* identifier[PLAC].system = V2-0203
 * identifier[PLAC].value = "GFEProviderAssignedID0001"
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 * extension[providerEventMethodology].valueString = "EEMM1021"
