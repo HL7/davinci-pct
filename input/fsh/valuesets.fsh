@@ -105,6 +105,23 @@ Description: "Value Set containing codes for the type of adjudication informatio
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
+ValueSet: PCTAdjudication   
+Title: "PCT Adjudication Value Set"
+Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values 
+defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem."
+* $HL7AdjudicationCS#submitted 
+* $HL7AdjudicationCS#copay 
+* $HL7AdjudicationCS#eligible
+* $HL7AdjudicationCS#deductible  
+* $HL7AdjudicationCS#benefit 
+* PCTAdjudication#coinsurance "Coinsurance" 
+* PCTAdjudication#noncovered "Noncovered" 
+* PCTAdjudication#memberliability "Member liability" 
+* PCTAdjudication#discount "Discount" 
+* ^copyright = "This Valueset is not copyrighted."
+* ^experimental = false
+
+
 // ValueSet: PCTCoverageCopayTypeVS
 // Title: "PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created // through the HL7 Terminology (THO) process to replace this value set"
 // Description: "Codes for the classification of insurance coverage copay types for patient. This is an extension of the // // // CoverageCopayTypeCodes value set"

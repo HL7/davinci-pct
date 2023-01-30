@@ -183,8 +183,13 @@ Description: "The No Surprises Act requires that group health plans and insurers
 // * extension[expirationDate] ^short = "Once the AEOB is complete and formally issued it is good until this date."
 
 
-
 * total 1..*
+* insert TotalSlicing
+* total.category from PCTAdjudication  (extensible)
+* total contains
+   adjudicationamounttype 1..* MS
+* total[adjudicationamounttype] ^short =  "Total adjudication type and amount"
+* total[adjudicationamounttype].category from PCTAdjudication (required)
 
 * processNote 1..*
 * processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"

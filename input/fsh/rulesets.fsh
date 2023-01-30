@@ -62,6 +62,14 @@ RuleSet: IdentfierSlicing
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on type pattern"
 
+RuleSet: TotalSlicing
+* total ^slicing.rules = #open
+* total ^slicing.ordered = false   // can be omitted, since false is the default
+* total ^slicing.description = "Slice based on value pattern"
+* total  ^slicing.discriminator.type = #pattern
+* total  ^slicing.discriminator.path = "category"
+* total.category 1..1 MS
+
 //// Invariants
 
 

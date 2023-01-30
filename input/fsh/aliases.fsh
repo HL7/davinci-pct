@@ -36,6 +36,7 @@ Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias:   MSDRG =  https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 Alias:   APDRG =  http://uri.hddaccess.com/cs/apdrg
 Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
+Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

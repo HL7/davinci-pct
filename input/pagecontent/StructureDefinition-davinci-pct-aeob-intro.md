@@ -1,13 +1,14 @@
 <h4 class="x_MsoNormal">Notes on Fields</h4>
 <ul>
 <li class="x_MsoNormal">.created: .created values convey the date and time the estimate was calculated, based on what was known about the state of the member’s benefits and accumulators for a given benefit period/plan year at that point in time (the .created date and time). </li>
-<li>.benefitPeriod: .benefitPeriod values convey the term of benefits (a.k.a. "plan year") that the benefits used to calculate the estimate were based on.
+<li>.benefitPeriod: .benefitPeriod values convey the term of benefits (a.k.a. "plan year") that the benefits used to calculate the estimate were based on. </li>
 
 <ul>
 <li>If included, the estimate was based on the member’s benefits and accumulators for the benefit period/plan year explicitly conveyed in .benefitPeriod, as of the .created date and time. </li>
 <li>If not included, it is understood that the estimate was based on the member’s benefits and accumulators for the current benefit period/plan year, as of the .created date and time.
 </li>
 </ul>
+<li class="x_MsoNormal">.total.amount:  Eligible amount = submitted amount - the noncovered amount - discount.  The subscriber pays the member liability = deductible + coinsurance + copay + noncovered (if applicable). The eligible amount - the member liability is the potential payer's payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient)</li>
 
 <li class="x_MsoNormal">Working together .created values and .benefitPeriod values explicitly convey the temporal context for the state of benefits and accumulators that were used to calculate the estimate communicated in an advanced EOB.
  The state of a member’s benefits and accumulators for a given benefit period or the benefit period in effect may change between the date that an estimate is generated (.created) and when the services being estimated are actually rendered (e.g., the actual date of service), resulting in a difference between the estimated vs. actual cost to the member.
