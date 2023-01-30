@@ -63,6 +63,17 @@ Description: "Defining codes for the classification of the supplied supporting i
 * #drg "DRG" "DRG (Diagnosis Related Group), including the code system, the DRG version and the code value"
 * #pointoforigin "Point of Origin" "UB-04 Source of Admission (FL-15) identifies the place where the patient is identified as needing admission to a facility."
 * #admtype "Admission Type" "UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled."
+* #claimFrequency "Claim Frequency" "Claim frequency - uses the last digit of the NUBC type of billing code."
+* ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+
+CodeSystem: PCTGFEFrequency
+Title: "PCT GFE Frequency Code System"
+Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type of Bill (TOB) codes.  The fourth digit of the TOB code defines the frequency of the bill for the institutional and electronic professional claim."
+* ^caseSensitive = false
+* #1 "1"
+* #7 "7"
+* #8 "8"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 

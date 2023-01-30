@@ -60,6 +60,13 @@ Description: "NUBC Uniform Billing (UB-04) codes to indicate the specific Type o
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
+ValueSet: PCTGFEFrequencyVS
+Title: "PCT GFE Frequency Code Value Set"
+Description: "These codes in this value set are derived from the NUBC Uniform Billing (UB-04) Type of Bill (TOB) codes.  The fourth digit of the TOB code defines the frequency of the bill for the institutional and electronic professional claim."
+* codes from system PCTGFEFrequency
+* ^copyright = "This Valueset is not copyrighted."
+* ^experimental = false
+
 ValueSet: PCTGFEItemRevenueVS
 Title: "PCT GFE NUBC Revenue Value Set"
 Description: "NUBC UB-04 Revenue codes"

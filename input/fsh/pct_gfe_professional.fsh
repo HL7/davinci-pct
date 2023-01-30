@@ -132,6 +132,12 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * supportingInfo[serviceFacility].valueReference 1..1
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
 
+* supportingInfo contains claimFrequency 0..1 MS
+* supportingInfo[claimFrequency] ^short = "Claim Frequency"
+* supportingInfo[claimFrequency] ^comment = "Claim frequency - uses the last digit of the NUBC type of billing code."
+* supportingInfo[claimFrequency].category = PCTSupportingInfoType#claimFrequency
+* supportingInfo[claimFrequency].code 1..1
+* supportingInfo[claimFrequency].code from PCTGFEFrequencyVS (required)
 
 * item 1..50
 * item.extension contains ReferralNumber named referralNumber 0..11 MS
