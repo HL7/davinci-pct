@@ -123,7 +123,7 @@ Description: "Codes for the classification of subject-to-medical-management reas
 * ^experimental = false
 
 ValueSet: PCTSupportingInfoTypeVS
-Title: "PCT Supporting Info Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT Supporting Info Type Value Set"
 Description: "Codes to specify the type of the supplied supporting information"
 //* codes from valueset $C4BBSupportingInfoTypeVS
 * codes from system PCTSupportingInfoType
