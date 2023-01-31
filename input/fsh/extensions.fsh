@@ -179,7 +179,7 @@ Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
 * value[x] 1..1
 * value[x] only Coding
-* value[x] from $ISO3166-P2-CSC-VS (example)
+* value[x] from $ISO3166-P2-CSC-VS (extensible)
 
 
 //// For PCTPractitioner Profile ////
