@@ -8,6 +8,8 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 
 * subscriber
 * subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
+* subscriber.display ^short = "Provide the name of the subscriber in Coverage.subscriber.display concatenating the subscriberâ€™s prefix, given name, family name and suffix (in this order), each separated by a single space. If discrete name parts are required, a Patient resource SHALL be pointed to in Coverage.subscriber.reference."
+* subscriber.display 1..1
 * subscriberId 1..1
 
 * relationship 1..1
