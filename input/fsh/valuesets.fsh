@@ -28,7 +28,7 @@ Description: "ICD-10 Codes to specify the type of diagnosis"
 * ^experimental = false
 
 ValueSet: PCTDiagnosisTypeVS
-Title: "PCT Diagnosis Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT Diagnosis Type Value Set"
 Description: "Codes to specify the type of diagnosis"
 * include $DIAGTYPECS#principal
 * include $DIAGTYPECS#admitting
@@ -37,7 +37,7 @@ Description: "Codes to specify the type of diagnosis"
 * ^experimental = false
 
 ValueSet: PCTProcedureTypeVS
-Title: "PCT Procedure Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT Procedure Type Value Set"
 Description: "Codes to specify the type of procedure"
 * include $PROCTYPECS#primary
 * codes from system PCTProcedureType
@@ -98,7 +98,7 @@ Description: "The FDA published list of NDC codes for finished drug products"
 * ^experimental = false
 
 ValueSet: PCTAdjudicationCategoryVS
-Title: "PCT GFE Item Adjudication Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT GFE Item Adjudication Value Set"
 Description: "Value Set containing codes for the type of adjudication information provided."
 * codes from system $ADJUDCS
 * codes from system PCTAdjudicationCategoryCS
@@ -132,7 +132,7 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 // * ^experimental = false
 
 ValueSet: PCTSubjectToMedicalMgmtReasonVS
-Title: "PCT Subject-To-Medical-Management Reason Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT Subject-To-Medical-Management Reason Value Set"
 Description: "Codes for the classification of subject-to-medical-management reasons"
 //Id: pct-medical-mgmt-reason-codes
 * codes from system PCTSubjectToMedicalMgmtReasonCS
@@ -148,7 +148,7 @@ Description: "Codes to specify the type of the supplied supporting information"
 * ^experimental = false
 
 ValueSet: PCTCareTeamRoleVS
-Title: "PCT Care Team Role Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
+Title: "PCT Care Team Role Value Set"
 Description: "Codes to specify the the functional roles of the care team members."
 * $CARETEAMROLECS#primary "Primary provider"
 * codes from system PCTCareTeamRole
@@ -275,7 +275,7 @@ Description: "Indicates the type of .processNote for AEOB."
 * ^experimental = false
 
 ValueSet: PCTFinancialTypeVS
-Title: "PCT Financial Type"
+Title: "PCT Financial Type Value Set"
 Description: "Financial Type codes for benefitBalance.financial.type."
 * ^experimental = false
 * codes from system PCTFinancialType

@@ -145,7 +145,7 @@ Description: "Defining codes for network status. This is for trial use."
 
 CodeSystem: PCTAEOBProcessNoteCS
 Id: PCTAEOBProcessNoteCS
-Title: "PCT AEOB Process Note"
+Title: "PCT AEOB Process Note Code System"
 Description: "Defining codes for process notes. This is for trial use."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
@@ -155,7 +155,7 @@ Description: "Defining codes for process notes. This is for trial use."
 * #other "Other" "Indicates other type of AEOB process note"
 
 CodeSystem: PCTFinancialType
-Title: "PCT Financial Type"
+Title: "PCT Financial Type Code System"
 Description: "Financial Type codes for benefitBalance.financial.type."
 * ^caseSensitive = true
 * ^copyright = "This CodeSystem is not copyrighted."
