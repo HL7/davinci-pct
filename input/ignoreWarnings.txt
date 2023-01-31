@@ -1,4 +1,4 @@
-== Suppressed Messages ==
+== Suppressed Messages == 
 
 # Error: 2 profiles listed in a type slice in a Bundle should be allowed per Grahame: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/2.20profiles.20found.20for.20entry.20resource
 
