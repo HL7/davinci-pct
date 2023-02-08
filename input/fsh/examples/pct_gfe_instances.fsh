@@ -328,7 +328,7 @@ Description: "An instance of PCTCoverage"
 * costToBeneficiary.type = COPAYTYPE#copaypct "Copay Percentage"
 * costToBeneficiary.valueQuantity.value = 20.00
 //* costToBeneficiary.valueMoney.currency = #USD
-* contract = Reference(contract1001)
+//* contract = Reference(contract1001)
 
 Instance: contract1001
 InstanceOf: Contract

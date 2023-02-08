@@ -74,7 +74,8 @@ Severity: #error
 
 Invariant: pct-gfe-bundle-3
 Description: "All references resources SHALL be contained within the Bundle"
-Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
+// Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
+Expression: "Bundle.entry.resource.descendants().reference.where($this.startsWith('#').not()).all((%resource.entry.fullUrl.join('|')&'|').contains(($this&'|')))"
 Severity: #error
 
 // Invariant: pct-gfe-bundle-4
