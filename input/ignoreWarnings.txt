@@ -16,7 +16,7 @@ Reference is remote which isn't supported by the specified aggregation mode(s) f
 
 # Rule eld-21: 'Constraints should have an expression or else validators will not be able to enforce them' Failed
 
-# Warning about using US Core Coverage, which is not available in US Core 3.1.1 which we are using
+# Warning about using US Core Coverage, which is not available in US Core 3.1.1 which we are using. The variance was approved by cross workgroup projects on 2/9/2023: https://jira.hl7.org/browse/FHIR-40344
 
 US FHIR Usage rules require that all profiles on Coverage derive from the core US profile. Comparison with US Core Coverage Profile
 
