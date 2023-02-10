@@ -172,7 +172,8 @@ Description: "CPT - HCPCS - HIPPS codes to report medical procedures and service
 * codes from system $HCPCS
 * codes from system $HIPPS
 * $DAR#not-applicable "Not Applicable"
-* ^copyright = "This Valueset is not copyrighted."
+// * ^copyright = "This Valueset is not copyrighted."
+* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
 * ^experimental = false
 
 // TODO replace with THO VS
