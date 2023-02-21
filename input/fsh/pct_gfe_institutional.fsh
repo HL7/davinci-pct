@@ -20,7 +20,8 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 
 //// Profile entension elements ////
 * extension contains GFESubmitter named gfeSubmitter 1..1
-* extension[gfeSubmitter].value[x] only Reference(PCTPractitioner or PCTOrganization)
+//* extension[gfeSubmitter].value[x] only Reference(PCTPractitioner or PCTOrganization)
+//* extension[gfeSubmitter].valueReference only Reference(PCTPractitioner or PCTOrganization)
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
 //* extension contains PlannedPeriodOfService named plannedPeriodOfService 0..* MS
 //* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services. This may span multiple claims, whereas billablePeriod is per claim."
