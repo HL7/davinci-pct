@@ -1,0 +1,9 @@
+{
+    "package-id": "hl7.fhir.us.davinci-pct",
+    "version": "1.0.0",
+    "path": "http://hl7.org/fhir/us/davinci-pct",
+    "milestone": true,
+    "status": "trial-use",
+    "sequence": "STU 1",
+    "desc": "Da Vinci Patient Cost Transparency Implementation Guide Release 1 - US Realm STU"
+}

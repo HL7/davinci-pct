@@ -102,5 +102,9 @@ Description: "PCT AEOB Bundle Example 1"
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization].resource = org1001
 
+
+
+
+
 ///////////////////////////////////////////
 

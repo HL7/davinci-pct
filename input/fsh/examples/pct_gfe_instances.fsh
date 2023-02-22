@@ -90,7 +90,7 @@ Description: "PCT Professional GFE Example 1"
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.servicedDate = 2021-10-31
-* item.extension[ServiceDescription].valueString.value = "Imaging"
+* item.extension[ServiceDescription].valueString = "Imaging"
 * item.locationCodeableConcept = $CMSPOSCS#21 "Inpatient Hospital"
 * item.quantity.value = 1
 * item.unitPrice.value = 200.00

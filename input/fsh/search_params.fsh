@@ -12,5 +12,6 @@ Usage: #definition
 * code = #aeob-date-of-service
 * base = #ExplanationOfBenefit
 * type = #date
-* expression = "ExplanationOfBenefit.serviced[x]"
+//* expression = "ExplanationOfBenefit.serviced[x]"
+* expression = "ExplanationOfBenefit.serviced"
 * target = #ExplanationOfBenefit

@@ -76,5 +76,7 @@ Error from server: Unable to provide support for code system https://x12.org/cod
 
 Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/ICD10
 
+Details for Bundle/PCT-GFE-Bundle-Inst-1 matching against profile http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|1.0.0 Show Reasoning
+
 
 
