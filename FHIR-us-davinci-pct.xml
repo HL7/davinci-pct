@@ -5,7 +5,7 @@
     <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pct/2022Jan"/>
     <artifactPageExtension value="-definitions"/>
     <artifactPageExtension value="-examples"/>
-    <artifactPageExtension value="-mappings"/>
+    <artifactPageExtension value="-mappings"/> 
     <artifact id="ValueSet/USClaimMedicalProductOrServiceCodes" key="ValueSet-USClaimMedicalProductOrServiceCodes" name="Claim Medical Product or Service Value Set"/>
     <artifact deprecated="true" id="StructureDefinition/compoundDrugLinkingNum" key="StructureDefinition-compoundDrugLinkingNum" name="CompoundDrugLinkingNumber"/>
     <artifact id="StructureDefinition/countrySubdivisionCode" key="StructureDefinition-countrySubdivisionCode" name="CountrySubdivisionCode"/>
