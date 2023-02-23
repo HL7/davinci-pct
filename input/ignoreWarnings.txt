@@ -1,26 +1,11 @@
 == Suppressed Messages == 
 
-# Error: 2 profiles listed in a type slice in a Bundle should be allowed per Grahame: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/2.20profiles.20found.20for.20entry.20resource
-
-https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/2.20profiles.20found.20for.20entry.20resource
- 
-# Have raised Jira FHIR-34371 per Lloyd's request. See Zulip from Lloyd: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Unsupported.20code.20systems
-
-Found a reference to a CodeSystem (http://terminology.hl7.org/CodeSystem/processpriority) where a ValueSet belongs
-
-# Dicussed on Zulip, should be a warning not an error: https://chat.fhir.org/#narrow/stream/179266-fhirpath/topic/FHIRPath.20asserting.20all.20references.20resources.20are.20in.20a.20Bundle
-
-Reference is remote which isn't supported by the specified aggregation mode(s) for the reference (bundled)
-
-# Warning: Unable to find a FHIRPath expression to accomplish the goal of ensuring all referenced resources are present in a Bundle after reaching out on Zulip https://chat.fhir.org/#narrow/stream/179266-fhirpath/topic/FHIRPath.20asserting.20all.20references.20resources.20are.20in.20a.20Bundle
-
-# Rule eld-21: 'Constraints should have an expression or else validators will not be able to enforce them' Failed
-
 # Warning about using US Core Coverage, which is not available in US Core 3.1.1 which we are using. The variance was approved by cross workgroup projects on 2/9/2023: https://jira.hl7.org/browse/FHIR-40344
 
-US FHIR Usage rules require that all profiles on Coverage derive from the core US profile. Comparison with US Core Coverage Profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-coverage').baseDefinition: US FHIR Usage rules require that all profiles on Coverage derive from the core US profile
 
-# Warning: Code Systems and Value Sets that are referenced in the guide but not available
+
+# Warning: Code Systems and Value Sets that are referenced in the guide but are not expanded and validatable because they are part of proprietary code systems that require special license.
 
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated]
 
@@ -33,8 +18,6 @@ US FHIR Usage rules require that all profiles on Coverage derive from the core U
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated]
 
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated]
-
-The valueSet reference http://nucc.org/provider-taxonomy on element Practitioner.qualification.code could not be resolved
 
 Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNonnewborn
 
@@ -54,15 +37,15 @@ Error from server: Unable to provide support for code system https://www.cms.gov
 
 Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPriorityTypeOfAdmitOrVisit
 
-# Information: Misc informational messages
+Error from server: Unable to provide support for code system https://x12.org/codes/service-type-codes
 
-The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/ICD10
 
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics|1.0.0
+
+
+# Examples codes that can't be validated as they are part of proprietary code systems that require special license.
 
 Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated
-
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
@@ -72,11 +55,26 @@ Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Plac
 
 Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
 
-Error from server: Unable to provide support for code system https://x12.org/codes/service-type-codes
-
-Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/ICD10
-
-Details for Bundle/PCT-GFE-Bundle-Inst-1 matching against profile http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|1.0.0 Show Reasoning
 
 
+# Institutional GFE profile Claim.diagnosis has a required binding that applies to all slices. This was done intentionally.
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[197].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[206].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[215].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[224].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[233].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
+# Professional GFE profile Claim.diagnosis haa a required binding that applies to all slices. This was done intentionally.
+INFORMATION: StructureDefinition/davinci-pct-gfe-professional: StructureDefinition.snapshot.element[149].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/davinci-pct-gfe-professional: StructureDefinition.snapshot.element[158].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+# Institutional GFE profile Claim.procedure has a required binding that applies to all slices. This was done intentionally.
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[251].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[260].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+# Professional GFE profile Claim.procedure has a required binding that applies to all slices. This was done intentionally.
+INFORMATION: StructureDefinition/davinci-pct-gfe-professional: StructureDefinition.snapshot.element[176].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+
+# The GFE Patient examples include a patient identifier that is not a member number as defined by the only slice hrex-patient-demographics
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics|1.0.0
