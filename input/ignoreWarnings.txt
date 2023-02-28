@@ -56,25 +56,5 @@ Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Plac
 Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
 
 
-
-# Institutional GFE profile Claim.diagnosis has a required binding that applies to all slices. This was done intentionally.
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[197].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[206].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[215].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[224].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[233].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
-# Professional GFE profile Claim.diagnosis haa a required binding that applies to all slices. This was done intentionally.
-INFORMATION: StructureDefinition/davinci-pct-gfe-professional: StructureDefinition.snapshot.element[149].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/davinci-pct-gfe-professional: StructureDefinition.snapshot.element[158].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
-# Institutional GFE profile Claim.procedure has a required binding that applies to all slices. This was done intentionally.
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[251].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[260].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
-# Professional GFE profile Claim.procedure has a required binding that applies to all slices. This was done intentionally.
-INFORMATION: StructureDefinition/davinci-pct-gfe-professional: StructureDefinition.snapshot.element[176].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
-
-
 # The GFE Patient examples include a patient identifier that is not a member number as defined by the only slice hrex-patient-demographics
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics|1.0.0
