@@ -76,11 +76,13 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * diagnosis contains
    principal 1..1 and
    other 0..11 MS
+* diagnosis[principal].type 1..1
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[other].type 1..1
 * diagnosis[other].type = PCTDiagnosisType#other
 * diagnosis[other].diagnosis[x]
 * diagnosis[other].diagnosis[x] only CodeableConcept
@@ -95,6 +97,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * procedure contains
    anesthesiaRelated 0..2 MS and
    other 0..24 MS
+* procedure[anesthesiaRelated].type 1..1
 * procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes

@@ -88,23 +88,28 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
    patientReasonForVisit 0..3 MS and
    externalcauseofinjury 0..12 MS and
    other 0..24 MS
+* diagnosis[principal].type 1..1
 * diagnosis[principal].type = $DIAGTYPECS#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[admitting].type 1..1
 * diagnosis[admitting].type = $DIAGTYPECS#admitting
 * diagnosis[admitting].diagnosis[x]
 * diagnosis[admitting].diagnosis[x] only CodeableConcept
 * diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[patientReasonForVisit].type 1..1
 * diagnosis[patientReasonForVisit].type = PCTDiagnosisType#patientReasonForVisit
 * diagnosis[patientReasonForVisit].diagnosis[x]
 * diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
 * diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[externalcauseofinjury].type 1..1
 * diagnosis[externalcauseofinjury].type = PCTDiagnosisType#externalCauseOfInjury
 * diagnosis[externalcauseofinjury].diagnosis[x]
 * diagnosis[externalcauseofinjury].diagnosis[x] only CodeableConcept
 * diagnosis[externalcauseofinjury].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[other].type 1..1
 * diagnosis[other].type = PCTDiagnosisType#other
 * diagnosis[other].diagnosis[x] MS
 * diagnosis[other].diagnosis[x] only CodeableConcept
@@ -119,12 +124,14 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * procedure contains
    principal 0..1 MS and
    other 0..24 MS
+* procedure[principal].type 1..1
 * procedure[principal].type = PCTProcedureType#principal
 * procedure[principal].sequence = 1
 * procedure[principal].procedure[x]
 * procedure[principal].procedure[x] only CodeableConcept
 * procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
+* procedure[other].type 1..1
 * procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x]
 * procedure[other].procedure[x] only CodeableConcept
