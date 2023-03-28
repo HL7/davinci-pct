@@ -7,7 +7,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-submit"
 * name = "GFESubmit"
 * title = "Submit a GFE resource for the creation of an AEOB"
-* status = #draft
+* status = #active
 * kind = #operation
 * description = "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The output is a url in the Content-Location header for subsequent polling and optionally an OperationOutcome resource per [async pattern](http://build.fhir.org/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient."
 * code = #gfe-submit

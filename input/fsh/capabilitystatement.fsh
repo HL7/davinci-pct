@@ -2,21 +2,18 @@ Instance: davinci-pct
 InstanceOf: CapabilityStatement
 Usage: #definition
 * meta.versionId = "1"
-* meta.lastUpdated = "2022-11-24T05:53:59.176+00:00"
+* meta.lastUpdated = "2023-03-28T19:21:32.176+00:00"
 * url = "http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct"
 * name = "PatientCostTransparencyCapabilityStatement"
 * title = "Patient Cost Transparency Implementation Guide Capability Statement"
-* status = #draft
-* date = "2022-11-24T00:44:43-05:00"
+* status = #active
+* date = "2023-03-28T14:21:32-05:00"
 * publisher = "HL7 International - Financial Management Work Group"
 * contact[0].name = "HL7 International - Financial Management Work Group"
 * contact[=].telecom[0].system = #url
 * contact[=].telecom[=].value = "http://hl7.org/Special/committees/fm"
 * contact[=].telecom[+].system = #email
 * contact[=].telecom[=].value = "fmlists@lists.hl7.org"
-* contact[+].name = "TBD"
-* contact[=].telecom.system = #email
-* contact[=].telecom.value = "mailto:TBD@exmple.org"
 * description = "Capability statement for the Da Vinci Patient Cost Transparency Implementation Guide"
 * jurisdiction = urn:iso:std:iso:3166#US
 * copyright = "Used by permission of HL7 International, all rights reserved Creative Commons License"
