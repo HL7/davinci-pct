@@ -19,6 +19,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
 * extension[serviceDescription].valueString = "Example service"
+* extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 // * extension[disclaimer].valueString = "Estimate Only ..."
 // * extension[expirationDate].valueDate = "2021-10-31"
 
@@ -33,7 +34,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * provider = Reference(org1002)
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
-* provider.extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
+
 * priority = $PROCPRIORITY#normal
 
 //* payee.type.coding = #provider
@@ -87,13 +88,71 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * benefitBalance.financial.usedMoney.currency = #USD
 ////////////////////////////////////////////
 
+
+////////////////////////////////////////////
+
+Instance: PCT-AEOB-Summary-1
+InstanceOf: PCTAdvancedEOBSummary
+Description: "An instance of the PCTAdvancedEOBSummary Profile"
+
+
+* extension[serviceDescription].valueString = "Example service"
+* extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
+
+* status = #active
+* type = PCTAEOBTypeSummaryCS#aeob-summary "Advanced Explanation of Benefit Summary "
+* use = #predetermination
+* patient = Reference(patient1001)
+* created = "2021-10-12"
+
+* insurer = Reference(org1001)
+
+// * provider.extension[contracting-status].valueCoding = #in "In Network"
+// * provider.extension[contracting-rate].valueDecimal = 2000.00
+* provider.extension[dataAbsentReason].valueCode = #not-applicable
+//* priority = $PROCPRIORITY#normal
+
+* outcome = #complete
+
+* insurance.focal = true
+* insurance.coverage = Reference(coverage1001)
+
+* benefitPeriod.start = "2022-01-01"
+* benefitPeriod.end = "2022-01-01"
+
+
+* total.category = $ADJUDCS#submitted "Submitted Amount"
+* total.amount.value = 200.00
+* total.amount.currency = #USD
+
+* processNote.extension[processNoteClass].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTAEOBProcessNoteCS#disclaimer "Disclaimer"
+* processNote.text = "processNote disclaimer text"
+
+
+* benefitBalance
+* benefitBalance.category = https://x12.org/codes/service-type-codes#1 "Medical Care"
+* benefitBalance.unit = http://terminology.hl7.org/CodeSystem/benefit-unit#individual
+* benefitBalance.term = http://terminology.hl7.org/CodeSystem/benefit-term#annual
+* benefitBalance.financial
+* benefitBalance.financial.type = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTFinancialType#allowed
+* benefitBalance.financial.allowedMoney
+* benefitBalance.financial.allowedMoney.value = 1
+* benefitBalance.financial.allowedMoney.currency = #USD
+* benefitBalance.financial.usedMoney
+* benefitBalance.financial.usedMoney.value = 1
+* benefitBalance.financial.usedMoney.currency = #USD
+////////////////////////////////////////////
+
+
 Instance: PCT-AEOB-Bundle-1
 InstanceOf: PCTAEOBBundle
 Description: "PCT AEOB Bundle Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234567"
 * timestamp = "2021-11-10T11:01:00+05:00"
-* entry[aeob].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Inst-Example-1"
+* entry[aeob-summary].fullUrl = "http://example.org/fhir/Claim/PCT-AEOB-Summary-1"
+* entry[aeob-summary].resource = PCT-AEOB-Summary-1
+* entry[aeob].fullUrl = "http://example.org/fhir/Claim/PCT-AEOB-1"
 * entry[aeob].resource = PCT-AEOB-1
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].resource = patient1001
@@ -101,6 +160,8 @@ Description: "PCT AEOB Bundle Example 1"
 * entry[coverage].resource = coverage1001
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization].resource = org1001
+* entry[gfeBundle].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+* entry[gfeBundle].resource = PCT-GFE-Bundle-Inst-1
 
 
 
