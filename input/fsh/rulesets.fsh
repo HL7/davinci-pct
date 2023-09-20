@@ -56,7 +56,7 @@ RuleSet: OrgContactSlicing
 * contact ^slicing.description = "Slice based on $this pattern"
 * contact MS
 
-RuleSet: IdentfierSlicing
+RuleSet: IdentifierSlicing
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open

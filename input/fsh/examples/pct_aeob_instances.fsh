@@ -100,7 +100,7 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 
 * status = #active
-* type = PCTAEOBTypeSummaryCS#aeob-summary "Advanced Explanation of Benefit Summary "
+* type = PCTAEOBTypeSummaryCS#eob-summary "Explanation of Benefit Summary "
 * use = #predetermination
 * patient = Reference(patient1001)
 * created = "2021-10-12"
@@ -119,7 +119,8 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 
 * benefitPeriod.start = "2022-01-01"
 * benefitPeriod.end = "2022-01-01"
-
+* billablePeriod.start = "2022-01-01"
+* billablePeriod.end = "2022-01-01"
 
 * total.category = $ADJUDCS#submitted "Submitted Amount"
 * total.amount.value = 200.00

@@ -23,17 +23,19 @@ Questions
 * extension contains ServiceDescription named serviceDescription 1..1 MS
 * extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
-* insert IdentfierSlicing
+* insert IdentifierSlicing
 * identifier contains 
 	INTER 0..* 
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
-* type = PCTAEOBTypeSummaryCS#aeob-summary
+* type = PCTAEOBTypeSummaryCS#eob-summary
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 
 * patient only Reference(HRexPatientDemographics)
+* billablePeriod 1..1
+* billablePeriod ^short = "The full Period of Service for all services or products included in the estimate from the first event to the last event."
 
 * insurer only Reference(PCTOrganization)
 
@@ -107,7 +109,7 @@ Questions
 */
 * adjudication 0..0
 /*
-* insert AdjudicationSlicing
+ insert AdjudicationSlicing
 * adjudication contains medicalmanagement 0..* MS and
     billingnetworkstatus 0..1 MS and
     renderingnetworkstatus 0..1 MS and
@@ -179,21 +181,35 @@ Questions
 
 * total 1..*
 * insert TotalSlicing
-* total.category from PCTAdjudication  (extensible)
+* total.category from PCTTotal (extensible)
 * total contains
-	submitted 0..1 MS and
+	submitted 1..1 MS and
 	memberliability 0..1 MS and
+	innetwork 0..1 MS and
+	outofnetwork 0..1 MS and
+	noncovered 0..1 MS and
+	negotiated 0..1 MS and
 	eligible 0..1 MS and
 	benefit 0..1 MS
 
 
 
 * total[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
-* total[submitted] ^short = "Totel provider submitted amount"
+* total[submitted] ^short = "Total provider submitted amount"
 
-* total[memberliability] ^short = "Total member liability"
+* total[memberliability] ^short = "Total member liability - Must include in non-zero total across all AEoBs"
 * total[memberliability].category = PCTAdjudicationCategoryCS#memberliability
-* total[memberliability] ^comment = "$0 is an acceptable value"
+
+* total[innetwork] ^short = "Total in network amount - Must include in non-zero total across all AEoBs"
+* total[innetwork].category = PCTNetworkStatusCS#innetwork
+
+* total[outofnetwork] ^short = "Total out of network amount - Must include in non-zero total across all AEoBs"
+* total[outofnetwork].category = PCTNetworkStatusCS#outofnetwork
+
+* total[negotiated] ^short = "Total negotiated amount - Must include in non-zero total across all AEoBs"
+* total[negotiated].category = PCTNetworkStatusCS#negotiated
+
+
 
 * total[eligible] ^short = "Total eligible amount"
 * total[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
@@ -248,14 +264,14 @@ Description: "This profile is used for exchanging a summary of Explanation of Be
 
 
 
-* insert IdentfierSlicing
+* insert IdentifierSlicing
 * identifier contains 
 	INTER 0..* 
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
 * code 1..1
-* code = PCTAEOBTypeSummaryCS#aeob-summary
+* code = PCTAEOBTypeSummaryCS#eob-summary
 * subject 1..1 MS
 * subject only Reference(HRexPatientDemographics)
 * subject ^short = "The recipient of the products and services"
@@ -427,7 +443,7 @@ Description: "Summary of benefit balance financial information"
 
 
 * total[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
-* total[submitted] ^short = "Totel provider submitted amount"
+* total[submitted] ^short = "Total provider submitted amount"
 
 * total[memberliability] ^short = "Total member liability"
 * total[memberliability].category = PCTAdjudicationCategoryCS#memberliability
@@ -474,6 +490,6 @@ CodeSystem: PCTAEOBTypeSummaryCS
 Title: "PCT AEOB Type Code System"
 Description: "Defining the code for an AEoB type summary"
 * ^caseSensitive = true
-* #aeob-summary "Advanced Explanation of Benefit Summary "
+* #eob-summary "Explanation of Benefit Summary "
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false

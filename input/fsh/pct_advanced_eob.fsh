@@ -12,7 +12,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * extension[serviceDescription] ^condition = "pct-aeob-1"
 * extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
-* insert IdentfierSlicing
+* insert IdentifierSlicing
 * identifier contains 
 	INTER 0..* and 
 	uniqueclaimid 1..1 
@@ -220,7 +220,7 @@ Severity: #error
 
 Invariant: pct-aeob-2
 Description: "Institutional EOB:  SHALL have adjudication[submitted] at the item or header level (can be at both locations)"
-Expression: "adjudication.where(category.coding.code='submitted').exists() or item.adjudication.where(category.coding.code='submitted').exists()"
+Expression: "adjudication.where(category.where(coding.code='submitted')).exists() or item.adjudication.where(category.where(coding.code='submitted')).exists()"
 Severity: #error
 
 Invariant: pct-aeob-3
