@@ -121,6 +121,17 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
+ValueSet: PCTTotal   
+Title: "PCT Total Value Set"
+Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values 
+defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the Network Status."
+* codes from valueset PCTAdjudication 
+* PCTNetworkStatusCS#innetwork "In Network"
+* PCTNetworkStatusCS#outofnetwork "Out Of Network"
+* PCTNetworkStatusCS#negotiated "Negotiated Service or Product"
+* ^copyright = "This Valueset is not copyrighted."
+* ^experimental = false
+
 
 // ValueSet: PCTCoverageCopayTypeVS
 // Title: "PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created // through the HL7 Terminology (THO) process to replace this value set"
@@ -245,17 +256,17 @@ This code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit defi
 ValueSet: PCTPayerProviderNetworkStatusVS
 Title: "PCT Payer Provider Network Status"
 Description: "Indicates the Provider network status with the Payer as of the effective date of service or admission."
-* include PCTNetworkStatusCS#innetwork
-* include PCTNetworkStatusCS#outofnetwork
+//* include PCTNetworkStatusCS#innetwork
+//* include PCTNetworkStatusCS#outofnetwork
 * codes from system PCTNetworkStatusCS
 * ^experimental = false
 
 ValueSet: PCTPayerBenefitPaymentStatusVS
 Title: "PCT Payer Benefit Payment Status"
 Description: "Indicates the in network or out of network payment status of the claim or line item."
-* include PCTNetworkStatusCS#innetwork
-* include PCTNetworkStatusCS#outofnetwork
-* include PCTNetworkStatusCS#other
+//* include PCTNetworkStatusCS#innetwork
+//* include PCTNetworkStatusCS#outofnetwork
+//* include PCTNetworkStatusCS#other
 * codes from system PCTNetworkStatusCS
 * ^experimental = false
 
