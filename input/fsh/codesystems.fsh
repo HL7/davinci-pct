@@ -140,6 +140,7 @@ Description: "Defining codes for network status. This is for trial use."
 * ^caseSensitive = true
 * #innetwork "In Network" "Indicates an in network status in relation to a patient's coverage"
 * #outofnetwork "Out Of Network" "Indicates a not in network status in relation to a patient's coverage"
+* #negotiated "Negotiated Service or Product" "Indicates a special negotiated status in relation to a patient's coverage"
 * #other "Other" "Indicates other network status or when a network does not apply"
 
 CodeSystem: PCTAEOBProcessNoteCS
