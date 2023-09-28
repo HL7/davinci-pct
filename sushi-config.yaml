@@ -25,6 +25,7 @@ jurisdiction: urn:iso:std:iso:3166#US
 
 parameters:   
   show-inherited-invariants: false
+  path-liquid: liquid
 
 pages:
   index.md:
