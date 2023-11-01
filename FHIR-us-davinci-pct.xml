@@ -18,7 +18,6 @@
 <artifact id="StructureDefinition/gfeDisclaimer" key="StructureDefinition-gfeDisclaimer" name="GFEDisclaimer"/>
 <artifact deprecated="true" id="StructureDefinition/gfeProviderAssignedIdentifier" key="StructureDefinition-gfeProviderAssignedIdentifier" name="GFEProviderAssignedIdentifier"/>
 <artifact id="StructureDefinition/gfeServiceLinkingInfo" key="StructureDefinition-gfeServiceLinkingInfo" name="GFEServiceLinkingInfo"/>
-<artifact id="OperationDefinition/GFE-submit" key="OperationDefinition-GFE-submit" name="GFESubmitOperation"/>
 <artifact id="StructureDefinition/gfeSubmitter" key="StructureDefinition-gfeSubmitter" name="GFESubmitter"/>
 <artifact id="ValueSet/ICD10ProcedureCodes" key="ValueSet-ICD10ProcedureCodes" name="ICD-10 Procedure Codes"/>
 <artifact id="StructureDefinition/inNetworkProviderOptionsLink" key="StructureDefinition-inNetworkProviderOptionsLink" name="In Network Provider Options Link"/>
@@ -101,6 +100,7 @@
 <artifact id="Claim/PCT-GFE-Professional-MRI" key="Claim-PCT-GFE-Professional-MRI" name="PCT-GFE-Professional-MRI"/>
 <artifact id="OperationOutcome/PCT-GFE-Validation-Error-Example-1" key="OperationOutcome-PCT-GFE-Validation-Error-Example-1" name="PCT-GFE-Validation-Error-Example-1"/>
 <artifact id="StructureDefinition/endpoint" key="StructureDefinition-endpoint" name="PCTEndpoint"/>
+<artifact id="CapabilityStatement/davinci-pct" key="CapabilityStatement-davinci-pct" name="Patient Cost Transparency Implementation Guide Capability Statement"/>
 <artifact id="StructureDefinition/processNoteClass" key="StructureDefinition-processNoteClass" name="ProcessNote Class"/>
 <artifact deprecated="true" id="Location/Provider-Org-Loc-2" key="Location-Provider-Org-Loc-2" name="Provider-Org-Loc-2"/>
 <artifact id="StructureDefinition/providerEventMethodology" key="StructureDefinition-providerEventMethodology" name="ProviderEventMethodology"/>
@@ -108,13 +108,13 @@
 <artifact id="StructureDefinition/referralNumber" key="StructureDefinition-referralNumber" name="ReferralNumber"/>
 <artifact id="StructureDefinition/serviceDescription" key="StructureDefinition-serviceDescription" name="Service Description"/>
 <artifact id="StructureDefinition/subjectToMedicalMgmt" key="StructureDefinition-subjectToMedicalMgmt" name="Subject To Medical Management"/>
+<artifact id="OperationDefinition/GFE-submit" key="OperationDefinition-GFE-submit" name="Submit a GFE resource for the creation of an AEOB"/>
 <artifact id="Organization/Submitter-Org-1" key="Organization-Submitter-Org-1" name="Submitter-Org-1"/>
 <artifact id="Practitioner/Submitter-Practitioner-1" key="Practitioner-Submitter-Practitioner-1" name="Submitter-Practitioner-1"/>
 <artifact id="ValueSet/USClaimDRGCodes" key="ValueSet-USClaimDRGCodes" name="US Claim DRG Codes"/>
 <artifact id="SearchParameter/aeob-date-of-service" key="SearchParameter-aeob-date-of-service" name="aeob-date-of-service"/>
 <artifact id="Contract/contract1001" key="Contract-contract1001" name="contract1001"/>
 <artifact id="Coverage/coverage1001" key="Coverage-coverage1001" name="coverage1001"/>
-<artifact id="CapabilityStatement/davinci-pct" key="CapabilityStatement-davinci-pct" name="davinci-pct"/>
 <artifact id="Endpoint/endpoint001" key="Endpoint-endpoint001" name="endpoint001"/>
 <artifact id="Organization/org1001" key="Organization-org1001" name="org1001"/>
 <artifact id="Organization/org1002" key="Organization-org1002" name="org1002"/>
