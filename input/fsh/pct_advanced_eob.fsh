@@ -207,9 +207,12 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * benefitBalance.financial.type 1..1
 * benefitBalance.financial.type from PCTFinancialTypeVS
 * benefitBalance.financial.allowed[x] 1..1
-* benefitBalance.financial.allowedMoney 1..1
+* benefitBalance.financial.allowedUnsignedInt MS
+* benefitBalance.financial.allowedMoney MS
 * benefitBalance.financial.used[x] 1..1
-* benefitBalance.financial.usedMoney 1..1
+* benefitBalance.financial.usedUnsignedInt MS
+* benefitBalance.financial.usedMoney MS
+
 
 
 Invariant: pct-aeob-1
