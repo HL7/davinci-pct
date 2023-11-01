@@ -99,7 +99,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * item.adjudication[adjustmentreason] ^short = "Adjustment Reason"
 * item.adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
-* item.adjudication[adjustmentreason].reason from PCTPayerBenefitPaymentStatusVS (required)
+* item.adjudication[adjustmentreason].reason from PCTAdjustmentReasonVS (required)
 * item.adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication[submitted] ^short = "Provider submitted amount"
 * item.adjudication[memberliability] ^short = "Member liability"
@@ -140,7 +140,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
 * adjudication[adjustmentreason] ^short = "Adjustment Reason"
 * adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
-* adjudication[adjustmentreason].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[adjustmentreason].reason from PCTAdjustmentReasonVS (required)
 * adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * adjudication[submitted] ^short = "Provider submitted amount"
 * adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability
