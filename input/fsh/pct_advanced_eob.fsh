@@ -131,13 +131,13 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * adjudication[medicalmanagement].value 0..0
 * adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
 * adjudication[billingnetworkstatus].category = PCTAdjudicationCategoryCS#billingnetworkstatus
-* adjudication[billingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[billingnetworkstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * adjudication[renderingnetworkstatus] ^short = "Rendering Provider Network Status"
 * adjudication[renderingnetworkstatus].category = PCTAdjudicationCategoryCS#renderingnetworkstatus
-* adjudication[renderingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[renderingnetworkstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status"
 * adjudication[benefitpaymentstatus].category = PCTAdjudicationCategoryCS#benefitpaymentstatus
-* adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * adjudication[adjustmentreason] ^short = "Adjustment Reason"
 * adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
 * adjudication[adjustmentreason].reason from PCTAdjustmentReasonVS (required)
