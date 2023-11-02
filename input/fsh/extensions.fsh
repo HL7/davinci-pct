@@ -165,6 +165,87 @@ Description: "This extension is used to indicate a the class of AEOB Claim proce
 * value[x] ^short = "The class of AEOB process note"
 
 
+Extension: RemainingBenefit
+Id: remaining-benefit
+Title: "Benefit Remaining"
+Description: "The quantity of the benefit remaining to date."
+* value[x] 1..1 MS 
+* value[x] only unsignedInt or Money //or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period
+//* value[x] ^slicing.discriminator.type = #type
+//* value[x] ^slicing.discriminator.path = "$this"
+//* value[x] ^slicing.ordered = false
+//* value[x] ^slicing.rules = #open
+
+//* value[x] ^definition = "The information determined as a result of making the observation, if the information has a simple value."
+//* value[x] ^comment = "An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/R4/observation.html#notes) below."
+//* value[x] ^requirements = "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations."
+//* value[x] ^base.path = "Observation.value[x]"
+//* value[x] ^base.min = 0
+//* value[x] ^base.max = "1"
+* value[x] ^type[0].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* value[x] ^type[=].extension.valueBoolean = true
+* value[x] ^type[+].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* value[x] ^type[=].extension.valueBoolean = true
+
+/** value[x].valueCodeableConcept only CodeableConcept
+
+* value[x].valueCodeableConcept ^sliceName = "valueCodeableConcept"
+* value[x].valueCodeableConcept ^base.path = "Observation.value[x]"
+* value[x].valueCodeableConcept ^base.min = 0
+* value[x].valueCodeableConcept ^base.max = "1"
+* value[x].valueCodeableConcept ^mustSupport = true
+* value[x].valueCodeableConcept ^isModifier = false
+* value[x].valueCodeableConcept ^binding.description = "SNOMED CT for coded results"
+*/
+//* value[x] 1..1
+//* value[x] only unsignedInt or Money
+//* valueUnsignedInt and valueMoney MS
+//* valueMoney MS
+
+
+/*
+* value[x] ^slicing.discriminator.type = #type
+* value[x] ^slicing.discriminator.path = "$this.resolve()"
+* value[x] ^slicing.rules = #open
+* value[x] contains 
+    valueMoney named valueMoney 0..* MS and
+    valueUnsignedInt named valueUnsignedInt 0..* MS
+//* value[x] contains money MS
+//* author[valueMoney] MS
+//* author[valueUnsignedInt] MS
+*/
+
+//* value[x] ^slicing.discriminator.type = #type
+//* value[x] ^slicing.discriminator.path = "$this"
+//* value[x] ^slicing.ordered = false
+//* value[x] ^slicing.rules = #open
+//* valueMoney ^mustSupport = true
+//* valueUnsignedInt ^mustSupport = true
+
+
+/*
+* value[x] ^slicing.discriminator.type = #type
+* value[x] ^slicing.discriminator.path = "$this"
+* value[x] ^slicing.ordered = false
+* value[x] ^slicing.rules = #open
+//* value[x] ^short = "Actual result"
+//* value[x] ^definition = "The information determined as a result of making the observation, if the information has a simple value."
+//* value[x] ^comment = "An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/R4/observation.html#notes) below."
+//* value[x] ^requirements = "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations."
+//* value[x] ^base.path = "Observation.value[x]"
+//* value[x] ^base.min = 0
+//* value[x] ^base.max = "1"
+/*
+* value[x] ^type[0].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* value[x] ^type[=].extension.valueBoolean = true
+* value[x] ^type[+].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* value[x] ^type[=].extension.valueBoolean = true
+*/
+* value[x] ^short = "Benefit Remaining"
+* ^context.type = #element
+* ^context.expression = "ExplanationOfBenefit.benefitBalance.financial"
+
+
 /// For PCTOrganization Profile ////
 
 Extension: ProviderTaxonomy
