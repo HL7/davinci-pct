@@ -206,12 +206,23 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * benefitBalance.financial 1..*
 * benefitBalance.financial.type 1..1
 * benefitBalance.financial.type from PCTFinancialTypeVS
-* benefitBalance.financial.allowed[x] 1..1
-* benefitBalance.financial.allowedUnsignedInt MS
-* benefitBalance.financial.allowedMoney MS
-* benefitBalance.financial.used[x] 1..1
-* benefitBalance.financial.usedUnsignedInt MS
-* benefitBalance.financial.usedMoney MS
+* benefitBalance.financial.allowed[x] 1..1 MS
+* benefitBalance.financial.allowed[x] only unsignedInt or Money
+* benefitBalance.financial.allowed[x] ^type[0].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.allowed[x] ^type[=].extension.valueBoolean = true
+* benefitBalance.financial.allowed[x] ^type[+].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.allowed[x] ^type[=].extension.valueBoolean = true
+//* benefitBalance.financial.allowedUnsignedInt MS
+//* benefitBalance.financial.allowedMoney MS
+* benefitBalance.financial.used[x] 1..1 MS
+* benefitBalance.financial.used[x] only unsignedInt or Money
+* benefitBalance.financial.used[x] ^type[0].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.used[x] ^type[=].extension.valueBoolean = true
+* benefitBalance.financial.used[x] ^type[+].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.used[x] ^type[=].extension.valueBoolean = true
+//* benefitBalance.financial.usedUnsignedInt MS
+//* benefitBalance.financial.usedMoney MS
+* benefitBalance.financial.extension contains RemainingBenefit named remaining  0..1 MS
 
 
 
