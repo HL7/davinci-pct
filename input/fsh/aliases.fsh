@@ -61,3 +61,5 @@ Alias:   $FDANationalDrugCode = http://hl7.org/fhir/us/carin-bb/ValueSet/FDANati
 Alias:   $C4BBSupportingInfoType = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBSupportingInfoType
 Alias:   $C4BBSupportingInfoTypeVS = http://hl7.org/fhir/us/carin-bb/ValueSet/C4BBSupportingInfoType
 Alias:   $AHANUBCTypeOfBill = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCTypeOfBill
+
+Alias: $WG = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
