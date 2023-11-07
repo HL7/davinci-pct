@@ -13,5 +13,5 @@ Usage: #definition
 * base = #ExplanationOfBenefit
 * type = #date
 //* expression = "ExplanationOfBenefit.serviced[x]"
-* expression = "ExplanationOfBenefit.serviced"
+* expression = "ExplanationOfBenefit.item.serviced"
 * target = #ExplanationOfBenefit
