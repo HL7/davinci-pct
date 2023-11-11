@@ -8,6 +8,8 @@
 Extension: GFESubmitter
 Id: gfeSubmitter
 Description: "This extension is used to indicate the scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB. All submitters (Practitioners and Organizations) must have an ETIN."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
 * value[x] only Reference(PCTOrganization or PCTPractitioner)
 * value[x] ^short = "The scheduling entity submitting the GFE"
 * valueReference 1..1
@@ -15,6 +17,8 @@ Description: "This extension is used to indicate the scheduling entity that subm
 Extension: GFEDisclaimer
 Id: gfeDisclaimer
 Description: "Disclaimers the patient should be made aware of regarding the providers estimate"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
 * value[x] only string
 * valueString 1..1
 
@@ -26,6 +30,8 @@ Description: "Disclaimers the patient should be made aware of regarding the prov
 Extension: GFEServiceLinkingInfo
 Id: gfeServiceLinkingInfo
 Description: "This extension is used to provide the GFE Service Linking Information. This allows implementers to have the same identifier on multiple GFEs that are part of one period of care's services. This would be needed for some of the workflow options that businesses may decide to use."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
 * extension contains
     plannedPeriodOfService 0..* MS and
     linkingIdentifier 0..* MS
@@ -33,14 +39,16 @@ Description: "This extension is used to provide the GFE Service Linking Informat
 * extension[plannedPeriodOfService] ^definition = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
 * extension[plannedPeriodOfService].value[x] 1..1
 * extension[plannedPeriodOfService].value[x] only date or Period
-* extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
-* extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practictioners who will be submitting a GFE for a patient's care."
+* extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practitioners who will be submitting a GFE for a patient's care."
+* extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practitioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier].value[x] 1..1
 * extension[linkingIdentifier].value[x] only string
 
 Extension: ReferralNumber
 Id: referralNumber
 Description: "This extension is used to provide the Referral Number."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.referral"
 * value[x] 1..1
 * value[x] only string
 
@@ -49,18 +57,24 @@ Description: "This extension is used to provide the Referral Number."
 Extension: ProviderEventMethodology
 Id: providerEventMethodology
 Description: "This extension is used for indicating the method a provider used to group services, and those providing such services, beyond what may be indicated through DRGs that the payer or patient may find helpful (e.g. grouping services by a standardized episode of care definition). This is provider generated text and should not be modified by the payer."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
 * value[x] 1..1
 * value[x] only string
 
 Extension: GFEBillingProviderLineItemCtrlNum
 Id: gfeBillingProviderLineItemCtrlNum
 Description: "This extension is used by the provider to assign a unique identifier to this item. The intent of this element is to allow the provider to assign something other than 'line number' for their purposes (e.g. tracking and troubleshooting)."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
 * value[x] 1..1
 * value[x] only Identifier
 
 Extension: GFEConsentForBalanceBilling
 Id: gfeConsentForBalanceBilling
 Description: "If the provider has received a written consent form indicating a patient has agreed to waive their protections and pay up to the full cost for the out-of-network item or service, this will be “true”. If the provider has not received written consent, this will be “false”. This is an attestation only. The billing provider is legally required to maintain the written notice and consent form."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.provider"
 * value[x] 1..1
 * value[x] only boolean
 
@@ -102,6 +116,8 @@ Extension: OutOfNetworkProviderInfo
 Id: inNetworkProviderOptionsLink
 Title: "In Network Provider Options Link"
 Description: "This extension provides a payer link to information enabling the patient to find providers that are in network for the requested services."
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 * value[x] 1..1
 * value[x] only url
 
@@ -109,6 +125,8 @@ Extension: GFEReference
 Id: gfeReference
 Title: "GFE Reference"
 Description: "This extension is used to reference the GFE submitted by an entity that started the process for obtaining an Advanced EOB."
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
 * value[x] 1..1
 * value[x] only Reference(PCTGFEBundle)
 
@@ -124,6 +142,10 @@ Extension: SubjectToMedicalMgmt
 Id: subjectToMedicalMgmt
 Title: "Subject To Medical Management"
 Description: "This extension is used to provide a reason to explain how the estimate may change subject to medical management."
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item.adjudication"
 * value[x] 1..1
 * value[x] only CodeableConcept or string
 * value[x] ^short = "The estimate may change subject to medical management with this reason"
@@ -159,6 +181,8 @@ Extension: ProcessNoteClass
 Id: processNoteClass
 Title: "ProcessNote Class"
 Description: "This extension is used to indicate a the class of AEOB Claim process notes"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.processNote"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from PCTAEOBProcessNoteVS (required)
@@ -169,6 +193,8 @@ Extension: RemainingBenefit
 Id: remaining-benefit
 Title: "Benefit Remaining"
 Description: "The quantity of the benefit remaining to date."
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.benefitBalance.financial"
 * value[x] 1..1 MS 
 * value[x] only unsignedInt or Money //or boolean or integer or Range or Ratio or SampledData or time or dateTime or Period
 //* value[x] ^slicing.discriminator.type = #type
@@ -251,6 +277,8 @@ Description: "The quantity of the benefit remaining to date."
 Extension: ProviderTaxonomy
 Id: providerTaxonomy
 Description: "This extension is used to indicate the taxonomy code of the provider."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.provider"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from $USCPROCROLE (extensible)
@@ -258,6 +286,8 @@ Description: "This extension is used to indicate the taxonomy code of the provid
 Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
+* ^context[+].type = #element
+* ^context[=].expression = "Address"
 * value[x] 1..1
 * value[x] only Coding
 * value[x] from $ISO3166-P2-CSC-VS (extensible)
@@ -268,6 +298,8 @@ Description: "This extension is used to provide the Country Subdivision Code - f
 Extension: PCTEndpoint
 Id: endpoint
 Description: "This extension is used to provide an endpoint."
+* ^context[+].type = #element
+* ^context[=].expression = "Practitioner"
 * value[x] 1..1
 * value[x] only Reference(Endpoint)
 
@@ -275,6 +307,14 @@ Extension: ServiceDescription
 Id: serviceDescription
 Title: "Service Description"
 Description: "This extension is used to communicate a plain language description of the procedure, product, or service."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.procedure"
+* ^context[+].type = #element
+* ^context[=].expression = "Claim.item"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item"
 * value[x] 1..1
 * value[x] only string
 * value[x] ^short = "The description of a procedure, product, or service"

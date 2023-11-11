@@ -19,6 +19,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
 * extension[serviceDescription].valueString = "Example service"
+* extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 // * extension[disclaimer].valueString = "Estimate Only ..."
 // * extension[expirationDate].valueDate = "2021-10-31"
 
@@ -33,7 +34,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * provider = Reference(org1002)
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
-* provider.extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
+
 * priority = $PROCPRIORITY#normal
 
 //* payee.type.coding = #provider
