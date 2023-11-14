@@ -45,18 +45,6 @@ Fixed Value CodeableConcept discriminator elements should have a max Cardinality
 </p>
 </td>
 </tr>
-<tr data-issuekey="FHIR-40558" class="issuerow">
-<td class="issuekey">
-
-<a class="issue-link" data-issue-key="FHIR-40558" href="https://jira.hl7.org/browse/FHIR-40558">FHIR-40558</a>
-</td>
-<td class="resolution">Accepted Comment
-</td>
-<td class="summary"><p>
-Group the profiles in the artifacts page so that the OutcomeOperation profiles appear after primary profiles
-</p>
-</td>
-</tr>
 <tr data-issuekey="FHIR-40812" class="issuerow">
 <td class="issuekey">
 
