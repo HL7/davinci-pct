@@ -7,39 +7,25 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pct/Str
 
 # Warning: Code Systems and Value Sets that are referenced in the guide but are not expanded and validatable because they are part of proprietary code systems that require special license.
 
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated]
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNonnewborn
 
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated]
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
 
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/USClaimMedicalProductOrServiceCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
 
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemCptHcpcsVS because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
 
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated]
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
 
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS because the value set or a code system it depends on is not known to the validator, Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated]
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 
-Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNonnewborn
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 
-Error from server: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPriorityTypeOfAdmitOrVisit
 
-Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
+Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes
 
-Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
-
-Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/RevenueCodes
-
-Error from server: Unable to provide support for code system https://www.nubc.org/CodeSystem/TypeOfBill
-
-Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
-
-Error from server: Unable to provide support for code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
-
-Error from server: Unable to provide support for code system http://terminology.hl7.org/CodeSystem/AHANUBCPriorityTypeOfAdmitOrVisit
-
-Error from server: Unable to provide support for code system https://x12.org/codes/service-type-codes
-
-Error from server: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/ICD10
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.cms.gov/Medicare/Coding/ICD10
 
 
 
@@ -47,14 +33,60 @@ Error from server: Unable to provide support for code system http://www.cms.gov/
 
 Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated
 
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/RevenueCodes' doesnt provide any codes so the code cannot be validated
+
+Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS|1.1.0
+
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS|1.1.0
+
+
+
 
 Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated
+
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS|1.1.0
+
+Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS|1.1.0
+
+The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/TypeOfBill' doesnt provide any codes so the code cannot be validated
+
+
+
 
 Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
 
 Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
 
+The definition for the Code System with URI 'https://x12.org/codes/service-type-codes' doesnt provide any codes so the code cannot be validated
+
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS|1.1.0
+
+Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS|1.1.0
+
+Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS|1.1.0
+
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS|1.1.0
+
+The definition for the Code System with URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' doesnt provide any codes so the code cannot be validated
+
+
+
+
+The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
+
+
+
 
 # The GFE Patient examples include a patient identifier that is not a member number as defined by the only slice hrex-patient-demographics
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics|1.0.0
+
+
+# CodeSystems that are draft in THO, will need to be changed in future versions of THO
+
+Reference to draft item http://terminology.hl7.org/CodeSystem/organization-type|0.1.0
+
+Reference to draft item http://terminology.hl7.org/CodeSystem/adjudication|0.1.0
+
+Reference to draft item http://terminology.hl7.org/CodeSystem/claim-type|0.1.0
+
+Reference to draft item http://terminology.hl7.org/CodeSystem/ex-diagnosistype|0.1.0

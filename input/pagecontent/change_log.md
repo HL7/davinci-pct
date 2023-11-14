@@ -1,6 +1,164 @@
 ### Change Log
 
-#### High Level Changes
+
+#### High Level Changes 1.1.0
+
+This STU Update includes a number of changes addressing some critical and minor fixes including:
+
+* Set max occurrences for slice discriminator element 'type' to one fo the Good Faith Estimate profiles.
+* Corrected <a href="StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefit payment status and adjustment reason adjudication slices to the correct Value Set binding.
+* Corrected <a href="StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefitBalance.financial element types and added remaining amount extension.
+* Corrected numerous FHIRPath expressions for SearchParameter and Invariants.
+* Assign context to all of the extensions
+* Small presentation changes.
+
+
+#### Detailed Changes 1.1.0 (JIRA Change Requests)
+
+<table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+<thead>
+<tr class="rowHeader">
+
+<th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+Key
+</th>
+
+<th class="colHeaderLink headerrow-resolution" data-id="resolution">
+Resolution
+</th>
+
+<th class="colHeaderLink headerrow-summary" data-id="summary">
+Summary
+</th>
+</tr>
+</thead>
+<tbody>
+<tr data-issuekey="FHIR-40526" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-40526" href="https://jira.hl7.org/browse/FHIR-40526">FHIR-40526</a>
+</td>
+<td class="resolution">Accepted Technical Correction
+</td>
+<td class="summary"><p>
+Fixed Value CodeableConcept discriminator elements should have a max Cardinality of 1
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-40558" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-40558" href="https://jira.hl7.org/browse/FHIR-40558">FHIR-40558</a>
+</td>
+<td class="resolution">Accepted Comment
+</td>
+<td class="summary"><p>
+Group the profiles in the artifacts page so that the OutcomeOperation profiles appear after primary profiles
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-40812" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-40812" href="https://jira.hl7.org/browse/FHIR-40812">FHIR-40812</a>
+</td>
+<td class="resolution">Persuasive
+</td>
+<td class="summary"><p>
+Change AEOB adjudication[adjustmentreason] binding to adjustment reason codes
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-42786" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-42786" href="https://jira.hl7.org/browse/FHIR-42786">FHIR-42786</a>
+</td>
+<td class="resolution">Persuasive with Modification
+</td>
+<td class="summary"><p>
+Correct Adjudication reason ValueSet binding for network status adjudication category slices
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-41490" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-41490" href="https://jira.hl7.org/browse/FHIR-41490">FHIR-41490</a>
+</td>
+<td class="resolution">Accepted Technical Correction
+</td>
+<td class="summary"><p>
+Update link for Asynchronous Interaction Request Pattern to point to R5 instead of CI
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-42825" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-42825" href="https://jira.hl7.org/browse/FHIR-42825">FHIR-42825</a>
+</td>
+<td class="resolution">Persuasive with Modification
+</td>
+<td class="summary"><p>
+Add extension for benefit balance remaining amount
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-42910" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-42910" href="https://jira.hl7.org/browse/FHIR-42910">FHIR-42910</a>
+</td>
+<td class="resolution">Persuasive
+</td>
+<td class="summary"><p>
+Change constraint in ExplanationOfBenefit.benefitBalance.financial allowed[x] and used[x]
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-43065" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-43065" href="https://jira.hl7.org/browse/FHIR-43065">FHIR-43065</a>
+</td>
+<td class="resolution">Accepted Technical Correction
+</td>
+<td class="summary"><p>
+Correct Date Of Service SearchParameter expression
+</p>
+</td>
+</tr>
+
+
+<tr data-issuekey="FHIR-43111" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-43111" href="https://jira.hl7.org/browse/FHIR-43111">FHIR-43111</a>
+</td>
+<td class="resolution">Persuasive
+</td>
+<td class="summary"><p>
+Correct Invariant issues identified in the IG Publisher
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-43077" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-43077" href="https://jira.hl7.org/browse/FHIR-43077">FHIR-43077</a>
+</td>
+<td class="resolution">Persuasive
+</td>
+<td class="summary"><p>
+Assign context to all of the extensions
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### High Level Changes 1.0.0
 
 There were many changes to all the profiles, value sets, etc. since the last ballot. The details are listed in the section below. High level changes since the ballot are:
 
@@ -12,7 +170,7 @@ There were many changes to all the profiles, value sets, etc. since the last bal
 *  Updates to the AEOB profile to provide guidance and improve alignment with requirements for patient AEOBs including benefit period, benefit balance, adjudication and supporting info elements
 
 
-#### Detailed Changes (JIRA Change Requests)
+#### Detailed Changes 1.0.0 (JIRA Change Requests)
 
 <table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
 <thead>
