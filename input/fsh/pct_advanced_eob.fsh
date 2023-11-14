@@ -57,7 +57,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * item 1..*
 * item.extension contains ServiceDescription named serviceDescription 0..1 MS
-* item.extension[serviceDescription] obeys pct-aeob-1
+//* item.extension[serviceDescription] obeys pct-aeob-1
 * item.extension[serviceDescription] ^condition = "pct-aeob-1"
 //* item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
@@ -234,10 +234,13 @@ Severity: #error
 
 Invariant: pct-aeob-2
 Description: "Institutional EOB:  SHALL have adjudication[submitted] at the item or header level (can be at both locations)"
-Expression: "adjudication.where(category.coding.code='submitted').exists() or item.adjudication.where(category.coding.code='submitted').exists()"
+//Expression: "adjudication.where(category.coding.code='submitted').exists() or item.adjudication.where(category.coding.code='submitted').exists()"
+Expression: "adjudication.where(category.coding.where(code='submitted')).exists() or item.adjudication.where(category.coding.where(code='submitted')).exists()"
 Severity: #error
 
 Invariant: pct-aeob-3
 Description: "Institutional EOB:  SHALL have adjudication[memberliability] at the item or header level (can be at both locations)"
-Expression: "adjudication.where(category.coding.code='memberliability').exists() or item.adjudication.where(category.coding.code='memberliability').exists()"
+Expression: "adjudication.where(category.coding.where(code='memberliability')).exists() or item.adjudication.where(category.coding.where(code='memberliability')).exists()"
+//Expression: "adjudication.where(category.coding.code='memberliability').exists() or item.adjudication.where(category.coding.code='memberliability').exists()"
+//Expression: "adjudication.where(category.where(coding.code='memberliability')).exists() or item.adjudication.where(category.where(coding.code='memberliability')).exists()"
 Severity: #error
