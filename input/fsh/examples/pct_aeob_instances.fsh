@@ -86,6 +86,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * benefitBalance.financial.usedMoney
 * benefitBalance.financial.usedMoney.value = 1
 * benefitBalance.financial.usedMoney.currency = #USD
+* benefitBalance.financial.extension[RemainingBenefit].valueMoney.value = 0
+* benefitBalance.financial.extension[RemainingBenefit].valueMoney.currency = #USD
 ////////////////////////////////////////////
 
 Instance: PCT-AEOB-Bundle-1
