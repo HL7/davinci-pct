@@ -86,6 +86,7 @@ Description: "PCT Professional GFE Example 1"
 * insurance.coverage = Reference(coverage1001)
 * diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001"
 * item.sequence = 1
 * item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
 * item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
@@ -94,8 +95,8 @@ Description: "PCT Professional GFE Example 1"
 * item.locationCodeableConcept = $CMSPOSCS#21 "Inpatient Hospital"
 * item.quantity.value = 1
 * item.unitPrice.value = 200.00
+* item.unitPrice.currency = #USD
 * item.net.value = 200.00
-* item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001"
 * item.net.currency = #USD
 * total.value = 200.00
 * total.currency = #USD
