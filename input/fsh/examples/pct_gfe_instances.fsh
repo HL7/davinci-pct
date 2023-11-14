@@ -50,8 +50,8 @@ Description: "PCT Institutional GFE Example 1"
 * item.extension[ServiceDescription].valueString = "Imaging"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
-* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
-* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
 * item.servicedDate = 2021-10-31
 * item.quantity.value = 1
 * item.net.value = 200.00
@@ -88,8 +88,8 @@ Description: "PCT Professional GFE Example 1"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001"
 * item.sequence = 1
-* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
-* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
 * item.servicedDate = 2021-10-31
 * item.extension[ServiceDescription].valueString = "Imaging"
 * item.locationCodeableConcept = $CMSPOSCS#21 "Inpatient Hospital"
@@ -130,7 +130,7 @@ Description: "PCT Institutional GFE for MRI"
 * diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
-* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
 * item.servicedDate = 2022-02-02
 * item.extension[ServiceDescription].valueString = "Imaging"
 * item.quantity.value = 1
