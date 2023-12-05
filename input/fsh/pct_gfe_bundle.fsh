@@ -69,7 +69,7 @@ Invariant: pct-gfe-bundle-2
 Description: "SHALL have at least one entry for a payer organization."
 //Expression: "entry.resource.ofType(Organization).type.where(coding.code='pay').exists()"
 //Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
-Expression: "entry.resource.ofType(Organization).where(type.coding.where(code='pay')).exists()"
+Expression: "entry.resource.ofType(Organization).where(type.coding.where(code='pay').exists()).exists()"
 Severity: #error
 
 
