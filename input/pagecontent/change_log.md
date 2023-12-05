@@ -5,12 +5,12 @@
 
 This STU Update includes a number of changes addressing some critical and minor fixes including:
 
-* Set max occurrences for slice discriminator element 'type' to one fo the Good Faith Estimate profiles.
+* Set max occurrences for slice discriminator element 'type' to one of the Good Faith Estimate profiles.
 * Corrected <a href="StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefit payment status and adjustment reason adjudication slices to the correct Value Set binding.
 * Corrected <a href="StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefitBalance.financial element types and added remaining amount extension.
 * Corrected numerous FHIRPath expressions for SearchParameter and Invariants.
 * Assign context to all of the extensions
-* Small presentation changes.
+* Small presentation and example changes.
 
 
 #### Detailed Changes 1.1.0 (JIRA Change Requests)
@@ -143,6 +143,34 @@ Assign context to all of the extensions
 </p>
 </td>
 </tr>
+
+
+<tr data-issuekey="FHIR-43330" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-43330" href="https://jira.hl7.org/browse/FHIR-43330">FHIR-43330</a>
+</td>
+<td class="resolution">Persuasive with Modification
+</td>
+<td class="summary"><p>
+Assign context to all of the extensions
+</p>
+</td>
+</tr>
+<tr data-issuekey="FHIR-43329" class="issuerow">
+<td class="issuekey">
+
+<a class="issue-link" data-issue-key="FHIR-43329" href="https://jira.hl7.org/browse/FHIR-43329">FHIR-43329</a>
+</td>
+<td class="resolution">Persuasive
+</td>
+<td class="summary"><p>
+Correct Example fullURL to use the right resource base
+</p>
+</td>
+</tr>
+
+
 </tbody>
 </table>
 

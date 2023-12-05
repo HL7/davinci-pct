@@ -31,41 +31,41 @@ Error from http://tx.fhir.org/r4: Unable to provide support for code system http
 
 # Examples codes that can't be validated as they are part of proprietary code systems that require special license.
 
-Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated
+Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found so the code cannot be validated
 
 The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/RevenueCodes' doesnt provide any codes so the code cannot be validated
 
-Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS|1.1.0
+Code System URI 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS|1.1.0
 
 Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemRevenueVS|1.1.0
 
 
 
 
-Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated
+Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found so the code cannot be validated
 
 Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS|1.1.0
 
-Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS|1.1.0
+Code System URI 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFETypeOfBillVS|1.1.0
 
 The definition for the Code System with URI 'https://www.nubc.org/CodeSystem/TypeOfBill' doesnt provide any codes so the code cannot be validated
 
 
 
 
-Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found so the code cannot be validated
 
-Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
+Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated
 
 The definition for the Code System with URI 'https://x12.org/codes/service-type-codes' doesnt provide any codes so the code cannot be validated
 
 Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS|1.1.0
 
-Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS|1.1.0
+Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS|1.1.0
 
 Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS|1.1.0
 
-Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS|1.1.0
+Code System URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFECMSPOS|1.1.0
 
 The definition for the Code System with URI 'https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set' doesnt provide any codes so the code cannot be validated
 
