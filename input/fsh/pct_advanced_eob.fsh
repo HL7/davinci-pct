@@ -57,7 +57,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * item 1..*
 * item.extension contains ServiceDescription named serviceDescription 0..1 MS
-* item.extension[serviceDescription] obeys pct-aeob-1
+//* item.extension[serviceDescription] obeys pct-aeob-1
 * item.extension[serviceDescription] ^condition = "pct-aeob-1"
 //* item.revenue MS
 * item.revenue from PCTGFEItemRevenueVS (required)
@@ -99,7 +99,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * item.adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * item.adjudication[adjustmentreason] ^short = "Adjustment Reason"
 * item.adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
-* item.adjudication[adjustmentreason].reason from PCTPayerBenefitPaymentStatusVS (required)
+* item.adjudication[adjustmentreason].reason from PCTAdjustmentReasonVS (required)
 * item.adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication[submitted] ^short = "Provider submitted amount"
 * item.adjudication[memberliability] ^short = "Member liability"
@@ -131,16 +131,16 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * adjudication[medicalmanagement].value 0..0
 * adjudication[billingnetworkstatus] ^short = "Billing Provider Network Status"
 * adjudication[billingnetworkstatus].category = PCTAdjudicationCategoryCS#billingnetworkstatus
-* adjudication[billingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[billingnetworkstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * adjudication[renderingnetworkstatus] ^short = "Rendering Provider Network Status"
 * adjudication[renderingnetworkstatus].category = PCTAdjudicationCategoryCS#renderingnetworkstatus
-* adjudication[renderingnetworkstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[renderingnetworkstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * adjudication[benefitpaymentstatus] ^short = "Benefit Payment Status"
 * adjudication[benefitpaymentstatus].category = PCTAdjudicationCategoryCS#benefitpaymentstatus
-* adjudication[benefitpaymentstatus].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[benefitpaymentstatus].reason from PCTPayerBenefitPaymentStatusVS (required)
 * adjudication[adjustmentreason] ^short = "Adjustment Reason"
 * adjudication[adjustmentreason].category = PCTAdjudicationCategoryCS#adjustmentreason
-* adjudication[adjustmentreason].reason from PCTAdjudicationCategoryVS (required)
+* adjudication[adjustmentreason].reason from PCTAdjustmentReasonVS (required)
 * adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * adjudication[submitted] ^short = "Provider submitted amount"
 * adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability
@@ -206,10 +206,24 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * benefitBalance.financial 1..*
 * benefitBalance.financial.type 1..1
 * benefitBalance.financial.type from PCTFinancialTypeVS
-* benefitBalance.financial.allowed[x] 1..1
-* benefitBalance.financial.allowedMoney 1..1
-* benefitBalance.financial.used[x] 1..1
-* benefitBalance.financial.usedMoney 1..1
+* benefitBalance.financial.allowed[x] 1..1 MS
+* benefitBalance.financial.allowed[x] only unsignedInt or Money
+* benefitBalance.financial.allowed[x] ^type[0].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.allowed[x] ^type[=].extension.valueBoolean = true
+* benefitBalance.financial.allowed[x] ^type[+].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.allowed[x] ^type[=].extension.valueBoolean = true
+//* benefitBalance.financial.allowedUnsignedInt MS
+//* benefitBalance.financial.allowedMoney MS
+* benefitBalance.financial.used[x] 1..1 MS
+* benefitBalance.financial.used[x] only unsignedInt or Money
+* benefitBalance.financial.used[x] ^type[0].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.used[x] ^type[=].extension.valueBoolean = true
+* benefitBalance.financial.used[x] ^type[+].extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
+* benefitBalance.financial.used[x] ^type[=].extension.valueBoolean = true
+//* benefitBalance.financial.usedUnsignedInt MS
+//* benefitBalance.financial.usedMoney MS
+* benefitBalance.financial.extension contains RemainingBenefit named remaining  0..1 MS
+
 
 
 Invariant: pct-aeob-1
@@ -220,10 +234,13 @@ Severity: #error
 
 Invariant: pct-aeob-2
 Description: "Institutional EOB:  SHALL have adjudication[submitted] at the item or header level (can be at both locations)"
-Expression: "adjudication.where(category.where(coding.code='submitted')).exists() or item.adjudication.where(category.where(coding.code='submitted')).exists()"
+//Expression: "adjudication.where(category.coding.code='submitted').exists() or item.adjudication.where(category.coding.code='submitted').exists()"
+Expression: "adjudication.where(category.coding.where(code='submitted').exists()).exists() or item.adjudication.where(category.coding.where(code='submitted').exists()).exists()"
 Severity: #error
 
 Invariant: pct-aeob-3
 Description: "Institutional EOB:  SHALL have adjudication[memberliability] at the item or header level (can be at both locations)"
-Expression: "adjudication.where(category.coding.code='memberliability').exists() or item.adjudication.where(category.coding.code='memberliability').exists()"
+Expression: "adjudication.where(category.coding.where(code='memberliability').exists()).exists() or item.adjudication.where(category.coding.where(code='memberliability').exists()).exists()"
+//Expression: "adjudication.where(category.coding.code='memberliability').exists() or item.adjudication.where(category.coding.code='memberliability').exists()"
+//Expression: "adjudication.where(category.where(coding.code='memberliability')).exists() or item.adjudication.where(category.where(coding.code='memberliability')).exists()"
 Severity: #error

@@ -19,6 +19,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
 * extension[serviceDescription].valueString = "Example service"
+
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 // * extension[disclaimer].valueString = "Estimate Only ..."
 // * extension[expirationDate].valueDate = "2021-10-31"
@@ -34,6 +35,7 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * provider = Reference(org1002)
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
+
 
 * priority = $PROCPRIORITY#normal
 
@@ -51,8 +53,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
-* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
-* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem)"
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
 * item.servicedDate = "2022-01-01"
 * item.net.value = 200.00
 * item.net.currency = #USD
@@ -86,6 +88,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * benefitBalance.financial.usedMoney
 * benefitBalance.financial.usedMoney.value = 1
 * benefitBalance.financial.usedMoney.currency = #USD
+* benefitBalance.financial.extension[RemainingBenefit].valueMoney.value = 0
+* benefitBalance.financial.extension[RemainingBenefit].valueMoney.currency = #USD
 ////////////////////////////////////////////
 
 
@@ -142,6 +146,8 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 * benefitBalance.financial.usedMoney
 * benefitBalance.financial.usedMoney.value = 1
 * benefitBalance.financial.usedMoney.currency = #USD
+* benefitBalance.financial.extension[RemainingBenefit].valueMoney.value = 0
+* benefitBalance.financial.extension[RemainingBenefit].valueMoney.currency = #USD
 ////////////////////////////////////////////
 
 
@@ -151,9 +157,10 @@ Description: "PCT AEOB Bundle Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234567"
 * timestamp = "2021-11-10T11:01:00+05:00"
+
 * entry[aeob-summary].fullUrl = "http://example.org/fhir/Claim/PCT-AEOB-Summary-1"
 * entry[aeob-summary].resource = PCT-AEOB-Summary-1
-* entry[aeob].fullUrl = "http://example.org/fhir/Claim/PCT-AEOB-1"
+* entry[aeob].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
 * entry[aeob].resource = PCT-AEOB-1
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].resource = patient1001
