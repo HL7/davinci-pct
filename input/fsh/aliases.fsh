@@ -37,6 +37,7 @@ Alias:   MSDRG =  https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment
 Alias:   APDRG =  http://uri.hddaccess.com/cs/apdrg
 Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
 Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication
+Alias:   $HL7TaskStatus = http://hl7.org/fhir/task-status
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type

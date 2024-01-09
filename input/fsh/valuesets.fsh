@@ -303,3 +303,33 @@ Title: "ICD-10 Procedure Codes"
 Description: "Procedure Codes from https://www.cms.gov/Medicare/Coding/ICD10"
 * ^experimental = false
 * codes from system http://www.cms.gov/Medicare/Coding/ICD10
+
+
+
+ValueSet: PCTPrimaryTaskStatusCodes
+Title: "Primary GFE Request Task Status Codes"
+Description: "Codes allowed for a convening provider created primary service task status"
+* ^experimental = false
+* include $HL7TaskStatus#draft
+* include $HL7TaskStatus#requested
+* include $HL7TaskStatus#in-progress
+* include $HL7TaskStatus#cancelled
+* include $HL7TaskStatus#on-hold
+* include $HL7TaskStatus#failed
+* include $HL7TaskStatus#completed
+* include $HL7TaskStatus#entered-in-error
+
+
+// TODO !!! Provide more details on which each request means (definition)
+ValueSet: PCTProviderTaskStatusCodes
+Title: "Provider GFE Request Task Status Codes"
+Description: "Codes allowed for a convening provider created provider-specific service task status"
+* ^experimental = false
+* include $HL7TaskStatus#draft
+* include $HL7TaskStatus#requested
+* include $HL7TaskStatus#received
+* include $HL7TaskStatus#accepted
+* include $HL7TaskStatus#rejected
+* include $HL7TaskStatus#failed
+* include $HL7TaskStatus#completed
+* include $HL7TaskStatus#entered-in-error
