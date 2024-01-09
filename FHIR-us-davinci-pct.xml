@@ -65,7 +65,7 @@
 <artifact id="ValueSet/PCTGFEItemRevenueVS" key="ValueSet-PCTGFEItemRevenueVS" name="PCT GFE NUBC Revenue Value Set"/>
 <artifact id="ValueSet/PCTGFETypeOfBillVS" key="ValueSet-PCTGFETypeOfBillVS" name="PCT GFE NUBC Uniform Billing (UB-04) Type of Bill Value Set"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-primary-request-task" key="StructureDefinition-davinci-pct-gfe-primary-request-task" name="PCT GFE Primary Request Task"/>
-<artifact id="StructureDefinition/davinci-pct-gfe-provider-request-task" key="StructureDefinition-davinci-pct-gfe-provider-request-task" name="PCT GFE Primary Request Task"/>
+<artifact id="StructureDefinition/davinci-pct-gfe-provider-request-task" key="StructureDefinition-davinci-pct-gfe-provider-request-task" name="PCT GFE Provider Request Task"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-request-bundle" key="StructureDefinition-davinci-pct-gfe-request-bundle" name="PCT GFE Request Bundle"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-request-servicerequest" key="StructureDefinition-davinci-pct-gfe-request-servicerequest" name="PCT GFE Request ServiceRequest"/>
 <artifact id="CodeSystem/PCTSupportingInfoType" key="CodeSystem-PCTSupportingInfoType" name="PCT GFE Supporting Info Type Code System"/>

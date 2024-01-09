@@ -20,7 +20,7 @@ Description: "The PCT Good Faith Estimate (GFE) Primary Request Task is used by 
 
 // TODO !!! Do we want a Coordinating platform identifier?
 
-// TODO !!! Need some sort of original request reference. Perhaps an extension? (Look at DocumentReference approach to superseding)
+// TODO !!! Need some sort of original request reference. Perhaps an extension? (Look at DocumentReference or ServiceRequest approach to superseding - Look at extensions IG)
 
 * partOf 0..0
 * partOf ^short = "The Primary request is not part of a greater request"
@@ -68,7 +68,7 @@ Description: "The PCT Good Faith Estimate (GFE) Primary Request Task is used by 
 Profile: PCTGFEProviderRequestTask
 Parent: Task
 Id: davinci-pct-gfe-provider-request-task
-Title: "PCT GFE Primary Request Task"
+Title: "PCT GFE Provider Request Task"
 Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by a convening provider to assign a GFE request task to a specific provider and may include information specific to that request."
 
 * identifier ^slicing.discriminator.path = "type"
@@ -85,6 +85,11 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
+* groupIdentifier 1..1
+* groupIdentifier.type = $V2-0203#PLAC "Placer Identifier"
+* groupIdentifier.system MS
+* groupIdentifier.value 1..1
+* groupIdentifier ^short = "Convening Provider Primary Task Identifier (DRAFT: used for grouping the sub-tasks together, may be the means to correlate tasks if the primary task goes away)"
 // TODO !!! Do we want a Coordinating platform identifier?
 
 // TODO !!! Need some sort of original request reference. Perhaps an extension? (Look at DocumentReference approach to superseding)
