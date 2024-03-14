@@ -20,6 +20,7 @@ Usage: #definition
 * parameter[0].use = #in
 * parameter[0].min = 1
 * parameter[0].max = "1"
+//* parameter[0].targetProfile = Canonical(PCTGFECollectionBundle)
 * parameter[0].documentation = "A Bundle containing a single or multiple GFE resources plus referenced resources."
 * parameter[0].type = #Bundle
 * parameter[1].name = #return
@@ -60,3 +61,4 @@ Usage: #definition
 // * parameter[1].max = "1"
 // * parameter[1].documentation = "A Bundle containing a single AEOB resource plus referenced resources."
 // * parameter[1].type = #Bundle
+
