@@ -25,6 +25,7 @@ publisher:
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core: 3.1.1
+  hl7.fhir.extensions.r5: 4.0.1
   hl7.fhir.us.davinci-hrex: 1.0.0     # NOTE: Da Vinci HRex depends on US Core 3.1.0
 
 copyrightYear: 2023+
@@ -92,6 +93,69 @@ menu:
   
   Change Log: change_log.html
  
+groups:
+  CapabilityStatements:
+    name: "Behavior: Capability Statements"
+    description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+    resources:
+    - CapabilityStatement/davinci-pct
+
+
+  Operations:
+    name: "Behavior: Operation Definitions"
+    description: These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.
+    resources:
+    - OperationDefinition/GFE-retrieve
+    - OperationDefinition/GFE-submit
+
+  SearchParameters:
+    name: "Behavior: Search Parameters"
+    description: These define the properties by which a RESTful server can be searched. They can also be used for sorting and including related resources.
+    resources:
+    - SearchParameter/aeob-date-of-service
+
+
+  General:
+    name: "Structures: General Resource Profiles"
+    description: These define constraints on FHIR resources for systems conforming to this implementation guide.
+    resources:
+    - StructureDefinition/davinci-pct-organization
+    - StructureDefinition/davinci-pct-practitioner
+    - StructureDefinition/davinci-pct-coverage
+
+  GFERequest:
+    name: "Structures: GFE Resource Profiles"
+    description: These define constraints on GFE and GFE Request related FHIR resources for systems conforming to this implementation guide.
+    resources:
+    - StructureDefinition/davinci-pct-coordinating-gfe-request-task
+    - StructureDefinition/davinci-pct-gfe-provider-request-task
+    - StructureDefinition/davinci-pct-gfe-request-bundle
+    - StructureDefinition/davinci-pct-gfe-request-information-bundle
+    - StructureDefinition/davinci-pct-proposed-servicerequest
+    - StructureDefinition/davinci-pct-proposed-medicationrequest
+    - StructureDefinition/davinci-pct-proposed-devicerequest
+    - StructureDefinition/davinci-pct-gfe-collection-bundle
+    - StructureDefinition/davinci-pct-gfe-bundle
+    - StructureDefinition/davinci-pct-gfe-missing-bundle
+    - StructureDefinition/davinci-pct-gfe-summary
+    - StructureDefinition/davinci-pct-gfe-institutional
+    - StructureDefinition/davinci-pct-gfe-professional
+    - StructureDefinition/davinci-pct-gfe-validation-error
+
+  AEOB:
+    name: "Structures: AEOB Resource Profiles"
+    description: These define constraints on AEOB and GFE Submit related FHIR resources for systems conforming to this implementation guide.
+    resources:
+    - StructureDefinition/davinci-pct-aeob-bundle
+    - StructureDefinition/davinci-pct-aeob-summary
+    - StructureDefinition/davinci-pct-aeob
+    - StructureDefinition/davinci-pct-aeob-complete
+    - StructureDefinition/davinci-pct-aeob-adjudication-error
+
+
+
+
+
  # Base Specs:
  #   FHIR R4 Spec: new-tab {{site.data.fhir.path}}
  #   US Core: new-tab {{site.data.fhir.ver.hl7_fhir_us_core}}

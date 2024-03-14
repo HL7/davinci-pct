@@ -61,6 +61,52 @@ Description: "PCT Institutional GFE Example 1"
 * total.value = 200.00
 * total.currency = #USD
 
+
+
+
+Instance: PCT-GFE-Summary-1
+InstanceOf: PCTGFESummary
+Description: "PCT Summary GFE Example 1"
+//* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
+//* identifier[ETIN].value = "ETIN-10010001"
+* status = #active
+* type = PCTEstimateTypeSummaryCS#estimate-summary "Estimate Summary"
+* patient = Reference(patient1001)
+* created = "2021-10-05"
+* billablePeriod.start = "2021-10-31"
+* billablePeriod.end = "2021-10-31"
+* insurer = Reference(org1001)
+//* provider = Reference(Submitter-Org-1)
+//* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+//* provider.extension[consentForBalanceBilling].valueBoolean = true
+* priority = $PROCPRIORITY#normal
+//* payee.type.coding = $PAYEETYPE#provider
+//* referral.extension[referralNumber].valueString = "REF12022002-121"
+//* referral.display = "Referral Number"
+//* supportingInfo[typeOfBill].sequence = 1
+//* supportingInfo[typeOfBill].category = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTSupportingInfoType#typeofbill
+//* supportingInfo[typeOfBill].code = https://www.nubc.org/CodeSystem/TypeOfBill#011X "Hospital Inpatient (Part A)"
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(coverage1001)
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+/* item.extension[ServiceDescription].valueString = "Imaging"
+* item.sequence = 1
+* item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.servicedDate = 2021-10-31
+* item.quantity.value = 1
+* item.net.value = 200.00
+* item.net.currency = #USD
+//* item.detail.sequence = 1
+//* item.detail.productOrService = $NDC#47781-457
+
+*/
+* total.value = 200.00
+* total.currency = #USD
+
 Instance: PCT-GFE-Professional-MRI
 InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
@@ -98,6 +144,48 @@ Description: "PCT Professional GFE Example 1"
 * item.unitPrice.currency = #USD
 * item.net.value = 200.00
 * item.net.currency = #USD
+* total.value = 200.00
+* total.currency = #USD
+
+Instance: PCT-GFE-Summary-MRI
+InstanceOf: PCTGFESummary
+Description: "PCT Summary GFE Example 1"
+
+//* extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
+//* extension[providerEventMethodology].valueString = "EEMM1022"
+//* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
+//* extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
+* status = #active
+* type = PCTEstimateTypeSummaryCS#estimate-summary "Estimate Summary"
+
+* patient = Reference(patient1001)
+* created = "2021-10-05"
+* billablePeriod.start = "2021-10-31"
+* insurer = Reference(org1001)
+* provider = Reference(Submitter-Practitioner-1)
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* priority = $PROCPRIORITY#normal
+//* payee.type.coding = $PAYEETYPE#provider
+//* referral.extension[referralNumber].valueString = "REF12022002-122"
+//* referral.display = "Referral Number"
+* insurance.sequence = 1
+* insurance.focal = true
+* insurance.coverage = Reference(coverage1001)
+* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+/* item.extension[GFEBillingProviderLineItemCtrlNum].valueIdentifier.value = "GFEBillingProviderLineItemCtrlNum-0001"
+* item.sequence = 1
+* item.productOrService = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.modifier = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* item.servicedDate = 2021-10-31
+* item.extension[ServiceDescription].valueString = "Imaging"
+* item.locationCodeableConcept = $CMSPOSCS#21 "Inpatient Hospital"
+* item.quantity.value = 1
+* item.unitPrice.value = 200.00
+* item.unitPrice.currency = #USD
+* item.net.value = 200.00
+* item.net.currency = #USD
+*/
 * total.value = 200.00
 * total.currency = #USD
 
@@ -147,6 +235,9 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
+* entry[gfe-summary].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-1"
+* entry[gfe-summary].id = "PCT-GFE-Summary-1"
+* entry[gfe-summary].resource = PCT-GFE-Summary-1
 * entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
 * entry[gfe].id = "PCT-GFE-Institutional-1"
 * entry[gfe].resource = PCT-GFE-Institutional-1
@@ -171,6 +262,10 @@ Description: "PCT GFE Bundle Professional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
+
+* entry[gfe-summary].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-MRI"
+* entry[gfe-summary].id = "PCT-GFE-Summary-MRI"
+* entry[gfe-summary].resource = PCT-GFE-Summary-MRI
 * entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 * entry[gfe].id = "PCT-GFE-Professional-MRI"
 * entry[gfe].resource = PCT-GFE-Professional-MRI

@@ -170,3 +170,38 @@ Description: "Financial Type codes for benefitBalance.financial.type."
 * #out-of-pocket-maximum "Out-of-Pocket Maximum" "The most the insured individual has to pay for covered services in a plan year. After this amount is spent on deductibles, copayments, and coinsurance for in-network care and services, the health plan pays 100% of the costs of covered benefits."
 * #visit "Visit" "A medical visit means diagnostic, therapeutic, or consultative services provided to a client by a healthcare professional in an outpatient setting."
 * #penalty "Penalty" "Benefit penalty is an approach used by the insurance company to reduce their payment on a claim when the patient or medical provider does not satisfy the rules of the health plan. Benefit penalties may occur when a pre-authorization is not obtained, for example."
+
+CodeSystem: PCTEstimateTypeSummaryCS
+Title: "PCT Estimate Type Code System"
+Description: "Defining the code for a estimate (GFE or AEOB) type summary"
+* ^caseSensitive = true
+* #estimate-summary "Estimate Summary"
+* ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+
+CodeSystem: PCTGFERequestTaskCS
+Title: "PCT GFE Request Task Codes Code System"
+Description: "Defining codes for defining GFE request types."
+* ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+* ^caseSensitive = true
+* #gfe-coordinating-request "GFE Coordinating Request" "Coordinating request representing the general request for a Good Faith Estimate (GFE) from all potentially GFE contributing providers."
+* #gfe-request "GFE Request" "Request for a Good Faith Estimate (GFE) from a GFE contributing provider."
+* #scheduled-request "Scheduled Service Request" "Request of a GFE for a scheduled service."
+* #nonscheduled-request "Nonscheduled Service Request" "Request of a GFE for a scheduled service, such as a request from a patient."
+
+
+CodeSystem: PCTContributingProviderTaskStatusReasonCS
+Title: "PCT GFE Request Task Status Reason Code Code System"
+Description: "Defining codes for defining GFE request task status reason types."
+* ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+* ^caseSensitive = true
+* #fulfilled "Fulfilled" "The GFE Request was fulfilled."
+* #time-limit-reached "Time Limit Reached" "The time period to provide the GFE has been reached."
+* #no-longer-needed "No Longer Needed" "The GFE is not longer needed."
+* #service-cancelled "Service Cancelled" "Scheduled service was cancelled."
+* #requires-new-request "Requires New Request" "Changes need to be made to the request which require the current request be cancelled and a new request be made."
+* #patient-declined "Patient Declined" "Patient has declined to receive a GFE or AEOB."
+* #schedule "Schedule" "Provider cannot participate due to proposed schedule dates and or times."
+* #service-not-provided "Service Not Provided" "Services or Products being requested are not available from this contributing provider."

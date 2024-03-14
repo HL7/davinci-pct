@@ -16,7 +16,7 @@ Description: "PCT AEOB Complete Example 1"
 * issue.diagnostics = "AEOB processing is complete, the AEOB will be sent directly to the patient. No AEOB will be returned to the submitter."
 
 Instance: PCT-GFE-Validation-Error-Example-1
-InstanceOf: GFRValidationError
+InstanceOf: GFEValidationError
 Description: "PCT GFE Validation Error Example 1"
 
 * issue.severity = #error

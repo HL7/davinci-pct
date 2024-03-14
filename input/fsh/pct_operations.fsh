@@ -62,3 +62,38 @@ Usage: #definition
 // * parameter[1].documentation = "A Bundle containing a single AEOB resource plus referenced resources."
 // * parameter[1].type = #Bundle
 
+
+// TODO, what happens in the event there is an error or no returned GFEs?
+Instance: GFERetrieveOperation
+InstanceOf: OperationDefinition
+Description: "This operation is used by an entity to retrieve a GFE Collection Bundle containing the GFE Bundle(s) and other referenced resources based on a GFE Coordinating Request Task. The only input parameter is the single reference to the coordinating task resource. The only output is a GFE Collection Bundle."
+Usage: #definition
+
+* id = "GFE-retrieve"
+* url = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
+* name = "GFERetrieve"
+* title = "Retrieve a GFE Collection Bundle"
+* status = #active
+* kind = #operation
+* description = "This operation is used by an entity to retrieve a GFE Collection Bundle containing the GFE Bundle(s) and other referenced resources based on a GFE Coordinating Request Task. The only input parameter is the single reference to the coordinating task resource. The only output is a GFE Collection Bundle."
+* code = #gfe-retrieve
+* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
+//* resource = #Claim
+* system = false
+* type = true
+* instance = false
+* parameter[0].name = #request
+* parameter[0].use = #in
+* parameter[0].min = 1
+* parameter[0].max = "1"
+* parameter[0].targetProfile = Canonical(PCTCoordinatingGFERequestTask)
+* parameter[0].documentation = "A reference to a coordinating GFE Request Task."
+* parameter[0].type = #Reference
+* parameter[1].name = #return
+* parameter[1].use = #out
+* parameter[1].min = 1
+* parameter[1].max = "1"
+//* parameter[0].targetProfile = Reference(PCTGFECollectionBundle)
+* parameter[1].documentation = "A GFE Request Collection Bundle containing the GFE Bundles of the submitted GFE Bundles by the GFE Request Contributing Providers."
+* parameter[1].type = #Bundle
+

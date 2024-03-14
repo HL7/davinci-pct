@@ -104,7 +104,7 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 
 * status = #active
-* type = PCTAEOBTypeSummaryCS#eob-summary "Explanation of Benefit Summary "
+* type = PCTEstimateTypeSummaryCS#estimate-summary "Estimate Summary"
 * use = #predetermination
 * patient = Reference(patient1001)
 * created = "2021-10-12"
@@ -158,7 +158,7 @@ Description: "PCT AEOB Bundle Example 1"
 * identifier.value = "59688475-2324-3242-1234567"
 * timestamp = "2021-11-10T11:01:00+05:00"
 
-* entry[aeob-summary].fullUrl = "http://example.org/fhir/Claim/PCT-AEOB-Summary-1"
+* entry[aeob-summary].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
 * entry[aeob-summary].resource = PCT-AEOB-Summary-1
 * entry[aeob].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
 * entry[aeob].resource = PCT-AEOB-1

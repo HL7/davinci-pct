@@ -306,9 +306,9 @@ Description: "Procedure Codes from https://www.cms.gov/Medicare/Coding/ICD10"
 
 
 
-ValueSet: PCTPrimaryTaskStatusCodes
-Title: "Primary GFE Request Task Status Codes"
-Description: "Codes allowed for a convening provider created primary service task status"
+ValueSet: PCTCoordinatingTaskStatusCodes
+Title: "Coordinating GFE Request Coordinating Task Status Codes"
+Description: "Codes allowed for a coordinating GFE request task status"
 * ^experimental = false
 * include $HL7TaskStatus#draft
 * include $HL7TaskStatus#requested
@@ -321,9 +321,9 @@ Description: "Codes allowed for a convening provider created primary service tas
 
 
 // TODO !!! Provide more details on which each request means (definition)
-ValueSet: PCTProviderTaskStatusCodes
-Title: "Provider GFE Request Task Status Codes"
-Description: "Codes allowed for a convening provider created provider-specific service task status"
+ValueSet: PCTContributingProviderTaskStatusCodes
+Title: "Provider GFE Request Contributing Provider Task Status Codes"
+Description: "Codes allowed for a convening provider created GFE Contributing Provider-specific service task status"
 * ^experimental = false
 * include $HL7TaskStatus#draft
 * include $HL7TaskStatus#requested
@@ -333,3 +333,30 @@ Description: "Codes allowed for a convening provider created provider-specific s
 * include $HL7TaskStatus#failed
 * include $HL7TaskStatus#completed
 * include $HL7TaskStatus#entered-in-error
+
+
+ValueSet: PCTGFERequestTaskTypeVS
+Title: "PCT GFE Request Task Codes ValueSet"
+Description: "Defining codes for defining GFE request types."
+* ^experimental = false
+* include PCTGFERequestTaskCS#scheduled-request
+* include PCTGFERequestTaskCS#nonscheduled-request
+
+ValueSet: PCTCoordinatingTaskStatusReasonCodes
+Title: "PCT GFE Request Coordinating Task Status Reason Codes ValueSet"
+Description: "Defining codes for defining GFE request coordinating task status reason types."
+* ^experimental = false
+* include PCTContributingProviderTaskStatusReasonCS#fulfilled
+* include PCTContributingProviderTaskStatusReasonCS#time-limit-reached
+* include PCTContributingProviderTaskStatusReasonCS#no-longer-needed
+* include PCTContributingProviderTaskStatusReasonCS#service-cancelled
+* include PCTContributingProviderTaskStatusReasonCS#requires-new-request
+* include PCTContributingProviderTaskStatusReasonCS#patient-declined
+
+ValueSet: PCTContributingProviderTaskStatusReasonCodes
+Title: "PCT GFE Request Contributing Provider Task Status Reason Codes ValueSet"
+Description: "Defining codes for defining GFE request GFE contributing provider task status reason types."
+* ^experimental = false
+* include PCTContributingProviderTaskStatusReasonCS#fulfilled
+* include PCTContributingProviderTaskStatusReasonCS#schedule
+* include PCTContributingProviderTaskStatusReasonCS#service-not-provided

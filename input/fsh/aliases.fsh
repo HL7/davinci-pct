@@ -19,6 +19,7 @@ Alias:   $ContactPurposeCS = http://terminology.hl7.org/CodeSystem/contactentity
 Alias:   $USNPI = http://hl7.org/fhir/sid/us-npi
 Alias:   $TOBFL-04 = https://www.nubc.org/CodeSystem/TypeOfBill
 Alias:   $CPT = http://www.ama-assn.org/go/cpt
+Alias:   $CDT = http://ada.org/cdt
 Alias:   $HCPCS = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias:   $HIPPS = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes
 Alias:   $NDC = http://hl7.org/fhir/sid/ndc
@@ -64,3 +65,6 @@ Alias:   $C4BBSupportingInfoTypeVS = http://hl7.org/fhir/us/carin-bb/ValueSet/C4
 Alias:   $AHANUBCTypeOfBill = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCTypeOfBill
 
 Alias: $WG = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+Alias: $requestedPeriodExtensionUrl = http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod
+Alias: $taskReplacesExtensionUrl = http://hl7.org/fhir/StructureDefinition/task-replaces
+Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason

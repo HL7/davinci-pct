@@ -18,7 +18,7 @@ Description: "OperationOutcome returned from the gfeSubmit operation when there 
 * issue.code = #processing
 * issue.diagnostics 1..1
 
-Profile: GFRValidationError
+Profile: GFEValidationError
 Parent: OperationOutcome
 Id: davinci-pct-gfe-validation-error
 Title: "PCT GFE Validation Error"

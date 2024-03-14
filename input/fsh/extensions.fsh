@@ -22,10 +22,15 @@ Description: "Disclaimers the patient should be made aware of regarding the prov
 * value[x] only string
 * valueString 1..1
 
-// Extension: PlannedPeriodOfService
-// Id: plannedPeriodOfService
-// Description: "This extension is used to provide the planned date or dates of service."
-// * value[x] only date or Period
+Extension: PlannedPeriodOfService
+Id: plannedPeriodOfService
+Description: "This extension is used to provide the planned date or dates of service."
+* value[x] only date or Period
+
+Extension: RequestInitiationDateTime
+Id: requestInitiationDateTime
+Description: "This extension expresses the date and time from which the request is being initiated. For scheduled services, this is the date and time of scheduling. For unscheduled services, this is the date and time the request is being made (possibly by the patient)."
+* value[x] only dateTime
 
 Extension: GFEServiceLinkingInfo
 Id: gfeServiceLinkingInfo
@@ -318,3 +323,29 @@ Description: "This extension is used to communicate a plain language description
 * value[x] 1..1
 * value[x] only string
 * value[x] ^short = "The description of a procedure, product, or service"
+
+
+Extension: PlannedServicePeriod
+Id: plannedServicePeriod
+Title: "Planned Service Period"
+Description: "Planned period of service the request is about"
+* ^context[+].type = #element
+* ^context[=].expression = "Task"
+* value[x] 1..1
+* value[x] only Period
+* valuePeriod.start 1..1
+* valuePeriod.end MS
+* value[x] ^short = "Planned period of service the request is about"
+
+
+Extension: RequestInitiationTime
+Id: requestInitiationTime
+Title: "Request Initiation Time"
+Description: "Instant from which the request is being initiated."
+* ^context[+].type = #element
+* ^context[=].expression = "Task"
+* value[x] 1..1
+* value[x] only instant
+* value[x] ^short = "Estimate Request instant"
+* value[x] ^comment = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
+
