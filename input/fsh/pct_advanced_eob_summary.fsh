@@ -20,7 +20,7 @@ Questions
 	Do we want to capture potential items of interest like one or more claims not covered under in network or one or more claims requiring medical management? Or perhaps instead say how much is covered in network, how much is out of network, etc.)
 */
 
-* extension contains ServiceDescription named serviceDescription 1..1 MS
+* extension contains ServiceDescription named serviceDescription 0..1 MS
 * extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
 * insert IdentifierSlicing
@@ -29,7 +29,7 @@ Questions
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
-* type = PCTAEOBTypeSummaryCS#eob-summary
+* type = PCTEstimateTypeSummaryCS#estimate-summary
 * subType 0..0
 * use = $CLAIMUSECS#predetermination "predetermination"
 
@@ -151,10 +151,3 @@ Questions
 
 
 
-CodeSystem: PCTAEOBTypeSummaryCS
-Title: "PCT AEOB Type Code System"
-Description: "Defining the code for an AEoB type summary"
-* ^caseSensitive = true
-* #eob-summary "Explanation of Benefit Summary "
-* ^copyright = "This CodeSystem is not copyrighted."
-* ^experimental = false

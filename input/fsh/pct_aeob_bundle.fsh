@@ -28,13 +28,14 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
     practitioner 0..* MS and
     gfeBundle 0..* MS
 
-* entry[aeob] ^short = "SHALL have a PCTAdvancedEOB resource"
-* entry[aeob].resource 1..1
-* entry[aeob].resource only PCTAdvancedEOB
 
 * entry[aeob-summary] ^short = "SHALL have a PCTAdvancedEOBSummary resource"
 * entry[aeob-summary].resource 1..1
 * entry[aeob-summary].resource only PCTAdvancedEOBSummary
+
+* entry[aeob] ^short = "SHALL have a PCTAdvancedEOB resource"
+* entry[aeob].resource 1..1
+* entry[aeob].resource only PCTAdvancedEOB
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
 * entry[patient].resource 1..1
