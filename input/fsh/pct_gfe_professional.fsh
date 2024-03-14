@@ -46,7 +46,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 * priority from $PROCPRIORITYVS (required)
 
-* insurer 1..1
+* insurer 0..1 MS
+* insurer ^short = "Required if insured estimate"
 * insurer only Reference(PCTOrganization)
 
 * payee MS
@@ -64,6 +65,9 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 
 
 * insurance.coverage only Reference(PCTCoverage)
+* insurance.coverage.extension contains $DARExtensionUrl named dataAbsentReason 0..1 MS
+* insurance.coverage.extension[dataAbsentReason] ^short = "Coverage may be not applicable if estimate is for self-pay or uninsured"
+
 * insurance.preAuthRef 0..2
 
 * insert DiagnosisSlicing
