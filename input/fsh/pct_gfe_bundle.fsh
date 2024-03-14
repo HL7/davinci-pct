@@ -2,8 +2,8 @@ Profile: PCTGFEBundle
 Parent: Bundle
 Id: davinci-pct-gfe-bundle
 Title: "PCT GFE Bundle"
-Description: "PCT GFE Bundle that contains necessary resources as a GFE Submission for obtaining an AEOB. Organizations for both the provider and payer SHALL be included. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
-
+//Description: "PCT GFE Bundle that contains necessary resources as a GFE Submission for obtaining an AEOB. Organizations for both the provider and payer SHALL be included. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
+Description: "PCT GFE Bundle that contains all resources for a Good faith estimate submitted by a single GFE contributing provider. Organizations for both the provider and payer MAY be included. This single contributing provider GFE Bundle may be included in a set of GFE bundles from other providers in a GFE Collection Bundle that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
 * obeys pct-gfe-bundle-1 and pct-gfe-bundle-2 and pct-gfe-bundle-3
 
 * identifier 1..1
@@ -21,12 +21,18 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slice different resources included in the bundle"
 * entry contains
-	gfe 1..* and
+	gfe-summary 1..1 and
+    gfe 1..* and
     patient 1..2 and
-    coverage 1..1 and
-    organization 1..* and
+    coverage 0..1 MS and
+    organization ..* MS and
     practitioner 0..* MS and
     attachment 0..* MS
+
+
+* entry[gfe-summary] ^short = "SHALL have a PCTGFESummary resource"
+* entry[gfe-summary].resource 1..1
+* entry[gfe-summary].resource only PCTGFESummary
 
 * entry[gfe] ^short = "SHALL have one or more PCTGFEProfessional or PCTGFEInstitutional resource(s)"
 * entry[gfe].resource 1..1 
@@ -44,15 +50,15 @@ Description: "PCT GFE Bundle that contains necessary resources as a GFE Submissi
 * entry[patient].resource 1..1
 * entry[patient].resource only HRexPatientDemographics
 
-* entry[coverage] ^short = "SHALL have one Coverage"
+* entry[coverage] ^short = "MAY have one Coverage"
 * entry[coverage].resource 1..1
 * entry[coverage].resource only PCTCoverage
 
-* entry[organization] ^short = "SHALL have the payer organization and may have provider organization(s)"
+* entry[organization] ^short = "SHALL have a submitting provider or submitting organization, but not both. May also have a payer organization."
 * entry[organization].resource 1..1 
 * entry[organization].resource only PCTOrganization
 
-* entry[practitioner] ^short = "MAY have the provider Practitioner(s)"
+* entry[practitioner] ^short = "SHALL have a submitting provider or submitting organization, but not both."
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
@@ -65,11 +71,10 @@ Description: "All GFEs must have the same GFE submitter"
 Expression: "(Bundle.entry.resource.ofType(Claim).extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeSubmitter').value.ofType(Reference).reference.distinct().count() = 1)"
 Severity: #error
 
+// TODO the expression needs fixing: Invariant requiring (entry[organization] where type is not 'pay' or 'ins') xor entry[practitioner]
 Invariant: pct-gfe-bundle-2
-Description: "SHALL have at least one entry for a payer organization."
-//Expression: "entry.resource.ofType(Organization).type.where(coding.code='pay').exists()"
-//Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
-Expression: "entry.resource.ofType(Organization).where(type.coding.where(code='pay').exists()).exists()"
+Description: "SHALL have a submitting provider or submitting organization, but not both."
+Expression: "Bundle.entry.resource.ofType(Practitioner).exists() or Bundle.entry.resource.ofType(Organization).exists()"
 Severity: #error
 
 
