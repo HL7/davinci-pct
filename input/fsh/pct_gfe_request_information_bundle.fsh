@@ -5,8 +5,6 @@ Title: "PCT GFE Request Information Bundle"
 Description: "PCT GFE Request Information Bundle that contains the information necessary for potential GFE contributing providers to create their estimates. This bundle may be used for a request encompassing the entire request or that is specific to a contributing provider and may include, but is not limited to, the Patient Resource, request resources (such as ServiceRequest, MedicationRequest, and DeviceRequest), Service location information, Coverage and Payer Organization resources (if applicable)."
 * obeys pct-gfe-request-information-bundle-1 
 
-// TODO, Create ticket that includes this bundle and the service request profiles
-
 //* identifier 1..1
 * type = #collection (exactly)
 * timestamp 1..1
@@ -42,11 +40,11 @@ Description: "PCT GFE Request Information Bundle that contains the information n
 
 * entry[organization] ^short = "MAY have the payer organization and may have provider organization(s)"
 * entry[organization].resource 1..1 
-* entry[organization].resource only PCTOrganization
+* entry[organization].resource only $USCoreOrganization
 
 * entry[practitioner] ^short = "MAY have the provider Practitioner(s)"
 * entry[practitioner].resource 1..1 
-* entry[practitioner].resource only PCTPractitioner
+* entry[practitioner].resource only  $USCorePractitioner or $USCorePractitionerRole 
 
 * entry[requested-items] ^short = "Items the request is about"
 * entry[requested-items].resource 1..1

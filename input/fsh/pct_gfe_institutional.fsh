@@ -213,7 +213,6 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
 
-//TODO: need to include HIPPS for institutional
 * item.productOrService from USClaimMedicalProductOrServiceCodes (required)
 //* item.productOrService obeys GFE-inst-item-productorservice
 * item.productOrService ^comment = "Can include null or N/A or data absent reason for the In-Patient Institutional case."

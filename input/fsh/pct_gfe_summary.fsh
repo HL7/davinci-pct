@@ -5,24 +5,6 @@ Title: "PCT Good Faith Estimate  Summary"
 //Description: "This profile is used for exchanging a summary of Explanation of Benefit (EoB) information, including costs and benefits, of all of the Advanced EoB data contained within an Advance EoB Bundle."
 Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs associated with a set of Good Faith Estimate Claims for a single Period of Care."
 
-/* 
-TODO
-	Need serviceDescription for primary procedure (what is the overall request about)
-	totals
-	benefits
-	Need to relax insurer requirement on GFE because not all are now going to insurer
-Questions
-
-	Do we keep an out of network provider extension (where to get more info on network providers)?
-	EOB Resource requires one provider. This would have to be addressed for a summary. What is the preferred method. Data Absent reason extension?
-	Should we disallow all elements that likely do not apply to a summary
-	How should we handle the total period of service (Is billable Period appropriate? Question for FM?)
-	Do we want to capture potential items of interest like one or more claims not covered under in network or one or more claims requiring medical management? Or perhaps instead say how much is covered in network, how much is out of network, etc.)
-*/
-
-
-
-
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.discriminator.type = #pattern
@@ -32,7 +14,8 @@ Questions
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
-* extension contains GFEDisclaimer named gfeDisclaimer 0..* MS
+* extension contains GFEDisclaimer named gfeDisclaimer 0..* MS and
+                     ServiceDescription named serviceDescription 0..1 MS
 * extension[gfeDisclaimer].value[x] only string
 * extension[gfeDisclaimer] ^short = "Disclaimers the patient should be made aware of regarding the estimate"
 

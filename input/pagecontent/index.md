@@ -35,6 +35,13 @@ FHIR is being used for consumer access to healthcare related data at significant
 
 Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG. 
 
+### General Workflow ###
+#### Actors ####
+
+#### GFE Request Workflow ####
+**GFE Request Diagram Steps (High Level View)**  
+
+#### GFE Submit Workflow ####
 **AEOB Interaction Diagram Steps (High Level View)**  
 
 1. A patient schedules a service which triggers the composition of a collection of one or more GFEs. <em>Note: The composition of the collection of GFEs is currently not in scope for this IG.</em>
@@ -54,7 +61,7 @@ Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of
 ### Credits  
 <br>
 **Primary Authors:**
-*	Corey Spears (The MITRE Corporation)
+*	Corey Spears (Lantana Consulting Group)
 *	Larry Decelles (The MITRE Corporation)
 *	Gary Gryan (The MITRE Corporation)
 *	Caleb Wan (The MITRE Corporation)

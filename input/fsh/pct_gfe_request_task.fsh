@@ -72,7 +72,11 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 
 //Requesting provider
 
-/** code Type Coordinating Task (convening provider task?)Need a new code. For co-provider 
+/** 
+
+
+TODO Meeting - What needs to happen with the GFE Linking identifier extension, which included [plannedPeriodOfService
+
 
 INVARIANT - if scheduled-service-request require a planned service date
 
@@ -94,7 +98,7 @@ Add guidance that this may be contained or it may be externals.
 
 
 */
-* requester only Reference(PCTPractitioner or PractitionerRole or PCTOrganization)
+* requester only Reference($USCorePractitioner or $USCorePractitionerRole or $USCoreOrganization)
 * requester ^short = "The convening provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
@@ -198,7 +202,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 //* for only Reference(HRexPatientDemographics)
 //* for ^short = "The patient for whom the GFE request is for"
 
-* requester only Reference(PCTPractitioner or PractitionerRole or PCTOrganization)
+* requester only Reference($USCorePractitioner or $USCorePractitionerRole or $USCoreOrganization)
 * requester ^short = "The convening provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
@@ -207,7 +211,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 
 
 * owner 1..1
-* owner only Reference(PCTPractitioner or PractitionerRole or PCTOrganization)
+* owner only Reference($USCorePractitioner or $USCorePractitionerRole or $USCoreOrganization)
 * owner ^short = "GFE Contributing Provider assigned to complete the GFE request"
 // TODO !!! A better description as to why there is not task executor.
 

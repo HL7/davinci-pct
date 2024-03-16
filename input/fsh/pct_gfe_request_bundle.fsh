@@ -55,7 +55,7 @@ Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exist
 Severity: #error
 */
 /*
-TODO  - need to have a participating provider
+TODO invariant - need to have a participating provider
 Invariant: pct-gfe-request-bundle-2
 Description: "Request Bundle SHALL contain at least one participating provider (Practitioner or Organization)"
 Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
