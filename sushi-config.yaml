@@ -36,7 +36,7 @@ parameters:
   version-comparison-master: true
   show-inherited-invariants: false
   path-liquid: liquid
-  auto-oid-root=2.16.840.1.113883.4.642.40.4 
+  auto-oid-root: 2.16.840.1.113883.4.642.40.4 
 
 pages:
   index.md:

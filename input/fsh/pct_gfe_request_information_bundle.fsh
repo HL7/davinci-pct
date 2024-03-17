@@ -40,11 +40,11 @@ Description: "PCT GFE Request Information Bundle that contains the information n
 
 * entry[organization] ^short = "MAY have the payer organization and may have provider organization(s)"
 * entry[organization].resource 1..1 
-* entry[organization].resource only $USCoreOrganization
+* entry[organization].resource only PCTOrganization
 
 * entry[practitioner] ^short = "MAY have the provider Practitioner(s)"
 * entry[practitioner].resource 1..1 
-* entry[practitioner].resource only  $USCorePractitioner or $USCorePractitionerRole 
+* entry[practitioner].resource only  PCTPractitioner or HRexPractitionerRole 
 
 * entry[requested-items] ^short = "Items the request is about"
 * entry[requested-items].resource 1..1

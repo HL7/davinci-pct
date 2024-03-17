@@ -98,7 +98,7 @@ Add guidance that this may be contained or it may be externals.
 
 
 */
-* requester only Reference($USCorePractitioner or $USCorePractitionerRole or $USCoreOrganization)
+* requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
 * requester ^short = "The convening provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
@@ -202,7 +202,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 //* for only Reference(HRexPatientDemographics)
 //* for ^short = "The patient for whom the GFE request is for"
 
-* requester only Reference($USCorePractitioner or $USCorePractitionerRole or $USCoreOrganization)
+* requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
 * requester ^short = "The convening provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
@@ -211,7 +211,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 
 
 * owner 1..1
-* owner only Reference($USCorePractitioner or $USCorePractitionerRole or $USCoreOrganization)
+* owner only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
 * owner ^short = "GFE Contributing Provider assigned to complete the GFE request"
 // TODO !!! A better description as to why there is not task executor.
 
