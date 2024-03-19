@@ -130,7 +130,7 @@ Questions
 
 
 * processNote 1..*
-* processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"
+* processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible. This may include a note about out of network providers or prior authorization."
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
 
 
