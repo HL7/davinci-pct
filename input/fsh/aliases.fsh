@@ -68,3 +68,4 @@ Alias: $WG = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
 Alias: $requestedPeriodExtensionUrl = http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod
 Alias: $taskReplacesExtensionUrl = http://hl7.org/fhir/StructureDefinition/task-replaces
 Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason
+Alias: $R5CoverageKind = http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind

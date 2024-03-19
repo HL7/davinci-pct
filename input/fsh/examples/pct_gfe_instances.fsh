@@ -410,6 +410,7 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 Instance: coverage1001
 InstanceOf: PCTCoverage
 Description: "An instance of PCTCoverage"
+* extension[coverage-kind].valueCode = #insurance
 * beneficiary = Reference(patient1001)
 * relationship = RELATE#self "Self"
 * status = #active

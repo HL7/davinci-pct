@@ -4,7 +4,11 @@ Id: davinci-pct-coverage
 Title: "PCT Coverage"
 Description: "PCT Coverage is a profile for capturing data that reflect a payer’s coverage that was effective as of the proposed date of service or the date of admission of the GFE."
 
+* extension contains
+    $R5CoverageKind named coverage-kind 1..1
 
+* extension[coverage-kind]
+  * valueCode 1..1
 
 * subscriber
 * subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
