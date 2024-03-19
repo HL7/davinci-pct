@@ -2,7 +2,7 @@ Profile: PCTGFERequestBundle
 Parent: Bundle
 Id: davinci-pct-gfe-request-bundle
 Title: "PCT GFE Request Bundle"
-Description: "PCT GFE Request Bundle that contains necessary resources for a convening provider to request GFEs from one or multiple GFE contributing providers."
+Description: "PCT GFE Request Bundle that contains necessary resources for a requesting provider to request GFEs from one or multiple GFE contributing providers."
 
 //* obeys pct-gfe-request-bundle-1
 

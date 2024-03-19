@@ -71,7 +71,7 @@ Usage: #definition
 * id = "GFE-retrieve"
 * url = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
 * name = "GFERetrieve"
-* title = "Retrieve a GFE Collection Bundle"
+* title = "Retrieve GFE Collection Bundle"
 * status = #active
 * kind = #operation
 * description = "This operation is used by an entity to retrieve a GFE Collection Bundle containing the GFE Bundle(s) and other referenced resources based on a GFE Coordinating Request Task. The only input parameter is the single reference to the coordinating task resource. The only output is a GFE Collection Bundle."

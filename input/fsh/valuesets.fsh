@@ -323,7 +323,7 @@ Description: "Codes allowed for a coordinating GFE request task status"
 // TODO !!! Provide more details on which each request means (definition)
 ValueSet: PCTContributingProviderTaskStatusCodes
 Title: "Provider GFE Request Contributing Provider Task Status Codes"
-Description: "Codes allowed for a convening provider created GFE Contributing Provider-specific service task status"
+Description: "Codes allowed for a Requesting Provider created GFE Contributing Provider-specific service task status"
 * ^experimental = false
 * include $HL7TaskStatus#draft
 * include $HL7TaskStatus#requested

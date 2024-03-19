@@ -10,7 +10,7 @@ This section of the implementation guide (IG) defines the specific conformance r
 - replacing contributing provider
 - Not on request changes. - If changes would require any providers to make changes to their estimations (including anticipated/scheduled service date, or changes of service) would result in a cancellation of the Coordinating task and all contributing provider tasks with new new coordinating tsk issued with the replaces-task pointing to the original coordinating task.
 - Need workflow diagrams with each step numbered and described including a statement of each Task status type. Make sure each task status is covered
-- A contributing Provider Task needs to be created for each provider that needs to submit a GFE. THis includes the submitting/convening provider where applicable.
+- A contributing Provider Task needs to be created for each provider that needs to submit a GFE. This includes the submitting/convening provider where applicable.
 - A note about creation either being each individual task and request information bundle or through the request bundle 
 
 

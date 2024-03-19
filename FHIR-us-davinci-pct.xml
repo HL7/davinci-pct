@@ -136,7 +136,7 @@
 <artifact id="StructureDefinition/referralNumber" key="StructureDefinition-referralNumber" name="ReferralNumber"/>
 <artifact id="StructureDefinition/requestInitiationTime" key="StructureDefinition-requestInitiationTime" name="Request Initiation Time"/>
 <artifact id="StructureDefinition/requestInitiationDateTime" key="StructureDefinition-requestInitiationDateTime" name="RequestInitiationDateTime"/>
-<artifact id="OperationDefinition/GFE-retrieve" key="OperationDefinition-GFE-retrieve" name="Retrieve a GFE Collection Bundle"/>
+<artifact id="OperationDefinition/GFE-retrieve" key="OperationDefinition-GFE-retrieve" name="Retrieve GFE Collection Bundle"/>
 <artifact id="StructureDefinition/serviceDescription" key="StructureDefinition-serviceDescription" name="Service Description"/>
 <artifact id="StructureDefinition/subjectToMedicalMgmt" key="StructureDefinition-subjectToMedicalMgmt" name="Subject To Medical Management"/>
 <artifact id="OperationDefinition/GFE-submit" key="OperationDefinition-GFE-submit" name="Submit a GFE resource for the creation of an AEOB"/>

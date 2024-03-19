@@ -53,7 +53,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1
-* identifier[PLAC] ^short = "Convening Provider Assigned Identifier for GFE Request"
+* identifier[PLAC] ^short = "Requesting Provider Assigned Identifier for GFE Request"
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
@@ -99,7 +99,7 @@ Add guidance that this may be contained or it may be externals.
 
 */
 * requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
-* requester ^short = "The convening provider making the request"
+* requester ^short = "The Requesting Provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
 * performerType 0..0 
@@ -169,7 +169,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1
-* identifier[PLAC] ^short = "Convening Provider Assigned Identifier for GFE Request"
+* identifier[PLAC] ^short = "Requesting Provider Assigned Identifier for GFE Request"
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
@@ -178,7 +178,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 * groupIdentifier.type = $V2-0203#PLAC "Placer Identifier"
 * groupIdentifier.system MS
 * groupIdentifier.value 1..1
-* groupIdentifier ^short = "Convening Provider Task Identifier (DRAFT: used for grouping the sub-tasks together, may be the means to correlate tasks if the primary task goes away)"
+* groupIdentifier ^short = "Requesting Provider Task Identifier (DRAFT: used for grouping the sub-tasks together, may be the means to correlate tasks if the primary task goes away)"
 */
 
 
@@ -203,7 +203,7 @@ Description: "The PCT Good Faith Estimate (GFE) Provider Request Task is used by
 //* for ^short = "The patient for whom the GFE request is for"
 
 * requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
-* requester ^short = "The convening provider making the request"
+* requester ^short = "The provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
 * performerType MS
