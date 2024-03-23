@@ -98,9 +98,9 @@ Add guidance that this may be contained or it may be externals.
 
 
 */
-* requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
+* requester only Reference(PCTPractitioner or PCTOrganization)
 * requester ^short = "The Requesting Provider making the request"
-* requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
+* requester ^comment = "Generally this will be a reference to a Practitioner or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
 * performerType 0..0 
 * performerType ^short = "Coordinating task does not have a specific performer types"
