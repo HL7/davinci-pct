@@ -158,18 +158,24 @@ Description: "PCT AEOB Bundle Example 1"
 * identifier.value = "59688475-2324-3242-1234567"
 * timestamp = "2021-11-10T11:01:00+05:00"
 
-* entry[aeob-summary].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
-* entry[aeob-summary].resource = PCT-AEOB-Summary-1
-* entry[aeob].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
-* entry[aeob].resource = PCT-AEOB-1
+* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
+* entry[aeob][=].resource = PCT-AEOB-Summary-1
+* entry[aeob][=].id = "PCT-AEOB-Summary-1"
+* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
+* entry[aeob][=].resource = PCT-AEOB-1
+* entry[aeob][=].id = "PCT-AEOB-1"
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].resource = patient1001
+* entry[patient].id = "patient1001"
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].resource = coverage1001
+* entry[coverage].id = "coverage1001"
 * entry[organization].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization].resource = org1001
+* entry[organization].id = "org1001"
 * entry[gfeBundle].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
 * entry[gfeBundle].resource = PCT-GFE-Bundle-Inst-1
+* entry[gfeBundle].id = "PCT-GFE-Bundle-Inst-1"
 
 
 
