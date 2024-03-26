@@ -178,8 +178,9 @@ Description: "Codes for the classification of organization contact purposes"
 // TODO replace with THO defined VS
 ValueSet: USClaimMedicalProductOrServiceCodes
 Title: "Claim Medical Product or Service Value Set"
-Description: "CPT - HCPCS - HIPPS codes to report medical procedures and services under public and private health insurance programs"
+Description: "CPT - HCPCS - HIPPS - CDT codes to report medical procedures and services under public and private health insurance programs"
 * codes from system $CPT
+* codes from system $CDT
 * codes from system $HCPCS
 * codes from system $HIPPS
 * $DAR#not-applicable "Not Applicable"
@@ -306,9 +307,9 @@ Description: "Procedure Codes from https://www.cms.gov/Medicare/Coding/ICD10"
 
 
 
-ValueSet: PCTCoordinatingTaskStatusCodes
-Title: "Coordinating GFE Request Coordinating Task Status Codes"
-Description: "Codes allowed for a coordinating GFE request task status"
+ValueSet: PCTCoordinationTaskStatusCodes
+Title: "GFE Coordination Task Status Codes"
+Description: "Codes allowed for a GFE Coordination Task status"
 * ^experimental = false
 * include $HL7TaskStatus#draft
 * include $HL7TaskStatus#requested
@@ -321,9 +322,9 @@ Description: "Codes allowed for a coordinating GFE request task status"
 
 
 // TODO !!! Provide more details on which each request means (definition)
-ValueSet: PCTContributingProviderTaskStatusCodes
-Title: "Provider GFE Request Contributing Provider Task Status Codes"
-Description: "Codes allowed for a Requesting Provider created GFE Contributing Provider-specific service task status"
+ValueSet: PCTContributorTaskStatusCodes
+Title: "Provider GFE Contributor Task Status Codes"
+Description: "Codes allowed for a GFE Contributor-specific service task status"
 * ^experimental = false
 * include $HL7TaskStatus#draft
 * include $HL7TaskStatus#requested
@@ -342,21 +343,21 @@ Description: "Defining codes for defining GFE request types."
 * include PCTGFERequestTaskCS#scheduled-request
 * include PCTGFERequestTaskCS#nonscheduled-request
 
-ValueSet: PCTCoordinatingTaskStatusReasonCodes
-Title: "PCT GFE Request Coordinating Task Status Reason Codes ValueSet"
-Description: "Defining codes for defining GFE request coordinating task status reason types."
+ValueSet: PCTCoordinationTaskStatusReasonCodes
+Title: "PCT GFE Request Coordination Task Status Reason Codes ValueSet"
+Description: "Defining codes for GFE Coordination Task status reason types."
 * ^experimental = false
-* include PCTContributingProviderTaskStatusReasonCS#fulfilled
-* include PCTContributingProviderTaskStatusReasonCS#time-limit-reached
-* include PCTContributingProviderTaskStatusReasonCS#no-longer-needed
-* include PCTContributingProviderTaskStatusReasonCS#service-cancelled
-* include PCTContributingProviderTaskStatusReasonCS#requires-new-request
-* include PCTContributingProviderTaskStatusReasonCS#patient-declined
+* include PCTTaskStatusReasonCS#fulfilled
+* include PCTTaskStatusReasonCS#time-limit-reached
+* include PCTTaskStatusReasonCS#no-longer-needed
+* include PCTTaskStatusReasonCS#service-cancelled
+* include PCTTaskStatusReasonCS#requires-new-request
+* include PCTTaskStatusReasonCS#patient-declined
 
-ValueSet: PCTContributingProviderTaskStatusReasonCodes
-Title: "PCT GFE Request Contributing Provider Task Status Reason Codes ValueSet"
-Description: "Defining codes for defining GFE request GFE contributing provider task status reason types."
+ValueSet: PCTContributorTaskStatusReasonCodes
+Title: "PCT GFE Contributor Task Status Reason Codes ValueSet"
+Description: "Defining codes for defining GFE request GFE contributor task status reason types."
 * ^experimental = false
-* include PCTContributingProviderTaskStatusReasonCS#fulfilled
-* include PCTContributingProviderTaskStatusReasonCS#schedule
-* include PCTContributingProviderTaskStatusReasonCS#service-not-provided
+* include PCTTaskStatusReasonCS#fulfilled
+* include PCTTaskStatusReasonCS#schedule
+* include PCTTaskStatusReasonCS#service-not-provided
