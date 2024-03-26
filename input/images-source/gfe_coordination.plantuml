@@ -1,0 +1,59 @@
+@startuml
+' TODO Make Sure the diagram matches the latest profiles
+    left to right direction
+    scale 1024 width
+    agent "PCT Organization" as pctorganization
+    agent "HRex Organization" as hrexorganization
+    agent "US Core Organization" as uscoreorganization
+    agent "PCT Practitioner" as pctpractitioner
+    agent "HRex Practitioner" as hrexpractitioner
+    agent "HRex PractitionerRole" as hrexpractitionerrole
+    agent "US Core Practitioner" as uscorepractitioner
+    agent "US Core PractitionerRole" as uscorepractitionerrole
+    agent "PCT Coverage" as pctcoverage
+    agent "HRex Coverage" as hrexcoverage
+    agent "US Core Patient" as uscorepatient
+    agent "HRex Patient Demographics" as hrexpatient
+    agent "GFE Bundle (contributor only)" as gfebundle
+    agent "GFE Request Information Bundle" as gferequestinfo
+    agent "PCT Service Location" as pctservicelocation
+    agent "PCT ServiceRequest" as pctservicerequest
+    agent "PCT MedicationRequest" as pctmedicationrequest
+    agent "PCT DeviceRequest" as pctdevicerequest
+    agent "FHIR NutritionOrder" as nutritionOrder
+    agent "FHIR VisionPrescription" as visionprescription
+    agent "FHIR DocumentReference" as documentreference
+    agent "GFE Coordination Request Task" as gfetask
+	note top: Coordination or Contributor
+
+    hrexcoverage <|-- pctcoverage
+    uscorepatient <|-- hrexpatient
+    uscorepractitioner <|-- hrexpractitioner
+    uscorepractitionerrole <|-- hrexpractitionerrole
+    hrexpractitioner <|-- pctpractitioner
+    uscoreorganization <|-- hrexorganization
+    hrexorganization <|-- pctorganization
+    
+    
+    gfetask --> pctpractitioner: "requester 1..1"
+    gfetask --> hrexpractitionerrole: "requester 1..1"
+    gfetask --> pctorganization: "requester 1..1"
+    gfetask --> gferequestinfo: "input[request info bundle] 1..1"
+    gfetask --> gfebundle: "output[gfe bundle] 1..1"
+    
+
+    
+	gferequestinfo --> hrexpatient: "entry[patient] 1..2"
+	gferequestinfo --> pctcoverage: "entry[coverage] 1..1"
+    gferequestinfo --> pctservicelocation : "entry[service-location] 0..*
+    gferequestinfo --> pctorganization: "entry[organization] 1..1"
+    gferequestinfo --> pctpractitioner: "entry[practitioner] 1..1"
+    gferequestinfo --> hrexpractitionerrole: "entry[practitioner] 1..1"
+
+    gferequestinfo --> pctservicerequest: "entry[requested-items] 0..*"
+    gferequestinfo --> pctmedicationrequest: "entry[requested-items] 0..*"
+    gferequestinfo --> pctdevicerequest: "entry[requested-items] 0..*"
+    gferequestinfo --> nutritionOrder: "entry[requested-items] 0..*"
+    gferequestinfo --> visionprescription: "entry[requested-items] 0..*"
+    gferequestinfo --> documentreference: "entry[attachment] 0..*"
+@enduml
