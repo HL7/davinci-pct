@@ -20,22 +20,22 @@ Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Or
 * entry ^slicing.description = "Slice different resources included in the bundle"
 
 * entry contains
-    aeob-summary 1..1 and
-	aeob 1..* and
+	aeob 2..* and
     patient 1..2 and
     coverage 1..1 and
     organization 1..* and
     practitioner 0..* MS and
     gfeBundle 0..* MS
 
-
+/*
 * entry[aeob-summary] ^short = "SHALL have a PCTAdvancedEOBSummary resource"
 * entry[aeob-summary].resource 1..1
 * entry[aeob-summary].resource only PCTAdvancedEOBSummary
+*/
 
 * entry[aeob] ^short = "SHALL have a PCTAdvancedEOB resource"
 * entry[aeob].resource 1..1
-* entry[aeob].resource only PCTAdvancedEOB
+* entry[aeob].resource only PCTAdvancedEOBSummary or PCTAdvancedEOB
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
 * entry[patient].resource 1..1
@@ -69,3 +69,5 @@ Description: "SHALL have at least one entry for a payer organization."
 //Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
 Expression: "entry.resource.ofType(Organization).where(type.coding.where(code='pay').exists()).exists()"
 Severity: #error
+
+// TODO Add invatiant requirement where at least a gfe summay exists
