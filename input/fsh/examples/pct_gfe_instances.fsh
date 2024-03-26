@@ -22,7 +22,9 @@ Description: "PCT Institutional GFE Example 1"
 //* identifier[ETIN].value = "ETIN-10010001"
 * identifier[PLAC].system = V2-0203
 * identifier[PLAC].value = "GFEProviderAssignedID0001"
+/* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
+*/
 * extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[gfeDisclaimer].valueString = "For estimation purposes only"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
@@ -112,7 +114,9 @@ InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
 * identifier[PLAC].system = V2-0203
 * identifier[PLAC].value = "GFEProviderAssignedID0002"
+/* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
+*/
 * extension[providerEventMethodology].valueString = "EEMM1022"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
@@ -162,8 +166,9 @@ Description: "PCT Summary GFE Example 1"
 * created = "2021-10-05"
 * billablePeriod.start = "2021-10-31"
 * insurer = Reference(org1001)
-* provider = Reference(Submitter-Practitioner-1)
-* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* provider.extension[dataAbsentReason].valueCode = #not-applicable
+//* provider = Reference(Submitter-Practitioner-1)
+//* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 //* payee.type.coding = $PAYEETYPE#provider
 //* referral.extension[referralNumber].valueString = "REF12022002-122"
@@ -193,7 +198,9 @@ Instance: PCT-GFE-Institutional-MRI
 InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE for MRI"
 * identifier[PLAC].value = "GFEProviderAssignedID0001MRI"
+/* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
+*/
 * extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2022-02-02"
@@ -235,12 +242,12 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
-* entry[gfe-summary].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-1"
-* entry[gfe-summary].id = "PCT-GFE-Summary-1"
-* entry[gfe-summary].resource = PCT-GFE-Summary-1
-* entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
-* entry[gfe].id = "PCT-GFE-Institutional-1"
-* entry[gfe].resource = PCT-GFE-Institutional-1
+* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-1"
+* entry[gfe][=].id = "PCT-GFE-Summary-1"
+* entry[gfe][=].resource = PCT-GFE-Summary-1
+* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
+* entry[gfe][=].id = "PCT-GFE-Institutional-1"
+* entry[gfe][=].resource = PCT-GFE-Institutional-1
 // * entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
 // * entry[gfeInstitutional].id = "PCT-GFE-Institutional-1"
 // * entry[gfeInstitutional].resource = PCT-GFE-Institutional-1
@@ -263,12 +270,12 @@ Description: "PCT GFE Bundle Professional Example 1"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
 
-* entry[gfe-summary].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-MRI"
-* entry[gfe-summary].id = "PCT-GFE-Summary-MRI"
-* entry[gfe-summary].resource = PCT-GFE-Summary-MRI
-* entry[gfe].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
-* entry[gfe].id = "PCT-GFE-Professional-MRI"
-* entry[gfe].resource = PCT-GFE-Professional-MRI
+* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-MRI"
+* entry[gfe][=].id = "PCT-GFE-Summary-MRI"
+* entry[gfe][=].resource = PCT-GFE-Summary-MRI
+* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
+* entry[gfe][=].id = "PCT-GFE-Professional-MRI"
+* entry[gfe][=].resource = PCT-GFE-Professional-MRI
 // * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].id = "PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI

@@ -1,10 +1,9 @@
-
 //////////////////////////////////////////
 //// Standalone Extension Definitions ////
 //////////////////////////////////////////
 
 //// For PCTGFEProfessional/PCTGFEProfessional Profile ////
-
+/* Remove GFE Submitter
 Extension: GFESubmitter
 Id: gfeSubmitter
 Description: "This extension is used to indicate the scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB. All submitters (Practitioners and Organizations) must have an ETIN."
@@ -13,6 +12,7 @@ Description: "This extension is used to indicate the scheduling entity that subm
 * value[x] only Reference(PCTOrganization or PCTPractitioner)
 * value[x] ^short = "The scheduling entity submitting the GFE"
 * valueReference 1..1
+*/
 
 Extension: GFEDisclaimer
 Id: gfeDisclaimer
@@ -22,6 +22,8 @@ Description: "Disclaimers the patient should be made aware of regarding the prov
 * value[x] only string
 * valueString 1..1
 
+/*
+The use of this extension went away before publication, leaving it orphaned, but was not removed.
 Extension: PlannedPeriodOfService
 Id: plannedPeriodOfService
 Description: "This extension is used to provide the planned date or dates of service."
@@ -30,8 +32,10 @@ Description: "This extension is used to provide the planned date or dates of ser
 Extension: RequestInitiationDateTime
 Id: requestInitiationDateTime
 Description: "This extension expresses the date and time from which the request is being initiated. For scheduled services, this is the date and time of scheduling. For unscheduled services, this is the date and time the request is being made (possibly by the patient)."
+* ^context[+].type = #element
+* ^context[=].expression = "Claim"
 * value[x] only dateTime
-
+*/
 Extension: GFEServiceLinkingInfo
 Id: gfeServiceLinkingInfo
 Description: "This extension is used to provide the GFE Service Linking Information. This allows implementers to have the same identifier on multiple GFEs that are part of one period of care's services. This would be needed for some of the workflow options that businesses may decide to use."
@@ -349,3 +353,14 @@ Description: "Instant from which the request is being initiated."
 * value[x] ^short = "Estimate Request instant"
 * value[x] ^comment = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
 
+
+Extension: SelfPayDeclared
+Id: selfPayDeclared
+Title: "Self-Pay Declared"
+Description: "Requester has explicitly declared self-pay."
+* ^context[+].type = #element
+* ^context[=].expression = "Coverage"
+* value[x] 1..1
+* value[x] only boolean
+* value[x] ^short = "Indication if requester has declared self-pay coverage"
+* value[x] ^comment = "Used to express that the request has declared that items are services rendered are to be self-pay and not covered by or submitted directly to an insurance plan."

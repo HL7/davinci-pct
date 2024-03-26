@@ -16,8 +16,10 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * identifier[INTER] ^short = "Intermediary System Identifier"
 
 //// Profile entension elements ////
+/* Remove GFE Submitter
 * extension contains GFESubmitter named gfeSubmitter 1..1
 * extension[gfeSubmitter] ^short = "The scheduling entity that submits the GFE to provide a collection of services to a payer for the creation of an Advanced EOB"
+*/
 //* extension contains PlannedPeriodOfService named plannedPeriodOfService 0..* MS
 //* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
 * extension contains GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS
