@@ -27,7 +27,7 @@ Usage: #definition
 * parameter[1].use = #out
 * parameter[1].min = 0
 * parameter[1].max = "1"
-* parameter[1].documentation = "When there is an error calling $gfe-submit (4xx, 5xx HTTP code) then an OperationOutcome must be returned per the [async pattern](https://hl7.org/fhir/R5/async-bundle.html)."
+* parameter[1].documentation = "When successful, this will return a Bundle of type batch-submit; When there is an error calling $gfe-submit (4xx, 5xx HTTP code) then an OperationOutcome must be returned per the [async pattern](https://hl7.org/fhir/R5/async-bundle.html)."
 * parameter[1].type = #OperationOutcome
 
 // Note: This is no longer needed. We will use FHIR queries instead. LD
