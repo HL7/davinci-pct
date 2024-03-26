@@ -2,7 +2,7 @@ Profile: PCTGFEMissingBundle
 Parent: Bundle
 Id: davinci-pct-gfe-missing-bundle
 Title: "PCT GFE Missing Bundle"
-Description: "PCT GFE Missing Bundle is used to indicate when a GFE request was made from a GFE Request Contributing Provider, but no GFE Bundle was submitted (attached to the Contributing Provider Task)."
+Description: "PCT GFE Missing Bundle is used to indicate when a GFE request was made from a GFE Contributor, but no GFE Bundle was submitted (attached to the GFE Contributor Task)."
 
 * type = #collection (exactly)
 * timestamp 1..1
@@ -20,8 +20,8 @@ Description: "PCT GFE Missing Bundle is used to indicate when a GFE request was 
 * entry contains
     patient 1..1 and
     coverage 0..1 MS and
-    organization ..* MS and
-    practitioner 0..* MS and
+    organization 0..2 MS and
+    practitioner 0..1 MS and
     requested-items 1..* MS
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
@@ -32,15 +32,15 @@ Description: "PCT GFE Missing Bundle is used to indicate when a GFE request was 
 * entry[coverage].resource 1..1
 * entry[coverage].resource only PCTCoverage
 
-* entry[organization] ^short = "MAY have the payer organization and may have provider organization(s)"
+* entry[organization] ^short = "MAY have the payer organization and may have provider organization"
 * entry[organization].resource 1..1 
 * entry[organization].resource only PCTOrganization
 
-* entry[practitioner] ^short = "MAY have the provider Practitioner(s)"
+* entry[practitioner] ^short = "MAY have the provider Practitioner"
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
 * entry[requested-items] ^short = "Items the request is about"
 * entry[requested-items].resource 1..1
-* entry[requested-items].resource only PCTProposedServiceRequest or PCTProposedMedicationRequest or PCTProposedDeviceRequest or NutritionOrder or VisionPrescription
+* entry[requested-items].resource only PCTServiceRequest or PCTMedicationRequest or PCTDeviceRequest or NutritionOrder or VisionPrescription
 
