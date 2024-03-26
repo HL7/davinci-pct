@@ -2,7 +2,7 @@ Profile: PCTGFEContributorTask
 Parent: Task
 Id: davinci-pct-gfe-contributor-task
 Title: "PCT GFE Contributor Task"
-Description: "The PCT Good Faith Estimate (GFE) Contributor Task is used by a GFE Coordination Requester to assign a GFE request task to a specific provider and may include information specific to that request."
+Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to assign a GFE contributor task to a specific provider and may include information specific to that patient’s expected service"
 
 
 * extension contains

@@ -1,4 +1,4 @@
-This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG. The bulk of it focuses on Good Faith Estimate (GFE) submission [$gfe-submit]( https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html) and an Advanced Explanation of Benefits (AEOB) query, though it also provides guidance on privacy, security, and other implementation requirements.
+This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG. The bulk of it focuses on Good Faith Estimate (GFE) submission [$gfe-submit](OperationDefinition-GFE-submit.html) and an Advanced Explanation of Benefits (AEOB) query, though it also provides guidance on privacy, security, and other implementation requirements.
 
 ### Context
 
@@ -43,6 +43,10 @@ This specification makes significant use of [FHIR profiles]({{site.data.fhir.pat
 
 The full set of profiles defined in this IG can be found by following the links on the [Artifacts](artifacts.html) page.
 
-- Need Notes about the 2 workflows and links to their specifications pages
-- Perhaps should add description of roles. Connecting business actors and technical actors.
-Business actors are Convening provider and co-provider. Technical are Requester, coordination Platform, contributing provider, Submitting provider (for AEOB)
+### Workflow Specific Specifications
+
+Additional Specifications for the two workflows in this guide can be found on the following pages:
+
+- [GFE Coordination Specification](gfe_coordination_specification.html) -  Requirements to support the ability for a provider to request and collect one or more GFEs from other providers that may participate in a set of procedures related to patient’s period of care for which a GFE is required, either to provide to the patient and/or to submit to a payer.
+
+- [GFE Submission and AEOB Specification](gfe_submission_and_aeob_specification.html) - Requirements to supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an AEOB bundle to the patient and optionally to the provider.

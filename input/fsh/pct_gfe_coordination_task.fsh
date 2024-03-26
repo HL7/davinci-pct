@@ -2,7 +2,7 @@ Profile: PCTGFECoordinationTask
 Parent: Task
 Id: davinci-pct-gfe-coordination-task
 Title: "PCT GFE Coordination Task"
-Description: "The PCT Good Faith Estimate (GFE) CoordinationTask is used to organize a GFE Request for a single period of care for which all GFE contributor tasks will be linked. The task includes the general inputs that are shared across all of the GFE contributor tasks. These inputs may include a 'primary' service and relevant conditions."
+Description: "The Good Faith Estimate (GFE) Coordination Task is used to organize a GFE across providers  for a single period of care for which all GFE Contributor Task resources will be linked. The task includes the general inputs that are shared across all of the GFE contributor tasks. These inputs may include a ‘primary’ service and relevant conditions."
 
 /*
 Consider other extensions 

@@ -1,3 +1,8 @@
+# TODO 
+# Make sure all of the artifacts are in place and nicely organized
+# Examples for all profiles
+# Review all descriptions
+
 # ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
@@ -42,15 +47,19 @@ pages:
   index.md:
     title: Patient Cost Transparency Implementation Guide Home Page
   use_cases.md:
-    title: Use Cases and Overview
+    title: Use Case and Actors
+  gfe_coordination_overview.md:
+    title: Good Faith Estimate (GFE) Coordination Overview
+  gfe_submission_and_aeob_overview.md:
+    title: Good Faith Estimate (GFE) Submission and AEOB Overview
   underlying_technologies.md:
     title: Technical Background and Underlying Technologies
   formal_specification.md:
     title: Formal Specification
-  gfe-request-specification.md:
-    title: GFE Request Specification
-  gfe-submit-specification.md:
-    title: GFE Submit Specification
+  gfe_coordination_specification.md:
+    title: Good Faith Estimate (GFE) Coordination Specification
+  gfe_submission_and_aeob_specification.md:
+    title: Good Faith Estimate (GFE) Submission and AEOB Specification
   terminology_licensure.md:
     title: Terminology Licensure
   security.md:
@@ -75,13 +84,15 @@ menu:
   Table of Contents: toc.html
   
   Background:
-    Use Cases and Overview: use_cases.html
+    Use Case and Actors: use_cases.html
+    GFE Coordination Overview: gfe_coordination_overview.html
+    GFE Submission and AEOB Overview: gfe_submission_and_aeob_overview.html
     Technical Background and Underlying Technologies: underlying_technologies.html
 
   Specification:
-    Formal Specification: formal_specification.html
-    GFE Request: gfe-request-specification.html
-    GFE Submit: gfe-submit-specification.html
+    General Specification: formal_specification.html
+    GFE Coordination Specification: gfe_coordination_specification.html
+    GFE Submission and AEOB Specification: gfe_submission_and_aeob_specification.html
 
 
   FHIR Artifacts:
@@ -107,6 +118,9 @@ groups:
     description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
     resources:
     - CapabilityStatement/davinci-pct
+    - CapabilityStatement/davinci-pct-coordination-platform
+    - CapabilityStatement/davinci-pct-coordination-requester
+    - CapabilityStatement/davinci-pct-gfe-contributor
 
 
   Operations:
@@ -131,24 +145,25 @@ groups:
     - StructureDefinition/davinci-pct-practitioner
     - StructureDefinition/davinci-pct-coverage
 
-  GFERequest:
+  GFE:
     name: "Structures: GFE Resource Profiles"
-    description: These define constraints on GFE and GFE Request related FHIR resources for systems conforming to this implementation guide.
+    description: These define constraints on GFE and GFE Coordination Request related FHIR resources for systems conforming to this implementation guide.
     resources:
-    - StructureDefinition/davinci-pct-coordinating-gfe-request-task
-    - StructureDefinition/davinci-pct-gfe-provider-request-task
-    - StructureDefinition/davinci-pct-gfe-request-bundle
-    - StructureDefinition/davinci-pct-gfe-request-information-bundle
-    - StructureDefinition/davinci-pct-proposed-servicerequest
-    - StructureDefinition/davinci-pct-proposed-medicationrequest
-    - StructureDefinition/davinci-pct-proposed-devicerequest
+    - StructureDefinition/davinci-pct-gfe-coordination-task
+    - StructureDefinition/davinci-pct-gfe-contributor-task
+    - StructureDefinition/davinci-pct-gfe-coordination-bundle
+    - StructureDefinition/davinci-pct-gfe-information-bundle
+    - StructureDefinition/davinci-pct-servicerequest
+    - StructureDefinition/davinci-pct-medicationrequest
+    - StructureDefinition/davinci-pct-devicerequest
+    - StructureDefinition/davinci-pct-service-location
     - StructureDefinition/davinci-pct-gfe-collection-bundle
     - StructureDefinition/davinci-pct-gfe-bundle
     - StructureDefinition/davinci-pct-gfe-missing-bundle
     - StructureDefinition/davinci-pct-gfe-summary
     - StructureDefinition/davinci-pct-gfe-institutional
     - StructureDefinition/davinci-pct-gfe-professional
-    - StructureDefinition/davinci-pct-gfe-validation-error
+    
 
   AEOB:
     name: "Structures: AEOB Resource Profiles"
@@ -158,7 +173,9 @@ groups:
     - StructureDefinition/davinci-pct-aeob-summary
     - StructureDefinition/davinci-pct-aeob
     - StructureDefinition/davinci-pct-aeob-complete
+    - StructureDefinition/davinci-pct-gfe-validation-error
     - StructureDefinition/davinci-pct-aeob-adjudication-error
+    
 
 
 

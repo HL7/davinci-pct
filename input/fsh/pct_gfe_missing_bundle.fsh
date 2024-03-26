@@ -2,7 +2,7 @@ Profile: PCTGFEMissingBundle
 Parent: Bundle
 Id: davinci-pct-gfe-missing-bundle
 Title: "PCT GFE Missing Bundle"
-Description: "PCT GFE Missing Bundle is used to indicate when a GFE request was made from a GFE Contributor, but no GFE Bundle was submitted (attached to the GFE Contributor Task)."
+Description: "PCT GFE Missing Bundle is used to indicate when a GFE Contributor task request was made, but no GFE Bundle was submitted (attached to the ContributorTask)."
 
 * type = #collection (exactly)
 * timestamp 1..1

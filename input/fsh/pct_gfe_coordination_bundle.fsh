@@ -4,7 +4,7 @@ Profile: PCTGFECoordinationBundle
 Parent: Bundle
 Id: davinci-pct-gfe-coordination-bundle
 Title: "PCT GFE Coordination Bundle"
-Description: "PCT GFE Coordination Bundle that contains necessary resources for a requesting provider to request GFEs from one or multiple GFE contributors."
+Description: "PCT GFE Request Bundle that contains necessary resources for GFE  to request GFEs from one or multiple GFE contributing providers."
 
 //* obeys pct-gfe-request-bundle-1
 

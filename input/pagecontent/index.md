@@ -2,7 +2,7 @@
 <p>
 This specification is a Standard for Trial Use. It is expected to continue to evolve and improve through HL7® FHIR® Connectathon testing and feedback from early adopters. 
 </p>
-<p>Criteria regarding what payers must verify in a good faith estimate (GFE) will be evaluated during the next phase of the project after the project stakeholders receive feedback on error handling during testing and implementation.</p>
+<p>STU1 focused on a payer receiving a good faith estimate (GFE) from a provider and returning an Advanced Explanation of Benefits (AEOB) to a patient. With STU2, this specification includes guidance on how multiple providers can work together to provide one GFE that can be sent directly to the patient if the patient does not have/chooses not to use health insurance or to a payer so that an AEOB can be generated for a patient covered by insurance.</p>
 <p>
 Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PCT" as the specification.
 </p>
@@ -19,101 +19,63 @@ Individuals interested in participating in the Patient Cost Transparency project
 </blockquote>
 
 ### Overview
-This IG  provides detailed guidance to support providers and payers exchanging financial information for specific services and items using FHIR-based standards. This exchange involves a provider submitting a Good Faith Estimate (GFE) to a payer, and the payer generating an Advanced Explanation of Benefits (AEOB) for a patient (which may optionally be returned to the submitting provider). This information about the cost of healthcare items or services may enable better decision making by the patient in consultation with the provider.  Note: This exchange will be triggered via a “request” or “scheduled service”. The AEOB will also include the GFE used to inform the AEOB generation. 
-This IG describes system interactions using the FHIR standard. This IG will reference where possible the “standards” defined by the Health Record exchange ([HRex](https://hl7.org/fhir/us/davinci-hrex/)) Library/Framework IG, other FHIR IGs, and other industry standards where applicable.
 
-There is no requirement or HIPAA mandate to use administration/payment transmission standards. However, HL7 and X12 work collaboratively to support implementers to align requirements with claim submission standards to ease the burden of implementation where possible.  
+This IG provides detailed guidance to support providers and payers exchanging financial information for specific items and services using FHIR-based standards. This exchange involves a provider or group of providers  submitting a Good Faith Estimate (GFE) to a patient (if self-pay or uninsured) or a payer. A payer can then generate an Advanced Explanation of Benefits (AEOB) for a patient (which may optionally be returned to the submitting provider). 
 
-This IG is informed by the [No Surprises Act (see Division BB, Title I, Sections 111 and 112)](https://www.ftc.gov/legal-library/browse/statutes/no-surprises-act-2021-consolidated-appropriations-act), which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that a provider share GFEs with a payer and that a payer make an AEOB available to a patient in advance of service. The initial scope of this IG was inspired by this general requirement.
+When there are multiple providers involved in a patient’s service, these providers may need to coordinate in order to produce one comprehensive GFE. This IG provides guidance on how this collaborative GFE creation process can leverage FHIR. Information about the cost of healthcare items or services may enable better decision making by the patient in consultation with the provider. 
 
-The IG supports different methods of information sharing between payers and providers and  payers and patients. In this way, the IG can support providers and payers as they work to meet the legislative and future regulatory requirement as well as enable information sharing valuable to supporting patient care.  Since the law does not require an API to share these data, the method used to share the required information – an API, a portal, email, etc. – is the decision of the parties engaged in the process. Should future rulemaking mandate a specific scenario, this IG can be revised IG accordingly. 
+Note: This exchange will be triggered via a “request” or “scheduled service”. When the patient has insurance they chose to use, the GFE will be sent from a provider to a payer. The payer will produce an AEOB, which will also include the GFE used to inform the AEOB generation. This IG describes system interactions using the FHIR standard. 
 
-By using the FHIR standard  and implementing this guide, providers and payers can enhance their existing technologies, where applicable, for estimating patient costs securely and efficiently using common open web technologies. The anticipated benefit of using FHIR APIs is to enable applications of the patients’ choice to give greater transparency into patient-specific estimated costs of expected healthcare services and items.
 
-FHIR is being used for consumer access to healthcare related data at significant scale today, and there are regulatory requirements in the form of the CMS Patient Access API for FHIR support for the related use case of post adjudicated claims. Use of an industry standard would keep the barrier to stakeholder adoption relatively low. 
+This IG will reference where possible the “standards” defined by the Health Record exchange ([HRex](https://hl7.org/fhir/us/davinci-hrex/)) Library/Framework IG, other FHIR IGs, and other industry standards where applicable.
 
+
+This IG is informed by the [No Surprises Act (see Division BB, Title I, Sections 111 and 112)](https://www.ftc.gov/legal-library/browse/statutes/no-surprises-act-2021-consolidated-appropriations-act), which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that a provider or providers share a GFE with a patient when the patient is self-pay/uninsured or with a payer for insured patients when the patient schedules a service or requests an estimate. When the payer receives a GFE, the payer must make an AEOB available to a patient in advance of the service.
+
+Understanding the need for multiple providers to be able to work together to produce a single GFE in support of the law, this IG provides guidance on how to create this GFE using FHIR. This IG introduces a GFE coordination workflow that leverages a Coordinating Platform. The Coordinating Platform could be any number of systems - a practice management system, an EHR, a portal, a third party system, etc. When a patient contacts a provider to schedule a service or request an estimate for a service, the provider or facility who schedules the service or receives the request is the convening provider or convening facility per CMS regulation. 
+
+
+The role a provider plays in this collaboration will change from case to case. In some cases, a provider will be a GFE Coordination Requester because the patient’s care is starting with them - the service was scheduled with this provider. If this provider is also providing items and services to be included in the GFE, they will also play the role of a GFE Contributor. For other patients, the same provider may be a co-provider supporting a different provider or facility with a patient’s period of care, in which case they will only act as a GFE Contributor. In either role, the IG provides tools to support the collaboration effort and the production of a single GFE. Certain state regulations may also inform which role a provider plays.
+
+> NOTE: At this time, the Departments have exercised enforcement discretion allowing providers to send separate GFEs to a patient or payer. Further federal regulation on this is anticipated. This IG can support this process, helping patients get the best, most usable information to make informed decisions about their care. If specific guidance is issued that requires adjustments to this IG, the IG will be updated.
+
+
+The IG supports different methods of information sharing between payers and providers and payers and patients. In this way, the IG can support providers and payers as they work to meet the legislative and future regulatory requirement as well as enable information sharing valuable to supporting patient care. Since the law does not require an API to share these data, the method used to share the required information – an API, a portal, email, etc. – is the decision of the parties engaged in the process. Should future rulemaking mandate a specific scenario, this IG can be revised accordingly.
+
+
+By using the FHIR standard and implementing this guide, providers and payers can enhance their existing technologies, where applicable, for estimating patient costs securely and efficiently using common open web technologies. The anticipated benefit of using FHIR APIs is to streamline the process of creating a single GFE and to enable applications of the patients’ choice to give greater transparency into patient-specific estimated costs of expected healthcare items and services by making AEOBs accessible.
+
+FHIR is being used for consumer access to healthcare related data at significant scale today, and there are regulatory requirements in the form of the CMS Patient Access API for FHIR support for the related use case of post adjudicated claims. Use of an industry standard would keep the barrier to stakeholder adoption relatively low.
 
 Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG. 
 
 ### General Workflow ###
-This IG defines two main workflows in support of the patient cost transparency use case. 
-1. [GFE Request and Collection Workflow ](#gfe-request-and-collection-workflow) - Supports the ability for a provider to request and collect one or more GFEs from other providers that may participate in a set of procedures related to patient's period of care for which a Good Faith Estimate is required, either to provide to the patient and/or to submit to a payer.
-2. [GFE Submit Workflow ](#gfe-submit-workflow) - Supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce a bundle of AEOB to the patient an optionally to the provider. This submission may include GFEs from multiple providers that were gathered in the [GFE Request Workflow ](#gfe-request-workflow).
 
-#### Actors ####
-The US No Surprises Act, which lays out some of the legal requirements this IG is meant to address, identifies a number of business actors responsible for the collection and sharing of GFEs and AEOBs. These are identified in the [Business Actors](#business-actors) section of the guide. This IG also defines a set of [Technical Actors](#technical-actors), which perform specific actions in their respective workflows. A business actor may perform zero or more technical actor actions defined in the workflows of this IG as they may decide to delegate the technical capabilities to third parties or may choose perform additional technical components. In order to abstract legal roles and responsibilities from technical capabilities, this guide identifies the business actors from the law, the technical actors that perform each role in the technical workflows defined by this IG, and the common relationships between them. This guide uses the term provider to mean either an individual Practitioner, an Organization, or a Facility.
+This guide breaks the process into two main parts in support of the patient cost transparency use case: 
+1. [GFE Coordination Workflow ](gfe_coordination_overview.html) -  Supports the ability for a provider to request and collect one or more GFEs from other providers that may participate in a set of procedures related to patient’s period of care for which a GFE is required, either to provide to the patient and/or to submit to a payer.
 
-##### Business Actors #####
-
-- **Patient** - An individual requesting an estimate either when scheduling a service or asking for an estimation without scheduling a service. From the payer perspective this is the same individual they call the "member".
-
-- **Convening Provider** - A Practitioner, Organization, or Facility that receives an initial request for a GFE, which will include any items or services that may be reasonably expected to be provided in conjunction with such a request, collects GFEs from providers potentially providing services or items in conjunction with the request (co-providers), and provides the full estimate to the patient or a payer. 
-
-- **Co-Provider** - A Practitioner, Organization, or Facility receives a request for a GFE from a convening provider involving services or items that relate to the fulfillment of the original request and submits the GFE to the Convening Provider in response to that request.
-
-- **Payer** - A group health plan, or a health insurance issuer offering group or individual health insurance coverage.
-
-##### Technical Actors #####
-
-- **GFE Requester** -  A provider and/or facility that initiates a request to collect GFEs across disparate individuals providers or provider organizations and retrieves the resulting GFE Bundles. The Convening Provider Business Actor often performs this role. 
-
-- **GFE Contributor** - A provider and/or facility that receives a request to contribute a Good Faith Estimate (GFE) from a GFE Requester as part of an initial request for estimation of services and items. The Co-provider Business actor often performs this role. However, if the Convening Provider business actor also contributes an estimate to add to the collection, they too will be performing the GFE Contributor actor role. 
-
-- **Coordination Platform** - A system receives that acts as the central location for enabling the communication and management of Tasks between the GFE Requester and GFE Contributors. This system is not necessarily associated with any business identified in the law. It may be implemented by a 3rd party, by the convening or contributing provider, or even by a payer.
-
-- **GFE Submitter** - A provider and/or facility that sends a Good Faith Estimate (GFE) to a payer to facilitate the creation of an Advanced Explanation of Benefits (AEOB).
-
-- **Payer** - A group health plan, or a health insurance issuer offering group or individual health insurance coverage and generates and AEOB when a GFE collection is submitted for a member. This is the same as the Payer Business Actor. For he purposes of this guide the business actor and technical actor are the same.
+2. [GFE Submission and AEOB Workflow ](gfe_submission_and_aeob_overview.html) - Supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an AEOB bundle to the patient and optionally to the provider. This submission may include GFEs from multiple providers or a consolidated GFE that were gathered in the [GFE Coordination Workflow ](gfe_coordination_overview.html).
 
 
+**Good Faith Estimate and Advanced Explanation of Benefit High Level Workflow**
+![PCT High Level Workflow](PCT_HighLevelWorkflow.png){:style="float: none;"}
 
-#### GFE Request and Collection Workflow ####
-**GFE Request Diagram Steps (High Level View)**  
-
-
-1. A patient schedules a service or requests an estimate for a service which triggers the composition of a collection of one or more GFEs. <em>Note: This workflow is used when there is need for a standard means of collecting GFEs from multiple providers.</em>
-
-
-2. A GFE requester identifies all of the co-providers that will need to provide services and/or items that would be reasonably expected to be provided in conjunction with the service the request is being asked for. The associated Practitioner and Organizations resources are searched for on the Coordination Platform and the FHIR Resource identifiers retrieved.
-
-3. The GFE Requester creates a single [Coordinating GFE Request Task](StructureDefinition-davinci-pct-coordinating-gfe-request-task.html) and one or more [GFE Contributing Provider Request Task](StructureDefinition-davinci-pct-gfe-provider-request-task.html) that contain the information necessary to create an estimate. These Tasks will contain or reference a [GFE Request Information Bundle](StructureDefinition-davinci-pct-gfe-request-information-bundle.html) which contains information about the patient, service(s) and/or item(s) a request is being made about, and any other information necessary to make an estimate.  A GFE Contributing Provider Request Task is created for each and every provider from which an estimate is being requested, including the convening provider if applicable as well as any providers for which non-FHIR out of band communications/submissions are being utilized (e.g. submission through a portal).
-
-3. All GFE Contributors are notified of a new task assignment. The means of which are not proscribed by this guide, but this could be FHIR subscriptions based, Unsolicited Notifications, another FHIR process, or some other out of bands method (e.g. secure email).
-
-4. The GFE Contributor retrieves the [GFE Contributing Provider Request Task](StructureDefinition-davinci-pct-gfe-provider-request-task.html) and any non-contained [GFE Request Information Bundle](StructureDefinition-davinci-pct-gfe-request-information-bundle.html) for information about the patient, service(s) and/or item(s) a request is being made about, and any other information necessary to make an estimate.
-
-5. The GFE Contributor can then decide to accept or reject the request the [GFE Contributing Provider Request Task](StructureDefinition-davinci-pct-gfe-provider-request-task.html) and update it appropriately on the Coordination Platform. If the Task is rejected, no other updates are made to this Task and there are not more actions for this contributing provider to perform in relation to the original [Coordinating GFE Request Task](StructureDefinition-davinci-pct-coordinating-gfe-request-task.html).
-
-6. The GFE Requester is notified of relevant status updates through the same sort of notification mechanisms made available to GFE Contributors. A Coordination Platform may choose to enable or disable notifications on certain types of task updates, but it is expected that any accept, reject, or completed status updates would result in a notification.
-
-7. When notified of a reject status, the GFE Requester can create a new [GFE Contributing Provider Request Task](StructureDefinition-davinci-pct-gfe-provider-request-task.html) for a different GFE Contributor. Alternatively, the requesting provider can choose to cancel the entire request (The Coordinating Task and all associated Contributor Tasks), and choose to, if appropriate, create a new Coordinating Task and associated Contributor Tasks. This may be done in cases where the rejecting Contributing Provider indicated their reason for rejection was something like a scheduling conflict.
-
-7. If the GFE Contributor accepts the request, they will collect the requested estimate(s), place them into a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html), attach it to the Contributor Task and mark the Task as completed. 
-
-8. At any point after the collection of the [Coordinating GFE Request Task](StructureDefinition-davinci-pct-coordinating-gfe-request-task.html), the GFE Requester can retrieve a full [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) for the Task from the Coordination Platform through a [GFE-retrieve operation](OperationDefinition-GFE-retrieve.html). This GFE Collection Bundle will contain all of the GFE Bundles submitted by the GFE Contributors and attached to the respective [GFE Contributing Provider Request Task](StructureDefinition-davinci-pct-gfe-provider-request-task.html) thus far. For any [GFE Contributing Provider Request Task](StructureDefinition-davinci-pct-gfe-provider-request-task.html) that does not have a GFE Bundle attached, a [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) containing information about the request services/items and the provider from whom they were requested will be included in the GFE Bundles stead.
-
-9. The GFE Requester may choose to "close" the request when they are satisfied or if the time-frame for collection of the GFEs has concluded by marking the Coordinating Task as Completed. 
-
-10. Optionally, the Coordination Platform could provide an option to allow the GFE Requester to enable the delivery of the GFE Collection bundle to its intended destination (patient or payer) on their behalf. This would be done through a process not specified in this IG.
-
-**GFE Request and Collection Diagram here**
 
 #### GFE Submit Workflow ####
-**AEOB Interaction Diagram Steps (High Level View)**  
 
-1. A patient schedules a service or requests an estimate for a service which triggers the composition of a collection of one or more GFEs. <em>Note: The composition of the collection of GFEs can be done through the [GFE Request and Collection Workflow](#gfe-request-workflow) or another means not defined in this IG.</em>
+**AEOB Interaction Diagram Steps (High Level View)**
+1. A patient schedules a service or requests an estimate for a service which triggers the composition of a collection of one or more GFEs. 
 
-2. A collection of GFEs in the form of a FHIR resource bundle ([GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html)) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation.  
+2. The Providers involved in the service coordinate on their individual charges and services for the Good Faith Estimate through the [GFE Coordination Workflow](gfe_coordination_overview.html), if applicable. For self-pay or uninsured patients, the GFE can be made available to the patient at this step. _(This would be through another means not defined in this IG.)_
 
-3. The payer would then process, adjudicate, and produce the AEOB bundle. 
+3. For insured patients, a collection of GFEs in the form of a FHIR resource bundle ([GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
 
-4. The patient can now request and receive the AEOB Bundle via FHIR query.
+4. The payer would then process, adjudicate, and produce the [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html).
 
->Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer. 
+5. The patient can now request and receive the AEOB Bundle via FHIR query.
 
-![AEOB Interaction Diagram](AEOB-interaction.png){:style="float: none;"}
+> Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
 
-**Figure 1: Advanced EOB Interactions** 
 
 ### Credits  
 <br>
@@ -136,12 +98,16 @@ The US No Surprises Act, which lays out some of the legal requirements this IG i
 *	Vanessa Candelora (Point-of-Care Partners)
 *	Phung Matthews (Point-of-Care Partners)
 *	Mary Kay McDaniel (Markam)
-*	Denise St. Clair (Acumen, LLC)
+*	Denise St. Clair (Global Alliant, Inc.)
+* Crystal Kallem (Point-of-Care Partners)
 
 **Da Vinci Member Leadership Provided By:**
 *	Alice O'Carroll (Florida Blue)
 *	Jacob Woodford (Epic)
-*	Luke Rockenbach (Providence St. Joseph)
+*	Luke Rockenbach (Providence)
+* Zackery Welch (Providence) 
+* Tina Mintyala (Providence) 
+
 
 **This IG was developed under the auspices of the Financial Management Work Group.**
 
@@ -153,9 +119,9 @@ Special thanks go to the numerous Da Vinci members and community   who have part
 *	Weill Cornell Medicine (Jill Vincente, Jarrett Cox)
 *	Aegis (Carie Hammond)
 
->If you are interested in participating in the PCT project, information about our calls, minutes of past discussions, and other information can be found [here](https://confluence.hl7.org/display/DVP/Patient+Cost+Transparency) on our HL7 Confluence page.
+> If you are interested in participating in the PCT project, information about our calls, minutes of past discussions, and other information can be found [here](https://confluence.hl7.org/display/DVP/Patient+Cost+Transparency) on our HL7 Confluence page.
 
-The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases. 
+The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, scheduling, prior authorization or other financial and administrative use cases. 
 
 
 ### Terms and Concepts

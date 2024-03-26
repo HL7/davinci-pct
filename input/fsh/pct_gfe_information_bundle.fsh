@@ -2,7 +2,7 @@ Profile: PCTGFEInformationBundle
 Parent: Bundle
 Id: davinci-pct-gfe-information-bundle
 Title: "PCT GFE Information Bundle"
-Description: "PCT GFE Information Bundle that contains the information necessary for potential GFE contributors to create their estimates. This bundle may be used for a request encompassing the entire request or that is specific to a GFE contributor and may include, but is not limited to, the Patient Resource, request resources (such as ServiceRequest, MedicationRequest, and DeviceRequest), Service location information, Coverage and Payer Organization resources (if applicable)."
+Description: "PCT GFE Information Bundle that contains the information necessary for GFE contributors to create their estimates. This bundle may for all GFE Contributors or  specific to a single contributor and may include, but is not limited to, the Patient Resource, request resources (such as ServiceRequest, MedicationRequest, and DeviceRequest), Service location information, Coverage and Payer Organization resources (if applicable)."
 * obeys pct-gfe-information-bundle-1 
 
 //* identifier 1..1

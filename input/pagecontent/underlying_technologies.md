@@ -30,6 +30,12 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 
 ## Relationship to Other Implementation Guides
 
+### Good Faith Estimate Coordination Relationships
+
+<figure>
+{% include gfe_coordination.svg %}
+</figure>
+
 ### Good Faith Estimate Relationships
 
 <figure>

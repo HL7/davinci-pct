@@ -185,13 +185,13 @@ Description: "Defining codes for defining GFE request types."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
-* #gfe-coordinating-request "GFE Coordinating Request" "Coordinating request representing the general request for a Good Faith Estimate (GFE) from all potentially GFE contributing providers."
-* #gfe-request "GFE Request" "Request for a Good Faith Estimate (GFE) from a GFE contributing provider."
+* #gfe-coordination-task "GFE Coordination Task" "The Coordination Task representing the general request for a Good Faith Estimate (GFE) from all potential GFE contributors."
+* #gfe-contributor-task "GFE Contributor Task" "The Contributor Task representing a provider specific request for a Good Faith Estimate (GFE)."
 * #scheduled-request "Scheduled Service Request" "Request of a GFE for a scheduled service."
 * #nonscheduled-request "Nonscheduled Service Request" "Request of a GFE for a scheduled service, such as a request from a patient."
 
 
-CodeSystem: PCTContributingProviderTaskStatusReasonCS
+CodeSystem: PCTTaskStatusReasonCS
 Title: "PCT GFE Request Task Status Reason Code Code System"
 Description: "Defining codes for defining GFE request task status reason types."
 * ^copyright = "This CodeSystem is not copyrighted."
@@ -204,4 +204,4 @@ Description: "Defining codes for defining GFE request task status reason types."
 * #requires-new-request "Requires New Request" "Changes need to be made to the request which require the current request be cancelled and a new request be made."
 * #patient-declined "Patient Declined" "Patient has declined to receive a GFE or AEOB."
 * #schedule "Schedule" "Provider cannot participate due to proposed schedule dates and or times."
-* #service-not-provided "Service Not Provided" "Services or Products being requested are not available from this contributing provider."
+* #service-not-provided "Service Not Provided" "Services or Products being requested are not available from this GFE contributor."

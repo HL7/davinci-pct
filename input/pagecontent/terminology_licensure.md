@@ -8,7 +8,8 @@
 This IG includes value set bindings to code systems that reference industry standard codes which require implementers to purchase a license before the coded concepts can be used. The following information summarizes the set of licensed Code Systems required by this IG and provides links to the information about where to go to obtain a license.
 <ul>
 <li><a href="http://www.ama-assn.org/go/cpt">AMA CPT</a>: The CPT  procedure and modifier codes are owned by the American Medical Association.</li>
-<li><a href="http://www.x12.org/codes/claim-adjustment-reason-codes/">X12</a>: CARC (Claim Adjustment Reason Codes are owned by X12..</li>
+<li><a href="http://www.ada.org/cdt">ADA CDT</a>: The CDT codes are owned by the American Dental Association.</li>
+<li><a href="http://www.x12.org/codes/claim-adjustment-reason-codes/">X12</a>: CARC (Claim Adjustment Reason Codes) are owned by X12.</li>
 <li><a href="https://www.nubc.org">NUBC</a>: The NUBC secretariat is the American Hospital Association..</li>
 <li><a href="http://www.nucc.org/">NUCC</a>: National Uniform Claim Committee (NUCC) is presently maintaining the Taxonomy code set. The codes are free and publicly available for download and use. If the use however is &quot; For commercial use, including sales or licensing, a license must be obtained&quot;.  It would be appropriate for an app developer to file the license form just like they would for any other code set; however, there is no fee.</li>
 <li><a href="https://www.ncpdp.org">NCPDP</a>: Retail Pharmacy data standards are defined by the NCPDP .</li>
