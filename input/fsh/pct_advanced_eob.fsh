@@ -185,11 +185,49 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * total 1..*
 * insert TotalSlicing
-* total.category from PCTAdjudication  (extensible)
+* total.category from PCTTotal (extensible)
 * total contains
-   adjudicationamounttype 1..* MS
-* total[adjudicationamounttype] ^short =  "Total adjudication type and amount"
-* total[adjudicationamounttype].category from PCTAdjudication (required)
+	submitted 1..1 MS and
+	memberliability 0..1 MS and
+	innetwork 0..1 MS and
+	outofnetwork 0..1 MS and
+	noncovered 0..1 MS and
+	negotiated 0..1 MS and
+	eligible 0..1 MS and
+	benefit 0..1 MS
+
+
+
+* total[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+* total[submitted] ^short = "Total provider submitted amount"
+
+* total[memberliability] ^short = "Total member liability - Must include in non-zero total across all AEoBs"
+* total[memberliability].category = PCTAdjudicationCategoryCS#memberliability
+
+* total[innetwork] ^short = "Total in network amount - Must include in non-zero total across all AEoBs"
+* total[innetwork].category = PCTNetworkStatusCS#innetwork
+
+* total[outofnetwork] ^short = "Total out of network amount - Must include in non-zero total across all AEoBs"
+* total[outofnetwork].category = PCTNetworkStatusCS#outofnetwork
+
+* total[negotiated] ^short = "Total negotiated amount - Must include in non-zero total across all AEoBs"
+* total[negotiated].category = PCTNetworkStatusCS#negotiated
+
+
+* total[noncovered] ^short = "Total noncovered amount - Must include in non-zero total across all AEoBs"
+* total[noncovered].category = PCTAdjudication#noncovered
+
+
+
+* total[eligible] ^short = "Total eligible amount - Must include in non-zero total across all AEoBs"
+* total[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
+* total[eligible] ^comment = "Eligible is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
+
+* total[benefit] ^short = "Total benefit amount - Must include in non-zero total across all AEoBs"
+* total[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
+* total[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
+
+
 
 * processNote 1..*
 * processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"
