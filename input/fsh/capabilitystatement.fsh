@@ -5,7 +5,7 @@ Usage: #definition
 * meta.lastUpdated = "2023-03-28T19:21:32.176+00:00"
 * url = "http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct"
 * name = "PatientCostTransparencyCapabilityStatement"
-* title = "Patient Cost Transparency Implementation Guide Capability Statement"
+* title = "Patient Cost Transparency Implementation Guide Payer Capability Statement"
 * status = #active
 * date = "2023-03-28T14:21:32-05:00"
 * publisher = "HL7 International - Financial Management Work Group"
@@ -14,7 +14,7 @@ Usage: #definition
 * contact[=].telecom[=].value = "http://hl7.org/Special/committees/fm"
 * contact[=].telecom[+].system = #email
 * contact[=].telecom[=].value = "fmlists@lists.hl7.org"
-* description = "Capability statement for the Da Vinci Patient Cost Transparency Implementation Guide"
+* description = "Payer capability statement for the Da Vinci Patient Cost Transparency Implementation Guide"
 * jurisdiction = urn:iso:std:iso:3166#US
 * copyright = "Used by permission of HL7 International, all rights reserved Creative Commons License"
 * kind = #requirements
