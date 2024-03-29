@@ -23,8 +23,8 @@ as general guidance on how to read FHIR specifications. Readers who are unfamili
 * [How to read resource & profile definitions]({{site.data.fhir.path}}formats.html)
 * [Base resource]({{site.data.fhir.path}}resource.html)
 
-#### FHIR Version
-[FHIR R4 US Core](http://hl7.org/fhir/us/core/index.html) 
+#### US Core Version
+[US Core STU 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/index.html) 
 
 Implementers should also familiarize themselves with the FHIR resources used within this IG.
 
