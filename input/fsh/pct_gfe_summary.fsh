@@ -4,7 +4,7 @@ Id: davinci-pct-gfe-summary
 Title: "PCT Good Faith Estimate  Summary"
 //Description: "This profile is used for exchanging a summary of Explanation of Benefit (EoB) information, including costs and benefits, of all of the Advanced EoB data contained within an Advance EoB Bundle."
 Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs associated with a set of Good Faith Estimate Claims for a single Period of Care."
-
+* insert TrialUseArtifact
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.discriminator.type = #pattern
@@ -23,7 +23,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * billablePeriod ^short = "The full Period of Care for all services or products included in the estimate from the first event to the last event."
 
 
-* type = PCTEstimateTypeSummaryCS#estimate-summary
+* type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary
 * subType 0..0
 * use = $CLAIMUSECS#predetermination "predetermination"
 

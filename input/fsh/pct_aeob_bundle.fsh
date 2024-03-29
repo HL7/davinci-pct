@@ -3,7 +3,7 @@ Parent: Bundle
 Id: davinci-pct-aeob-bundle
 Title: "PCT AEOB Bundle"
 Description: "PCT AEOB Bundle that contains necessary resources for an AEOBs. Organizations for both the payer and provider SHALL be included."
-
+* insert TrialUseArtifact
 * obeys pct-aeob-bundle-1 and pct-aeob-bundle-2
 
 * identifier 1..1

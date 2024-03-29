@@ -3,6 +3,7 @@ Parent: ServiceRequest
 Id: davinci-pct-servicerequest
 Title: "PCT GFE ServiceRequest"
 Description: "The PCT ServiceRequest including details about a service for which a GFE is being requested."
+* insert TrialUseArtifact
 
 * status = #active
 * intent = #proposal

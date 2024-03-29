@@ -1,3 +1,5 @@
+{% include draft_content_note.md content="page" %}
+
 This section of the Implementation Guide focuses on enabling providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider Good Faith Estimates (GFE) are required, either to provide to the patient or to submit to a payer (for patients using insurance.)
 
 This guide supports the:
@@ -7,7 +9,7 @@ This guide supports the:
 - Ability for contributors to respond to a request for data back to a coordination requester with cost and planned items and services information.
 Ability for a Coordination Platform to communicate a GFE to payer (leveraging an existing PCT IG workflow,) and to other providers in the care team, prior to scheduled a service or upon request
 
-The Coordination Platform (defined in LINK TO WHERE WE PUT IT) is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
+The Coordination Platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
 
 Additionally, see the Terms and Concepts (link) and Systems and Actors (link) for more detail on acronyms and new terms.  
 
@@ -51,14 +53,14 @@ The Task references to to Practitioner and Organization references in must point
 _Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester_
 
 
-Figure 2 shows the relationships of the resources involved in GFE coordination request as the exist on the Coordination Platform whether they be written individually or through the GFS Coordination Bundle transaction. If the GFE Information Bundles are not contained in the Task, they would exist as Bundle resources that would be individually retrievable from the Coordination Platform.
+Figure 2 shows the relationships of the resources involved in GFE coordination request as they exist on the Coordination Platform whether they be written individually or through the GFE Coordination Bundle transaction. If the GFE Information Bundles are not contained in the Task, they would exist as Bundle resources that would be individually retrievable from the Coordination Platform.
 
 ![Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform](GFE_Coordination_Platform_Resources.png){:style="float: none;"}
 
 _Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform_
 
 
-Figure 3 shows the GFE Information Bundle is created by the GFE Coordination Requester  and is meant to contain the information needed for GFE Contributors to make their estimate. This includes the Patient, Coverage and Payer is applicable, specific providers or roles being asked for (not the same as those on the Coordination Platform), requested items (including items and services), and any additional documentation. Additional resources that provide important contextual information that could affect needed items, services, or costs, such as Conditions or Observations, are also allowed.
+Figure 3 shows the GFE Information Bundle is created by the GFE Coordination Requester and is meant to contain the information needed for GFE Contributors to make their estimate. This includes the Patient, Coverage and Payer if applicable, specific providers or roles being asked for (not the same as those on the Coordination Platform), requested items (including items and services), and any additional documentation. Additional resources that provide important contextual information that could affect needed items, services, or costs, such as Conditions or Observations, are also allowed.
 
 
 ![Figure 3. GFE Information Bundle created by the GFE Coordination Requester](GFE_Information_Bundle.png){:style="float: none;"}

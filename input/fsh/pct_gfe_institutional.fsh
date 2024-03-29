@@ -3,7 +3,7 @@ Parent: Claim
 Id: davinci-pct-gfe-institutional
 Title: "PCT Good Faith Estimate Institutional"
 Description: "PCT Good Faith Estimate Institutional is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for an institutional GFE submission."
-
+* insert TrialUseArtifact
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.discriminator.type = #pattern

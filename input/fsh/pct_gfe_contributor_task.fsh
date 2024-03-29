@@ -3,7 +3,7 @@ Parent: Task
 Id: davinci-pct-gfe-contributor-task
 Title: "PCT GFE Contributor Task"
 Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to assign a GFE contributor task to a specific provider and may include information specific to that patient’s expected service"
-
+* insert DraftArtifact
 
 * extension contains
    $requestedPeriodExtensionUrl named requested-period 0..1 MS and
@@ -32,7 +32,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
-   PLAC 1..1 and
+   PLAC 0..1 and
    INTER 0..*
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
@@ -61,7 +61,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * statusReason from PCTContributorTaskStatusReasonCodes (extensible)
 * intent = http://hl7.org/fhir/task-intent#order
 
-* code = PCTGFERequestTaskCS#gfe-contributor-task
+* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-contributor-task
 
 // TODO Supporting Information contained within the bundle. Perhaps guidance on use of reference identifiers?
 //* focus only Reference(PCTGFERequestServiceRequest)

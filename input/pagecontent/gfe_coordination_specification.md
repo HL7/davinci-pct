@@ -1,3 +1,6 @@
+<!-- **The following page is DRAFT. It has not yet undergone HL7 balloting.**
+{:.stu-note} -->
+
 This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG for GFE Coordination. It focuses on the Good Faith Estimate (GFE) Coordination Task, though it also provides guidance on privacy, security, and other implementation requirements.
 
 #### Summary
@@ -14,7 +17,7 @@ The Coordination Platform is the system enabling all interactions between collab
 
 After the GFE Coordination Requester, expectedly a Convening provider, determines that GFE collection needs to be coordinated across providers and determines the set of services and providers necessary, they will search the Coordination Platform for the references (FHIR IDs) for the providers to coordinate with. This lookup is generally done with an NPI, Tax ID or other identifying methods as supported by the Coordination Platform. For the purposes of this IG, the Coordination Platform provides a sort of “White Pages” phonebook lookup of providers. It is expected that providers largely maintain their own networks of potential care team members or have other means to find providers to work with. The “phonebook” lookup provided by the Coordination Platform is not expected to serve as a means to lookup providers by services offered or their service locations.
 
-The Coordination Platform **SHALL** manage a current set of [[PCT Organization](StructureDefinition-davinci-pct-organization.html)](StructureDefinition-davinci-pct-organization.html), [[PCT Practitioner](StructureDefinition-davinci-pct-practitioner.html)](StructureDefinition-davinci-pct-practitioner.html), and [[HRex PractitionerRole](https://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-practitionerrole.html)](https://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-practitionerrole.html) resources as identified in this guide with enough data and searching capabilities to support GFE Coordination Requesters to identify and retrieve the FHIR IDs of GFE Contributors.
+The Coordination Platform **SHALL** manage a current set of [PCT Organization](StructureDefinition-davinci-pct-organization.html), [PCT Practitioner](StructureDefinition-davinci-pct-practitioner.html), and [HRex PractitionerRole](https://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-practitionerrole.html) resources as identified in this guide with enough data and searching capabilities to support GFE Coordination Requesters to identify and retrieve the FHIR IDs of GFE Contributors.
 
 
 #### Creating and Submitting a GFE Coordination Request
@@ -30,7 +33,7 @@ The information that applies to all of the tasks **SHALL** be identified in the 
 There **SHALL** be at least one information bundle associated in the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html).
 A GFE Coordination Requester **MAY** create GFE Contributor specific information bundles which **SHALL** be associated to the appropriate [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html).This can be done to provide specific providers  only the information they need to see.
 To associate an information bundle with a Task in the `Task.input`, the GFE Contributor SHOULD encode the bundle as an attachment in `Task.input.valueAttachment`, though they **MAY** associate it through a reference in `Task.input.valueReference`.
-A [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) associated to a Task through a reference **SHALL** exist on the Coordination Platform and the Task **SHALL** have the ` Task.input.valueReference` reference the instance on the Coordination Platform.
+A [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) associated to a Task through a reference **SHALL** exist on the Coordination Platform and the Task **SHALL** have the `Task.input.valueReference` reference the instance on the Coordination Platform.
 Since the information bundle is fully self-contained and its relevance only extends to the Task in which it is associated, there is no need for the bundle to be written directly to the Coordination Platform. This can simplify the management of the data and has the advantage of not enabling the bundle to be modified outside of the Task. 
 A potential disadvantage of having the information bundle contained in the Task is the size of the resource. An organization that has to manage and search through many [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources may have a notable increase in traffic volume. This may be mitigated by Coordination Platforms that support the `_summary` search parameter
 

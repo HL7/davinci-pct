@@ -3,7 +3,7 @@ Parent: ExplanationOfBenefit
 Id: davinci-pct-aeob
 Title: "PCT Advanced EOB"
 Description: "The No Surprises Act requires that group health plans and insurers provide advance cost estimates, called advanced explanations of benefits (advanced EOBs), for scheduled services. This profile is used for exchanging the Advanced EOB data."
-
+* insert TrialUseArtifact
 * obeys pct-aeob-1 and pct-aeob-2 and pct-aeob-3
 
 * extension contains GFEReference named gfeReference 1..*

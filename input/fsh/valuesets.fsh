@@ -340,24 +340,24 @@ ValueSet: PCTGFERequestTaskTypeVS
 Title: "PCT GFE Request Task Codes ValueSet"
 Description: "Defining codes for defining GFE request types."
 * ^experimental = false
-* include PCTGFERequestTaskCS#scheduled-request
-* include PCTGFERequestTaskCS#nonscheduled-request
+* include PCTGFERequestTaskCSTemporaryTrialUse#scheduled-request
+* include PCTGFERequestTaskCSTemporaryTrialUse#nonscheduled-request
 
 ValueSet: PCTCoordinationTaskStatusReasonCodes
 Title: "PCT GFE Request Coordination Task Status Reason Codes ValueSet"
 Description: "Defining codes for GFE Coordination Task status reason types."
 * ^experimental = false
-* include PCTTaskStatusReasonCS#fulfilled
-* include PCTTaskStatusReasonCS#time-limit-reached
-* include PCTTaskStatusReasonCS#no-longer-needed
-* include PCTTaskStatusReasonCS#service-cancelled
-* include PCTTaskStatusReasonCS#requires-new-request
-* include PCTTaskStatusReasonCS#patient-declined
+* include PCTTaskStatusReasonCSTemporaryTrialUse#fulfilled
+* include PCTTaskStatusReasonCSTemporaryTrialUse#time-limit-reached
+* include PCTTaskStatusReasonCSTemporaryTrialUse#no-longer-needed
+* include PCTTaskStatusReasonCSTemporaryTrialUse#service-cancelled
+* include PCTTaskStatusReasonCSTemporaryTrialUse#requires-new-request
+* include PCTTaskStatusReasonCSTemporaryTrialUse#patient-declined
 
 ValueSet: PCTContributorTaskStatusReasonCodes
 Title: "PCT GFE Contributor Task Status Reason Codes ValueSet"
 Description: "Defining codes for defining GFE request GFE contributor task status reason types."
 * ^experimental = false
-* include PCTTaskStatusReasonCS#fulfilled
-* include PCTTaskStatusReasonCS#schedule
-* include PCTTaskStatusReasonCS#service-not-provided
+* include PCTTaskStatusReasonCSTemporaryTrialUse#fulfilled
+* include PCTTaskStatusReasonCSTemporaryTrialUse#schedule
+* include PCTTaskStatusReasonCSTemporaryTrialUse#service-not-provided

@@ -3,7 +3,7 @@ Parent: Task
 Id: davinci-pct-gfe-coordination-task
 Title: "PCT GFE Coordination Task"
 Description: "The Good Faith Estimate (GFE) Coordination Task is used to organize a GFE across providers  for a single period of care for which all GFE Contributor Task resources will be linked. The task includes the general inputs that are shared across all of the GFE contributor tasks. These inputs may include a ‘primary’ service and relevant conditions."
-
+* insert DraftArtifact
 /*
 Consider other extensions 
 https://hl7.org/fhir/extensions/5.1.0-ballot/StructureDefinition-request-replaces.html
@@ -48,7 +48,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
-   PLAC 1..1 and
+   PLAC 0..1 and
    INTER 0..*
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
@@ -66,7 +66,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * intent = http://hl7.org/fhir/task-intent#order
 * intent ^short = "Order for a Good Faith Estimate (not for services to be rendered)"
 
-* code = PCTGFERequestTaskCS#gfe-coordination-task
+* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-coordination-task
 
 // TODO !!!!!!!
 

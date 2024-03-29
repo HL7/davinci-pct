@@ -81,10 +81,10 @@ This guide breaks the process into two main parts in support of the patient cost
 <br>
 **Primary Authors:**
 *	Corey Spears (Lantana Consulting Group)
+*	Rick Geimer (Lantana Consulting Group)
 *	Larry Decelles (The MITRE Corporation)
 *	Gary Gryan (The MITRE Corporation)
 *	Caleb Wan (The MITRE Corporation)
-*	Rick Geimer (Lantana Consulting Group)
 
 **Technical Editing:**
 *	Yolanda Liu (The MITRE Corporation)
@@ -92,14 +92,18 @@ This guide breaks the process into two main parts in support of the patient cost
 *	Kristin Schrock (Lantana Consulting Group) 
 
 **Da Vinci Project Coordination and Core Team:**
+*	Vanessa Candelora (Point-of-Care Partners)
 *	Viet Nguyen (Stratametrics, LLC)
 *	Jocelyn Keegan (Point-of-Care Partners)
 *	Robert Dieterle (EnableCare, LLC)
-*	Vanessa Candelora (Point-of-Care Partners)
 *	Phung Matthews (Point-of-Care Partners)
 *	Mary Kay McDaniel (Markam)
+* Lloyd McKenzie (Dogwood Health Consulting)
 *	Denise St. Clair (Global Alliant, Inc.)
 * Crystal Kallem (Point-of-Care Partners)
+
+**Test Lead:**
+* Ryan Moehrke (AEGIS)
 
 **Da Vinci Member Leadership Provided By:**
 *	Alice O'Carroll (Florida Blue)
@@ -107,6 +111,7 @@ This guide breaks the process into two main parts in support of the patient cost
 *	Luke Rockenbach (Providence)
 * Zackery Welch (Providence) 
 * Tina Mintyala (Providence) 
+* Jill Elder  (Providence) 
 
 
 **This IG was developed under the auspices of the Financial Management Work Group.**

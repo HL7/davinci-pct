@@ -7,7 +7,7 @@ Parent: HRexCoverage
 Id: davinci-pct-coverage
 Title: "PCT Coverage"
 Description: "PCT Coverage is a profile for capturing data that reflect a payer’s coverage that was effective as of the proposed date of service or the date of admission of the GFE."
-
+* insert TrialUseArtifact
 * extension contains
     $R5CoverageKind named coverage-kind 1..1 and
     SelfPayDeclared named self-pay-declared 0..1 MS

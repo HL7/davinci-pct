@@ -73,7 +73,18 @@ RuleSet: TotalSlicing
 //// Invariants
 
 
+RuleSet: DraftArtifact
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #draft
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* ^extension[=].valueInteger = 1
+* ^status = #draft
 
+RuleSet: TrialUseArtifact
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* ^extension[=].valueCode = #trial-use
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+* ^extension[=].valueInteger = 1
 
 //// NOTE: based on CARIN-BB IG -- see C4BBExplanationOfBenefit profile
 //// Invariants

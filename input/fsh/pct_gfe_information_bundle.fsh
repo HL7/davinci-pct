@@ -3,7 +3,9 @@ Parent: Bundle
 Id: davinci-pct-gfe-information-bundle
 Title: "PCT GFE Information Bundle"
 Description: "PCT GFE Information Bundle that contains the information necessary for GFE contributors to create their estimates. This bundle may for all GFE Contributors or  specific to a single contributor and may include, but is not limited to, the Patient Resource, request resources (such as ServiceRequest, MedicationRequest, and DeviceRequest), Service location information, Coverage and Payer Organization resources (if applicable)."
+* insert DraftArtifact
 * obeys pct-gfe-information-bundle-1 
+
 
 //* identifier 1..1
 * type = #collection (exactly)
@@ -25,7 +27,12 @@ Description: "PCT GFE Information Bundle that contains the information necessary
     organization ..* MS and
     service-location 0..* MS and
     practitioner 0..* MS and
-    requested-items 1..* MS and
+    practitioner-role 0..* MS and
+    requested-items-service 0..* MS and
+    requested-items-medication 0..* MS and
+    requested-items-device 0..* MS and
+    requested-items-nutrition 0..* MS and
+    requested-items-vision 0..* MS and
     attachment 0..* MS
 
 
@@ -44,15 +51,35 @@ Description: "PCT GFE Information Bundle that contains the information necessary
 
 * entry[practitioner] ^short = "MAY have the provider Practitioner(s)"
 * entry[practitioner].resource 1..1 
-* entry[practitioner].resource only  PCTPractitioner or HRexPractitionerRole 
+* entry[practitioner].resource only  PCTPractitioner
+
+* entry[practitioner-role] ^short = "MAY have the provider PractitionerRole(s)"
+* entry[practitioner-role].resource 1..1 
+* entry[practitioner-role].resource only  HRexPractitionerRole 
 
 * entry[service-location] ^short = "MAY have Service Location(s)"
 * entry[service-location].resource 1..1 
 * entry[service-location].resource only  PCTServiceLocation 
 
-* entry[requested-items] ^short = "Items the request is about"
-* entry[requested-items].resource 1..1
-* entry[requested-items].resource only PCTServiceRequest or PCTMedicationRequest or PCTDeviceRequest or NutritionOrder or VisionPrescription
+* entry[requested-items-service] ^short = "Items the request is about - PCTServiceRequest"
+* entry[requested-items-service].resource 1..1
+* entry[requested-items-service].resource only PCTServiceRequest
+
+* entry[requested-items-medication] ^short = "Items the request is about - PCTMedicationRequest"
+* entry[requested-items-medication].resource 1..1
+* entry[requested-items-medication].resource only PCTMedicationRequest
+
+* entry[requested-items-device] ^short = "Items the request is about - PCTDeviceRequest"
+* entry[requested-items-device].resource 1..1
+* entry[requested-items-device].resource only PCTDeviceRequest
+
+* entry[requested-items-nutrition] ^short = "Items the request is about - NutritionOrder"
+* entry[requested-items-nutrition].resource 1..1
+* entry[requested-items-nutrition].resource only NutritionOrder
+
+* entry[requested-items-vision] ^short = "Items the request is about - VisionPrescription"
+* entry[requested-items-vision].resource 1..1
+* entry[requested-items-vision].resource only VisionPrescription
 
 * entry[attachment] ^short = "MAY have attachments as DocumentReference resource(s)"
 * entry[attachment].resource 1..1 

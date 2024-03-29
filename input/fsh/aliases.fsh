@@ -20,6 +20,7 @@ Alias:   $USNPI = http://hl7.org/fhir/sid/us-npi
 Alias:   $TOBFL-04 = https://www.nubc.org/CodeSystem/TypeOfBill
 Alias:   $CPT = http://www.ama-assn.org/go/cpt
 Alias:   $CDT = http://ada.org/cdt
+Alias:   $RXNORM = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias:   $HCPCS = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias:   $HIPPS = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes
 Alias:   $NDC = http://hl7.org/fhir/sid/ndc

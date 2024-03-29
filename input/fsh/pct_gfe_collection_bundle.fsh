@@ -8,6 +8,7 @@ Parent: Bundle
 Id: davinci-pct-gfe-collection-bundle
 Title: "PCT GFE Collection Bundle"
 Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contributors. This collection of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
+* insert TrialUseArtifact
 * obeys pct-gfe-collection-bundle-2 and pct-gfe-collection-bundle-3
 
 * identifier 1..1
@@ -19,7 +20,7 @@ Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contr
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
-// * entry ^slicing.discriminator.type = #profile
+//* entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -30,7 +31,6 @@ Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contr
     organization ..2 MS and
     practitioner 0..1 MS and
     gfe-bundle 0..* MS and
-    gfe-missing 0..* MS and
     attachment 0..* MS
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
@@ -49,13 +49,9 @@ Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contr
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
-* entry[gfe-bundle] ^short = "SHALL include GFE contributor specific GFE bundle"
+* entry[gfe-bundle] ^short = "MAY include GFE contributor specific GFE bundle and MAY include bundle(s) with information about a unfulfilled GFE request"
 * entry[gfe-bundle].resource 1..1
-* entry[gfe-bundle].resource only PCTGFEBundle
-
-* entry[gfe-missing] ^short = "MAY include bundle(s) with information about a unfulfilled GFE request"
-* entry[gfe-missing].resource 1..1
-* entry[gfe-missing].resource only PCTGFEMissingBundle
+* entry[gfe-bundle].resource only PCTGFEBundle or PCTGFEMissingBundle
 
 
 * entry[attachment] ^short = "MAY have attachments as DocumentReference resource(s)"

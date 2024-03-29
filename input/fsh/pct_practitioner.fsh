@@ -3,6 +3,7 @@ Parent: HRexPractitioner
 Id: davinci-pct-practitioner
 Title: "PCT Practitioner"
 Description: "The PCT Practitioner profile builds upon the US Core Practitioner profile. It is used to convey information about the practitioner who will be providing services to the patient as described on the GFE."
+* insert TrialUseArtifact
 
 // * extension contains PCTEndpoint named endpoint 0..* MS
 // * extension[endpoint] ^short = "Technical endpoints providing access to services operated for the practitioner."

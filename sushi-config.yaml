@@ -38,10 +38,16 @@ releaseLabel: STU 2 Ballot
 jurisdiction: urn:iso:std:iso:3166#US
 
 parameters:   
-  version-comparison-master: true
+  
   show-inherited-invariants: false
-  path-liquid: liquid
+  #path-liquid: liquid
+  #propagate-status: true
   auto-oid-root: 2.16.840.1.113883.4.642.40.4 
+  #version-comparison-master: true
+  version-comparison:
+     - 1.0.0
+     - 1.1.0
+     
 
 pages:
   index.md:
@@ -50,16 +56,32 @@ pages:
     title: Use Case and Actors
   gfe_coordination_overview.md:
     title: Good Faith Estimate (GFE) Coordination Overview
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: draft
   gfe_submission_and_aeob_overview.md:
     title: Good Faith Estimate (GFE) Submission and AEOB Overview
   underlying_technologies.md:
     title: Technical Background and Underlying Technologies
   formal_specification.md:
     title: Formal Specification
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: trial-use
   gfe_coordination_specification.md:
     title: Good Faith Estimate (GFE) Coordination Specification
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: draft
   gfe_submission_and_aeob_specification.md:
     title: Good Faith Estimate (GFE) Submission and AEOB Specification
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: trial-use
   terminology_licensure.md:
     title: Terminology Licensure
   security.md:
@@ -135,6 +157,8 @@ groups:
     description: These define the properties by which a RESTful server can be searched. They can also be used for sorting and including related resources.
     resources:
     - SearchParameter/aeob-date-of-service
+    - SearchParameter/task-requested-period
+    - SearchParameter/task-replaces
 
 
   General:

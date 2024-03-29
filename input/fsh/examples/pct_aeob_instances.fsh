@@ -104,7 +104,7 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
 
 * status = #active
-* type = PCTEstimateTypeSummaryCS#estimate-summary "Estimate Summary"
+* type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
 * use = #predetermination
 * patient = Reference(patient1001)
 * created = "2021-10-12"
