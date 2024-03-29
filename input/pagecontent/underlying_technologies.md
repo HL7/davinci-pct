@@ -24,7 +24,9 @@ as general guidance on how to read FHIR specifications. Readers who are unfamili
 * [Base resource]({{site.data.fhir.path}}resource.html)
 
 #### US Core Version
-[US Core STU 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/index.html) 
+
+[US Core STU 3.1.1]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) 
+
 
 Implementers should also familiarize themselves with the FHIR resources used within this IG.
 
@@ -49,11 +51,11 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 </figure>
 
 ### US Core
-Provider billing and payer claims adjudication systems for those profiles defined by US Core SHALL use the specification defined by [US Core](http://hl7.org/fhir/us/core/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
+Provider billing and payer claims adjudication systems for those profiles defined by US Core SHALL use the specification defined by [US Core]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
 
-Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support](http://hl7.org/fhir/us/core/general-guidance.html#must-support) Guidance where US Core IG resources are used.
+Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support]({{site.data.fhir.ver.hl7_fhir_us_core}}/general-guidance.html#must-support) Guidance where US Core IG resources are used.
 
 
 ### Da Vinci HRex
-Provider billing and payer systems SHALL use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex) when exchanging information, as defined by [the Privacy and Security section of this IG](security.html). Implementers should be familiar with this specification.
+Provider billing and payer systems SHALL use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG]({{site.data.fhir.ver.hl7_fhir_us_davinci_hrex}}/index.html) when exchanging information, as defined by [the Privacy and Security section of this IG](security.html). Implementers should be familiar with this specification.
 
