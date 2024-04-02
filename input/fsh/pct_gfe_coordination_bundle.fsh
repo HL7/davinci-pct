@@ -38,7 +38,7 @@ Description: "PCT GFE Request Bundle that contains necessary resources for GFE  
 
 
 // TODO INvariant requiring at least one coordination task and one contributor task
-/* THis does not apply
+/* This does not apply
 Invariant: pct-gfe-request-bundle-1
 Description: "All references resources SHALL be contained within the Bundle"
 Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"

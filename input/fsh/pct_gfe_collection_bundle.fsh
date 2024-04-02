@@ -8,7 +8,7 @@ Parent: Bundle
 Id: davinci-pct-gfe-collection-bundle
 Title: "PCT GFE Collection Bundle"
 Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contributors. This collection of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
-* insert TrialUseArtifact
+* insert TrialUseArtifact1
 * obeys pct-gfe-collection-bundle-2 and pct-gfe-collection-bundle-3
 
 * identifier 1..1

@@ -3,13 +3,9 @@ Parent: ExplanationOfBenefit
 Id: davinci-pct-aeob-summary
 Title: "PCT Advanced EOB Summary"
 Description: "This profile is used for exchanging a summary of Explanation of Benefit (EoB) information, including costs and benefits, of all of the Advanced EoB data contained within an Advance EoB Bundle."
-* insert TrialUseArtifact
+* insert TrialUseArtifact1
 
 /* 
-TODO
-	Need serviceDescription for primary procedure (what is the overal request about)
-	totals
-	benefits
 
 Questions
 	Do we need to have references to the AEOBs that the summary is referencing OR is it reasonably implied by the context of being in an AEOB Bundle? How about when it leaves the bundle, e.g. for processing)
