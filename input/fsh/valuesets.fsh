@@ -1,15 +1,15 @@
 
 ValueSet: PCTOrgIdentifierTypeVS
-Title: "PCT Organization Identifier Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes to specify the type of identifiers for organizations to indicate usage for a specific purpose"
+Title: "PCT Organization Identifier Type Value Set"
+Description: "Codes to specify the type of identifiers for organizations to indicate usage for a specific purpose. This ValueSet is currently locally defined; an external FHIR value set may be created through the HL7 Terminology (THO) process to replace this value set in a future version."
 * codes from valueset $IdentifierTypeVS
 * codes from system PCTOrgIdentifierTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
 ValueSet: PCTOrganizationTypeVS
-Title: "PCT Organization Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes to specify the type of entity involved in the PCT GFE process"
+Title: "PCT Organization Type Value Set"
+Description: "Codes to specify the type of entity involved in the PCT GFE process. This ValueSet is currently locally defined; an external FHIR value set may be created through the HL7 Terminology (THO) process to replace this value set in a future version."
 * codes from valueset $OrganizationType
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
@@ -168,8 +168,8 @@ Description: "Codes to specify the the functional roles of the care team members
 * ^experimental = false
 
 ValueSet: PCTOrgContactPurposeTypeVS
-Title: "PCT Organization Contact Purpose Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"
-Description: "Codes for the classification of organization contact purposes"
+Title: "PCT Organization Contact Purpose Value Set"
+Description: "Codes for the classification of organization contact purposes. This ValueSet is currently locally defined; an external FHIR value set may be created through the HL7 Terminology (THO) process to replace this value set in a future version."
 * codes from system $ContactPurposeCS
 * codes from system PCTOrgContactPurposeType
 * ^copyright = "This Valueset is not copyrighted."

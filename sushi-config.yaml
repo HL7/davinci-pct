@@ -52,8 +52,16 @@ parameters:
 pages:
   index.md:
     title: Patient Cost Transparency Implementation Guide Home Page
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   use_cases.md:
     title: Use Case and Actors
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   gfe_coordination_overview.md:
     title: Good Faith Estimate (GFE) Coordination Overview
     extension:
@@ -62,8 +70,16 @@ pages:
           valueCode: draft
   gfe_submission_and_aeob_overview.md:
     title: Good Faith Estimate (GFE) Submission and AEOB Overview
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   underlying_technologies.md:
     title: Technical Background and Underlying Technologies
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   formal_specification.md:
     title: Formal Specification
     extension:
@@ -84,12 +100,28 @@ pages:
           valueCode: trial-use
   terminology_licensure.md:
     title: Terminology Licensure
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   security.md:
     title: Security
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: trial-use
   downloads.md:
     title: Downloads
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   change_log.md:
     title: Change Log
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
 #  credits.md:
 #    title: Credits
   

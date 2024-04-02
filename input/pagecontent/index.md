@@ -2,9 +2,11 @@
 <p>
 This specification is a Standard for Trial Use. It is expected to continue to evolve and improve through HL7® FHIR® Connectathon testing and feedback from early adopters. 
 </p>
-<p>STU1 focused on a payer receiving a good faith estimate (GFE) from a provider and returning an Advanced Explanation of Benefits (AEOB) to a patient. With STU2, this specification includes guidance on how multiple providers can work together to provide one GFE that can be sent directly to the patient if the patient does not have/chooses not to use health insurance or to a payer so that an AEOB can be generated for a patient covered by insurance.</p>
+<p>STU1 focused on a payer receiving a good faith estimate (GFE) from a provider and returning an Advanced Explanation of Benefits (AEOB) to a patient. With STU2, this specification includes guidance on how multiple providers can work together to provide one collective GFE, GFE Summary and AEOB Summary for easier patient understanding of their overall estimated cost, as well as other valuable updates. See [Change Log](change_log.html) for additional information.
+The IG STU2 content relating to the GFE Coordination is marked as DRAFT throughout this guide. The Da Vinci PCT open community of providers, payers, health IT including EHRs, revenue cycle experts, billing specialists, cost estimator experts and others that have provided requirements and vetted design decisions, recognize that the GFE coordination process is not happening today. Balloting this content provides the opportunity to gain feedback broadly and enable better insights for testing of the technology as the business process evolves to ready a standard for trial use.
+</p>
 <p>
-Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci PCT" as the specification.
+Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci Patient Cost Transparency (PCT)(FHIR)" as the specification.
 </p>
 <p>
 This implementation guide (IG) is dependent on other specifications. Please submit any comments you have on these base specifications as follows:

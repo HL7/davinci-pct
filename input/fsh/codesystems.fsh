@@ -1,7 +1,7 @@
 
 CodeSystem: PCTOrgIdentifierTypeCS
 Title: "PCT Organization Identifier Type Code System"
-Description: "Identifier Type codes for defining the type of identifier payers and providers assign to organizations"
+Description: "Identifier Type codes for defining the type of identifier payers and providers assign to organizations. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #ETIN "Electronic Transmitter Identification Number" "Electronic Transmitter Identification Number"
 * #payerid "Payer ID" "Payer ID used in HIPAA covered claims submission transactions"
@@ -21,7 +21,7 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 
 CodeSystem: PCTDiagnosisType
 Title: "PCT Diagnosis Type"
-Description: "Defining codes for the classification of diagnosis types"
+Description: "Defining codes for the classification of diagnosis types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #patientReasonForVisit "Patient's Reason for Visit" "Identifies the patient's reason for the outpatient institutional visit"
 //* #externalCauseOfInjury "External Cause of Injury"	  "Required when an external cause of injury is needed to describe the injury"
@@ -33,7 +33,7 @@ Description: "Defining codes for the classification of diagnosis types"
 
 CodeSystem: PCTProcedureType
 Title: "PCT Procedure Type"
-Description: "Defining codes for the classification of procedure types"
+Description: "Defining codes for the classification of procedure types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #principal "Pricipal" "Principal procedure information"
 * #procedureRequiringAnesthesia  "Surgical procedure requiring anesthesia" "Identifies the surgical procedure requiring anesthesia"
@@ -44,7 +44,7 @@ Description: "Defining codes for the classification of procedure types"
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
 Title: "PCT Subject-To-Medical-Management Reason Code System"
 //Id: pct-medical-mgmt-condition-type
-Description: "Defining codes for the classification of subject-to-medical-management reason types"
+Description: "Defining codes for the classification of subject-to-medical-management reason types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #concurrent-review "Concurrent Review" "Concurrent Review"
 * #prior-auth "Prior Authorization" "Prior Authorization"
@@ -55,7 +55,7 @@ Description: "Defining codes for the classification of subject-to-medical-manage
 
 CodeSystem: PCTSupportingInfoType
 Title: "PCT GFE Supporting Info Type Code System"
-Description: "Defining codes for the classification of the supplied supporting information"
+Description: "Defining codes for the classification of the supplied supporting information. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #cmspos "CMS Place of Service" "Place of Service Codes are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided. The Centers for Medicare & Medicaid Services (CMS) maintain POS codes used throughout the health care industry."
 * #typeofbill "Type of Bill"  "UB-04 Type of Bill (FL-04) provides specific information for payer purposes."
@@ -69,7 +69,7 @@ Description: "Defining codes for the classification of the supplied supporting i
 
 CodeSystem: PCTGFEFrequency
 Title: "PCT GFE Frequency Code System"
-Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type of Bill (TOB) codes.  The fourth digit of the TOB code defines the frequency of the bill for the institutional and electronic professional claim."
+Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type of Bill (TOB) codes.  The fourth digit of the TOB code defines the frequency of the bill for the institutional and electronic professional claim. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = false
 * #1 "1"
 * #7 "7"
@@ -79,7 +79,7 @@ Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type
 
 CodeSystem: PCTCareTeamRole
 Title: "PCT Care Team Role"
-Description: "PCT code system for defining the functional roles of the care team members."
+Description: "PCT code system for defining the functional roles of the care team members. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #attending "Attending provider" "The attending physician."
 * #referring "Referring provider" "The referring provider."
@@ -92,7 +92,7 @@ Description: "PCT code system for defining the functional roles of the care team
 
 CodeSystem: PCTOrgContactPurposeType
 Title: "PCT Organization Contact Purpose Type Code System"
-Description: "Organization Contact Purpose Type Code System"
+Description: "Organization Contact Purpose Type Code System. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #GFERELATED "GFE-related" "Contact details for dealing with issues related to Good Faith Estimate (GFE)."
 * ^copyright = "This CodeSystem is not copyrighted."
@@ -100,7 +100,7 @@ Description: "Organization Contact Purpose Type Code System"
 
 CodeSystem: PCTAdjudicationCategoryCS
 Title: "PCT Adjudication Category CodeSystem"
-Description: "Codes indicating the type of adjudication information provided."
+Description: "Codes indicating the type of adjudication information provided. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * ^experimental = false
 * #billingnetworkstatus "Billing Network Status" "Indicates the Billing Provider network status in relation to the patient's coverage."
@@ -112,7 +112,7 @@ Description: "Codes indicating the type of adjudication information provided."
 
 CodeSystem: PCTAdjudication
 Title: "PCT Adjudication Code System"
-Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
+Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
 * #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
 * #memberliability "Member liability" "The amount of the member's liability."
@@ -124,7 +124,7 @@ Description: "Describes the various amount fields used when payers receive and a
 
 CodeSystem: PCTIdentifierType
 Title:  "PCT Identifier Type"
-Description: "Defining codes for types of identifiers"
+Description: "Defining codes for types of identifiers. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
@@ -134,7 +134,7 @@ Description: "Defining codes for types of identifiers"
 CodeSystem: PCTNetworkStatusCS
 Id: PCTNetworkStatusCS
 Title: "PCT Network Status"
-Description: "Defining codes for network status. This is for trial use."
+Description: "Defining codes for network status.  This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
@@ -146,7 +146,7 @@ Description: "Defining codes for network status. This is for trial use."
 CodeSystem: PCTAEOBProcessNoteCS
 Id: PCTAEOBProcessNoteCS
 Title: "PCT AEOB Process Note Code System"
-Description: "Defining codes for process notes. This is for trial use."
+Description: "Defining codes for process notes.  This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
@@ -156,7 +156,7 @@ Description: "Defining codes for process notes. This is for trial use."
 
 CodeSystem: PCTFinancialType
 Title: "PCT Financial Type Code System"
-Description: "Financial Type codes for benefitBalance.financial.type."
+Description: "Financial Type codes for benefitBalance.financial.type. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
@@ -173,7 +173,7 @@ Description: "Financial Type codes for benefitBalance.financial.type."
 
 CodeSystem: PCTEstimateTypeSummaryCSTemporaryTrialUse
 Title: "PCT Estimate Type Code System"
-Description: "Defining the code for a estimate (GFE or AEOB) type summary. THE CODE SYSTEM URL IS FOR TEMPORARY TRAIL AND IS EXPECTED TO CHANGE IN A FUTURE VERSION."
+Description: "Defining the code for a estimate (GFE or AEOB) type summary.  This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #estimate-summary "Estimate Summary"
 * ^copyright = "This CodeSystem is not copyrighted."
@@ -181,7 +181,7 @@ Description: "Defining the code for a estimate (GFE or AEOB) type summary. THE C
 
 CodeSystem: PCTGFERequestTaskCSTemporaryTrialUse
 Title: "PCT GFE Request Task Codes Code System"
-Description: "Defining codes for defining GFE request types. THE COdE SYSTEM URL IS FOR TEMPORARY TRAIL AND IS EXPECTED TO CHANGE IN A FUTURE VERSION."
+Description: "Defining codes for defining GFE request types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
@@ -193,7 +193,7 @@ Description: "Defining codes for defining GFE request types. THE COdE SYSTEM URL
 
 CodeSystem: PCTTaskStatusReasonCSTemporaryTrialUse
 Title: "PCT GFE Request Task Status Reason Code Code System"
-Description: "Defining codes for defining GFE request task status reason types. THE CODE SYSTEM URL IS FOR TEMPORARY TRAIL AND IS EXPECTED TO CHANGE IN A FUTURE VERSION."
+Description: "Defining codes for defining GFE request task status reason types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true

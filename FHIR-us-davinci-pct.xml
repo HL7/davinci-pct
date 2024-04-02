@@ -92,11 +92,11 @@
 <artifact id="CodeSystem/PCTNetworkStatusCS" key="CodeSystem-PCTNetworkStatusCS" name="PCT Network Status"/>
 <artifact id="StructureDefinition/davinci-pct-organization" key="StructureDefinition-davinci-pct-organization" name="PCT Organization"/>
 <artifact id="CodeSystem/PCTOrgContactPurposeType" key="CodeSystem-PCTOrgContactPurposeType" name="PCT Organization Contact Purpose Type Code System"/>
-<artifact id="ValueSet/PCTOrgContactPurposeTypeVS" key="ValueSet-PCTOrgContactPurposeTypeVS" name="PCT Organization Contact Purpose Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
+<artifact id="ValueSet/PCTOrgContactPurposeTypeVS" key="ValueSet-PCTOrgContactPurposeTypeVS" name="PCT Organization Contact Purpose Value Set"/>
 <artifact id="CodeSystem/PCTOrgIdentifierTypeCS" key="CodeSystem-PCTOrgIdentifierTypeCS" name="PCT Organization Identifier Type Code System"/>
-<artifact id="ValueSet/PCTOrgIdentifierTypeVS" key="ValueSet-PCTOrgIdentifierTypeVS" name="PCT Organization Identifier Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
+<artifact id="ValueSet/PCTOrgIdentifierTypeVS" key="ValueSet-PCTOrgIdentifierTypeVS" name="PCT Organization Identifier Type Value Set"/>
 <artifact deprecated="true" id="CodeSystem/PCTOrganizationTypeCS" key="CodeSystem-PCTOrganizationTypeCS" name="PCT Organization Type Code System"/>
-<artifact id="ValueSet/PCTOrganizationTypeVS" key="ValueSet-PCTOrganizationTypeVS" name="PCT Organization Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
+<artifact id="ValueSet/PCTOrganizationTypeVS" key="ValueSet-PCTOrganizationTypeVS" name="PCT Organization Type Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/davinci-pct-patient" key="StructureDefinition-davinci-pct-patient" name="PCT Patient"/>
 <artifact id="ValueSet/PCTPayerBenefitPaymentStatusVS" key="ValueSet-PCTPayerBenefitPaymentStatusVS" name="PCT Payer Benefit Payment Status"/>
 <artifact id="ValueSet/PCTPayerProviderNetworkStatusVS" key="ValueSet-PCTPayerProviderNetworkStatusVS" name="PCT Payer Provider Network Status"/>

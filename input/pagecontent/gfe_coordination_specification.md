@@ -1,5 +1,4 @@
-<!-- **The following page is DRAFT. It has not yet undergone HL7 balloting.**
-{:.stu-note} -->
+{% include draft_content_note.md content="page" %}
 
 This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG for GFE Coordination. It focuses on the Good Faith Estimate (GFE) Coordination Task, though it also provides guidance on privacy, security, and other implementation requirements.
 
@@ -63,7 +62,7 @@ GFE Contributors **SHALL** be able to accept a GFE Contributing Task by updating
 GFE Contributors **SHALL** be able to decline a GFE Contributing Task by updating a Task they are assigned to with a Task.status code of `rejected`
 
 When submitting a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html), GFE Contributors **SHALL** update the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)  with the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) contained in `Task.output.valueAttachement` and **SHALL** set that Task.status to `completed` when the Task is considered complete.
-The GFE Contributor **MAY** include other types of data in output.valueAttachement, but such data **SHALL** be in a FHIR Resource format and fully contained with no external references that can’t be resolved internally.
+The GFE Contributor **MAY** include other types of data in output.valueAttachment, but such data **SHALL** be in a FHIR Resource format and fully contained with no external references that can’t be resolved internally.
 
 
 #### Replacing Coordination Tasks or Contributor Tasks
