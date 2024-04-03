@@ -1,13 +1,249 @@
 ### Change Log
 
+#### High Level Changes 2.0.0-ballot
+
+This ballot version includes a new use case addressing the need to coordinate GFE collection among providers and makes some modifications to the existing GFE Submit workflow:
+
+* Added the GFE Coordination Workflow <a href="gfe_coordination_overview.html">Overview</a> and <a href="gfe_coordination_specification.html">Specification</a> pages.
+* Created the following profiles in support of the GFE Collection workflow:
+    * [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) - This collection of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation.
+    * [GFE Coordination Bundle](StructureDefinition-davinci-pct-gfe-coordination-bundle.html) - Contains necessary resources for GFE to request GFEs from one or multiple GFE contributing providers.
+    * [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) - Used to organize a GFE across providers for a single period of care for which all GFE Contributor Task resources will be linked.
+    * [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) - Used by a GFE coordinator to assign a GFE contributor task to a specific provider and may include information specific to that patient’s expected service.
+    * [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) - Contains the information necessary for GFE contributors to create their estimates.
+    * [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) - Used to indicate when a GFE Contributor task request was made, but no GFE Bundle was submitted.
+    * [GFE ServiceRequest](StructureDefinition-davinci-pct-servicerequest.html) - Includes details about a service for which a GFE is being requested.
+    * [GFE MedicationRequest](StructureDefinition-davinci-pct-medicationrequest.html) - Includes details about a medication for which a GFE is being requested.
+    * [GFE DeviceRequest](StructureDefinition-davinci-pct-devicerequest.html) - Includes details about a device for which a GFE is being requested.
+    * [PCT Service Location](StructureDefinition-davinci-pct-service-location.html) - Provides information where the service is to be performed or the item delivered.
+* Created the following CapabilityStatements identifying requirements of the GFE Coordination workflow actors:
+    * [Coordination Platform Capability Statement](CapabilityStatement-davinci-pct-coordination-platform.html)
+    * [Coordination Requester Capability Statement](CapabilityStatement-davinci-pct-coordination-requester.html)
+    * [GFE Contributor Capability Statement](CapabilityStatement-davinci-pct-gfe-contributor.html)
+* Created CodeSystems and ValueSets in support of the GFE Coordination workflow
+* Created the [Retrieve GFE Collection Bundle (GFE-Retrieve) operation](OperationDefinition-GFE-retrieve.html) to support the collection of GFE Bundles contributed through the GFE Coordination workflow.
+* Updated the [GFE Submit](OperationDefinition-GFE-submit.html) operation to take a [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) instead of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) (which is now contained in the GFE Collection Bundle)
+* Added the [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) and [GFE Summary](StructureDefinition-davinci-pct-gfe-summary.html) profiles and requirements for their presence in the [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html) and [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) respectively
+* Assign a standards status to all artifacts and pages.
+* Small presentation and example changes.
+
+
+#### Detailed Changes 2.0.0-ballot (JIRA Change Requests)
+
+<table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+<thead>
+<tr class="rowHeader">
+
+<th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+Key
+</th>
+
+<th class="colHeaderLink headerrow-resolution" data-id="resolution">
+Resolution
+</th>
+
+<th class="colHeaderLink headerrow-summary" data-id="summary">
+Summary
+</th>
+</tr>
+</thead>
+<tbody>
+<tr data-issuekey='FHIR-42832' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-42832' href='https://jira.hl7.org/browse/FHIR-42832'>FHIR-42832</a>
+</td>
+<td class='resolution'>Persuasive with Modification</td>
+<td class='summary'><p>Add slices to the Advanced ExplanationOfBenefit total</p></td>
+</tr>
+<tr data-issuekey='FHIR-42707' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-42707' href='https://jira.hl7.org/browse/FHIR-42707'>FHIR-42707</a>
+</td>
+<td class='resolution'>Persuasive with Modification</td>
+<td class='summary'><p>GFE submit operation should describe the wrapping batch-response bundle</p></td>
+</tr>
+<tr data-issuekey='FHIR-42785' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-42785' href='https://jira.hl7.org/browse/FHIR-42785'>FHIR-42785</a>
+</td>
+<td class='resolution'>Persuasive with Modification</td>
+<td class='summary'><p>Add "negotiated" code to Network status CodeSystem and adjudication and item.adjudication bound ValueSet</p></td>
+</tr>
+<tr data-issuekey='FHIR-43705' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-43705' href='https://jira.hl7.org/browse/FHIR-43705'>FHIR-43705</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Improve description of OperationOutcome OUT param in $gfe-submit</p></td>
+</tr>
+<tr data-issuekey='FHIR-44952' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44952' href='https://jira.hl7.org/browse/FHIR-44952'>FHIR-44952</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Relax insurance/coverage requirements on GFE Bundle and GFE claim profiles</p></td>
+</tr>
+<tr data-issuekey='FHIR-44955' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44955' href='https://jira.hl7.org/browse/FHIR-44955'>FHIR-44955</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Add CDT codes to GFE Claim codes ValueSet bindings</p></td>
+</tr>
+<tr data-issuekey='FHIR-44971' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44971' href='https://jira.hl7.org/browse/FHIR-44971'>FHIR-44971</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Create an operation to retrieve a GFE Collection Bundle for a task</p></td>
+</tr>
+<tr data-issuekey='FHIR-44993' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44993' href='https://jira.hl7.org/browse/FHIR-44993'>FHIR-44993</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Create CapabilityStatements for GFE Request workflow</p></td>
+</tr>
+<tr data-issuekey='FHIR-45001' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45001' href='https://jira.hl7.org/browse/FHIR-45001'>FHIR-45001</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Pre-adopt Coverage.kind into PCT Coverage profile and add declaration</p></td>
+</tr>
+<tr data-issuekey='FHIR-45037' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45037' href='https://jira.hl7.org/browse/FHIR-45037'>FHIR-45037</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Add proposed service location to GFE information request bundle</p></td>
+</tr>
+<tr data-issuekey='FHIR-45053' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45053' href='https://jira.hl7.org/browse/FHIR-45053'>FHIR-45053</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Remove GFE Submitter from Claim resource Profiles</p></td>
+</tr>
+<tr data-issuekey='FHIR-45055' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45055' href='https://jira.hl7.org/browse/FHIR-45055'>FHIR-45055</a>
+</td>
+<td class='resolution'>Persuasive with Modification</td>
+<td class='summary'><p>Add a GFE Coordination Workflow to the IG</p></td>
+</tr>
+<tr data-issuekey='FHIR-45151' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45151' href='https://jira.hl7.org/browse/FHIR-45151'>FHIR-45151</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Add an STU note on all draft pages (narrative & profile) about it being draft</p></td>
+</tr>
+<tr data-issuekey='FHIR-45152' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45152' href='https://jira.hl7.org/browse/FHIR-45152'>FHIR-45152</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Change the home page STU Note text</p></td>
+</tr>
+<tr data-issuekey='FHIR-44951' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44951' href='https://jira.hl7.org/browse/FHIR-44951'>FHIR-44951</a>
+</td>
+<td class='resolution'>Not Persuasive with Modification</td>
+<td class='summary'><p>Change the GFE Bundle to be contributor specific and add a GFE Collection Bundle</p></td>
+</tr>
+<tr data-issuekey='FHIR-45054' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45054' href='https://jira.hl7.org/browse/FHIR-45054'>FHIR-45054</a>
+</td>
+<td class='resolution'>Persuasive with Modification</td>
+<td class='summary'><p>Create a GFE Coordination Bundle for submitting a GFE Coordination request</p></td>
+</tr>
+<tr data-issuekey='FHIR-45061' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45061' href='https://jira.hl7.org/browse/FHIR-45061'>FHIR-45061</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Section 3.3 US Core currently resolves to US Core 6.1 in two places. It should actually NOT point to US Core 6.1.0, but US Core 3.1.1</p></td>
+</tr>
+<tr data-issuekey='FHIR-45060' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-45060' href='https://jira.hl7.org/browse/FHIR-45060'>FHIR-45060</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>The header for section 3.2.1 reads FHIR Version, but the link reads FHIR R4 US Core and points to US Core 6.1 instead of the FHIR R4 Specification.</p></td>
+</tr>
+<tr data-issuekey='FHIR-43329' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-43329' href='https://jira.hl7.org/browse/FHIR-43329'>FHIR-43329</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Correct Example fullURL to use the right resource base</p></td>
+</tr>
+<tr data-issuekey='FHIR-44859' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44859' href='https://jira.hl7.org/browse/FHIR-44859'>FHIR-44859</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Correct the spelling of the word definition</p></td>
+</tr>
+<tr data-issuekey='FHIR-44691' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44691' href='https://jira.hl7.org/browse/FHIR-44691'>FHIR-44691</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Correct typo in index page regarding future IG </p></td>
+</tr>
+<tr data-issuekey='FHIR-44970' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44970' href='https://jira.hl7.org/browse/FHIR-44970'>FHIR-44970</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Add a GFE Request Information Bundle and related profiles</p></td>
+</tr>
+<tr data-issuekey='FHIR-44954' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44954' href='https://jira.hl7.org/browse/FHIR-44954'>FHIR-44954</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Create Coordinating Request Task and Contributing Provider Request Task Profiles</p></td>
+</tr>
+<tr data-issuekey='FHIR-44778' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-44778' href='https://jira.hl7.org/browse/FHIR-44778'>FHIR-44778</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Create an GFE Summary Profile to add to the GFE Bundle</p></td>
+</tr>
+<tr data-issuekey='FHIR-42827' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-42827' href='https://jira.hl7.org/browse/FHIR-42827'>FHIR-42827</a>
+</td>
+<td class='resolution'>Persuasive</td>
+<td class='summary'><p>Create an AEOB Summary Profile to add to the AEOB Bundle</p></td>
+</tr>
+<tr data-issuekey='FHIR-43330' class='issuerow'>
+<td class="issuekey" style="white-space:nowrap">
+<a class='issue-link' data-issue-key='FHIR-43330' href='https://jira.hl7.org/browse/FHIR-43330'>FHIR-43330</a>
+</td>
+<td class='resolution'>Persuasive with Modification</td>
+<td class='summary'><p>Correct invariant expressions where a coding is checked</p></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
 
 #### High Level Changes 1.1.0
 
 This STU Update includes a number of changes addressing some critical and minor fixes including:
 
 * Set max occurrences for slice discriminator element 'type' to one of the Good Faith Estimate profiles.
-* Corrected <a href="StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefit payment status and adjustment reason adjudication slices to the correct Value Set binding.
-* Corrected <a href="StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefitBalance.financial element types and added remaining amount extension.
+* Corrected <a href="https://hl7.org/fhir/us/davinci-pct/STU1.1/StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefit payment status and adjustment reason adjudication slices to the correct Value Set binding.
+* Corrected <a href="https://hl7.org/fhir/us/davinci-pct/STU1.1/StructureDefinition-davinci-pct-aeob.html">Advanced Explanation Of Benefit Profile</a> benefitBalance.financial element types and added remaining amount extension.
 * Corrected numerous FHIRPath expressions for SearchParameter and Invariants.
 * Assign context to all of the extensions
 * Small presentation and example changes.
@@ -179,7 +415,7 @@ Correct Example fullURL to use the right resource base
 There were many changes to all the profiles, value sets, etc. since the last ballot. The details are listed in the section below. High level changes since the ballot are:
 
 * The polling mechanism changed form polling based on Bundle.identifier to using the [asyncrhonous response pattern](http://build.fhir.org/async-bundle.html).
-* Updated workflow diagrams on the [Use Cases](use_cases.html) page.
+* Updated workflow diagrams on the [Use Cases](https://hl7.org/fhir/us/davinci-pct/STU1.1/use_cases.html) page.
 * Most code systems have been moved to the [HL7 terminology](https://terminology.hl7.org/) page, and their code system URLs changed as a result.
 * Harmonized with CARIN blue button EOB where possible to reduce implementation barriers
 * Added Must Support definition, and updated elements to align with MS definition, and removed MS from elements where the minimum cardinality is 1 since these are required anyway
