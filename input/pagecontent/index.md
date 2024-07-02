@@ -126,7 +126,7 @@ Special thanks go to the numerous Da Vinci members and community   who have part
 *	Weill Cornell Medicine (Jill Vincente, Jarrett Cox)
 *	Aegis (Carie Hammond)
 
-> If you are interested in participating in the PCT project, information about our calls, minutes of past discussions, and other information can be found [here](https://confluence.hl7.org/display/DVP/Patient+Cost+Transparency) on our HL7 Confluence page.
+> If you are interested in participating in the PCT project, information about our calls, minutes of past discussions, and other information can be found [here](https://confluence.hl7.org/pages/viewpage.action?pageId=116460399) on our HL7 Confluence page.
 
 The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, scheduling, prior authorization or other financial and administrative use cases. 
 

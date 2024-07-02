@@ -40,7 +40,7 @@ jurisdiction: urn:iso:std:iso:3166#US
 parameters:   
   
   show-inherited-invariants: false
-  #path-liquid: liquid
+  path-liquid: liquid
   #propagate-status: true
   auto-oid-root: 2.16.840.1.113883.4.642.40.4 
   #version-comparison-master: true
@@ -161,9 +161,15 @@ menu:
     Terminology Licensure: terminology_licensure.html
     
   Security: security.html
+
+  Support:  
+    Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=116460399
+    Discussion Forum: https://chat.fhir.org/#narrow/stream/301151-Da-Vinci-PCT
+    Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&customfield_11302=FHIR-us-davinci-pct&issuetype=10600
+    Downloads: downloads.html
     
-  Downloads: downloads.html
-  
+
+
   Change Log: change_log.html
  
 groups:
