@@ -176,6 +176,36 @@ Description: "PCT GFE Collection Bundle Example 1"
 * entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
+Instance: PCT-GFE-Collection-Bundle-2
+InstanceOf: PCTGFECollectionBundle
+Description: "PCT GFE Collection Bundle Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-2347384711"
+* timestamp = "2024-03-29T11:01:00+05:00"
+
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].id = "patient1001"
+* entry[patient].resource = patient1001
+
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].id = "coverage1001"
+* entry[coverage].resource = coverage1001
+* entry[practitioner][+].fullUrl = "http://example.org/fhir/Practitioner/Submitter-Practitioner-1"
+* entry[practitioner][=].id = "Submitter-Practitioner-1"
+* entry[practitioner][=].resource = Submitter-Practitioner-1
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
+
+
+
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Prof-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Bundle-Prof-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Bundle-Prof-1
+
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
 
@@ -193,6 +223,9 @@ Description: "PCT GFE Missing Bundle Example 1"
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
 * entry[coverage].resource = coverage1001
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
 * entry[requested-items-device].fullUrl = "http://example.org/fhir/DeviceRequest/PCT-DeviceRequest-1"
 * entry[requested-items-device].id = "PCT-DeviceRequest-1"
 * entry[requested-items-device].resource = PCT-DeviceRequest-1
