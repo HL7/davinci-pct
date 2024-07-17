@@ -167,13 +167,13 @@ Description: "PCT GFE Collection Bundle Example 1"
 
 
 
-* entry[gfe-bundle].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
-* entry[gfe-bundle].id = "PCT-GFE-Bundle-Inst-1"
-* entry[gfe-bundle].resource = PCT-GFE-Bundle-Inst-1
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Bundle-Inst-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Bundle-Inst-1
 
-* entry[gfe-bundle].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
-* entry[gfe-bundle].id = "PCT-GFE-Missing-Bundle-1"
-* entry[gfe-bundle].resource = PCT-GFE-Missing-Bundle-1
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
 
