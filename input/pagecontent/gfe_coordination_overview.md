@@ -4,10 +4,11 @@ This section of the Implementation Guide focuses on enabling providers and facil
 
 This guide supports the:
 
-- Ability for a convening provider, acting as a coordination requester, to notify co-providers, acting as contributors, and request data to inform Good Faith Estimates (GFEs) for expected items and services
+- Ability for a convening provider, acting as a coordination requester, to notify co-providers, acting as contributors, and request data to inform Good Faith Estimates (GFEs) for expected items and services.
 
 - Ability for contributors to respond to a request for data back to a coordination requester with cost and planned items and services information.
-Ability for a Coordination Platform to communicate a GFE to payer (leveraging an existing PCT IG workflow,) and to other providers in the care team, prior to scheduled a service or upon request
+
+- Ability for a Coordination Platform to communicate a GFE to payer (leveraging an existing PCT IG workflow) and to other providers in the care team, prior to scheduled a service or upon request.
 
 The Coordination Platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
 
