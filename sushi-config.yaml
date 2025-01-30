@@ -13,7 +13,7 @@ name: PatientCostTransparency
 title: Patient Cost Transparency Implementation Guide
 description: To support the request for cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.
 status: active
-version: 2.0.0-ballot
+version: 2.0.0-draft
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  #<<< must include a http://hl7.org/fhir/StructureDefinition/structuredefinition-wg extension that identifies the workgroup responsible for the IG. This is the authoritative element.
     valueCode: fm  # <<< The value must be the code for the workgroup
@@ -32,22 +32,36 @@ dependencies:
   hl7.fhir.us.core: 3.1.1
   hl7.fhir.extensions.r5: 4.0.1
   hl7.fhir.us.davinci-hrex: 1.0.0     # NOTE: Da Vinci HRex depends on US Core 3.1.0
+  hl7.terminology: 6.1.0
+  hl7.fhir.uv.subscriptions-backport: 1.1.0
 
-copyrightYear: 2023+
-releaseLabel: STU 2 Ballot
+
+copyrightYear: 2025+
+releaseLabel: STU 2 - Draft
 jurisdiction: urn:iso:std:iso:3166#US
 
 parameters:   
-  
+  path-expansion-params: '../../input/exp-params.json'  # for using US ed of SNOMED
+  active-tables: false
+  apply-contact: true
+  apply-jurisdiction: true
+  apply-publisher: true
+  apply-version: true
   show-inherited-invariants: false
+  # usage-stats-opt-out: true
+  # excludexml: false
+  # excludejson: false
+  # excludettl: true
+  # excludemap: true
+  # tabbed-snapshots: false
   path-liquid: liquid
   #propagate-status: true
   auto-oid-root: 2.16.840.1.113883.4.642.40.4 
-  #version-comparison-master: true
+  version-comparison-master: 1.1.0
   version-comparison:
      - 1.0.0
      - 1.1.0
-     
+
 
 pages:
   index.md:
@@ -165,7 +179,7 @@ menu:
   Support:  
     Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=116460399
     Discussion Forum: https://chat.fhir.org/#narrow/stream/301151-Da-Vinci-PCT
-    Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&customfield_11302=FHIR-us-davinci-pct&issuetype=10600
+    Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-pct
     Downloads: downloads.html
     
 
@@ -231,13 +245,21 @@ groups:
     name: "Structures: AEOB Resource Profiles"
     description: These define constraints on AEOB and GFE Submit related FHIR resources for systems conforming to this implementation guide.
     resources:
-    - StructureDefinition/davinci-pct-aeob-bundle
+    - StructureDefinition/davinci-pct-aeob-documentreference
+    - StructureDefinition/davinci-pct-aeob-document-bundle
+    - StructureDefinition/davinci-pct-aeob-composition
     - StructureDefinition/davinci-pct-aeob-summary
     - StructureDefinition/davinci-pct-aeob
     - StructureDefinition/davinci-pct-aeob-complete
     - StructureDefinition/davinci-pct-gfe-validation-error
     - StructureDefinition/davinci-pct-aeob-adjudication-error
     
+
+  ARCHIVED:
+    name: "DO NOT USE: Archived Resource Profiles"
+    description: These are archived profiles temporarily held during a transition from collection bundles to document bundles.
+    resources:
+    - StructureDefinition/davinci-pct-aeob-bundle
 
 
 

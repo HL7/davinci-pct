@@ -68,9 +68,9 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 * adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted "Submitted Amount"
 * adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability "Member Liability"
 
-* total.category = $ADJUDCS#submitted "Submitted Amount"
-* total.amount.value = 200.00
-* total.amount.currency = #USD
+* total[submitted].category = $ADJUDCS#submitted "Submitted Amount"
+* total[submitted].amount.value = 200.00
+* total[submitted].amount.currency = #USD
 
 * processNote.extension[processNoteClass].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTAEOBProcessNoteCS#disclaimer "Disclaimer"
 * processNote.text = "processNote disclaimer text"
@@ -126,9 +126,9 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 * billablePeriod.start = "2022-01-01"
 * billablePeriod.end = "2022-01-01"
 
-* total.category = $ADJUDCS#submitted "Submitted Amount"
-* total.amount.value = 200.00
-* total.amount.currency = #USD
+* total[submitted].category = $ADJUDCS#submitted "Submitted Amount"
+* total[submitted].amount.value = 200.00
+* total[submitted].amount.currency = #USD
 
 * processNote.extension[processNoteClass].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTAEOBProcessNoteCS#disclaimer "Disclaimer"
 * processNote.text = "processNote disclaimer text"
