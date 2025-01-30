@@ -1,0 +1,110 @@
+// TODO, need to adopt most of the documentReference requirements, less the type and context requirements
+// Need US Core Variant Request
+Profile: PCTAdvancedEOBDocumentReference
+Parent: DocumentReference
+Id: davinci-pct-aeob-documentreference
+Title: "PCT AEOB Document Reference"
+Description: "PCT AEOB Document Reference that enables searching and subscriptions for AEOB Documents."
+* insert TrialUseArtifact1
+
+* extension contains
+    RequestInitiationTime named requestInitiationTime 1..1 MS and
+    GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS and
+    EstimateProcedureOrService named procedureOrService 0..* MS and
+    EstimateCondition named condition 0..* MS
+    
+    
+    
+* extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information including planned period of service and a GFE linking identifier"
+
+* extension[requestInitiationTime] ^short = "Estimate Request instant"
+* extension[requestInitiationTime] ^comment = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
+* extension[requestInitiationTime].valueInstant 1..1
+
+* extension[procedureOrService] ^short = "Primary Procedures and/or products involved in the estimates"
+* extension[procedureOrService].value[x] only CodeableConcept
+* extension[procedureOrService].valueCodeableConcept 1..1
+
+* extension[condition] ^short = "Primary diagnoses involved in the estimates"
+* extension[condition].value[x] only CodeableConcept
+* extension[condition].valueCodeableConcept 1..1
+* extension[condition].valueCodeableConcept from PCTDiagnosticCodes (required)
+
+* identifier MS // US Core 6.1 DR Profile
+
+
+
+* status MS
+* docStatus 1..1 MS
+* type 1..
+* type = PCTDocumentType#aeob-document
+
+* category 1.. MS
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category ^short = "(USCDI) Categorization of document"
+* category contains estimate 0..*
+* category[estimate] ^short = "Estimate category"
+* category[estimate] = PCTDocumentCategory#estimate
+
+* subject 1..1 MS
+* subject only Reference(HRexPatientDemographics)
+
+
+* date obeys pct-datetime-to-seconds
+
+// TODO Discuss who the author is
+* author 2..*
+* author only Reference(PCTOrganization or PCTPractitioner)
+* author ^short = "All involved parties, including payer all Good Faith Estimate (GFE) providers"
+
+// DISCUSS, do we want an authenticator requirement? - A participant who has attested to the accuracy of the composition/document.
+// DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
+
+* relatesTo MS
+* relatesTo ^short = "Relationship to other AEOB documents. Required if this estimate is replacing another." 
+
+* content 1..1 MS
+* content.attachment MS
+* content.attachment obeys pct-dr-1
+* content.attachment.contentType MS
+* content.attachment.data MS
+* content.attachment.url MS
+// * content.format DISCUSS is there a way to do a format Code of the profile?
+
+
+// DISCUSS, use of context? for period of care?
+
+/* TODO
+    aggregation of searchable elements needs to be outside of DocumentReference
+
+*/
+
+//TODO Search parameters
+
+Invariant: pct-dr-1
+Description: "DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
+Expression: "url.exists() or data.exists()"
+Severity: #error
+
+
+Instance: PCT-AEOB-DocumentReference-1
+InstanceOf: PCTAdvancedEOBDocumentReference
+Description: "PCT AEOB DocumentReference Example 1"
+
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
+* extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* status = #current
+* docStatus = #final
+* type = PCTDocumentType#aeob-document
+* category = PCTDocumentCategory#estimate
+* subject = Reference(patient1001)
+
+* date = "2025-01-10T11:01:00+05:00"
+
+* author[+]  = Reference(org1001)
+* author[+]  = Reference(Submitter-Org-1)
+
+* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-AEOB-Document-Bundle-1"

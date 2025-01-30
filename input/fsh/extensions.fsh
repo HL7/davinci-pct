@@ -348,6 +348,8 @@ Title: "Request Initiation Time"
 Description: "Instant from which the request is being initiated."
 * ^context[+].type = #element
 * ^context[=].expression = "Task"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
 * value[x] 1..1
 * value[x] only instant
 * value[x] ^short = "Estimate Request instant"

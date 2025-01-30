@@ -1,72 +1,72 @@
 //// Rulesets
 
 RuleSet: AdjudicationSlicing
-* adjudication ^slicing.discriminator.type = #pattern
+* adjudication ^slicing.discriminator.type = #value
 * adjudication ^slicing.discriminator.path = "category"
 * adjudication ^slicing.rules = #open
 * adjudication ^slicing.ordered = false   // can be omitted, since false is the default
-* adjudication ^slicing.description = "Slice based on $this pattern"
+* adjudication ^slicing.description = "Slice based on $this value"
 * adjudication MS
 
 RuleSet: ItemAdjudicationSlicing
-* item.adjudication ^slicing.discriminator.type = #pattern
+* item.adjudication ^slicing.discriminator.type = #value
 * item.adjudication ^slicing.discriminator.path = "category"
 * item.adjudication ^slicing.rules = #open
 * item.adjudication ^slicing.ordered = false   // can be omitted, since false is the default
-* item.adjudication ^slicing.description = "Slice based on $this pattern"
+* item.adjudication ^slicing.description = "Slice based on $this value"
 * item.adjudication 1.. MS
 
 RuleSet: SupportingInfoSlicing
-* supportingInfo ^slicing.discriminator.type = #pattern
+* supportingInfo ^slicing.discriminator.type = #value
 * supportingInfo ^slicing.discriminator.path = "category"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.ordered = false   // can be omitted, since false is the default
-* supportingInfo ^slicing.description = "Slice based on $this pattern"
+* supportingInfo ^slicing.description = "Slice based on $this value"
 * supportingInfo MS
 
 RuleSet: DiagnosisSlicing
-* diagnosis ^slicing.discriminator.type = #pattern
+* diagnosis ^slicing.discriminator.type = #value
 * diagnosis ^slicing.discriminator.path = "type"
 * diagnosis ^slicing.rules = #open
 * diagnosis ^slicing.ordered = false   // can be omitted, since false is the default
-* diagnosis ^slicing.description = "Slice based on $this pattern"
+* diagnosis ^slicing.description = "Slice based on $this value"
 * diagnosis MS
 
 RuleSet: ProcedureSlicing
-* procedure ^slicing.discriminator.type = #pattern
+* procedure ^slicing.discriminator.type = #value
 * procedure ^slicing.discriminator.path = "type"
 * procedure ^slicing.rules = #open
 * procedure ^slicing.ordered = false   // can be omitted, since false is the default
-* procedure ^slicing.description = "Slice based on $this pattern"
+* procedure ^slicing.description = "Slice based on $this value"
 * procedure MS
 
 RuleSet: CareTeamSlicing
-* careTeam ^slicing.discriminator.type = #pattern
+* careTeam ^slicing.discriminator.type = #value
 * careTeam ^slicing.discriminator.path = "role"
 * careTeam ^slicing.rules = #open
 * careTeam ^slicing.ordered = false   // can be omitted, since false is the default
-* careTeam ^slicing.description = "Slice based on $this pattern"
+* careTeam ^slicing.description = "Slice based on $this value"
 * careTeam MS
 
 RuleSet: OrgContactSlicing
-* contact ^slicing.discriminator.type = #pattern
+* contact ^slicing.discriminator.type = #value
 * contact ^slicing.discriminator.path = "purpose"
 * contact ^slicing.rules = #open
 * contact ^slicing.ordered = false   // can be omitted, since false is the default
-* contact ^slicing.description = "Slice based on $this pattern"
+* contact ^slicing.description = "Slice based on $this value"
 * contact MS
 
 RuleSet: IdentifierSlicing
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on type pattern"
+* identifier ^slicing.description = "Slice based on type value"
 
 RuleSet: TotalSlicing
 * total ^slicing.rules = #open
 * total ^slicing.ordered = false   // can be omitted, since false is the default
-* total ^slicing.description = "Slice based on value pattern"
-* total  ^slicing.discriminator.type = #pattern
+* total ^slicing.description = "Slice based on value value"
+* total  ^slicing.discriminator.type = #value
 * total  ^slicing.discriminator.path = "category"
 * total.category 1..1 MS
 
