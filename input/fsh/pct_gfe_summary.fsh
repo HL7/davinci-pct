@@ -7,8 +7,8 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * insert TrialUseArtifact1
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.description = "Slice based on $this pattern"
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.description = "Slice based on $this value"
 * identifier contains
    INTER 0..*
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
@@ -61,14 +61,15 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * accident.location[x].country from $ISO3166-P1-ALPHA2-VS (required)
 
 * insert DiagnosisSlicing
-* diagnosis 1..*
+* diagnosis 1..* MS
+//* diagnosis ^short = "Pertinent diagnosis information - For this element, Must Support means the information source **SHALL** be capable of populating and will populate if available and permitted."
 //* diagnosis.diagnosis[x] MS
 //* diagnosis.diagnosis[x] only CodeableConcept
 //* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
 * diagnosis.type MS
 * diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
-   principal 1..1 and
+   principal 1..1 MS and
    admitting 0..1 MS and
    patientReasonForVisit 0..3 MS and
    externalcauseofinjury 0..12 MS and
@@ -109,7 +110,10 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * procedure.extension contains ServiceDescription named serviceDescription 1..1
 * procedure contains
    principal 0..1 MS and
+   anesthesiaRelated 0..2 MS and   
    other 0..24 MS
+
+* procedure[principal].extension 1..*
 * procedure[principal].type 1..1
 * procedure[principal].type = PCTProcedureType#principal
 * procedure[principal].sequence = 1
@@ -117,6 +121,14 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * procedure[principal].procedure[x] only CodeableConcept
 * procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
+
+* procedure[anesthesiaRelated].extension 1..*
+* procedure[anesthesiaRelated].type 1..1
+* procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
+* procedure[anesthesiaRelated].procedure[x] only CodeableConcept
+* procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
+
+* procedure[other].extension 1..*
 * procedure[other].type 1..1
 * procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x]
