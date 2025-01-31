@@ -13,7 +13,7 @@ One of the primary interaction supported by this IG is submitting a GFE and rece
 
 The GFE Bundle will be sent as the sole payload of a [$gfe-submit](OperationDefinition-GFE-submit.html) operation, which is based on the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html) (please refer to that page  for more details). Note: that page is part of the FHIR R5 current build, but uses no R5 resources; this guide is pre-adopting that HTTP request pattern. The response will be a URL in the Content-Location header for subsequent polling. 
 
-AEOBs will often not be complete and the calling client (or other interested systems - e.g., patient or convening provider system) will need to periodically poll the payer server to determine the status of the gfe-submit operation. Polling can generate the following responses:
+AEOBs will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server to determine the status of the gfe-submit operation. Polling can generate the following responses:
 
   * If the response is in-progress, this request will return an HTTP status code of 202 Accepted, indicating that the provider should poll again later. The payer system should return a Retry-After header with each in-progress polling response, and the client should use this information to inform the timing of the next polling request. 
   * If the response is an error, this request will return an HTTP status code of 4XX or 5XX, and the body of the response will be an OperationOutcome detailing the error. 
