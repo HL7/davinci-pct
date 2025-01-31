@@ -32,6 +32,8 @@ Additionally, see the Terms and Concepts (link) and Systems and Actors (link) fo
 4. The GFE Contributor retrieves the task and request information (GFE Information Bundle)
    The GFE Contributor can then decide to accept or reject the request and update the task appropriately.
 
+   Note: GFE Contributors should not reject a Task because of insufficient information to produce a GFE and instead should contact the GFE requester for the necessary information.
+
 5. The GFE Collaboration Requester is notified of status updates to the tasks they created.
 
 6. When notified of a reject status, the GFE Coordination Requester can create a new GFE Contributor Task for a new contributor if they would like.

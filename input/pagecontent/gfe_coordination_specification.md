@@ -61,6 +61,8 @@ GFE Contributors **SHALL** be able to accept a GFE Contributing Task by updating
 
 GFE Contributors **SHALL** be able to decline a GFE Contributing Task by updating a Task they are assigned to with a Task.status code of `rejected`
 
+GFE Contributors **SHOULD NOT** reject a Task because there is insufficient information to provide a GFE. Instead, the GFE Contributor **SHOULD** request the necessary information from the GFE Requester (the means of this communication is not defined by this specification). GFE Contributors **MAY** reject a Task if they are still unable to receive the necessary information after attempting to do so.
+
 When submitting a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html), GFE Contributors **SHALL** update the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)  with the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) contained in `Task.output.valueAttachement` and **SHALL** set that Task.status to `completed` when the Task is considered complete.
 The GFE Contributor **MAY** include other types of data in output.valueAttachment, but such data **SHALL** be in a FHIR Resource format and fully contained with no external references that can’t be resolved internally.
 
