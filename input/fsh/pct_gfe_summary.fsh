@@ -61,7 +61,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * accident.location[x].country from $ISO3166-P1-ALPHA2-VS (required)
 
 * insert DiagnosisSlicing
-* diagnosis 1..* MS
+* diagnosis 0..* MS
 //* diagnosis ^short = "Pertinent diagnosis information - For this element, Must Support means the information source **SHALL** be capable of populating and will populate if available and permitted."
 //* diagnosis.diagnosis[x] MS
 //* diagnosis.diagnosis[x] only CodeableConcept
@@ -69,7 +69,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * diagnosis.type MS
 * diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
-   principal 1..1 MS and
+   principal 0..1 MS and
    admitting 0..1 MS and
    patientReasonForVisit 0..3 MS and
    externalcauseofinjury 0..12 MS and
@@ -80,6 +80,9 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[principal] ^short = "Principal Diagnosis - Must Support means the information source SHALL be capable of populating and SHALL populate if available and permitted."
+* diagnosis[principal] ^comment = "If the Principal Diagnosis code is known, it is important that it be shared in the GFE, particularly when the GFE is being sent to a payer for an insured patient. Payers very often need the diagnosis to be able to provide an estimate. Without the diagnosis, payers may assume the service is diagnostic and thus the patient responsibility may be higher than the diagnosis, such as for preventative services, would otherwise indicate. It is understood that in certain situations, such as scheduled services or GFE requests prior to orders, diagnosis is not needed or may not yet be known. However, when it is known, it is important that this information be shared to ensure the best possible estimate is provided to the patient."
+
 * diagnosis[admitting].type 1..1
 * diagnosis[admitting].type = $DIAGTYPECS#admitting
 * diagnosis[admitting].diagnosis[x]
@@ -107,13 +110,14 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * procedure.type MS
 * procedure.type from PCTProcedureTypeVS
 
+* procedure.extension 1..*
 * procedure.extension contains ServiceDescription named serviceDescription 1..1
 * procedure contains
    principal 0..1 MS and
    anesthesiaRelated 0..2 MS and   
    other 0..24 MS
 
-* procedure[principal].extension 1..*
+
 * procedure[principal].type 1..1
 * procedure[principal].type = PCTProcedureType#principal
 * procedure[principal].sequence = 1
@@ -122,7 +126,6 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
 
-* procedure[anesthesiaRelated].extension 1..*
 * procedure[anesthesiaRelated].type 1..1
 * procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept

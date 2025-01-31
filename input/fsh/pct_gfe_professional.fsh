@@ -73,14 +73,14 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * insurance.preAuthRef 0..2
 
 * insert DiagnosisSlicing
-* diagnosis 1..*
+* diagnosis 0..* MS
 //* diagnosis.diagnosis[x] MS
 //* diagnosis.diagnosis[x] only CodeableConcept
 //* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
 * diagnosis.type MS
 * diagnosis.type from PCTDiagnosisTypeVS
 * diagnosis contains
-   principal 1..1 and
+   principal 0..1 MS and
    other 0..11 MS
 * diagnosis[principal].type 1..1
 * diagnosis[principal].type = $DIAGTYPECS#principal
@@ -88,6 +88,9 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
+* diagnosis[principal] ^short = "Principal Diagnosis - Must Support means the information source SHALL be capable of populating and SHALL populate if available and permitted."
+* diagnosis[principal] ^comment = "If the Principal Diagnosis code is known, it is important that it be shared in the GFE, particularly when the GFE is being sent to a payer for an insured patient. Payers very often need the diagnosis to be able to provide an estimate. Without the diagnosis, payers may assume the service is diagnostic and thus the patient responsibility may be higher than the diagnosis, such as for preventative services, would otherwise indicate. It is understood that in certain situations, such as scheduled services or GFE requests prior to orders, diagnosis is not needed or may not yet be known. However, when it is known, it is important that this information be shared to ensure the best possible estimate is provided to the patient."
+
 * diagnosis[other].type 1..1
 * diagnosis[other].type = PCTDiagnosisType#other
 * diagnosis[other].diagnosis[x]
@@ -99,10 +102,13 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 //* procedure.procedure[x] only CodeableConcept
 * procedure.type MS
 * procedure.type from PCTProcedureTypeVS
+* procedure.extension 1..*
 * procedure.extension contains ServiceDescription named serviceDescription 1..1
 * procedure contains
    anesthesiaRelated 0..2 MS and
    other 0..24 MS
+
+
 * procedure[anesthesiaRelated].type 1..1
 * procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
