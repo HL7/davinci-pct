@@ -1,6 +1,6 @@
 {% include draft_content_note.md content="page" %}
 
-This section of the Implementation Guide focuses on enabling providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider Good Faith Estimates (GFE) are required, either to provide to the patient or to submit to a payer (for patients using insurance.)
+This section of the Implementation Guide focuses on enabling providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider Good Faith Estimates (GFE) are required, either to provide to the patient or, optionally, to submit to a payer (for patients using insurance.)
 
 This guide supports the:
 
@@ -14,10 +14,9 @@ The Coordination Platform is introduced in this guide to act as the system desig
 
 Additionally, see the Terms and Concepts (link) and Systems and Actors (link) for more detail on acronyms and new terms.  
 
-Good Faith Estimate (GFE) Bundle including [Good Faith Estimate resource profiles](artifacts.html#structures-gfe-resource-profiles) (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an Advanced Explanation of Benefit (AEOB) Bundle including [Advanced Explanation of Benefits resource profiles](artifacts.html#structures-aeob-resource-profiles) (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and optionally the provider (GFE submitter on claim resources), can retrieve to get an estimation of costs for expected services as known at a specific point in time.
 
 ### Workflow at a Glance ###
-![PCT GFE Coordination High Level Workflow](PCT_GFE_Coordination_HighLevelWorkflow.png){:style="float: none;"}
+![PCT GFE Coordination High Level Workflow](PCT_GFE_Coordination_HighLevelWorkflow.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 **GFE Coordination Diagram Steps (High Level View)**
 > Pre-Step: A patient schedules a service or requests an estimate for a service which triggers the collection of one or more GFEs. 
@@ -49,14 +48,14 @@ Below are illustrations showing the relationships between the profiles involved 
 Figure 1 shows a GFE Coordination Bundle which is a transaction Bundle that can be used by a GFE Coordination Requester to submit all resources involved in a GFE coordination request in a single POST transaction. It includes a single GFE Coordination Task, and one or more GFE Contributor Tasks. The GFE Coordination Task must have a GFE Information Bundle associated to it. This information bundle is used to express all of the generally applicable information needed for GFE Contributors to make their estimates. Optionally, the GFE Contributor Tasks may also have a GFE Information Bundle associated to them to convey any provider specific information, such as specific services or to share specific contextual clinical information.A GFE Information Bundle is preferably associated to its respective Task resource by encoding it in the `Task.input.valueAttachment`. Alternatively a GFE Information Bundle may be referenced by the `Task.input.valueReference`and be written to the Coordination Platform as a separate Bundle.
 The Task references to to Practitioner and Organization references in must point to the instances on the Coordination Platform.
 
-![Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester](GFE_Coordination_Bundle.png){:style="float: none;"}
+![Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester](GFE_Coordination_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester_
 
 
 Figure 2 shows the relationships of the resources involved in GFE coordination request as they exist on the Coordination Platform whether they be written individually or through the GFE Coordination Bundle transaction. If the GFE Information Bundles are not contained in the Task, they would exist as Bundle resources that would be individually retrievable from the Coordination Platform.
 
-![Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform](GFE_Coordination_Platform_Resources.png){:style="float: none;"}
+![Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform](GFE_Coordination_Platform_Resources.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform_
 
@@ -64,21 +63,21 @@ _Figure 2. GFE Coordination Bundle content as stored on the Coordination Platfor
 Figure 3 shows the GFE Information Bundle is created by the GFE Coordination Requester and is meant to contain the information needed for GFE Contributors to make their estimate. This includes the Patient, Coverage and Payer if applicable, specific providers or roles being asked for (not the same as those on the Coordination Platform), requested items (including items and services), and any additional documentation. Additional resources that provide important contextual information that could affect needed items, services, or costs, such as Conditions or Observations, are also allowed.
 
 
-![Figure 3. GFE Information Bundle created by the GFE Coordination Requester](GFE_Information_Bundle.png){:style="float: none;"}
+![Figure 3. GFE Information Bundle created by the GFE Coordination Requester](GFE_Information_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 3. GFE Information Bundle created by the GFE Coordination Requester_
 
 
 Figure 4 shows the GFE Bundle which is created by the GFE Contributor and attached to their GFE Contributor Task. It contains the Patient, Coverage and Payer if relevant, involved providers, and Claims data with the estimated costs.
 
-![Figure 4. A GFE Bundle created by the GFE Contributor](GFE_Bundle.png){:style="float: none;"}
+![Figure 4. A GFE Bundle created by the GFE Contributor](GFE_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
 
 _Figure 4. A GFE Bundle created by the GFE Contributor_
 
 
 Figure 5 shows the GFE Missing Bundle which is used to convey that a GFE Contributor Task did not have a GFE Bundle attached when a GFE Collection Bundle was compiled. The purpose of this bundle is to provide an indication that aGFE collection is incomplete and what is missing, including the GFE Contributor and the items and services that an estimate requested for. 
 
-![Figure 5. A GFE Missing bundle created by the Coordination Platform](GFE_Missing_Bundle.png){:style="float: none;"}
+![Figure 5. A GFE Missing bundle created by the Coordination Platform](GFE_Missing_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
 
 _Figure 5. A GFE Missing bundle created by the Coordination Platform_
 
@@ -86,7 +85,7 @@ _Figure 5. A GFE Missing bundle created by the Coordination Platform_
 Figure 6 shows the GFE Collection bundle created by the Coordination Platform when the GFE Coordination Requester calls the GFE-retrieve operation. In response to the gre-retrieve operation the provider (Practitioner or Organization). As part of the [GFE Submission and AEOB Workflow](gfe_submission_and_aeob_overview.html), this represents the GFE submitter (which can be changed before the submission if necessary).
 
 
-![Figure 6. GFE Collection Bundle created by the Coordination Platform](GFE_Collection_Bundle.png){:style="float: none;"}
+![Figure 6. GFE Collection Bundle created by the Coordination Platform](GFE_Collection_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 6. GFE Collection Bundle created by the Coordination Platform_
 
@@ -94,7 +93,7 @@ _Figure 6. GFE Collection Bundle created by the Coordination Platform_
 
 #### Full GFE Coordination: End-to-End Workflow
 
-![GFE Coordination Technical Workflow](PCTCoordinationWorkflow.png){:style="float: none;"}
+![GFE Coordination Technical Workflow](PCTCoordinationWorkflow.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
 _Figure 7. GFE Coordination Technical Workflow_
 
@@ -123,7 +122,9 @@ _Figure 7. GFE Coordination Technical Workflow_
     * Create GFE Missing Bundles for each incomplete task
     * Create a GFE Collection Bundle containing all GFE Bundle and GFE Missing Bundle resources, and return it in the body of the operation
 
-8. GFE Coordination Requestor provides the GFE Bundle to the patient directly, or proceeds to the [GFE Submission and AEOB Workflow]( gfe_submission_and_aeob_overview.html) and submits the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) to the Payer.
+8. GFE Coordination Requestor provides the GFE Bundle to the patient directly, or optionally for insured patients, proceeds to the [GFE Submission and AEOB Workflow]( gfe_submission_and_aeob_overview.html) and submits the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) to the Payer. (If a Coordination Platform submits a GFE Collection Bundle to a payer, it takes on the role of a GFE Submitter acting on behalf of the provider)
+
+Note: This IG does not require GFE coordination to take place in order for providers to submit GFEs to payers, nor does it require the output of the GFE coordination be submitted to a payer.
 
 9. GFE Coordination Requestor updates the status of each [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) to `closed` and uses an HTTP PUT to update the task on the Coordination Platform’s FHIR server.  
 
@@ -133,7 +134,7 @@ _Figure 7. GFE Coordination Technical Workflow_
 **Timeline Example Scenario**
 The diagram below demonstrates use of the available date elements to meet turnaround times to provide Good Faith Estimates (GFE)
 
-![Request Timeline Example](Timeline_Example.png){:style="float: none;"}
+![Request Timeline Example](Timeline_Example.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 _Figure 8. Request Timeline Example_
 
 

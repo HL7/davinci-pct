@@ -5,7 +5,7 @@ This guide does not currently specify a means for providers to update or cancel 
 
 
 ### Workflow at a Glance ###
-![PCT GFE Submission and AEOB High Level Workflow](PCT_GFE_Submission_HighLevelWorkflow.png){:style="float: none;"}
+![PCT GFE Submission and AEOB High Level Workflow](PCT_GFE_Submission_HighLevelWorkflow.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
 Figure 1: Advanced EOB Interactions
 Dotted line indicates optional.
@@ -30,7 +30,7 @@ Below are illustrations showing the relationships between the profiles involved 
 
 Figure 1 shows a GFE Collection Bundle that is submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the GFE Bundles for processing.
 
-![Figure 1. GFE Collection Bundle](GFE_Collection_Bundle.png){:style="float: none;"}
+![Figure 1. GFE Collection Bundle](GFE_Collection_Bundle.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
 Figure 1. GFE Collection Bundle
 
@@ -40,7 +40,7 @@ Figure 2 shows the components of the GFE Bundle. It contains the Patient, Covera
 All resources (supporting info, etc.) needed to process the GFE and produce the AEOB **SHALL** be included in the GFE Bundle. Relevant resources referenced by such resources **SHALL** also be included.
 
 
-![Figure 2. A GFE Bundle](GFE_Bundle.png){:style="float: none;"}
+![Figure 2. A GFE Bundle](GFE_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 2. A GFE Bundle_
 
@@ -50,7 +50,7 @@ Figure 3 shows an AEOB Bundle created by a payer in response to a GFE-submit ope
 The AEOB bundle **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original GFE bundle (i.e., an exact copy of the originally submitted GFE).
 
 
-![Figure 3. A AEOB Bundle](AEOB_Bundle.png){:style="float: none;"}
+![Figure 3. A AEOB Bundle](AEOB_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 3. A AEOB Bundle_
 
@@ -61,7 +61,7 @@ _Figure 3. A AEOB Bundle_
 
 The workflow diagram below describes the process of receiving a GFE Bundle from the submitting provider and returning the completed AEOB asynchronously (or acknowledgement that the process was completed if the AEOB will not be returned to the provider), as well as the process for a patient app to query for and retrieve their completed AEOB.
 
-![Payer Perspective](PCTWorkflowPayer.png){:style="float: none;"}
+![Payer Perspective](PCTWorkflowPayer.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
 **Figure 4: Payer Perspective: End-to-End Workflow**
 
@@ -91,7 +91,7 @@ The individual steps from the provider and patient perspective are detailed in t
 
 A patient schedules a service and this triggers the composition of a collection of one or more GFEs, which the provider then submits to the payer for processing. Note: The composition of the collection of GFEs is currently not in scope for this guide.
 
-![Provider Perspective](PCTWorkflowProvider.png){:style="float: none;"}
+![Provider Perspective](PCTWorkflowProvider.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 **Figure 5: Provider Perspective**
 
@@ -108,7 +108,7 @@ A patient schedules a service and this triggers the composition of a collection 
 
 The patient has scheduled the service(s) with the provider(s). The payer may return the completed AEOB to the patient in many ways such as via mail, the payer patient portal, mobile app, or other technology to connect to the AEOB API. The only method in scope for this guide is the FHIR-based API approach inspired by the Patient Access API defined in the [CARIN Consumer Directed Payer Data Exchange](https://build.fhir.org/ig/HL7/carin-bb/Use_Case.html#use-case---consumer-access-to-their-claims-data) guide (CARIN IG for Blue Button). If the payer does implement both this API and the Patient Access API defined in the CARIN IG, it is up to the payer to determine if those APIs use the same or different endpoints. 
 
-![Patient Perspective](PCTWorkflowPatient.png){:style="float: none;"}
+![Patient Perspective](PCTWorkflowPatient.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 **Figure 6: Patient Perspective**
 
@@ -124,7 +124,7 @@ Note: If GFE processing fails, the payer may use existing business processes to 
 
 The diagram below  shows examples of how a patient may provide or withhold consent for No Surprises act Act protections using the balanceBilling extension on the GFE and how that could change the resulting AEOB from the payer.  
 
-![Balance Billing](GFEbalanceBilling.png){:style="float: none;"}
+![Balance Billing](GFEbalanceBilling.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
 **MRI Scenario**
 

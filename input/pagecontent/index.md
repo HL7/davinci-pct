@@ -60,7 +60,7 @@ This guide breaks the process into two main parts in support of the patient cost
 
 
 **Good Faith Estimate and Advanced Explanation of Benefit High Level Workflow**
-![PCT High Level Workflow](PCT_HighLevelWorkflow.png){:style="float: none;"}
+![PCT High Level Workflow](PCT_HighLevelWorkflow.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
 
 #### GFE Submit Workflow ####
