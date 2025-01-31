@@ -68,8 +68,18 @@ The GFE Contributor **MAY** include other types of data in output.valueAttachmen
 #### Replacing Coordination Tasks or Contributor Tasks
 **Replacing a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)**
 
-If there is a schedule change, a change to the items or services for which a GFE is being requested, or the context of which has changed such that is may materially affect the GFE of a GFE Contributor, the GFE Coordinator SHOULD cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
+If there is a schedule change, a change to the items or services for which a GFE is being requested, or the context of which has changed such that it may materially affect the GFE of a GFE Contributor, the GFE Coordinator SHOULD cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
 This new replacement [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) SHOULD contain the `task-replaces` extension with a reference to the `cancelled` [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) that the new one replaces. This will enable GFE Contributors to refer back to any previous [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources in the case it may assist them in addressing the new task.
+
+The cancellation and creation of a new task, instead of updating tasks, is recommended because there is limited time to provide an estimate and the intent is to provide the best possible estimate at time of the request. There could be any number of modifications during this process that will be difficult to track during this limited time. Closing and opening a new request provides some closure/finality to the interaction that should be easier to track, particularly without requiring systems, both server and client, to support FHIR resource versioning. Modifications of existing tasks would require each GFE contributor be notified of the change, some of which may have already closed out their task, potentially causing additional disruption, avoidable re-work, and errors. 
+
+Replacing a GFE contributor, does not present the same sort of coordination challenges and is being provided as a means to reduce burden of the other GFE Contributors that are participating by not requiring them to resubmit.
+
+
+The cancellation and creation of a new task, instead of updating tasks, is recommended because there is limited time to provide an estimate and the intent is to provide the best possible estimate at time of the request. There could be any number of modifications during this process that will be difficult to track during this limited time. Closing and opening a new request provides some closure/finality to the interaction that should be easier to track, particularly without requiring systems, both server and client, to support FHIR resource versioning. Modifications of existing tasks would require each GFE contributor be notified of the change, some of which may have already closed out their task, potentially causing additional disruption, avoidable re-work, and errors. 
+
+Replacing a GFE contributor, does not present the same sort of coordination challenges and is being provided as a means to reduce burden of the other GFE Contributors that are participating by not requiring them to resubmit.
+
 
 **Replacing a GFE Contributor**
 GFE Coordination Requesters **SHALL** be able to replace GFE Contributors regardless of the state of the status of the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) as long as the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) does not have a status of `cancelled`, `failed`, `completed`, or `entered-in-error`.
