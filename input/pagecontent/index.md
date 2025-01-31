@@ -70,7 +70,7 @@ This guide breaks the process into two main parts in support of the patient cost
 
 2. The Providers involved in the service coordinate on their individual charges and services for the Good Faith Estimate through the [GFE Coordination Workflow](gfe_coordination_overview.html), if applicable. For self-pay or uninsured patients, the GFE can be made available to the patient at this step. _(This would be through another means not defined in this IG.)_
 
-3. For insured patients, a collection of GFEs in the form of a FHIR resource bundle ([GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
+3. For insured patients, one or more GFEs in a FHIR Bundle resource ([GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
 
 4. The payer would then process, adjudicate, and produce the [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html).
 
