@@ -37,11 +37,13 @@ Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contr
 * entry[patient].resource 1..1
 * entry[patient].resource only HRexPatientDemographics
 
-* entry[coverage] ^short = "MAY have one Coverage"
+* entry[coverage] ^short = "MAY have one Coverage. SHALL be present submitted to a payer in the $gfe-submit operation."
+* entry[coverage] ^definition = "SHALL be present submitted to a payer in the $gfe-submit operation."
 * entry[coverage].resource 1..1
 * entry[coverage].resource only PCTCoverage
 
-* entry[organization] ^short = "SHALL have an initiating provider or initiating organization, but not both. May also have a payer organization."
+* entry[organization] ^short = "SHALL have an initiating provider or initiating organization, but not both. May also have a payer organization. Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation."
+* entry[organization] ^definition = "Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation."
 * entry[organization].resource 1..1 
 * entry[organization].resource only PCTOrganization
 
