@@ -45,8 +45,8 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.description = "Slice based on $this pattern"
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.description = "Slice based on $this value"
 * identifier contains
    PLAC 0..1 and
    INTER 0..*
