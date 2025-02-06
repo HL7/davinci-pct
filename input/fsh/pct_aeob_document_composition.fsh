@@ -12,9 +12,10 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB into a
 
 * date obeys pct-datetime-to-seconds
 
-* author 1..1
-* author only Reference(PCTOrganization)
-* author ^short = "Payer Organization Providing the Advanced Explanation of Benefit (AEOB)"
+* author 2..*
+* author only Reference(PCTOrganization or PCTPractitioner)
+* author ^short = "All involved parties, including payer all Good Faith Estimate (GFE) providers"
+
 
 * title MS
 
@@ -79,7 +80,8 @@ Usage: #inline
 * date = "2025-01-10T11:01:00+05:00"
 
 // TODO Discuss who the author is
-* author = Reference(org1001)
+* author[+] = Reference(org1001)
+* author[+] = Reference(Submitter-Org-1)
 
 * title = "Advanced Explanation of Benefit Document for Eve Betterhalf - 2025-01-10"
 

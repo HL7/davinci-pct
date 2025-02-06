@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "AEOB"
-    ]
+    ],
+    "cSpell.enabledFileTypes": {
+        "fsh": true
+    }
 }

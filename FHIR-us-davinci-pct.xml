@@ -32,6 +32,9 @@
 <artifact id="StructureDefinition/davinci-pct-aeob-adjudication-error" key="StructureDefinition-davinci-pct-aeob-adjudication-error" name="PCT AEOB Adjudication Error"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-bundle" key="StructureDefinition-davinci-pct-aeob-bundle" name="PCT AEOB Bundle"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-complete" key="StructureDefinition-davinci-pct-aeob-complete" name="PCT AEOB Complete"/>
+<artifact id="StructureDefinition/davinci-pct-aeob-composition" key="StructureDefinition-davinci-pct-aeob-composition" name="PCT AEOB Composition"/>
+<artifact id="StructureDefinition/davinci-pct-aeob-document-bundle" key="StructureDefinition-davinci-pct-aeob-document-bundle" name="PCT AEOB Document Bundle"/>
+<artifact id="StructureDefinition/davinci-pct-aeob-documentreference" key="StructureDefinition-davinci-pct-aeob-documentreference" name="PCT AEOB Document Reference"/>
 <artifact id="CodeSystem/PCTAEOBProcessNoteCS" key="CodeSystem-PCTAEOBProcessNoteCS" name="PCT AEOB Process Note Code System"/>
 <artifact id="ValueSet/PCTAEOBProcessNoteVS" key="ValueSet-PCTAEOBProcessNoteVS" name="PCT AEOB Process Note Types"/>
 <artifact id="CodeSystem/PCTAdjudicationCategoryCS" key="CodeSystem-PCTAdjudicationCategoryCS" name="PCT Adjudication Category CodeSystem"/>
@@ -50,6 +53,9 @@
 <artifact deprecated="true" id="ValueSet/pct-coverage-copay-codes" key="ValueSet-pct-coverage-copay-codes" name="PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
 <artifact id="CodeSystem/PCTDiagnosisType" key="CodeSystem-PCTDiagnosisType" name="PCT Diagnosis Type"/>
 <artifact id="ValueSet/PCTDiagnosisTypeVS" key="ValueSet-PCTDiagnosisTypeVS" name="PCT Diagnosis Type Value Set"/>
+<artifact id="CodeSystem/PCTDocumentCategory" key="CodeSystem-PCTDocumentCategory" name="PCT Document Categories"/>
+<artifact id="CodeSystem/PCTDocumentSection" key="CodeSystem-PCTDocumentSection" name="PCT Document Section Codes"/>
+<artifact id="CodeSystem/PCTDocumentType" key="CodeSystem-PCTDocumentType" name="PCT Document Types"/>
 <artifact id="CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse" key="CodeSystem-PCTEstimateTypeSummaryCSTemporaryTrialUse" name="PCT Estimate Type Code System"/>
 <artifact id="CodeSystem/PCTFinancialType" key="CodeSystem-PCTFinancialType" name="PCT Financial Type Code System"/>
 <artifact id="ValueSet/PCTFinancialTypeVS" key="ValueSet-PCTFinancialTypeVS" name="PCT Financial Type Value Set"/>
@@ -115,11 +121,14 @@
 <artifact id="OperationOutcome/PCT-AEOB-Adjudication-Error-Example-1" key="OperationOutcome-PCT-AEOB-Adjudication-Error-Example-1" name="PCT-AEOB-Adjudication-Error-Example-1"/>
 <artifact id="Bundle/PCT-AEOB-Bundle-1" key="Bundle-PCT-AEOB-Bundle-1" name="PCT-AEOB-Bundle-1"/>
 <artifact id="OperationOutcome/PCT-AEOB-Complete-Example-1" key="OperationOutcome-PCT-AEOB-Complete-Example-1" name="PCT-AEOB-Complete-Example-1"/>
+<artifact id="Bundle/PCT-AEOB-Document-Bundle-1" key="Bundle-PCT-AEOB-Document-Bundle-1" name="PCT-AEOB-Document-Bundle-1"/>
+<artifact id="DocumentReference/PCT-AEOB-DocumentReference-1" key="DocumentReference-PCT-AEOB-DocumentReference-1" name="PCT-AEOB-DocumentReference-1"/>
 <artifact id="ExplanationOfBenefit/PCT-AEOB-Summary-1" key="ExplanationOfBenefit-PCT-AEOB-Summary-1" name="PCT-AEOB-Summary-1"/>
 <artifact id="DeviceRequest/PCT-DeviceRequest-1" key="DeviceRequest-PCT-DeviceRequest-1" name="PCT-DeviceRequest-1"/>
 <artifact id="Bundle/PCT-GFE-Bundle-Inst-1" key="Bundle-PCT-GFE-Bundle-Inst-1" name="PCT-GFE-Bundle-Inst-1"/>
 <artifact id="Bundle/PCT-GFE-Bundle-Prof-1" key="Bundle-PCT-GFE-Bundle-Prof-1" name="PCT-GFE-Bundle-Prof-1"/>
 <artifact id="Bundle/PCT-GFE-Collection-Bundle-1" key="Bundle-PCT-GFE-Collection-Bundle-1" name="PCT-GFE-Collection-Bundle-1"/>
+<artifact id="Bundle/PCT-GFE-Collection-Bundle-2" key="Bundle-PCT-GFE-Collection-Bundle-2" name="PCT-GFE-Collection-Bundle-2"/>
 <artifact id="Task/PCT-GFE-Contributor-Task-1" key="Task-PCT-GFE-Contributor-Task-1" name="PCT-GFE-Contributor-Task-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Task-2" key="Task-PCT-GFE-Contributor-Task-2" name="PCT-GFE-Contributor-Task-2"/>
 <artifact id="Bundle/PCT-GFE-Coordination-Bundle-1" key="Bundle-PCT-GFE-Coordination-Bundle-1" name="PCT-GFE-Coordination-Bundle-1"/>
@@ -152,6 +161,8 @@
 <artifact id="OperationDefinition/GFE-retrieve" key="OperationDefinition-GFE-retrieve" name="Retrieve GFE Collection Bundle"/>
 <artifact id="StructureDefinition/selfPayDeclared" key="StructureDefinition-selfPayDeclared" name="Self-Pay Declared"/>
 <artifact id="StructureDefinition/serviceDescription" key="StructureDefinition-serviceDescription" name="Service Description"/>
+<artifact id="StructureDefinition/estimateProcedureOrService" key="StructureDefinition-estimateProcedureOrService" name="Significant Procedures and/or products involved"/>
+<artifact id="StructureDefinition/estimateCondition" key="StructureDefinition-estimateCondition" name="Significant condition involved"/>
 <artifact id="StructureDefinition/subjectToMedicalMgmt" key="StructureDefinition-subjectToMedicalMgmt" name="Subject To Medical Management"/>
 <artifact id="OperationDefinition/GFE-submit" key="OperationDefinition-GFE-submit" name="Submit a GFE resource for the creation of an AEOB"/>
 <artifact id="Organization/Submitter-Org-1" key="Organization-Submitter-Org-1" name="Submitter-Org-1"/>
