@@ -43,11 +43,12 @@ Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contr
 * entry[coverage].resource only PCTCoverage
 
 * entry[organization] ^short = "SHALL have an initiating provider or initiating organization, but not both. May also have a payer organization. Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation."
-* entry[organization] ^definition = "Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation."
+* entry[organization] ^definition = "GFE Collection Bundle initiating provider organization and/or an associated Payer. A Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation. An initiating provider SHALL be present as an initiating provider organization (an entry in this slice) or an initiating provider practitioner (practitioner slice), but not both."
 * entry[organization].resource 1..1 
 * entry[organization].resource only PCTOrganization
 
 * entry[practitioner] ^short = "SHALL have a initiating provider or initiating organization, but not both."
+* entry[practitioner] ^definition = "GFE Collection Bundle initiating provider practitioner. An initiating provider SHALL be present as an initiating provider practitioner (in this slice) or an initiating provider organization (an entry in the organization slice), but not both."
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
