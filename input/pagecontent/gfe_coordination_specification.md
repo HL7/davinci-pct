@@ -128,7 +128,7 @@ GFE Contributors **SHALL** only be able to set their assigned Task.status to `re
 
 #### Access and Authorization
 **Actor based access**
-Coordination Participants (GFE Coordination Requesters and GFE Contributors) **SHALL** be able to read and update all of the Task resources they created or are assigned to (via `Task.owner`) while the Task does not have a status of completed, rejects, or entered-in-error. 
+Coordination Participants (GFE Coordination Requesters and GFE Contributors) **SHALL** be able to read and update all of the Task resources they created or are assigned to (via Task.owner) while the Task does not have a status of `draft` and does not have a businessStatus of `closed` and **SHOULD** retain read access regardless of status or businessStatus. 
 GFE Contributors **SHALL** have read access to [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) resources that are referenced by [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources that are assigned to and **SHALL NOT** have access to modify those [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) resources unless they are also the GFE Coordination Requester. 
 GFE Contributors **MAY** access the Tasks of other participants whose assigned Task references the same [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) if the Coordination Platform allows it.
 
