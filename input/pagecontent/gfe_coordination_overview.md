@@ -113,7 +113,7 @@ _Figure 7. GFE Coordination Technical Workflow_
 
 4. Each GFE Contributor retrieves their respective [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) from the Coordination Platform, reviews the contents, and responds by updating the Task status appropriately and using a FHIR PUT operation to update the Task on the Coordination Platform FHIR endpoint.
     * If the contributor accepts the task, Task.status shall be changed to `accepted`.
-    * If the contributor declines the task, Task.status shall be changed to `rejected`.
+    * If the contributor declines the task, Task.status shall be changed to `rejected` and the reason for the rejection should be placed in Task.statusReason.
 
 5. After each GFE Contributor has updated their respective [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), the GFE Coordination Requester is notified of the changes (same process as step 3) and reviews the updates. If a GFE Contributor has rejected, the GFE Coordination Requester may choose to replace the contributor or cancel the entire request depending on the reason if one is provided in `Task.statusReason` (e.g. if a key participant is unable to participate due to a proposed date of service, the GFE Coordination Requester may wish to cancel the entire request and make a new request with a time that works for that participant).
 
