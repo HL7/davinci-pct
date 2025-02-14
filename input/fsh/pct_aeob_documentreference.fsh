@@ -36,7 +36,7 @@ Description: "PCT AEOB Document Reference that enables searching and subscriptio
 
 * status MS
 * docStatus 1..1 MS
-* type 1..
+* type 1.. MS
 * type = PCTDocumentType#aeob-document
 
 * category 1.. MS
@@ -57,7 +57,7 @@ Description: "PCT AEOB Document Reference that enables searching and subscriptio
 // TODO Discuss who the author is
 * author 2..*
 * author only Reference(PCTOrganization or PCTPractitioner)
-* author ^short = "All involved parties, including payer all Good Faith Estimate (GFE) providers"
+* author ^short = "All involved authoring parties, including payer all Good Faith Estimate (GFE) providers"
 
 // DISCUSS, do we want an authenticator requirement? - A participant who has attested to the accuracy of the composition/document.
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.

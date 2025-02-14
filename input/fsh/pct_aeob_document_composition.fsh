@@ -14,7 +14,7 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB into a
 
 * author 2..*
 * author only Reference(PCTOrganization or PCTPractitioner)
-* author ^short = "All involved parties, including payer all Good Faith Estimate (GFE) providers"
+* author ^short = "All involved authoring parties, including payer all Good Faith Estimate (GFE) providers"
 
 
 * title MS
@@ -36,8 +36,8 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB into a
     //coverage 1..1 and
     //organization 0..1 and
     //practitioner 0..1 MS and
-    aeob-summary 1..1 and
-    aeob 1..1 and
+    aeob-summary 1..1 MS and
+    aeob 1..1 MS and
     //gfeBundleAll 1..1 MS and
     gfeBundle 1..* MS 
 
@@ -45,24 +45,24 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB into a
 
 * section[aeob-summary] ^short = "SHALL have a reference to one PCTAdvancedEOBSummary, contained within the document bundle"
 * section[aeob-summary].code = PCTDocumentSection#aeob-summary-section
-* section[aeob-summary].entry 1..1
+* section[aeob-summary].entry 1..1 MS
 * section[aeob-summary].entry only Reference(PCTAdvancedEOBSummary)
 * section[aeob-summary].entry ^type.aggregation = #bundled
 
 * section[aeob] ^short = "SHALL have a reference to one or more PCTAdvancedEOB resource(s), all contained within the document bundle"
 * section[aeob].code = PCTDocumentSection#aeob-section
-* section[aeob].entry 1..*
+* section[aeob].entry 1..* MS
 * section[aeob].entry only Reference(PCTAdvancedEOB)
 * section[aeob].entry ^type.aggregation = #bundled
 
 
 * section[gfeBundle] ^short = "SHALL reference one PCTGFEBundle resource, which may be contained in the document bundle or may reference an external resource, and the associated author (GFE Contributor) contained in the document bundle."
 * section[gfeBundle].code = PCTDocumentSection#gfe-section
-* section[gfeBundle].author 1..1
+* section[gfeBundle].author 1..1 MS
 * section[gfeBundle].author ^short = "Associated GFE author (GFE Contributor) contained in the document bundle"
 * section[gfeBundle].author only Reference(PCTPractitioner or PCTOrganization)
-* section[gfeBundle].entry ^type.aggregation = #bundled
-* section[gfeBundle].entry 1..1
+* section[gfeBundle].author ^type.aggregation = #bundled
+* section[gfeBundle].entry 1..1 MS
 * section[gfeBundle].entry only Reference(PCTGFEBundle)
 
 
