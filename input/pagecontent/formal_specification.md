@@ -39,7 +39,7 @@ Receiver:
 This guide uses technical actors to define [Must Support](formal_specification.html#must-support) conformance requirements.
 
 
-#### Must Support ####
+#### Ongoing Data Retention and Access ####
 This IG does not provide specific requirements for data retention and access except for where it directly ties to the primary workflow and use case. Details for continued retention and access after the workflow has concluded are not defined in this guide. Implementers should recognize that the data covered in this guide is likely to be considered part of the patient's medical record and as such would be subject to the same retention and access requirements as any other information in the patient's medical record.
 
 
