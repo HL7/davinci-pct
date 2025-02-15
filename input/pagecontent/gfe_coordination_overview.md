@@ -40,7 +40,7 @@ Additionally, see the Terms and Concepts (link) and Systems and Actors (link) fo
 
 7. If the GFE Contributor accepts the request, they will collect the requested estimate(s), place them into a GFE Bundle, attach it to the task and mark completed.
 
-8. The GFE Coordination Requester can retrieve a GFE Collection Bundle (made up of attached GFE Bundles and information about [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html)s) at any time through a gfe-retrieve operation. They could also choose to ‘close’ the Coordination Task by marking it as completed.
+8. The GFE Coordination Requester can retrieve a GFE Collection Bundle (made up of attached GFE Bundles and information about [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html)s) at any time through a gfe-retrieve operation. They could also choose to ‘close’ the Coordination Task by marking it as completed and include a statusReason.
 
 ### Data Structures ###
 
@@ -124,13 +124,21 @@ _Figure 7. GFE Coordination Technical Workflow_
     * Create GFE Missing Bundles for each incomplete task
     * Create a GFE Collection Bundle containing all GFE Bundle and GFE Missing Bundle resources, and return it in the body of the operation
 
-8. GFE Coordination Requestor provides the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) to the patient directlyGFE Coordination Requestor provides the GFE Bundle to the patient directly, or optionally for insured patients, proceeds to the [GFE Submission and AEOB Workflow]( gfe_submission_and_aeob_overview.html) and submits the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) to the Payer. (If a Coordination Platform submits a GFE Collection Bundle to a payer, it takes on the role of a GFE Submitter acting on behalf of the provider)
+8. GFE Coordination Requestor provides the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) to the patient directly, or optionally for insured patients, proceeds to the [GFE Submission and AEOB Workflow]( gfe_submission_and_aeob_overview.html) and submits the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) to the Payer. (If a Coordination Platform submits a GFE Collection Bundle to a payer, it takes on the role of a GFE Submitter acting on behalf of the provider)
 
-Note: This IG does not require GFE coordination to take place in order for providers to submit GFEs to payers, nor does it require the output of the GFE coordination be submitted to a payer.
+    Note: This IG does not require GFE coordination to take place in order for providers to submit GFEs to payers, nor does it require the output of the GFE coordination be submitted to a payer.
 
-Note: This [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) should be provided to either the patient or submitted to the payer with the same resources as it was received from the Coordination Platform, including the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html)s. This is important so that the patient can be made aware of any missing estimates when they receive the GFE Collection Bundle or AEOB Bundle. 
+    Note: This [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) should be provided to either the patient or submitted to the payer with the same resources as it was received from the Coordination Platform, including the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html)s. This is important so that the patient can be made aware of any missing estimates when they receive the [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) or [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html).
 
-9. GFE Coordination Requestor updates the status of each [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) to `closed` and uses an HTTP PUT to update the task on the Coordination Platform’s FHIR server.  
+9. The GFE Coordination Requester updates the status of the GFE Coordination Task to `completed` and sets a statusReason using an HTTP Put operation on the Coordination Platform's FHIR Server.
+
+    Notes: GFE Coordination tasks should be marked as completed and should not be marked as cancelled if the GFE Collection Bundle is being delivered to the patient or payer.
+
+    GFE Contributors may receive notifications on task status changes which could be used as an indication that a coordination activity has been completed though they may not have completed their task by providing a GFE Bundle.
+    
+    Additionally GFE Coordination Requesters may want to notify GFE Requesters, through means not directly addressed in this IG, when a GFE Bundle has been passed on the the patient or payer and include an indication as to whether they had a GFE Bundle included in the GFE Collection Bundle.
+
+10. GFE Coordination Requestor updates the status of each [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) to `closed` and uses an HTTP PUT to update the task on the Coordination Platform’s FHIR server.  
 
 
 #### Examples

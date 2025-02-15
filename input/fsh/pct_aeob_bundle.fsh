@@ -53,9 +53,9 @@ Description: "DO NOT USE - (Temporarily archived during transition to a document
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
-* entry[gfeBundle] ^short = "MAY have PCTGFEBundle resource"
+* entry[gfeBundle] ^short = "MAY have PCTGFEBundle or PCTGFEMissingBundle resource"
 * entry[gfeBundle].resource 1..1 
-* entry[gfeBundle].resource only PCTGFEBundle
+* entry[gfeBundle].resource only PCTGFEBundle or PCTGFEMissingBundle
 
 
 Invariant: pct-aeob-bundle-1

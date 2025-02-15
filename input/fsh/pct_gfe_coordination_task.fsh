@@ -14,6 +14,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 
 
 */
+* obeys pct-coord-task-1
 
 * extension contains
    $requestedPeriodExtensionUrl named requested-period 0..1 MS and
@@ -134,3 +135,11 @@ Add guidance that this may be contained or it may be externals.
 
 * output MS
 * output ^short = "Any outputs for the GFE Coordination Task which might include notes on why the GFE Coordination Task was unable to be completed."
+
+
+
+
+Invariant: pct-coord-task-1
+Description: "statusReason required when status is 'completed' or 'cancelled'"
+Expression: "(status = 'completed' or status = 'cancelled') implies statusReason.exists()"
+Severity: #error
