@@ -82,6 +82,8 @@
 <artifact id="ValueSet/PCTGFEItemRevenueVS" key="ValueSet-PCTGFEItemRevenueVS" name="PCT GFE NUBC Revenue Value Set"/>
 <artifact id="ValueSet/PCTGFETypeOfBillVS" key="ValueSet-PCTGFETypeOfBillVS" name="PCT GFE NUBC Uniform Billing (UB-04) Type of Bill Value Set"/>
 <artifact id="ValueSet/PCTCoordinationTaskStatusReasonCodes" key="ValueSet-PCTCoordinationTaskStatusReasonCodes" name="PCT GFE Request Coordination Task Status Reason Codes ValueSet"/>
+<artifact id="CodeSystem/PCTTaskBusinessStatusCSTemporaryTrialUse" key="CodeSystem-PCTTaskBusinessStatusCSTemporaryTrialUse" name="PCT GFE Request Task Business Status Code System"/>
+<artifact id="ValueSet/PCTTaskBusinessStatusCodes" key="ValueSet-PCTTaskBusinessStatusCodes" name="PCT GFE Request Task Business Status ValueSet"/>
 <artifact id="CodeSystem/PCTGFERequestTaskCSTemporaryTrialUse" key="CodeSystem-PCTGFERequestTaskCSTemporaryTrialUse" name="PCT GFE Request Task Codes Code System"/>
 <artifact id="ValueSet/PCTGFERequestTaskTypeVS" key="ValueSet-PCTGFERequestTaskTypeVS" name="PCT GFE Request Task Codes ValueSet"/>
 <artifact id="CodeSystem/PCTTaskStatusReasonCSTemporaryTrialUse" key="CodeSystem-PCTTaskStatusReasonCSTemporaryTrialUse" name="PCT GFE Request Task Status Reason Code Code System"/>
@@ -133,8 +135,6 @@
 <artifact id="Task/PCT-GFE-Contributor-Task-2" key="Task-PCT-GFE-Contributor-Task-2" name="PCT-GFE-Contributor-Task-2"/>
 <artifact id="Bundle/PCT-GFE-Coordination-Bundle-1" key="Bundle-PCT-GFE-Coordination-Bundle-1" name="PCT-GFE-Coordination-Bundle-1"/>
 <artifact id="Task/PCT-GFE-Coordination-Task-1" key="Task-PCT-GFE-Coordination-Task-1" name="PCT-GFE-Coordination-Task-1"/>
-<artifact id="Task/PCT-GFE-Coordination-Task-1a" key="Task-PCT-GFE-Coordination-Task-1a" name="PCT-GFE-Coordination-Task-1a"/>
-<artifact id="Task/PCT-GFE-Coordination-Task-1b" key="Task-PCT-GFE-Coordination-Task-1b" name="PCT-GFE-Coordination-Task-1b"/>
 <artifact id="Bundle/PCT-GFE-Information-Bundle-1" key="Bundle-PCT-GFE-Information-Bundle-1" name="PCT-GFE-Information-Bundle-1"/>
 <artifact id="Claim/PCT-GFE-Institutional-1" key="Claim-PCT-GFE-Institutional-1" name="PCT-GFE-Institutional-1"/>
 <artifact id="Claim/PCT-GFE-Institutional-MRI" key="Claim-PCT-GFE-Institutional-MRI" name="PCT-GFE-Institutional-MRI"/>
