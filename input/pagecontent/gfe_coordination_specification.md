@@ -106,7 +106,7 @@ The [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundl
 
 - The Organization, Practitioner, PractitionerRole Resource (for providers) extracted from the [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) associated with the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), if present.
 
-- All of the FHIR Resources in .output.valueAttachment of the associated (that have a Task.partOf that references the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)) [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) where the status is not `rejected` or `cancelled` (NOTE: that each Contributor Task may have multiple output.valueAttachment iterations.
+- All of the FHIR Resources in .output.valueAttachment of the associated (that have a Task.partOf that references the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)) [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) where the status is not `rejected` or `cancelled` (NOTE: that each Contributor Task may have multiple output.valueAttachment iterations).
 
 - For each associated [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) that does not have a status of `rejected` or cancelled` and does not have a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) in output.valueAttachment, there **SHALL** be a [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html).
 
@@ -123,6 +123,96 @@ When the status of the [GFE Coordination Task](StructureDefinition-davinci-pct-g
 The GFE Coordination Requester **SHALL** update the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html).status to `completed` to close the request when no new GFE Contributions will be needed or accepted.
 
 GFE Contributors **SHALL** only be able to set their assigned Task.status to `received`, `accepted`, `rejected`, or `completed`.
+
+
+
+
+
+# TODO Review the sections above and below for duplicate requirements
+
+
+
+#### Task Workflow Requirements
+
+\- This section explains the minimal workflow requirements and task transitions for both the coordination task and the contributor task. Except were specifically stated, this IG does not disallow other states or transitions. However, implementers should not expect other systems to recognize or understand variances from this process without prior agreement.
+
+##### The Coordination Task Workflow
+
+![PCT GFE Coordination Task Workflow](Task_flowChart-Coordinator.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+
+
+1. **Start** - This workflow starts with the Coordination Task, and relevant Contributor Tasks being created by the Coordination Requester, all with the same status.
+2. **Draft** (Optional) - The Coordination and associated Contributor Tasks, **MAY** optionally be placed in a draft status.
+    1. Tasks in draft status **SHOULD NOT** trigger a notification.
+    2. Contributor Tasks do not start the Contributor Task Workflow while in draft status.
+    3. The Coordination Task **MAY** be updated by the Coordination Requester to a status of ready (3), entered-in-error (6), or cancelled (7).
+3. **Ready** – The GFE Coordination Requester **SHALL** set the status of the Coordination Task to ready to initiate the GFE coordination process.
+    1. The Coordination Platform **SHALL** automatically change the associated Contributor Task status’ to requested and the individual Contributor Task Workflow begins.
+    2. The Coordination Task **MAY** be updated by the Coordination Requester to a status of entered-in-error (6) or cancelled (7).
+    3. The Coordination Platform **MAY** change the status to failed (8) in the event of a process of system failure or in-progress (4) when at least one of the associated Contributor Tasks changes to a status of accepted.
+4. **In Progress** – Coordination Platform **SHALL** automatically change the Coordination Task status to in-progress when at least one of the Coordination Task’s associated Contributor Tasks has a status change from received to accepted.
+    1. The Coordination Task **MAY** be updated by the Coordination Requester to a status of completed (5), entered-in-error (6) or cancelled (7).
+    2. The Coordination Platform **MAY** change the status to failed (8) in the event of a process of system failure.
+5. **Completed** – The Coordination Requester **SHOULD** change the status of an in-progress Coordination Task to completed when the necessary GFE information is collected, or the time limit is reached and the Task needs to be closed.
+    1. The Coordination Requester **SHALL** provide a statusReason in the update to the Coordination Task.
+    2. The Coordination Platform **SHALL** automatically update the businessStatus of the Coordination Task and all associated Contributor Tasks to closed.
+    3. The Coordination Task **SHALL** automatically update all associated open Contributor Tasks, where the status is not complete, with a status of failed and provide a statusReason matching the statusReason the Coordination Task (that was the statusReason provided by the Coordination Requester).
+6. **Entered In Error** – The Coordination Requester **MAY** change the status of any open Coordination Task to entered-in-error.
+    1. The Coordination Platform **SHALL** automatically update the businessStatus of the Coordination Task and all associated Contributor Tasks to closed.
+    2. The Coordination Task **SHALL** automatically update all associated open Contributor Task status’, where the status is not complete, to entered-in-error.
+7. **Cancelled** - The Coordination Requester **MAY** change the status of any open Coordination Task to cancelled.
+    1. The Coordination Requester **SHALL** provide a statusReason in the update to the Coordination Task.
+    2. The Coordination Platform **SHALL** automatically update the businessStatus of the Coordination Task and all associated Contributor Tasks to closed.
+    3. The Coordination Task **SHALL** automatically update all associated open Contributor Task status’, where the status is not complete, to cancelled.
+8. **Failed** – The Coordination Platform **MAY** change the status of Coordination Task with status of ready or in-progress to failed in the event of a system or process issue.
+    1. The Coordination Platform **SHALL** provide a statusReason provided with an explanation of the failure with a useful description in the statusReason.text.
+    2. The Coordination Platform **SHALL** automatically update the businessStatus of the Coordination Task and all associated Contributor Tasks to closed.
+    3. The Coordination Task **SHALL** automatically update all associated open Contributor Task status’ to failed.
+
+##### The Contributor Task Workflow
+
+![PCT GFE Coordination Task Workflow](Task_flowChart-Contributor.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+
+1. **Optional Precondition** – _(not in diagram)_ Prior to the start of this workflow a Contributor Task **MAY** exist with a draft status.
+    1. Creation and editing of a draft status Contributor Task **SHOULD NOT** trigger a notification to the GFE Contributor it is assigned to.
+    2. The GFE Contributor **SHALL NOT** have write access to a Contributor Task with a draft status.
+    3. A draft status Contributor Task **MAY** be discoverable (searchable) by the assigned GFE Contributor (Task.owner), depending on business workflow needs.
+2. **Start** - This workflow starts with the Contributor Task being created or updated with a status of requested.
+3. **Requested** – The GFE Contributor Task **SHALL** automatically be updated by the Coordination Platform with a status of requested based on the events in the GFE Coordination Workflow.
+    1. The assigned GFE Contributor (Task.owner) **SHALL** now have read access to the Task.
+    2. Upon retrieval of the GFE Contributor Task by the GFE Contributor (Task.owner), either through a read or a search, the Coordination Platform **SHALL** automatically update the GFE Contributor Task status to received.
+    3. The GFE Contributor Task **SHALL** be automatically updated by the Coordination Platform to a status of entered-in-error (7), failed (8), or cancelled (9) based on the events in the GFE Coordination Workflow.
+4. **Received** – The Coordination Platform **SHALL** automatically update the Contributor Task status to received upon first retrieval, either through read or search.
+    1. The assigned GFE Contributor (Task.owner) **SHALL** now have write access to update the Task.
+    2. The GFE Contributor Task **MAY** be updated by the assigned GFE Contributor to a status of accepted (4) or rejected (5).
+    3. The GFE Contributor Task **SHALL** be automatically updated by the Coordination Platform to a status of entered-in-error (7), failed (8), or cancelled (9) based on the events in the GFE Coordination Workflow.
+5. **Accepted** – The GFE Contributor **SHALL** update the GFE Contributor Task to a status of accepted when they decide to participate in the GFE coordination process for the request and plan on providing a GFE Bundle.
+    1. The Contributor Task **MAY** be updated by the assigned GFE Contributor (Task.owner) to a status of rejected (5), completed (6), or failed (7).
+    2. The GFE Contributor Task **SHALL** be automatically updated by the Coordination Platform to a status of entered-in-error (7), failed (8), or cancelled (9) based on the events in the GFE Coordination Workflow.
+6. **Rejected** – The GFE Contributor **SHALL** update the GFE Contributor Task to a status of rejected if they will not participate in the GFE coordination process for the request and will take no further action on the request.
+    1. The GFE Contributor **SHOULD** provide a statusReason for rejecting the Task.
+    2. The Coordination Platform **SHALL** automatically update the businessStatus of the Contributor Task to closed.
+7. **Completed** – The GFE Contributor **SHALL** update the GFE Contributor Task to a status of completed when they attach the GFE bundle and it is ready to be made available to the GFE Coordinator (via gfe-retrieve operation). This is usually done after there is a sufficient level of confidence in the GFE Bundle they had attached to the Task.
+    1. The GFE Contributor **MAY** continue to update the Contributor Task’s attached GFE Bundle if the Task’s businessStatus is not set to a value of closed.
+    2. The GFE Contributor **MAY** update the businessStatus of the Contributor Task to closed if there will be no further changes made.
+    3. The Coordination Platform **MAY** automatically update the businessStatus of the Contributor Task to closed if there will be no further changes made based on the events in the GFE Coordination Workflow.
+8. **Entered in Error** – The Coordination Platform **SHALL** set a GFE Contributor Task status to entered-in-error based on the events in the GFE Coordination Workflow.
+    1. The Coordination Platform **SHALL** automatically update the businessStatus of the Contributor Task to closed.
+9. **Failed** – Either the GFE Contributor **MAY** set the Contributor Task status to failed if they were unable to complete the task or the Coordination Platform **SHALL** set a GFE Contributor Task status to failed based on the events in the GFE Coordination Workflow.
+    1. GFE Contributor Tasks updated with a status of failure **SHALL** have a statusReason provided with an explanation of the failure with a useful description in the statusReason.text.
+    2. The Coordination Platform **SHALL** automatically update the businessStatus of the Contributor Task to closed.
+10. **Cancelled** – The Coordination Platform **SHALL** set a GFE Contributor Task status to cancelled based on the events in the GFE Coordination Workflow.
+    1. The Coordination Platform **SHALL** automatically update the businessStatus of the Contributor Task Tasks to closed.
+
+**Closed Tasks**
+
+All Tasks with a businessStatus of closed **SHALL** not be updatable by the Coordination Requester or GFE Contributors.
+
+
+
+
+
+
 
 
 
