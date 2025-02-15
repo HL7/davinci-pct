@@ -12,7 +12,7 @@ This guide supports the:
 
 The Coordination Platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
 
-Additionally, see the Terms and Concepts (link) and Systems and Actors (link) for more detail on acronyms and new terms.  
+Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [Systems and Actors](use_cases.html#actors) for more detail on acronyms and new terms.  
 
 
 ### Workflow at a Glance ###
@@ -135,7 +135,7 @@ _Figure 7. GFE Coordination Technical Workflow_
     Notes: GFE Coordination tasks should be marked as completed and should not be marked as cancelled if the GFE Collection Bundle is being delivered to the patient or payer.
 
     GFE Contributors may receive notifications on task status changes which could be used as an indication that a coordination activity has been completed though they may not have completed their task by providing a GFE Bundle.
-    
+
     Additionally GFE Coordination Requesters may want to notify GFE Requesters, through means not directly addressed in this IG, when a GFE Bundle has been passed on the the patient or payer and include an indication as to whether they had a GFE Bundle included in the GFE Collection Bundle.
 
 10. GFE Coordination Requestor updates the status of each [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) to `closed` and uses an HTTP PUT to update the task on the Coordination Platform’s FHIR server.  
