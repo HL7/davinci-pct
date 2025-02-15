@@ -67,7 +67,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
 * statusReason.text 1..1 MS
 
-
+* businessStatus from PCTTaskBusinessStatusCodes (extensible)
 
 //Add invariant requiring Task.statusReason when status = `completed` or` cancelled`
 

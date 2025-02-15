@@ -361,3 +361,15 @@ Description: "Defining codes for defining GFE request GFE contributor task statu
 * include PCTTaskStatusReasonCSTemporaryTrialUse#fulfilled
 * include PCTTaskStatusReasonCSTemporaryTrialUse#schedule
 * include PCTTaskStatusReasonCSTemporaryTrialUse#service-not-provided
+* include PCTTaskStatusReasonCSTemporaryTrialUse#time-limit-reached
+* include PCTTaskStatusReasonCSTemporaryTrialUse#no-longer-needed
+* include PCTTaskStatusReasonCSTemporaryTrialUse#service-cancelled
+* include PCTTaskStatusReasonCSTemporaryTrialUse#requires-new-request
+* include PCTTaskStatusReasonCSTemporaryTrialUse#patient-declined
+
+
+ValueSet: PCTTaskBusinessStatusCodes
+Title: "PCT GFE Request Task Business Status ValueSet"
+Description: "Codes for defining  GFE request task business status types."
+* ^experimental = false
+* PCTTaskBusinessStatusCSTemporaryTrialUse#closed

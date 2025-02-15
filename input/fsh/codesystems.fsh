@@ -181,7 +181,7 @@ Description: "Defining the code for a estimate (GFE or AEOB) type summary.  This
 
 CodeSystem: PCTGFERequestTaskCSTemporaryTrialUse
 Title: "PCT GFE Request Task Codes Code System"
-Description: "Defining codes for defining GFE request types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
+Description: "Codes for defining GFE request types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
@@ -193,7 +193,7 @@ Description: "Defining codes for defining GFE request types. This CodeSystem is 
 
 CodeSystem: PCTTaskStatusReasonCSTemporaryTrialUse
 Title: "PCT GFE Request Task Status Reason Code Code System"
-Description: "Defining codes for defining GFE request task status reason types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
+Description: "Codes for defining GFE request task status reason types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
@@ -205,3 +205,12 @@ Description: "Defining codes for defining GFE request task status reason types. 
 * #patient-declined "Patient Declined" "Patient has declined to receive a GFE or AEOB."
 * #schedule "Schedule" "Provider cannot participate due to proposed schedule dates and or times."
 * #service-not-provided "Service Not Provided" "Services or Products being requested are not available from this GFE contributor."
+
+
+CodeSystem: PCTTaskBusinessStatusCSTemporaryTrialUse
+Title: "PCT GFE Request Task Business Status Code System"
+Description: "Codes for defining  GFE request task business status types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
+* ^copyright = "This CodeSystem is not copyrighted."
+* ^experimental = false
+* ^caseSensitive = true
+* #closed "Task Closed" "The Task is closed and business actor updates are no longer allowed."
