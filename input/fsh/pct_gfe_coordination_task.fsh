@@ -69,10 +69,6 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 
 * businessStatus from PCTTaskBusinessStatusCodes (extensible)
 
-//Add invariant requiring Task.statusReason when status = `completed` or` cancelled`
-
-
-
 * intent = http://hl7.org/fhir/task-intent#order
 * intent ^short = "Order for a Good Faith Estimate (not for services to be rendered)"
 
