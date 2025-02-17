@@ -60,6 +60,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * statusReason MS
 * statusReason from PCTContributorTaskStatusReasonCodes (extensible)
 
+* businessStatus MS
 * businessStatus from PCTTaskBusinessStatusCodes (extensible)
 
 * intent = http://hl7.org/fhir/task-intent#order

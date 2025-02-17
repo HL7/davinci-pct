@@ -67,6 +67,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
 * statusReason.text 1..1 MS
 
+* businessStatus MS
 * businessStatus from PCTTaskBusinessStatusCodes (extensible)
 
 * intent = http://hl7.org/fhir/task-intent#order
@@ -136,6 +137,6 @@ Add guidance that this may be contained or it may be externals.
 
 
 Invariant: pct-coord-task-1
-Description: "statusReason required when status is 'completed' or 'cancelled'"
-Expression: "(status = 'completed' or status = 'cancelled') implies statusReason.exists()"
+Description: "statusReason required when status is `completed`, `cancelled`, or `failed`"
+Expression: "(status = 'completed' or status = 'cancelled' or status = 'failed') implies statusReason.exists()"
 Severity: #error
