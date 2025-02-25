@@ -142,14 +142,46 @@ Description: "PCT GFE Information Bundle Example 1"
 
 
 
+Instance: PCT-GFE-Missing-Bundle-1
+InstanceOf: PCTGFEMissingBundle
+Description: "PCT GFE Missing Bundle Example 1"
+
+* timestamp = "2024-03-27T11:01:00+05:00"
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1002"
+* entry[organization][=].id = "org1002"
+* entry[organization][=].resource = org1002
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].id = "patient1001"
+* entry[patient].resource = patient1001
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].id = "coverage1001"
+* entry[coverage].resource = coverage1001
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
+* entry[requested-items-device].fullUrl = "http://example.org/fhir/DeviceRequest/PCT-DeviceRequest-1"
+* entry[requested-items-device].id = "PCT-DeviceRequest-1"
+* entry[requested-items-device].resource = PCT-DeviceRequest-1
 
 
-Instance: PCT-GFE-Collection-Bundle-1
-InstanceOf: PCTGFECollectionBundle
-Description: "PCT GFE Collection Bundle Example 1"
+
+
+
+
+
+////////////////////////////////////////////
+
+Instance: PCT-GFE-Document-Bundle-Inst-1
+InstanceOf: PCTGFEDocumentBundle
+Description: "PCT GFE Document Bundle Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
+
+* entry[composition].fullUrl = "http://example.org/fhir/Compositinon/PCT-GFE-Composition-Inst-1"
+* entry[composition].id = "PCT-GFE-Composition-Inst-1"
+* entry[composition].resource = PCT-GFE-Composition-Inst-1
+
 
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
@@ -176,12 +208,16 @@ Description: "PCT GFE Collection Bundle Example 1"
 * entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
-Instance: PCT-GFE-Collection-Bundle-2
-InstanceOf: PCTGFECollectionBundle
-Description: "PCT GFE Collection Bundle Example 1"
+Instance: PCT-GFE-Document-Prof-Bundle-1
+InstanceOf: PCTGFEDocumentBundle
+Description: "PCT GFE Document Bundle Professional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
+
+* entry[composition].fullUrl = "http://example.org/fhir/Compositinon/PCT-GFE-Composition-Prof-1"
+* entry[composition].id = "PCT-GFE-Composition-Prof-1"
+* entry[composition].resource = PCT-GFE-Composition-Prof-1
 
 * entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
@@ -209,26 +245,104 @@ Description: "PCT GFE Collection Bundle Example 1"
 
 
 
-Instance: PCT-GFE-Missing-Bundle-1
-InstanceOf: PCTGFEMissingBundle
-Description: "PCT GFE Missing Bundle Example 1"
 
-* timestamp = "2024-03-27T11:01:00+05:00"
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1002"
-* entry[organization][=].id = "org1002"
-* entry[organization][=].resource = org1002
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
-* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
-* entry[coverage].id = "coverage1001"
-* entry[coverage].resource = coverage1001
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
-* entry[organization][=].id = "org1001"
-* entry[organization][=].resource = org1001
-* entry[requested-items-device].fullUrl = "http://example.org/fhir/DeviceRequest/PCT-DeviceRequest-1"
-* entry[requested-items-device].id = "PCT-DeviceRequest-1"
-* entry[requested-items-device].resource = PCT-DeviceRequest-1
+
+Instance: PCT-GFE-Composition-Inst-1
+InstanceOf: PCTGFEComposition
+Description: "PCT GFE Composition Institutional Example 1"
+Usage: #inline
+* status = #final
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-document "GFE Document"
+* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* subject = Reference(patient1001)
+
+
+* date = "2025-01-10T11:01:00+05:00"
+
+// TODO Discuss who the author is
+* author[+] = Reference(org1001)
+* author[+] = Reference(Submitter-Org-1)
+
+* title = "Institutional Good Faith Estimate Document for Eve Betterhalf - 2025-01-10"
+
+* section[gfeBundle].code = PCTDocumentSection#gfe-section
+* section[gfeBundle].author = Reference(Submitter-Org-1)
+* section[gfeBundle].entry = Reference(PCT-GFE-Bundle-Inst-1)
+
+
+
+
+
+Instance: PCT-GFE-Composition-Prof-1
+InstanceOf: PCTGFEComposition
+Description: "PCT GFE Composition Professional Example 1"
+Usage: #inline
+* status = #final
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-document "GFE Document"
+* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* subject = Reference(patient1001)
+
+
+* date = "2025-01-10T11:01:00+05:00"
+
+// TODO Discuss who the author is
+* author[+] = Reference(org1001)
+* author[+] = Reference(Submitter-Org-1)
+
+* title = "Professional Good Faith Estimate Document for Eve Betterhalf - 2025-01-10"
+
+* section[gfeBundle].code = PCTDocumentSection#gfe-section
+* section[gfeBundle].author = Reference(Submitter-Org-1)
+* section[gfeBundle].entry = Reference(PCT-GFE-Bundle-Prof-1)
+
+
+
+
+
+
+
+
+Instance: PCT-GFE-DocumentReference-Inst-1
+InstanceOf: PCTGFEDocumentReference
+Description: "PCT GFE DocumentReference Institutional Example 1"
+
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
+* extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* status = #current
+* docStatus = #final
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
+* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* subject = Reference(patient1001)
+
+* date = "2025-01-10T11:01:00+05:00"
+
+* author[+]  = Reference(org1001)
+* author[+]  = Reference(Submitter-Org-1)
+
+* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Document-Bundle-Inst-1"
+
+
+
+Instance: PCT-GFE-DocumentReference-Prof-1
+InstanceOf: PCTGFEDocumentReference
+Description: "PCT GFE DocumentReference Professional Example 1"
+
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
+* extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* status = #current
+* docStatus = #final
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
+* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* subject = Reference(patient1001)
+
+* date = "2025-01-10T11:01:00+05:00"
+
+* author[+]  = Reference(org1001)
+* author[+]  = Reference(Submitter-Org-1)
+
+* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Document-Bundle-Prof-1"
 
 
 
@@ -280,3 +394,74 @@ Description: "PCT ServiceLocation Example 1"
 
 * name = "Hospital"
 * type = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP "Hospital"
+
+
+
+
+
+
+////////////////////////////////////////////
+// TODO To Be removed once Document Bundle is fully adopted
+
+Instance: PCT-GFE-Collection-Bundle-Inst-1
+InstanceOf: PCTGFECollectionBundle
+Description: "PCT GFE Collection Bundle Institutional Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-2347384711"
+* timestamp = "2024-03-29T11:01:00+05:00"
+
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].id = "patient1001"
+* entry[patient].resource = patient1001
+
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].id = "coverage1001"
+* entry[coverage].resource = coverage1001
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization][=].id = "Submitter-Org-1"
+* entry[organization][=].resource = Submitter-Org-1
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
+
+
+
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Bundle-Inst-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Bundle-Inst-1
+
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
+
+
+Instance: PCT-GFE-Collection-undle-Prof-1
+InstanceOf: PCTGFECollectionBundle
+Description: "PCT GFE Collection Bundle Professional Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-2347384711"
+* timestamp = "2024-03-29T11:01:00+05:00"
+
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].id = "patient1001"
+* entry[patient].resource = patient1001
+
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].id = "coverage1001"
+* entry[coverage].resource = coverage1001
+* entry[practitioner][+].fullUrl = "http://example.org/fhir/Practitioner/Submitter-Practitioner-1"
+* entry[practitioner][=].id = "Submitter-Practitioner-1"
+* entry[practitioner][=].resource = Submitter-Practitioner-1
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].id = "org1001"
+* entry[organization][=].resource = org1001
+
+
+
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Prof-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Bundle-Prof-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Bundle-Prof-1
+
+* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
+* entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1

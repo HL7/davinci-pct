@@ -37,6 +37,7 @@
 <artifact id="StructureDefinition/davinci-pct-aeob-documentreference" key="StructureDefinition-davinci-pct-aeob-documentreference" name="PCT AEOB Document Reference"/>
 <artifact id="CodeSystem/PCTAEOBProcessNoteCS" key="CodeSystem-PCTAEOBProcessNoteCS" name="PCT AEOB Process Note Code System"/>
 <artifact id="ValueSet/PCTAEOBProcessNoteVS" key="ValueSet-PCTAEOBProcessNoteVS" name="PCT AEOB Process Note Types"/>
+<artifact id="StructureDefinition/davinci-pct-aeob-abstract-available-subscriptiontopic" key="StructureDefinition-davinci-pct-aeob-abstract-available-subscriptiontopic" name="PCT Abstract AEOB Available Subscription Topic"/>
 <artifact id="CodeSystem/PCTAdjudicationCategoryCS" key="CodeSystem-PCTAdjudicationCategoryCS" name="PCT Adjudication Category CodeSystem"/>
 <artifact deprecated="true" id="CodeSystem/PCTAdjudicationCategoryType" key="CodeSystem-PCTAdjudicationCategoryType" name="PCT Adjudication Category Type"/>
 <artifact id="CodeSystem/PCTAdjudication" key="CodeSystem-PCTAdjudication" name="PCT Adjudication Code System"/>
@@ -53,20 +54,23 @@
 <artifact deprecated="true" id="ValueSet/pct-coverage-copay-codes" key="ValueSet-pct-coverage-copay-codes" name="PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
 <artifact id="CodeSystem/PCTDiagnosisType" key="CodeSystem-PCTDiagnosisType" name="PCT Diagnosis Type"/>
 <artifact id="ValueSet/PCTDiagnosisTypeVS" key="ValueSet-PCTDiagnosisTypeVS" name="PCT Diagnosis Type Value Set"/>
-<artifact id="CodeSystem/PCTDocumentCategory" key="CodeSystem-PCTDocumentCategory" name="PCT Document Categories"/>
+<artifact id="CodeSystem/PCTDocumentCategoryTemporaryTrialUse" key="CodeSystem-PCTDocumentCategoryTemporaryTrialUse" name="PCT Document Categories"/>
 <artifact id="CodeSystem/PCTDocumentSection" key="CodeSystem-PCTDocumentSection" name="PCT Document Section Codes"/>
-<artifact id="CodeSystem/PCTDocumentType" key="CodeSystem-PCTDocumentType" name="PCT Document Types"/>
+<artifact id="CodeSystem/PCTDocumentTypeTemporaryTrialUse" key="CodeSystem-PCTDocumentTypeTemporaryTrialUse" name="PCT Document Types"/>
 <artifact id="CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse" key="CodeSystem-PCTEstimateTypeSummaryCSTemporaryTrialUse" name="PCT Estimate Type Code System"/>
 <artifact id="CodeSystem/PCTFinancialType" key="CodeSystem-PCTFinancialType" name="PCT Financial Type Code System"/>
 <artifact id="ValueSet/PCTFinancialTypeVS" key="ValueSet-PCTFinancialTypeVS" name="PCT Financial Type Value Set"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-bundle" key="StructureDefinition-davinci-pct-gfe-bundle" name="PCT GFE Bundle"/>
 <artifact id="ValueSet/PCTGFECMSPOS" key="ValueSet-PCTGFECMSPOS" name="PCT GFE CMS Place of Service Value Set"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-collection-bundle" key="StructureDefinition-davinci-pct-gfe-collection-bundle" name="PCT GFE Collection Bundle"/>
+<artifact id="StructureDefinition/davinci-pct-gfe-composition" key="StructureDefinition-davinci-pct-gfe-composition" name="PCT GFE Composition"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-contributor-task" key="StructureDefinition-davinci-pct-gfe-contributor-task" name="PCT GFE Contributor Task"/>
 <artifact id="ValueSet/PCTContributorTaskStatusReasonCodes" key="ValueSet-PCTContributorTaskStatusReasonCodes" name="PCT GFE Contributor Task Status Reason Codes ValueSet"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-coordination-bundle" key="StructureDefinition-davinci-pct-gfe-coordination-bundle" name="PCT GFE Coordination Bundle"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-coordination-task" key="StructureDefinition-davinci-pct-gfe-coordination-task" name="PCT GFE Coordination Task"/>
 <artifact id="StructureDefinition/davinci-pct-devicerequest" key="StructureDefinition-davinci-pct-devicerequest" name="PCT GFE DeviceRequest"/>
+<artifact id="StructureDefinition/davinci-pct-gfe-document-bundle" key="StructureDefinition-davinci-pct-gfe-document-bundle" name="PCT GFE Document Bundle"/>
+<artifact id="StructureDefinition/davinci-pct-gfe-documentreference" key="StructureDefinition-davinci-pct-gfe-documentreference" name="PCT GFE Document Reference"/>
 <artifact id="CodeSystem/PCTGFEFrequency" key="CodeSystem-PCTGFEFrequency" name="PCT GFE Frequency Code System"/>
 <artifact id="ValueSet/PCTGFEFrequencyVS" key="ValueSet-PCTGFEFrequencyVS" name="PCT GFE Frequency Code Value Set"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-information-bundle" key="StructureDefinition-davinci-pct-gfe-information-bundle" name="PCT GFE Information Bundle"/>
@@ -129,12 +133,17 @@
 <artifact id="DeviceRequest/PCT-DeviceRequest-1" key="DeviceRequest-PCT-DeviceRequest-1" name="PCT-DeviceRequest-1"/>
 <artifact id="Bundle/PCT-GFE-Bundle-Inst-1" key="Bundle-PCT-GFE-Bundle-Inst-1" name="PCT-GFE-Bundle-Inst-1"/>
 <artifact id="Bundle/PCT-GFE-Bundle-Prof-1" key="Bundle-PCT-GFE-Bundle-Prof-1" name="PCT-GFE-Bundle-Prof-1"/>
-<artifact id="Bundle/PCT-GFE-Collection-Bundle-1" key="Bundle-PCT-GFE-Collection-Bundle-1" name="PCT-GFE-Collection-Bundle-1"/>
-<artifact id="Bundle/PCT-GFE-Collection-Bundle-2" key="Bundle-PCT-GFE-Collection-Bundle-2" name="PCT-GFE-Collection-Bundle-2"/>
+<artifact deprecated="true" id="Bundle/PCT-GFE-Collection-Bundle-1" key="Bundle-PCT-GFE-Collection-Bundle-1" name="PCT-GFE-Collection-Bundle-1"/>
+<artifact id="Bundle/PCT-GFE-Collection-Bundle-Inst-1" key="Bundle-PCT-GFE-Collection-Bundle-Inst-1" name="PCT-GFE-Collection-Bundle-Inst-1"/>
+<artifact id="Bundle/PCT-GFE-Collection-undle-Prof-1" key="Bundle-PCT-GFE-Collection-undle-Prof-1" name="PCT-GFE-Collection-undle-Prof-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Task-1" key="Task-PCT-GFE-Contributor-Task-1" name="PCT-GFE-Contributor-Task-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Task-2" key="Task-PCT-GFE-Contributor-Task-2" name="PCT-GFE-Contributor-Task-2"/>
 <artifact id="Bundle/PCT-GFE-Coordination-Bundle-1" key="Bundle-PCT-GFE-Coordination-Bundle-1" name="PCT-GFE-Coordination-Bundle-1"/>
 <artifact id="Task/PCT-GFE-Coordination-Task-1" key="Task-PCT-GFE-Coordination-Task-1" name="PCT-GFE-Coordination-Task-1"/>
+<artifact id="Bundle/PCT-GFE-Document-Bundle-Inst-1" key="Bundle-PCT-GFE-Document-Bundle-Inst-1" name="PCT-GFE-Document-Bundle-Inst-1"/>
+<artifact id="Bundle/PCT-GFE-Document-Prof-Bundle-1" key="Bundle-PCT-GFE-Document-Prof-Bundle-1" name="PCT-GFE-Document-Prof-Bundle-1"/>
+<artifact id="DocumentReference/PCT-GFE-DocumentReference-Inst-1" key="DocumentReference-PCT-GFE-DocumentReference-Inst-1" name="PCT-GFE-DocumentReference-Inst-1"/>
+<artifact id="DocumentReference/PCT-GFE-DocumentReference-Prof-1" key="DocumentReference-PCT-GFE-DocumentReference-Prof-1" name="PCT-GFE-DocumentReference-Prof-1"/>
 <artifact id="Bundle/PCT-GFE-Information-Bundle-1" key="Bundle-PCT-GFE-Information-Bundle-1" name="PCT-GFE-Information-Bundle-1"/>
 <artifact id="Claim/PCT-GFE-Institutional-1" key="Claim-PCT-GFE-Institutional-1" name="PCT-GFE-Institutional-1"/>
 <artifact id="Claim/PCT-GFE-Institutional-MRI" key="Claim-PCT-GFE-Institutional-MRI" name="PCT-GFE-Institutional-MRI"/>
@@ -172,6 +181,10 @@
 <artifact id="SearchParameter/task-replaces" key="SearchParameter-task-replaces" name="TaskReplaces"/>
 <artifact id="SearchParameter/task-requested-period" key="SearchParameter-task-requested-period" name="TaskRequestedPeriod"/>
 <artifact id="ValueSet/USClaimDRGCodes" key="ValueSet-USClaimDRGCodes" name="US Claim DRG Codes"/>
+<artifact id="Subscription/aeob-available-author-subscription" key="Subscription-aeob-available-author-subscription" name="aeob-available-author-subscription"/>
+<artifact id="Basic/aeob-available-author-subscription-topic" key="Basic-aeob-available-author-subscription-topic" name="aeob-available-author-subscription-topic"/>
+<artifact id="Subscription/aeob-available-subject-subscription" key="Subscription-aeob-available-subject-subscription" name="aeob-available-subject-subscription"/>
+<artifact id="Basic/aeob-available-subject-subscription-topic" key="Basic-aeob-available-subject-subscription-topic" name="aeob-available-subject-subscription-topic"/>
 <artifact id="SearchParameter/aeob-date-of-service" key="SearchParameter-aeob-date-of-service" name="aeob-date-of-service"/>
 <artifact id="Contract/contract1001" key="Contract-contract1001" name="contract1001"/>
 <artifact id="Coverage/coverage1001" key="Coverage-coverage1001" name="coverage1001"/>

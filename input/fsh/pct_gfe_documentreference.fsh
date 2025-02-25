@@ -1,10 +1,10 @@
 // TODO, need to adopt most of the documentReference requirements, less the type and context requirements
 // Need US Core Variant Request
-Profile: PCTAdvancedEOBDocumentReference
+Profile: PCTGFEDocumentReference
 Parent: DocumentReference
-Id: davinci-pct-aeob-documentreference
-Title: "PCT AEOB Document Reference"
-Description: "PCT AEOB Document Reference that enables searching and subscriptions for AEOB Documents."
+Id: davinci-pct-gfe-documentreference
+Title: "PCT GFE Document Reference"
+Description: "PCT GFE Document Reference that enables searching and subscriptions for GFE Documents."
 * insert TrialUseArtifact1
 
 * extension contains
@@ -37,7 +37,7 @@ Description: "PCT AEOB Document Reference that enables searching and subscriptio
 * status MS
 * docStatus 1..1 MS
 * type 1.. MS
-* type = PCTDocumentTypeTemporaryTrialUse#aeob-document
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
 
 * category 1.. MS
 * category ^slicing.discriminator.type = #value
@@ -57,13 +57,13 @@ Description: "PCT AEOB Document Reference that enables searching and subscriptio
 // TODO Discuss who the author is
 * author 2..*
 * author only Reference(PCTOrganization or PCTPractitioner)
-* author ^short = "All involved authoring parties, including payer all Good Faith Estimate (GFE) providers"
+* author ^short = "All involved authoring parties, including all Good Faith Estimate (GFE) providers"
 
 // DISCUSS, do we want an authenticator requirement? - A participant who has attested to the accuracy of the composition/document.
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
 * relatesTo MS
-* relatesTo ^short = "Relationship to other AEOB documents. Required if this estimate is replacing another." 
+* relatesTo ^short = "Relationship to other GFE documents. Required if this estimate is replacing another." 
 
 * content 1..1 MS
 * content.attachment MS
@@ -82,9 +82,3 @@ Description: "PCT AEOB Document Reference that enables searching and subscriptio
 */
 
 //TODO Search parameters
-
-Invariant: pct-dr-1
-Description: "DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
-Expression: "url.exists() or data.exists()"
-Severity: #error
-

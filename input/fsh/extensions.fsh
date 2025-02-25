@@ -366,3 +366,33 @@ Description: "Requester has explicitly declared self-pay."
 * value[x] only boolean
 * value[x] ^short = "Indication if requester has declared self-pay coverage"
 * value[x] ^comment = "Used to express that the request has declared that items are services rendered are to be self-pay and not covered by or submitted directly to an insurance plan."
+
+
+Extension: EstimateProcedureOrService
+Id: estimateProcedureOrService
+Title: "Significant Procedures and/or products involved"
+Description: "Significant Procedures and/or products involved in an estimate."
+* ^context[+].type = #element
+* ^context[=].expression = "Task"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from USClaimMedicalProductOrServiceCodes (required)
+* value[x] ^short = "Significant Procedures and/or products involved"
+* value[x] ^comment = "Significant Procedures and/or products involved in an estimate."
+
+
+Extension: EstimateCondition
+Id: estimateCondition
+Title: "Significant condition involved"
+Description: "Significant condition involved in an estimate."
+* ^context[+].type = #element
+* ^context[=].expression = "Task"
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from PCTDiagnosticCodes (required)
+* value[x] ^short = "Significant condition or condition involved"
+* value[x] ^comment = "Significant condition involved in an estimate."

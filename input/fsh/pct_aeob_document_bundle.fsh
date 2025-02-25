@@ -75,35 +75,6 @@ Description: "PCT AEOB Document Bundle that contains necessary resources for an 
 
 */
 
-Extension: EstimateProcedureOrService
-Id: estimateProcedureOrService
-Title: "Significant Procedures and/or products involved"
-Description: "Significant Procedures and/or products involved in an estimate."
-* ^context[+].type = #element
-* ^context[=].expression = "Task"
-* ^context[+].type = #element
-* ^context[=].expression = "DocumentReference"
-* value[x] 1..1
-* value[x] only CodeableConcept
-* valueCodeableConcept from USClaimMedicalProductOrServiceCodes (required)
-* value[x] ^short = "Significant Procedures and/or products involved"
-* value[x] ^comment = "Significant Procedures and/or products involved in an estimate."
-
-
-Extension: EstimateCondition
-Id: estimateCondition
-Title: "Significant condition involved"
-Description: "Significant condition involved in an estimate."
-* ^context[+].type = #element
-* ^context[=].expression = "Task"
-* ^context[+].type = #element
-* ^context[=].expression = "DocumentReference"
-* value[x] 1..1
-* value[x] only CodeableConcept
-* valueCodeableConcept from PCTDiagnosticCodes (required)
-* value[x] ^short = "Significant condition or condition involved"
-* value[x] ^comment = "Significant condition involved in an estimate."
-
 
 
 Invariant: pct-datetime-to-seconds
@@ -113,72 +84,17 @@ Severity: #error
 
 
 
-CodeSystem: PCTDocumentType
-Title: "PCT Document Types"
-Description: "Defining codes for types of documents used for Patient Cost Transparency estimates. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as LOINC, which will result in a code system url change and possibly modified codes and definitions."
-* ^caseSensitive = true
-* #gfe-document "GFE Document" "A Good Faith Estimate (GFE) Document providing a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. This document may contain one or more individual GFE (Claim) resources."
-* #aeob-document "AEOB Document" "An Advanced Explanation of Benefit (AEOB) Document providing a notification of reasonably expected charges and billing codes provided by a payer according to the member benefits in relation a Good Faith Estimate (GFE) supplied by one or more providers for a given period of service.  AEOBs need to include which providers are expected to provide treatment, the network status of providers, good faith estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates; for example, the disclaimer might state that the information provided in the notification is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) and is subject to change."
-* ^copyright = "This CodeSystem is not copyrighted."
-* ^experimental = false
-
-
-CodeSystem: PCTDocumentCategory
-Title: "PCT Document Categories"
-Description: "Defining codes for categories of documents used for Patient Cost Transparency estimates. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as LOINC, which will result in a code system url change and possibly modified codes and definitions."
-* ^caseSensitive = true
-* #estimate "Estimation Document" "An estimate of healthcare services, products, costs and/or benefits."
-* ^copyright = "This CodeSystem is not copyrighted."
-* ^experimental = false
-
-
-CodeSystem: PCTDocumentSection
-Title: "PCT Document Section Codes"
-Description: "Defining codes for the sections found in documents used for Patient Cost Transparency estimates."
-* ^caseSensitive = true
-* #aeob-summary-section "AEOB Summary" "The Advanced Explanation of Benefit (AEOB) Summary Document Section"
-* #aeob-section "AEOB Section" "The Advanced Explanation of Benefit (AEOB) Document Section"
-* #gfe-section "GFE Section" "A Good Faith Estimate (GFE) Document Section (one per provider)"
-* ^copyright = "This CodeSystem is not copyrighted."
-* ^experimental = false
 
 
 
+Invariant: pct-aeob-bundle-1
+Description: "All references resources SHALL be contained within the Bundle with the exception of the PCT GFE Bundle (referenced from the gfeReference extension in the AEOB), which MAY be present"
+Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
+// Expression: "Bundle.entry.resource.descendants().reference.where($this.startsWith('#').not() and $this.startsWith('Bundle').not()).all((%resource.entry.fullUrl.join('|')&'|').contains(($this&'|')))"
+Severity: #error
 
-Instance: PCT-AEOB-Document-Bundle-1
-InstanceOf: PCTAEOBDocumentBundle
-Description: "PCT AEOB Document Bundle Example 1"
-* identifier.system = "http://example.com/identifiers/bundle"
-* identifier.value = "59688475-2324-3242-1234568"
-* timestamp = "2025-01-10T11:01:00+05:00"
-
-
-
-* entry[composition][+].fullUrl = "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
-* entry[composition][=].resource = PCT-AEOB-Composition-1
-* entry[composition][=].id = "PCT-AEOB-Composition-1"
-
-* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
-* entry[aeob][=].resource = PCT-AEOB-Summary-1
-* entry[aeob][=].id = "PCT-AEOB-Summary-1"
-* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
-* entry[aeob][=].resource = PCT-AEOB-1
-* entry[aeob][=].id = "PCT-AEOB-1"
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].resource = patient1001
-* entry[patient].id = "patient1001"
-* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
-* entry[coverage].resource = coverage1001
-* entry[coverage].id = "coverage1001"
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
-* entry[organization][=].resource = org1001
-* entry[organization][=].id = "org1001"
-
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[organization][=].resource = Submitter-Org-1
-* entry[organization][=].id = "Submitter-Org-1"
-
-* entry[gfeBundle].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
-* entry[gfeBundle].resource = PCT-GFE-Bundle-Inst-1
-* entry[gfeBundle].id = "PCT-GFE-Bundle-Inst-1"
-
+Invariant: pct-aeob-bundle-2
+Description: "SHALL have at least one entry for a payer organization."
+//Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
+Expression: "entry.resource.ofType(Organization).where(type.coding.where(code='pay').exists()).exists()"
+Severity: #error

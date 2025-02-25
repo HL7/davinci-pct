@@ -30,9 +30,9 @@ publisher:
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core: 3.1.1
-  hl7.fhir.extensions.r5: 4.0.1
+  hl7.fhir.extensions.r5: 5.2.0
   hl7.fhir.us.davinci-hrex: 1.0.0     # NOTE: Da Vinci HRex depends on US Core 3.1.0
-  hl7.terminology: 6.1.0
+  hl7.terminology: 6.2.0
   hl7.fhir.uv.subscriptions-backport: 1.1.0
 
 
@@ -233,7 +233,10 @@ groups:
     - StructureDefinition/davinci-pct-medicationrequest
     - StructureDefinition/davinci-pct-devicerequest
     - StructureDefinition/davinci-pct-service-location
-    - StructureDefinition/davinci-pct-gfe-collection-bundle
+    #- StructureDefinition/davinci-pct-gfe-collection-bundle
+    - StructureDefinition/davinci-pct-gfe-documentreference
+    - StructureDefinition/davinci-pct-gfe-document-bundle
+    - StructureDefinition/davinci-pct-gfe-composition
     - StructureDefinition/davinci-pct-gfe-bundle
     - StructureDefinition/davinci-pct-gfe-missing-bundle
     - StructureDefinition/davinci-pct-gfe-summary
@@ -260,6 +263,7 @@ groups:
     description: These are archived profiles temporarily held during a transition from collection bundles to document bundles.
     resources:
     - StructureDefinition/davinci-pct-aeob-bundle
+    - StructureDefinition/davinci-pct-gfe-collection-bundle
 
 
 

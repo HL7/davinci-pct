@@ -148,8 +148,106 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 * benefitBalance.financial.usedMoney.currency = #USD
 * benefitBalance.financial.extension[RemainingBenefit].valueMoney.value = 0
 * benefitBalance.financial.extension[RemainingBenefit].valueMoney.currency = #USD
-////////////////////////////////////////////
 
+
+
+
+Instance: PCT-AEOB-Document-Bundle-1
+InstanceOf: PCTAEOBDocumentBundle
+Description: "PCT AEOB Document Bundle Example 1"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-1234568"
+* timestamp = "2025-01-10T11:01:00+05:00"
+
+
+
+* entry[composition].fullUrl = "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
+* entry[composition].resource = PCT-AEOB-Composition-1
+* entry[composition].id = "PCT-AEOB-Composition-1"
+
+* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
+* entry[aeob][=].resource = PCT-AEOB-Summary-1
+* entry[aeob][=].id = "PCT-AEOB-Summary-1"
+* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
+* entry[aeob][=].resource = PCT-AEOB-1
+* entry[aeob][=].id = "PCT-AEOB-1"
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].resource = patient1001
+* entry[patient].id = "patient1001"
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].resource = coverage1001
+* entry[coverage].id = "coverage1001"
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].resource = org1001
+* entry[organization][=].id = "org1001"
+
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization][=].resource = Submitter-Org-1
+* entry[organization][=].id = "Submitter-Org-1"
+
+* entry[gfeBundle].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+* entry[gfeBundle].resource = PCT-GFE-Bundle-Inst-1
+* entry[gfeBundle].id = "PCT-GFE-Bundle-Inst-1"
+
+
+
+
+Instance: PCT-AEOB-Composition-1
+InstanceOf: PCTAdvancedEOBComposition
+Description: "PCT AEOB Composition Example 1"
+Usage: #inline
+* status = #final
+* type = PCTDocumentTypeTemporaryTrialUse#aeob-document "AEOB Document"
+* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* subject = Reference(patient1001)
+
+
+* date = "2025-01-10T11:01:00+05:00"
+
+// TODO Discuss who the author is
+* author[+] = Reference(org1001)
+* author[+] = Reference(Submitter-Org-1)
+
+* title = "Advanced Explanation of Benefit Document for Eve Betterhalf - 2025-01-10"
+
+* section[aeob-summary].code = PCTDocumentSection#aeob-summary-section
+* section[aeob-summary].entry = Reference(PCT-AEOB-Summary-1)
+
+* section[aeob].code = PCTDocumentSection#aeob-section
+* section[aeob].entry = Reference(PCT-AEOB-1)
+
+* section[gfeBundle].code = PCTDocumentSection#gfe-section
+* section[gfeBundle].author = Reference(Submitter-Org-1)
+* section[gfeBundle].entry = Reference(PCT-GFE-Bundle-Inst-1)
+
+
+
+
+
+Instance: PCT-AEOB-DocumentReference-1
+InstanceOf: PCTAdvancedEOBDocumentReference
+Description: "PCT AEOB DocumentReference Example 1"
+
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
+* extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
+* extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
+* status = #current
+* docStatus = #final
+* type = PCTDocumentTypeTemporaryTrialUse#aeob-document
+* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* subject = Reference(patient1001)
+
+* date = "2025-01-10T11:01:00+05:00"
+
+* author[+]  = Reference(org1001)
+* author[+]  = Reference(Submitter-Org-1)
+
+* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-AEOB-Document-Bundle-1"
+
+
+
+////////////////////////////////////////////
+// TODO To Be removed once Document Bundle is fully adopted
 
 Instance: PCT-AEOB-Bundle-1
 InstanceOf: PCTAEOBBundle
