@@ -144,6 +144,6 @@ Questions
 * benefitBalance.financial.allowedMoney 1..1
 * benefitBalance.financial.used[x] 1..1
 * benefitBalance.financial.usedMoney 1..1
-
+* benefitBalance.financial.extension contains RemainingBenefit named remaining  0..1 MS
 
 
