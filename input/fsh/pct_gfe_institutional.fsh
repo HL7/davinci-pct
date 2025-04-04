@@ -2,7 +2,7 @@ Profile: PCTGFEInstitutional
 Parent: Claim
 Id: davinci-pct-gfe-institutional
 Title: "PCT Good Faith Estimate Institutional"
-Description: "PCT Good Faith Estimate Institutional is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for an institutional GFE submission."
+Description: "PCT Good Faith Estimate Institutional is a profile for an institutional provider to capture estimation for  items and services for the patient or, optionally, to submit to a payer (for patients using insurance). If submitting to a payer, this includes the data needed for a payer to process and create an Advanced EOB. This profile is used for an institutional GFE submission."
 * insert TrialUseArtifact
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
@@ -143,12 +143,16 @@ Description: "PCT Good Faith Estimate Institutional is a profile for capturing s
 * procedure[principal].procedure[x] only CodeableConcept
 * procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
+* procedure[principal].extension 1..*
+* procedure[principal].extension contains ServiceDescription named serviceDescription 1..1
 
 * procedure[other].type 1..1
 * procedure[other].type = PCTProcedureType#other
 * procedure[other].procedure[x]
 * procedure[other].procedure[x] only CodeableConcept
 * procedure[other].procedure[x] from PCTProcedureSurgicalCodes
+* procedure[other].extension 1..*
+* procedure[other].extension contains ServiceDescription named serviceDescription 1..1
 
 * insert CareTeamSlicing
 //* careTeam 0..* MS

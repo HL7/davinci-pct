@@ -2,7 +2,7 @@ Profile: PCTGFEProfessional
 Parent: Claim
 Id: davinci-pct-gfe-professional
 Title: "PCT Good Faith Estimate Professional"
-Description: "PCT Good Faith Estimate Professional is a profile for capturing submission data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for a professional GFE submission."
+Description: "PCT Good Faith Estimate Professional is a profile for an professional provider to capture estimation for  items and services for the patient or, optionally, to submit to a payer (for patients using insurance). If submitting to a payer, this includes the data needed to be processed by a payer for the creation of an Advanced EOB. This profile is used for a professional GFE submission."
 * insert TrialUseArtifact
 * insert IdentifierSlicing
 * identifier contains
@@ -113,6 +113,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for capturing su
 * procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
+* procedure[anesthesiaRelated].extension 1..*
+* procedure[anesthesiaRelated].extension contains ServiceDescription named serviceDescription 1..1
 
 
 * insert CareTeamSlicing
