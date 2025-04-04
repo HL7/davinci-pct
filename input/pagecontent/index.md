@@ -56,7 +56,7 @@ Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of
 This guide breaks the process into two main parts in support of the patient cost transparency use case: 
 1. [GFE Coordination Workflow ](gfe_coordination_overview.html) -  Supports the ability for a provider to request and collect one or more GFEs from other providers that may participate in a set of procedures related to patient’s period of care for which a GFE is required, either to provide to the patient and/or to submit to a payer.
 
-2. [GFE Submission and AEOB Workflow ](gfe_submission_and_aeob_overview.html) - Supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an AEOB bundle to the patient and optionally to the provider. This submission may include GFEs from multiple providers or a consolidated GFE that were gathered in the [GFE Coordination Workflow ](gfe_coordination_overview.html).
+2. [GFE Submission and AEOB Workflow ](gfe_submission_and_aeob_overview.html) - Supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) to the patient and optionally to the provider. This submission may include GFEs from multiple providers or a consolidated GFE that were gathered in the [GFE Coordination Workflow ](gfe_coordination_overview.html).
 
 
 **Good Faith Estimate and Advanced Explanation of Benefit High Level Workflow**
@@ -70,11 +70,11 @@ This guide breaks the process into two main parts in support of the patient cost
 
 2. The Providers involved in the service coordinate on their individual charges and services for the Good Faith Estimate through the [GFE Coordination Workflow](gfe_coordination_overview.html), if applicable. For self-pay or uninsured patients, the GFE can be made available to the patient at this step. _(This would be through another means not defined in this IG.)_
 
-3. For insured patients, one or more GFEs in a FHIR Bundle resource ([GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
+3. For insured patients, one or more GFEs in a FHIR Bundle resource ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
 
-4. The payer would then process, adjudicate, and produce the [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html).
+4. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
-5. The patient can now request and receive the AEOB Bundle via FHIR query.
+5. The patient can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 > Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
 

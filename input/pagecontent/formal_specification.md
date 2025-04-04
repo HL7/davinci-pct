@@ -54,4 +54,4 @@ Additional Specifications for the two workflows in this guide can be found on th
 
 - [GFE Coordination Specification](gfe_coordination_specification.html) -  Requirements to support the ability for a provider to request and collect one or more GFEs from other providers that may participate in a set of procedures related to patient’s period of care for which a GFE is required, either to provide to the patient and/or to submit to a payer.
 
-- [GFE Submission and AEOB Specification](gfe_submission_and_aeob_specification.html) - Requirements to supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an AEOB bundle to the patient and optionally to the provider.
+- [GFE Submission and AEOB Specification](gfe_submission_and_aeob_specification.html) - Requirements to supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) to the patient and optionally to the provider.

@@ -2,10 +2,10 @@ Profile: PCTAdvancedEOBComposition
 Parent: Composition
 Id: davinci-pct-aeob-composition
 Title: "PCT AEOB Composition"
-Description: "PCT AEOB Composition that assembles the contents of an AEOB (represented by one or more individual AEOB resources) into a single logical package. This version fo the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
+Description: "PCT AEOB Composition that assembles the contents of an AEOB (represented by one or more individual AEOB resources) into a single logical package. A Composition for the document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
-* type = PCTDocumentTypeTemporaryTrialUse#aeob-document
-* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
+* category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
 * subject only Reference(HRexPatientDemographics)
 
@@ -22,8 +22,25 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 // DISCUSS, do we want an attester requirement? - A participant who has attested to the accuracy of the composition/document.
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
-//* relatesTo MS
-//* relatesTo ^short = "Relationship to other AEOB documents. Required if this estimate is replacing another." This does not work as it can only reference a composition. This needs to be done in a DocumentReference
+* relatesTo MS
+* relatesTo ^short = "Relationship to other AEOB packets. Required if this estimate is replacing another." 
+
+* relatesTo ^slicing.discriminator.type = #value
+* relatesTo ^slicing.discriminator.path = "code"
+* relatesTo ^slicing.rules = #open
+* relatesTo ^slicing.description = "Slice different relationships"
+
+* relatesTo contains
+  replaces 0..1 MS
+
+
+* relatesTo[replaces] ^short = "The identifier of the document (Composition.identifier) this estimate replaces"
+  * code = #replaces
+  * targetIdentifier 1..1 MS
+    * system 1..1
+    * value 1..1
+
+
 * section ^short = "Sections for Advanced Explanation of Benefit (AEOB) Summary, Individual AEOBs, and associates Good Faith Estimates (GFEs)"
 
 * section ^slicing.discriminator.type = #value

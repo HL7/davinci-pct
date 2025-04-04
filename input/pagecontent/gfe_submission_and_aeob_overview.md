@@ -1,7 +1,9 @@
-This section of the Implementation Guide focuses on enabling a provider to submit a Good Faith Estimate (GFE) Bundle including [Good Faith Estimate resource profiles](artifacts.html#structures-gfe-resource-profiles) (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an Advanced Explanation of Benefit (AEOB) Bundle including [Advanced Explanation of Benefits resource profiles](artifacts.html#structures-aeob-resource-profiles) (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and optionally the provider (GFE submitter on claim resources), can retrieve to get an estimation of costs for expected services as known at a specific point in time.
+<!--TODO Remove/move all Conformance verbs SHALL SHOULD MAY to Specification page-->
+
+This section of the Implementation Guide focuses on enabling a provider to submit a [Good Faith Estimate (GFE) Packet](StructureDefinition-davinci-pct-gfe-packet.html) including [Good Faith Estimate resource profiles](artifacts.html#structures-gfe-resource-profiles) (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an [Advanced Explanation of Benefit (AEOB) Packet](StructureDefinition-davinci-pct-aeob-packet.html) including [Advanced Explanation of Benefits resource profiles](artifacts.html#structures-aeob-resource-profiles) (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and optionally the provider (GFE submitter on claim resources), can retrieve to get an estimation of costs for expected services as known at a specific point in time.
 
 A primary goal of this guide is to enable the patient to have access to AEOBs for expected future medical items or services. Sharing this information with the provider is also supported as an option. This enables the provider to have an informed conversation with the patient to support better patient decision making. If this capability is supported by the implementer, the patient’s AEOB will be provided to the GFE submitting provider using the same profiles in this guide. In this way the provider would receive the same information made available to the patient.
-This guide does not currently specify a means for providers to update or cancel a GFE submission. Rather, if there is new information that may materially affect the estimation, the provider would submit a new GFE Bundle.
+This guide does not currently specify a means for providers to update or cancel a GFE submission. Rather, if there is new information that may materially affect the estimation, the provider would submit a new [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
 
 ### Workflow at a Glance ###
@@ -14,11 +16,11 @@ Dotted line indicates optional.
 
 1. A patient schedules a service which triggers the composition of a collection of one or more GFEs. Note: The composition of the collection of GFEs is currently not in scope for this IG.
 
-2. The collection of GFEs in the form of a FHIR resource bundle (GFE Bundle) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html) to the payer’s endpoint for AEOB creation.
+2. The collection of GFEs in the form of a FHIR resource bundle ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation.
 
-3. The payer would then process, adjudicate, and produce the AEOB bundle.
+3. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
-4. The patient can now request and receive the AEOB Bundle via FHIR query.
+4. The patient can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 >Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer.
 
@@ -28,51 +30,53 @@ Below are illustrations showing the relationships between the profiles involved 
 > Note: For brevity, not all data elements are shown.
 
 
-Figure 1 shows a GFE Collection Bundle that is submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the GFE Bundles for processing.
+Figure 1 shows a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) that is submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)s for processing.
 
-![Figure 1. GFE Collection Bundle](GFE_Collection_Bundle.png){:style="float: none;width: 800px;display: block;margin: auto;"}
+![Figure 1. GFE Packet](GFE_Packet.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
-Figure 1. GFE Collection Bundle
+Figure 1. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)
 
 
 
-Figure 2 shows the components of the GFE Bundle. It contains the Patient, Coverage and Payer if relevant, involved providers, and Claims data with the estimated costs. If the GFE Coordination Workflow was utilized, this is the same GFE Bundle as the one provided by a GFE Contributor.
-All resources (supporting info, etc.) needed to process the GFE and produce the AEOB **SHALL** be included in the GFE Bundle. Relevant resources referenced by such resources **SHALL** also be included.
+Figure 2 shows the components of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). It contains the Patient, Coverage and Payer if relevant, involved providers, and Claims data with the estimated costs. If the GFE Coordination Workflow was utilized, this is the same [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) as the one provided by a GFE Contributor.
+All resources (supporting info, etc.) needed to process the GFE and produce the AEOB **SHALL** be included in the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). Relevant resources referenced by such resources **SHALL** also be included.
 
 
 ![Figure 2. A GFE Bundle](GFE_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-_Figure 2. A GFE Bundle_
+_Figure 2. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)_
 
 
 
-Figure 3 shows an AEOB Bundle created by a payer in response to a GFE-submit operation.
-The AEOB bundle **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original GFE bundle (i.e., an exact copy of the originally submitted GFE).
+Figure 3 shows an [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) created by a payer in response to a GFE-submit operation.
+The [AEOB Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) (i.e., an exact copy of the originally submitted GFE).
 
 
-![Figure 3. A AEOB Bundle](AEOB_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 3. A AEOB Packet](AEOB_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-_Figure 3. A AEOB Bundle_
+_Figure 3. A [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)_
 
 
 ### Technical Workflows ###
 
 #### Payer Perspective: End-to-End Workflow
 
-The workflow diagram below describes the process of receiving a GFE Bundle from the submitting provider and returning the completed AEOB asynchronously (or acknowledgement that the process was completed if the AEOB will not be returned to the provider), as well as the process for a patient app to query for and retrieve their completed AEOB.
+<!-- TODO This visio workflow diagram needs to be updated, specifically the name of the bundle to "Packet". -->
+
+The workflow diagram below describes the process of receiving a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) from the submitting provider and returning the completed AEOB asynchronously (or acknowledgement that the process was completed if the AEOB will not be returned to the provider), as well as the process for a patient app to query for and retrieve their completed AEOB.
 
 ![Payer Perspective](PCTWorkflowPayer.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
 **Figure 4: Payer Perspective: End-to-End Workflow**
 
-1. The provider uses the gfe-submit operation to submit the GFE bundle to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to this link for more details. Note: This page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
+1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to this link for more details. Note: This page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
   * If the payer's FHIR aware endpoint does not receive the request (i.e. system is down, incorrect URL used, etc.) an HTTP status code of 4XX or 5XX will be returned. 
   * If the gfe-submit operation is successfully invoked, the request will move to Step 2. 
-2. The payer system validates the GFE bundle against the FHIR R4 core specification and the GFE Bundle profile and other appropriate profiles in this guide, using the core FHIR [validate](http://hl7.org/fhir/resource-operation-validate.html) operation. 
+2. The payer system validates the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) against the FHIR R4 core specification and the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) profile and other appropriate profiles in this guide, using the core FHIR [validate](http://hl7.org/fhir/resource-operation-validate.html) operation. 
   * If any validation errors are received, an HTTP status code of 412 Precondition Failed is returned along with an OperationOutcome resource containing the result of the validate operation. 
   * If validation is successful, the request will move to Step 3. 
-3. The payer system accepts the GFE bundle. An HTTP status code of 202 Accepted is returned, and the Content-Location header  contains a URL for subsequent polling. 
-4. The payer system begins processing the GFE bundle asynchronously to produce the AEOB. Some payers may process GFEs in near real time, which this guide can support, but more likely this process will take a substantial amount of time, up to the limits allowed by regulation. 
+3. The payer system accepts the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html). An HTTP status code of 202 Accepted is returned, and the Content-Location header  contains a URL for subsequent polling. 
+4. The payer system begins processing the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) asynchronously to produce the AEOB. Some payers may process GFEs in near real time, which this guide can support, but more likely this process will take a substantial amount of time, up to the limits allowed by regulation. If a payer receives a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) with a `replaces` relatesTo identifier that matches a previous GFE Submission identifier by the same submitter and the AEOB is not yet complete, the payer may assume that an AEOB response is no longer needed for the previous request and process the new request instead.
 5. GFE processing can result in success or failure. 
   * In case of failure, the payer system sets the status of the request (identified by the unique URL returned in Step 3) to error, and prepare an OperationOutcome resource with details and move to Step 7. The payer should also notify the patient that the estimate was unable to be produced leveraging similar existing EOB/Claims business processes, though this communication to the patient is out of scope for this guide. 
   * If successful, move to Step 6. 
@@ -82,7 +86,7 @@ The workflow diagram below describes the process of receiving a GFE Bundle from 
 7. The payer system provides an endpoint at the URL provided in Step 3 whereby the provider can poll for GFE processing status.   
   * If the response is in-progress, the endpoint returns an HTTP status code of 202 Accepted, indicating that the provider should poll again later. The payer system should return a Retry-After header with each in-progress polling response, and the client should use this information to inform the timing of the next polling request. 
   * If the response is an error, the endpoint returns an HTTP status code of 4XX or 5XX, and the body of the response is an OperationOutcome detailing the error. 
-  * If the response is successful, the endpoint returns an HTTP status code of 200 OK, and the body of the request is a [Bundle resource of type batch-response](https://www.hl7.org/fhir/codesystem-bundle-type.html#bundle-type-batch-response). This batch-response bundle SHOULD contain the completed AEOB Bundle and MAY contain one or more OperationOutcome resources with additional information regarding GFE/AEOB processing. If the batch-response Bundle does not contain an AEOB Bundle, then it SHALL contain at least one OperationOutcome resource detailing the reason why the AEOB Bundle is not present (e.g. the AEOB was sent directly to the patient and will not be returned to the provider). 
+  * If the response is successful, the endpoint returns an HTTP status code of 200 OK, and the body of the request is a [Bundle resource of type batch-response](https://www.hl7.org/fhir/codesystem-bundle-type.html#bundle-type-batch-response). This batch-response bundle **SHOULD** contain the completed [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) and **MAY** contain one or more OperationOutcome resources with additional information regarding GFE/AEOB processing. If the batch-response Bundle does not contain an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html), then it **SHALL** contain at least one OperationOutcome resource detailing the reason why the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is not present (e.g. the AEOB was sent directly to the patient and will not be returned to the provider). 
 
 
 The individual steps from the provider and patient perspective are detailed in the sections below. 
@@ -95,14 +99,14 @@ A patient schedules a service and this triggers the composition of a collection 
 
 **Figure 5: Provider Perspective**
 
-1. The provider uses the gfe-submit operation to submit the GFE bundle to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to that page for more details. Note: that page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
+1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to that page for more details. Note: that page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
   * If successful this request will return an HTTP status code of 202 Accepted with a Content-Location header containing the absolute URL of an endpoint for subsequent status requests (polling location). 
-  * If the operation fails it will return an HTTP status code of 4XX or 5XX and an OperationOutcome resource containing the error details (such as a 412 Precondition Failed if the content of the POST was not a valid GFE Bundle), provided the operation was successfully invoked (i.e. if the POST was submitted to a non-existent URL, the submitter would likely receive a 404 Not Found status code with no OperationOutcome). 
+  * If the operation fails it will return an HTTP status code of 4XX or 5XX and an OperationOutcome resource containing the error details (such as a 412 Precondition Failed if the content of the POST was not a valid [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)), provided the operation was successfully invoked (i.e. if the POST was submitted to a non-existent URL, the submitter would likely receive a 404 Not Found status code with no OperationOutcome). 
 
-2. If Step 1 resulted in a 202 Accepted return code and a valid URL in the Content-Location header, the provider may now poll for the status of the request. The AEOB Bundle is created asynchronously since GFE processing has not taken place yet. The url returned in Step 1 can now be used to check the status of the AEOB process. 
+2. If Step 1 resulted in a 202 Accepted return code and a valid URL in the Content-Location header, the provider may now poll for the status of the request. The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is created asynchronously since GFE processing has not taken place yet. The url returned in Step 1 can now be used to check the status of the AEOB process. 
   * If the response is in-progress, this request will return an HTTP status code of 202 Accepted, indicating that the provider should poll again later. The payer system should return a Retry-After header with each in-progress polling response, and the client should use this information to inform the timing of the next polling request. 
   * If the response is an error, this request will return an HTTP status code of 4XX or 5XX, and the body of the response will be an OperationOutcome detailing the error. 
-  * If the response is successful, this request will return an HTTP status code of 200 OK, and the body of the request will be a Bundle resource of type batch-response. This batch-response bundle SHOULD contain the completed AEOB Bundle and MAY contain one or more OperationOutcome resources with additional information regarding GFE/AEOB processing. If the batch-response Bundle does not contain an AEOB Bundle, then it SHALL contain at least one OperationOutcome resource detailing the reason why the AEOB Bundle is not present (e.g. the AEOB was sent directly to the patient and will not be returned to the provider). 
+  * If the response is successful, this request will return an HTTP status code of 200 OK, and the body of the request will be a Bundle resource of type batch-response. This batch-response bundle **SHOULD** contain the completed [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) and MAY contain one or more OperationOutcome resources with additional information regarding GFE/AEOB processing. If the batch-response Bundle does not contain an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html), then it SHALL contain at least one OperationOutcome resource detailing the reason why the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is not present (e.g. the AEOB was sent directly to the patient and will not be returned to the provider). 
 
 #### Patient Perspective: Get Completed AEOB from Payer
 

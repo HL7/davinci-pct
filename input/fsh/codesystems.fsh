@@ -218,29 +218,34 @@ Description: "Codes for defining  GFE request task business status types. This C
 
 CodeSystem: PCTDocumentTypeTemporaryTrialUse
 Title: "PCT Document Types"
-Description: "Defining codes for types of documents used for Patient Cost Transparency estimates. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as LOINC, which will result in a code system url change and possibly modified codes and definitions."
+Description: "Defining codes for types and categories of documents and collections used for Patient Cost Transparency estimates. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as LOINC, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
-* #gfe-document "GFE Document" "A Good Faith Estimate (GFE) Document providing a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. This document may contain one or more individual GFE (Claim) resources."
-* #aeob-document "AEOB Document" "An Advanced Explanation of Benefit (AEOB) Document providing a notification of reasonably expected charges and billing codes provided by a payer according to the member benefits in relation a Good Faith Estimate (GFE) supplied by one or more providers for a given period of service.  AEOBs need to include which providers are expected to provide treatment, the network status of providers, good faith estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates; for example, the disclaimer might state that the information provided in the notification is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) and is subject to change."
+* #gfe-packet "GFE Packet" "A Good Faith Estimate (GFE) Packet providing a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. This document type bundle may contain one or more individual GFE (Claim) resources."
+* #aeob-packet "AEOB Packet" "An Advanced Explanation of Benefit (AEOB) Packet providing a notification of reasonably expected charges and billing codes provided by a payer according to the member benefits in relation a Good Faith Estimate (GFE) supplied by one or more providers for a given period of service.  AEOBs need to include which providers are expected to provide treatment, the network status of providers, good faith estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates; for example, the disclaimer might state that the information provided in the notification is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) and is subject to change."
+* #estimate "Estimation Packet" "An estimate of healthcare services, products, costs and/or benefits."
+* #pct-gfe-packet "PCT GFE Packet" "Patient Cost Transparency (PCT) Good Faith Estimate (GFE) Packet bundle that contains GFE Bundles from GFE contributors."
+* #pct-aeob-packet "PCT AEOB Packet" "Patient Cost Transparency (PCT) Advanced Explanation of Benefit (AEOB) Packet PCT AEOB Packet that contains product and service estimations provided by a payer based on a provider submitted Good Faith Estimate (GFE) and a members coverage and benefits."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
-
+/*
 CodeSystem: PCTDocumentCategoryTemporaryTrialUse
 Title: "PCT Document Categories"
 Description: "Defining codes for categories of documents used for Patient Cost Transparency estimates. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as LOINC, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
 * #estimate "Estimation Document" "An estimate of healthcare services, products, costs and/or benefits."
+* #pct-gfe-packet "PCT GFE Packet" "Patient Cost Transparency (PCT) Good Faith Estimate (GFE) Packet bundle that contains GFE Bundles from GFE contributors."
+* #pct-aeob-packet "PCT AEOB Packet" "Patient Cost Transparency (PCT) Advanced Explanation of Benefit (AEOB) Packet PCT AEOB Document Bundle that contains product and service estimations provided by a payer based on a provider submitted Good Faith Estimate (GFE) and a members coverage and benefits."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
-
+*/
 
 CodeSystem: PCTDocumentSection
-Title: "PCT Document Section Codes"
-Description: "Defining codes for the sections found in documents used for Patient Cost Transparency estimates."
+Title: "PCT Packet Section Codes"
+Description: "Defining codes for the sections found in packets (document bundles) used for Patient Cost Transparency estimates."
 * ^caseSensitive = true
-* #aeob-summary-section "AEOB Summary" "The Advanced Explanation of Benefit (AEOB) Summary Document Section"
-* #aeob-section "AEOB Section" "The Advanced Explanation of Benefit (AEOB) Document Section"
-* #gfe-section "GFE Section" "A Good Faith Estimate (GFE) Document Section (one per provider)"
+* #aeob-summary-section "AEOB Summary" "The Advanced Explanation of Benefit (AEOB) Summary Packet Section"
+* #aeob-section "AEOB Section" "The Advanced Explanation of Benefit (AEOB) Packet Section"
+* #gfe-section "GFE Section" "A Good Faith Estimate (GFE) Packet Section (one per provider)"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false

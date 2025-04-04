@@ -70,3 +70,20 @@ Alias: $requestedPeriodExtensionUrl = http://hl7.org/fhir/5.0/StructureDefinitio
 Alias: $taskReplacesExtensionUrl = http://hl7.org/fhir/StructureDefinition/task-replaces
 Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $R5CoverageKind = http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind
+
+
+
+///// Subscription related /////
+/*
+
+// Does not work for R4 - Alias: $fhir-types = http://hl7.org/fhir/fhir-types 
+Alias: $R5SubTop_version = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.version
+Alias: $R5SubTop_name = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.name
+Alias: $R5SubTop_title = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.title
+Alias: $R5SubTop_date = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.date
+Alias: $R5SubTop_description = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.description
+Alias: $R5SubTop_resourceTrigger = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.resourceTrigger
+Alias: $R5SubTop_canFilterBy = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.canFilterBy
+Alias: $R5SubTop_notificationShape = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.notificationShape
+Alias: $R5SubTop_status = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.status
+*/

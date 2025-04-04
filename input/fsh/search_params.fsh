@@ -74,3 +74,167 @@ Usage: #definition
 * xpath = "f:Task/f:extension[url='http://hl7.org/fhir/StructureDefinition/task-replaces']/f.value"
 * xpathUsage = #normal
 * target = #Task
+
+
+
+Instance: packet-request-initiation-time
+InstanceOf: SearchParameter
+Title: "Packet Estimate Request Initiation Time"
+Description: "Instant from which the request originating request was being initiated."
+Usage: #definition
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-request-initiation-time"
+* version = "2.0.0"
+* name = "PacketRequestInitiationTime"
+* status = #active
+* experimental = false
+* date = "2025-04-04T09:29:23+11:00"
+* publisher = "HL7 Financial Management Working Group"
+* contact.name = "HL7 Financial Management Working Group"
+* contact.telecom[0].system = #url
+* contact.telecom[=].value = "http://www.hl7.org/Special/committees/fm"
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "fm@lists.HL7.org"
+* description = "Instant from which the request originating request was being initiated."
+* jurisdiction = urn:iso:std:iso:3166#US
+* code = #estimate-initiation-time
+* base = #DocumentReference
+* type = #date
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/requestInitiationTime').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/requestInitiationTime']/f.value"
+* xpathUsage = #normal
+* target = #DocumentReference
+
+
+
+
+
+Instance: packet-procedure-or-service
+InstanceOf: SearchParameter
+Title: "Packet Procedure or Service"
+Description: "Significant Procedures and/or products involved in an estimate."
+Usage: #definition
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-procedure-or-service"
+* version = "2.0.0"
+* name = "PacketProcedureOrService"
+* status = #active
+* experimental = false
+* date = "2025-04-04T09:29:23+11:00"
+* publisher = "HL7 Financial Management Working Group"
+* contact.name = "HL7 Financial Management Working Group"
+* contact.telecom[0].system = #url
+* contact.telecom[=].value = "http://www.hl7.org/Special/committees/fm"
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "fm@lists.HL7.org"
+* description = "Significant Procedures and/or products involved in an estimate in the packet."
+* jurisdiction = urn:iso:std:iso:3166#US
+* code = #estimate-service
+* base = #DocumentReference
+* type = #token
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/estimateProcedureOrService').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/estimateProcedureOrService']/f.value"
+* xpathUsage = #normal
+* target = #DocumentReference
+
+
+Instance: packet-condition
+InstanceOf: SearchParameter
+Title: "Packet Procedure or Service"
+Description: "Significant condition involved in an estimate."
+Usage: #definition
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-condition"
+* version = "2.0.0"
+* name = "PacketCondition"
+* status = #active
+* experimental = false
+* date = "2025-04-04T09:29:23+11:00"
+* publisher = "HL7 Financial Management Working Group"
+* contact.name = "HL7 Financial Management Working Group"
+* contact.telecom[0].system = #url
+* contact.telecom[=].value = "http://www.hl7.org/Special/committees/fm"
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "fm@lists.HL7.org"
+* description = "Significant condition involved in an estimate in the packet."
+* jurisdiction = urn:iso:std:iso:3166#US
+* code = #estimate-condition
+* base = #DocumentReference
+* type = #token
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/estimateCondition').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/estimateCondition']/f.value"
+* xpathUsage = #normal
+* target = #DocumentReference
+
+
+
+
+
+
+
+
+
+
+
+Instance: packet-LinkingIdentifier
+InstanceOf: SearchParameter
+Title: "Packet Linking Identifier"
+Description: "An identifier assigned to a particular service or series of services to enabling linking."
+Usage: #definition
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-linking-identifier"
+* version = "2.0.0"
+* name = "PacketLinkingIdentifier"
+* status = #active
+* experimental = false
+* date = "2025-04-04T09:29:23+11:00"
+* publisher = "HL7 Financial Management Working Group"
+* contact.name = "HL7 Financial Management Working Group"
+* contact.telecom[0].system = #url
+* contact.telecom[=].value = "http://www.hl7.org/Special/committees/fm"
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "fm@lists.HL7.org"
+* description = "An identifier assigned to a particular service or series of services to enabling linking."
+* jurisdiction = urn:iso:std:iso:3166#US
+* code = #linking-identifier
+* base = #DocumentReference
+* type = #token
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo')extension.where(url='linkingIdentifier').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='linkingIdentifier']/f.value"
+* xpathUsage = #normal
+* target = #DocumentReference
+
+
+
+Instance: packet-PlannedPeriodOfService
+InstanceOf: SearchParameter
+Title: "Packet Linking Identifier"
+Description: "Planned date(s) of a particular admission/service or a series of admissions/services."
+Usage: #definition
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-PlannedPeriodOfService"
+* version = "2.0.0"
+* name = "PacketPlannedPeriodOfService"
+* status = #active
+* experimental = false
+* date = "2025-04-04T09:29:23+11:00"
+* publisher = "HL7 Financial Management Working Group"
+* contact.name = "HL7 Financial Management Working Group"
+* contact.telecom[0].system = #url
+* contact.telecom[=].value = "http://www.hl7.org/Special/committees/fm"
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "fm@lists.HL7.org"
+* description = "Planned date(s) of a particular admission/service or a series of admissions/services."
+* jurisdiction = urn:iso:std:iso:3166#US
+* code = #planned-period
+* base = #DocumentReference
+* type = #date
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo')extension.where(url='plannedPeriodOfService').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='plannedPeriodOfService']/f.value"
+* xpathUsage = #normal
+* target = #DocumentReference

@@ -31,15 +31,15 @@ Usage: #definition
 * rest.resource[0].type = #Bundle
 * rest.resource[=].type.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].type.extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-aeob-bundle"
+* rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-aeob-packet"
 * rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile[=].extension.valueCode = #SHALL
 * rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle"
 * rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-collection-bundle"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
+* rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-packet"
 * rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile[=].extension.valueCode = #SHALL
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #MAY
 * rest.resource[=].interaction[=].code = #create
@@ -67,6 +67,47 @@ Usage: #definition
 * rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #MAY
 * rest.resource[=].interaction[=].code = #history-type
+
+* rest.resource[=].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-request-initiation-time"
+* rest.resource[=].searchParam[=].documentation = "Instant from which the request originating request was being initiated."
+* rest.resource[=].searchParam[=].name = "estimate-initiation-time"
+* rest.resource[=].searchParam[=].type = #date
+
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-procedure-or-service"
+* rest.resource[=].searchParam[=].documentation = "Significant Procedures and/or products involved in an estimate in the packet."
+* rest.resource[=].searchParam[=].name = "estimate-service"
+* rest.resource[=].searchParam[=].type = #token
+
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-condition"
+* rest.resource[=].searchParam[=].documentation = "Significant condition involved in an estimate in the packet."
+* rest.resource[=].searchParam[=].name = "estimate-condition"
+* rest.resource[=].searchParam[=].type = #token
+
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-linking-identifier"
+* rest.resource[=].searchParam[=].documentation = "An identifier assigned to a particular service or series of services to enabling linking."
+* rest.resource[=].searchParam[=].name = "linking-identifier"
+* rest.resource[=].searchParam[=].type = #token
+
+
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/packet-PlannedPeriodOfService"
+* rest.resource[=].searchParam[=].documentation = "Planned date(s) of a particular admission/service or a series of admissions/services."
+* rest.resource[=].searchParam[=].name = "planned-period"
+* rest.resource[=].searchParam[=].type = #date
+
+
+
+
+
 * rest.resource[=].operation.name = "GFESubmit"
 * rest.resource[=].operation.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].operation.extension.valueCode = #SHALL

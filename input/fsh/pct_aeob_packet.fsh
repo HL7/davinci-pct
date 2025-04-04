@@ -1,8 +1,8 @@
-Profile: PCTAEOBDocumentBundle
+Profile: PCTAEOBPacket
 Parent: Bundle
-Id: davinci-pct-aeob-document-bundle
-Title: "PCT AEOB Document Bundle"
-Description: "PCT AEOB Document Bundle that contains necessary resources for an AEOBs. This version fo the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
+Id: davinci-pct-aeob-packet
+Title: "PCT AEOB Packet"
+Description: "PCT AEOB Packet that contains necessary resources for AEOBs. A document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
 * obeys pct-aeob-bundle-1 and pct-aeob-bundle-2
 
