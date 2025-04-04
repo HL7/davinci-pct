@@ -119,9 +119,9 @@ Description: "PCT GFE Information Bundle Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-27T11:01:00+05:00"
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+//* entry[patient].id = "patient1001"
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
 * entry[coverage].resource = coverage1001
@@ -150,9 +150,9 @@ Description: "PCT GFE Missing Bundle Example 1"
 * entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1002"
 * entry[organization][=].id = "org1002"
 * entry[organization][=].resource = org1002
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+//* entry[patient].id = "patient1001"
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
 * entry[coverage].resource = coverage1001
@@ -171,9 +171,9 @@ Description: "PCT GFE Missing Bundle Example 1"
 
 ////////////////////////////////////////////
 
-Instance: PCT-GFE-Document-Bundle-Inst-1
-InstanceOf: PCTGFEDocumentBundle
-Description: "PCT GFE Document Bundle Institutional Example 1"
+Instance: PCT-GFE-Packet-Inst-1
+InstanceOf: PCTGFEPacket
+Description: "PCT GFE Packet Institutional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
@@ -183,9 +183,9 @@ Description: "PCT GFE Document Bundle Institutional Example 1"
 * entry[composition].resource = PCT-GFE-Composition-Inst-1
 
 
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+//* entry[patient].id = "patient1001"
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
@@ -208,9 +208,9 @@ Description: "PCT GFE Document Bundle Institutional Example 1"
 * entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
-Instance: PCT-GFE-Document-Prof-Bundle-1
-InstanceOf: PCTGFEDocumentBundle
-Description: "PCT GFE Document Bundle Professional Example 1"
+Instance: PCT-GFE-Packet-Prof-1
+InstanceOf: PCTGFEPacket
+Description: "PCT GFE Packet Professional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
@@ -219,9 +219,9 @@ Description: "PCT GFE Document Bundle Professional Example 1"
 * entry[composition].id = "PCT-GFE-Composition-Prof-1"
 * entry[composition].resource = PCT-GFE-Composition-Prof-1
 
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
@@ -252,9 +252,9 @@ InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Institutional Example 1"
 Usage: #inline
 * status = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-document "GFE Document"
-* category = PCTDocumentCategoryTemporaryTrialUse#estimate
-* subject = Reference(patient1001)
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet "GFE Packet"
+* category = PCTDocumentTypeTemporaryTrialUse#estimate
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 
 * date = "2025-01-10T11:01:00+05:00"
@@ -263,7 +263,7 @@ Usage: #inline
 * author[+] = Reference(org1001)
 * author[+] = Reference(Submitter-Org-1)
 
-* title = "Institutional Good Faith Estimate Document for Eve Betterhalf - 2025-01-10"
+* title = "Institutional Good Faith Estimate Packet for Eve Betterhalf - 2025-01-10"
 
 * section[gfeBundle].code = PCTDocumentSection#gfe-section
 * section[gfeBundle].author = Reference(Submitter-Org-1)
@@ -278,9 +278,9 @@ InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Professional Example 1"
 Usage: #inline
 * status = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-document "GFE Document"
-* category = PCTDocumentCategoryTemporaryTrialUse#estimate
-* subject = Reference(patient1001)
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet "GFE Packet"
+* category = PCTDocumentTypeTemporaryTrialUse#estimate
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 
 * date = "2025-01-10T11:01:00+05:00"
@@ -289,7 +289,7 @@ Usage: #inline
 * author[+] = Reference(org1001)
 * author[+] = Reference(Submitter-Org-1)
 
-* title = "Professional Good Faith Estimate Document for Eve Betterhalf - 2025-01-10"
+* title = "Professional Good Faith Estimate Packet for Eve Betterhalf - 2025-01-10"
 
 * section[gfeBundle].code = PCTDocumentSection#gfe-section
 * section[gfeBundle].author = Reference(Submitter-Org-1)
@@ -311,16 +311,16 @@ Description: "PCT GFE DocumentReference Institutional Example 1"
 * extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * status = #current
 * docStatus = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
-* category = PCTDocumentCategoryTemporaryTrialUse#estimate
-* subject = Reference(patient1001)
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* category = PCTDocumentTypeTemporaryTrialUse#estimate
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 * date = "2025-01-10T11:01:00+05:00"
 
 * author[+]  = Reference(org1001)
 * author[+]  = Reference(Submitter-Org-1)
 
-* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Document-Bundle-Inst-1"
+* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Packet-Inst-1"
 
 
 
@@ -333,16 +333,16 @@ Description: "PCT GFE DocumentReference Professional Example 1"
 * extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * status = #current
 * docStatus = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
-* category = PCTDocumentCategoryTemporaryTrialUse#estimate
-* subject = Reference(patient1001)
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* category = PCTDocumentTypeTemporaryTrialUse#estimate
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 * date = "2025-01-10T11:01:00+05:00"
 
 * author[+]  = Reference(org1001)
 * author[+]  = Reference(Submitter-Org-1)
 
-* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Document-Bundle-Prof-1"
+* content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Packet-Prof-1"
 
 
 
@@ -357,7 +357,7 @@ Description: "PCT ServiceRequest Example 1"
 
 * code = $CPT#73722 "Magnetic resonance (eg, proton) imaging, any joint of lower extremity; with contrast material(s)"
 
-* subject = Reference(patient1001)
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 
 Instance: PCT-MedicationRequest-1
@@ -369,7 +369,7 @@ Description: "PCT MedicationRequest Example 1"
 
 * medicationCodeableConcept = $RXNORM#692620 "gadobenate"
 
-* subject = Reference(patient1001)
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 
 Instance: PCT-DeviceRequest-1
@@ -383,7 +383,7 @@ Description: "PCT DeviceRequest Example 1"
 
 * codeCodeableConcept = $HCPCS#L1820 "KNEE ORTHOSIS, ELASTIC WITH CONDYLAR PADS AND JOINTS, WITH OR WITHOUT PATELLAR CONTROL, PREFABRICATED, INCLUDES FITTING AND ADJUSTMENT"
 
-* subject = Reference(patient1001)
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 
 Instance: PCT-ServiceLocation-1
@@ -410,9 +410,9 @@ Description: "PCT GFE Collection Bundle Institutional Example 1"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
 
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+//* entry[patient].id = "patient1001"
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
@@ -435,16 +435,16 @@ Description: "PCT GFE Collection Bundle Institutional Example 1"
 * entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
-Instance: PCT-GFE-Collection-undle-Prof-1
+Instance: PCT-GFE-Collection-Bundle-Prof-1
 InstanceOf: PCTGFECollectionBundle
 Description: "PCT GFE Collection Bundle Professional Example 1"
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
 
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"

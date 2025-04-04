@@ -1,10 +1,10 @@
-Profile: PCTGFEDocumentBundle
+Profile: PCTGFEPacket
 Parent: Bundle
-Id: davinci-pct-gfe-document-bundle
-Title: "PCT GFE Document Bundle"
-Description: "PCT GFE Document Bundle that contains GFE Bundles from GFE contributors. This collection of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
+Id: davinci-pct-gfe-packet
+Title: "PCT GFE Packet"
+Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. This document type bundle of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases."
 * insert TrialUseArtifact1
-* obeys pct-gfe-document-bundle-1 and pct-gfe-document-bundle-2
+* obeys pct-gfe-packet-1 and pct-gfe-packet-2
 
 * identifier 1..1
 * type = #document (exactly)
@@ -63,21 +63,21 @@ Description: "PCT GFE Document Bundle that contains GFE Bundles from GFE contrib
 
 /*
 // TODO MEETING, is the GFE Submitter necessary on each and every GFE and do they have to be the same? If so, this requires the GFE contributor to make a copy of the requesting provider, but to what end?)
-Invariant: pct-gfe-document-bundle-1
+Invariant: pct-gfe-packet-1
 Description: "All GFEs must have the same GFE submitter"
 Expression: "(Bundle.entry.resource.ofType(Claim).extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeSubmitter').value.ofType(Reference).reference.distinct().count() = 1)"
 Severity: #error
 */
 
 // TODO the expression needs fixing: Invariant requiring (entry[organization] where type is not 'pay' or 'ins') xor entry[practitioner]
-Invariant: pct-gfe-document-bundle-1
+Invariant: pct-gfe-packet-1
 Description: "SHALL have a initiating provider or initiating organization, but not both."
 Expression: "Bundle.entry.resource.ofType(Practitioner).exists() or Bundle.entry.resource.ofType(Organization).exists()"
 Severity: #error
 
 // TODO Invariant requiring at least a GFE Bundle or a GFEMissingBundle
 
-Invariant: pct-gfe-document-bundle-2
+Invariant: pct-gfe-packet-2
 Description: "All references resources SHALL be contained within the Bundle"
 // Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
 Expression: "Bundle.entry.resource.descendants().reference.where($this.startsWith('#').not()).all((%resource.entry.fullUrl.join('|')&'|').contains(($this&'|')))"

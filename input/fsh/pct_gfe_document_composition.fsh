@@ -4,8 +4,8 @@ Id: davinci-pct-gfe-composition
 Title: "PCT GFE Composition"
 Description: "PCT GFE Composition that assembles the contents of a GFE (represented by one or more individual GFE Bundles) into a single logical package. This version fo the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
-* category = PCTDocumentCategoryTemporaryTrialUse#estimate
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
 * subject only Reference(HRexPatientDemographics)
 
@@ -22,8 +22,24 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 // DISCUSS, do we want an attester requirement? - A participant who has attested to the accuracy of the composition/document.
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
-//* relatesTo MS
-//* relatesTo ^short = "Relationship to other AEOB documents. Required if this estimate is replacing another." This does not work as it can only reference a composition. This needs to be done in a DocumentReference
+* relatesTo MS
+* relatesTo ^short = "Relationship to other GFE packets. Required if this estimate is replacing another." 
+
+* relatesTo ^slicing.discriminator.type = #value
+* relatesTo ^slicing.discriminator.path = "code"
+* relatesTo ^slicing.rules = #open
+* relatesTo ^slicing.description = "Slice different relationships"
+
+* relatesTo contains
+  replaces 0..1 MS
+
+
+* relatesTo[replaces] ^short = "The identifier of the document (Composition.identifier) this estimate replaces"
+  * code = #replaces
+  * targetIdentifier 1..1 MS
+    * system 1..1
+    * value 1..1
+
 * section ^short = "Sections Individual GFE Bundles"
 
 * section ^slicing.discriminator.type = #value

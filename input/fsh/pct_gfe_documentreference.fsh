@@ -3,8 +3,8 @@
 Profile: PCTGFEDocumentReference
 Parent: DocumentReference
 Id: davinci-pct-gfe-documentreference
-Title: "PCT GFE Document Reference"
-Description: "PCT GFE Document Reference that enables searching and subscriptions for GFE Documents."
+Title: "PCT GFE Packet Document Reference"
+Description: "PCT GFE Packet Document Reference that enables searching and subscriptions for GFE Packets."
 * insert TrialUseArtifact1
 
 * extension contains
@@ -37,7 +37,7 @@ Description: "PCT GFE Document Reference that enables searching and subscription
 * status MS
 * docStatus 1..1 MS
 * type 1.. MS
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-document
+* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
 
 * category 1.. MS
 * category ^slicing.discriminator.type = #value
@@ -46,7 +46,7 @@ Description: "PCT GFE Document Reference that enables searching and subscription
 * category ^short = "(USCDI) Categorization of document"
 * category contains estimate 0..*
 * category[estimate] ^short = "Estimate category"
-* category[estimate] = PCTDocumentCategoryTemporaryTrialUse#estimate
+* category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 
 * subject 1..1 MS
 * subject only Reference(HRexPatientDemographics)
@@ -55,7 +55,7 @@ Description: "PCT GFE Document Reference that enables searching and subscription
 * date obeys pct-datetime-to-seconds
 
 // TODO Discuss who the author is
-* author 2..*
+* author 1..*
 * author only Reference(PCTOrganization or PCTPractitioner)
 * author ^short = "All involved authoring parties, including all Good Faith Estimate (GFE) providers"
 
@@ -63,7 +63,20 @@ Description: "PCT GFE Document Reference that enables searching and subscription
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
 * relatesTo MS
-* relatesTo ^short = "Relationship to other GFE documents. Required if this estimate is replacing another." 
+* relatesTo ^short = "Relationship to other GFE packet. Required if this estimate is replacing another." 
+
+* relatesTo ^slicing.discriminator.type = #value
+* relatesTo ^slicing.discriminator.path = "code"
+* relatesTo ^slicing.rules = #open
+* relatesTo ^slicing.description = "Slice different relationships"
+
+* relatesTo contains
+  replaces 0..1 MS
+
+
+* relatesTo[replaces] ^short = "Relationship to other GFE packets. Required if this estimate is replacing another."
+  * code = #replaces
+
 
 * content 1..1 MS
 * content.attachment MS
@@ -71,7 +84,7 @@ Description: "PCT GFE Document Reference that enables searching and subscription
 * content.attachment.contentType MS
 * content.attachment.data MS
 * content.attachment.url MS
-// * content.format DISCUSS is there a way to do a format Code of the profile?
+* content.format = PCTDocumentTypeTemporaryTrialUse#pct-gfe-packet
 
 
 // DISCUSS, use of context? for period of care?
