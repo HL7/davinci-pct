@@ -144,7 +144,7 @@ Assumptions:<br>
 2.  She  walks to the PCP front desk; they  enter the order into the EMR system and direct the patient to ABC’s Radiology department.
 3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present.
 4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551, and provide her coverage information, which she plans to use .
-5.  The MRI is scheduled for 9 days from today. This triggers the creation process for an AEOB.
+5.  The MRI is scheduled for 9 days from today. The GFE Submit and AEOB process is started if an estimate is wanted or needed.
 6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately.
 7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the GFE for the expected charges with the expected billing and diagnostic codes.
 8.  This information is sent to the payer.
