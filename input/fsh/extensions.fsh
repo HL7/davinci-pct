@@ -16,7 +16,7 @@ Description: "This extension is used to indicate the scheduling entity that subm
 
 Extension: GFEDisclaimer
 Id: gfeDisclaimer
-Description: "Disclaimers the patient should be made aware of regarding the providers estimate"
+Description: "Disclaimers the patient should be made aware of regarding the providers estimate including any additional assumptions and requirements.  Noting that that the information provided is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) the item or service, to be furnished and is subject to change."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"
 * value[x] only string
