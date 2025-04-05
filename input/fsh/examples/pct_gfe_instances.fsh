@@ -33,7 +33,7 @@ Description: "PCT Institutional GFE Example 1"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
-* patient = Reference(patient1001)
+* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
 * provider = Reference(Submitter-Org-1)
@@ -78,7 +78,7 @@ Description: "PCT Summary GFE Example 1"
 
 * status = #active
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
-* patient = Reference(patient1001)
+* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * created = "2021-10-05"
 * billablePeriod.start = "2021-10-31"
 * billablePeriod.end = "2021-10-31"
@@ -127,7 +127,7 @@ Description: "PCT Professional GFE Example 1"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 * type = $ClaimTypeCS#professional "Professional"
-* patient = Reference(patient1001)
+* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * created = "2021-10-05"
 * insurer = Reference(org1001)
 * provider = Reference(Submitter-Practitioner-1)
@@ -158,7 +158,7 @@ Description: "PCT Professional GFE Example 1"
 
 Instance: PCT-GFE-Summary-MRI
 InstanceOf: PCTGFESummary
-Description: "PCT Summary GFE Example 1"
+Description: "PCT Summary MRI GFE"
 
 //* extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
 //* extension[providerEventMethodology].valueString = "EEMM1022"
@@ -167,7 +167,7 @@ Description: "PCT Summary GFE Example 1"
 * status = #active
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
 
-* patient = Reference(patient1001)
+* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * created = "2021-10-05"
 * billablePeriod.start = "2021-10-31"
 * insurer = Reference(org1001)
@@ -211,7 +211,7 @@ Description: "PCT Institutional GFE for MRI"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2022-02-02"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
-* patient = Reference(patient1001)
+* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * created = "2022-02-02"
 * insurer = Reference(org1001)
 * provider = Reference(Submitter-Org-1)
@@ -268,9 +268,9 @@ Description: "PCT GFE Bundle Institutional Example 1"
 * entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
 * entry[organization][=].resource = org1001
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+//* entry[patient].id = "patient1001"
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].resource = coverage1001
 
@@ -296,9 +296,9 @@ Description: "PCT GFE Bundle Professional Example 1"
 * entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
 * entry[organization][=].resource = org1001
-* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
-* entry[patient].id = "patient1001"
-* entry[patient].resource = patient1001
+* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+//* entry[patient].id = "patient1001"
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 * entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].resource = coverage1001
 
@@ -309,6 +309,7 @@ Description: "PCT GFE Bundle Professional Example 1"
 Instance: patient1001
 Description: "An instance of Patient"
 InstanceOf: HRexPatientDemographics
+* id = "9c05d948-b931-4bff-8766-18b99b0650d4"
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Eve Betterhalf</b> female, DoB: 1955-07-23 ( <code>http://example.com/identifiers/patient</code>/1001)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-MaritalStatus U}\">unmarried</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 781-949-4949(MOBILE)</li><li>222 Burlington Road, Bedford MA 01730</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Languages spoken\">Language:</td><td colspan=\"3\"><span title=\"Codes: {urn:ietf:bcp:47 en-US}\">English (United States)</span> (preferred)</td></tr></table></div>"
 * identifier.system = "http://example.com/identifiers/patient"
@@ -441,7 +442,7 @@ Description: "An instance of PCTCoverage"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"coverage1001\"> </a><a name=\"hccoverage1001\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Coverage &quot;coverage1001&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-coverage.html\">PCT Coverage</a></p></div><p><b>Extension Definition for Coverage.kind for Version 5.0</b>: insurance</p><p><b>status</b>: active</p><p><b>subscriberId</b>: PFP123450000</p><p><b>beneficiary</b>: <a href=\"Patient-patient1001.html\">Patient/patient1001</a> &quot; BETTERHALF&quot;</p><p><b>relationship</b>: Self <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-subscriber-relationship.html\">SubscriberPolicyholder Relationship Codes</a>#self)</span></p><p><b>period</b>: 2021-01-01 --&gt; 2022-01-01</p><p><b>payor</b>: <a href=\"Organization-org1001.html\">Organization/org1001</a> &quot;Umbrella Insurance Company&quot;</p><h3>Classes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value</b></td><td><b>Name</b></td></tr><tr><td style=\"display: none\">*</td><td>Plan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-coverage-class.html\">Coverage Class Codes</a>#plan)</span></td><td>Premim Family Plus</td><td>Premim Family Plus Plan</td></tr></table><h3>CostToBeneficiaries</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Copay Percentage <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-coverage-copay-type.html\">Coverage Copay Type Codes</a>#copaypct)</span></td><td>20</td></tr></table></div>"
 * extension[coverage-kind].valueCode = #insurance
 * extension[self-pay-declared].valueBoolean = false
-* beneficiary = Reference(patient1001)
+* beneficiary.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * relationship = RELATE#self "Self"
 * status = #active
 * class.name = "Premim Family Plus Plan"
@@ -450,7 +451,7 @@ Description: "An instance of PCTCoverage"
 * period.start = "2021-01-01"
 * period.end = "2022-01-01"
 * payor = Reference(org1001)
-//* subscriber = Reference(patient1001)
+//* subscriber.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subscriberId = "PFP123450000"
 * costToBeneficiary.type = COPAYTYPE#copaypct "Copay Percentage"
 * costToBeneficiary.valueQuantity.value = 20.00
@@ -462,7 +463,7 @@ InstanceOf: Contract
 Description: "An instance of Contract"
 * applies.start = "2021-01-01"
 * applies.end = "2022-01-01"
-* subject = Reference(patient1001)
+* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * type = CONTRACTTYPE#healthinsurance "Health Insurance"
 
 Instance: endpoint001
