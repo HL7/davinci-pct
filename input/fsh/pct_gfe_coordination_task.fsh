@@ -98,7 +98,7 @@ How to include the Bundle? Perhaps in contained. How should references be done t
 Create a profile for the GFE Request Information Bundle
 Perhaps guidance on use of reference identifiers?
 
-How about the output GFE Collection bundle? 
+How about the output GFE Packet? 
 Need an operationDefiniton for retrieving the GFE Collection. Could be attached as an output to the task.
 
 Add guidance that this may be contained or it may be externals.

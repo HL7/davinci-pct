@@ -65,16 +65,16 @@ Usage: #definition
 
 Instance: GFERetrieveOperation
 InstanceOf: OperationDefinition
-Description: "This operation is used by an entity to retrieve a GFE Collection Bundle containing the GFE Bundle(s) and other referenced resources based on a GFE Coordination Task. The only input parameter is the single reference to the coordination task resource. The only output is a GFE Collection Bundle. If the task reference is to a Coordinating Task, this will return the GFE Collection Bundle. If this task reference is for a GFE Contributor Task, it returns the GFE Bundle, if present. If a GFE Bundle does not exist for an associated Contributor Task, in place of a GFE Bundle, a GFE Missing Bundle is provided (either directly in a response if the referenced task was a Contributor Task or inside the GFE Collection Bundle if the referenced task was a Coordinating Task.)"
+Description: "This operation is used by an entity to retrieve a GFE Packet containing the GFE Bundle(s) and other referenced resources based on a GFE Coordination Task. The only input parameter is the single reference to the coordination task resource. The only output is a GFE Packet. If the task reference is to a Coordinating Task, this will return the GFE Packet. If this task reference is for a GFE Contributor Task, it returns the GFE Bundle, if present. If a GFE Bundle does not exist for an associated Contributor Task, in place of a GFE Bundle, a GFE Missing Bundle is provided (either directly in a response if the referenced task was a Contributor Task or inside the GFE Packet if the referenced task was a Coordinating Task.). This operation will only return GFE Bundles for GFE Contributor Tasks that have an appropriately attached GFE Bundle and a status of `completed`. All other Contributor Tasks that otherwise do not have a status of `rejected` or `cancelled` will have a GFE Missing Bundle included instead."
 Usage: #definition
 
 * id = "GFE-retrieve"
 * url = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
 * name = "GFERetrieve"
-* title = "Retrieve GFE Collection Bundle"
+* title = "Retrieve GFE Packet"
 * status = #active
 * kind = #operation
-* description = "This operation is used by an entity to retrieve a GFE Collection Bundle containing the GFE Bundle(s) and other referenced resources based on a GFE Coordination Task. The only input parameter is the single reference to the GFE Coordination Task resource. The only output is a GFE Collection Bundle."
+* description = "This operation is used by an entity to retrieve a GFE Packet containing the GFE Bundle(s) and other referenced resources based on a GFE Coordination Task. The only input parameter is the single reference to the GFE Coordination Task resource. The only output is a GFE Packet."
 * code = #gfe-retrieve
 * base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
 //* resource = #Claim
@@ -93,6 +93,6 @@ Usage: #definition
 * parameter[1].min = 1
 * parameter[1].max = "1"
 //* parameter[0].targetProfile = Reference(PCTGFECollectionBundle)
-* parameter[1].documentation = "A GFE Request Collection Bundle containing the GFE Bundles of the submitted GFE Bundles by the GFE Contributors."
+* parameter[1].documentation = "A GFE Packet containing the GFE Bundles of the submitted GFE Bundles by the GFE Contributors for GFE Contributor Tasks marked as `completed`, and GFE Missing Bundles for incomplete Tasks."
 * parameter[1].type = #Bundle
 
