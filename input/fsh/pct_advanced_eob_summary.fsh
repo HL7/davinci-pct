@@ -134,6 +134,7 @@ Questions
 * benefitBalance 1..*
 * benefitBalance.category 1..1 
 * benefitBalance.category from PCTBenefitBalanceCategoryVS 
+* benefitBalance.category.text 1..1 MS
 * benefitBalance.unit 1..1 
 * benefitBalance.unit from http://hl7.org/fhir/ValueSet/benefit-unit (required)
 * benefitBalance.term 1..1
