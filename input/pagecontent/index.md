@@ -74,7 +74,7 @@ This guide breaks the process into two main parts in support of the patient cost
 
 4. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
-5. The patient can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
+5. The patient and provider can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 > Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
 
