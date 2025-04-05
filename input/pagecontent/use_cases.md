@@ -12,8 +12,7 @@ The US No Surprises Act, which lays out some of the legal requirements this IG i
 
 #### Business Actors ####
 
-- **Patient** - An individual who accesses a provider estimation (GFE) of costs for products or services they may receive in the future. From the payer perspective this is the same individual called  the “member”.
-Member – A health plan member / patient who accesses a payer processed estimation of costs for products or services they may receive in the future (AEOB.)
+- **Patient** - An individual who accesses a provider estimation (GFE) of costs for products or services if they do not have insurance or are self pay, or who accesses a payer processed estimation of costs for products or services they may receive in the future (AEOB) if they are using insurance.
 
 - **Convening Provider** - A Practitioner, Organization, or Facility that is responsible for the single, comprehensive good faith estimate GFE, which will include any items or services that may be reasonably expected to be provided in conjunction with the primary item or service such a request and collects GFEs from providers potentially providing services or items in conjunction with the request (co-providers). This provider is responsible for submitting the GFE to the patient for self-pay/uninsured. 
 
