@@ -38,6 +38,10 @@ Receiver:
 
 This guide uses technical actors to define [Must Support](formal_specification.html#must-support) conformance requirements.
 
+#### CapabilityStatement Server Requirement ####
+Any servers claiming conformance to this guide SHALL include provide CapabilityStatement at `/metadata` that has a CapabilityStatement.instantiates with one or more Canonical values of the associated CapabilityStatement canonical, according to the role or roles it is supporting along with the version (e.g. `http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct-coordination-platform|2.0.0`). 
+
+Note: this may be used by clients to determine what services the server and versions of the capabilities the server supports.
 
 #### Ongoing Data Retention and Access ####
 This IG does not provide specific requirements for data retention and access except for where it directly ties to the primary workflow and use case. Details for continued retention and access after the workflow has concluded are not defined in this guide. Implementers should recognize that the data covered in this guide is likely to be considered part of the patient's medical record and as such would be subject to the same retention and access requirements as any other information in the patient's medical record.
