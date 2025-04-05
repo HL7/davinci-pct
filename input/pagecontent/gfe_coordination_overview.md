@@ -151,6 +151,12 @@ _Figure 7. GFE Coordination Technical Workflow_
 
     Additionally GFE Coordination Requesters may want to notify GFE Requesters, through means not directly addressed in this IG, when a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) has been passed on the the patient or payer and include an indication as to whether they had a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) included in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
+    NOTE: The GFE Coordination Workflow, including the use of the Coordination Platform, does not assume or require that each system providing information that will ultimately be included in the GFE Bundle is leveraging FHIR. It is possible and expected that a certain amount of communication and coordination throughout this process will be out of band.
+
+    Providers engaged in contributing the GFE bundle may need to discuss care planning for the patient pre-service, or they may need to discuss the patient’s case in detail to best estimate the care that will be needed as part of the service in question. Provider staff may already have established communication methods for scheduling and staffing specific services and procedures. These out of band activities can continue and the information generated from these interactions can then be supplied to the Coordination Platform, or specifically to the convening provider, via non-FHIR mechanisms.
+
+    The expectation is that regardless of how this information is compiled and estimates are developed, the information can be included in the GFE Bundle and ultimately be part of a FHIR-based process that will facilitate the creation of an AEOB. The GFE Coordination Workflow does not preclude out of band activities but provides an opportunity to include out of band information gathering in the FHIR-based payload ultimately shared as part of the GFE Bundle.
+
 10. The Coordination Platform updates the status of the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and each associated [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) `Task.businessStatus` to `closed`.
 
 
