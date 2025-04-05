@@ -22,7 +22,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * identifier[uniqueclaimid].type = PCTIdentifierType#uc "Unique Claim ID"
 * identifier[uniqueclaimid] ^short = "Unique Claim ID"
 
-* type from PCTAEOBTypeVS (required)
+* type from ClaimTypeCodes (required)
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 

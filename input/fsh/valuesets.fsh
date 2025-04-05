@@ -197,6 +197,7 @@ Description: "US Claim Diagnosis Related Group Codes. All codes from MS-DRGs - A
 * codes from system APRDRG 
 * ^experimental = false
 
+/*
 ValueSet: PCTAEOBTypeVS
 Title: "PCT Advance Explanation of Benefit Type Value Set"
 Description: "Codes to specify the type of AEOB"
@@ -204,6 +205,7 @@ Description: "Codes to specify the type of AEOB"
 * include $ClaimTypeCS#professional
 * codes from system $ClaimTypeCS
 * ^experimental = false
+*/
 
 
 ValueSet: AHANUBCPointOfOriginVS
