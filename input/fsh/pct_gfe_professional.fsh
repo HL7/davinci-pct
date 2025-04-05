@@ -173,8 +173,10 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 
 * item.modifier 0..4 MS
 * item.modifier from PCTGFEItemCptHcpcsVS (required)
+* item.modifier.coding obeys pct-cpt-display
 
 * item.productOrService from USClaimMedicalProductOrServiceCodes (required)
+* item.productOrService.coding obeys pct-cpt-display
 // * item.productOrService ^comment = "Must be provided with an actual CPT/HCPCS value. Can’t be null or N/A or data absent reason."
 
 * item.serviced[x] 1..1

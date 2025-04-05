@@ -93,6 +93,12 @@ RuleSet: TrialUseArtifact1
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
 * ^extension[=].valueInteger = 1
 
+
+Invariant: pct-cpt-display
+Description: "CPT codes require a display value (CPT Consumer Friendly Descriptors recommended)"
+Expression: "system = 'http://www.ama-assn.org/go/cpt' implies display.exists()"
+Severity: #error
+
 //// NOTE: based on CARIN-BB IG -- see C4BBExplanationOfBenefit profile
 //// Invariants
 
