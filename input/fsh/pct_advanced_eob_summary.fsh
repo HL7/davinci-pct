@@ -131,6 +131,8 @@ Questions
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
 
 
+* benefitBalance ^short = "Estimated Balance by Benefit Category as if the expected item(s) or service(s) included in this estimate were applied."
+* benefitBalance ^definition = "Estimated Balance by Benefit Category as if the expected item(s) or service(s) included in this estimate were applied. Note: The available balance is based on known claims and does not account for other Good Faith Estimates (GFEs). Benefit balances will remain unchanged until the claim adjudication process applies benefits. Consequently, if multiple estimates pertain to the same benefit, the benefit balance will not consider other estimates."
 * benefitBalance 1..*
 * benefitBalance.category 1..1 
 * benefitBalance.category from PCTBenefitBalanceCategoryVS 

@@ -10,6 +10,8 @@
 </ul>
 <li class="x_MsoNormal">.total.amount:  Eligible amount = submitted amount - the noncovered amount - discount.  The subscriber pays the member liability = deductible + coinsurance + copay + noncovered (if applicable). The eligible amount - the member liability is the potential payer's payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient)</li>
 
+<li class="x_MsoNormal">.benefitbalance: benefit.balance shows the estimated balance by benefit category as if the expected item(s) or service(s) included in this estimate were applied. The .allowed value would reflect current allowed total limits for the specific category, unit, and term (e.g. Physical Therapy, Individual, annual.) The .used and .remaining would reflect current known balance plus or minus, respectively, the current estimate's expected item(s) or service(s) impact on the patient's benefit balance.</li>
+
 <li class="x_MsoNormal">Working together .created values and .benefitPeriod values explicitly convey the temporal context for the state of benefits and accumulators that were used to calculate the estimate communicated in an advanced EOB.
  The state of a member’s benefits and accumulators for a given benefit period or the benefit period in effect may change between the date that an estimate is generated (.created) and when the services being estimated are actually rendered (e.g., the actual date of service), resulting in a difference between the estimated vs. actual cost to the member.
  </li>
