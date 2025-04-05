@@ -41,6 +41,8 @@ Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
 Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication
 Alias:   $HL7TaskStatus = http://hl7.org/fhir/task-status
 
+Alias:  $MIMETypes = http://hl7.org/fhir/ValueSet/mimetypes
+
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type
 Alias:   $OrganizationType = http://hl7.org/fhir/ValueSet/organization-type

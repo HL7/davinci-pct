@@ -98,6 +98,37 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * input ^short = "GFE Contributor specific Information and references to service and supporting information, such as Conditions, Observations, and notes"
 * input ^comment = "Contained or referenced request information bundle made available to a specific GFE contributor that includes information about the products and or services requested and other supporting information, such as Conditions, Observations, and notes"
 
+* input ^slicing.discriminator.path = "type"
+* input ^slicing.rules = #open
+* input ^slicing.discriminator.type = #value
+* input ^slicing.description = "Slice based on value"
+* input contains
+   gfe-information-bundle 0..1
+
+
+* input[gfe-information-bundle].type = PCTDocumentTypeTemporaryTrialUse#gfe-information-bundle
+* input[gfe-information-bundle].value[x] only Attachment or Reference
+* input[gfe-information-bundle].valueAttachment.contentType 1..1
+* input[gfe-information-bundle].valueAttachment.contentType from PCTTaskAttachmentContentType (required)
+* input[gfe-information-bundle].valueAttachment.data 1..1
+* input[gfe-information-bundle].valueReference.reference 1..1
+
+
+* output ^slicing.discriminator.path = "type"
+* output ^slicing.rules = #open
+* output ^slicing.discriminator.type = #value
+* output ^slicing.description = "Slice based on value"
+* output contains
+   gfe-bundle 0..1
+
+* output[gfe-bundle].type = PCTDocumentTypeTemporaryTrialUse#gfe-bundle
+* output[gfe-bundle].value[x] only Attachment
+* output[gfe-bundle].valueAttachment.contentType 1..1
+* output[gfe-bundle].valueAttachment.contentType from PCTTaskAttachmentContentType (required)
+* output[gfe-bundle].valueAttachment.data 1..1
+* output[gfe-bundle].valueAttachment.creation 1..1
+
+
 * output MS
 * output ^short = "Any outputs from the GFE Contributor including the GFE Bundle or notes on why the specific task was unable to be completed"
 * output ^comment = "Any outputs for the GFE Contributor Task which might include notes on why the GFE Contributor Task was unable to be completed."

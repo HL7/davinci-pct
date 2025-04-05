@@ -130,6 +130,36 @@ Add guidance that this may be contained or it may be externals.
 * input ^short = "Information and references to service and supporting information, such as Conditions, Observations, and notes"
 * input ^comment = "Contained or referenced request information bundle made available to all GFE contributors that includes information about the products and or services requested and other supporting information, such as Conditions, Observations, and notes"
 
+* input ^slicing.discriminator.path = "type"
+* input ^slicing.rules = #open
+* input ^slicing.discriminator.type = #value
+* input ^slicing.description = "Slice based on value"
+* input contains
+   gfe-information-bundle 0..1
+
+
+* input[gfe-information-bundle].type = PCTDocumentTypeTemporaryTrialUse#gfe-information-bundle
+* input[gfe-information-bundle].value[x] only Attachment or Reference
+* input[gfe-information-bundle].valueAttachment.contentType 1..1
+* input[gfe-information-bundle].valueAttachment.contentType from PCTTaskAttachmentContentType (required)
+* input[gfe-information-bundle].valueAttachment.data 1..1
+* input[gfe-information-bundle].valueReference.reference 1..1
+
+
+* output ^slicing.discriminator.path = "type"
+* output ^slicing.rules = #open
+* output ^slicing.discriminator.type = #value
+* output ^slicing.description = "Slice based on value"
+* output contains
+   gfe-packet 0..1
+
+* output[gfe-packet].type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* output[gfe-packet].value[x] only Attachment
+* output[gfe-packet].valueAttachment.contentType 1..1
+* output[gfe-packet].valueAttachment.contentType from PCTTaskAttachmentContentType (required)
+* output[gfe-packet].valueAttachment.data 1..1
+* output[gfe-packet].valueAttachment.creation 1..1
+
 * output MS
 * output ^short = "Any outputs for the GFE Coordination Task which might include notes on why the GFE Coordination Task was unable to be completed."
 
