@@ -16,11 +16,12 @@ Usage: #definition
 * system = false
 * type = true
 * instance = false
+* inputProfile = Canonical(PCTGFEPacket)
 * parameter[0].name = #resource
 * parameter[0].use = #in
 * parameter[0].min = 1
 * parameter[0].max = "1"
-//* parameter[0].targetProfile = Canonical(PCTGFECollectionBundle)
+* parameter[0].targetProfile = Canonical(PCTGFEPacket)
 * parameter[0].documentation = "A Bundle containing a single or multiple GFE resources plus referenced resources."
 * parameter[0].type = #Bundle
 * parameter[1].name = #return
@@ -77,22 +78,24 @@ Usage: #definition
 * description = "This operation is used by an entity to retrieve a GFE Packet containing the GFE Bundle(s) and other referenced resources based on a GFE Coordination Task. The only input parameter is the single reference to the GFE Coordination Task resource. The only output is a GFE Packet."
 * code = #gfe-retrieve
 * base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
-//* resource = #Claim
+* resource = #Task
 * system = false
-* type = true
-* instance = false
-* parameter[0].name = #request
+* type = false
+* instance = true
+* outputProfile = Canonical(PCTGFEPacket)
+/* parameter[0].name = #request
 * parameter[0].use = #in
 * parameter[0].min = 1
 * parameter[0].max = "1"
 * parameter[0].targetProfile = Canonical(PCTGFECoordinationTask)
 * parameter[0].documentation = "A reference to a GFE Coordination Task."
 * parameter[0].type = #Reference
-* parameter[1].name = #return
-* parameter[1].use = #out
-* parameter[1].min = 1
-* parameter[1].max = "1"
-//* parameter[0].targetProfile = Reference(PCTGFECollectionBundle)
-* parameter[1].documentation = "A GFE Packet containing the GFE Bundles of the submitted GFE Bundles by the GFE Contributors for GFE Contributor Tasks marked as `completed`, and GFE Missing Bundles for incomplete Tasks."
-* parameter[1].type = #Bundle
+*/
+* parameter[+].name = #return
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].targetProfile = Reference(PCTGFEPacket)
+* parameter[=].documentation = "A GFE Packet containing the GFE Bundles of the submitted GFE Bundles by the GFE Contributors for GFE Contributor Tasks marked as `completed`, and GFE Missing Bundles for incomplete Tasks."
+* parameter[=].type = #Bundle
 

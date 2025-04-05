@@ -176,7 +176,7 @@ When replacing a GFE Contributor, the GFE Coordination Requester **SHALL** write
 If more than a simple replacement GFE Contributors is required, such as a change in scheduled date or services, the GFE Coordinating Requester SHOULD cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
 
 
-#### Retrieving the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) and Closing the Coordination Task
+#### Retrieving the GFE Packet and Closing the Coordination Task
 Retrieval of the collection of contributed GFEs is done through the [$gfe-retrieve](OperationDefinition-GFE-retrieve.html) operation. This operation collects the contributed [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources attached to the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources as well as any [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) resources for any [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources that do not have an attached [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). A Task **SHALL** have an appropriately attached [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) and a `status` of `completed` in order to be included in the GFE Packet returned through the $gfe-retrieve operation. [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) resources support indication that the GFE may be missing a portion that will contribute to their overall cost. These bundles are a technical requirement in the event the GFE must be sent without all contributor estimates included. 
 
 
@@ -184,7 +184,7 @@ Retrieval of the collection of contributed GFEs is done through the [$gfe-retrie
 
 Retrieval of a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** be available to the GFE Coordination Requester that created the associated [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and **SHALL** be retrieved using the FHIR ID of the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html).
 
-The [$gfe-retrieve operation](OperationDefinition-GFE-retrieve.html) **SHALL** return a single [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) when a valid [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) FHIR ID was provided and for which the requester has access.
+The [$gfe-retrieve operation](OperationDefinition-GFE-retrieve.html) **SHALL** return a single [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) when executed on a valid [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) instance for which the requester has access.
 
 The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** consist of:
 
