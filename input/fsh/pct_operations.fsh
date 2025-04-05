@@ -95,7 +95,7 @@ Usage: #definition
 * parameter[=].use = #out
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].targetProfile = Reference(PCTGFEPacket)
+* parameter[=].targetProfile = Canonical(PCTGFEPacket)
 * parameter[=].documentation = "A GFE Packet containing the GFE Bundles of the submitted GFE Bundles by the GFE Contributors for GFE Contributor Tasks marked as `completed`, and GFE Missing Bundles for incomplete Tasks."
 * parameter[=].type = #Bundle
 
