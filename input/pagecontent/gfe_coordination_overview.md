@@ -29,6 +29,8 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 
 2. The GFE Coordination Requester creates a set of Tasks (a single Coordinating [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and one or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)(s)) that contain the information necessary to create an estimate on the Coordination Platform. 
 
+  Note: If the GFE Coordination Requester needs to provide a GFE Bundle as part of this request, they will also need to serve in the GFE Contributor role by creating a GFE Contributor task for themselves and carry out the requirements of that role.
+
 3. GFE Contributors are notified of a new task assignment.
 
 4. The GFE Contributor retrieves the task and request information (GFE Information Bundle)
