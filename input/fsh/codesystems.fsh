@@ -152,6 +152,7 @@ Description: "Defining codes for process notes.  This CodeSystem is currently de
 * ^caseSensitive = true
 * #disclaimer "Disclaimer" "Indicates a disclaimer type of process note"
 * #adjudication-note "Adjudication Note" "Indicates an adjudication note type of process note"
+* #conditional "Conditional" "Indicates a conditional type of note which supplements information that is already included in the required Medical Management or Prior Authorization information.  A process note that includes information about conditional factors of the estimate not captured in the originating GFE submission of  the advanced explanation of benefit."
 * #other "Other" "Indicates other type of AEOB process note"
 
 CodeSystem: PCTFinancialType

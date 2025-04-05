@@ -283,6 +283,7 @@ Title: "PCT AEOB Process Note Types"
 Description: "Indicates the type of .processNote for AEOB."
 * include PCTAEOBProcessNoteCS#disclaimer
 * include PCTAEOBProcessNoteCS#adjudication-note
+* include PCTAEOBProcessNoteCS#conditional
 * include PCTAEOBProcessNoteCS#other
 * codes from system PCTAEOBProcessNoteCS
 * ^experimental = false
