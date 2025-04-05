@@ -232,7 +232,8 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 * processNote 1..*
-* processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible"
+* processNote ^short = "Disclaimers go here. Notes should be clear and as specific to the situation at hand as possible including any additional assumptions and requirements. This may include notes about prior authorization, out of network providers, benefit period,  and other legal or otherwise required disclaimers."
+* processNote ^comment = "These disclaimers may include, but are not limited to things such as: notes on prior authorization or other medical management requirements, provider discounts, limitations, preconditions, assumptions, information known to be missing in the estimate, conditions that may affect the estimate, or anything that may affect the interpretation of the estimate."
 * processNote.extension contains ProcessNoteClass named processNoteClass 0..1
 
 
