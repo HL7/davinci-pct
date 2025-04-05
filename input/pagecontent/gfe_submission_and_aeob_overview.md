@@ -70,7 +70,7 @@ The workflow diagram below describes the process of receiving a [GFE Packet](Str
 **Figure 4: Payer Perspective: End-to-End Workflow**
 
 1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to this link for more details. Note: This page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
-  * If the payer's FHIR aware endpoint does not receive the request (i.e. system is down, incorrect URL used, etc.) an HTTP status code of 4XX or 5XX will be returned. 
+  * If the payer’s FHIR aware endpoint cannot handle the request (i.e. back-end system is down, etc.) an HTTP status code of 4XX or 5XX MAY be returned, or the GFE Submitter may receive no response at all if the web server is down or data was submitted to the wrong URL.
   * If the gfe-submit operation is successfully invoked, the request will move to Step 2. 
 2. The payer system validates the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) against the FHIR R4 core specification and the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) profile and other appropriate profiles in this guide (e.g. using the core FHIR [validate](http://hl7.org/fhir/resource-operation-validate.html) operation). 
   * If any validation errors are received, an HTTP status code of 412 Precondition Failed is returned along with an OperationOutcome resource containing the result of the validate operation.  The OperationOutcome includes information about the issues encountered with the submission.
