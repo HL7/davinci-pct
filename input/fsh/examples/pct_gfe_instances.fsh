@@ -18,6 +18,8 @@ Alias: ENDPOINTCONNECTIONTYPE = http://terminology.hl7.org/CodeSystem/endpoint-c
 Instance: PCT-GFE-Institutional-1
 InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE Example 1"
+Usage: #example
+
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * text.status = #additional
@@ -71,6 +73,8 @@ Description: "PCT Institutional GFE Example 1"
 Instance: PCT-GFE-Summary-1
 InstanceOf: PCTGFESummary
 Description: "PCT Summary GFE Example 1"
+Usage: #example
+
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * text.status = #additional 
@@ -117,6 +121,8 @@ Description: "PCT Summary GFE Example 1"
 Instance: PCT-GFE-Professional-MRI
 InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
+Usage: #example
+
 * identifier[PLAC].system = V2-0203
 * identifier[PLAC].value = "GFEProviderAssignedID0002"
 /* Remove GFE Submitter
@@ -159,6 +165,7 @@ Description: "PCT Professional GFE Example 1"
 Instance: PCT-GFE-Summary-MRI
 InstanceOf: PCTGFESummary
 Description: "PCT Summary MRI GFE"
+Usage: #example
 
 //* extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
 //* extension[providerEventMethodology].valueString = "EEMM1022"
@@ -202,6 +209,8 @@ Description: "PCT Summary MRI GFE"
 Instance: PCT-GFE-Institutional-MRI
 InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE for MRI"
+Usage: #example
+
 * identifier[PLAC].value = "GFEProviderAssignedID0001MRI"
 /* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
@@ -250,6 +259,8 @@ Description: "PCT Institutional GFE for MRI"
 Instance: PCT-GFE-Bundle-Inst-1
 InstanceOf: PCTGFEBundle
 Description: "PCT GFE Bundle Institutional Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
@@ -277,6 +288,8 @@ Description: "PCT GFE Bundle Institutional Example 1"
 Instance: PCT-GFE-Bundle-Prof-1
 InstanceOf: PCTGFEBundle
 Description: "PCT GFE Bundle Professional Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
@@ -309,6 +322,8 @@ Description: "PCT GFE Bundle Professional Example 1"
 Instance: patient1001
 Description: "An instance of Patient"
 InstanceOf: HRexPatientDemographics
+Usage: #example
+
 * id = "9c05d948-b931-4bff-8766-18b99b0650d4"
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Eve Betterhalf</b> female, DoB: 1955-07-23 ( <code>http://example.com/identifiers/patient</code>/1001)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-MaritalStatus U}\">unmarried</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 781-949-4949(MOBILE)</li><li>222 Burlington Road, Bedford MA 01730</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Languages spoken\">Language:</td><td colspan=\"3\"><span title=\"Codes: {urn:ietf:bcp:47 en-US}\">English (United States)</span> (preferred)</td></tr></table></div>"
@@ -333,6 +348,8 @@ InstanceOf: HRexPatientDemographics
 Instance: prac001
 InstanceOf: PCTPractitioner
 Description: "An instance of PCTPractitioner"
+Usage: #example
+
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1234567893"
 * name.given = "Patricia"
@@ -349,6 +366,8 @@ Description: "An instance of PCTPractitioner"
 Instance: prac002
 InstanceOf: PCTPractitioner
 Description: "An instance of PCTPractitioner"
+Usage: #example
+
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1234567995"
 * name.given = "Christine"
@@ -364,6 +383,8 @@ Description: "An instance of PCTPractitioner"
 Instance: Submitter-Practitioner-1
 InstanceOf: PCTPractitioner
 Description: "Professional GFE Submitter 1"
+Usage: #example
+
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "6456789016"
 * identifier[ETIN].value = "ETIN-20020001"
@@ -382,6 +403,8 @@ Description: "Professional GFE Submitter 1"
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
 Description: "Institutional GFE Submitter 1"
+Usage: #example
+
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"Submitter-Org-1\"> </a><a name=\"hcSubmitter-Org-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Submitter-Org-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-organization.html\">PCT Organization</a></p></div><p><b>identifier</b>: Electronic Transmitter Identification Number/ETIN-10010301</p><p><b>active</b>: true</p><p><b>type</b>: Non-Healthcare Business or Corporation <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-organization-type.html\">Organization type</a>#bus)</span></p><p><b>name</b>: GFE Service Help INC.</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Purpose</b></td><td><b>Name</b></td><td><b>Telecom</b></td></tr><tr><td style=\"display: none\">*</td><td>GFE-related <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-PCTOrgContactPurposeType.html\">PCT Organization Contact Purpose Type Code System</a>#GFERELATED)</span></td><td>Clara Sender</td><td>ph: 781-632-3209(WORK), <a href=\"mailto:csender@GFEServiceHelp.com\">csender@GFEServiceHelp.com</a></td></tr></table></div>"
 * type = $ORGTYPE#bus
@@ -399,6 +422,8 @@ Description: "Institutional GFE Submitter 1"
 Instance: org1001
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization as a payer"
+Usage: #example
+
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"org1001\"> </a><a name=\"hcorg1001\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;org1001&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-organization.html\">PCT Organization</a></p></div><p><b>identifier</b>: Electronic Transmitter Identification Number/ETIN-3200002</p><p><b>active</b>: true</p><p><b>type</b>: Payer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-organization-type.html\">Organization type</a>#pay)</span></p><p><b>name</b>: Umbrella Insurance Company</p><p><b>telecom</b>: ph: 860-547-5001(WORK)</p><p><b>address</b>: 680 Asylum Street Hartford CT 06155 US </p></div>"
 * type = $ORGTYPE#pay "Payer"
@@ -418,6 +443,8 @@ Description: "An instance of PCTOrganization as a payer"
 Instance: org1002
 InstanceOf: PCTOrganization
 Description: "An instance of PCTOrganization as a healthcare provider"
+Usage: #example
+
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"org1002\"> </a><a name=\"hcorg1002\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;org1002&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-organization.html\">PCT Organization</a></p></div><p><b>identifier</b>: National provider identifier/1234568095, Tax ID number/TAX-3211001</p><p><b>active</b>: true</p><p><b>type</b>: Healthcare Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-organization-type.html\">Organization type</a>#prov)</span></p><p><b>name</b>: Boston Radiology Center</p><p><b>telecom</b>: ph: 781-232-3200(WORK)</p><p><b>address</b>: 32 Fruit Street Boston MA 02114 US </p></div>"
 * type = $ORGTYPE#prov "Healthcare Provider"
@@ -438,6 +465,8 @@ Description: "An instance of PCTOrganization as a healthcare provider"
 Instance: coverage1001
 InstanceOf: PCTCoverage
 Description: "An instance of PCTCoverage"
+Usage: #example
+
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"coverage1001\"> </a><a name=\"hccoverage1001\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Coverage &quot;coverage1001&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-coverage.html\">PCT Coverage</a></p></div><p><b>Extension Definition for Coverage.kind for Version 5.0</b>: insurance</p><p><b>status</b>: active</p><p><b>subscriberId</b>: PFP123450000</p><p><b>beneficiary</b>: <a href=\"Patient-patient1001.html\">Patient/patient1001</a> &quot; BETTERHALF&quot;</p><p><b>relationship</b>: Self <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-subscriber-relationship.html\">SubscriberPolicyholder Relationship Codes</a>#self)</span></p><p><b>period</b>: 2021-01-01 --&gt; 2022-01-01</p><p><b>payor</b>: <a href=\"Organization-org1001.html\">Organization/org1001</a> &quot;Umbrella Insurance Company&quot;</p><h3>Classes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value</b></td><td><b>Name</b></td></tr><tr><td style=\"display: none\">*</td><td>Plan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-coverage-class.html\">Coverage Class Codes</a>#plan)</span></td><td>Premim Family Plus</td><td>Premim Family Plus Plan</td></tr></table><h3>CostToBeneficiaries</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>Copay Percentage <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-coverage-copay-type.html\">Coverage Copay Type Codes</a>#copaypct)</span></td><td>20</td></tr></table></div>"
 * extension[coverage-kind].valueCode = #insurance
@@ -461,6 +490,8 @@ Description: "An instance of PCTCoverage"
 Instance: contract1001
 InstanceOf: Contract
 Description: "An instance of Contract"
+Usage: #example
+
 * applies.start = "2021-01-01"
 * applies.end = "2022-01-01"
 * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
@@ -469,6 +500,8 @@ Description: "An instance of Contract"
 Instance: endpoint001
 InstanceOf: Endpoint
 Description: "An instance of Endpoint"
+Usage: #example
+
 * status = #active
 * payloadType = PAYLOADTYPE#CarePlan
 * connectionType = ENDPOINTCONNECTIONTYPE#hl7-fhir-rest

@@ -1,0 +1,58 @@
+{
+  "resourceType": "SubscriptionTopic",
+  "id": "davinci-pct-gfe-available-subject-subscriptiontopic",
+  "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-subject-subscriptiontopic",
+  "version": "2.0.0",
+  "status": "active",
+  "name": "PCTGFEAvailableSubjectSubscriptionTopic",
+  "title": "GFE Available - Subject",
+  "experimental": false,
+  "date": "2025-04-05",
+  "description": "Subject focused Subscription Topic for when a Good Faith Estimate (GFE) Packet DocumentReference is created or updated (for FHIR R4). This represents that an GFE Packet, either contained in or referred to by the DocumentReference has been newly created and is available or has been updated, should updates be made.",
+  "resourceTrigger": [
+    {
+      "description": "Triggered when an GFE Packet DocumentReference is created or updated",
+      "resource": "http://hl7.org/fhir/StructureDefinition/DocumentReference",
+      "supportedInteraction": [
+        "create",
+        "update"
+      ],
+      "queryCriteria": 
+      {
+        "resultForCreate": "test-passes",
+        "current": "type=gfe-packet",
+        "resultForDelete": "test-passes",
+        "requireBoth": false
+        
+      }
+    }
+  ],
+  "canFilterBy": [
+    {
+      "description": "Filter based on the subject of a DocumentReference.",
+      "resource": "DocumentReference",
+      "filterParameter": "subject",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/DocumentReference-subject",
+      "comparator": ["eq"]
+    },
+    {
+      "description": "Filter based on the status (current | superseded | entered-in-error) of a DocumentReference.",
+      "resource": "DocumentReference",
+      "filterParameter": "status",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/DocumentReference-status",
+      "comparator": ["eq"]
+    },
+    {
+      "description": "Filter based on the document status (registered | partial | preliminary | final | amended | corrected | appended | cancelled | entered-in-error | deprecated | unknown) of a DocumentReference.",
+      "resource": "DocumentReference",
+      "filterParameter": "doc-status",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/DocumentReference-doc-status",
+      "comparator": ["eq"]
+    }
+  ],
+  "notificationShape": [
+    {
+      "resource": "DocumentReference"
+    }
+  ]
+}

@@ -21,6 +21,7 @@ PCTGFECollectionBundle
 Instance: PCT-GFE-Coordination-Bundle-1
 InstanceOf: PCTGFECoordinationBundle
 Description: "PCT GFE Coordination Bundle Example 1"
+Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384710"
 * timestamp = "2024-03-27T11:01:00+05:00"
@@ -45,7 +46,7 @@ Description: "PCT GFE Coordination Bundle Example 1"
 Instance: PCT-GFE-Coordination-Task-1
 InstanceOf: PCTGFECoordinationTask
 Description: "PCT GFE Coordination Task example 1"
-
+Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-30T11:01:00+05:00"
 
@@ -71,7 +72,7 @@ Description: "PCT GFE Coordination Task example 1"
 Instance: PCT-GFE-Contributor-Task-1
 InstanceOf: PCTGFEContributorTask
 Description: "PCT GFE Contributor Task example 1"
-
+Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-30T11:01:00+05:00"
 
@@ -94,7 +95,7 @@ Description: "PCT GFE Contributor Task example 1"
 Instance: PCT-GFE-Contributor-Task-2
 InstanceOf: PCTGFEContributorTask
 Description: "PCT GFE Contributor Task example 2"
-
+Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-30T11:01:00+05:00"
 
@@ -116,6 +117,8 @@ Description: "PCT GFE Contributor Task example 2"
 Instance: PCT-GFE-Information-Bundle-1
 InstanceOf: PCTGFEInformationBundle
 Description: "PCT GFE Information Bundle Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-27T11:01:00+05:00"
@@ -145,6 +148,7 @@ Description: "PCT GFE Information Bundle Example 1"
 Instance: PCT-GFE-Missing-Bundle-1
 InstanceOf: PCTGFEMissingBundle
 Description: "PCT GFE Missing Bundle Example 1"
+Usage: #example
 
 * timestamp = "2024-03-27T11:01:00+05:00"
 * entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1002"
@@ -174,6 +178,8 @@ Description: "PCT GFE Missing Bundle Example 1"
 Instance: PCT-GFE-Packet-Inst-1
 InstanceOf: PCTGFEPacket
 Description: "PCT GFE Packet Institutional Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
@@ -211,6 +217,8 @@ Description: "PCT GFE Packet Institutional Example 1"
 Instance: PCT-GFE-Packet-Prof-1
 InstanceOf: PCTGFEPacket
 Description: "PCT GFE Packet Professional Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
@@ -305,6 +313,7 @@ Usage: #inline
 Instance: PCT-GFE-DocumentReference-Inst-1
 InstanceOf: PCTGFEDocumentReference
 Description: "PCT GFE DocumentReference Institutional Example 1"
+Usage: #example
 
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
@@ -327,6 +336,7 @@ Description: "PCT GFE DocumentReference Institutional Example 1"
 Instance: PCT-GFE-DocumentReference-Prof-1
 InstanceOf: PCTGFEDocumentReference
 Description: "PCT GFE DocumentReference Professional Example 1"
+Usage: #example
 
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
@@ -351,6 +361,7 @@ Description: "PCT GFE DocumentReference Professional Example 1"
 Instance: PCT-ServiceRequest-1
 InstanceOf: PCTServiceRequest
 Description: "PCT ServiceRequest Example 1"
+Usage: #example
 
 * status = #active
 * intent = #proposal
@@ -363,6 +374,7 @@ Description: "PCT ServiceRequest Example 1"
 Instance: PCT-MedicationRequest-1
 InstanceOf: PCTMedicationRequest
 Description: "PCT MedicationRequest Example 1"
+Usage: #example
 
 * status = #active
 * intent = #proposal
@@ -375,6 +387,8 @@ Description: "PCT MedicationRequest Example 1"
 Instance: PCT-DeviceRequest-1
 InstanceOf: PCTDeviceRequest
 Description: "PCT DeviceRequest Example 1"
+Usage: #example
+
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"PCT-DeviceRequest-1\"> </a><a name=\"hcPCT-DeviceRequest-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DeviceRequest &quot;PCT-DeviceRequest-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-devicerequest.html\">PCT GFE DeviceRequest</a></p></div><p><b>status</b>: active</p><p><b>intent</b>: proposal</p><p><b>code</b>: KNEE ORTHOSIS, ELASTIC WITH CONDYLAR PADS AND JOINTS, WITH OR WITHOUT PATELLAR CONTROL, PREFABRICATED, INCLUDES FITTING AND ADJUSTMENT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (HCPCSReleaseCodeSets#L1820)</span></p><p><b>subject</b>: <a href=\"Patient-patient1001.html\">Patient/patient1001</a> &quot; BETTERHALF&quot;</p></div>"
 
@@ -389,6 +403,7 @@ Description: "PCT DeviceRequest Example 1"
 Instance: PCT-ServiceLocation-1
 InstanceOf: PCTServiceLocation
 Description: "PCT ServiceLocation Example 1"
+Usage: #example
 
 * status = #active
 
@@ -406,6 +421,8 @@ Description: "PCT ServiceLocation Example 1"
 Instance: PCT-GFE-Collection-Bundle-Inst-1
 InstanceOf: PCTGFECollectionBundle
 Description: "PCT GFE Collection Bundle Institutional Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"
@@ -438,6 +455,8 @@ Description: "PCT GFE Collection Bundle Institutional Example 1"
 Instance: PCT-GFE-Collection-Bundle-Prof-1
 InstanceOf: PCTGFECollectionBundle
 Description: "PCT GFE Collection Bundle Professional Example 1"
+Usage: #example
+
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-29T11:01:00+05:00"

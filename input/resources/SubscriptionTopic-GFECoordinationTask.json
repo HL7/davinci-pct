@@ -1,0 +1,73 @@
+{
+  "resourceType": "SubscriptionTopic",
+  "id": "davinci-pct-gfe-coordination-task-subscriptiontopic",
+  "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic",
+  "version": "2.0.0",
+  "status": "active",
+  "name": "PCTGFECoordinationTaskSubscriptionTopic",
+  "title": "GFE Coordination Task Notification",
+  "experimental": false,
+  "date": "2025-04-17",
+  "description": "Subscription Topic to provide a notification to an Provider involved in GFE Coordination effort (either as a GFE Coordination Requester or a GFE Coordinator) whenever a Task is created, updated, or deleted (for FHIR R4). For the GFE Coordination requester this will trigger for a change on a Coordination or Contributor Task for which they are the requester. For a GFE Contributor this will trigger on a change to a Contributor Task for which they are the owner or on a change to an associated Coordination Task. This will be triggered on the creation, update, or deletion of Coordination (gfe-coordination-task) or Contributor Task (gfe-contributor-task) codes.",
+  "resourceTrigger": [
+    {
+      "description": "Triggered when a GFE Coordination or Contributor Task created, updated, or deleted",
+      "resource": "http://hl7.org/fhir/StructureDefinition/Task",
+      "supportedInteraction": [
+        "create",
+        "update",
+        "delete"
+      ],
+      "queryCriteria": 
+      {
+        "resultForCreate": "test-passes",
+        "current": "code=gfe-coordination-task,gfe-contributor-task",
+        "resultForDelete": "test-passes",
+        "requireBoth": false
+        
+      }
+    }
+  ],
+  "canFilterBy": [
+    {
+      "description": "Filter based on the requester of a Task.",
+      "resource": "Task",
+      "filterParameter": "requester",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/Task-requester",
+      "comparator": ["eq"]
+    },
+    {
+      "description": "Filter based on the owner (performer) of a Task.",
+      "resource": "Task",
+      "filterParameter": "owner",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/Task-owner",
+      "comparator": ["eq"]
+    },
+    {
+      "description": "Filter based on the owner (performer) of a Task that is part of another Task.",
+      "resource": "Task",
+      "filterParameter": "_has:Task:part-of:owner",
+      "comparator": ["eq"]
+    },
+    {
+      "description": "Filter based on the status (draft | requested | received | accepted | +) of a Task.",
+      "resource": "Task",
+      "filterParameter": "status",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/Task-status",
+      "comparator": ["eq"]
+    },
+    {
+      "description": "Filter based on the task business status (closed +) of a Task.",
+      "resource": "Task",
+      "filterParameter": "business-status",
+      "filterDefinition": "http://hl7.org/fhir/SearchParameter/Task-business-status",
+      "comparator": ["eq"],
+      "modifier": ["not"]
+    }
+  ],
+  "notificationShape": [
+    {
+      "resource": "Task"
+    }
+  ]
+}

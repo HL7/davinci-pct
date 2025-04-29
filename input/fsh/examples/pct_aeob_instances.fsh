@@ -8,7 +8,8 @@ Alias: CPT4 = http://www.ama-assn.org/go/cpt
 
 Instance: PCT-AEOB-1
 InstanceOf: PCTAdvancedEOB
-Description: "An instance of the PCTAdvancedEOB Profile"
+Description: "An example instance of the PCTAdvancedEOB Profile"
+Usage: #example
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 
@@ -99,8 +100,8 @@ Description: "An instance of the PCTAdvancedEOB Profile"
 
 Instance: PCT-AEOB-Summary-1
 InstanceOf: PCTAdvancedEOBSummary
-Description: "An instance of the PCTAdvancedEOBSummary Profile"
-
+Description: "An example instance of the PCTAdvancedEOBSummary Profile"
+Usage: #example
 
 * extension[serviceDescription].valueString = "Example service"
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.com/out-of-network.html"
@@ -158,6 +159,7 @@ Description: "An instance of the PCTAdvancedEOBSummary Profile"
 Instance: PCT-AEOB-Packet-1
 InstanceOf: PCTAEOBPacket
 Description: "PCT AEOB Packet Example 1"
+Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234568"
 * timestamp = "2025-01-10T11:01:00+05:00"
@@ -230,6 +232,7 @@ Usage: #inline
 Instance: PCT-AEOB-DocumentReference-1
 InstanceOf: PCTAdvancedEOBDocumentReference
 Description: "PCT AEOB DocumentReference Example 1"
+Usage: #example
 
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * extension[procedureOrService].valueCodeableConcept = $CPT#70551 "Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material"
@@ -255,6 +258,7 @@ Description: "PCT AEOB DocumentReference Example 1"
 Instance: PCT-AEOB-Bundle-1
 InstanceOf: PCTAEOBBundle
 Description: "PCT AEOB Bundle Example 1"
+Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234567"
 * timestamp = "2021-11-10T11:01:00+05:00"

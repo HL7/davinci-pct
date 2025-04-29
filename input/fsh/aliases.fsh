@@ -57,6 +57,8 @@ Alias:   $PROCPRIORITYVS = http://hl7.org/fhir/ValueSet/process-priority
 Alias:   $AMACPTALL = http://hl7.org/fhir/ValueSet/cpt-all
 Alias:   $CLAIMUSEVS = http://hl7.org/fhir/ValueSet/claim-use
 
+Alias:   $v3ActRelationship = http://terminology.hl7.org/CodeSystem/v3-ActRelationshipType
+
 //// CARIN-BB ////
 Alias:   $AHANUBCRevenueCodes = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCRevenueCodes
 Alias:   $AMACPTCMSHCPCSModifiers = http://hl7.org/fhir/us/carin-bb/ValueSet/AMACPTCMSHCPCSModifiers
