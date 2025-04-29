@@ -106,8 +106,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * procedure.extension 1..*
 * procedure.extension contains ServiceDescription named serviceDescription 1..1
 * procedure contains
-   anesthesiaRelated 0..2 MS and
-   other 0..24 MS
+   anesthesiaRelated 0..2 MS // and
+//   other 0..24 MS
 
 
 * procedure[anesthesiaRelated].type 1..1
@@ -116,8 +116,15 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
 * procedure[anesthesiaRelated].extension 1..*
 * procedure[anesthesiaRelated].extension contains ServiceDescription named serviceDescription 1..1
-
-
+/*
+* procedure[other].type 1..1
+* procedure[other].type = PCTProcedureType#other
+* procedure[other].procedure[x]
+* procedure[other].procedure[x] only CodeableConcept
+* procedure[other].procedure[x] from PCTProcedureSurgicalCodes
+* procedure[other].extension 1..*
+* procedure[other].extension contains ServiceDescription named serviceDescription 1..1
+*/
 * insert CareTeamSlicing
 //* careTeam 0..*
 * careTeam.provider 1..1
