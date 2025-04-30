@@ -45,7 +45,7 @@ Usage: #definition
 * xpath = "f:Task/f:extension[url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod']/f.value"
 * xpathUsage = #normal
 
-
+// TODO, look to see whether this task replaces needs to be replaced by GFERelatedTask
 Instance: task-replaces
 InstanceOf: SearchParameter
 Title: "TaskReplaces"
@@ -203,7 +203,7 @@ Usage: #definition
 * code = #linking-identifier
 * base = #DocumentReference
 * type = #token
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo')extension.where(url='linkingIdentifier').value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo').extension.where(url='linkingIdentifier').value"
 * xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='linkingIdentifier']/f.value"
 * xpathUsage = #normal
 * target = #DocumentReference
