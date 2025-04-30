@@ -82,6 +82,7 @@ Usage: #definition
 * system = false
 * type = false
 * instance = true
+* inputProfile = Canonical(PCTGFECoordinationTask)
 * outputProfile = Canonical(PCTGFEPacket)
 /* parameter[0].name = #request
 * parameter[0].use = #in
