@@ -234,7 +234,7 @@ Usage: #definition
 * code = #planned-period
 * base = #DocumentReference
 * type = #date
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo')extension.where(url='plannedPeriodOfService').value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo').extension.where(url='plannedPeriodOfService').value"
 * xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='plannedPeriodOfService']/f.value"
 * xpathUsage = #normal
 * target = #DocumentReference
