@@ -385,3 +385,9 @@ Description: "US Claim Diagnosis Related Group Codes. All codes from MS-DRGs - A
 * ^experimental = false
 
 
+ValueSet: PCTGFETaskRelationship
+Title: "PCT GFE Task Relationship"
+Description: "Code expressing a relationship that the source Task has with the referenced GFE Task has with the source GFE Task. "
+* $v3ActRelationship#PREV
+* $v3ActRelationship#RPLC
+* ^experimental = false

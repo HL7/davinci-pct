@@ -396,3 +396,31 @@ Description: "Significant condition involved in an estimate."
 * valueCodeableConcept from PCTDiagnosticCodes (required)
 * value[x] ^short = "Significant condition or condition involved"
 * value[x] ^comment = "Significant condition involved in an estimate."
+
+
+
+Extension: GFERelatedTask
+Id: gfeRelatedTask
+Description: "A relationship that the source Task has with the referenced GFE Task has with the source GFE Task. This may be used for cases when a new GFE is needed or a Task needs to be replaced for some reason and the requester and owner, where present, are the same between the referenced and source Task respectively."
+* ^context[+].type = #element
+* ^context[=].expression = "Task"
+* extension 1..*
+* extension contains
+    relationship 1..1 and
+    related 1..1 and
+    description 0..1
+
+* extension[relationship] ^short = "A code indicating the nature of the Task relationship."
+* extension[relationship].value[x] 1..1
+* extension[relationship].value[x] only CodeableConcept
+* extension[relationship].valueCodeableConcept from PCTGFETaskRelationship (extensible)
+
+
+* extension[related] ^short = "A code indicating the nature of the Task relationship."
+* extension[related].value[x] 1..1
+* extension[related].value[x] only Reference
+* extension[related].valueReference only Reference(PCTGFECoordinationTask or PCTGFEContributorTask)
+
+* extension[description] ^short = "A description of relevant changes or matters of import."
+* extension[description].value[x] 1..1
+* extension[description].value[x] only markdown
