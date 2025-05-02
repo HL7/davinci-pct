@@ -68,13 +68,13 @@ This guide breaks the process into two main parts in support of the patient cost
 **AEOB Interaction Diagram Steps (High Level View)**
 1. A patient schedules a service or requests an estimate for a service which triggers the composition of a collection of one or more GFEs. 
 
-2. The Providers involved in the service coordinate on their individual charges and services for the Good Faith Estimate through the [GFE Coordination Workflow](gfe_coordination_overview.html), if applicable. For self-pay or uninsured patients, the GFE can be made available to the patient at this step. _(This would be through another means not defined in this IG.)_
+2. The Providers involved in the service coordinate on their individual charges and services for the Good Faith Estimate through the [GFE Coordination Workflow](gfe_coordination_overview.html), if applicable. For self-pay or uninsured patients, the GFE can be made available to the patient at this step. <!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>_(This would be through another means not defined in this IG.)_</s></span><!-- /FHIR-45939 -->
 
 3. For insured patients, one or more GFEs in a FHIR Bundle resource ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
 
 4. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
-5. The patient and provider can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
+5. The patient and provider <!-- FHIR-45939 --><span class="bg-success" markdown="1">may receive a notification of availability of the AEOB Packet and </span><!-- /FHIR-45939 -->can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 > Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
 

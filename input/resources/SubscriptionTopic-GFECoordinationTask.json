@@ -1,14 +1,14 @@
 {
   "resourceType": "SubscriptionTopic",
-  "id": "davinci-pct-gfe-coordination-task-subscriptiontopic",
-  "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic",
+  "id": "davinci-pct-gfe-coordination-task-notification",
+  "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-notification",
   "version": "2.0.0",
   "status": "active",
   "name": "PCTGFECoordinationTaskSubscriptionTopic",
-  "title": "GFE Coordination Task Notification",
+  "title": "SubscriptionTopic - GFE Coordination Task Notification",
   "experimental": false,
   "date": "2025-04-17",
-  "description": "Subscription Topic to provide a notification to an Provider involved in GFE Coordination effort (either as a GFE Coordination Requester or a GFE Coordinator) whenever a Task is created, updated, or deleted (for FHIR R4). For the GFE Coordination requester this will trigger for a change on a Coordination or Contributor Task for which they are the requester. For a GFE Contributor this will trigger on a change to a Contributor Task for which they are the owner or on a change to an associated Coordination Task. This will be triggered on the creation, update, or deletion of Coordination (gfe-coordination-task) or Contributor Task (gfe-contributor-task) codes.",
+  "description": "Subscription Topic to provide a notification to an Provider involved in GFE Coordination effort (either as a GFE Coordination Requester or a GFE Coordinator) whenever a Task is created, updated, or deleted (for FHIR R4). For the GFE Coordination requester this will trigger for a change on a Coordination or Contributor Task for which they are the requester. For a GFE Contributor this will trigger on a change to a Contributor Task for which they are the owner or on a change to an associated Coordination Task. This will be triggered on the creation, update, or deletion of Coordination (gfe-coordination-task) or Contributor Task (gfe-contributor-task) codes.\n\r**Canonical URL:** http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-notification",
   "resourceTrigger": [
     {
       "description": "Triggered when a GFE Coordination or Contributor Task created, updated, or deleted",

@@ -1,24 +1,36 @@
 Profile: PCTAEOBAvailableAuthorSubscription
 Parent: Subscription
 Id: davinci-pct-aeob-available-author-subscription
-Title: "AEOB Available, Author - Subscription"
+Title: "Subscription - AEOB Available for Author Notification"
 Description: "An author focused Subscription when an Advanced Explanation of Benefit (AEOB) Packet DocumentReference is created or updated (for FHIR R4). This represents that an AEOB Bundle, either contained in or referred to by the DocumentReference has been newly created and is available or has been updated, should updates be made."
-* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-subscriptiontopic"
+* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification"
 * criteria.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria named filterCriteria 1..* MS
 * status = #active
-* channel.type = #rest-hook
+
+* channel.extension contains 
+    http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period named heartbeatPeriod 0..1 and
+    http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout named timeout 0..1 and
+    http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-max-count named maxCount 0..1
+
+//* channel.type = #rest-hook
 * channel.payload.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content named payloadContent 1..1 MS
 //* channel.payload.extension[payloadContent].valueCode = #full-resource
 
 Profile: PCTAEOBAvailableSubjectSubscription
 Parent: Subscription
 Id: davinci-pct-aeob-available-subject-subscription
-Title: "AEOB Available, Subject - Subscription"
+Title: "Subscription - AEOB Available for Subject Notification"
 Description: "A subject focused Subscription when an Advanced Explanation of Benefit (AEOB) Packet DocumentReference is created or updated (for FHIR R4). This represents that an AEOB Bundle, either contained in or referred to by the DocumentReference has been newly created and is available or has been updated, should updates be made."
-* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-subscriptiontopic"
+* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-notification"
 * criteria.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria named filterCriteria 1..* MS
 * status = #active
-* channel.type = #rest-hook
+
+* channel.extension contains 
+    http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period named heartbeatPeriod 0..1 and
+    http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout named timeout 0..1 and
+    http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-max-count named maxCount 0..1
+
+//* channel.type = #rest-hook
 * channel.payload.extension contains http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content named payloadContent 1..1 MS
 //* channel.payload.extension[payloadContent].valueCode = #full-resource
 
@@ -28,7 +40,7 @@ Instance: example-aeob-available-author-subscription-full
 InstanceOf: davinci-pct-aeob-available-author-subscription
 Description: "An example instance of the davinci-pct-aeob-available-author-subscription Profile returning the full DocumentReference resource"
 Usage: #example
-* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-subscriptiontopic"
+* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification"
 * criteria.extension[filterCriteria].valueString = "DocumentReference?author=Practitioner/123456789"
 * status = #active
 * end = "2025-04-20T03:33:12.7238087+00:00"
@@ -43,7 +55,7 @@ Instance: example-aeob-available-author-subscription-id-only
 InstanceOf: davinci-pct-aeob-available-author-subscription
 Description: "An example instance of the davinci-pct-aeob-available-author-subscription Profile returning only the id of the DocumentReference resource"
 Usage: #example
-* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-subscriptiontopic"
+* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification"
 * criteria.extension[filterCriteria].valueString = "DocumentReference?author=Practitioner/123456789"
 * status = #active
 * end = "2025-04-20T03:33:12.7238087+00:00"

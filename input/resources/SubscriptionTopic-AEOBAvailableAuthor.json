@@ -1,14 +1,14 @@
 {
   "resourceType": "SubscriptionTopic",
-  "id": "davinci-pct-aeob-available-author-subscriptiontopic",
-  "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-subscriptiontopic",
+  "id": "davinci-pct-aeob-available-author-notification",
+  "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification",
   "version": "2.0.0",
   "status": "active",
   "name": "PCTAEOBAvailableAuthorSubscriptionTopic",
-  "title": "AEOB Available Author Notification",
+  "title": "SubscriptionTopic - AEOB Available for Author Notification",
   "experimental": false,
   "date": "2025-04-05",
-  "description": "Author focused Subscription Topic when an Advanced Explanation of Benefit (AEOB) Packet DocumentReference is created or updated (for FHIR R4). This represents that an AEOB Bundle, either contained in or referred to by the DocumentReference has been newly created and is available or has been updated, should updates be made.",
+  "description": "Author focused Subscription Topic when an Advanced Explanation of Benefit (AEOB) Packet DocumentReference is created or updated (for FHIR R4). This represents that an AEOB Bundle, either contained in or referred to by the DocumentReference has been newly created and is available or has been updated, should updates be made.\n\r**Canonical URL:** http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification",
   "resourceTrigger": [
     {
       "description": "Triggered when an AEOB Packet DocumentReference is created or updated",

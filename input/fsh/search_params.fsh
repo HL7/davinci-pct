@@ -212,7 +212,7 @@ Usage: #definition
 
 Instance: packet-PlannedPeriodOfService
 InstanceOf: SearchParameter
-Title: "Packet Linking Identifier"
+Title: "Packet Planned Period Of Service"
 Description: "Planned date(s) of a particular admission/service or a series of admissions/services."
 Usage: #definition
 * extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"

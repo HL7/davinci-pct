@@ -137,11 +137,55 @@ GFE Coordination Requesters SHOULD POST a GFE Coordination request though a sing
 The GFE Coordination workflow is designed to allow participation of GFE Contributors that may not support this FHIR IG directly, or support FHIR at all. The Coordination Platform may provide another means to contribute data for [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources, such as through a delegate system or a portal. To support this, GFE Coordination Requesters SHOULD create [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources for all of GFE Contributors  that a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) is needed from if they have an active Coordination Participant Resource (Organization/Practitioner/PractitionerRole) on the Coordination Platform.
 
 
-#### Notifications of New and Updated Tasks
-Methods of notification are not defined in this IG, but may take the form of FHIR Subscription (potentially using [Notified Pull](https://hl7.org/fhir/uv/subscriptions-backport/2024Jan/notifications.html#notified-pull)), unsolicited notification, messaging or other method. Other Out of Band (OOB) transactions are also allowed.
+#### Notifications of New and Updated Tasks ####
+
+##### General Requirements for Notifications of New and Updated Tasks #####
+<!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>Methods of notification are not defined in this IG, but m</s> Notifications m</span><!-- /FHIR-45939 -->ay take the form of FHIR Subscription (<!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>potentially using [Notified Pull](https://hl7.org/fhir/uv/subscriptions-backport/2024Jan/notifications.html#notified-pull)</s>as defined in this IG</span><!-- /FHIR-45939 -->), unsolicited notification, messaging or other method.<!-- FHIR-45939 --><span class="bg-success" markdown="1"><s> Other Out of Band (OOB) transactions are also allowed.</s></span><!-- /FHIR-45939 -->
 
 Coordination Platforms **SHALL** be able to notify GFE Contributors when a new [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) is assigned to them or is marked as `cancelled`.
 Coordination Platforms **SHALL** be able to notify GFE Coordination Requesters when a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) they created has had their `status` updated to `rejected`, `accepted`, or `completed`.
+
+Implementers **MAY** support the R4 Subscriptions referenced in the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}).
+{:.new-content}
+
+
+This IG defines the following minimal requirements for the support of subscriptions for systems conforming to this IG that choose to support subscriptions:
+* Servers supporting subscriptions **SHALL** expose this as part of the Server's CapabilityStatement
+* Support for subscription topic discovery is not required, however, the subscription topic canonical urls that show up in the `Subscription.criteria` for the subscription topics supported **SHALL** be used. Other types of Subscriptions are allowed.
+* Servers **SHOULD** support rest-hook and **MAY** support websocket, email, sms, message or other channels
+* Servers **SHALL** support both JSON and XML and clients SHALL support at least one of these.
+* Client and server **SHALL** support `id-only`, though they can also support other content approaches. 
+>Note: The `id-only` approach means that the id of the Task that was updated will be provided. The client will then perform a read or a query to retrieve the identified record(s) specified in the subscription notification.
+{:.new-content}
+
+
+
+##### Requirements for GFE Coordination Task Subscriptions #####
+The Coordination Requester subscription **SHALL** conform to the [Subscription - GFE Coordination Task Update Notification](StructureDefininition-davinci-pct-gfe-task-update-subscription.html) and meet the following requirements:
+* **SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic`
+* **SHALL** have the `Subscription.criteria.extension[filterCriteria].valueString` = `Task?requester=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the Coordination Requester.
+{:.new-content}
+
+The GFE Contributor subscription **SHALL** conform to the [Subscription - GFE Coordination Task Update Notification](StructureDefininition-davinci-pct-gfe-task-update-subscription.html) and meet the following requirements:
+* **SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic`
+* **SHALL** have one of the following, but not both (contributors should have a subscription for each)
+    * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `Task?owner=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the GFE Contributor.
+    * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `Task?_has:Task:part-of:owner=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the Coordination Contributor.
+    >Note: This will enable the notification when the Coordination Task that is parent to the Contributor Task, is updated.
+{:.new-content}
+
+
+##### Requirements for GFE Packet Availability Subscriptions #####
+For notifications to patients (GFE Packet subject) the GFE Packet subscription SHALL conform to the [Subscription - GFE Available for Subject Notification](StructureDefininition-davinci-pct-gfe-available-subject-subscription.html) and meet the following requirements:
+* **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.
+* Updates to the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** result in an update to the [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) in order to trigger a notification. 
+{:.new-content}
+
+For notifications to authors (GFE Contributors) the GFE Packet subscription **SHALL** conform to the [Subscription - GFE Available for Author Notification](StructureDefinintion-davinci-pct-gfe-available-author-subscription.html) and meet the following requirements:
+* **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?author=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the GFE Contributor.
+* Updates to the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** result in an update to the [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) in order to trigger a notification. 
+{:.new-content}
+
 
 #### Searching for and Retrieving Tasks
 Both GFE Coordination Requesters and GFE Contributors need to be able to search for Tasks related to their role in the GFE Coordination workflow. Searching requirements are detailed the CapabilityStatements in this guide and **SHALL** be followed for a system to claim conformance to this guide.

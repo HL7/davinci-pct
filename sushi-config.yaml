@@ -265,8 +265,20 @@ groups:
     - StructureDefinition/davinci-pct-aeob-bundle
     - StructureDefinition/davinci-pct-gfe-collection-bundle
 
+  Subscriptions:
+    name: "Subscriptions"
+    description: These define provide definitions for subscriptions including R4B based SubscriptionTopic and subscription profiles.
+    resources:
+    - SubscriptionTopic/davinci-pct-gfe-coordination-task-notification
+    - SubscriptionTopic/davinci-pct-gfe-available-subject-notification
+    - SubscriptionTopic/davinci-pct-gfe-available-author-notification
+    - SubscriptionTopic/davinci-pct-aeob-available-subject-notification
+    - SubscriptionTopic/davinci-pct-aeob-available-author-notification
 
-
+    - StructureDefinition/davinci-pct-gfe-task-update-subscription
+    - StructureDefinition/davinci-pct-gfe-available-subject-subscription
+    - StructureDefinition/davinci-pct-aeob-available-subject-subscription
+    - StructureDefinition/davinci-pct-aeob-available-author-subscription
 
 
  # Base Specs:

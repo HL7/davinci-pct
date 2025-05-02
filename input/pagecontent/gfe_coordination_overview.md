@@ -29,14 +29,14 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 
 2. The GFE Coordination Requester creates a set of Tasks (a single Coordinating [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and one or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)(s)) that contain the information necessary to create an estimate on the Coordination Platform. 
 
-  Note: If the GFE Coordination Requester needs to provide a GFE Bundle as part of this request, they will also need to serve in the GFE Contributor role by creating a GFE Contributor task for themselves and carry out the requirements of that role.
+>Note: If the GFE Coordination Requester needs to provide a GFE Bundle as part of this request, they will also need to serve in the GFE Contributor role by creating a GFE Contributor task for themselves and carry out the requirements of that role.
 
 3. GFE Contributors are notified of a new task assignment.
 
 4. The GFE Contributor retrieves the task and request information (GFE Information Bundle)
    The GFE Contributor can then decide to accept or reject the request and update the task appropriately.
 
-   Note: GFE Contributors should not reject a Task because of insufficient information to produce a GFE and instead should contact the GFE requester for the necessary information.
+>Note: GFE Contributors should not reject a Task because of insufficient information to produce a GFE and instead should contact the GFE requester for the necessary information.
 
 5. The GFE Collaboration Requester is notified of status updates to the tasks they created.
 
@@ -47,6 +47,38 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 8. The GFE Coordination Requester can retrieve a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) (made up of attached GFE Bundles and information about [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html)s) at any time through a gfe-retrieve operation. 
 
 9. The GFE Coordination Requester can close the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) by updating the status as `completed`, `cancelled`, `failed`, or `entered-in-error` when the GFE collection is to be concluded and no more changes, updates, or GFE Bundles will be accepted. The requester can add a `statusReason` indicating why the Task has been concluded (e.g. the task has been fulfilled, the time limit has been reached, the service has been cancelled, etc.)
+
+
+<!-- FHIR-45939 -->
+### Notifications ###
+
+Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
+This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subcription.criteria`. 
+{:.new-content}
+
+
+#### Task Creation and Updates ####
+Notifications should be sent to participants whenever a change is made that the participant may need to act upon. For the Coordination Requester, this means any updates to (or the creation of) the Coordination Task or Contributor Tasks for which they are the `requester`. For the Contributor, this means any updates to (or the creation of) a non-draft Contributor Task for which they are the `owner` as well as any updates to a Coordination Task of which such Contributor Tasks are `partOf`. This may be done through creating a compliant [Subscription - GFE Coordination Task Update Notification](StructureDefininition-davinci-pct-gfe-task-update-subscription.html) that references the [SubscriptionTopic - GFE Coordination Task Notification](SubscriptionTopic-davinci-pct-gfe-coordination-task-notification.html) canonical URL. 
+{:.new-content}
+
+#### GFE Packet Availability ####
+Providers may need to make the GFE Packet available to the patient or other contributing providers. This may need to be done as part of the coordination workflow with multiple providers or separately with a single provider. In either scenario, this could be handled by the provider directly or through an intermediary like the Coordination Platform. Notifications of the availability of a new or updated GFE Packet should be sent to the patient, their authorized representative, or other providers. 
+{:.new-content}
+
+For the patients, this means the creation or update of a [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done through creating a compliant [Subscription - GFE Available for Subject Notification](StructureDefininition-davinci-pct-gfe-available-subject-subscription.html) that references the [SubscriptionTopic - GFE Available for Subject Notification](SubscriptionTopic-davinci-pct-gfe-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-subject-notification`. 
+{:.new-content}
+
+For the Authors (Contributing Providers), this means the creation or update of a [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) for which the author (provider) is the `DocumentReference.author`. This may be done through creating a compliant [Subscription - GFE Available for Author Notification](StructureDefinintion-davinci-pct-gfe-available-author-subscription.html) that references the [SubscriptionTopic - GFE Available for Subject Notification](SubscriptionTopic-davinci-pct-gfe-available-author-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-author-notification`.
+{:.new-content}
+
+The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an GFE Packet (should be replaced). However, if updates are supported and there is a separate Bundle for the GFE Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
+{:.new-content}
+
+
+<!-- /FHIR-45939 -->
+
+
+
 
 
 ### Data Structures ###
@@ -116,9 +148,8 @@ _Figure 7. GFE Coordination Technical Workflow_
 1. GFE Coordinating Requester performs a FHIR search for [Practitioner](StructureDefinition-davinci-pct-practitioner.html), [PractitionerRole](https://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-practitionerrole.html), or [Organization](StructureDefinition-davinci-pct-organization.html) resources. If successful (200 OK), the search will return 0 or more resources.
     * If 1 or more resources are returned, the GFE Coordination Requestor processes those resources, extracting the resource IDs for use in step 2.
     * If 0 resources are returned, or an error occurs, the requester should reformulate their search and try again.
-
-<!--TODO Still need a fail early mechanism, App ack in initial communication-->
-
+    <!--TODO Still need a fail early mechanism, App ack in initial communication-->
+    
 2. GFE Coordinating Requester creates a [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and 1 or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources, creates and associates one or more [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) resources and includes them in a [GFE Coordination Bundle](StructureDefinition-davinci-pct-gfe-coordination-bundle.html), then uses a FHIR POST to the transaction endpoint of the Coordination Platform’s FHIR server.
     * If successful, the content of the bundle will be stored as separate resources on the FHIR server, and notifications will be sent to all GFE Contributors referenced in the Tasks per step 3. The notifications may be sent via FHIR subscriptions, which can be triggered by a create operation, or they may be out of band notifications using whatever mechanism the coordination platform chooses.
     * If the POST fails, the entire transaction is rolled back and no resources will be stored on the Coordination Platform. The requestor must address any errors and resubmit.
@@ -130,7 +161,7 @@ _Figure 7. GFE Coordination Technical Workflow_
     * If the contributor accepts the task, `Task.status` shall be changed to `accepted`.
     * If the contributor declines the task, `Task.status` shall be changed to `rejected` and the reason for the rejection should be placed in `Task.statusReason`.
 
-5. After each GFE Contributor has updated their respective [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), the GFE Coordination Requester is notified of the changes (same process as step 3) and reviews the updates. If a GFE Contributor has rejected, the GFE Coordination Requester may choose to replace the contributor or cancel the entire request depending on the reason if one is provided in `Task.statusReason` (e.g. if a key participant is unable to participate due to a proposed date of service, the GFE Coordination Requester may wish to cancel the entire request and make a new request with a time that works for that participant).
+5. After each GFE Contributor has updated their respective [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), the GFE Coordination Requester is notified of the changes (same process as step 3) and reviews the updates. If a GFE Contributor has rejected, the GFE Coordination Requester may choose to replace the contributor or cancel the entire request depending on the reason if one is provided in `Task.statusReason` (e.g. if a key participant is unable to participate due to a proposed date of service, the GFE Coordination Requester may wish to cancel the entire request and make a new request with a time that works for that participant). If the Coordination Requester creates a new set of Tasks that replaces this cancelled set, they may add a GFE Related Task extension to one or more of the new Tasks that references the appropriate cancelled tasks and has a code of replaces. (This may aid GFE Contributors in developing a new GFE Bundle as well as record keeping)
 
 6. After accepting a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), each GFE Contributor creates a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) with their good faith estimate (consisting of one or more GFE Claim resources) and any supporting resources. They then attach that bundle to their [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), sets the status to `completed` and does an HTTP PUT operation to update the task.
 
@@ -151,7 +182,7 @@ _Figure 7. GFE Coordination Technical Workflow_
 
     GFE Contributors may receive notifications on task status changes which could be used as an indication that a coordination activity has been completed though they may not have completed their task by providing a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html).
 
-    Additionally GFE Coordination Requesters may want to notify GFE Requesters, through means not directly addressed in this IG, when a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) has been passed on the the patient or payer and include an indication as to whether they had a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) included in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
+    Additionally GFE Coordination Requesters may want to notify GFE Requesters<!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>, through means not directly addressed in this IG,</s></span><!-- /FHIR-45939 --> when <!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>a</s>their</span> <!-- /FHIR-45939 --> [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) has been passed on the patient or payer and include an indication as to whether they had a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) included in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
     NOTE: The GFE Coordination Workflow, including the use of the Coordination Platform, does not assume or require that each system providing information that will ultimately be included in the GFE Bundle is leveraging FHIR. It is possible and expected that a certain amount of communication and coordination throughout this process will be out of band.
 
@@ -161,6 +192,8 @@ _Figure 7. GFE Coordination Technical Workflow_
 
 10. The Coordination Platform updates the status of the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and each associated [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) `Task.businessStatus` to `closed`.
 
+11. In the event that a new set of GFEs are required (for example when a sufficient amount of time has passed to warrant a refreshed estimate or where slight modifications to the services or products from a previously completed estimate was required) the Coordination Requester may create a new set of Tasks that is noted to succeed this previous completed set. This can be done by adding the GFE Related Task extension to one or more of the new Tasks that references the appropriate previous Tasks and a code of previous. (This may aid GFE Contributors in developing a new GFE Bundle as well as record keeping).
+Note: This is a replacement of the Task not the GFE or GFE Bundles.
 
 #### Examples
 

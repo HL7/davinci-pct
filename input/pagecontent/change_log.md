@@ -414,7 +414,7 @@ Correct Example fullURL to use the right resource base
 
 There were many changes to all the profiles, value sets, etc. since the last ballot. The details are listed in the section below. High level changes since the ballot are:
 
-* The polling mechanism changed form polling based on Bundle.identifier to using the [asyncrhonous response pattern](http://build.fhir.org/async-bundle.html).
+* The polling mechanism changed form polling based on Bundle.identifier to using the [asynchronous response pattern](http://build.fhir.org/async-bundle.html).
 * Updated workflow diagrams on the [Use Cases](https://hl7.org/fhir/us/davinci-pct/STU1.1/use_cases.html) page.
 * Most code systems have been moved to the [HL7 terminology](https://terminology.hl7.org/) page, and their code system URLs changed as a result.
 * Harmonized with CARIN blue button EOB where possible to reduce implementation barriers
@@ -424,7 +424,7 @@ There were many changes to all the profiles, value sets, etc. since the last bal
 
 #### Detailed Changes 1.0.0 (JIRA Change Requests)
 
-<table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+<table id="issuetable" border="1" cellpadding="3" cellspacing="1" width="100%">
 <thead>
 <tr class="rowHeader">
 
