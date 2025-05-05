@@ -1,7 +1,8 @@
-// TODO JIRA Make sure all tickets and profile requirements align
-// TODO The collection Bundle is to be used in the submission. Make sure that is explicit everywhere including the submit operation. 
 // TODO deal with the situation that the coordination request only deals with Pract/org on CP, but in the submission we need to have the submitting prov. Need way to indicate  Perhaps guidance?
 // Guidance that the initiating provider may need to be changed from the CP version to the Submitting Provider version
+/* Replaced with GFE Packet 
+FHIR-49786 - Change the GFE Collection Bundle to be a document Bundle and add a Document reference to adequately address search and subscriptions
+
 
 Profile: PCTGFECollectionBundle
 Parent: Bundle
@@ -61,13 +62,13 @@ Description: "PCT GFE Collection Bundle that contains GFE Bundles from GFE contr
 * entry[attachment].resource 1..1 
 * entry[attachment].resource only DocumentReference
 
-/*
+*
 // TODO MEETING, is the GFE Submitter necessary on each and every GFE and do they have to be the same? If so, this requires the GFE contributor to make a copy of the requesting provider, but to what end?)
 Invariant: pct-gfe-collection-bundle-1
 Description: "All GFEs must have the same GFE submitter"
 Expression: "(Bundle.entry.resource.ofType(Claim).extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeSubmitter').value.ofType(Reference).reference.distinct().count() = 1)"
 Severity: #error
-*/
+*
 
 // TODO the expression needs fixing: Invariant requiring (entry[organization] where type is not 'pay' or 'ins') xor entry[practitioner]
 Invariant: pct-gfe-collection-bundle-2
@@ -87,3 +88,4 @@ Severity: #error
 // Description: "SHALL contain at least one gfeInstitutional slice or gfeProfessional slice"
 // Expression: "entry.resource.ofType(Claim).type.where(coding.code='institutional').exists() or entry.resource.ofType(Claim).type.where(coding.code='professional').exists()"
 // Severity: #error
+*/

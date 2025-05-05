@@ -127,14 +127,14 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * procedure[principal].procedure[x] from ICD10ProcedureCodes (required)
 * procedure[principal] ^short = "Principal clinical procedure performed"
 * procedure[principal].extension 1..*
-* procedure[principal].extension contains ServiceDescription named serviceDescription 1..1
+//* procedure[principal].extension contains ServiceDescription named serviceDescription 1..1
 
 * procedure[anesthesiaRelated].type 1..1
 * procedure[anesthesiaRelated].type = PCTProcedureType#procedureRequiringAnesthesia
 * procedure[anesthesiaRelated].procedure[x] only CodeableConcept
 * procedure[anesthesiaRelated].procedure[x] from PCTProcedureSurgicalCodes
 * procedure[anesthesiaRelated].extension 1..*
-* procedure[anesthesiaRelated].extension contains ServiceDescription named serviceDescription 1..1
+//* procedure[anesthesiaRelated].extension contains ServiceDescription named serviceDescription 1..1
 
 * procedure[other].extension 1..*
 * procedure[other].type 1..1
@@ -143,7 +143,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * procedure[other].procedure[x] only CodeableConcept
 * procedure[other].procedure[x] from PCTProcedureSurgicalCodes
 * procedure[other].extension 1..*
-* procedure[other].extension contains ServiceDescription named serviceDescription 1..1
+//* procedure[other].extension contains ServiceDescription named serviceDescription 1..1
 
 * insert CareTeamSlicing
 //* careTeam 0..* MS

@@ -4,6 +4,9 @@ Id: davinci-pct-gfe-composition
 Title: "PCT GFE Composition"
 Description: "PCT GFE Composition that assembles the contents of a GFE (represented by one or more individual GFE Bundles) into a single logical package. This version fo the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
+* identifier 1..
+  * system 1..1
+  * value 1..1
 * type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS

@@ -259,6 +259,8 @@ Instance: PCT-GFE-Composition-Inst-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Institutional Example 1"
 Usage: #inline
+* identifier[+].system = "http://www.example.org/identifiers/composition"
+* identifier[=].value = "019283476"
 * status = #final
 * type = PCTDocumentTypeTemporaryTrialUse#gfe-packet "GFE Packet"
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
@@ -285,6 +287,8 @@ Instance: PCT-GFE-Composition-Prof-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Professional Example 1"
 Usage: #inline
+* identifier[+].system = "http://www.example.org/identifiers/composition"
+* identifier[=].value = "019283477"
 * status = #final
 * type = PCTDocumentTypeTemporaryTrialUse#gfe-packet "GFE Packet"
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
@@ -414,10 +418,7 @@ Usage: #example
 
 
 
-
-////////////////////////////////////////////
-// TODO To Be removed once Document Bundle is fully adopted
-
+/*
 Instance: PCT-GFE-Collection-Bundle-Inst-1
 InstanceOf: PCTGFECollectionBundle
 Description: "PCT GFE Collection Bundle Institutional Example 1"
@@ -484,3 +485,5 @@ Usage: #example
 * entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
 * entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
 * entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
+
+*/

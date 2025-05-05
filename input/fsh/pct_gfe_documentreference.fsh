@@ -44,7 +44,7 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category ^short = "(USCDI) Categorization of document"
-* category contains estimate 0..*
+* category contains estimate 1..1
 * category[estimate] ^short = "Estimate category"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 
