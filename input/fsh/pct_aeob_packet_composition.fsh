@@ -4,6 +4,9 @@ Id: davinci-pct-aeob-composition
 Title: "PCT AEOB Composition"
 Description: "PCT AEOB Composition that assembles the contents of an AEOB (represented by one or more individual AEOB resources) into a single logical package. A Composition for the document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
+* identifier 1..
+  * system 1..1
+  * value 1..1
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
