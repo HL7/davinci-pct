@@ -168,10 +168,11 @@ menu:
     Operations: artifacts.html#2
     Search Parameters: artifacts.html#3
     Profiles: artifacts.html#4
-    Extensions: artifacts.html#5
-    Value Sets: artifacts.html#6
-    Code Systems: artifacts.html#7
-    Examples: artifacts.html#8
+    Subscriptions: artifacts.html#7
+    Extensions: artifacts.html#10
+    Value Sets: artifacts.html#11
+    Code Systems: artifacts.html#12
+    Examples: artifacts.html#13
     Terminology Licensure: terminology_licensure.html
     
   Security: security.html
