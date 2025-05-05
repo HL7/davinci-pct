@@ -201,6 +201,8 @@ Instance: PCT-AEOB-Composition-1
 InstanceOf: PCTAdvancedEOBComposition
 Description: "PCT AEOB Composition Example 1"
 Usage: #inline
+* identifier.system = "http://www.example.org/identifiers/composition"
+* identifier.value = "019283475"
 * status = #final
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet "AEOB Packet"
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
