@@ -54,25 +54,19 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 
 Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
 This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subcription.criteria`. 
-{:.new-content}
 
 
 #### Task Creation and Updates ####
 Notifications should be sent to participants whenever a change is made that the participant may need to act upon. For the Coordination Requester, this means any updates to (or the creation of) the Coordination Task or Contributor Tasks for which they are the `requester`. For the Contributor, this means any updates to (or the creation of) a non-draft Contributor Task for which they are the `owner` as well as any updates to a Coordination Task of which such Contributor Tasks are `partOf`. This may be done through creating a compliant [Subscription - GFE Coordination Task Update Notification](StructureDefininition-davinci-pct-gfe-task-update-subscription.html) that references the [SubscriptionTopic - GFE Coordination Task Notification](SubscriptionTopic-davinci-pct-gfe-coordination-task-notification.html) canonical URL. 
-{:.new-content}
 
 #### GFE Packet Availability ####
 Providers may need to make the GFE Packet available to the patient or other contributing providers. This may need to be done as part of the coordination workflow with multiple providers or separately with a single provider. In either scenario, this could be handled by the provider directly or through an intermediary like the Coordination Platform. Notifications of the availability of a new or updated GFE Packet should be sent to the patient, their authorized representative, or other providers. 
-{:.new-content}
 
 For the patients, this means the creation or update of a [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done through creating a compliant [Subscription - GFE Available for Subject Notification](StructureDefininition-davinci-pct-gfe-available-subject-subscription.html) that references the [SubscriptionTopic - GFE Available for Subject Notification](SubscriptionTopic-davinci-pct-gfe-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-subject-notification`. 
-{:.new-content}
 
 For the Authors (Contributing Providers), this means the creation or update of a [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) for which the author (provider) is the `DocumentReference.author`. This may be done through creating a compliant [Subscription - GFE Available for Author Notification](StructureDefinintion-davinci-pct-gfe-available-author-subscription.html) that references the [SubscriptionTopic - GFE Available for Subject Notification](SubscriptionTopic-davinci-pct-gfe-available-author-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-author-notification`.
-{:.new-content}
 
 The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an GFE Packet (should be replaced). However, if updates are supported and there is a separate Bundle for the GFE Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
-{:.new-content}
 
 
 <!-- /FHIR-45939 -->
@@ -182,7 +176,7 @@ _Figure 7. GFE Coordination Technical Workflow_
 
     GFE Contributors may receive notifications on task status changes which could be used as an indication that a coordination activity has been completed though they may not have completed their task by providing a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html).
 
-    Additionally GFE Coordination Requesters may want to notify GFE Requesters<!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>, through means not directly addressed in this IG,</s></span><!-- /FHIR-45939 --> when <!-- FHIR-45939 --><span class="bg-success" markdown="1"><s>a</s>their</span> <!-- /FHIR-45939 --> [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) has been passed on the patient or payer and include an indication as to whether they had a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) included in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
+    Additionally GFE Coordination Requesters may want to notify GFE Requesters<!-- FHIR-45939 <span class="bg-success" markdown="1"><s>, through means not directly addressed in this IG,</s></span> /FHIR-45939 --> when <!-- FHIR-45939 <span class="bg-success" markdown="1"><s>a</s>-->their<!--</span>  /FHIR-45939 --> [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) has been passed on the patient or payer and include an indication as to whether they had a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) included in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
     NOTE: The GFE Coordination Workflow, including the use of the Coordination Platform, does not assume or require that each system providing information that will ultimately be included in the GFE Bundle is leveraging FHIR. It is possible and expected that a certain amount of communication and coordination throughout this process will be out of band.
 

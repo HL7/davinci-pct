@@ -49,12 +49,12 @@ Just like the AEOB request, additional Bundle entries must be present for all re
 It is possible that the incoming Bundle cannot be processed due to validation errors or other non-business-errors. In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB response will be returned.
 
 
+<!-- FHIR-45939 -->
 ### Notifications of AEOB Availability ###
 
 #### General Requirements for Notifications of AEOB Availability ####
 Notifications may take the form of FHIR Subscription (as defined in this IG), unsolicited notification, messaging or other method.
 Payers **SHALL** be able to notify patients when an AEOB Packet is made available. Payers **MAY** be able to notify related GFE author(s) when an AEOB Packet is made available.
-{:.new-content}
 
 Implementers **MAY** support the R4 Subscriptions referenced in the Subscriptions for R5 Backport Implementation Guide. 
 This IG defines the following minimal requirements for the support of subscriptions for systems conforming to this IG that choose to support subscriptions:
@@ -64,7 +64,6 @@ This IG defines the following minimal requirements for the support of subscripti
 * Servers **SHALL** support both JSON and XML and clients **SHALL** support at least one of these.
 * Client and server **SHALL** support `id-only`, though they can also support other content approaches. 
 >Note: The `id-only` approach means that the id of the Task that was updated will be provided. The client will then perform a read or a query to retrieve the identified record(s) specified in the subscription notification.
-{:.new-content}
 
 
 
@@ -72,13 +71,12 @@ This IG defines the following minimal requirements for the support of subscripti
 For notifications to patients (AEOB Packet subject) the AEOB Packet subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.
 * Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
-{:.new-content}
 
 For notifications to author(s) (providers) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?author=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the provider.
 * Updates to the AEOB Packet **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
-{:.new-content}
 
+<!-- /FHIR-45939 -->
 
 ### Patient Access to AEOBs
 

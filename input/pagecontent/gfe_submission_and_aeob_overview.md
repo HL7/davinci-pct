@@ -20,7 +20,7 @@ Dotted line indicates optional.
 
 3. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
-4. The patient <!-- FHIR-45939 --><span class="bg-success" markdown="1">and provider may receive a notification of availability of the AEOB Packet and </span><!-- /FHIR-45939 -->can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
+4. The patient <!-- FHIR-45939 <span class="bg-success" markdown="1">-->and provider may receive a notification of availability of the AEOB Packet and <!--</span> /FHIR-45939 -->can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 >Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer.
 
@@ -30,23 +30,17 @@ Dotted line indicates optional.
 ### Notifications for AEOB Packet Availability ###
 
 Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
-{:.new-content}
 
 This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subscription.criteria`.
-{:.new-content}
 
 Notifications of AEOB Packet availability should be sent to the intended recipient (patient or provider(s)). 
 For the patients, this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done through creating a compliant [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription.html) that references the [SubscriptionTopic - AEOB Available for Subject Notification](SubscriptionTopic-davinci-pct-aeob-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-notification`.
-{:.new-content}
 
 For the Author(s) (Provider(s)), this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the author (provider) is the `DocumentReference.author`. This may be done through creating a [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription.html) that references the [SubscriptionTopic - AEOB Available for Author Notification](SubscriptionTopic-davinci-pct-aeob-available-author-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification`.
-{:.new-content}
 
 There may be one or more Author for the AEOB and Notifications can be shared directly to all authors through this means or to one Author (Convening Provider/GFE Submitter) who can then share the Patient AEOB with other contributing/co-providers as needed.
-{:.new-content}
 
 The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an AEOB Packet (should be replaced). However, if updates are supported and there is a separate Bundle for the AEOB Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
-{:.new-content}
 
 <!-- /FHIR-45939 -->
 
