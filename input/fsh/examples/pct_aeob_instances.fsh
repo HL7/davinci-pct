@@ -252,9 +252,7 @@ Usage: #example
 
 
 
-////////////////////////////////////////////
-// TODO To Be removed once Document Bundle is fully adopted
-
+/*
 Instance: PCT-AEOB-Bundle-1
 InstanceOf: PCTAEOBBundle
 Description: "PCT AEOB Bundle Example 1"
@@ -283,8 +281,5 @@ Usage: #example
 * entry[gfeBundle].id = "PCT-GFE-Bundle-Inst-1"
 
 
-
-
-
-///////////////////////////////////////////
+*/
 

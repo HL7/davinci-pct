@@ -31,7 +31,7 @@
 <artifact id="ValueSet/AHANUBCPriorityTypeOfAdmissionOrVisitVS" key="ValueSet-AHANUBCPriorityTypeOfAdmissionOrVisitVS" name="NUBC Priority (Type) of Admission or Visit"/>
 <artifact deprecated="true" id="StructureDefinition/outOfNetworkProviderInfo" key="StructureDefinition-outOfNetworkProviderInfo" name="Out Of Network Provider Info"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-adjudication-error" key="StructureDefinition-davinci-pct-aeob-adjudication-error" name="PCT AEOB Adjudication Error"/>
-<artifact id="StructureDefinition/davinci-pct-aeob-bundle" key="StructureDefinition-davinci-pct-aeob-bundle" name="PCT AEOB Bundle"/>
+<artifact deprecated="true" id="StructureDefinition/davinci-pct-aeob-bundle" key="StructureDefinition-davinci-pct-aeob-bundle" name="PCT AEOB Bundle"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-complete" key="StructureDefinition-davinci-pct-aeob-complete" name="PCT AEOB Complete"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-composition" key="StructureDefinition-davinci-pct-aeob-composition" name="PCT AEOB Composition"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-packet" key="StructureDefinition-davinci-pct-aeob-packet" name="PCT AEOB Packet"/>
@@ -60,7 +60,7 @@
 <artifact id="ValueSet/PCTFinancialTypeVS" key="ValueSet-PCTFinancialTypeVS" name="PCT Financial Type Value Set"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-bundle" key="StructureDefinition-davinci-pct-gfe-bundle" name="PCT GFE Bundle"/>
 <artifact id="ValueSet/PCTGFECMSPOS" key="ValueSet-PCTGFECMSPOS" name="PCT GFE CMS Place of Service Value Set"/>
-<artifact id="StructureDefinition/davinci-pct-gfe-collection-bundle" key="StructureDefinition-davinci-pct-gfe-collection-bundle" name="PCT GFE Collection Bundle"/>
+<artifact deprecated="true" id="StructureDefinition/davinci-pct-gfe-collection-bundle" key="StructureDefinition-davinci-pct-gfe-collection-bundle" name="PCT GFE Collection Bundle"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-composition" key="StructureDefinition-davinci-pct-gfe-composition" name="PCT GFE Composition"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-contributor-task" key="StructureDefinition-davinci-pct-gfe-contributor-task" name="PCT GFE Contributor Task"/>
 <artifact id="ValueSet/PCTContributorTaskStatusReasonCodes" key="ValueSet-PCTContributorTaskStatusReasonCodes" name="PCT GFE Contributor Task Status Reason Codes ValueSet"/>
@@ -125,7 +125,7 @@
 <artifact id="ValueSet/PCTBenefitBalanceCategoryVS" key="ValueSet-PCTBenefitBalanceCategoryVS" name="PCT benefitBalance.category codes"/>
 <artifact id="ExplanationOfBenefit/PCT-AEOB-1" key="ExplanationOfBenefit-PCT-AEOB-1" name="PCT-AEOB-1"/>
 <artifact id="OperationOutcome/PCT-AEOB-Adjudication-Error-Example-1" key="OperationOutcome-PCT-AEOB-Adjudication-Error-Example-1" name="PCT-AEOB-Adjudication-Error-Example-1"/>
-<artifact id="Bundle/PCT-AEOB-Bundle-1" key="Bundle-PCT-AEOB-Bundle-1" name="PCT-AEOB-Bundle-1"/>
+<artifact deprecated="true" id="Bundle/PCT-AEOB-Bundle-1" key="Bundle-PCT-AEOB-Bundle-1" name="PCT-AEOB-Bundle-1"/>
 <artifact id="OperationOutcome/PCT-AEOB-Complete-Example-1" key="OperationOutcome-PCT-AEOB-Complete-Example-1" name="PCT-AEOB-Complete-Example-1"/>
 <artifact id="DocumentReference/PCT-AEOB-DocumentReference-1" key="DocumentReference-PCT-AEOB-DocumentReference-1" name="PCT-AEOB-DocumentReference-1"/>
 <artifact id="Bundle/PCT-AEOB-Packet-1" key="Bundle-PCT-AEOB-Packet-1" name="PCT-AEOB-Packet-1"/>
@@ -134,8 +134,6 @@
 <artifact id="Bundle/PCT-GFE-Bundle-Inst-1" key="Bundle-PCT-GFE-Bundle-Inst-1" name="PCT-GFE-Bundle-Inst-1"/>
 <artifact id="Bundle/PCT-GFE-Bundle-Prof-1" key="Bundle-PCT-GFE-Bundle-Prof-1" name="PCT-GFE-Bundle-Prof-1"/>
 <artifact deprecated="true" id="Bundle/PCT-GFE-Collection-Bundle-1" key="Bundle-PCT-GFE-Collection-Bundle-1" name="PCT-GFE-Collection-Bundle-1"/>
-<artifact id="Bundle/PCT-GFE-Collection-Bundle-Inst-1" key="Bundle-PCT-GFE-Collection-Bundle-Inst-1" name="PCT-GFE-Collection-Bundle-Inst-1"/>
-<artifact id="Bundle/PCT-GFE-Collection-Bundle-Prof-1" key="Bundle-PCT-GFE-Collection-Bundle-Prof-1" name="PCT-GFE-Collection-Bundle-Prof-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Task-1" key="Task-PCT-GFE-Contributor-Task-1" name="PCT-GFE-Contributor-Task-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Task-2" key="Task-PCT-GFE-Contributor-Task-2" name="PCT-GFE-Contributor-Task-2"/>
 <artifact id="Bundle/PCT-GFE-Coordination-Bundle-1" key="Bundle-PCT-GFE-Coordination-Bundle-1" name="PCT-GFE-Coordination-Bundle-1"/>

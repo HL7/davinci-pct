@@ -4,7 +4,7 @@ Id: davinci-pct-aeob-packet
 Title: "PCT AEOB Packet"
 Description: "PCT AEOB Packet that contains necessary resources for AEOBs. A document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
-* obeys pct-aeob-bundle-1 and pct-aeob-bundle-2
+* obeys pct-aeob-packet-1 and pct-aeob-packet-2
 
 * identifier 1..1
 * type = #document (exactly)
@@ -64,7 +64,7 @@ Description: "PCT AEOB Packet that contains necessary resources for AEOBs. A doc
 * entry[gfeBundle].resource only PCTGFEBundle or PCTGFEMissingBundle
 
 
-// TODO Add invariant requirement where at least a gfe summay exists
+// TODO Consider adding invariant requirement where at least a gfe summmary exists
 
 
 
@@ -87,13 +87,13 @@ Severity: #error
 
 
 
-Invariant: pct-aeob-bundle-1
+Invariant: pct-aeob-packet-1
 Description: "All references resources SHALL be contained within the Bundle with the exception of the PCT GFE Bundle (referenced from the gfeReference extension in the AEOB), which MAY be present"
 Expression: "Bundle.entry.descendants().reference.distinct().all(resolve().exists())"
 // Expression: "Bundle.entry.resource.descendants().reference.where($this.startsWith('#').not() and $this.startsWith('Bundle').not()).all((%resource.entry.fullUrl.join('|')&'|').contains(($this&'|')))"
 Severity: #error
 
-Invariant: pct-aeob-bundle-2
+Invariant: pct-aeob-packet-2
 Description: "SHALL have at least one entry for a payer organization."
 //Expression: "entry.resource.ofType(Organization).exists(type.coding.code='pay')"
 Expression: "entry.resource.ofType(Organization).where(type.coding.where(code='pay').exists()).exists()"

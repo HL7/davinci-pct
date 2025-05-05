@@ -258,12 +258,12 @@ groups:
     - StructureDefinition/davinci-pct-aeob-adjudication-error
     
 
-  ARCHIVED:
-    name: "DO NOT USE: Archived Resource Profiles"
-    description: These are archived profiles temporarily held during a transition from collection bundles to document bundles.
-    resources:
-    - StructureDefinition/davinci-pct-aeob-bundle
-    - StructureDefinition/davinci-pct-gfe-collection-bundle
+  #ARCHIVED:
+  #  name: "DO NOT USE: Archived Resource Profiles"
+  #  description: These are archived profiles temporarily held during a transition from collection bundles to document bundles.
+  #  resources:
+  #  - StructureDefinition/davinci-pct-aeob-bundle
+  #  - StructureDefinition/davinci-pct-gfe-collection-bundle
 
   Subscriptions:
     name: "Subscriptions"

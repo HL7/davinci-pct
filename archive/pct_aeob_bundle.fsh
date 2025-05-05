@@ -1,3 +1,7 @@
+/* Replaced with AEOB Packet 
+FHIR-49761 - Change the AEOB Bundle to be a document Bundle and add a Document reference to adequately address search and subscriptions
+
+
 Profile: PCTAEOBBundle
 Parent: Bundle
 Id: davinci-pct-aeob-bundle
@@ -27,11 +31,11 @@ Description: "DO NOT USE - (Temporarily archived during transition to a document
     practitioner 0..* MS and
     gfeBundle 0..* MS
 
-/*
+*
 * entry[aeob-summary] ^short = "SHALL have a PCTAdvancedEOBSummary resource"
 * entry[aeob-summary].resource 1..1
 * entry[aeob-summary].resource only PCTAdvancedEOBSummary
-*/
+*
 
 * entry[aeob] ^short = "SHALL have a PCTAdvancedEOB resource"
 * entry[aeob].resource 1..1
@@ -58,4 +62,5 @@ Description: "DO NOT USE - (Temporarily archived during transition to a document
 * entry[gfeBundle].resource only PCTGFEBundle or PCTGFEMissingBundle
 
 
-// TODO Add invatiant requirement where at least a gfe summay exists
+
+*/
