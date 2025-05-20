@@ -14,6 +14,8 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 
 * extension[coverage-kind]
   * valueCode 1..1
+  * valueCode from http://hl7.org/fhir/coverage-kind (required)
+  * valueCode ^short = "insurance | self-pay | other"
 
 * subscriber
 * subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
