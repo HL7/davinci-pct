@@ -35,7 +35,7 @@ CodeSystem: PCTProcedureType
 Title: "PCT Procedure Type"
 Description: "Defining codes for the classification of procedure types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
-* #principal "Pricipal" "Principal procedure information"
+* #principal "Principal" "Principal procedure information"
 * #procedureRequiringAnesthesia  "Surgical procedure requiring anesthesia" "Identifies the surgical procedure requiring anesthesia"
 * #other "Other" "Other procedure information"
 * ^copyright = "This CodeSystem is not copyrighted."
