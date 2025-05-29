@@ -264,4 +264,6 @@ Tasks marked as `completed`, `rejected`, or `entered-in-error` **SHOULD NOT** be
 
 #### Patient Access to GFEs
 
-> Note: Although technically possible, conveying the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the patient via FHIR API is optional and the workflow is contingent upon the Coordination Requester opting to expose the API to the patient. For the self-pay or uninsured patients, the GFEs must be provided to the patient, but this may be done in many ways such as via mail, the patient portal, or via an API. This specification does not currently address requirements for sharing GFE information with patients through an API.
+Providers **MAY** make GFE information available to the patient, regardless of whether there is a need or intent to send it to a payer for an insured patient estimate (AEOB). 
+
+> Note:  Providers may provide GFE information in a number of ways, such as via mail, the patient portal, or via an API specified in this IG. This specification does not currently address requirements for sharing GFE information with patients through an API.
