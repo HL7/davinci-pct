@@ -22,7 +22,7 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier[payerid] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#payerid
 * identifier[payerid].value 1..1
 
-* identifier[naiccode] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#naiccode
+//* identifier[naiccode] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#naiccode
 * identifier[naiccode].system = "urn:oid:2.16.840.1.113883.6.300"
 * identifier[naiccode].value 1..1
 
