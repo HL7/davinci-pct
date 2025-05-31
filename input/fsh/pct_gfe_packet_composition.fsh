@@ -4,6 +4,16 @@ Id: davinci-pct-gfe-composition
 Title: "PCT GFE Composition"
 Description: "PCT GFE Composition that assembles the contents of a GFE (represented by one or more individual GFE Bundles) into a single logical package. This version fo the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
+
+* extension contains
+    GFEServiceLinkingInfo named gfeServiceLinkingInfo 1..1 MS and 
+    RequestOriginationType named requestOriginationType 1..1 MS
+
+* extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information including planned period of service and a GFE linking identifier"    
+
+* extension[requestOriginationType] ^short = "Indicator as to whether the request for estimate originated from a scheduled or unscheduled service."    
+
+
 * identifier 1..
   * system 1..1
   * value 1..1

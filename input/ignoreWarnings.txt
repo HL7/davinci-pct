@@ -130,8 +130,8 @@ INFORMATION: CodeSystem/PCTSupportingInfoType: CodeSystem: Most code systems def
 # The PCTEstimateTypeSummaryCSTemporaryTrialUse Code Systems in this IG currently need some review and validation before it is determined if a new code system is warranted.
 INFORMATION: CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# The PCTGFERequestTaskCSTemporaryTrialUse Code Systems in this IG currently needs some review and validation before it is determined if a new code system is warranted.
-INFORMATION: CodeSystem/PCTGFERequestTaskCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+# The PCTGFERequestTypeCSTemporaryTrialUse Code Systems in this IG currently needs some review and validation before it is determined if a new code system is warranted.
+INFORMATION: CodeSystem/PCTGFERequestTypeCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 # The PCTTaskStatusReasonCSTemporaryTrialUse Code Systems in this IG currently needs some review and validation before it is determined if a new code system is warranted.
 INFORMATION: CodeSystem/PCTTaskStatusReasonCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)

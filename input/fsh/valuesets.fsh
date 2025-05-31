@@ -340,12 +340,12 @@ Description: "Codes allowed for a GFE Contributor-specific service task status"
 * include $HL7TaskStatus#entered-in-error
 
 
-ValueSet: PCTGFERequestTaskTypeVS
-Title: "PCT GFE Request Task Codes ValueSet"
-Description: "Defining codes for defining GFE request types."
+ValueSet: PCTGFERequestTypeVS
+Title: "PCT GFE Request Type Codes ValueSet"
+Description: "Codes for the Good Faith Estimate (GFE) request origination types."
 * ^experimental = false
-* include PCTGFERequestTaskCSTemporaryTrialUse#scheduled-request
-* include PCTGFERequestTaskCSTemporaryTrialUse#nonscheduled-request
+* include PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
+* include PCTGFERequestTypeCSTemporaryTrialUse#nonscheduled-request
 
 ValueSet: PCTCoordinationTaskStatusReasonCodes
 Title: "PCT GFE Request Coordination Task Status Reason Codes ValueSet"

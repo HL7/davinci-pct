@@ -24,6 +24,7 @@ Dotted line indicates optional.
 
 >Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer.
 
+>Note: The timeline that a payer is required to provide an AEOB is expected to depend on when the payer receives the GFE submission from provider/facility. For scheduled services, payers would determine if the request originated from a scheduled service from the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[requestOriginationType].valueCodeableConcept` and use the service dates/time in the  `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod` to determine the start of the service and the according timeframe they have to provide an AEOB. It is allowed for a planned period of service to be provided for unscheduled services. This may be useful for situations where a service is not scheduled, but the time frame could affect the estimate (e.g. the service is planned in a different plan year).
 
 ### Notifications for AEOB Packet Availability ###
 

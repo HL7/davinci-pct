@@ -12,6 +12,19 @@ In addition to the requirements specified in this section, GFE Submitters, and P
 
 One of the primary interaction supported by this IG is submitting a GFE and receiving an AEOB in response. To perform this, a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
+
+For scheduled services the submitting provider **SHALL** include the following in the[GFE  Composition]( StructureDefinition-davinci-pct-gfe-composition.html):
+
+Service dates/time in the `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod`.
+The `Composition.extension[requestOriginationType].valueCodeableConcept` with a code representing a `scheduled-request`.
+Note: This value may already be present if the GFE Packet was created through the [GFE Coordination Workflow](gfe_coordination_overview.html), and the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) was provided a `Task.extension[planned-service-period]` value. If not, the submitting provider is expected to add the appropriate values for a scheduled service.
+ 
+
+To the GFE Composition Profile:
+to the `Composition.extension[gfeServiceLinkingInfo]` description add a requirement that scheduled services **SHALL** have `extension[plannedPeriodOfService].valueDate|valuePeriod` populated
+Add an error severity Invariant that requires a where `extension[plannedPeriodOfService].valueDate|valuePeriod` populated exists if `Composition.extension[requestOriginationType].valueCodeableConcept` has a code representing a `scheduled-request`
+
+
 The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) will be sent as the sole payload of a [$gfe-submit](OperationDefinition-GFE-submit.html) operation, which is based on the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html) (please refer to that page for more details). Note: that page is part of the FHIR R5 current build, but uses no R5 resources; this guide is pre-adopting that HTTP request pattern. The response will be a URL in the Content-Location header for subsequent polling. 
 
 AEOBs will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server to determine the status of the gfe-submit operation. Polling can generate the following responses:

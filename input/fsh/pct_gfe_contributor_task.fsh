@@ -65,7 +65,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 
 * intent = http://hl7.org/fhir/task-intent#order
 
-* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-contributor-task
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-contributor-task
 
 // TODO Supporting Information contained within the bundle. Perhaps guidance on use of reference identifiers?
 //* focus only Reference(PCTGFERequestServiceRequest)

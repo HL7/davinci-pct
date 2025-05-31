@@ -78,7 +78,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * intent = http://hl7.org/fhir/task-intent#order
 * intent ^short = "Order for a Good Faith Estimate (not for services to be rendered)"
 
-* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-coordination-task
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-coordination-task
 
 // TODO !!!!!!!
 
@@ -123,7 +123,7 @@ Add guidance that this may be contained or it may be externals.
 
 * reasonCode 1..1 
 * reasonCode ^short = "scheduled-request | nonscheduled-request"
-* reasonCode from PCTGFERequestTaskTypeVS (required)
+* reasonCode from PCTGFERequestTypeVS (required)
 
 // TODO Supporting Information contained within the bundle. Perhaps guidance on use of reference identifiers?
 //* insurance MS

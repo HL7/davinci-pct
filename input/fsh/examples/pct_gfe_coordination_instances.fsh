@@ -59,11 +59,11 @@ Usage: #example
 //* statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
 * intent = http://hl7.org/fhir/task-intent#order
 
-* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-coordination-task
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-coordination-task
 * requester = Reference(Submitter-Org-1)
 
 
-* reasonCode = PCTGFERequestTaskCSTemporaryTrialUse#scheduled-request
+* reasonCode = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
 * input.type.text = "GFE Information Bundle"
 * input.valueAttachment.contentType = #application/fhir+json
 //* input.valueAttachment.data = ""
@@ -87,7 +87,7 @@ Usage: #example
 //* statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
 * intent = http://hl7.org/fhir/task-intent#order
 
-* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-contributor-task
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-contributor-task
 * requester = Reference(Submitter-Org-1)
 * owner = Reference(Submitter-Org-1)
 
@@ -110,7 +110,7 @@ Usage: #example
 //* statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
 * intent = http://hl7.org/fhir/task-intent#order
 
-* code = PCTGFERequestTaskCSTemporaryTrialUse#gfe-contributor-task
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-contributor-task
 * requester = Reference(Submitter-Org-1)
 * owner = Reference(org1002)
 
@@ -259,6 +259,9 @@ Instance: PCT-GFE-Composition-Inst-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Institutional Example 1"
 Usage: #inline
+
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
+* extension[requestOriginationType].valueCodeableConcept = PCTGFERequestTypeCSTemporaryTrialUse#nonscheduled-request
 * identifier[+].system = "http://www.example.org/identifiers/composition"
 * identifier[=].value = "019283476"
 * status = #final
@@ -287,6 +290,9 @@ Instance: PCT-GFE-Composition-Prof-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Professional Example 1"
 Usage: #inline
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008003"
+* extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
+* extension[requestOriginationType].valueCodeableConcept = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
 * identifier[+].system = "http://www.example.org/identifiers/composition"
 * identifier[=].value = "019283477"
 * status = #final

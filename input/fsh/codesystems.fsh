@@ -180,8 +180,8 @@ Description: "Defining the code for a estimate (GFE or AEOB) type summary.  This
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
-CodeSystem: PCTGFERequestTaskCSTemporaryTrialUse
-Title: "PCT GFE Request Task Codes Code System"
+CodeSystem: PCTGFERequestTypeCSTemporaryTrialUse
+Title: "PCT GFE Request Type Codes Code System"
 Description: "Codes for defining GFE request types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
