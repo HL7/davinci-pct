@@ -21,7 +21,7 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 
 //* identifier contains NPI 0..1 MS
 * identifier[NPI] 0..1 MS
-* identifier[NPI] ^patternIdentifier.type  = $V2-0203#NPI 
+//* identifier[NPI] ^patternIdentifier.type  = $V2-0203#NPI 
 * identifier[NPI].value 1..1 MS
 * identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 

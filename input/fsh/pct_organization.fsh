@@ -29,7 +29,7 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier[tin] ^patternIdentifier.type = $V2-0203#TAX 
 * identifier[tin] ^short = "Tax ID Number"
 
-* identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI
+//* identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI
 //* identifier[NPI].value 1..1
 //* identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
