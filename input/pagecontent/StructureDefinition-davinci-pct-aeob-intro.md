@@ -18,6 +18,25 @@
  The state of a member’s benefits and accumulators for a given benefit period or the benefit period in effect may change between the date that an estimate is generated (.created) and when the services being estimated are actually rendered (e.g., the actual date of service), resulting in a difference between the estimated vs. actual cost to the member.
  </li>
 
+<li class="x_MsoNormal">The .processnote data element is used to communicate disclaimers and specific information for this estimate to the patient. Processnote should include notes to meet legislative, legal, or otherwise required disclaimers. Notes should be clear and as specific to the situation at hand as possible including any additional assumptions and requirements. Examples of the types of information payers can use the processnote for include:
+<ul>
+<li>Disclaimer that the information provided in the notification is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) and is subject to change.</li>
+
+<li>Disclaimer that that coverage for such item or service is subject to a medical management technique, like prior authorization.</li>
+
+<li>Additional information about Prior Authorization, any assumptions made such as that the estimate is calculated assuming any applicable prior auth is approved and that the estimate may be higher if approval conditions are not met. If available, Payers could include Coverage Requirements Discovery (CRD) response information for improved patient transparency and information sharing.</li>
+
+<li>Unique assumptions about diagnosis code(s) impact on estimate accuracy, e.g. Diagnosis code was not specified. This estimate is based on assumption that this service is diagnostic and thus the patient responsibility may be higher than if the diagnosis was for preventative services.</li>
+
+<li>Additional information indicating that the AEOB contains one or more out of network providers and thus patient responsibility may be higher than if an in-network provider was chosen.</li>
+</ul>
+
+<li class="x_MsoNormal">extension:outOfNetworkProviderInfo: outOfNetworkProviderInfo is an extension to provide a payer link enabling the patient to find providers that are in-network for the requested services.</li>
+
+<li class="x_MsoNormal">adjudication: billingnetworkstatus, renderingnetworkstatus, benefitpaymentstatus, and adjustmentreason work together to indicate if the item or service is considered in or out of network for purposes of creating the estimate and thus indicating as such for providing the patient with relevant .processnote and outofnetworkproviderinfo.</li>
+
+</ul>
+
 <h4 class="x_MsoNormal">Examples</h4>
 <h5 class="x_MsoNormal">Example 1 – Estimation based on current benefit period</h5>
 <ul>
