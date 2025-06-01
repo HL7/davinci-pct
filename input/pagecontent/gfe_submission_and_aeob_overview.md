@@ -68,10 +68,13 @@ _Figure 2. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)_
 Figure 3 shows an [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) created by a payer in response to a GFE-submit operation.
 The [AEOB Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) (i.e., an exact copy of the originally submitted GFE).
 
+The [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) includes, at a minimum, the full estimation based on the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) received in the GFE submission. If the payer or intermediary supports linking across submissions, the [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) may include estimates across linked GFE submissions (e.g. through a [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) [GFE Service Linking Info](StructureDefinition-gfeServiceLinkingInfo.html)).
 
 ![Figure 3. A AEOB Packet](AEOB_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 3. A [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)_
+
+The [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) represents the full summary of the estimation including costs and benefits, of all of the Advanced EOB data contained within an Advanced EOB Bundle.
 
 
 ### Technical Workflows ###

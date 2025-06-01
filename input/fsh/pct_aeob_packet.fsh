@@ -2,7 +2,7 @@ Profile: PCTAEOBPacket
 Parent: Bundle
 Id: davinci-pct-aeob-packet
 Title: "PCT AEOB Packet"
-Description: "PCT AEOB Packet that contains necessary resources for AEOBs. A document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
+Description: "PCT AEOB Packet that contains necessary resources for one or more an AEOBs.  Organizations for both the payer and provider SHALL be included.   An AEOB Summary SHALL be included and reflect the total estimate for the patient, including all AEOB resources within the Bundle. This version of the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
 * obeys pct-aeob-packet-1 and pct-aeob-packet-2
 

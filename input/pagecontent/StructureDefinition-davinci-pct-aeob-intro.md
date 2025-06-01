@@ -10,7 +10,10 @@
 <li>If not included, it is understood that the estimate was based on the member’s benefits and accumulators for the current benefit period/plan year, as of the .created date and time.
 </li>
 </ul>
+
 <li class="x_MsoNormal">.total.amount:  Eligible amount = submitted amount - the noncovered amount - discount.  The subscriber pays the member liability = deductible + coinsurance + copay + noncovered (if applicable). The eligible amount - the member liability is the potential payer's payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient)</li>
+
+<li class="x_MsoNormal">.total.amount and .benefitbalance work together to reflect the expected member’s costs across all the Advanced EOB resources in this AEOB Packet. This means that all accumulations to deductible, out-of-pocket maximum, and other limits are collectively reflective of all GFEs in the GFE Packet, giving the Patient a comprehensive estimate for all expected service(s) or item(s) from one or more providers.</li>
 
 <li class="x_MsoNormal">.benefitbalance: benefit.balance shows the estimated balance by benefit category as if the expected item(s) or service(s) included in this estimate were applied. The .allowed value would reflect current allowed total limits for the specific category, unit, and term (e.g. Physical Therapy, Individual, annual.) The .used and .remaining would reflect current known balance plus or minus, respectively, the current estimate's expected item(s) or service(s) impact on the patient's benefit balance.</li>
 
