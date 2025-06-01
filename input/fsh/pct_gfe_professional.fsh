@@ -138,11 +138,11 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * careTeam contains
    rendering 0..* and
    referring 0..1
-* careTeam[rendering].role = PCTCareTeamRole#rendering
+* careTeam[rendering].role = $CARETEAMROLECS#rendering
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
 * careTeam[rendering].qualification 1..1
 * careTeam[rendering].qualification ^short = "Practitioner credential or specialization - must provide a taxonomy code for the Professional case"
-* careTeam[referring].role = PCTCareTeamRole#referring
+* careTeam[referring].role = $CARETEAMROLECS#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
 
 * insert SupportingInfoSlicing

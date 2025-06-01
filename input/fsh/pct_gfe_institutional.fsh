@@ -169,17 +169,17 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
    operating 0..2 MS and
    rendering 0..1 MS and
    referring 0..1 MS
-* careTeam[attending].role = PCTCareTeamRole#attending
+* careTeam[attending].role = $CARETEAMROLECS#attending
 //* careTeam[attending] ^short = "May be used for the Institutional case only"
 * careTeam[attending].provider only Reference(PCTPractitioner)
 * careTeam[attending].qualification 1..1 
-* careTeam[operating].role = PCTCareTeamRole#operating
+* careTeam[operating].role = $CARETEAMROLECS#operating
 * careTeam[operating].provider only Reference(PCTPractitioner)
 //* careTeam[operating] ^short = "May be used for the Institutional case only"
-* careTeam[rendering].role = PCTCareTeamRole#rendering
+* careTeam[rendering].role = $CARETEAMROLECS#rendering
 * careTeam[rendering].provider only Reference(PCTPractitioner)
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
-* careTeam[referring].role = PCTCareTeamRole#referring
+* careTeam[referring].role = $CARETEAMROLECS#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
 
 * insert SupportingInfoSlicing

@@ -164,7 +164,7 @@ Description: "Codes to specify the the functional roles of the care team members
 //* $CARETEAMROLECS#primary "Primary provider"
 //* codes from system PCTCareTeamRole
 * codes from system $CARETEAMROLECS
-* http://terminology.hl7.org/CodeSystem/claimcareteamrole#supervisor "Supervisor"
+//* http://terminology.hl7.org/CodeSystem/claimcareteamrole#supervisor "Supervisor"
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
