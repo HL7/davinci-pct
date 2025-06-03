@@ -38,7 +38,6 @@
 
 <li class="x_MsoNormal">adjudication: billingnetworkstatus, renderingnetworkstatus, benefitpaymentstatus, and adjustmentreason work together to indicate if the item or service is considered in or out of network for purposes of creating the estimate and thus indicating as such for providing the patient with relevant .processnote and outofnetworkproviderinfo.</li>
 
-</ul>
 
 <h4 class="x_MsoNormal">Examples</h4>
 <h5 class="x_MsoNormal">Example 1 – Estimation based on current benefit period</h5>
