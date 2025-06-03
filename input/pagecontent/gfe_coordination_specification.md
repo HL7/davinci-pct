@@ -227,7 +227,7 @@ The [$gfe-retrieve operation](OperationDefinition-GFE-retrieve.html) **SHALL** r
 The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** consist of:
 
 - [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** include the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) as the first resource
-    - If there is a date in [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) 1Task.extension[planned-service-period]1, this date/time **SHALL** be placed into the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valuePeriod`
+    - If there is a date in [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) `Task.extension[planned-service-period]`, this date/time **SHALL** be placed into the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valuePeriod`
     - The code in the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) `Task.reasonCode` **SHALL** be placed into the [GFE  Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[requestOriginationType].valueCodeableConcept`
 
 - The Patient Resource extracted from the [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) associated with the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)
