@@ -76,7 +76,7 @@ Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type
 * #8 "8"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
-
+/*
 CodeSystem: PCTCareTeamRole
 Title: "PCT Care Team Role"
 Description: "PCT code system for defining the functional roles of the care team members. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
@@ -89,7 +89,7 @@ Description: "PCT code system for defining the functional roles of the care team
 * #rendering "Rendering provider" "The rendering/performing provider."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
-
+*/
 CodeSystem: PCTOrgContactPurposeType
 Title: "PCT Organization Contact Purpose Type Code System"
 Description: "Organization Contact Purpose Type Code System. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
@@ -180,8 +180,8 @@ Description: "Defining the code for a estimate (GFE or AEOB) type summary.  This
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
-CodeSystem: PCTGFERequestTaskCSTemporaryTrialUse
-Title: "PCT GFE Request Task Codes Code System"
+CodeSystem: PCTGFERequestTypeCSTemporaryTrialUse
+Title: "PCT GFE Request Type Codes Code System"
 Description: "Codes for defining GFE request types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false

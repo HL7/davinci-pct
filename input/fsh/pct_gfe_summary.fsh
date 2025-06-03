@@ -82,7 +82,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * diagnosis[principal].diagnosis[x] only CodeableConcept
 * diagnosis[principal].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[principal] ^short = "Principal Diagnosis - Must Support means the information source SHALL be capable of populating and SHALL populate if available and permitted."
-* diagnosis[principal] ^comment = "If the Principal Diagnosis code is known, it is important that it be shared in the GFE, particularly when the GFE is being sent to a payer for an insured patient. Payers very often need the diagnosis to be able to provide an estimate. Without the diagnosis, payers may assume the service is diagnostic and thus the patient responsibility may be higher than the diagnosis, such as for preventative services, would otherwise indicate. It is understood that in certain situations, such as scheduled services or GFE requests prior to orders, diagnosis is not needed or may not yet be known. However, when it is known, it is important that this information be shared to ensure the best possible estimate is provided to the patient."
+* diagnosis[principal] ^comment = "If the Principal Diagnosis code is known, it is important that it be shared in the GFE, particularly when the GFE is being sent to a payer for an insured patient. Payers very often need the diagnosis to be able to provide an estimate. Without the diagnosis, payers may assume the service is diagnostic and thus the patient responsibility may be higher or not covered at all than the diagnosis, such as for preventative services, would otherwise indicate. It is understood that in certain situations, such as scheduled services or GFE requests prior to orders, diagnosis is not needed or may not yet be known. However, when it is known, it is important that this information be shared to ensure the best possible estimate is provided to the patient."
 
 * diagnosis[admitting].type 1..1
 * diagnosis[admitting].type = $DIAGTYPECS#admitting
@@ -159,17 +159,17 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
    operating 0..2 MS and
    rendering 0..1 MS and
    referring 0..1 MS
-* careTeam[attending].role = PCTCareTeamRole#attending
+* careTeam[attending].role = $CARETEAMROLECS#attending
 //* careTeam[attending] ^short = "May be used for the Institutional case only"
 * careTeam[attending].provider only Reference(PCTPractitioner)
 * careTeam[attending].qualification 1..1 
-* careTeam[operating].role = PCTCareTeamRole#operating
+* careTeam[operating].role = $CARETEAMROLECS#operating
 * careTeam[operating].provider only Reference(PCTPractitioner)
 //* careTeam[operating] ^short = "May be used for the Institutional case only"
-* careTeam[rendering].role = PCTCareTeamRole#rendering
+* careTeam[rendering].role = $CARETEAMROLECS#rendering
 * careTeam[rendering].provider only Reference(PCTPractitioner)
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
-* careTeam[referring].role = PCTCareTeamRole#referring
+* careTeam[referring].role = $CARETEAMROLECS#referring
 // * careTeam[referring] ^short = "May be used for the Institutional/Professional case"
 
 

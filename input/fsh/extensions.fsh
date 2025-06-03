@@ -41,6 +41,8 @@ Id: gfeServiceLinkingInfo
 Description: "This extension is used to provide the GFE Service Linking Information. This allows implementers to have the same identifier on multiple GFEs that are part of one period of care's services. This would be needed for some of the workflow options that businesses may decide to use."
 * ^context[+].type = #element
 * ^context[=].expression = "Claim"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition"
 * extension contains
     plannedPeriodOfService 0..* MS and
     linkingIdentifier 0..* MS
@@ -62,6 +64,15 @@ Description: "This extension is used to provide the Referral Number."
 * value[x] only string
 
 
+
+Extension: RequestOriginationType
+Id: requestOriginationType
+Description: "Indicator as to whether the request for estimate originated from a scheduled or unscheduled service."
+* ^context[+].type = #element
+* ^context[=].expression = "Composition"
+* value[x] 1..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from PCTGFERequestTypeVS (required)
 
 Extension: ProviderEventMethodology
 Id: providerEventMethodology

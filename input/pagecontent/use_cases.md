@@ -20,6 +20,8 @@ Note: the term "convening provider" is being used to be consistent with the lang
 
 - **Co-Provider** - A Practitioner, Organization, or Facility receives a request for a GFE from a convening provider involving services or items that relate to the fulfillment of the original request and submits the GFE to the Convening Provider in response to that request.
 
+- **GFE Submitter** - Any provider and/or facility that sends a Good Faith Estimate (GFE) to a payer to facilitate the creation of an Advanced Explanation of Benefits (AEOB).|
+
 - **Payer** - A group health plan, or a health insurance issuer offering group or individual health insurance coverage.
 
 

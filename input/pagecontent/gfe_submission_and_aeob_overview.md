@@ -20,35 +20,26 @@ Dotted line indicates optional.
 
 3. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
-4. The patient <!-- FHIR-45939 --><span class="bg-success" markdown="1">and provider may receive a notification of availability of the AEOB Packet and </span><!-- /FHIR-45939 -->can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
+4. The patient and provider may receive a notification of availability of the AEOB Packet and can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 >Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer.
 
-
-<!-- FHIR-45939 -->
+>Note: The timeline that a payer is required to provide an AEOB is expected to depend on when the payer receives the GFE submission from provider/facility. For scheduled services, payers would determine if the request originated from a scheduled service from the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[requestOriginationType].valueCodeableConcept` and use the service dates/time in the  `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod` to determine the start of the service and the according timeframe they have to provide an AEOB. It is allowed for a planned period of service to be provided for unscheduled services. This may be useful for situations where a service is not scheduled, but the time frame could affect the estimate (e.g. the service is planned in a different plan year).
 
 ### Notifications for AEOB Packet Availability ###
 
 Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
-{:.new-content}
 
-This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subscription.criteria`.
-{:.new-content}
+This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. Support for the FHIR Subscriptions framework is new in this version of the PCT Implementation Guide and is currently optional. However, FHIR Subscriptions are likely be required in a future version of this specification since it offers significant performance benefits. That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subscription.criteria`.
 
 Notifications of AEOB Packet availability should be sent to the intended recipient (patient or provider(s)). 
 For the patients, this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done through creating a compliant [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription.html) that references the [SubscriptionTopic - AEOB Available for Subject Notification](SubscriptionTopic-davinci-pct-aeob-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-notification`.
-{:.new-content}
 
 For the Author(s) (Provider(s)), this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the author (provider) is the `DocumentReference.author`. This may be done through creating a [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription.html) that references the [SubscriptionTopic - AEOB Available for Author Notification](SubscriptionTopic-davinci-pct-aeob-available-author-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification`.
-{:.new-content}
 
 There may be one or more Author for the AEOB and Notifications can be shared directly to all authors through this means or to one Author (Convening Provider/GFE Submitter) who can then share the Patient AEOB with other contributing/co-providers as needed.
-{:.new-content}
 
 The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an AEOB Packet (should be replaced). However, if updates are supported and there is a separate Bundle for the AEOB Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
-{:.new-content}
-
-<!-- /FHIR-45939 -->
 
 ### Data Structures ###
 
@@ -77,10 +68,13 @@ _Figure 2. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)_
 Figure 3 shows an [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) created by a payer in response to a GFE-submit operation.
 The [AEOB Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** contain one or more AEOBs. Each AEOB **SHALL** contain a reference to the original [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) (i.e., an exact copy of the originally submitted GFE).
 
+The [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) includes, at a minimum, the full estimation based on the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) received in the GFE submission. If the payer or intermediary supports linking across submissions, the [AEOB Packet](StructureDefinition-davinci-pct-AEOB-packet.html) may include estimates across linked GFE submissions (e.g. through a [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) [GFE Service Linking Info](StructureDefinition-gfeServiceLinkingInfo.html)).
 
 ![Figure 3. A AEOB Packet](AEOB_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 _Figure 3. A [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)_
+
+The [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) represents the full summary of the estimation including costs and benefits, of all of the Advanced EOB data contained within an Advanced EOB Bundle.
 
 
 ### Technical Workflows ###

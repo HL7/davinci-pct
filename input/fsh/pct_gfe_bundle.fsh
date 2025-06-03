@@ -8,7 +8,7 @@ Description: "PCT GFE Bundle that contains all resources for a Good faith estima
 /* Remove GFE Submitter
 * obeys pct-gfe-bundle-1 and pct-gfe-bundle-2 and pct-gfe-bundle-3
 */
-* obeys pct-gfe-bundle-1 and pct-gfe-bundle-2
+* obeys pct-gfe-bundle-1 and pct-gfe-bundle-2 and pct-gfe-bundle-3
 
 * identifier 1..1
 * type = #collection (exactly)
@@ -39,6 +39,7 @@ Description: "PCT GFE Bundle that contains all resources for a Good faith estima
 //* entry[gfe-summary].resource only PCTGFESummary
 
 * entry[gfe] ^short = "SHALL have one or more PCTGFEProfessional or PCTGFEInstitutional resource(s)"
+* entry[gfe] ^condition = "pct-gfe-bundle-3"
 * entry[gfe].resource 1..1 
 * entry[gfe].resource only PCTGFESummary or PCTGFEProfessional or PCTGFEInstitutional
 
@@ -69,6 +70,13 @@ Description: "PCT GFE Bundle that contains all resources for a Good faith estima
 * entry[attachment] ^short = "MAY have attachments as DocumentReference resource(s)"
 * entry[attachment].resource 1..1 
 * entry[attachment].resource only DocumentReference
+
+
+Invariant: pct-gfe-bundle-3
+Description: "The first entry SHALL be an estimate-summary GFE"
+Expression: "Bundle.entry[0].resource.ofType(Claim).type.coding.where(code='estimate-summary' and system='http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse').exists()"
+Severity: #error
+
 
 /* Remove GFE Submitter TODO JIRA Need a ticket for removal of GFE Submitter
 Invariant: pct-gfe-bundle-3

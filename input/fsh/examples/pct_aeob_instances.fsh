@@ -242,7 +242,7 @@ Usage: #example
 * status = #current
 * docStatus = #final
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
-* category = PCTDocumentTypeTemporaryTrialUse#estimate
+* category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 * date = "2025-01-10T11:01:00+05:00"

@@ -12,7 +12,21 @@ In addition to the requirements specified in this section, GFE Submitters, and P
 
 One of the primary interaction supported by this IG is submitting a GFE and receiving an AEOB in response. To perform this, a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
-The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) will be sent as the sole payload of a [$gfe-submit](OperationDefinition-GFE-submit.html) operation, which is based on the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html) (please refer to that page for more details). Note: that page is part of the FHIR R5 current build, but uses no R5 resources; this guide is pre-adopting that HTTP request pattern. The response will be a URL in the Content-Location header for subsequent polling. 
+
+For scheduled services the submitting provider **SHALL** include the following in the[GFE  Composition]( StructureDefinition-davinci-pct-gfe-composition.html):
+
+Service dates/time in the `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod`.
+The `Composition.extension[requestOriginationType].valueCodeableConcept` with a code representing a `scheduled-request`.
+>Note: This value may already be present if the GFE Packet was created through the [GFE Coordination Workflow](gfe_coordination_overview.html), and the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) was provided a `Task.extension[planned-service-period]` value. If not, the submitting provider is expected to add the appropriate values for a scheduled service.
+ 
+
+To the GFE Composition Profile:
+to the `Composition.extension[gfeServiceLinkingInfo]` description add a requirement that scheduled services **SHALL** have `extension[plannedPeriodOfService].valueDate|valuePeriod` populated
+Add an error severity Invariant that requires a where `extension[plannedPeriodOfService].valueDate|valuePeriod` populated exists if `Composition.extension[requestOriginationType].valueCodeableConcept` has a code representing a `scheduled-request`
+
+
+The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) will be sent as the sole payload of a [$gfe-submit](OperationDefinition-GFE-submit.html) operation, which is based on the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html) (please refer to that page for more details). 
+>Note: that page is part of the FHIR R5 current build, but uses no R5 resources; this guide is pre-adopting that HTTP request pattern. The response will be a URL in the Content-Location header for subsequent polling. 
 
 AEOBs will often not be complete and the calling client (or other interested systems - e.g., patient or submitting provider system) will need to periodically poll the payer server to determine the status of the gfe-submit operation. Polling can generate the following responses:
 
@@ -44,6 +58,9 @@ All resources **SHALL** comply with their respective profiles. FHIR elements not
 This IG treats everything that happens beyond the defined operations endpoint receiving the FHIR bundle as a black box. This black box includes any business associates, clearinghouses, payers, contracted review entities, and other intermediaries that may be involved in the AEOB request and response. The black box ensures that any other requirements are met and to perform all processing within the allowed time frame.
 
 #### AEOB Response
+
+The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** include, at a minimum, the full estimation based on the GFE Packet received in the GFE submission. Optionally, it may include estimates across linked GFE submissions (e.g. through a [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) [GFE Service Linking Info](StructureDefinition-gfeServiceLinkingInfo.html) if the payer or intermediary supports linking across submissions).
+
 Just like the AEOB request, additional Bundle entries must be present for all resources referenced by the AEOB response or descendent references. When converting additional Bundle entries, the conversion process **SHALL** ensure that only one resource is created for a given combination of content, e.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. When echoing back resources that are in the AEOB request, the system **SHALL** ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
 
 It is possible that the incoming Bundle cannot be processed due to validation errors or other non-business-errors. In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB response will be returned.
@@ -53,8 +70,7 @@ It is possible that the incoming Bundle cannot be processed due to validation er
 
 #### General Requirements for Notifications of AEOB Availability ####
 Notifications may take the form of FHIR Subscription (as defined in this IG), unsolicited notification, messaging or other method.
-Payers **SHALL** be able to notify patients when an AEOB Packet is made available. Payers **MAY** be able to notify related GFE author(s) when an AEOB Packet is made available.
-{:.new-content}
+Payers **SHALL** be able to notify patients when an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is made available. Payers **MAY** be able to notify related GFE author(s) when an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is made available.
 
 Implementers **MAY** support the R4 Subscriptions referenced in the Subscriptions for R5 Backport Implementation Guide. 
 This IG defines the following minimal requirements for the support of subscriptions for systems conforming to this IG that choose to support subscriptions:
@@ -64,20 +80,16 @@ This IG defines the following minimal requirements for the support of subscripti
 * Servers **SHALL** support both JSON and XML and clients **SHALL** support at least one of these.
 * Client and server **SHALL** support `id-only`, though they can also support other content approaches. 
 >Note: The `id-only` approach means that the id of the Task that was updated will be provided. The client will then perform a read or a query to retrieve the identified record(s) specified in the subscription notification.
-{:.new-content}
-
 
 
 #### Requirements for AEOB Packet Availability Subscriptions ####
-For notifications to patients (AEOB Packet subject) the AEOB Packet subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription) and meet the following requirements:
+For notifications to patients (AEOB Packet `subject`) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.
 * Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
-{:.new-content}
 
 For notifications to author(s) (providers) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?author=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the provider.
-* Updates to the AEOB Packet **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
-{:.new-content}
+* Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
 
 
 ### Patient Access to AEOBs

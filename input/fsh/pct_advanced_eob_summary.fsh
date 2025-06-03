@@ -2,7 +2,7 @@ Profile: PCTAdvancedEOBSummary
 Parent: ExplanationOfBenefit
 Id: davinci-pct-aeob-summary
 Title: "PCT Advanced EOB Summary"
-Description: "This profile is used for exchanging a summary of Explanation of Benefit (EoB) information, including costs and benefits, of all of the Advanced EoB data contained within an Advance EoB Bundle."
+Description: "This profile is used for exchanging a summary of Advanced Explanation of Benefit (AEOB) information, including costs and benefits, of all of the Advanced EOB data contained within an AEOB Packet."
 * insert TrialUseArtifact1
 
 /* 
