@@ -270,19 +270,19 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 
 Invariant: pct-aeob-1
-Description: "Institutional EOB:  SHALL have serviceDescription at the item or header level (can be at both locations)"
+Description: "Advanced EOB:  SHALL have serviceDescription at the item or header level (can be at both locations)"
 Expression: "extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists() or item.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/serviceDescription').exists()"
 Severity: #error
 
 
 Invariant: pct-aeob-2
-Description: "Institutional EOB:  SHALL have adjudication[submitted] at the item or header level (can be at both locations)"
+Description: "Advanced EOB:  SHALL have adjudication[submitted] at the item or header level (can be at both locations)"
 //Expression: "adjudication.where(category.coding.code='submitted').exists() or item.adjudication.where(category.coding.code='submitted').exists()"
 Expression: "adjudication.where(category.coding.where(code='submitted').exists()).exists() or item.adjudication.where(category.coding.where(code='submitted').exists()).exists()"
 Severity: #error
 
 Invariant: pct-aeob-3
-Description: "Institutional EOB:  SHALL have adjudication[memberliability] at the item or header level (can be at both locations)"
+Description: "Advanced EOB:  SHALL have adjudication[memberliability] at the item or header level (can be at both locations)"
 Expression: "adjudication.where(category.coding.where(code='memberliability').exists()).exists() or item.adjudication.where(category.coding.where(code='memberliability').exists()).exists()"
 //Expression: "adjudication.where(category.coding.code='memberliability').exists() or item.adjudication.where(category.coding.code='memberliability').exists()"
 //Expression: "adjudication.where(category.where(coding.code='memberliability')).exists() or item.adjudication.where(category.where(coding.code='memberliability')).exists()"
