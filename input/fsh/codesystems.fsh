@@ -128,7 +128,7 @@ Description: "Defining codes for types of identifiers. This CodeSystem is curren
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 * ^caseSensitive = true
-* #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
+//* #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 
 CodeSystem: PCTNetworkStatusCS

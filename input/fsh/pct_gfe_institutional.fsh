@@ -9,14 +9,14 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.description = "Slice based on $this value"
 * identifier contains
-   PLAC 1..1 and
-   INTER 0..*
+   PLAC 1..1 //and
+//   INTER 0..*
 * identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1
 * identifier[PLAC] ^short = "Provider Assigned Identifier for GFE Claim"
-* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
-* identifier[INTER] ^short = "Intermediary System Identifier"
+//* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
+//* identifier[INTER] ^short = "Intermediary System Identifier"
 
 //// Profile entension elements ////
 /* Remove GFE Submitter

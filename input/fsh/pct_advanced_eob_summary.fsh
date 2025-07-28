@@ -19,12 +19,12 @@ Questions
 * extension contains ServiceDescription named serviceDescription 0..1 MS
 * extension contains OutOfNetworkProviderInfo named outOfNetworkProviderInfo 0..1 MS
 
-* insert IdentifierSlicing
+/* insert IdentifierSlicing
 * identifier contains 
 	INTER 0..* 
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
-
+*/
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary
 * subType 0..0
 * use = $CLAIMUSECS#predetermination "predetermination"

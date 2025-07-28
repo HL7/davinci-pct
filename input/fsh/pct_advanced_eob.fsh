@@ -14,10 +14,10 @@ Description: "The No Surprises Act requires that group health plans and insurers
 
 * insert IdentifierSlicing
 * identifier contains 
-	INTER 0..* and 
+//	INTER 0..* and 
 	uniqueclaimid 1..1 
-* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
-* identifier[INTER] ^short = "Intermediary System Identifier"
+//* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
+//* identifier[INTER] ^short = "Intermediary System Identifier"
 * identifier[uniqueclaimid] ^short = "Unique Claim Identifier"
 * identifier[uniqueclaimid].type = PCTIdentifierType#uc "Unique Claim ID"
 * identifier[uniqueclaimid] ^short = "Unique Claim ID"

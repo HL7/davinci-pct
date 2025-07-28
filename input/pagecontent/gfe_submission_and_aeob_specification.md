@@ -75,7 +75,7 @@ Payers **SHALL** be able to notify patients when an [AEOB Packet](StructureDefin
 Implementers **MAY** support the R4 Subscriptions referenced in the Subscriptions for R5 Backport Implementation Guide. 
 This IG defines the following minimal requirements for the support of subscriptions for systems conforming to this IG that choose to support subscriptions:
 * Servers supporting subscriptions **SHALL** expose this as part of the Server's CapabilityStatement
-* Support for subscription topic discovery is not required, however, the subscription topic canonical urls that show up in the `Subscription.criteria`for the subscription topics supported **SHALL** be used. Other types of Subscriptions are allowed.
+* Support for subscription topic discovery is not required, however, the subscription topic canonical urls that show up in the `Subscription.criteria` for the subscription topics supported **SHALL** be used. Other types of Subscriptions are allowed.
 * Servers **SHOULD** support rest-hook and **MAY** support websocket, email, sms, message or other channels
 * Servers **SHALL** support both JSON and XML and clients **SHALL** support at least one of these.
 * Client and server **SHALL** support `id-only`, though they can also support other content approaches. 

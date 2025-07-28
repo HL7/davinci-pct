@@ -5,7 +5,7 @@ Title: "PCT Good Faith Estimate  Summary"
 //Description: "This profile is used for exchanging a summary of Explanation of Benefit (EoB) information, including costs and benefits, of all of the Advanced EoB data contained within an Advance EoB Bundle."
 Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs associated with a set of Good Faith Estimate Claims for a single Period of Care."
 * insert TrialUseArtifact1
-* identifier ^slicing.discriminator.path = "type"
+/** identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.description = "Slice based on $this value"
@@ -13,7 +13,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
    INTER 0..*
 * identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 * identifier[INTER] ^short = "Intermediary System Identifier"
-
+*/
 * extension contains GFEDisclaimer named gfeDisclaimer 0..* MS and
                      ServiceDescription named serviceDescription 0..1 MS
 * extension[gfeDisclaimer].value[x] only string
