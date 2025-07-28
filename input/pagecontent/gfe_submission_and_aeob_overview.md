@@ -14,7 +14,7 @@ Dotted line indicates optional.
 
 **GFE Submission and AEOB Diagram Steps (High Level View)**
 
-1. A patient schedules a service which triggers the composition of a collection of one or more GFEs. Note: The composition of the collection of GFEs is currently not in scope for this IG.
+1. A patient schedules a service which triggers the composition of a collection of one or more GFEs.
 
 2. The collection of GFEs in the form of a FHIR resource bundle ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation.
 
@@ -115,7 +115,7 @@ The individual steps from the provider and patient perspective are detailed in t
 
 #### Provider Perspective: Submitting a GFE and Polling for a Completed AEOB
 
-A patient schedules a service and this triggers the composition of a collection of one or more GFEs, which the provider then submits to the payer for processing. Note: The composition of the collection of GFEs is currently not in scope for this guide.
+A patient schedules a service and this triggers the composition of a collection of one or more GFEs, which the provider then submits to the payer for processing.
 
 ![Provider Perspective](PCTWorkflowProvider.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
