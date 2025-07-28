@@ -82,6 +82,8 @@ This IG defines the following minimal requirements for the support of subscripti
 >Note: The `id-only` approach means that the id of the Task that was updated will be provided. The client will then perform a read or a query to retrieve the identified record(s) specified in the subscription notification.
 
 
+To support the access and ability to provide notifications appropriately, an AEOB Packet Document Reference and PCT AEOB Composition **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the AEOB Packet Document Reference `documentReferece.status` and PCT AEOB Composition `Composition.status` **SHALL** be set to `entered-in-error`
+
 #### Requirements for AEOB Packet Availability Subscriptions ####
 For notifications to patients (AEOB Packet `subject`) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.

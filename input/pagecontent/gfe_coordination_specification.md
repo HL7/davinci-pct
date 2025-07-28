@@ -180,6 +180,7 @@ For notifications to authors (GFE Contributors) the GFE Packet subscription **SH
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?author=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the GFE Contributor.
 * Updates to the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** result in an update to the [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) in order to trigger a notification. 
 
+To support the access and ability to provide notifications appropriately, a GFE Packet DocumentReference and PCT GFE Composition **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the GFE Packet DocumentReference `documentReferece.status` and PCT GFE Composition `Composition.status` **SHALL** be set to `entered-in-error`.
 
 #### Searching for and Retrieving Tasks
 Both GFE Coordination Requesters and GFE Contributors need to be able to search for Tasks related to their role in the GFE Coordination workflow. Searching requirements are detailed the CapabilityStatements in this guide and **SHALL** be followed for a system to claim conformance to this guide.
