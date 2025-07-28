@@ -5,7 +5,7 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 * ^caseSensitive = true
 * #ETIN "Electronic Transmitter Identification Number" "Electronic Transmitter Identification Number"
 * #payerid "Payer ID" "Payer ID used in HIPAA covered claims submission transactions"
-* #naiccode "NAIC Code" "An identifier assigned to licensed and authorized insurance companies by the National Association of Insurance Commissioners (NAIC)"
+//* #naiccode "NAIC Code" "An identifier assigned to licensed and authorized insurance companies by the National Association of Insurance Commissioners (NAIC)"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 

@@ -12,8 +12,8 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier ^slicing.description = "Slice based on $this pattern"
 * identifier contains
    ETIN 0..1 MS and
-   payerid 0..1 MS and
-   naiccode 0..1 MS
+   payerid 0..1 MS //and
+   //naiccode 0..1 MS
 * identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN 
 //* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number" <<<<<WOULD CAUSE slicing errors
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
@@ -22,9 +22,9 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier[payerid] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#payerid
 * identifier[payerid].value 1..1
 
-* identifier[naiccode] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#naiccode
-* identifier[naiccode].system = "urn:oid:2.16.840.1.113883.6.300"
-* identifier[naiccode].value 1..1
+//* identifier[naiccode] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#naiccode
+//* identifier[naiccode].system = "urn:oid:2.16.840.1.113883.6.300"
+//* identifier[naiccode].value 1..1
 
 * identifier[tin] ^patternIdentifier.type = $V2-0203#TAX 
 * identifier[tin] ^short = "Tax ID Number"
