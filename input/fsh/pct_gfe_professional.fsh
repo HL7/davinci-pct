@@ -79,7 +79,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 //* diagnosis.diagnosis[x] only CodeableConcept
 //* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
 * diagnosis.type MS
-* diagnosis.type from PCTDiagnosisTypeVS
+* diagnosis.type from DiagnosisTypeCodes
 * diagnosis contains
    principal 0..1 MS and
    other 0..11 MS
@@ -93,7 +93,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * diagnosis[principal] ^comment = "If the Principal Diagnosis code is known, it is important that it be shared in the GFE, particularly when the GFE is being sent to a payer for an insured patient. Payers very often need the diagnosis to be able to provide an estimate. Without the diagnosis, payers may assume the service is diagnostic and thus the patient responsibility may be higher or not covered at all than the diagnosis, such as for preventative services, would otherwise indicate. It is understood that in certain situations, such as scheduled services or GFE requests prior to orders, diagnosis is not needed or may not yet be known. However, when it is known, it is important that this information be shared to ensure the best possible estimate is provided to the patient."
 
 * diagnosis[other].type 1..1
-* diagnosis[other].type = PCTDiagnosisType#other
+* diagnosis[other].type = DiagnosisTypeCodes#secondary
 * diagnosis[other].diagnosis[x]
 * diagnosis[other].diagnosis[x] only CodeableConcept
 * diagnosis[other].diagnosis[x] from PCTDiagnosticCodes (required)

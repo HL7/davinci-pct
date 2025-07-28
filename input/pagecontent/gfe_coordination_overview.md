@@ -213,6 +213,8 @@ Assumptions:
 
 5. Dr. Carla Cutter’s office and Sleeper Anesthesiologist Group (Co-Providers) each review the procedure(s), relevant clinical data and respond to the GFE coordination request with procedures, pricing, including patient responsibility via the designated Coordination Platform. 
 
-6. Good Health Hospital’s assigned Coordination Platform aggregates all convening and co-provider estimates into a single GFE, with the summary total for the surgery across providers as well as the details per provider.
+6. Good Health Hospital (Convening Facility) also submits an estimate for the OR time and facility charges that will be included in the GFE through the Coordination Platform, in this way also contributing to the estimate as a GFE Contributor.
+
+7. Good Health Hospital’s assigned Coordination Platform aggregates all convening and co-provider estimates into a single GFE, with the summary total for the surgery across providers as well as the details per provider and the associated facility charges.
 
 7. GFE is posted to API available to the Patient by Tuesday (within one business day from time of scheduling)

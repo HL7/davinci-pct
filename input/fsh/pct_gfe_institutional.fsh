@@ -88,7 +88,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 //* diagnosis.diagnosis[x] only CodeableConcept
 //* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10 (required)
 * diagnosis.type MS
-* diagnosis.type from PCTDiagnosisTypeVS
+* diagnosis.type from DiagnosisTypeCodes
 * diagnosis contains
    principal 0..1 MS and
    admitting 0..1 MS and
@@ -111,17 +111,17 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * diagnosis[admitting].diagnosis[x] only CodeableConcept
 * diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[patientReasonForVisit].type 1..1
-* diagnosis[patientReasonForVisit].type = PCTDiagnosisType#patientReasonForVisit
+* diagnosis[patientReasonForVisit].type = DiagnosisTypeCodes#patientreasonforvisit
 * diagnosis[patientReasonForVisit].diagnosis[x]
 * diagnosis[patientReasonForVisit].diagnosis[x] only CodeableConcept
 * diagnosis[patientReasonForVisit].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[externalcauseofinjury].type 1..1
-* diagnosis[externalcauseofinjury].type = PCTDiagnosisType#externalCauseOfInjury
+* diagnosis[externalcauseofinjury].type = DiagnosisTypeCodes#externalcauseofinjury
 * diagnosis[externalcauseofinjury].diagnosis[x]
 * diagnosis[externalcauseofinjury].diagnosis[x] only CodeableConcept
 * diagnosis[externalcauseofinjury].diagnosis[x] from PCTDiagnosticCodes (required)
 * diagnosis[other].type 1..1
-* diagnosis[other].type = PCTDiagnosisType#other
+* diagnosis[other].type = DiagnosisTypeCodes#secondary
 * diagnosis[other].diagnosis[x] MS
 * diagnosis[other].diagnosis[x] only CodeableConcept
 * diagnosis[other].diagnosis[x] from PCTDiagnosticCodes (required)

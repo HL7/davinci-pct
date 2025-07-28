@@ -26,7 +26,7 @@ Description: "ICD-10 Codes to specify the type of diagnosis"
 * codes from system $ICD10CM
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
-
+/*
 ValueSet: PCTDiagnosisTypeVS
 Title: "PCT Diagnosis Type Value Set"
 Description: "Codes to specify the type of diagnosis"
@@ -35,6 +35,7 @@ Description: "Codes to specify the type of diagnosis"
 * codes from system PCTDiagnosisType
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
+*/
 
 ValueSet: PCTProcedureTypeVS
 Title: "PCT Procedure Type Value Set"

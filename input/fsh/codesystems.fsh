@@ -18,7 +18,7 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 // * #pharmacy-maxoutofpocket "Pharmacy-Maximum Out Of Pocket" "The maximum amout of payment for medicines which a patient, or family, is expected to incur - typically annually."
 // * ^copyright = "This CodeSystem is not copyrighted."
 // * ^experimental = false
-
+/*
 CodeSystem: PCTDiagnosisType
 Title: "PCT Diagnosis Type"
 Description: "Defining codes for the classification of diagnosis types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
@@ -30,7 +30,7 @@ Description: "Defining codes for the classification of diagnosis types. This Cod
 * #externalCauseOfInjury "External Cause of Injury" "Required when an external cause of injury is needed to describe the injury"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
-
+*/
 CodeSystem: PCTProcedureType
 Title: "PCT Procedure Type"
 Description: "Defining codes for the classification of procedure types. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
