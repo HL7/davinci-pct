@@ -11,7 +11,7 @@
 </li>
 </ul>
 
-<li class="x_MsoNormal">.total.amount:  Eligible amount = submitted amount - the noncovered amount - discount.  The subscriber pays the member liability = deductible + coinsurance + copay + noncovered (if applicable). The eligible amount - the member liability is the potential payer's payment amount to the provider (paidtoprovider) or the subscriber (paidtopatient)</li>
+<li class="x_MsoNormal">.total.amount:  Eligible amount = submitted amount - the noncovered amount - discount.  The subscriber pays the member liability = deductible + coinsurance + copay + noncovered (if applicable). The eligible amount - the member liability is the potential payer's payment amount to the provider or the subscriber.</li>
 
 <li class="x_MsoNormal">.total.amount and .benefitbalance work together to reflect the expected member’s costs across all the Advanced EOB resources in this AEOB Packet. This means that all accumulations to deductible, out-of-pocket maximum, and other limits are collectively reflective of all GFEs in the GFE Packet, giving the Patient a comprehensive estimate for all expected service(s) or item(s) from one or more providers.</li>
 
