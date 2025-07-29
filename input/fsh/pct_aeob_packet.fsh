@@ -45,7 +45,7 @@ Description: "PCT AEOB Packet that contains necessary resources for one or more 
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
 * entry[patient].resource 1..1
-* entry[patient].resource only HRexPatientDemographics
+* entry[patient].resource only USCorePatientProfile
 
 * entry[coverage] ^short = "SHALL have one Coverage"
 * entry[coverage].resource 1..1

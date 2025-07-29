@@ -38,7 +38,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * type = $ClaimTypeCS#professional
 * use = $CLAIMUSECS#predetermination "predetermination"
 
-* patient only Reference(HRexPatientDemographics)
+* patient only Reference(USCorePatientProfile)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
 * provider only Reference(PCTOrganization or PCTPractitioner)

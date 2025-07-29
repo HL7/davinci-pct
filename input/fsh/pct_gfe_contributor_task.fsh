@@ -71,7 +71,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 //* focus only Reference(PCTGFERequestServiceRequest)
 
 // TODO Supporting Information contained within the bundle. Perhaps guidance on use of reference identifiers?
-//* for only Reference(HRexPatientDemographics)
+//* for only Reference(USCorePatientProfile)
 //* for ^short = "The patient for whom the GFE request is for"
 
 * requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)

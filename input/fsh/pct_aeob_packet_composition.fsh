@@ -10,7 +10,7 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
-* subject only Reference(HRexPatientDemographics)
+* subject only Reference(USCorePatientProfile)
 
 
 * date obeys pct-datetime-to-seconds

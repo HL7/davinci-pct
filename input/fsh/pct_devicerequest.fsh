@@ -10,4 +10,4 @@ Description: "The PCT DeviceRequest including details about a device for which a
 
 * code[x] 1..1 MS
 
-* subject only Reference(HRexPatientDemographics)
+* subject only Reference(USCorePatientProfile)

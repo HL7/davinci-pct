@@ -1,5 +1,5 @@
 Profile: PCTMedicationRequest
-Parent: MedicationRequest
+Parent: USCoreMedicationRequestProfile
 Id: davinci-pct-medicationrequest
 Title: "PCT GFE MedicationRequest"
 Description: "The PCT MedicationRequest including details about a medication for which a GFE is being requested."
@@ -11,4 +11,4 @@ Description: "The PCT MedicationRequest including details about a medication for
 
 * medication[x] 1..1 MS
 
-* subject only Reference(HRexPatientDemographics)
+* subject only Reference(USCorePatientProfile)

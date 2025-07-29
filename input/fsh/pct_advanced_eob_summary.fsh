@@ -30,7 +30,7 @@ Questions
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 
-* patient only Reference(HRexPatientDemographics)
+* patient only Reference(USCorePatientProfile)
 * billablePeriod 1..1
 * billablePeriod ^short = "The full Period of Care for all services or products included in the estimate from the first event to the last event."
 

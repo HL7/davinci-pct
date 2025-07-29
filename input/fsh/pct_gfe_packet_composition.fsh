@@ -22,7 +22,7 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 * type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
-* subject only Reference(HRexPatientDemographics)
+* subject only Reference(USCorePatientProfile)
 
 
 * date obeys pct-datetime-to-seconds

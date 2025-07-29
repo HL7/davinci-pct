@@ -1,5 +1,5 @@
 Profile: PCTServiceRequest
-Parent: ServiceRequest
+Parent: USCoreServiceRequestProfile
 Id: davinci-pct-servicerequest
 Title: "PCT GFE ServiceRequest"
 Description: "The PCT ServiceRequest including details about a service for which a GFE is being requested."
@@ -14,4 +14,4 @@ Description: "The PCT ServiceRequest including details about a service for which
 
 * quantity[x] MS
 
-* subject only Reference(HRexPatientDemographics)
+* subject only Reference(USCorePatientProfile)

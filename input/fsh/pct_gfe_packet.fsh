@@ -35,7 +35,7 @@ Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. Th
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
 * entry[patient].resource 1..1
-* entry[patient].resource only HRexPatientDemographics
+* entry[patient].resource only USCorePatientProfile
 
 * entry[coverage] ^short = "MAY have one Coverage. SHALL be present submitted to a payer in the $gfe-submit operation."
 * entry[coverage] ^definition = "SHALL be present submitted to a payer in the $gfe-submit operation."

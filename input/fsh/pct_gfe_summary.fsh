@@ -29,7 +29,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 
-* patient only Reference(HRexPatientDemographics)
+* patient only Reference(USCorePatientProfile)
 
 * enterer 0..0
 

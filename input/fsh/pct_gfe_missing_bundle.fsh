@@ -31,7 +31,7 @@ Description: "PCT GFE Missing Bundle is used to indicate when a GFE Contributor 
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
 * entry[patient].resource 1..1
-* entry[patient].resource only HRexPatientDemographics
+* entry[patient].resource only USCorePatientProfile
 
 * entry[coverage] ^short = "MAY have one Coverage"
 * entry[coverage].resource 1..1

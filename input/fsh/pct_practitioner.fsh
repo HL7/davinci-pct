@@ -1,5 +1,5 @@
 Profile: PCTPractitioner
-Parent: HRexPractitioner
+Parent: USCorePractitionerProfile
 Id: davinci-pct-practitioner
 Title: "PCT Practitioner"
 Description: "The PCT Practitioner profile builds upon the US Core Practitioner profile. It is used to convey information about the practitioner who will be providing services to the patient as described on the GFE."
@@ -29,13 +29,13 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 * identifier[tin] ^short = "Tax ID Number"
 * identifier[tin].value 1..1
 
-* identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
-* identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
+//* identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
+//* identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
 
 
 * name.given 1..1
 
 //TODO: add slices for phone and email
-* telecom MS
+//* telecom MS
 
 * qualification.code from http://terminology.hl7.org/ValueSet/v3-NUCCProviderCodes (required)

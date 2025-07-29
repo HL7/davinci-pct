@@ -49,7 +49,7 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 
 * subject 1..1 MS
-* subject only Reference(HRexPatientDemographics)
+* subject only Reference(USCorePatientProfile)
 
 
 * date obeys pct-datetime-to-seconds

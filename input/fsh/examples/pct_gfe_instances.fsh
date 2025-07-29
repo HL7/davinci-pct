@@ -321,7 +321,7 @@ Usage: #example
 
 Instance: patient1001
 Description: "An instance of Patient"
-InstanceOf: HRexPatientDemographics
+InstanceOf: USCorePatientProfile
 Usage: #example
 
 * id = "9c05d948-b931-4bff-8766-18b99b0650d4"
@@ -351,7 +351,7 @@ Description: "An instance of PCTPractitioner"
 Usage: #example
 
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "1234567893"
+* identifier[NPI].value = "9941339100"
 * name.given = "Patricia"
 * name.family = "Primary"
 * name.text = "Patricia	Primary"
@@ -369,7 +369,7 @@ Description: "An instance of PCTPractitioner"
 Usage: #example
 
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "1234567995"
+* identifier[NPI].value = "9941339100"
 * name.given = "Christine"
 * name.family = "Curie"
 * name.text = "Christine Curie"
@@ -386,7 +386,7 @@ Description: "Professional GFE Submitter 1"
 Usage: #example
 
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[NPI].value = "6456789016"
+* identifier[NPI].value = "9941339100"
 * identifier[ETIN].value = "ETIN-20020001"
 * identifier[ETIN].system = "http://example.com/us-etin"
 * name.given = "Nora"
@@ -448,7 +448,7 @@ Usage: #example
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"org1002\"> </a><a name=\"hcorg1002\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;org1002&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-organization.html\">PCT Organization</a></p></div><p><b>identifier</b>: National provider identifier/1234568095, Tax ID number/TAX-3211001</p><p><b>active</b>: true</p><p><b>type</b>: Healthcare Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-organization-type.html\">Organization type</a>#prov)</span></p><p><b>name</b>: Boston Radiology Center</p><p><b>telecom</b>: ph: 781-232-3200(WORK)</p><p><b>address</b>: 32 Fruit Street Boston MA 02114 US </p></div>"
 * type = $ORGTYPE#prov "Healthcare Provider"
-* identifier[NPI].value = "1234568095"
+* identifier[NPI].value = "9941339100"
 * identifier[tin].value = "TAX-3211001"
 * name = "Boston Radiology Center"
 * active = true

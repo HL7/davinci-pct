@@ -3,13 +3,14 @@ Parent: HRexOrganization
 Id: davinci-pct-organization
 Title: "PCT Organization"
 Description: "The PCT Organization profile builds upon the US Core Organization profile. It is used to convey a payer, provider, payee, or service facility organization."
-* insert TrialUseArtifact
+//* insert TrialUseArtifact
 
-* identifier ^slicing.discriminator.path = "$this"
+/* identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.ordered = false   // can be omitted, since false is the default
 * identifier ^slicing.description = "Slice based on $this pattern"
+*/
 * identifier contains
    ETIN 0..1 MS and
    payerid 0..1 MS //and
@@ -29,12 +30,15 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * identifier[tin] ^patternIdentifier.type = $V2-0203#TAX 
 * identifier[tin] ^short = "Tax ID Number"
 
+* identifier[NPI] 0..1 MS
+* identifier[CLIA] 0..1
+
 //* identifier[NPI] ^patternIdentifier.type = $V2-0203#NPI
 //* identifier[NPI].value 1..1
 //* identifier[NPI] ^short = "The National Provider Identifier assigned to the provider."
 
-* identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
-* identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
+//* identifier[ccn] ^short = "Medicare Certification Number - Should only be included in Medicare related transactions"
+//* identifier[ccn] ^definition = "Medicare Certification Number - Only relevant for Medicare related transactions. Must Support is only applicable for Medicare-based transactions."
 
 * type 1..*
 * type from PCTOrganizationTypeVS (extensible)

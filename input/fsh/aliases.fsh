@@ -1,11 +1,11 @@
 //// US Core ////
-Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
-Alias:   $USCorePatient = http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
-Alias:   $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
-Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
-Alias:   $USCoreProviderRole = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-role
-Alias:   $USCoreProviderSpecialty = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-specialty
+//Alias:   $USCoreLocation = http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
+//Alias:   $USCorePatient = http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+//Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+//Alias:   $USCorePractitionerRole = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
+//Alias:   $USCoreOrganization = http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+//Alias:   $USCoreProviderRole = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-role
+//Alias:   $USCoreProviderSpecialty = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-specialty
 
 //// Code systems ////
 Alias:   NUCC = http://nucc.org/provider-taxonomy
@@ -35,13 +35,13 @@ Alias:   $PROCPRIORITY = http://terminology.hl7.org/CodeSystem/processpriority
 Alias:   $NUBCREVENUE = https://www.nubc.org/CodeSystem/RevenueCodes
 Alias:   $CLAIMUSECS = http://hl7.org/fhir/claim-use
 Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason
-Alias:   MSDRG =  https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
-Alias:   APDRG =  http://uri.hddaccess.com/cs/apdrg
+Alias:   MSDRG = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
+Alias:   APDRG = http://uri.hddaccess.com/cs/apdrg
 Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
 Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication
 Alias:   $HL7TaskStatus = http://hl7.org/fhir/task-status
 
-Alias:  $MIMETypes = http://hl7.org/fhir/ValueSet/mimetypes
+Alias:  $MIMETypes = urn:ietf:bcp:13
 
 //// Value Sets ////
 Alias:   $IdentifierTypeVS   =  http://hl7.org/fhir/ValueSet/identifier-type
