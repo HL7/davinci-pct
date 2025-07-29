@@ -43,7 +43,7 @@ Description: "PCT GFE Information Bundle that contains the information necessary
 
 * entry[coverage] ^short = "MAY have one Coverage"
 * entry[coverage].resource 1..1
-* entry[coverage].resource only PCTCoverage
+* entry[coverage].resource only PCTCoverage or PCTSelfPayCoverage
 
 * entry[organization] ^short = "MAY have the payer organization and may have provider organization(s)"
 * entry[organization].resource 1..1 

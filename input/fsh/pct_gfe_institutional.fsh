@@ -73,7 +73,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * referral.extension[referralNumber] ^short = "Referral Number"
 
 
-* insurance.coverage only Reference(PCTCoverage)
+* insurance.coverage only Reference(PCTCoverage or PCTSelfPayCoverage)
 * insurance.coverage.extension contains $DARExtensionUrl named dataAbsentReason 0..1 MS
 * insurance.coverage.extension[dataAbsentReason] ^short = "Coverage may be not applicable if estimate is for self-pay or uninsured"
 
@@ -97,7 +97,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
    other 0..24 MS
 
 * diagnosis[principal].type 1..1
-* diagnosis[principal].type = $DIAGTYPECS#principal
+* diagnosis[principal].type = DiagnosisTypeCodes#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept
@@ -106,7 +106,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * diagnosis[principal] ^comment = "If the Principal Diagnosis code is known, it is important that it be shared in the GFE, particularly when the GFE is being sent to a payer for an insured patient. Payers very often need the diagnosis to be able to provide an estimate. Without the diagnosis, payers may assume the service is diagnostic and thus the patient responsibility may be higher or not covered at all than the diagnosis, such as for preventative services, would otherwise indicate. It is understood that in certain situations, such as scheduled services or GFE requests prior to orders, diagnosis is not needed or may not yet be known. However, when it is known, it is important that this information be shared to ensure the best possible estimate is provided to the patient."
 
 * diagnosis[admitting].type 1..1
-* diagnosis[admitting].type = $DIAGTYPECS#admitting
+* diagnosis[admitting].type = DiagnosisTypeCodes#admitting
 * diagnosis[admitting].diagnosis[x]
 * diagnosis[admitting].diagnosis[x] only CodeableConcept
 * diagnosis[admitting].diagnosis[x] from PCTDiagnosticCodes (required)

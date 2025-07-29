@@ -67,7 +67,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 //* supportingInfo.category from $C4BBSupportingInfoType (extensible)
 
 
-* insurance.coverage only Reference(PCTCoverage)
+* insurance.coverage only Reference(PCTCoverage or PCTSelfPayCoverage)
 * insurance.coverage.extension contains $DARExtensionUrl named dataAbsentReason 0..1 MS
 * insurance.coverage.extension[dataAbsentReason] ^short = "Coverage may be not applicable if estimate is for self-pay or uninsured"
 
@@ -84,7 +84,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
    principal 0..1 MS and
    other 0..11 MS
 * diagnosis[principal].type 1..1
-* diagnosis[principal].type = $DIAGTYPECS#principal
+* diagnosis[principal].type = DiagnosisTypeCodes#principal
 * diagnosis[principal].sequence = 1
 * diagnosis[principal].diagnosis[x]
 * diagnosis[principal].diagnosis[x] only CodeableConcept

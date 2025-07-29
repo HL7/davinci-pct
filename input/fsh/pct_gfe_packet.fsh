@@ -40,7 +40,7 @@ Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. Th
 * entry[coverage] ^short = "MAY have one Coverage. SHALL be present submitted to a payer in the $gfe-submit operation."
 * entry[coverage] ^definition = "SHALL be present submitted to a payer in the $gfe-submit operation."
 * entry[coverage].resource 1..1
-* entry[coverage].resource only PCTCoverage
+* entry[coverage].resource only PCTCoverage or PCTSelfPayCoverage
 
 * entry[organization] ^short = "SHALL have an initiating provider or initiating organization, but not both. May also have a payer organization. Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation."
 * entry[organization] ^definition = "GFE Packet initiating provider organization and/or an associated Payer. A Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation. An initiating provider SHALL be present as an initiating provider organization (an entry in this slice) or an initiating provider practitioner (practitioner slice), but not both."

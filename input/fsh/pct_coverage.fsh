@@ -9,13 +9,12 @@ Title: "PCT Coverage"
 Description: "PCT Coverage is a profile for capturing data that reflect a payerâ€™s coverage that was effective as of the proposed date of service or the date of admission of the GFE."
 * insert TrialUseArtifact
 * extension contains
-    $R5CoverageKind named coverage-kind 1..1 and
-    SelfPayDeclared named self-pay-declared 0..1 MS
+    $R5CoverageKind named coverage-kind 1..1
 
 * extension[coverage-kind]
   * valueCode 1..1
-  * valueCode from http://hl7.org/fhir/coverage-kind (required)
-  * valueCode ^short = "insurance | self-pay | other"
+  * valueCode = http://hl7.org/fhir/coverage-kind#insurance
+  * valueCode ^short = "insurance only"
 
 * subscriber
 * subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
@@ -63,5 +62,37 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payerâ
 // * class[group].name ^comment = "Name of the Employer Account (135)"
 // * class[plan].value ^comment = "Business concept used by a health plan to describe its benefit offerings (154)"
 // * class[plan].name ^comment = "Name of the health plan benefit offering assigned to the Plan Identfier (155)"
+
+
+
+
+
+
+
+
+Profile: PCTSelfPayCoverage
+Parent: Coverage
+Id: davinci-pct-self-pay-coverage
+Title: "PCT Self-Pay Coverage"
+Description: "PCT Self-Pay Coverage is a profile for capturing that an estimate is to be be based  on a self-pay or uninsured patient."
+* insert TrialUseArtifact
+* extension contains
+    $R5CoverageKind named coverage-kind 1..1 and
+    SelfPayDeclared named self-pay-declared 0..1 MS
+
+* extension[coverage-kind]
+  * valueCode 1..1
+  * valueCode = http://hl7.org/fhir/coverage-kind#self-pay
+  * valueCode ^short = "self-pay only"
+
+
+* relationship 1..1 MS
+//* relationship from $SubscriberRelationiship (required)
+
+* payor 1..1 MS
+* payor only Reference (HRexPatientDemographics)
+
+* beneficiary MS
+* beneficiary only Reference (HRexPatientDemographics)
 
 

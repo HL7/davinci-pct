@@ -14,6 +14,7 @@
 <artifact id="StructureDefinition/countrySubdivisionCode" key="StructureDefinition-countrySubdivisionCode" name="CountrySubdivisionCode"/>
 <artifact deprecated="true" id="StructureDefinition/disclaimer" key="StructureDefinition-disclaimer" name="Disclaimer"/>
 <artifact deprecated="true" id="StructureDefinition/estimatedDateOfService" key="StructureDefinition-estimatedDateOfService" name="EstimatedDateOfService"/>
+<artifact id="Requirements/example1" key="Requirements-example1" name="Example Requirements Set 1"/>
 <artifact deprecated="true" id="StructureDefinition/expirationDate" key="StructureDefinition-expirationDate" name="Expiration Date"/>
 <artifact id="ValueSet/PCTCoordinationTaskStatusCodes" key="ValueSet-PCTCoordinationTaskStatusCodes" name="GFE Coordination Task Status Codes"/>
 <artifact id="StructureDefinition/gfeReference" key="StructureDefinition-gfeReference" name="GFE Reference"/>
@@ -47,13 +48,13 @@
 <artifact id="StructureDefinition/davinci-pct-aeob" key="StructureDefinition-davinci-pct-aeob" name="PCT Advanced EOB"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-summary" key="StructureDefinition-davinci-pct-aeob-summary" name="PCT Advanced EOB Summary"/>
 <artifact id="ValueSet/PCTProcedureSurgicalCodes" key="ValueSet-PCTProcedureSurgicalCodes" name="PCT CMS HCPCS and AMA CPT Procedure Surgical Codes"/>
-<artifact id="CodeSystem/PCTCareTeamRole" key="CodeSystem-PCTCareTeamRole" name="PCT Care Team Role"/>
+<artifact deprecated="true" id="CodeSystem/PCTCareTeamRole" key="CodeSystem-PCTCareTeamRole" name="PCT Care Team Role"/>
 <artifact id="ValueSet/PCTCareTeamRoleVS" key="ValueSet-PCTCareTeamRoleVS" name="PCT Care Team Role Value Set"/>
 <artifact id="StructureDefinition/davinci-pct-coverage" key="StructureDefinition-davinci-pct-coverage" name="PCT Coverage"/>
 <artifact deprecated="true" id="CodeSystem/PCTCoverageCopayTypeCS" key="CodeSystem-PCTCoverageCopayTypeCS" name="PCT Coverage Copay Type Code System"/>
 <artifact deprecated="true" id="ValueSet/pct-coverage-copay-codes" key="ValueSet-pct-coverage-copay-codes" name="PCT Coverage Copay Type Value Set - locally defined for testing purpose; an external FHIR value set will be created through the HL7 Terminology (THO) process to replace this value set"/>
-<artifact id="CodeSystem/PCTDiagnosisType" key="CodeSystem-PCTDiagnosisType" name="PCT Diagnosis Type"/>
-<artifact id="ValueSet/PCTDiagnosisTypeVS" key="ValueSet-PCTDiagnosisTypeVS" name="PCT Diagnosis Type Value Set"/>
+<artifact deprecated="true" id="CodeSystem/PCTDiagnosisType" key="CodeSystem-PCTDiagnosisType" name="PCT Diagnosis Type"/>
+<artifact deprecated="true" id="ValueSet/PCTDiagnosisTypeVS" key="ValueSet-PCTDiagnosisTypeVS" name="PCT Diagnosis Type Value Set"/>
 <artifact id="CodeSystem/PCTDocumentTypeTemporaryTrialUse" key="CodeSystem-PCTDocumentTypeTemporaryTrialUse" name="PCT Document Types"/>
 <artifact id="CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse" key="CodeSystem-PCTEstimateTypeSummaryCSTemporaryTrialUse" name="PCT Estimate Type Code System"/>
 <artifact id="CodeSystem/PCTFinancialType" key="CodeSystem-PCTFinancialType" name="PCT Financial Type Code System"/>
@@ -86,9 +87,11 @@
 <artifact id="ValueSet/PCTCoordinationTaskStatusReasonCodes" key="ValueSet-PCTCoordinationTaskStatusReasonCodes" name="PCT GFE Request Coordination Task Status Reason Codes ValueSet"/>
 <artifact id="CodeSystem/PCTTaskBusinessStatusCSTemporaryTrialUse" key="CodeSystem-PCTTaskBusinessStatusCSTemporaryTrialUse" name="PCT GFE Request Task Business Status Code System"/>
 <artifact id="ValueSet/PCTTaskBusinessStatusCodes" key="ValueSet-PCTTaskBusinessStatusCodes" name="PCT GFE Request Task Business Status ValueSet"/>
-<artifact id="CodeSystem/PCTGFERequestTaskCSTemporaryTrialUse" key="CodeSystem-PCTGFERequestTaskCSTemporaryTrialUse" name="PCT GFE Request Task Codes Code System"/>
-<artifact id="ValueSet/PCTGFERequestTaskTypeVS" key="ValueSet-PCTGFERequestTaskTypeVS" name="PCT GFE Request Task Codes ValueSet"/>
+<artifact deprecated="true" id="CodeSystem/PCTGFERequestTaskCSTemporaryTrialUse" key="CodeSystem-PCTGFERequestTaskCSTemporaryTrialUse" name="PCT GFE Request Task Codes Code System"/>
+<artifact deprecated="true" id="ValueSet/PCTGFERequestTaskTypeVS" key="ValueSet-PCTGFERequestTaskTypeVS" name="PCT GFE Request Task Codes ValueSet"/>
 <artifact id="CodeSystem/PCTTaskStatusReasonCSTemporaryTrialUse" key="CodeSystem-PCTTaskStatusReasonCSTemporaryTrialUse" name="PCT GFE Request Task Status Reason Code Code System"/>
+<artifact id="CodeSystem/PCTGFERequestTypeCSTemporaryTrialUse" key="CodeSystem-PCTGFERequestTypeCSTemporaryTrialUse" name="PCT GFE Request Type Codes Code System"/>
+<artifact id="ValueSet/PCTGFERequestTypeVS" key="ValueSet-PCTGFERequestTypeVS" name="PCT GFE Request Type Codes ValueSet"/>
 <artifact id="StructureDefinition/davinci-pct-servicerequest" key="StructureDefinition-davinci-pct-servicerequest" name="PCT GFE ServiceRequest"/>
 <artifact id="CodeSystem/PCTSupportingInfoType" key="CodeSystem-PCTSupportingInfoType" name="PCT GFE Supporting Info Type Code System"/>
 <artifact id="ValueSet/PCTGFETaskRelationship" key="ValueSet-PCTGFETaskRelationship" name="PCT GFE Task Relationship"/>
@@ -117,6 +120,7 @@
 <artifact deprecated="true" id="CodeSystem/PCTProcedureSurgicalCS" key="CodeSystem-PCTProcedureSurgicalCS" name="PCT Procedure Surgical Code System"/>
 <artifact id="CodeSystem/PCTProcedureType" key="CodeSystem-PCTProcedureType" name="PCT Procedure Type"/>
 <artifact id="ValueSet/PCTProcedureTypeVS" key="ValueSet-PCTProcedureTypeVS" name="PCT Procedure Type Value Set"/>
+<artifact id="StructureDefinition/davinci-pct-self-pay-coverage" key="StructureDefinition-davinci-pct-self-pay-coverage" name="PCT Self-Pay Coverage"/>
 <artifact id="StructureDefinition/davinci-pct-service-location" key="StructureDefinition-davinci-pct-service-location" name="PCT Service Location"/>
 <artifact id="CodeSystem/PCTSubjectToMedicalMgmtReasonCS" key="CodeSystem-PCTSubjectToMedicalMgmtReasonCS" name="PCT Subject-To-Medical-Management Reason Code System"/>
 <artifact id="ValueSet/PCTSubjectToMedicalMgmtReasonVS" key="ValueSet-PCTSubjectToMedicalMgmtReasonVS" name="PCT Subject-To-Medical-Management Reason Value Set"/>
@@ -172,6 +176,7 @@
 <artifact id="StructureDefinition/providerTaxonomy" key="StructureDefinition-providerTaxonomy" name="ProviderTaxonomy"/>
 <artifact id="StructureDefinition/referralNumber" key="StructureDefinition-referralNumber" name="ReferralNumber"/>
 <artifact id="StructureDefinition/requestInitiationTime" key="StructureDefinition-requestInitiationTime" name="Request Initiation Time"/>
+<artifact id="StructureDefinition/requestOriginationType" key="StructureDefinition-requestOriginationType" name="RequestOriginationType"/>
 <artifact id="OperationDefinition/GFE-retrieve" key="OperationDefinition-GFE-retrieve" name="Retrieve GFE Packet"/>
 <artifact id="StructureDefinition/selfPayDeclared" key="StructureDefinition-selfPayDeclared" name="Self-Pay Declared"/>
 <artifact id="StructureDefinition/serviceDescription" key="StructureDefinition-serviceDescription" name="Service Description"/>
@@ -196,7 +201,7 @@
 <artifact id="ValueSet/PCTTaskAttachmentContentType" key="ValueSet-USClaimDRGCodes" name="US Claim DRG Codes"/>
 <artifact id="ValueSet/USClaimDRGCodes" key="ValueSet-USClaimDRGCodes" name="US Claim DRG Codes"/>
 <artifact id="SearchParameter/aeob-date-of-service" key="SearchParameter-aeob-date-of-service" name="aeob-date-of-service"/>
-<artifact id="Contract/contract1001" key="Contract-contract1001" name="contract1001"/>
+<artifact deprecated="true" id="Contract/contract1001" key="Contract-contract1001" name="contract1001"/>
 <artifact id="Coverage/coverage1001" key="Coverage-coverage1001" name="coverage1001"/>
 <artifact id="Endpoint/endpoint001" key="Endpoint-endpoint001" name="endpoint001"/>
 <artifact id="Subscription/example-aeob-available-author-subscription-full" key="Subscription-example-aeob-available-author-subscription-full" name="example-aeob-available-author-subscription-full"/>
@@ -212,6 +217,7 @@
 <artifact id="Practitioner/prac001" key="Practitioner-prac001" name="prac001"/>
 <artifact id="Practitioner/prac002" key="Practitioner-prac002" name="prac002"/>
 <artifact deprecated="true" id="PractitionerRole/pracRole002" key="PractitionerRole-pracRole002" name="pracRole002"/>
+<artifact id="Coverage/selfpaycoverage2001" key="Coverage-selfpaycoverage2001" name="selfpaycoverage2001"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

@@ -221,6 +221,7 @@ groups:
     - StructureDefinition/davinci-pct-organization
     - StructureDefinition/davinci-pct-practitioner
     - StructureDefinition/davinci-pct-coverage
+    - StructureDefinition/davinci-pct-self-pay-coverage
 
   GFE:
     name: "Structures: GFE Resource Profiles"
