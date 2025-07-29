@@ -380,8 +380,8 @@ Description: "Codes for defining  GFE request task business status types."
 * PCTTaskBusinessStatusCSTemporaryTrialUse#closed
 
 ValueSet: PCTTaskAttachmentContentType
-Title: "US Claim DRG Codes"
-Description: "US Claim Diagnosis Related Group Codes. All codes from MS-DRGs - AP-DRGs - APR-DRGs"
+Title: "PCT Task Attachment Mime Types"
+Description: "Patient Cost Transparency Task Attachment Mime Types"
 * $MIMETypes#application/fhir+json
 * $MIMETypes#application/fhir+xml
 * ^experimental = false
