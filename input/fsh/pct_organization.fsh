@@ -15,12 +15,12 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
    ETIN 0..1 MS and
    payerid 0..1 MS //and
    //naiccode 0..1 MS
-* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN 
+* identifier[ETIN] ^patternIdentifier.type = IdentifierType#ETIN 
 //* identifier[ETIN].type = PCTOrgIdentifierTypeCS#ETIN "Electronic Transmitter Identification Number" <<<<<WOULD CAUSE slicing errors
 //* identifier[ETIN].value 1..1 <<<<<<<<< DOES NOT WORK
 * identifier[ETIN] ^short = "Electronic Transmitter Identification Number."
 
-* identifier[payerid] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#payerid
+* identifier[payerid] ^patternIdentifier.type = IdentifierType#PAYERID
 * identifier[payerid].value 1..1
 
 //* identifier[naiccode] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#naiccode

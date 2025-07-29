@@ -1,12 +1,12 @@
 
-ValueSet: PCTOrgIdentifierTypeVS
+/*ValueSet: PCTOrgIdentifierTypeVS
 Title: "PCT Organization Identifier Type Value Set"
 Description: "Codes to specify the type of identifiers for organizations to indicate usage for a specific purpose. This ValueSet is currently locally defined; an external FHIR value set may be created through the HL7 Terminology (THO) process to replace this value set in a future version."
 * codes from valueset $IdentifierTypeVS
 * codes from system PCTOrgIdentifierTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
-
+*/
 ValueSet: PCTOrganizationTypeVS
 Title: "PCT Organization Type Value Set"
 Description: "Codes to specify the type of entity involved in the PCT GFE process. This ValueSet is currently locally defined; an external FHIR value set may be created through the HL7 Terminology (THO) process to replace this value set in a future version."

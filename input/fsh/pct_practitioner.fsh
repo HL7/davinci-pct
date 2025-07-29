@@ -15,7 +15,7 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 // * identifier ^slicing.description = "Slice based on $this pattern"
 
 * identifier contains ETIN 0..1 MS and tin 0..1 MS
-* identifier[ETIN] ^patternIdentifier.type = PCTOrgIdentifierTypeCS#ETIN 
+* identifier[ETIN] ^patternIdentifier.type = IdentifierType#ETIN 
 * identifier[ETIN].value 1..1 MS
 * identifier[ETIN] ^short = "The submitter's Electronic Transmitter Identification Number."
 

@@ -1,4 +1,4 @@
-
+/*
 CodeSystem: PCTOrgIdentifierTypeCS
 Title: "PCT Organization Identifier Type Code System"
 Description: "Identifier Type codes for defining the type of identifier payers and providers assign to organizations. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
@@ -8,7 +8,7 @@ Description: "Identifier Type codes for defining the type of identifier payers a
 //* #naiccode "NAIC Code" "An identifier assigned to licensed and authorized insurance companies by the National Association of Insurance Commissioners (NAIC)"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
-
+*/
 // CodeSystem: PCTCoverageCopayTypeCS
 // Title: "PCT Coverage Copay Type Code System"
 // Id: pct-coverage-copay-type
