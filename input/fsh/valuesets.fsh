@@ -142,15 +142,15 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 // * codes from system PCTCoverageCopayTypeCS
 // * ^copyright = "This Valueset is not copyrighted."
 // * ^experimental = false
-
+/*
 ValueSet: PCTSubjectToMedicalMgmtReasonVS
 Title: "PCT Subject-To-Medical-Management Reason Value Set"
 Description: "Codes for the classification of subject-to-medical-management reasons"
 //Id: pct-medical-mgmt-reason-codes
-* codes from system PCTSubjectToMedicalMgmtReasonCS
+* codes from system MedicalManagementType
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
-
+*/
 ValueSet: PCTSupportingInfoTypeVS
 Title: "PCT Supporting Info Type Value Set"
 Description: "Codes to specify the type of the supplied supporting information"

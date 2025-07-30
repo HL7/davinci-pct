@@ -60,13 +60,13 @@ Usage: #example
 * item.servicedDate = "2022-01-01"
 * item.net.value = 200.00
 * item.net.currency = #USD
-* item.adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
+* item.adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = MedicalManagementType#concurrent-review "Concurrent Review"
 * item.adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
 // * item.adjudication[medicalmanagement].amount.value = 200.00
 // * item.adjudication[medicalmanagement].amount.currency = #USD
 
 * adjudication[medicalmanagement].category = PCTAdjudicationCategoryCS#medicalmanagement "Medical Management"
-* adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = PCTSubjectToMedicalMgmtReasonCS#concurrent-review "Concurrent Review"
+* adjudication[medicalmanagement].extension[subjectToMedicalMgmt].valueCodeableConcept = MedicalManagementType#concurrent-review "Concurrent Review"
 * adjudication[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted "Submitted Amount"
 * adjudication[memberliability].category = PCTAdjudicationCategoryCS#memberliability "Member Liability"
 

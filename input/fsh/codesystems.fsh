@@ -41,6 +41,7 @@ Description: "Defining codes for the classification of procedure types. This Cod
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
+/*
 CodeSystem: PCTSubjectToMedicalMgmtReasonCS
 Title: "PCT Subject-To-Medical-Management Reason Code System"
 //Id: pct-medical-mgmt-condition-type
@@ -52,6 +53,7 @@ Description: "Defining codes for the classification of subject-to-medical-manage
 * #fail-first "Fail-First" "Fail-First"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
+*/
 
 CodeSystem: PCTSupportingInfoType
 Title: "PCT GFE Supporting Info Type Code System"
