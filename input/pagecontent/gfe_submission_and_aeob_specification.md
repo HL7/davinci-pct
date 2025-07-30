@@ -58,7 +58,7 @@ The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** in
 
 Just like the AEOB request, additional Bundle entries must be present for all resources referenced by the AEOB response or descendent references. When converting additional Bundle entries, the conversion process **SHALL** ensure that only one resource is created for a given combination of content, e.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance should be created - referenced from multiple places as appropriate. When echoing back resources that are in the AEOB request, the system **SHALL** ensure that the same fullUrl and resource identifiers are used in the response as appeared in the request.
 
-It is possible that the incoming Bundle cannot be processed due to validation errors or other non-business-errors. In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB response will be returned.
+t is possible that the incoming Bundle cannot be processed due to validation errors, other non-business errors, or quick automated business errors. In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB response will be returned.
 
 
 ### Notifications of AEOB Availability ###
