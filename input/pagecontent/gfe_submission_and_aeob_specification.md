@@ -20,11 +20,6 @@ The `Composition.extension[requestOriginationType].valueCodeableConcept` with a 
 >Note: This value may already be present if the GFE Packet was created through the [GFE Coordination Workflow](gfe_coordination_overview.html), and the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) was provided a `Task.extension[planned-service-period]` value. If not, the submitting provider is expected to add the appropriate values for a scheduled service.
  
 
-To the GFE Composition Profile:
-to the `Composition.extension[gfeServiceLinkingInfo]` description add a requirement that scheduled services **SHALL** have `extension[plannedPeriodOfService].valueDate|valuePeriod` populated
-Add an error severity Invariant that requires a where `extension[plannedPeriodOfService].valueDate|valuePeriod` populated exists if `Composition.extension[requestOriginationType].valueCodeableConcept` has a code representing a `scheduled-request`
-
-
 The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) will be sent as the sole payload of a [$gfe-submit](OperationDefinition-GFE-submit.html) operation, which is based on the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html) (please refer to that page for more details). 
 >Note: that page is part of the FHIR R5 current build, but uses no R5 resources; this guide is pre-adopting that HTTP request pattern. The response will be a URL in the Content-Location header for subsequent polling. 
 
