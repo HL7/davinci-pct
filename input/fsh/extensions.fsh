@@ -45,15 +45,21 @@ Description: "This extension is used to provide the GFE Service Linking Informat
 * ^context[=].expression = "Composition"
 * extension contains
     plannedPeriodOfService 0..* MS and
-    linkingIdentifier 0..* MS
-* extension[plannedPeriodOfService] ^short = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
-* extension[plannedPeriodOfService] ^definition = "This could be the scheduled date(s) of a particular admission/service or a series of admissions/services."
+    linkingIdentifier 0..1 MS and
+    anticipatedSubmittingProviderCount 0..1
+* extension[plannedPeriodOfService] ^short = "A timeframe during which a patient is expected to receive healthcare services and/or items as outlined in a Good Faith Estimate (GFE)."
+* extension[plannedPeriodOfService] ^definition = "A timeframe (scheduled or requested) during which a patient is expected to receive healthcare services generally related to a specific treatment goal, episode of care, or clinical objective as outlined in a Good Faith Estimate (GFE). This period typically begins with the initial scheduled service and includes all reasonably expected items and services that are associated with that primary service, even if rendered by different providers or facilities."
 * extension[plannedPeriodOfService].value[x] 1..1
 * extension[plannedPeriodOfService].value[x] only date or Period
 * extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practitioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practitioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier].value[x] 1..1
 * extension[linkingIdentifier].value[x] only string
+* extension[anticipatedSubmittingProviderCount] ^short = "Total number of providers that are expected to submit GFEs."
+* extension[anticipatedSubmittingProviderCount] ^definition = "The total number of providers that are expected to submit a GFE as part of a planned period of service or estimate request. This number includes all co-provider and the convening provider (if the convening provider is submitting a GFE). If this value is provided in more than one resource and there is a conflict in the number, the extension as part of the GFE Composition as part of the GFE Packet will be the definitive number."
+* extension[anticipatedSubmittingProviderCount] ^comment = "The count of GFE submitting providers is useful for an intermediary or a payer that is collating multiple GFE submissions from multiple providers. This element is highly recommended if there are GFEs that will be submitted from multiple providers and is not needed if there is only a single submitting provider (e.g. only a single provider GFE or is the GFE Coordination process was done before submitting the GFE Packet)."
+* extension[anticipatedSubmittingProviderCount].value[x] 1..1
+* extension[anticipatedSubmittingProviderCount].value[x] only unsignedInt
 
 Extension: ReferralNumber
 Id: referralNumber
@@ -97,6 +103,8 @@ Description: "If the provider has received a written consent form indicating a p
 * ^context[=].expression = "Claim.provider"
 * value[x] 1..1
 * value[x] only boolean
+
+
 
 // Extension: ProductOrServiceBillingCode
 // Description: "ProductOrService Billing Code"
@@ -169,7 +177,7 @@ Description: "This extension is used to provide a reason to explain how the esti
 * value[x] 1..1
 * value[x] only CodeableConcept or string
 * value[x] ^short = "The estimate may change subject to medical management with this reason"
-* valueCodeableConcept from PCTSubjectToMedicalMgmtReasonVS (extensible)
+* valueCodeableConcept from MedicalManagementType (extensible)
 
 // Extension: SubjectToMedicalMgmtDisclaimer
 // Id: subject-to-medical-mgmt-disclaimer
