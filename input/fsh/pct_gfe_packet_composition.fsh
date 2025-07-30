@@ -8,7 +8,7 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 * obeys pct-gfe-packet-composition-1
 
 * extension contains
-    GFEServiceLinkingInfo named gfeServiceLinkingInfo 1..1 MS and 
+    GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS and  // FHIR-45759 set this to be 1..1, but was later changes by FHIR-34959 to 0..1
     RequestOriginationType named requestOriginationType 1..1 MS
 
 * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information including planned period of service and a GFE linking identifier. Scheduled services SHALL have a plannedPeriodOfService valueDate or ValuePeriod"    
