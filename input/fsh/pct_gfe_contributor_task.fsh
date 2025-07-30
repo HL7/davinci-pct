@@ -8,7 +8,8 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * extension contains
    $requestedPeriodExtensionUrl named requested-period 0..1 MS and
    RequestInitiationTime named request-initiation-time 1..1 MS and
-   PlannedServicePeriod named planned-service-period 0..1 MS
+   PlannedServicePeriod named planned-service-period 0..1 MS and
+   GFERelatedTask named predecessor-task 0..1
    
 //   SchedulingTime named scheduling-time 0..1 MS and
 //   ScheduledServicePeriod named scheduled-service-period 0..1 MS 
@@ -26,6 +27,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * extension[planned-service-period].valuePeriod.start 1..1
 * extension[planned-service-period].valuePeriod.end MS
 
+* extension[predecessor-task] ^short = "A reference to the related Task which the current task replaces or carries forward the intention of."
 
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open

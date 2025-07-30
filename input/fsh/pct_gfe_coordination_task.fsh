@@ -21,7 +21,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
    RequestInitiationTime named request-initiation-time 1..1 MS and
    PlannedServicePeriod named planned-service-period 0..1 MS and
    // TODO, look to see whether this task replaces needs to be replaced by GFERelatedTask
-   $taskReplacesExtensionUrl named task-replaces 0..1 MS and
+   //$taskReplacesExtensionUrl named task-replaces 0..1 MS and
    GFERelatedTask named predecessor-task 0..1
 //   PatientRequestDate named patient-request-date-time 0..1 MS and
    
@@ -42,11 +42,12 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * extension[planned-service-period].valuePeriod.start 1..1
 * extension[planned-service-period].valuePeriod.end MS
 
-// TODO, look to see whether this task replaces needs to be replaced by GFERelatedTask
-* extension[task-replaces] ^short = "Indicates a related previous task that had been completed to terminated."
-* extension[task-replaces] ^comment = "If a previous request was completed or cancelled that largely represents this current task it may be useful for GFE contributors to be able to refer to the previous request. This may happen when something about a GFE collection request changes so much that it requires re-issuing the request by cancelling the first one and creating a new one. GFE contributors may want to refer back to the previous request in order to help them populate a response to the new one."
+
+//* extension[task-replaces] ^short = "Indicates a related previous task that had been completed to terminated."
+//* extension[task-replaces] ^comment = "If a previous request was completed or cancelled that largely represents this current task it may be useful for GFE contributors to be able to refer to the previous request. This may happen when something about a GFE collection request changes so much that it requires re-issuing the request by cancelling the first one and creating a new one. GFE contributors may want to refer back to the previous request in order to help them populate a response to the new one."
 
 // TODO add predecessor-task short & comment
+* extension[predecessor-task] ^short = "A reference to the related Task which the current task replaces or carries forward the intention of."
 
 
 * identifier ^slicing.discriminator.path = "type"
