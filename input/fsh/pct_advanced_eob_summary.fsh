@@ -105,7 +105,7 @@ Questions
 * total[outofnetwork] ^short = "Total out of network amount - Must include in non-zero total across all AEoBs"
 * total[outofnetwork].category = PCTNetworkStatusCS#outofnetwork
 
-* total[negotiated] ^short = "Total negotiated amount - Must include in non-zero total across all AEoBs"
+* total[negotiated] ^short = "Total negotiated amount - Total for special negotiated status for a service or product in relation to a patient's coverage that is established outside of a formal network contract"
 * total[negotiated].category = PCTNetworkStatusCS#negotiated
 
 
