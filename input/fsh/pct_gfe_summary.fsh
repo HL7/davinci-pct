@@ -19,7 +19,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * extension[gfeDisclaimer].value[x] only string
 * extension[gfeDisclaimer] ^short = "Disclaimers the patient should be made aware of regarding the estimate, e.g. application of sliding scale for self-pay/uninsured patients"
 * extension[gfeDisclaimer] ^definition = "Disclaimers the patient should be made aware of regarding the providers estimate including any additional assumptions and requirements.  Noting that that the information provided is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) the item or service, to be furnished and is subject to change."
-* extension[gfeDisclaimer] ^comment = "These disclaimers may include, but are not limited to things such as: provider discounts, limitations, preconditions, requirements, assumptions (e.g. diagnostic vs. preventative), information known to be missing in the estimate, conditions that may affect the estimate, or anything that may affect the interpretation of the estimate."
+* extension[gfeDisclaimer] ^comment = "These disclaimers may include, but are not limited to things such as: provider discounts (e.g. application of sliding fee scale),  limitations, preconditions, requirements, assumptions (e.g. diagnostic vs. preventative), information known to be missing in the estimate, conditions that may affect the estimate, or anything that may affect the interpretation of the estimate."
 * billablePeriod MS
 * billablePeriod ^short = "The full Period of Care for all services or products included in the estimate from the first event to the last event."
 
