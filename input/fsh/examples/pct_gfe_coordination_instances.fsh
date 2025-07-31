@@ -361,6 +361,8 @@ Usage: #inline
 
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
 * extension[requestOriginationType].valueCodeableConcept = PCTGFERequestTypeCSTemporaryTrialUse#nonscheduled-request
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
+
 * identifier[+].system = "http://www.example.org/identifiers/composition"
 * identifier[=].value = "019283476"
 * status = #final
@@ -392,6 +394,7 @@ Usage: #inline
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008003"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * extension[requestOriginationType].valueCodeableConcept = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * identifier[+].system = "http://www.example.org/identifiers/composition"
 * identifier[=].value = "019283477"
 * status = #final
