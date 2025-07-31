@@ -31,7 +31,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * extension[providerEventMethodology] ^definition = "How the provider determined the number of claims and the number and type of billing providers to include in the GFE. Examples include provider episodes of care experience, PACES, order set based on clinical guidelines, payor suggested grouping, or some other method of determination. The extension definition contains additional detail."
 * extension contains GFEDisclaimer named gfeDisclaimer 0..* MS
 * extension[gfeDisclaimer].value[x] only string
-* extension[gfeDisclaimer] ^short = "Disclaimers the patient should be made aware of regarding the providers estimate"
+* extension[gfeDisclaimer] ^short = "Disclaimers the patient should be made aware of regarding the providers estimate, e.g. application of sliding scale for self-pay/uninsured patients"
 * extension[gfeDisclaimer] ^definition = "Disclaimers the patient should be made aware of regarding the providers estimate including any additional assumptions and requirements.  Noting that that the information provided is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) the item or service, to be furnished and is subject to change."
 * extension[gfeDisclaimer] ^comment = "These disclaimers may include, but are not limited to things such as: provider discounts, limitations, preconditions, requirements, assumptions (e.g. diagnostic vs. preventative), information known to be missing in the estimate, conditions that may affect the estimate, or anything that may affect the interpretation of the estimate."
 
