@@ -74,6 +74,14 @@ Usage: #example
 * total[submitted].amount.value = 200.00
 * total[submitted].amount.currency = #USD
 
+* total[memberliability].category = PCTAdjudicationCategoryCS#memberliability "Member liability"
+* total[memberliability].amount.value = 20.00
+* total[memberliability].amount.currency = #USD
+
+* total[eligible].category = $ADJUDCS#eligible "Eligible Amount"
+* total[eligible].amount.value = 190.00
+* total[eligible].amount.currency = #USD
+
 * processNote.extension[processNoteClass].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTAEOBProcessNoteCS#disclaimer "Disclaimer"
 * processNote.text = "processNote disclaimer text"
 
@@ -132,6 +140,15 @@ Usage: #example
 * total[submitted].category = $ADJUDCS#submitted "Submitted Amount"
 * total[submitted].amount.value = 200.00
 * total[submitted].amount.currency = #USD
+
+* total[memberliability].category = PCTAdjudicationCategoryCS#memberliability "Member liability"
+* total[memberliability].amount.value = 20.00
+* total[memberliability].amount.currency = #USD
+
+* total[eligible].category = $ADJUDCS#eligible "Eligible Amount"
+* total[eligible].amount.value = 190.00
+* total[eligible].amount.currency = #USD
+
 
 * processNote.extension[processNoteClass].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTAEOBProcessNoteCS#disclaimer "Disclaimer"
 * processNote.text = "processNote disclaimer text"
@@ -201,12 +218,15 @@ Instance: PCT-AEOB-Composition-1
 InstanceOf: PCTAdvancedEOBComposition
 Description: "PCT AEOB Composition Example 1"
 Usage: #inline
+
+* extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * identifier.system = "http://www.example.org/identifiers/composition"
 * identifier.value = "019283475"
 * status = #final
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet "AEOB Packet"
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+
 
 
 * date = "2025-01-10T11:01:00+05:00"
