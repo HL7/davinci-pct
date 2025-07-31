@@ -83,12 +83,12 @@ Questions
 * total.category from PCTTotal (extensible)
 * total contains
 	submitted 1..1 MS and
-	memberliability 0..1 MS and
+	memberliability 1..1 MS and
+	eligible 1..1 MS and
 	innetwork 0..1 MS and
 	outofnetwork 0..1 MS and
 	noncovered 0..1 MS and
 	negotiated 0..1 MS and
-	eligible 0..1 MS and
 	benefit 0..1 MS
 
 
