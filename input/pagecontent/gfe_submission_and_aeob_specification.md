@@ -13,7 +13,7 @@ In addition to the requirements specified in this section, GFE Submitters, and P
 One of the primary interaction supported by this IG is submitting a GFE and receiving an AEOB in response. To perform this, a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
 
-For scheduled services the submitting provider **SHALL** include the following in the[GFE  Composition]( StructureDefinition-davinci-pct-gfe-composition.html):
+For scheduled services the submitting provider **SHALL** include the following in the [GFE  Composition]( StructureDefinition-davinci-pct-gfe-composition.html):
 
 Service dates/time in the `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod`.
 The `Composition.extension[requestOriginationType].valueCodeableConcept` with a code representing a `scheduled-request`.

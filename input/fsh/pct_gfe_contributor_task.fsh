@@ -20,7 +20,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * extension[requested-period].valuePeriod.end 1..1
 
 * extension[request-initiation-time] ^short = "Estimate Request instant"
-* extension[request-initiation-time] ^short = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
+* extension[request-initiation-time] ^comment = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
 * extension[request-initiation-time].valueInstant 1..1
 
 * extension[planned-service-period] ^short = "GFE contributor specific planned or scheduled period of service the request is about"

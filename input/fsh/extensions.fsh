@@ -372,7 +372,7 @@ Description: "Instant from which the request is being initiated."
 * value[x] 1..1
 * value[x] only instant
 * value[x] ^short = "Estimate Request instant"
-* value[x] ^comment = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
+* value[x] ^comment = "Instant from which the event that triggered the need for an estimate took place. For the GFE request made to a provider or set of providers to fulfill, this is the date and time the patient or their representative made the request or the time of the service scheduling activity (as opposed to the planned time of service). For an AEOB request made to a payer to fulfill, this is the time in which the GFE submission was made to the payer."
 
 
 Extension: SelfPayDeclared
