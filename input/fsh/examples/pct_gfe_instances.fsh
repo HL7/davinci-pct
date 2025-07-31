@@ -31,7 +31,8 @@ Usage: #example
 */
 * extension[providerEventMethodology].valueString = "EEMM1021"
 * extension[gfeDisclaimer].valueString = "For estimation purposes only"
-* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
@@ -129,7 +130,8 @@ Usage: #example
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
 */
 * extension[providerEventMethodology].valueString = "EEMM1022"
-* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008001"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * status = #active
 * type = $ClaimTypeCS#professional "Professional"
@@ -216,7 +218,8 @@ Usage: #example
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
 */
 * extension[providerEventMethodology].valueString = "EEMM1021"
-* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008002"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2022-02-02"
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"

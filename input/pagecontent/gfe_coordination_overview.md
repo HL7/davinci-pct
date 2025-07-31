@@ -218,3 +218,8 @@ Assumptions:
 7. Good Health Hospital’s assigned Coordination Platform aggregates all convening and co-provider estimates into a single GFE, with the summary total for the surgery across providers as well as the details per provider and the associated facility charges.
 
 7. GFE is posted to API available to the Patient by Tuesday (within one business day from time of scheduling)
+
+
+### Multi-Provider Coordination Workflow Alternative ###
+
+If the GFE Coordination Workflow is not an option for gathering all of the GFE Bundles from the contributing providers, this Implementation Guide provides a means for separate individual GFE Packet submissions to be assembled via use of linking identifiers. See the section [Multi-Provider Good Faith Estimates](gfe_submission_and_aeob_overview.html#multi-provider-good-faith-estimates) for more details.

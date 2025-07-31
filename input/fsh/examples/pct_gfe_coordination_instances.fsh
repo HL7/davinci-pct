@@ -359,7 +359,9 @@ InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Institutional Example 1"
 Usage: #inline
 
-* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008002"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008002"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
+
 * extension[requestOriginationType].valueCodeableConcept = PCTGFERequestTypeCSTemporaryTrialUse#nonscheduled-request
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 
@@ -391,7 +393,8 @@ Instance: PCT-GFE-Composition-Prof-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Professional Example 1"
 Usage: #inline
-* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueString = "223452-2342-2435-008003"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008003"
+* extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
 * extension[requestOriginationType].valueCodeableConcept = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"

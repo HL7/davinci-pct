@@ -54,7 +54,9 @@ Description: "This extension is used to provide the GFE Service Linking Informat
 * extension[linkingIdentifier] ^short = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practitioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier] ^definition = "An identifier assigned to a particular service or series of services, generally by a scheduling facility, to be used by all providers and practitioners who will be submitting a GFE for a patient's care."
 * extension[linkingIdentifier].value[x] 1..1
-* extension[linkingIdentifier].value[x] only string
+* extension[linkingIdentifier].value[x] only Identifier
+* extension[linkingIdentifier].valueIdentifier.value 1..1
+* extension[linkingIdentifier].valueIdentifier.system 1..1
 * extension[anticipatedSubmittingProviderCount] ^short = "Total number of providers that are expected to submit GFEs."
 * extension[anticipatedSubmittingProviderCount] ^definition = "The total number of providers that are expected to submit a GFE as part of a planned period of service or estimate request. This number includes all co-provider and the convening provider (if the convening provider is submitting a GFE). If this value is provided in more than one resource and there is a conflict in the number, the extension as part of the GFE Composition as part of the GFE Packet will be the definitive number."
 * extension[anticipatedSubmittingProviderCount] ^comment = "The count of GFE submitting providers is useful for an intermediary or a payer that is collating multiple GFE submissions from multiple providers. This element is highly recommended if there are GFEs that will be submitted from multiple providers and is not needed if there is only a single submitting provider (e.g. only a single provider GFE or is the GFE Coordination process was done before submitting the GFE Packet)."

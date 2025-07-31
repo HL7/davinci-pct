@@ -26,6 +26,32 @@ Dotted line indicates optional.
 
 >Note: The timeline that a payer is required to provide an AEOB is expected to depend on when the payer receives the GFE submission from provider/facility. For scheduled services, payers would determine if the request originated from a scheduled service from the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[requestOriginationType].valueCodeableConcept` and use the service dates/time in the  `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod` to determine the start of the service and the according timeframe they have to provide an AEOB. It is allowed for a planned period of service to be provided for unscheduled services. This may be useful for situations where a service is not scheduled, but the time frame could affect the estimate (e.g. the service is planned in a different plan year).
 
+
+### Multi-Provider Good Faith Estimates ###
+
+This Implementation Guide defines two ways in which a set of GFE Claims from multiple providers can be assembled for the purpose of creating a single [AEOB Packet].
+This Implementation Guide defines GFE Coordination workflow to enable providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider Good Faith Estimates (GFE) are required, either to provide to the patient or, optionally, to submit to a payer (for patients using insurance.) Alternatively, there is another option for which separate GFEs from multiple providers for a single patient’s period of care can be identified for the purpose of creating a single AEOB Packet.  In Summary, the two options are:
+
+1. The GFE Coordination workflow where the aggregation of a single [GFE Packet] is coordinated through a Task-based process involving multiple providers before submission to the payer through a single $gfe-submit operation
+2. Linking and Assembling Separate GFE Submissions from multiple providers’ (each submitted via the $gfe-submit operation separately) then assembled by a payer or intermediary to produce a single  AEOB Packet.
+
+Neither of these options is required by any actor defined in this Implementation Guide. Other methods not defined in this guide may be available.
+
+#### The GFE Coordination Workflow ####
+
+The GFE Coordination Workflow provides a means for GFE Coordination Requester (convening provider) to identify and notify all of the contributing providers (co-providers) needed and assign GFE Contributor Tasks asking for a GFE Bundle from each contributor through a Coordination Platform. Those contributors can attach their GFE Bundle and complete their Tasks to indicate it’s ready, rather than sending the GFE Bundle separately to the payer. The GFE Coordination Requester can then retrieve all the GFE Bundles from the Coordination Platform via a $gfe-retrieve operation in the form of a single GFE Packet. The GFE Packet  can then be submitted to a payer as a single submission containing all providers’ GFE Bundles for one patient’s period of care. This option is only available to providers with access to a platform that supports this function, which may be implemented by a 3rd party, by the convening or contributing provider, or even by a payer.
+
+>Note: This technical approach option better facilitates coordination between providers prior to the submission of a consolidated GFE Packet, significantly increasing the likelihood of completeness.
+
+#### Linking and Assembling Separate GFE Submissions ####
+
+If the GFE Coordination Workflow is not an option for gathering all of the GFE Bundles from the contributing providers, this Implementation Guide provides a means for separate individual GFE Packet submissions to be linked for a payer to assemble. All providers submitting their individual GFE Packets related to one patient’s period of care need to provide the same GFEServiceLinkingInfo identifier (the GFE Packets GFE Composition `Composition.extension[gfeServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier`). This identifier would likely be created, assigned, and sent by the provider that initiated the request to the other participating providers through a means not defined in this guide. The number of other providers expected to submit estimates may also be included. A payer or intermediary can then use this service linking information to assemble together a complete set of GFEs for which to create an AEOB Packet for. This option is only available to providers if the payer, or an intermediary, receiving the separate GFE submissions supports assembly after submission.
+
+>Note: This option does not facilitate coordination providers prior to GFE Packet submission and therefore may lack completeness and reducing the likelihood for payers to accurately produce a complete Patient AEOB. This method does not provide a defined means for providers to directly indicate that they cannot participate. Additionally, since the GFEs are submitted individually, payers may not know when all of the GFEs have been received, what may be missing, when to start the time clock for compliance, and they may have to wait until the time limit is nearly expired before creating an AEOB Packet, possibly introducing unnecessary delays in providing the member with an estimate.
+
+
+
+
 ### Notifications for AEOB Packet Availability ###
 
 Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
