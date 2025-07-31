@@ -8,12 +8,20 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 * obeys pct-gfe-packet-composition-1
 
 * extension contains
+    RequestInitiationTime named requestInitiationTime 1..1 MS and
     GFEServiceLinkingInfo named gfeServiceLinkingInfo 0..1 MS and  // FHIR-45759 set this to be 1..1, but was later changes by FHIR-34959 to 0..1
     RequestOriginationType named requestOriginationType 1..1 MS
+
+
+
+* extension[requestInitiationTime] ^short = "Estimate Request instant (instance service was scheduled or estimate requested)"
+* extension[requestInitiationTime] ^comment = "Instant from which the request is being initiated. For patient initiated requests, this is the date and time the patient or their representative made the request. For a newly scheduled service, this represents the time of the scheduling activity (as opposed to the planned time of service). For all other requests, the time of the event that triggered the need for an estimate."
+* extension[requestInitiationTime].valueInstant 1..1
 
 * extension[gfeServiceLinkingInfo] ^short = "GFE Service Linking Information including planned period of service and a GFE linking identifier. Scheduled services SHALL have a plannedPeriodOfService valueDate or ValuePeriod"    
 
 * extension[requestOriginationType] ^short = "Indicator as to whether the request for estimate originated from a scheduled or unscheduled service."    
+
 
 
 * identifier 1..

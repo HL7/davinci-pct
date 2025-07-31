@@ -4,6 +4,18 @@ Id: davinci-pct-aeob-composition
 Title: "PCT AEOB Composition"
 Description: "PCT AEOB Composition that assembles the contents of an AEOB (represented by one or more individual AEOB resources) into a single logical package. A Composition for the document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
+
+
+* extension contains
+    RequestInitiationTime named requestInitiationTime 1..1    
+    
+* extension[requestInitiationTime] ^short = "Estimate Request instant (instance GFE Packet submitted to payer)"
+* extension[requestInitiationTime] ^comment = "Instant from which the request is being initiated. The time of the AEOB request made to a payer to fulfill, this is the time in which the GFE submission was made to the payer."
+* extension[requestInitiationTime].valueInstant 1..1
+
+
+
+
 * identifier 1..
   * system 1..1
   * value 1..1
