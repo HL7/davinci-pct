@@ -114,6 +114,7 @@ Usage: #example
 * requester = Reference(Submitter-Org-1)
 * owner = Reference(org1002)
 
+
 Instance: PCT-GFE-Information-Bundle-1
 InstanceOf: PCTGFEInformationBundle
 Description: "PCT GFE Information Bundle Example 1"
@@ -167,6 +168,104 @@ Usage: #example
 * entry[requested-items-device].id = "PCT-DeviceRequest-1"
 * entry[requested-items-device].resource = PCT-DeviceRequest-1
 
+
+
+
+
+
+
+
+
+
+
+
+
+Instance: PCT-GFE-Coordination-Replacement-Task-1
+InstanceOf: PCTGFECoordinationTask
+Description: "PCT GFE Coordination Task replacement example 1"
+Usage: #example
+
+* extension[requested-period].valuePeriod.end = "2024-03-31T11:01:00+05:00"
+
+* extension[request-initiation-time].valueInstant = "2024-03-28T11:01:00+05:00"
+
+* extension[planned-service-period].valuePeriod.start = "2024-04-29T10:00:00+05:00"
+* extension[planned-service-period].valuePeriod.end = "2024-04-29T11:00:00+05:00"
+
+* extension[predecessor-task]
+  * extension[relationship].valueCodeableConcept = $v3ActRelationship#RPLC "replaces"
+  * extension[related].valueReference = Reference(PCT-GFE-Coordination-Task-1)
+  * extension[description].valueMarkdown = "Change to Planned period of Service"
+
+* status = $HL7TaskStatus#requested
+//* statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
+* intent = http://hl7.org/fhir/task-intent#order
+
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-coordination-task
+* requester = Reference(Submitter-Org-1)
+
+
+* reasonCode = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
+* input.type.text = "GFE Information Bundle"
+* input.valueAttachment.contentType = #application/fhir+json
+//* input.valueAttachment.data = ""
+
+
+Instance: PCT-GFE-Contributor-Replacement-Task-1
+InstanceOf: PCTGFEContributorTask
+Description: "PCT GFE Contributor Task replacement example 1"
+Usage: #example
+
+* extension[requested-period].valuePeriod.end = "2024-03-31T11:01:00+05:00"
+
+* extension[request-initiation-time].valueInstant = "2024-03-28T11:01:00+05:00"
+
+* extension[planned-service-period].valuePeriod.start = "2024-04-29T10:00:00+05:00"
+* extension[planned-service-period].valuePeriod.end = "2024-04-29T11:00:00+05:00"
+
+* extension[predecessor-task]
+  * extension[relationship].valueCodeableConcept = $v3ActRelationship#RPLC "replaces"
+  * extension[related].valueReference = Reference(PCT-GFE-Contributor-Task-1)
+  * extension[description].valueMarkdown = "Change to Planned period of Service"
+
+
+* partOf = Reference(PCT-GFE-Coordination-Replacement-Task-1)
+
+* status = $HL7TaskStatus#received
+//* statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
+* intent = http://hl7.org/fhir/task-intent#order
+
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-contributor-task
+* requester = Reference(Submitter-Org-1)
+* owner = Reference(Submitter-Org-1)
+
+
+Instance: PCT-GFE-Contributor-Replacement-Task-2
+InstanceOf: PCTGFEContributorTask
+Description: "PCT GFE Contributor Task replacement example 2"
+Usage: #example
+
+* extension[requested-period].valuePeriod.end = "2024-03-31T11:01:00+05:00"
+
+* extension[request-initiation-time].valueInstant = "2024-03-28T11:01:00+05:00"
+
+* extension[planned-service-period].valuePeriod.start = "2024-04-29T10:00:00+05:00"
+* extension[planned-service-period].valuePeriod.end = "2024-04-29T11:00:00+05:00"
+
+* extension[predecessor-task]
+  * extension[relationship].valueCodeableConcept = $v3ActRelationship#RPLC "replaces"
+  * extension[related].valueReference = Reference(PCT-GFE-Contributor-Task-2)
+  * extension[description].valueMarkdown = "Change to Planned period of Service"
+
+* partOf = Reference(PCT-GFE-Coordination-Replacement-Task-1)
+
+* status = $HL7TaskStatus#received
+//* statusReason from PCTCoordinationTaskStatusReasonCodes (extensible)
+* intent = http://hl7.org/fhir/task-intent#order
+
+* code = PCTGFERequestTypeCSTemporaryTrialUse#gfe-contributor-task
+* requester = Reference(Submitter-Org-1)
+* owner = Reference(org1002)
 
 
 
