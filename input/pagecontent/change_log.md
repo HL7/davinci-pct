@@ -6,24 +6,24 @@ This ballot version includes a new use case addressing the need to coordinate GF
 
 * Added the GFE Coordination Workflow <a href="gfe_coordination_overview.html">Overview</a> and <a href="gfe_coordination_specification.html">Specification</a> pages.
 * Created the following profiles in support of the GFE Collection workflow:
-    * [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) - This collection of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation.
-    * [GFE Coordination Bundle](StructureDefinition-davinci-pct-gfe-coordination-bundle.html) - Contains necessary resources for GFE to request GFEs from one or multiple GFE contributing providers.
-    * [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) - Used to organize a GFE across providers for a single period of care for which all GFE Contributor Task resources will be linked.
-    * [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) - Used by a GFE coordinator to assign a GFE contributor task to a specific provider and may include information specific to that patient’s expected service.
-    * [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) - Contains the information necessary for GFE contributors to create their estimates.
-    * [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) - Used to indicate when a GFE Contributor task request was made, but no GFE Bundle was submitted.
-    * [GFE ServiceRequest](StructureDefinition-davinci-pct-servicerequest.html) - Includes details about a service for which a GFE is being requested.
-    * [GFE MedicationRequest](StructureDefinition-davinci-pct-medicationrequest.html) - Includes details about a medication for which a GFE is being requested.
-    * [GFE DeviceRequest](StructureDefinition-davinci-pct-devicerequest.html) - Includes details about a device for which a GFE is being requested.
-    * [PCT Service Location](StructureDefinition-davinci-pct-service-location.html) - Provides information where the service is to be performed or the item delivered.
+    * [GFE Collection Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-collection-bundle.html) - This collection of GFE Bundles from GFE contributors that can then be made available to the patient or sent to a payer for insurance estimation.
+    * [GFE Coordination Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-coordination-bundle.html) - Contains necessary resources for GFE to request GFEs from one or multiple GFE contributing providers.
+    * [GFE Coordination Task](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-coordination-task.html) - Used to organize a GFE across providers for a single period of care for which all GFE Contributor Task resources will be linked.
+    * [GFE Contributor Task](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-contributor-task.html) - Used by a GFE coordinator to assign a GFE contributor task to a specific provider and may include information specific to that patient’s expected service.
+    * [GFE Information Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-information-bundle.html) - Contains the information necessary for GFE contributors to create their estimates.
+    * [GFE Missing Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-missing-bundle.html) - Used to indicate when a GFE Contributor task request was made, but no GFE Bundle was submitted.
+    * [GFE ServiceRequest](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-servicerequest.html) - Includes details about a service for which a GFE is being requested.
+    * [GFE MedicationRequest](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-medicationrequest.html) - Includes details about a medication for which a GFE is being requested.
+    * [GFE DeviceRequest](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-devicerequest.html) - Includes details about a device for which a GFE is being requested.
+    * [PCT Service Location](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-service-location.html) - Provides information where the service is to be performed or the item delivered.
 * Created the following CapabilityStatements identifying requirements of the GFE Coordination workflow actors:
-    * [Coordination Platform Capability Statement](CapabilityStatement-davinci-pct-coordination-platform.html)
-    * [Coordination Requester Capability Statement](CapabilityStatement-davinci-pct-coordination-requester.html)
-    * [GFE Contributor Capability Statement](CapabilityStatement-davinci-pct-gfe-contributor.html)
+    * [Coordination Platform Capability Statement](https://hl7.org/fhir/us/davinci-pct/2024May/CapabilityStatement-davinci-pct-coordination-platform.html)
+    * [Coordination Requester Capability Statement](https://hl7.org/fhir/us/davinci-pct/2024May/CapabilityStatement-davinci-pct-coordination-requester.html)
+    * [GFE Contributor Capability Statement](https://hl7.org/fhir/us/davinci-pct/2024May/CapabilityStatement-davinci-pct-gfe-contributor.html)
 * Created CodeSystems and ValueSets in support of the GFE Coordination workflow
-* Created the [Retrieve GFE Collection Bundle (GFE-Retrieve) operation](OperationDefinition-GFE-retrieve.html) to support the collection of GFE Bundles contributed through the GFE Coordination workflow.
-* Updated the [GFE Submit](OperationDefinition-GFE-submit.html) operation to take a [GFE Collection Bundle](StructureDefinition-davinci-pct-gfe-collection-bundle.html) instead of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) (which is now contained in the GFE Collection Bundle)
-* Added the [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) and [GFE Summary](StructureDefinition-davinci-pct-gfe-summary.html) profiles and requirements for their presence in the [AEOB Bundle](StructureDefinition-davinci-pct-aeob-bundle.html) and [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) respectively
+* Created the [Retrieve GFE Collection Bundle (GFE-Retrieve) operation](https://hl7.org/fhir/us/davinci-pct/2024May/OperationDefinition-GFE-retrieve.html) to support the collection of GFE Bundles contributed through the GFE Coordination workflow.
+* Updated the [GFE Submit](https://hl7.org/fhir/us/davinci-pct/2024May/OperationDefinition-GFE-submit.html) operation to take a [GFE Collection Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-collection-bundle.html) instead of the [GFE Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-bundle.html) (which is now contained in the GFE Collection Bundle)
+* Added the [AEOB Summary](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-aeob-summary.html) and [GFE Summary](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-summary.html) profiles and requirements for their presence in the [AEOB Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-aeob-bundle.html) and [GFE Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-bundle.html) respectively
 * Assign a standards status to all artifacts and pages.
 * Small presentation and example changes.
 

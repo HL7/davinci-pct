@@ -53,7 +53,7 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 ### US Core
 Provider billing and payer claims adjudication systems for those profiles defined by US Core SHALL use the specification defined by [US Core]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
 
-Da Vinci PCT implementations SHALL conform to the US Core IG [Must Support]({{site.data.fhir.ver.hl7_fhir_us_core}}/general-guidance.html#must-support) Guidance where US Core IG resources are used.
+Da Vinci PCT implementations SHALL conform to the US Core IG [General Guidance]({{site.data.fhir.ver.uscore}}/general-guidance.html) requirements where US Core IG resources are used.
 
 
 ### Da Vinci HRex

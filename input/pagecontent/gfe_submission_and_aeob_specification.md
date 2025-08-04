@@ -80,11 +80,11 @@ This IG defines the following minimal requirements for the support of subscripti
 To support the access and ability to provide notifications appropriately, an AEOB Packet Document Reference and PCT AEOB Composition **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the AEOB Packet Document Reference `documentReferece.status` and PCT AEOB Composition `Composition.status` **SHALL** be set to `entered-in-error`
 
 #### Requirements for AEOB Packet Availability Subscriptions ####
-For notifications to patients (AEOB Packet `subject`) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription) and meet the following requirements:
+For notifications to patients (AEOB Packet `subject`) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription.html) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.
 * Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
 
-For notifications to author(s) (providers) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription) and meet the following requirements:
+For notifications to author(s) (providers) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription.html) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?author=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the provider.
 * Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) in order to trigger a notification. 
 

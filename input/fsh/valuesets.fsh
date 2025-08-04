@@ -106,7 +106,7 @@ Description: "Value Set containing codes for the type of adjudication informatio
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
-ValueSet: PCTAdjudication   
+ValueSet: PCTAdjudicationVS   
 Title: "PCT Adjudication Value Set"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values 
 defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem."
@@ -126,7 +126,7 @@ ValueSet: PCTTotal
 Title: "PCT Total Value Set"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values 
 defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the Network Status."
-* codes from valueset PCTAdjudication 
+* codes from valueset PCTAdjudicationVS 
 * PCTNetworkStatusCS#innetwork "In Network"
 * PCTNetworkStatusCS#outofnetwork "Out Of Network"
 * PCTNetworkStatusCS#negotiated "Negotiated Service or Product"

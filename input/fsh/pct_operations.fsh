@@ -16,7 +16,7 @@ Usage: #definition
 * system = false
 * type = true
 * instance = false
-* inputProfile = Canonical(PCTGFEPacket)
+//* inputProfile = Canonical(PCTGFEPacket)
 * parameter[0].name = #resource
 * parameter[0].use = #in
 * parameter[0].min = 1
@@ -28,7 +28,9 @@ Usage: #definition
 * parameter[1].use = #out
 * parameter[1].min = 0
 * parameter[1].max = "1"
-* parameter[1].documentation = "When successful, this will return a Bundle of type batch-submit; When there is an error calling $gfe-submit (4xx, 5xx HTTP code) then an OperationOutcome must be returned per the [async pattern](https://hl7.org/fhir/R5/async-bundle.html)."
+
+//#TODO define a bundle that includes operation outcomes for each resource in the input bundle.
+* parameter[1].documentation = "When successful, this will return operationOutcome with the; When there is an error calling $gfe-submit (4xx, 5xx HTTP code) then an OperationOutcome must be returned per the [async pattern](https://hl7.org/fhir/R5/async-bundle.html)."
 * parameter[1].type = #OperationOutcome
 
 // Note: This is no longer needed. We will use FHIR queries instead. LD
@@ -83,7 +85,7 @@ Usage: #definition
 * type = false
 * instance = true
 //* inputProfile = Canonical(PCTGFECoordinationTask)
-* outputProfile = Canonical(PCTGFEPacket)
+//* outputProfile = Canonical(PCTGFEPacket)
 /* parameter[0].name = #request
 * parameter[0].use = #in
 * parameter[0].min = 1
@@ -100,3 +102,36 @@ Usage: #definition
 * parameter[=].documentation = "A GFE Packet containing the GFE Bundles of the submitted GFE Bundles by the GFE Contributors for GFE Contributor Tasks marked as `completed`, and GFE Missing Bundles for incomplete Tasks."
 * parameter[=].type = #Bundle
 
+
+Instance: GFECoordinationRequest
+InstanceOf: OperationDefinition
+Description: "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The only output is a url for subsequent polling per [async pattern](https://hl7.org/fhir/R5/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient and not to the provider."
+Usage: #definition
+
+* id = "GFE-coordination-request"
+* url = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-coordination-request"
+* name = "GFECoordinationRequest"
+* title = ""
+* status = #active
+* kind = #operation
+* description = "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The output is a url in the Content-Location header for subsequent polling and optionally an OperationOutcome resource per [async pattern](https://hl7.org/fhir/R5/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient."
+* code = #gfe-submit
+* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-coordination-request"
+//* resource = #Claim
+* system = true
+* type = false
+* instance = false
+//* inputProfile = Canonical(PCTGFECoordinationBundle)
+* parameter[0].name = #resource
+* parameter[0].use = #in
+* parameter[0].min = 1
+* parameter[0].max = "1"
+* parameter[0].targetProfile = Canonical(PCTGFECoordinationBundle)
+* parameter[0].documentation = "A request Bundle that contains necessary resources for GFE  to request GFEs from one or multiple GFE contributing providers."
+* parameter[0].type = #Bundle
+* parameter[1].name = #return
+* parameter[1].use = #out
+* parameter[1].min = 0
+* parameter[1].max = "1"
+* parameter[1].documentation = "When successful, this will return a Bundle of type batch-response; When there is an error calling $gfe-coordination-request (4xx, 5xx HTTP code) then an OperationOutcome must be returned."
+* parameter[1].type = #OperationOutcome
