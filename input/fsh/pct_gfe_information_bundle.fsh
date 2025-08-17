@@ -39,11 +39,11 @@ Description: "PCT GFE Information Bundle that contains the information necessary
     
 * entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
 * entry[patient].resource 1..1
-* entry[patient].resource only USCorePatientProfile
+* entry[patient].resource only USCorePatientProfile|7.0.0
 
 * entry[coverage] ^short = "MAY have one Coverage"
 * entry[coverage].resource 1..1
-* entry[coverage].resource only PCTCoverage or PCTSelfPayCoverage
+* entry[coverage].resource only PCTCoverage
 
 * entry[organization] ^short = "MAY have the payer organization and may have provider organization(s)"
 * entry[organization].resource 1..1 
@@ -55,7 +55,7 @@ Description: "PCT GFE Information Bundle that contains the information necessary
 
 * entry[practitioner-role] ^short = "MAY have the provider PractitionerRole(s)"
 * entry[practitioner-role].resource 1..1 
-* entry[practitioner-role].resource only  HRexPractitionerRole 
+* entry[practitioner-role].resource only  USCorePractitionerRoleProfile|7.0.0
 
 * entry[service-location] ^short = "MAY have Service Location(s)"
 * entry[service-location].resource 1..1 

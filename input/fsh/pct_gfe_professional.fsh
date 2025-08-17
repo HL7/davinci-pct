@@ -38,7 +38,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * type = $ClaimTypeCS#professional
 * use = $CLAIMUSECS#predetermination "predetermination"
 
-* patient only Reference(USCorePatientProfile)
+* patient only Reference(USCorePatientProfile|7.0.0)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
 * provider only Reference(PCTOrganization or PCTPractitioner)
@@ -67,7 +67,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 //* supportingInfo.category from $C4BBSupportingInfoType (extensible)
 
 
-* insurance.coverage only Reference(PCTCoverage or PCTSelfPayCoverage)
+* insurance.coverage only Reference(PCTCoverage)
 * insurance.coverage.extension contains $DARExtensionUrl named dataAbsentReason 0..1 MS
 * insurance.coverage.extension[dataAbsentReason] ^short = "Coverage may be not applicable if estimate is for self-pay or uninsured"
 
@@ -136,8 +136,8 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * careTeam.qualification
 * careTeam.qualification from $USCPROCROLE (required)
 * careTeam contains
-   rendering 0..* and
-   referring 0..1
+   rendering 0..* MS and
+   referring 0..1 MS
 * careTeam[rendering].role = $CARETEAMROLECS#rendering
 //* careTeam[rendering] ^short = "May be used for the Institutional/Professional case"
 * careTeam[rendering].qualification 1..1

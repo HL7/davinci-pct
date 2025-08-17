@@ -29,7 +29,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * use = $CLAIMUSECS#predetermination "predetermination"
 
 
-* patient only Reference(USCorePatientProfile)
+* patient only Reference(USCorePatientProfile|7.0.0)
 
 * enterer 0..0
 
@@ -55,7 +55,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 
 * facility 0..0
 
-* insurance.coverage only Reference(PCTCoverage or PCTSelfPayCoverage)
+* insurance.coverage only Reference(PCTCoverage)
 * insurance.preAuthRef 0..0
 
 * accident.location[x] only Address

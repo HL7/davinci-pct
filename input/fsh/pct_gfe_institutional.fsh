@@ -48,7 +48,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * type = $ClaimTypeCS#institutional
 * use = $CLAIMUSECS#predetermination "predetermination"
 
-* patient only Reference(USCorePatientProfile)
+* patient only Reference(USCorePatientProfile|7.0.0)
 
 // Billing provider--get Taxonomy Code and Organization from PractitionerRole
 * provider only Reference(PCTOrganization)
@@ -73,7 +73,7 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * referral.extension[referralNumber] ^short = "Referral Number"
 
 
-* insurance.coverage only Reference(PCTCoverage or PCTSelfPayCoverage)
+* insurance.coverage only Reference(PCTCoverage)
 * insurance.coverage.extension contains $DARExtensionUrl named dataAbsentReason 0..1 MS
 * insurance.coverage.extension[dataAbsentReason] ^short = "Coverage may be not applicable if estimate is for self-pay or uninsured"
 
@@ -185,11 +185,11 @@ Description: "PCT Good Faith Estimate Institutional is a profile for an institut
 * insert SupportingInfoSlicing
 * supportingInfo.category from PCTSupportingInfoTypeVS (extensible)
 * supportingInfo contains
-   typeOfBill 1..1 and
-   serviceFacility 0..1 MS and
-   drg 0..1 and
-   pointoforigin 0..1 and
-   admtype 0..1
+   typeOfBill 1..1 MS and
+   serviceFacility 0..1 MS MS and
+   drg 0..1 MS and
+   pointoforigin 0..1 MS and
+   admtype 0..1 MS
    
 
 * supportingInfo[typeOfBill].category
