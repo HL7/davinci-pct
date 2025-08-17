@@ -22,7 +22,7 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
-* subject only Reference(USCorePatientProfile)
+* subject only Reference(USCorePatientProfile|7.0.0)
 
 
 * date obeys pct-datetime-to-seconds
@@ -88,11 +88,13 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 * section[aeob].entry ^type.aggregation = #bundled
 
 
-* section[gfeBundle] ^short = "SHALL reference one PCTGFEBundle resource, which may be contained in the document bundle or may reference an external resource, and the associated author (GFE Contributor) contained in the document bundle."
+* section[gfeBundle] ^short = "SHALL reference one PCTGFEBundle or PCTGFEMissingBundle resource, which may be contained in the document bundle or may reference an external resource, and the associated author (GFE Contributor) or proposed author (in the case of a missing GFE Bundle) contained in the document bundle."
 * section[gfeBundle].code = PCTDocumentSection#gfe-section
 * section[gfeBundle].author 1..1 MS
-* section[gfeBundle].author ^short = "Associated GFE author (GFE Contributor) contained in the document bundle"
+* section[gfeBundle].author ^short = "Associated GFE author (GFE Contributor) or proposed author (in the case of a missing GFE Bundle) contained in the document bundle"
 * section[gfeBundle].author only Reference(PCTPractitioner or PCTOrganization)
 * section[gfeBundle].author ^type.aggregation = #bundled
 * section[gfeBundle].entry 1..1 MS
-* section[gfeBundle].entry only Reference(PCTGFEBundle)
+* section[gfeBundle].entry only Reference(PCTGFEBundle or PCTGFEMissingBundle)
+
+

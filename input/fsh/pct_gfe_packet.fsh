@@ -26,7 +26,7 @@ Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. Th
     coverage 0..1 MS and
     organization ..2 MS and
     practitioner 0..1 MS and
-    gfe-bundle 0..* MS and
+    gfeBundle 0..* MS and
     attachment 0..* MS
 
 * entry[composition] ^short = "SHALL have a PCTGFEComposition resource"
@@ -35,12 +35,12 @@ Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. Th
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may have a separate subscriber"
 * entry[patient].resource 1..1
-* entry[patient].resource only USCorePatientProfile
+* entry[patient].resource only USCorePatientProfile|7.0.0
 
 * entry[coverage] ^short = "MAY have one Coverage. SHALL be present submitted to a payer in the $gfe-submit operation."
 * entry[coverage] ^definition = "SHALL be present submitted to a payer in the $gfe-submit operation."
 * entry[coverage].resource 1..1
-* entry[coverage].resource only PCTCoverage or PCTSelfPayCoverage
+* entry[coverage].resource only PCTCoverage
 
 * entry[organization] ^short = "SHALL have an initiating provider or initiating organization, but not both. May also have a payer organization. Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation."
 * entry[organization] ^definition = "GFE Packet initiating provider organization and/or an associated Payer. A Payer Organization SHALL be present when being submitted to a payer in the $gfe-submit operation. An initiating provider SHALL be present as an initiating provider organization (an entry in this slice) or an initiating provider practitioner (practitioner slice), but not both."
@@ -52,9 +52,9 @@ Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. Th
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
-* entry[gfe-bundle] ^short = "MAY include GFE contributor specific GFE bundle and MAY include bundle(s) with information about a unfulfilled GFE request"
-* entry[gfe-bundle].resource 1..1
-* entry[gfe-bundle].resource only PCTGFEBundle or PCTGFEMissingBundle
+* entry[gfeBundle] ^short = "MAY include GFE contributor specific GFE bundle or information about a unfulfilled GFE request (GFE Missing Bundle)"
+* entry[gfeBundle].resource 1..1
+* entry[gfeBundle].resource only PCTGFEBundle or PCTGFEMissingBundle
 
 
 * entry[attachment] ^short = "MAY have attachments as DocumentReference resource(s)"

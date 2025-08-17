@@ -45,7 +45,7 @@ Description: "PCT AEOB Packet that contains necessary resources for one or more 
 
 * entry[patient] ^short = "SHALL have the patient subject of care and may be a separate subscriber"
 * entry[patient].resource 1..1
-* entry[patient].resource only USCorePatientProfile
+* entry[patient].resource only USCorePatientProfile|7.0.0
 
 * entry[coverage] ^short = "SHALL have one Coverage"
 * entry[coverage].resource 1..1
@@ -59,10 +59,9 @@ Description: "PCT AEOB Packet that contains necessary resources for one or more 
 * entry[practitioner].resource 1..1 
 * entry[practitioner].resource only PCTPractitioner
 
-* entry[gfeBundle] ^short = "MAY have PCTGFEBundle or PCTGFEMissingBundle resource"
+* entry[gfeBundle] ^short = "MAY include GFE contributor specific GFE bundle or information about a unfulfilled GFE request (GFE Missing Bundle)"
 * entry[gfeBundle].resource 1..1 
 * entry[gfeBundle].resource only PCTGFEBundle or PCTGFEMissingBundle
-
 
 // TODO Consider adding invariant requirement where at least a gfe summmary exists
 

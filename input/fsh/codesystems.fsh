@@ -178,7 +178,7 @@ CodeSystem: PCTEstimateTypeSummaryCSTemporaryTrialUse
 Title: "PCT Estimate Type Code System"
 Description: "Defining the code for a estimate (GFE or AEOB) type summary.  This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
 * ^caseSensitive = true
-* #estimate-summary "Estimate Summary"
+* #estimate-summary "Estimate Summary" "A summarization of the estimate of one or more financial document(s) or artifact(s) (such as a Claims or Explanation of Benefits)"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
@@ -250,7 +250,8 @@ Title: "PCT Packet Section Codes"
 Description: "Defining codes for the sections found in packets (document bundles) used for Patient Cost Transparency estimates."
 * ^caseSensitive = true
 * #aeob-summary-section "AEOB Summary" "The Advanced Explanation of Benefit (AEOB) Summary Packet Section"
+* #coverage-section "Coverage Section" "The Estimate Packet Coverage Section"
 * #aeob-section "AEOB Section" "The Advanced Explanation of Benefit (AEOB) Packet Section"
-* #gfe-section "GFE Section" "A Good Faith Estimate (GFE) Packet Section (one per provider)"
+* #gfe-section "GFE Section" "A Good Faith Estimate (GFE) or Missing GFE Packet Section (one per provider)"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false

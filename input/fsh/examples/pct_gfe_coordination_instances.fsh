@@ -64,8 +64,9 @@ Usage: #example
 
 
 * reasonCode = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
-* input.type.text = "GFE Information Bundle"
-* input.valueAttachment.contentType = #application/fhir+json
+* input[gfe-information-bundle].type.text = "GFE Information Bundle"
+//* input[gfe-information-bundle].valueAttachment.contentType = #application/fhir+json
+* input[gfe-information-bundle].valueReference = Reference(PCT-GFE-Information-Bundle-1)
 //* input.valueAttachment.data = ""
 
 
@@ -124,14 +125,14 @@ Usage: #example
 * identifier.value = "59688475-2324-3242-2347384711"
 * timestamp = "2024-03-27T11:01:00+05:00"
 * entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
-//* entry[patient].id = "patient1001"
+* entry[patient].id = "patient1001"
 * entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
-* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].fullUrl = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
-* entry[coverage].resource = coverage1001
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[coverage].resource = 49fd53a8-7eb7-4319-acc8-04bf8a3cb603
+* entry[organization][+].fullUrl = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
-* entry[organization][=].resource = org1001
+* entry[organization][=].resource = 2ccf0ff7-2af1-4598-b667-6e35b79529df // org1001
 
 * entry[service-location].fullUrl = "http://example.org/fhir/Location/PCT-ServiceLocation-1"
 * entry[service-location].id = "PCT-ServiceLocation-1"
@@ -151,19 +152,22 @@ InstanceOf: PCTGFEMissingBundle
 Description: "PCT GFE Missing Bundle Example 1"
 Usage: #example
 
+* id = "e1b566b9-34a6-467b-83d2-8107a5ee987d"
+* identifier.system = "http://example.com/identifiers/bundle"
+* identifier.value = "59688475-2324-3242-2347384376"
 * timestamp = "2024-03-27T11:01:00+05:00"
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1002"
+* entry[organization][+].fullUrl = "urn:uuid:646ce5de-3216-4098-ae71-c96d5f02b088" // "http://example.org/fhir/Organization/org1002"
 * entry[organization][=].id = "org1002"
 * entry[organization][=].resource = org1002
 * entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
 //* entry[patient].id = "patient1001"
 * entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
-* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].fullUrl = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
-* entry[coverage].resource = coverage1001
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[coverage].resource = 49fd53a8-7eb7-4319-acc8-04bf8a3cb603
+* entry[organization][+].fullUrl = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
-* entry[organization][=].resource = org1001
+* entry[organization][=].resource = 2ccf0ff7-2af1-4598-b667-6e35b79529df // org1001
 * entry[requested-items-device].fullUrl = "http://example.org/fhir/DeviceRequest/PCT-DeviceRequest-1"
 * entry[requested-items-device].id = "PCT-DeviceRequest-1"
 * entry[requested-items-device].resource = PCT-DeviceRequest-1
@@ -206,8 +210,9 @@ Usage: #example
 
 
 * reasonCode = PCTGFERequestTypeCSTemporaryTrialUse#scheduled-request
-* input.type.text = "GFE Information Bundle"
-* input.valueAttachment.contentType = #application/fhir+json
+* input[gfe-information-bundle].type.text = "GFE Information Bundle"
+//* input[gfe-information-bundle].valueAttachment.contentType = #application/fhir+json
+* input[gfe-information-bundle].valueReference = Reference(PCT-GFE-Information-Bundle-1)
 //* input.valueAttachment.data = ""
 
 
@@ -292,25 +297,26 @@ Usage: #example
 //* entry[patient].id = "patient1001"
 * entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
 
-* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].fullUrl = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
-* entry[coverage].resource = coverage1001
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[coverage].resource = 49fd53a8-7eb7-4319-acc8-04bf8a3cb603
+* entry[organization][+].fullUrl = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // "http://example.org/fhir/Organization/Submitter-Org-1"
 * entry[organization][=].id = "Submitter-Org-1"
-* entry[organization][=].resource = Submitter-Org-1
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].resource = e7c36e30-edb8-4a0a-8208-c92085663b00
+* entry[organization][+].fullUrl = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
-* entry[organization][=].resource = org1001
+* entry[organization][=].resource = 2ccf0ff7-2af1-4598-b667-6e35b79529df
 
 
 
-* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
-* entry[gfe-bundle][=].id = "PCT-GFE-Bundle-Inst-1"
-* entry[gfe-bundle][=].resource = PCT-GFE-Bundle-Inst-1
 
-* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
-* entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
-* entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
+* entry[gfeBundle][+].fullUrl = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+* entry[gfeBundle][=].id = "PCT-GFE-Bundle-Inst-1"
+* entry[gfeBundle][=].resource = b5ff05d5-b645-4676-b8ed-a3937dabac7b
+
+* entry[gfeBundle][+].fullUrl = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfeBundle][=].id = "PCT-GFE-Missing-Bundle-1"
+* entry[gfeBundle][=].resource = e1b566b9-34a6-467b-83d2-8107a5ee987d
 
 
 Instance: PCT-GFE-Packet-Prof-1
@@ -328,27 +334,27 @@ Usage: #example
 
 * entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
 * entry[patient].id = "patient1001"
-* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4
+* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4  // patient1001
 
-* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].fullUrl = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // "http://example.org/fhir/Coverage/coverage1001"
 * entry[coverage].id = "coverage1001"
-* entry[coverage].resource = coverage1001
-* entry[practitioner][+].fullUrl = "http://example.org/fhir/Practitioner/Submitter-Practitioner-1"
+* entry[coverage].resource = 49fd53a8-7eb7-4319-acc8-04bf8a3cb603
+* entry[practitioner][+].fullUrl = "urn:uuid:2e4341dc-70b8-4709-9fa9-0b6d64cf21bb" // "http://example.org/fhir/Practitioner/Submitter-Practitioner-1"
 * entry[practitioner][=].id = "Submitter-Practitioner-1"
-* entry[practitioner][=].resource = Submitter-Practitioner-1
-* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[practitioner][=].resource = 2e4341dc-70b8-4709-9fa9-0b6d64cf21bb // Submitter-Practitioner-1
+* entry[organization][+].fullUrl = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // "http://example.org/fhir/Organization/org1001"
 * entry[organization][=].id = "org1001"
-* entry[organization][=].resource = org1001
+* entry[organization][=].resource = 2ccf0ff7-2af1-4598-b667-6e35b79529df //org1001
 
 
 
-* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Prof-1"
-* entry[gfe-bundle][=].id = "PCT-GFE-Bundle-Prof-1"
-* entry[gfe-bundle][=].resource = PCT-GFE-Bundle-Prof-1
+* entry[gfeBundle][+].fullUrl = "urn:uuid:f8c054ba-e496-4230-b74e-a3ad871fb563" // "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Prof-1"
+* entry[gfeBundle][=].id = "PCT-GFE-Bundle-Prof-1"
+* entry[gfeBundle][=].resource = f8c054ba-e496-4230-b74e-a3ad871fb563 //PCT-GFE-Bundle-Prof-1
 
-* entry[gfe-bundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
-* entry[gfe-bundle][=].id = "PCT-GFE-Missing-Bundle-1"
-* entry[gfe-bundle][=].resource = PCT-GFE-Missing-Bundle-1
+* entry[gfeBundle][+].fullUrl = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfeBundle][=].id = "PCT-GFE-Missing-Bundle-1"
+* entry[gfeBundle][=].resource = e1b566b9-34a6-467b-83d2-8107a5ee987d //PCT-GFE-Missing-Bundle-1
 
 
 
@@ -357,7 +363,7 @@ Usage: #example
 Instance: PCT-GFE-Composition-Inst-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Institutional Example 1"
-Usage: #inline
+Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008002"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
@@ -376,23 +382,28 @@ Usage: #inline
 * date = "2025-01-10T11:01:00+05:00"
 
 // TODO Discuss who the author is
-* author[+] = Reference(org1001)
-* author[+] = Reference(Submitter-Org-1)
+* author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
 
 * title = "Institutional Good Faith Estimate Packet for Eve Betterhalf - 2025-01-10"
 
-* section[gfeBundle].code = PCTDocumentSection#gfe-section
-* section[gfeBundle].author = Reference(Submitter-Org-1)
-* section[gfeBundle].entry = Reference(PCT-GFE-Bundle-Inst-1)
+* section[coverage].code = PCTDocumentSection#coverage-section
+* section[coverage].entry.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603"  // = Reference(coverage1001)
+
+* section[gfeBundle][+].code = PCTDocumentSection#gfe-section
+* section[gfeBundle][=].author.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+* section[gfeBundle][=].entry.reference = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // = Reference(PCT-GFE-Bundle-Inst-1)
 
 
-
+* section[gfeBundle][+].code = PCTDocumentSection#gfe-section
+* section[gfeBundle][=].entry.reference = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // = Reference(PCT-GFE-Missing-Bundle-1)
+* section[gfeBundle][=].author.reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
 
 
 Instance: PCT-GFE-Composition-Prof-1
 InstanceOf: PCTGFEComposition
 Description: "PCT GFE Composition Professional Example 1"
-Usage: #inline
+Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008003"
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.system = "http://example.org/Claim/identifiers"
 * extension[GFEServiceLinkingInfo].extension[plannedPeriodOfService].valueDate = "2021-10-31"
@@ -409,15 +420,21 @@ Usage: #inline
 * date = "2025-01-10T11:01:00+05:00"
 
 // TODO Discuss who the author is
-* author[+] = Reference(org1001)
-* author[+] = Reference(Submitter-Org-1)
+* author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* author[+].reference = "urn:uuid:2e4341dc-70b8-4709-9fa9-0b6d64cf21bb" // = Reference(Submitter-Practitioner-1)
 
 * title = "Professional Good Faith Estimate Packet for Eve Betterhalf - 2025-01-10"
 
-* section[gfeBundle].code = PCTDocumentSection#gfe-section
-* section[gfeBundle].author = Reference(Submitter-Org-1)
-* section[gfeBundle].entry = Reference(PCT-GFE-Bundle-Prof-1)
+* section[coverage].code = PCTDocumentSection#coverage-section
+* section[coverage].entry.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // = Reference(coverage1001)
 
+* section[gfeBundle][+].code = PCTDocumentSection#gfe-section
+* section[gfeBundle][=].author.reference = "urn:uuid:2e4341dc-70b8-4709-9fa9-0b6d64cf21bb" // = Reference(Submitter-Practitioner-1)
+* section[gfeBundle][=].entry.reference = "urn:uuid:f8c054ba-e496-4230-b74e-a3ad871fb563" // = Reference(PCT-GFE-Bundle-Prof-1)
+
+* section[gfeBundle][+].code = PCTDocumentSection#gfe-section
+* section[gfeBundle][=].entry.reference = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // = Reference(PCT-GFE-Missing-Bundle-1)
+* section[gfeBundle][=].author.reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
 
 
 
@@ -441,8 +458,8 @@ Usage: #example
 
 * date = "2025-01-10T11:01:00+05:00"
 
-* author[+]  = Reference(org1001)
-* author[+]  = Reference(Submitter-Org-1)
+* author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
 
 * content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Packet-Inst-1"
 
@@ -464,8 +481,8 @@ Usage: #example
 
 * date = "2025-01-10T11:01:00+05:00"
 
-* author[+]  = Reference(org1001)
-* author[+]  = Reference(Submitter-Org-1)
+* author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
 
 * content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-GFE-Packet-Prof-1"
 
@@ -505,7 +522,7 @@ Description: "PCT DeviceRequest Example 1"
 Usage: #example
 
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"PCT-DeviceRequest-1\"> </a><a name=\"hcPCT-DeviceRequest-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DeviceRequest &quot;PCT-DeviceRequest-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-devicerequest.html\">PCT GFE DeviceRequest</a></p></div><p><b>status</b>: active</p><p><b>intent</b>: proposal</p><p><b>code</b>: KNEE ORTHOSIS, ELASTIC WITH CONDYLAR PADS AND JOINTS, WITH OR WITHOUT PATELLAR CONTROL, PREFABRICATED, INCLUDES FITTING AND ADJUSTMENT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (HCPCSReleaseCodeSets#L1820)</span></p><p><b>subject</b>: <a href=\"Patient-patient1001.html\">Patient/patient1001</a> &quot; BETTERHALF&quot;</p></div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><a name=\"PCT-DeviceRequest-1\"> </a><a name=\"hcPCT-DeviceRequest-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DeviceRequest &quot;PCT-DeviceRequest-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-devicerequest.html\">PCT GFE DeviceRequest</a></p></div><p><b>status</b>: active</p><p><b>intent</b>: proposal</p><p><b>code</b>: KNEE ORTHOSIS, ELASTIC WITH CONDYLAR PADS AND JOINTS, WITH OR WITHOUT PATELLAR CONTROL, PREFABRICATED, INCLUDES FITTING AND ADJUSTMENT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (HCPCSReleaseCodeSets#L1820)</span></p><p><b>subject</b>: <a href=\"Patient-9c05d948-b931-4bff-8766-18b99b0650d4.html\">patient1001</a> &quot; BETTERHALF&quot;</p></div>"
 
 * status = #active
 * intent = #proposal

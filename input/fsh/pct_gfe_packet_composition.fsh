@@ -30,7 +30,7 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 * type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
 * category = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject 1..1 MS
-* subject only Reference(USCorePatientProfile)
+* subject only Reference(USCorePatientProfile|7.0.0)
 
 
 * date obeys pct-datetime-to-seconds
@@ -71,24 +71,32 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 * section ^slicing.description = "Slice different resources included in the bundle"
 
 * section contains
-    gfeBundle 1..* MS 
+    coverage 1..1 MS and
+    gfeBundle 1..* MS
 
 
+* section[coverage] ^short = "SHALL have a reference to a PCTCoverage resource, contained within the document bundle"
+* section[coverage].code = PCTDocumentSection#coverage-section
+* section[coverage].entry 1..1 MS
+* section[coverage].entry only Reference(PCTCoverage)
+* section[coverage].entry ^type.aggregation = #bundled
 
-* section[gfeBundle] ^short = "SHALL reference one PCTGFEBundle resource, which may be contained in the document bundle or may reference an external resource, and the associated author (GFE Contributor) contained in the document bundle."
+* section[gfeBundle] ^short = "SHALL reference one PCTGFEBundle or PCTGFEMissingBundle resource, which SHALL be contained in the document bundle, and the associated author (GFE Contributor) or proposed author (in the case of a missing GFE Bundle) contained in the document bundle."
 * section[gfeBundle].code = PCTDocumentSection#gfe-section
 * section[gfeBundle].author 1..1 MS
-* section[gfeBundle].author ^short = "Associated GFE author (GFE Contributor) contained in the document bundle"
+* section[gfeBundle].author ^short = "Associated GFE author (GFE Contributor) or proposed author (in the case of a missing GFE Bundle) contained in the document bundle"
 * section[gfeBundle].author only Reference(PCTPractitioner or PCTOrganization)
 * section[gfeBundle].author ^type.aggregation = #bundled
 * section[gfeBundle].entry 1..1 MS
-* section[gfeBundle].entry only Reference(PCTGFEBundle)
+* section[gfeBundle].entry only Reference(PCTGFEBundle or PCTGFEMissingBundle)
 * section[gfeBundle].entry ^type.aggregation = #bundled
+
+
 
 Invariant: pct-gfe-packet-composition-1
 Description: "Scheduled service requests require a planned period of service"
 Expression: "extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/requestOriginationType' and 
-valueCodeableConcept.coding.where(code='scheduled-request').exists()).exists() implies
+value.ofType(CodeableConcept).coding.where(code='scheduled-request').exists()).exists() implies
 extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeServiceLinkingInfo' and extension.where(url = 'plannedPeriodOfService').exists()).exists()"
 Severity: #error
 
