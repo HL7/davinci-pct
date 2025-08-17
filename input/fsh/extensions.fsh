@@ -371,6 +371,8 @@ Description: "Instant from which the request is being initiated."
 * ^context[=].expression = "Task"
 * ^context[+].type = #element
 * ^context[=].expression = "DocumentReference"
+* ^context[+].type = #element
+* ^context[=].expression = "Composition"
 * value[x] 1..1
 * value[x] only instant
 * value[x] ^short = "Estimate Request instant"
