@@ -324,7 +324,7 @@ Description: "This extension is used to provide the Country Subdivision Code - f
 
 
 //// For PCTPractitioner Profile ////
-
+/*
 Extension: PCTEndpoint
 Id: endpoint
 Description: "This extension is used to provide an endpoint."
@@ -332,6 +332,7 @@ Description: "This extension is used to provide an endpoint."
 * ^context[=].expression = "Practitioner"
 * value[x] 1..1
 * value[x] only Reference(Endpoint)
+*/
 
 Extension: ServiceDescription
 Id: serviceDescription

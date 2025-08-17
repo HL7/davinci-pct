@@ -374,7 +374,7 @@ Usage: #example
 * telecom.system = #phone
 * telecom.value = "781-232-3231"
 * address.text = "32 Fruit Street, Boston MA 02114"
-* extension[PCTEndpoint].valueReference = Reference(endpoint001)
+//* extension[PCTEndpoint].valueReference = Reference(endpoint001)
 
 Instance: prac002
 InstanceOf: PCTPractitioner
@@ -537,6 +537,7 @@ Usage: #example
 * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * type = CONTRACTTYPE#healthinsurance "Health Insurance"
 */
+/*
 Instance: endpoint001
 InstanceOf: Endpoint
 Description: "An instance of Endpoint"
@@ -548,6 +549,6 @@ Usage: #example
 * identifier.system = "http://example.org/enpoint-identifier"
 * identifier.value = "epid-1"
 * address = "http://fhir3.healthintersections.com.au/open/CarePlan"
-
+*/
 
 
