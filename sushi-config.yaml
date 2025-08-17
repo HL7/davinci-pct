@@ -13,12 +13,14 @@ name: PatientCostTransparency
 title: Patient Cost Transparency Implementation Guide
 description: To support the request for cost information for specific services and items from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.
 status: active
-version: 2.0.0-draft
+version: 2.0.0
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  #<<< must include a http://hl7.org/fhir/StructureDefinition/structuredefinition-wg extension that identifies the workgroup responsible for the IG. This is the authoritative element.
     valueCode: fm  # <<< The value must be the code for the workgroup
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 2
 # Maturity TBD
 #  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
 #    valueInteger: 3
@@ -37,19 +39,25 @@ dependencies:
       Needed for systems supporting USCDI v4
   hl7.fhir.us.core.v610:
     version: 6.1.0
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    uri: http://hl7.org/fhir/us/core/v610/ImplementationGuide/hl7.fhir.us.core.v610
     id: uscore6
     reason: |
       Needed for systems supporting USCDI v3
   hl7.fhir.us.core.v311:
     version: 3.1.1
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    uri: http://hl7.org/fhir/us/core/v311/ImplementationGuide/hl7.fhir.us.core.v311
     id: uscore3
     reason: |
       Needed for systems supporting USCDI v1
   hl7.fhir.extensions.r5: 5.2.0
-  hl7.fhir.us.davinci-hrex: 1.1.0
-  hl7.terminology.r4: 6.5.0
+  hl7.fhir.us.davinci-hrex: 
+    version: 1.1.0
+    uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
+    id: hrex
+  hl7.terminology.r4:
+    version: 6.5.0
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    id: tho
   hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
 
 
@@ -65,13 +73,14 @@ parameters:
   apply-publisher: true
   apply-version: true
   show-inherited-invariants: false
+  pin-canonicals: pin-multiples
   # usage-stats-opt-out: true
   # excludexml: false
   # excludejson: false
   # excludettl: true
   # excludemap: true
   # tabbed-snapshots: false
-  path-liquid: liquid
+  # path-liquid: liquid
   #propagate-status: true
   auto-oid-root: 2.16.840.1.113883.4.642.40.4 
   version-comparison-master: 1.1.0
@@ -166,7 +175,7 @@ pages:
 menu:
   IG Home: index.html
 
-  Table of Contents: toc.html
+  #Table of Contents: toc.html
   
   Background:
     Use Case and Actors: use_cases.html
@@ -175,9 +184,10 @@ menu:
     Technical Background and Underlying Technologies: underlying_technologies.html
 
   Specification:
-    General Specification: formal_specification.html
+    Conformance Expectations: formal_specification.html
     GFE Coordination Specification: gfe_coordination_specification.html
     GFE Submission and AEOB Specification: gfe_submission_and_aeob_specification.html
+    Privacy, Safety, and Security: security.html
 
 
   FHIR Artifacts:
@@ -191,12 +201,22 @@ menu:
     Code Systems: artifacts.html#12
     Examples: artifacts.html#13
     Terminology Licensure: terminology_licensure.html
-    
-  Security: security.html
+
+  Base Specs:
+    FHIR R4 Spec: https://hl7.org/fhir/R4/
+    HRex 1.1.0: https://hl7.org/fhir/us/davinci-hrex/STU1.1/
+    US Core 7.0.0: https://hl7.org/fhir/us/core/STU7/
+    US Core 6.1.0: https://hl7.org/fhir/us/core/STU6.1/
+    US Core 3.1.1: https://hl7.org/fhir/us/core/STU3.1.1/
+    Subscriptions Backport 1.1.0: https://hl7.org/fhir/uv/subscriptions-backport/STU1.1/
+
+
 
   Support:  
-    Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=116460399
     Discussion Forum: https://chat.fhir.org/#narrow/stream/301151-Da-Vinci-PCT
+    Project Page: https://confluence.hl7.org/spaces/DVP/pages/116460399/Patient+Cost+Transparency+PCT
+    Implementer Support: https://confluence.hl7.org/spaces/DVP/pages/288396444/PCT+Implementer+Support
+    Specification Dashboard: https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17111
     Propose a Change: https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&amp;issuetype=10600&amp;customfield_11302=FHIR-us-davinci-pct
     Downloads: downloads.html
     
@@ -239,7 +259,7 @@ groups:
     - StructureDefinition/davinci-pct-organization
     - StructureDefinition/davinci-pct-practitioner
     - StructureDefinition/davinci-pct-coverage
-    - StructureDefinition/davinci-pct-self-pay-coverage
+    #- StructureDefinition/davinci-pct-self-pay-coverage
 
   GFE:
     name: "Structures: GFE Resource Profiles"

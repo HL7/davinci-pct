@@ -44,12 +44,12 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category ^short = "(USCDI) Categorization of document"
-* category contains estimate 1..1
+* category contains estimate 1..1 MS
 * category[estimate] ^short = "Estimate category"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 
 * subject 1..1 MS
-* subject only Reference(USCorePatientProfile)
+* subject only Reference(USCorePatientProfile|7.0.0)
 
 
 * date obeys pct-datetime-to-seconds

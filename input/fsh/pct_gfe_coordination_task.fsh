@@ -111,7 +111,7 @@ Add guidance that this may be contained or it may be externals.
 
 
 */
-* requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
+* requester only Reference(PCTPractitioner or USCorePractitionerRoleProfile|7.0.0 or PCTOrganization)
 * requester ^short = "GFE Coordination Requester making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
@@ -141,7 +141,7 @@ Add guidance that this may be contained or it may be externals.
 * input ^slicing.discriminator.type = #value
 * input ^slicing.description = "Slice based on value"
 * input contains
-   gfe-information-bundle 0..1
+   gfe-information-bundle 0..1 MS
 
 
 * input[gfe-information-bundle].type = PCTDocumentTypeTemporaryTrialUse#gfe-information-bundle
@@ -157,7 +157,7 @@ Add guidance that this may be contained or it may be externals.
 * output ^slicing.discriminator.type = #value
 * output ^slicing.description = "Slice based on value"
 * output contains
-   gfe-packet 0..1
+   gfe-packet 0..1 MS
 
 * output[gfe-packet].type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
 * output[gfe-packet].value[x] only Attachment

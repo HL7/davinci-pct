@@ -25,7 +25,9 @@ as general guidance on how to read FHIR specifications. Readers who are unfamili
 
 #### US Core Version
 
-[US Core STU 3.1.1]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) 
+[US Core STU 7.0.0]({{site.data.fhir.ver.uscore}}/index.html) 
+[US Core STU 6.1.0]({{site.data.fhir.ver.uscore6}}/index.html) 
+[US Core STU 3.1.1]({{site.data.fhir.ver.uscore3}}/index.html) 
 
 
 Implementers should also familiarize themselves with the FHIR resources used within this IG.

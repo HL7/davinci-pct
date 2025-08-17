@@ -3,21 +3,16 @@
     agent "HRex Organization" as hrexorganization
     agent "US Core Organization" as uscoreorganization
     agent "PCT Practitioner" as pctpractitioner
-    agent "HRex Practitioner" as hrexpractitioner
     agent "US Core Practitioner" as uscorepractitioner
     agent "PCT Coverage" as pctcoverage
-    agent "HRex Coverage" as hrexcoverage
+    agent "US Core Coverage" as uscorecoverage
     agent "US Core Patient" as uscorepatient
-    agent "HRex Patient Demographics" as hrexpatient
     agent "Good Faith Estimate" as gfe
 	note top: professional or institutional
-    hrexcoverage <|-- pctcoverage
-    uscorepatient <|-- hrexpatient
-    uscorepractitioner <|-- hrexpractitioner
-    hrexpractitioner <|-- pctpractitioner
+    uscorecoverage <|-- pctcoverage
     uscoreorganization <|-- hrexorganization
     hrexorganization <|-- pctorganization
-	gfe --> hrexpatient: "patient 1..1"
+	gfe --> uscorepatient: "patient 1..1"
 	gfe --> pctcoverage: "insurance.coverage 1..*"
 	gfe --> pctpractitioner: "provider 1..1"
 	gfe --> pctorganization: "provider 1..1"

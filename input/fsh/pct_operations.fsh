@@ -29,7 +29,6 @@ Usage: #definition
 * parameter[1].min = 0
 * parameter[1].max = "1"
 
-//#TODO define a bundle that includes operation outcomes for each resource in the input bundle.
 * parameter[1].documentation = "When successful, this will return operationOutcome with the; When there is an error calling $gfe-submit (4xx, 5xx HTTP code) then an OperationOutcome must be returned per the [async pattern](https://hl7.org/fhir/R5/async-bundle.html)."
 * parameter[1].type = #OperationOutcome
 
@@ -111,7 +110,7 @@ Usage: #definition
 * id = "GFE-coordination-request"
 * url = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-coordination-request"
 * name = "GFECoordinationRequest"
-* title = ""
+* title = "Good Faith Estimate Coordination Request"
 * status = #active
 * kind = #operation
 * description = "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The output is a url in the Content-Location header for subsequent polling and optionally an OperationOutcome resource per [async pattern](https://hl7.org/fhir/R5/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient."
@@ -133,5 +132,5 @@ Usage: #definition
 * parameter[1].use = #out
 * parameter[1].min = 0
 * parameter[1].max = "1"
-* parameter[1].documentation = "When successful, this will return a Bundle of type batch-response; When there is an error calling $gfe-coordination-request (4xx, 5xx HTTP code) then an OperationOutcome must be returned."
-* parameter[1].type = #OperationOutcome
+* parameter[1].documentation = "A batch-response Bundle including OperationOutcome entries each noting the success or failure to process the entry in the input Bundle. OperationOutcomes denoting a failure SHALL list of issues that caused the failure. All entries must be successfully processed for any to be successful. If an input Bundle entry fails, they all fail. Entries that would otherwise be successful will have an operationOutcome indicating the precondition that all of Bundle entries have to be processed was not met."
+* parameter[1].type = #Bundle

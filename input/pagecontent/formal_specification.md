@@ -1,15 +1,15 @@
 This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG. The bulk of it focuses on Good Faith Estimate (GFE) submission [$gfe-submit](OperationDefinition-GFE-submit.html) and an Advanced Explanation of Benefits (AEOB) query, though it also provides guidance on privacy, security, and other implementation requirements.
 
-### Context
+## Context
 
-#### Pre-reading
+### Pre-reading
 Before reading this formal specification, implementers should first familiarize themselves with two other key portions of the specification:
 
 * The [Use Case](use_cases.html) page provides context for the intent and general process flow of this formal specification.
 
 * The [Technical Background and Underlying Technologies]( underlying_technologies.html) page provides information about the underlying specifications and indicates what portions should be read and understood to have the necessary foundation for the constraints and usage guidance described here.
 
-#### Conventions
+### Conventions
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
 * **SHALL** indicates requirements that must be met to be conformant with the specification.
@@ -20,7 +20,7 @@ This implementation guide (IG) uses specific terminology to flag statements that
 
 
 
-#### Must Support ####
+### MustSupport ###
 
 The following rules regarding Must Support  elements apply to all Profiles in this guide. The Must Support definitions are not inherited from other IGs, even for profiles in this guide derived from another guide.
 
@@ -38,21 +38,21 @@ Receiver:
 
 This guide uses technical actors to define [Must Support](formal_specification.html#must-support) conformance requirements.
 
-#### CapabilityStatement Server Requirement ####
+### CapabilityStatement Server Requirement ###
 Any servers claiming conformance to this guide SHALL include provide CapabilityStatement at `/metadata` that has a `CapabilityStatement.instantiates` with one or more Canonical values of the associated CapabilityStatement canonical, according to the role or roles it is supporting along with the version (e.g. `http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct-coordination-platform|2.0.0`). 
 
 Note: this may be used by clients to determine what services the server and versions of the capabilities the server supports.
 
-#### Ongoing Data Retention and Access ####
+### Ongoing Data Retention and Access ####
 This IG does not provide specific requirements for data retention and access except for where it directly ties to the primary workflow and use case. Details for continued retention and access after the workflow has concluded are not defined in this guide. Implementers should recognize that the data covered in this guide is likely to be considered part of the patient's medical record and as such would be subject to the same retention and access requirements as any other information in the patient's medical record.
 
 
-#### Profiles
+### Profiles
 This specification makes significant use of [FHIR profiles]({{site.data.fhir.path}}profiling.html) and terminology artifacts to describe the content to be shared as part of AEOB requests and responses.
 
 The full set of profiles defined in this IG can be found by following the links on the [Artifacts](artifacts.html) page.
 
-### Workflow Specific Specifications
+## Workflow Specific Specifications
 
 Additional Specifications for the two workflows in this guide can be found on the following pages:
 

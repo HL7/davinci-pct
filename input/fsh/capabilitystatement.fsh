@@ -19,7 +19,7 @@ Usage: #definition
 * jurisdiction = urn:iso:std:iso:3166#US
 * copyright = "Used by permission of HL7 International, all rights reserved Creative Commons License"
 * kind = #requirements
-* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"
+* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server|7.0.0"
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[+] = #xml

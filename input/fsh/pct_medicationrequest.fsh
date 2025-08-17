@@ -1,9 +1,10 @@
 Profile: PCTMedicationRequest
-Parent: USCoreMedicationRequestProfile
+Parent: USCoreMedicationRequestProfile|7.0.0
 Id: davinci-pct-medicationrequest
 Title: "PCT GFE MedicationRequest"
 Description: "The PCT MedicationRequest including details about a medication for which a GFE is being requested."
 * insert DraftArtifact
+* ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 
 * status = #active
 * intent = #proposal
@@ -11,4 +12,4 @@ Description: "The PCT MedicationRequest including details about a medication for
 
 * medication[x] 1..1 MS
 
-* subject only Reference(USCorePatientProfile)
+* subject only Reference(USCorePatientProfile|7.0.0)

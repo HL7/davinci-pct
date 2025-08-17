@@ -3,7 +3,7 @@ This section of the implementation guide (IG) defines the specific conformance r
 ## Detailed Requirements
 
 ### Summary
-FHIR uses a pair of resources called [Claim](https://www.hl7.org/fhir/claim.html) and [EOB](http://www.hl7.org/fhir/explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These uses are distinguished by the Claim.use and ExplanationOfBenefit.use code. This guide requires `predetermination` for both Claim.use and ExplanationOfBenefits.use. All references to Claim and EOB in this IG are referring to the AEOB.
+FHIR uses a pair of resources called [Claim]({{site.data.fhir.path}}claim.html) and [EOB]({{site.data.fhir.path}}explanationofbenefit.html) for multiple purposes - they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These uses are distinguished by the Claim.use and ExplanationOfBenefit.use code. This guide requires `predetermination` for both Claim.use and ExplanationOfBenefits.use. All references to Claim and EOB in this IG are referring to the AEOB.
 
 In addition to the requirements specified in this section, GFE Submitters, and Payers **SHALL** meet the requirements as specified in their respective requirements CapabilityStatements and sections defined in this IG.
 

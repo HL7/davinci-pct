@@ -132,7 +132,7 @@ TODO This visio workflow diagram needs to be updated, specifically for "closing"
 _Figure 7. GFE Coordination Technical Workflow_
 
 
-1. GFE Coordinating Requester performs a FHIR search for [Practitioner](StructureDefinition-davinci-pct-practitioner.html), [PractitionerRole](https://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-practitionerrole.html), or [Organization](StructureDefinition-davinci-pct-organization.html) resources. If successful (200 OK), the search will return 0 or more resources.
+1. GFE Coordinating Requester performs a FHIR search for [Practitioner](StructureDefinition-davinci-pct-practitioner.html), [PractitionerRole]({{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html), or [Organization](StructureDefinition-davinci-pct-organization.html) resources. If successful (200 OK), the search will return 0 or more resources.
     * If 1 or more resources are returned, the GFE Coordination Requestor processes those resources, extracting the resource IDs for use in step 2.
     * If 0 resources are returned, or an error occurs, the requester should reformulate their search and try again.
     <!--TODO Still need a fail early mechanism, App ack in initial communication-->

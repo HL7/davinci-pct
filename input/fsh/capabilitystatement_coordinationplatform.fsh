@@ -18,7 +18,7 @@ Usage: #definition
 * jurisdiction = urn:iso:std:iso:3166#US
 * copyright = "Used by permission of HL7 International, all rights reserved Creative Commons License"
 * kind = #requirements
-* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"
+* imports = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server|7.0.0"
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[+] = #xml
@@ -395,7 +395,7 @@ Is there a definition for summary or some way to identify it is a requirement in
 * rest.resource[+].type = #PractitionerRole
 * rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
-* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitionerrole"
+* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|7.0.0"
 * rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile.extension.valueCode = #SHALL
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"

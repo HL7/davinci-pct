@@ -29,7 +29,7 @@ When there are multiple providers involved in a patient’s service, these provi
 Note: This exchange will be triggered via a “request” or “scheduled service”. When the patient has insurance they chose to use, the GFE will be sent from a provider to a payer. The payer will produce an AEOB, which will also include the GFE used to inform the AEOB generation. This IG describes system interactions using the FHIR standard. 
 
 
-This IG will reference where possible the “standards” defined by the Health Record exchange ([HRex](https://hl7.org/fhir/us/davinci-hrex/)) Library/Framework IG, other FHIR IGs, and other industry standards where applicable.
+This IG will reference where possible the “standards” defined by the Health Record exchange ([HRex]({{site.data.fhir.ver.hrex}})) Library/Framework IG, other FHIR IGs, and other industry standards where applicable.
 
 
 This IG is informed by the [No Surprises Act (see Division BB, Title I, Sections 111 and 112)](https://www.ftc.gov/legal-library/browse/statutes/no-surprises-act-2021-consolidated-appropriations-act), which was enacted as part of the Consolidated Appropriations Act, 2021. The No Surprises Act specifically requires that a provider or providers share a GFE with a patient when the patient is self-pay/uninsured or with a payer for insured patients when the patient schedules a service or requests an estimate. When the payer receives a GFE, the payer must make an AEOB available to a patient in advance of the service.
@@ -70,7 +70,7 @@ This guide breaks the process into two main parts in support of the patient cost
 
 2. The Providers involved in the service coordinate on their individual charges and services for the Good Faith Estimate through the [GFE Coordination Workflow](gfe_coordination_overview.html), if applicable. For self-pay or uninsured patients, the GFE can be made available to the patient at this step.
 
-3. For insured patients, one or more GFEs in a FHIR Bundle resource ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](https://build.fhir.org/ig/HL7/davinci-pct/OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
+3. For insured patients, one or more GFEs in a FHIR Bundle resource ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation. 
 
 4. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
@@ -140,3 +140,18 @@ The scope of this guide does not include coordination of benefits or more than o
 | GFE | The Good Faith Estimate is a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. For a complete breakdown of what needs to be included in the GFE see [42 U.S. Code 300gg-136](https://www.law.cornell.edu/uscode/text/42/300gg-136)|
 | HIPAA |The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that required the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge. The US Department of Health and Human Services (HHS) issued the HIPAA Privacy Rule to implement the requirements of HIPAA. The HIPAA Security Rule protects a subset of information covered by the Privacy Rule. |
 {: .grid }
+
+
+### Dependencies
+This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that is mandated for use in the U.S.
+
+In addition, this guide also relies on several ancestor implementation guides:
+
+{% include dependency-table-nontech.xhtml %}
+
+This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
+
+### Intellectual Property Considerations
+This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license]({{site.data.fhir.path}}license.html#license). The license page also describes rules for the use of the FHIR name and logo.
+
+{% include ip-statements.xhtml %}

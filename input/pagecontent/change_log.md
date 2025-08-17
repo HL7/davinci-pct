@@ -1,6 +1,6 @@
-### Change Log
 
-#### High Level Changes 2.0.0-ballot
+
+### High Level Changes 2.0.0-ballot
 
 This ballot version includes a new use case addressing the need to coordinate GFE collection among providers and makes some modifications to the existing GFE Submit workflow:
 
@@ -237,7 +237,7 @@ Summary
 
 
 
-#### High Level Changes 1.1.0
+### High Level Changes 1.1.0
 
 This STU Update includes a number of changes addressing some critical and minor fixes including:
 
@@ -410,7 +410,7 @@ Correct Example fullURL to use the right resource base
 </tbody>
 </table>
 
-#### High Level Changes 1.0.0
+### High Level Changes 1.0.0
 
 There were many changes to all the profiles, value sets, etc. since the last ballot. The details are listed in the section below. High level changes since the ballot are:
 
@@ -2986,10 +2986,14 @@ Add entry slices on Bundles for expected and required resource types
 <td class="resolution">    Persuasive
 </td>
 <td class="summary"><p>
-Add Relationshiop Diagram
+Add Relationship Diagram
 </p>
 </td>
 </tr>
 </tbody>
 </table>
 
+
+### Version 0.1.0
+
+Initial ballot version

@@ -76,7 +76,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 //* for only Reference(USCorePatientProfile)
 //* for ^short = "The patient for whom the GFE request is for"
 
-* requester only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
+* requester only Reference(PCTPractitioner or USCorePractitionerRoleProfile|7.0.0 or PCTOrganization)
 * requester ^short = "The provider making the request"
 * requester ^comment = "Generally this will be a reference to a Practitioner, PractitionerRole, or Organization resource residing on the Coordination Platform. If there is a need to express contact information that is specific to the request, and therefore is not included in the information on the Coordination Platform, the reference should point to a server and resource that does not have additional authentication or or authorization requirements."
 
@@ -85,7 +85,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 
 
 * owner 1..1
-* owner only Reference(PCTPractitioner or HRexPractitionerRole or PCTOrganization)
+* owner only Reference(PCTPractitioner or USCorePractitionerRoleProfile|7.0.0 or PCTOrganization)
 * owner ^short = "GFE Contributor assigned to complete the task"
 // TODO !!! A better description as to why there is not task executor.
 
@@ -105,7 +105,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * input ^slicing.discriminator.type = #value
 * input ^slicing.description = "Slice based on value"
 * input contains
-   gfe-information-bundle 0..1
+   gfe-information-bundle 0..1 MS
 
 
 * input[gfe-information-bundle].type = PCTDocumentTypeTemporaryTrialUse#gfe-information-bundle
@@ -121,7 +121,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * output ^slicing.discriminator.type = #value
 * output ^slicing.description = "Slice based on value"
 * output contains
-   gfe-bundle 0..1
+   gfe-bundle 0..1 MS
 
 * output[gfe-bundle].type = PCTDocumentTypeTemporaryTrialUse#gfe-bundle
 * output[gfe-bundle].value[x] only Attachment

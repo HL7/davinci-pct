@@ -46,7 +46,7 @@
       "description": "Filter based on the document status (registered | partial | preliminary | final | amended | corrected | appended | cancelled | entered-in-error | deprecated | unknown) of a DocumentReference.",
       "resource": "DocumentReference",
       "filterParameter": "doc-status",
-      "filterDefinition": "http://hl7.org/fhir/SearchParameter/DocumentReference-doc-status",
+      "filterDefinition": "http://hl7.org/fhir/us/davinci-pct/SearchParameter/DocumentReference-doc-status",
       "comparator": ["eq"]
     }
   ],

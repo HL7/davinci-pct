@@ -238,3 +238,33 @@ Usage: #definition
 * xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='plannedPeriodOfService']/f.value"
 * xpathUsage = #normal
 * target = #DocumentReference
+
+
+Instance: DocumentReference-doc-status
+InstanceOf: SearchParameter
+Title: "DocumentReference docStatus"
+Description: "The status of the underlying document."
+Usage: #definition
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+* extension.valueCode = #trial-use
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/DocumentReference-doc-status"
+* version = "2.0.0"
+* name = "DocumentReferenceDocStatus"
+* status = #active
+* experimental = false
+* date = "2025-08-11T21:47:23+11:00"
+* publisher = "HL7 Financial Management Working Group"
+* contact.name = "HL7 Financial Management Working Group"
+* contact.telecom[0].system = #url
+* contact.telecom[=].value = "http://www.hl7.org/Special/committees/fm"
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "fm@lists.HL7.org"
+* description = "The status of the underlying document."
+* jurisdiction = urn:iso:std:iso:3166#US
+* code = #doc-status
+* base = #DocumentReference
+* type = #token
+* expression = "DocumentReference.docStatus"
+* xpath = "f:DocumentReference/f.docStatus"
+* xpathUsage = #normal
+* target = #DocumentReference

@@ -36,6 +36,21 @@ Description: "A subject focused Subscription when an Advanced Explanation of Ben
 
 
 
+Instance: example-aeob-available-subject-subscription
+InstanceOf: davinci-pct-aeob-available-subject-subscription
+Description: "An example instance of the davinci-pct-aeob-available-subject-subscription Profile returning the full DocumentReference resource"
+Usage: #example
+* criteria = "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-notification"
+* criteria.extension[filterCriteria].valueString = "DocumentReference?subject=Patient/9c05d948-b931-4bff-8766-18b99b0650d4"
+* status = #active
+* end = "2025-08-16T03:33:12.7238087+00:00"
+* reason = "Test of PCT Subscriptions"
+* channel.type = #rest-hook
+* channel.endpoint = "https://example.com/fhir/r4/$subscription-hook"
+* channel.payload = #application/fhir+json
+* channel.payload.extension[payloadContent].valueCode = #full-resource
+
+
 Instance: example-aeob-available-author-subscription-full
 InstanceOf: davinci-pct-aeob-available-author-subscription
 Description: "An example instance of the davinci-pct-aeob-available-author-subscription Profile returning the full DocumentReference resource"
