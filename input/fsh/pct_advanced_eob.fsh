@@ -19,7 +19,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 //* identifier[INTER].type = PCTIdentifierType#INTER "Intermediary System Identifier"
 //* identifier[INTER] ^short = "Intermediary System Identifier"
 * identifier[uniqueclaimid] ^short = "Unique Claim Identifier"
-* identifier[uniqueclaimid].type = PCTIdentifierType#uc "Unique Claim ID"
+* identifier[uniqueclaimid].type = V2-0203#UCID
 * identifier[uniqueclaimid] ^short = "Unique Claim ID"
 
 * type from ClaimTypeCodes (required)

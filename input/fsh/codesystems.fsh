@@ -125,7 +125,7 @@ Description: "Describes the various amount fields used when payers receive and a
 * ^caseSensitive = true
 * ^experimental = false
 * ^copyright = "This CodeSystem is not copyrighted."
-
+/*
 CodeSystem: PCTIdentifierType
 Title:  "PCT Identifier Type"
 Description: "Defining codes for types of identifiers. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
@@ -134,7 +134,7 @@ Description: "Defining codes for types of identifiers. This CodeSystem is curren
 * ^caseSensitive = true
 //* #INTER "Intermediary System Identifier" "Identifier assigned by an intermediary system"
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
-
+*/
 CodeSystem: PCTNetworkStatusCS
 Id: PCTNetworkStatusCS
 Title: "PCT Network Status"
