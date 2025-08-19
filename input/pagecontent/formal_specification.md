@@ -7,7 +7,7 @@ Before reading this formal specification, implementers should first familiarize 
 
 * The [Use Case](use_cases.html) page provides context for the intent and general process flow of this formal specification.
 
-* The [Reading This IG](reading_this_Ig.html) page provides information about the underlying structure and specifications and indicates what portions should be read and understood to have the necessary foundation for the constraints and usage guidance described here.
+* The [Reading This IG](reading_this_ig.html) page provides information about the underlying structure and specifications and indicates what portions should be read and understood to have the necessary foundation for the constraints and usage guidance described here.
 
 
 
