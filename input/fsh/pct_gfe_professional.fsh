@@ -158,11 +158,11 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * supportingInfo[serviceFacility].valueReference only Reference(PCTOrganization)
 
 * supportingInfo contains claimFrequency 0..1 MS
-* supportingInfo[claimFrequency] ^short = "Claim Frequency"
-* supportingInfo[claimFrequency] ^comment = "Claim frequency - uses the last digit of the NUBC type of billing code."
+* supportingInfo[claimFrequency] ^short = "Claim Frequency component of the UB-04 Type of Bill Code (4th digit of the UB-04 Type of Bill code)."
+* supportingInfo[claimFrequency] ^comment = "For the purposes of Patient Cost Transparency Estimates, this field may be used to modify or replace a GFE claim estimate within the same GFE Packet submission. This specification does not support the modification of Claim resources outside of the GFE Packet and client systems SHALL NOT expect the inclusion of the frequency code to affect the use or interpretation of any Claim outside of the GFE Packet."
 * supportingInfo[claimFrequency].category = PCTSupportingInfoType#claimFrequency
 * supportingInfo[claimFrequency].code 1..1
-* supportingInfo[claimFrequency].code from PCTGFEFrequencyVS (required)
+* supportingInfo[claimFrequency].code from PCTGFETypeOfBillVS (required)
 
 * item 1..50
 * item.extension contains ReferralNumber named referralNumber 0..11 MS

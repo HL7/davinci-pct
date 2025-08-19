@@ -69,6 +69,7 @@ Description: "Defining codes for the classification of the supplied supporting i
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
 
+/*
 CodeSystem: PCTGFEFrequency
 Title: "PCT GFE Frequency Code System"
 Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type of Bill (TOB) codes.  The fourth digit of the TOB code defines the frequency of the bill for the institutional and electronic professional claim. This CodeSystem is currently defined by this IG, but is anticipated to be temporary. The concepts within are expected to be moved in a future version to a more central terminology specification such as THO, which will result in a code system url change and possibly modified codes and definitions."
@@ -78,6 +79,7 @@ Description: "These codes are derived from the NUBC Uniform Billing (UB-04) Type
 * #8 "8"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^experimental = false
+*/
 /*
 CodeSystem: PCTCareTeamRole
 Title: "PCT Care Team Role"
