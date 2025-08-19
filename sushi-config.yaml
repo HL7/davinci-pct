@@ -96,6 +96,12 @@ pages:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: informative
+  reading_this_ig.md:
+    title: Reading This IG
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
   use_cases.md:
     title: Use Case and Actors
     extension:
@@ -114,12 +120,12 @@ pages:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: informative
-  underlying_technologies.md:
-    title: Technical Background and Underlying Technologies
+  projects_and_participants.md:
+    title: Project and Participants
     extension:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
   formal_specification.md:
     title: Formal Specification
     extension:
@@ -178,10 +184,11 @@ menu:
   #Table of Contents: toc.html
   
   Background:
+    Reading this IG: reading_this_ig.html
     Use Case and Actors: use_cases.html
     GFE Coordination Overview: gfe_coordination_overview.html
     GFE Submission and AEOB Overview: gfe_submission_and_aeob_overview.html
-    Technical Background and Underlying Technologies: underlying_technologies.html
+    Project and Participants: projects_and_participants.html
 
   Specification:
     Conformance Expectations: formal_specification.html

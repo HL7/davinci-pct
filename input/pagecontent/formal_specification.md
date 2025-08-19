@@ -7,9 +7,14 @@ Before reading this formal specification, implementers should first familiarize 
 
 * The [Use Case](use_cases.html) page provides context for the intent and general process flow of this formal specification.
 
-* The [Technical Background and Underlying Technologies]( underlying_technologies.html) page provides information about the underlying specifications and indicates what portions should be read and understood to have the necessary foundation for the constraints and usage guidance described here.
+* The [Reading This IG](reading_this_Ig.html) page provides information about the underlying structure and specifications and indicates what portions should be read and understood to have the necessary foundation for the constraints and usage guidance described here.
 
-### Conventions
+
+
+### Conventions and conformance language
+
+This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the [mustSupport]({{site.data.fhir.path}}profiling.html#mustsupport) requirement.  Base expectations for the interpretation of these terms are set in the [FHIR core specification]({{site.data.fhir.path}}conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html).
+
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
 * **SHALL** indicates requirements that must be met to be conformant with the specification.
@@ -17,7 +22,6 @@ This implementation guide (IG) uses specific terminology to flag statements that
 * **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to), but which do not, for this version of the specification, affect the determination of specification conformance.
 
 * **MAY** describes optional behaviors that are free to consider but are not a recommendation for or against adoption.
-
 
 
 ### MustSupport ###
@@ -36,10 +40,22 @@ Receiver:
 * The receiver **SHOULD** be capable of displaying must support data elements for human use.
 * The receiver **SHALL** be able to process resource instances containing must-support data elements asserting missing information (data absent reason extension).
 
-This guide uses technical actors to define [Must Support](formal_specification.html#must-support) conformance requirements.
+This guide uses technical actors to define Must Support conformance requirements.
 
-### CapabilityStatement Server Requirement ###
-Any servers claiming conformance to this guide SHALL include provide CapabilityStatement at `/metadata` that has a `CapabilityStatement.instantiates` with one or more Canonical values of the associated CapabilityStatement canonical, according to the role or roles it is supporting along with the version (e.g. `http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct-coordination-platform|2.0.0`). 
+Also see the mustSupport rules for the [HRex]({{site.data.fhir.ver.hrex}}/conformance.html#mustsupport) and [US Core]({{site.data.fhir.ver.uscore}}/must-support.html) implementation guides, which apply to content adhering to data elements profiled in those guides.
+
+### CapabilityStatement Requirements ###
+In order to conform to this implementation guide, in addition to adhering to any relevant 'SHALL' statements, a system **SHALL** conform to at least one of the CapabilityStatements based on their role(s) listed here:
+
+* [PCT Coordination Platform](CapabilityStatement-davinci-pct-coordination-platform.html) - Coordination Platform Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
+* [PCT Coordination Requester](CapabilityStatement-davinci-pct-coordination-requester.html) - Coordination Requester Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
+* [PCT GFE Contributor](CapabilityStatement-davinci-pct-gfe-contributor.html) - GFE Contributor Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
+* [PCT Payer](CapabilityStatement-davinci-pct.html) - Payer capability statement for the Da Vinci Patient Cost Transparency Implementation Guide
+
+
+Additionally, any servers claiming conformance to this guide **SHALL** include provide CapabilityStatement at `/metadata` that has a `CapabilityStatement.instantiates` with one or more Canonical values of the associated CapabilityStatement canonical, according to the role or roles it is supporting along with the version (e.g. `http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct-coordination-platform|2.0.0`). 
+
+
 
 Note: this may be used by clients to determine what services the server and versions of the capabilities the server supports.
 

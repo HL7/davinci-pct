@@ -236,7 +236,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 * identifier.value = "019283475"
 * status = #final
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet "AEOB Packet"
-* category = PCTDocumentTypeTemporaryTrialUse#estimate
+* category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 
 

@@ -1,6 +1,6 @@
 == Suppressed Messages == 
 
-# Warning: Code Systems and Value Sets that are referenced in the guide or examples but are not expanded and validatable because they are part of proprietary code systems that require special license or are otherwise not included in tx.fhir.org.
+# 01. === Warning: Code Systems and Value Sets that are referenced in the guide or examples but are not expanded and validatable because they are part of proprietary code systems that require special license or are otherwise not included in tx.fhir.org. ===
 
 A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated
@@ -40,67 +40,38 @@ Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/dav
 Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTBenefitBalanceCategoryVS|2.0.0' because the code system https://x12.org/codes/service-type-codes was not found
 
 
-# CodeSystems that are draft in THO, will need to be changed in future versions of THO
+# 02. === CodeSystems that are draft in THO, will need to be changed in future versions of THO ===
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 
 
 
 
-# The PCTAdjudication Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
+# 03. === The previously defined (but noted in the intro as temporary, and predating the latest TI requirements about artifacts urls indicating a temporary status) PCTAdjudication, PCTAdjudicationCategoryCS, PCTAEOBProcessNoteCS, PCTFinancialType, PCTNetworkStatusCS, PCTOrgContactPurposeType, PCTProcedureType, and PCTSupportingInfoType Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide ===
 INFORMATION: CodeSystem/PCTAdjudication: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTAdjudicationCategoryCS Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTAdjudicationCategoryCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTAEOBProcessNoteCS Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTAEOBProcessNoteCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTFinancialType Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTFinancialType: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTGFEFrequency Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
-INFORMATION: CodeSystem/PCTGFEFrequency: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTIdentifierType Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
-INFORMATION: CodeSystem/PCTIdentifierType: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTNetworkStatusCS Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTNetworkStatusCS: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTOrgContactPurposeType Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTOrgContactPurposeType: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-
-# The PCTProcedureType Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTProcedureType: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTSupportingInfoType Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide
 INFORMATION: CodeSystem/PCTSupportingInfoType: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-
-
-
-# The PCTEstimateTypeSummaryCSTemporaryTrialUse Code Systems in this IG currently need some review and validation before it is determined if a new code system is warranted.
+# 04. === The defined (temporaryTrialUse url) PCTEstimateTypeSummaryCSTemporaryTrialUse, PCTGFERequestTypeCSTemporaryTrialUse, PCTTaskStatusReasonCSTemporaryTrialUse  Code Systems in this IG currently needs some coordination with IGs and other IG teams and some codes may need to eventually be adopted into existing code systems, but additional comments and testing are needed. These already existed in a previous published version of the guide ===
 INFORMATION: CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTGFERequestTypeCSTemporaryTrialUse Code Systems in this IG currently needs some review and validation before it is determined if a new code system is warranted.
 INFORMATION: CodeSystem/PCTGFERequestTypeCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# The PCTTaskStatusReasonCSTemporaryTrialUse Code Systems in this IG currently needs some review and validation before it is determined if a new code system is warranted.
 INFORMATION: CodeSystem/PCTTaskStatusReasonCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 
-# Summary of Claim and ExplanationOfBenefit does not allow provider reference or display because it crosses multiple providers. A DAR extension is used instead
+# 05. === Summary of Claim and ExplanationOfBenefit does not allow provider reference or display because it crosses multiple providers. A DAR extension is used instead ===
 WARNING: Claim/PCT-GFE-Summary-1: Claim.provider: A Reference without an actual reference or identifier should have a display
 WARNING: Claim/PCT-GFE-Summary-MRI: Claim.provider: A Reference without an actual reference or identifier should have a display
-WARNING: ExplanationOfBenefit/PCT-AEOB-Summary-1: ExplanationOfBenefit.provider: A Reference without an actual reference or identifier should have a display
+WARNING: ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60: ExplanationOfBenefit.provider: A Reference without an actual reference or identifier should have a display
 
 
-# The Version of US Core was chosen on purpose. It was reviewed to support the needs and 8.0.0 came out towards the end of ballot reconciliation and will not be needed for some time.
+# 06. ===  The version of US Core was chosen on purpose. It was reviewed to support the needs and 8.0.0 came out towards the end of ballot reconciliation and will not be needed for some time. ===
 The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
-# EOB Summary does not include a provider and does not allow a display (by design)
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[1].resource/*ExplanationOfBenefit/PCT-AEOB-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
+# 07. === EOB Summary does not include a provider and does not allow a display (by design) ===
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
@@ -112,9 +83,9 @@ WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba
 WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display
 WARNING: Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b: Bundle.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
 WARNING: Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563: Bundle.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[1].resource/*ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60*/.provider: A Reference without an actual reference or identifier should have a display
 
-# Warning about pattern discriminator being deprecated - Inherited from US Core requirements
-
+# 08. === Warning about pattern discriminator being deprecated - Inherited from US Core requirements ===
 INFORMATION: StructureDefinition/davinci-pct-coverage: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/davinci-pct-coverage: StructureDefinition.snapshot.element[49].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/davinci-pct-medicationrequest: StructureDefinition.snapshot.element[14].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -122,17 +93,18 @@ INFORMATION: StructureDefinition/davinci-pct-organization: StructureDefinition.s
 INFORMATION: StructureDefinition/davinci-pct-practitioner: StructureDefinition.snapshot.element[9].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 INFORMATION: StructureDefinition/davinci-pct-servicerequest: StructureDefinition.snapshot.element[17].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
 
-# MS slicing on root element inherited by US Core. Not all slices are meant to be MS. Zulip discussion: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Slices.20not.20inheriting.20preferred.20bindings.20from.20root
+# 09. === MS slicing on root element inherited by US Core. Not all slices are meant to be MS. Zulip discussion: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Slices.20not.20inheriting.20preferred.20bindings.20from.20root ===
 WARNING: StructureDefinition/davinci-pct-organization: StructureDefinition.snapshot: The slice 'CLIA' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/davinci-pct-organization: StructureDefinition.snapshot: The slice 'NAIC' on path 'Organization.identifier' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
 
-# Information Message regarding a deprecated extension (maxValueSet), that was inherited through the FHIR R4 standard itself.
+# 10. === Information Message regarding a deprecated extensions, that was inherited through the FHIR R4 standard itself and other IGs. ===
 INFORMATION: StructureDefinition/davinci-pct-aeob-adjudication-error: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 
 
 
-# Information message about jurisdiction valueset that was deprecated. This valueset is pulled from the base FHIR spec
+# 11. === Information message about jurisdiction valueset that was deprecated. This valueset is pulled from the base FHIR spec ===
 INFORMATION: SubscriptionTopic/davinci-pct-aeob-available-author-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 INFORMATION: SubscriptionTopic/davinci-pct-aeob-available-subject-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 INFORMATION: SubscriptionTopic/davinci-pct-gfe-available-author-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
@@ -140,25 +112,99 @@ INFORMATION: SubscriptionTopic/davinci-pct-gfe-available-subject-notification: S
 INFORMATION: SubscriptionTopic/davinci-pct-gfe-coordination-task-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 
 
-# Informational messages about version pinned canonicals for constraints that are inherited and not defined in this IG
-INFORMATION: StructureDefinition.snapshot.element[122].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
-
-
-
-# Informational warning about CodeSystem defined in this IG that is is marked as temporary and is planned to move to THO once matured.
+# 12. === Informational warning about CodeSystem defined in this IG that is is marked as temporary and is planned to move to THO once matured. ==
 INFORMATION: CodeSystem/PCTDocumentTypeTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/PCTTaskBusinessStatusCSTemporaryTrialUse: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# Informational warning about CodeSystem defined in this IG that is anticipated to stay in the IG (It is use case/IG specific). Will review with TI to get exception when the artifact/IG matures.
+# 13. === Informational warning about CodeSystem defined in this IG that is anticipated to stay in the IG (It is use case/IG specific). Will review with TI to get exception when the artifact/IG matures. ===
 INFORMATION: CodeSystem/PCTDocumentSection: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
 
-# 26. === Using the standard CapabilityStatementExpectation extension in additional contexts to fully express intended capabilities ===
+# 14. === Using the standard CapabilityStatementExpectation extension in additional contexts to fully express intended capabilities ===
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 
 
-# Warning that the entry matches multiple profiles. THe profiles however are distinct and this instance only matches one.
+# 15. === Warning that the entry matches multiple profiles. The profiles however are distinct and this instance only matches one. ===
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[0].resource/*Composition/PCT-AEOB-Composition-1*/.section[2].entry[0]: Found multiple matching profiles for urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b among choices: http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0, http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[0].resource/*Composition/PCT-GFE-Composition-Inst-1*/.section[1].entry[0]: Found multiple matching profiles for urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b among choices: http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0, http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0
 WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[0].resource/*Composition/PCT-GFE-Composition-Prof-1*/.section[1].entry[0]: Found multiple matching profiles for urn:uuid:f8c054ba-e496-4230-b74e-a3ad871fb563 among choices: http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0, http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0
+
+
+# 16. === Pattern being applied across slices inherited from a base specification ===
+INFORMATION: StructureDefinition/davinci-pct-organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+
+# 17. === Warning about External CodeSystem that has content marked as not-present. That is correct. ===
+WARNING: ValueSet/USClaimMedicalProductOrServiceCodes: ValueSet.compose.include[1]: The value set references CodeSystem 'http://www.ada.org/cdt' which has status 'not-present'
+
+# 18. === Informational notice that there is not an explicitly linked example. However, given that there is a bundle aggregation requirement, these examples cannot be separately linked example. The introduction to the profiles note this. ===
+INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-aeob-composition'): The Implementation Guide contains no explicitly linked examples for this profile
+INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-composition'): The Implementation Guide contains no explicitly linked examples for this profile
+
+
+# 19. === INFORMATIONAL issue about automatically version pinned references. This IG pins most version where there are multiple options, but these automatically pinned versions are either from unpinned inherited requirements are from those that FSH does not provide a simple mechanism to define. ===
+INFORMATION: StructureDefinition.snapshot.element[122].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[66].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[60].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[117].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.differential.element[14].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
+INFORMATION: StructureDefinition.snapshot.element[109].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[44].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[76].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.differential.element[17].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[85].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[68].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[53].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[213].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.differential.element[19].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[279].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.differential.element[8].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[204].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[217].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[0].constraint[5].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[1].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[1].targetProfile[1]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[1].targetProfile[2]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[1].targetProfile[3]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[18].type[1].targetProfile[4]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[19].type[1].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[19].binding.valueSet: Pinned the version of http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4 to 20240606 from choices of 20170601 (us.nlm.vsac#0.11.0), 20240606 (us.nlm.vsac#0.19.0)
+INFORMATION: StructureDefinition.snapshot.element[21].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].targetProfile[1]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].targetProfile[2]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].targetProfile[3]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].targetProfile[4]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[28].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[80].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[46].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[10].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[10].constraint[2].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[41].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[16].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[27].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[39].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[18].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-servicerequest-category to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[25].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].targetProfile[1]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].targetProfile[2]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[29].type[0].targetProfile[4]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[34].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+INFORMATION: StructureDefinition.snapshot.element[67].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+
+
+# 20. === New DA VINCI Warning that does not apply. Requirements to things that do not exist (version 0.1.0 was the initial ballot version and tickets did not exist, SubscriptionTopic does not exist in R4) ===
+WARNING: DA VINCI: The Change Log page (change_log.html) does not include any Jira tracker items links for the section with title Version 0.1.0
+WARNING: DA VINCI: The How to Read page (reading_this_ig.html) needs to include a reference to the http://hl7.org/fhir/R4/subscriptiontopic.html because this IG uses the subscriptiontopic resource.
+
+# 21. === New DA VINCI Warning stating the menu item should be "Use Cases". We chose "Use Case and Actors" ===
+WARNING: DA VINCI: The second menu item under Background should have the label Use Cases.

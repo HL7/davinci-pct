@@ -41,7 +41,7 @@ Description: "PCT Good Faith Estimate Summary is a profile for summarizing costs
 * provider.type 0..0
 * provider.identifier 0..0
 * provider.display 0..0
-* provider.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named dataAbsentReason 1..1
+* provider.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0 named dataAbsentReason 1..1
 * provider.extension[dataAbsentReason].valueCode = #not-applicable
 
 * priority from $PROCPRIORITYVS (required)

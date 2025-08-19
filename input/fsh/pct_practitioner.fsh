@@ -38,4 +38,4 @@ Description: "The PCT Practitioner profile builds upon the US Core Practitioner 
 //TODO: add slices for phone and email
 //* telecom MS
 
-* qualification.code from http://terminology.hl7.org/ValueSet/v3-NUCCProviderCodes (required)
+* qualification.code from http://terminology.hl7.org/ValueSet/v3-NUCCProviderCodes|3.0.0 (required)

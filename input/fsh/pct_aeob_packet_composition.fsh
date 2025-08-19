@@ -20,7 +20,28 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
   * system 1..1
   * value 1..1
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
-* category = PCTDocumentTypeTemporaryTrialUse#estimate
+
+
+
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Slice defining composition as an estimate - category"
+
+* category contains
+  estimate 1..1 MS
+
+* category[estimate].coding ^slicing.discriminator.type = #value
+* category[estimate].coding ^slicing.discriminator.path = "$this"
+* category[estimate].coding ^slicing.rules = #open
+* category[estimate].coding ^slicing.description = "Slice defining composition as an estimate - category coding"
+
+* category[estimate].coding contains
+  estimate-coding 1..1 MS
+
+* category[estimate].coding[estimate-coding] = PCTDocumentTypeTemporaryTrialUse#estimate
+
+
 * subject 1..1 MS
 * subject only Reference(USCorePatientProfile|7.0.0)
 
@@ -37,7 +58,7 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 // DISCUSS, do we want an attester requirement? - A participant who has attested to the accuracy of the composition/document.
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
-* relatesTo MS
+
 * relatesTo ^short = "Relationship to other AEOB packets. Required if this estimate is replacing another." 
 
 * relatesTo ^slicing.discriminator.type = #value

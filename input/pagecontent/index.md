@@ -79,56 +79,34 @@ This guide breaks the process into two main parts in support of the patient cost
 > Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
 
 
-### Credits  
-<br>
-**Primary Authors:**
-*	Corey Spears (Lantana Consulting Group)
-*	Rick Geimer (Lantana Consulting Group)
-*	Larry Decelles (The MITRE Corporation)
-*	Gary Gryan (The MITRE Corporation)
-*	Caleb Wan (The MITRE Corporation)
+### Content and Organization
+### Content and Organization
+This implementation guide (and the menu for it) is organized into the following sections:
 
-**Technical Editing:**
-*	Yolanda Liu (The MITRE Corporation)
-*	Joe Minieri (The MITRE Corporation)
-*	Kristin Schrock (Lantana Consulting Group) 
+* *Background* - Supporting informative pages that covers the use cases and actors, but does not set conformance expectations
+  * [Reading this IG](reading_this_ig.html) points to key pages in the FHIR spec and other source specifications that must be understood to understand this guide
+  * [Use Cases](use_cases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
+  
+  * [GFE Coordination Overview](gfe_coordination_overview.html) describes the use case and workflow of the Good Faith Estimate (GFE) multiple provider coordination use case that describes how providers using varying technologies can coordinate to gather their constituent GFEs to pull together into a single GFE Packet.
+  * [GFE Submission and AEOB Overview](gfe_submission_and_aeob_overview.html) describes the use case and workflow for a provider to submit a GFE Packet to a payer to request an Advanced Explanation of Benefits (AEOB) for their patient and making that AEOB available.
+  * [Project and Participants](projects_and_participants.html) gives a high-level overview of Da Vinci and identifies the individuals and organizations involved in developing this implementation guide
 
-**Da Vinci Project Coordination and Core Team:**
-*	Vanessa Candelora (Point-of-Care Partners)
-*	Viet Nguyen (Stratametrics, LLC)
-*	Jocelyn Keegan (Point-of-Care Partners)
-*	Robert Dieterle (EnableCare, LLC)
-*	Phung Matthews (Point-of-Care Partners)
-*	Mary Kay McDaniel (Markam)
-* Lloyd McKenzie (Dogwood Health Consulting)
-*	Denise St. Clair (Global Alliant, Inc.)
-* Crystal Kallem (Point-of-Care Partners)
+* *Specification* - Pages that set conformance expectations
+  * [Conformance Expectations](formal_specification.html) defines base language and expectations for declaring conformance with the guide
+  * [GFE Coordination Specification](gfe_coordination_specification.html) describes the conformance requirements for implementers of the multiple provider using varying technologies can coordinate to the creation of a single a single GFE Packet.
+  * [GFE Submission and AEOB Specification](gfe_submission_and_aeob_specification.html) describes the conformance requirements for a provider submitting a GFE Packet for an insured patient to a payer for an AEOB to be created and made available.
+  * [Privacy, Safety, and Security](security.html) covers considerations around data access, protection, and similar concepts that apply to all implementations
 
-**Test Lead:**
-* Ryan Moehrke (AEGIS)
-
-**Da Vinci Member Leadership Provided By:**
-*	Alice O'Carroll (Florida Blue)
-*	Jacob Woodford (Epic)
-*	Luke Rockenbach (Providence)
-* Zackery Welch (Providence) 
-* Tina Mintyala (Providence) 
-* Jill Elder  (Providence) 
-
-
-**This IG was developed under the auspices of the Financial Management Work Group.**
-
-Special thanks go to the numerous Da Vinci members and community   who have participated on conference calls, provided reviews and feedback, supported sample data gathering, reference implementation development, and testing including, but not limited to:
-*	Blue Cross Blue Shield Association (Patricia B Taylor, Samuel Undine, Michael Gould, Gail Kocher)
-*	Smile CDR Inc. (Cait O'Donnell, Joseph Quinn, and Sophie Tekeste)
-*	The MITRE Corporation (FHIR Shorthand Team) 
-*	Cambia Health Solutions (Hong Huang, Pat Waller)
-*	Weill Cornell Medicine (Jill Vincente, Jarrett Cox)
-*	Aegis (Carie Hammond)
-
-> If you are interested in participating in the PCT project, information about our calls, minutes of past discussions, and other information can be found [here](https://confluence.hl7.org/pages/viewpage.action?pageId=116460399) on our HL7 Confluence page.
-
-The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, scheduling, prior authorization or other financial and administrative use cases. 
+* *FHIR Artifacts*
+  * [Artifacts Overview](artifacts.html) introduces and provides links to the profiles, search parameters and other FHIR artifacts used in this implementation guide
+* *Base Specs* - Quick links to the various specifications this guide derives from
+* *Support* - Links to help with use of this guide
+  * *Discussion Forum* is a place to ask questions about the guide, discuss potential issues, and search through prior discussions
+  * *Project Page* includes information about project calls, agendas, past minutes, and instructions for how to participate
+  * *Implementer Support* provides information about reference implementations, resources for testing, known errata, regulatory considerations, and practical implementation pathways
+  * *Specification Dashboard* shows new and historical issues that have been logged against the specification, proposed dispositions, unapplied changes, etc.
+  * *Propose a Change* allows formal submission of requests for change to the specification.  (Consider raising the issue on the discussion forum first.)
+  * [Downloads](downloads.html) allows downloading this and other specifications, as well as other useful files
 
 
 ### Terms and Concepts

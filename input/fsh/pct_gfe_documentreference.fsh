@@ -62,7 +62,6 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 // DISCUSS, do we want an authenticator requirement? - A participant who has attested to the accuracy of the composition/document.
 // DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
-* relatesTo MS
 * relatesTo ^short = "Relationship to other GFE packet. Required if this estimate is replacing another." 
 
 * relatesTo ^slicing.discriminator.type = #value
