@@ -186,8 +186,8 @@ Usage: #example
 
 
 
-* entry[composition].fullUrl = "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
-* entry[composition].resource = PCT-AEOB-Composition-1
+* entry[composition].fullUrl = "urn:uuid:3b46e3b7-ea0a-455f-a797-48c2d9faca1d" // "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
+* entry[composition].resource = 3b46e3b7-ea0a-455f-a797-48c2d9faca1d //PCT-AEOB-Composition-1
 * entry[composition].id = "PCT-AEOB-Composition-1"
 
 * entry[aeob][+].fullUrl = "urn:uuid:645c61ac-963d-44c7-b6a2-17f3ec6a5f60" // "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
@@ -231,6 +231,7 @@ InstanceOf: PCTAdvancedEOBComposition
 Description: "PCT AEOB Composition Example 1"
 Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 
+* id = "3b46e3b7-ea0a-455f-a797-48c2d9faca1d"
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * identifier.system = "http://www.example.org/identifiers/composition"
 * identifier.value = "019283475"
