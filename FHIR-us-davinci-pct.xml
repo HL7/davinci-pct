@@ -11,7 +11,7 @@
 <artifact id="StructureDefinition/remaining-benefit" key="StructureDefinition-remaining-benefit" name="Benefit Remaining"/>
 <artifact id="ValueSet/USClaimMedicalProductOrServiceCodes" key="ValueSet-USClaimMedicalProductOrServiceCodes" name="Claim Medical Product or Service Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/compoundDrugLinkingNum" key="StructureDefinition-compoundDrugLinkingNum" name="CompoundDrugLinkingNumber"/>
-<artifact id="StructureDefinition/countrySubdivisionCode" key="StructureDefinition-countrySubdivisionCode" name="CountrySubdivisionCode"/>
+<artifact deprecated="true" id="StructureDefinition/countrySubdivisionCode" key="StructureDefinition-countrySubdivisionCode" name="CountrySubdivisionCode"/>
 <artifact deprecated="true" id="StructureDefinition/disclaimer" key="StructureDefinition-disclaimer" name="Disclaimer"/>
 <artifact id="SearchParameter/DocumentReference-doc-status" key="SearchParameter-DocumentReference-doc-status" name="DocumentReference docStatus"/>
 <artifact deprecated="true" id="StructureDefinition/estimatedDateOfService" key="StructureDefinition-estimatedDateOfService" name="EstimatedDateOfService"/>
@@ -149,15 +149,15 @@
 <artifact id="DocumentReference/PCT-GFE-DocumentReference-Inst-1" key="DocumentReference-PCT-GFE-DocumentReference-Inst-1" name="PCT-GFE-DocumentReference-Inst-1"/>
 <artifact id="DocumentReference/PCT-GFE-DocumentReference-Prof-1" key="DocumentReference-PCT-GFE-DocumentReference-Prof-1" name="PCT-GFE-DocumentReference-Prof-1"/>
 <artifact id="Bundle/PCT-GFE-Information-Bundle-1" key="Bundle-PCT-GFE-Information-Bundle-1" name="PCT-GFE-Information-Bundle-1"/>
-<artifact id="Claim/PCT-GFE-Institutional-1" key="Claim-PCT-GFE-Institutional-1" name="PCT-GFE-Institutional-1"/>
-<artifact id="Claim/PCT-GFE-Institutional-MRI" key="Claim-PCT-GFE-Institutional-MRI" name="PCT-GFE-Institutional-MRI"/>
+<artifact id="Claim/aedb6db2-c8a4-41e8-a8e1-722258ff01dd" key="Claim-PCT-GFE-Institutional-1" name="PCT-GFE-Institutional-1"/>
+<artifact id="Claim/914c0b2c-4ce3-4260-965e-4366c174a785" key="Claim-PCT-GFE-Institutional-MRI" name="PCT-GFE-Institutional-MRI"/>
 <artifact id="Bundle/e1b566b9-34a6-467b-83d2-8107a5ee987d" key="Bundle-PCT-GFE-Missing-Bundle-1" name="PCT-GFE-Missing-Bundle-1"/>
 <artifact id="Bundle/PCT-GFE-Packet-Inst-1" key="Bundle-PCT-GFE-Packet-Inst-1" name="PCT-GFE-Packet-Inst-1"/>
 <artifact id="Bundle/PCT-GFE-Packet-Prof-1" key="Bundle-PCT-GFE-Packet-Prof-1" name="PCT-GFE-Packet-Prof-1"/>
 <artifact deprecated="true" id="Claim/PCT-GFE-Professional-1" key="Claim-PCT-GFE-Professional-1" name="PCT-GFE-Professional-1"/>
-<artifact id="Claim/PCT-GFE-Professional-MRI" key="Claim-PCT-GFE-Professional-MRI" name="PCT-GFE-Professional-MRI"/>
-<artifact id="Claim/PCT-GFE-Summary-1" key="Claim-PCT-GFE-Summary-1" name="PCT-GFE-Summary-1"/>
-<artifact id="Claim/PCT-GFE-Summary-MRI" key="Claim-PCT-GFE-Summary-MRI" name="PCT-GFE-Summary-MRI"/>
+<artifact id="Claim/6369b2f8-1154-4935-a27f-4a578d9e384c" key="Claim-PCT-GFE-Professional-MRI" name="PCT-GFE-Professional-MRI"/>
+<artifact id="Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847" key="Claim-PCT-GFE-Summary-1" name="PCT-GFE-Summary-1"/>
+<artifact id="Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4" key="Claim-PCT-GFE-Summary-MRI" name="PCT-GFE-Summary-MRI"/>
 <artifact id="OperationOutcome/PCT-GFE-Validation-Error-Example-1" key="OperationOutcome-PCT-GFE-Validation-Error-Example-1" name="PCT-GFE-Validation-Error-Example-1"/>
 <artifact id="MedicationRequest/PCT-MedicationRequest-1" key="MedicationRequest-PCT-MedicationRequest-1" name="PCT-MedicationRequest-1"/>
 <artifact id="Location/PCT-ServiceLocation-1" key="Location-PCT-ServiceLocation-1" name="PCT-ServiceLocation-1"/>
@@ -235,7 +235,7 @@
 <page key="gfe_submission_and_aeob_specification" name="Good Faith Estimate (GFE) Submission and AEOB Specification"/>
 <page key="index" name="Patient Cost Transparency Implementation Guide Home Page"/>
 <page key="projects_and_participants" name="Project and Participants"/>
-<page key="reading_this_ig" name="Reading THis IG"/>
+<page key="reading_this_ig" name="Reading This IG"/>
 <page key="security" name="Security"/>
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="underlying_technologies" name="Technical Background and Underlying Technologies"/>

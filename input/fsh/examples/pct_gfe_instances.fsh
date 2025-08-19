@@ -20,6 +20,7 @@ InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE Example 1"
 Usage: #example
 
+* id = "aedb6db2-c8a4-41e8-a8e1-722258ff01dd"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * text.status = #generated
@@ -76,6 +77,7 @@ InstanceOf: PCTGFESummary
 Description: "PCT Summary GFE Example 1"
 Usage: #example
 
+* id = "3e67b7e5-e15b-4003-802b-79bfc0ba4847"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 * text.status = #generated 
@@ -124,6 +126,7 @@ InstanceOf: PCTGFEProfessional
 Description: "PCT Professional GFE Example 1"
 Usage: #example
 
+* id = "6369b2f8-1154-4935-a27f-4a578d9e384c"
 * text.status = #generated 
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Claim PCT-GFE-Professional-MRI</b></p><a name=\"PCT-GFE-Professional-MRI\"> </a><a name=\"hcPCT-GFE-Professional-MRI\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-gfe-professional.html\">PCT Good Faith Estimate Professional</a></p></div><p><b>ProviderEventMethodology</b>: EEMM1022</p><blockquote><p><b>GFEServiceLinkingInfo</b></p><ul><li>linkingIdentifier: <code>http://example.org/Claim/identifiers</code>/223452-2342-2435-008001</li><li>plannedPeriodOfService: 2021-10-31</li></ul></blockquote><p><b>identifier</b>: Placer Identifier/GFEProviderAssignedID0002</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/claim-type professional}\">Professional</span></p><p><b>use</b>: Predetermination</p><p><b>patient</b>: <a href=\"Bundle-PCT-AEOB-Packet-1.html#urn-uuid-9c05d948-b931-4bff-8766-18b99b0650d4\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-1234568; type = document; timestamp = 2025-01-10 11:01:00+0500</a></p><p><b>created</b>: 2021-10-05</p><p><b>insurer</b>: <a href=\"Bundle-PCT-AEOB-Packet-1.html#urn-uuid-2ccf0ff7-2af1-4598-b667-6e35b79529df\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-1234568; type = document; timestamp = 2025-01-10 11:01:00+0500</a></p><p><b>provider</b>: <a href=\"Bundle-PCT-GFE-Packet-Prof-1.html#urn-uuid-2e4341dc-70b8-4709-9fa9-0b6d64cf21bb\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-2347384711; type = document; timestamp = 2024-03-29 11:01:00+0500</a></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><h3>Payees</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/payeetype provider}\">Provider</span></td></tr></table><p><b>referral</b>: Referral Number</p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Diagnosis[x]</b></td><td><b>Type</b></td><td><b>PackageCode</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><span title=\"Codes:{http://hl7.org/fhir/sid/icd-10-cm S06.30}\">Unspecified focal traumatic brain injury</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosistype principal}\">Principal Diagnosis</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup 400}\">Head trauma - concussion</span></td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Bundle-PCT-AEOB-Packet-1.html#urn-uuid-49fd53a8-7eb7-4319-acc8-04bf8a3cb603\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-1234568; type = document; timestamp = 2025-01-10 11:01:00+0500</a></td></tr></table><blockquote><p><b>item</b></p><p><b>Service Description</b>: Imaging</p><p><b>GFEBillingProviderLineItemCtrlNum</b>: GFEBillingProviderLineItemCtrlNum-0001</p><p><b>sequence</b>: 1</p><p><b>productOrService</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70551}\">Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material</span></p><p><b>modifier</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70551}\">Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material</span></p><p><b>serviced</b>: 2021-10-31</p><p><b>location</b>: <span title=\"Codes:{https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set 21}\">Inpatient Hospital</span></p><p><b>quantity</b>: 1</p><h3>UnitPrices</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table><h3>Nets</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></blockquote><h3>Totals</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></div>"
 
@@ -172,6 +175,7 @@ InstanceOf: PCTGFESummary
 Description: "PCT Summary MRI GFE"
 Usage: #example
 
+* id = "ef5c6c33-aab0-4346-a79c-22b8f1e75ff4"
 * text.status = #generated 
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Claim PCT-GFE-Summary-MRI</b></p><a name=\"PCT-GFE-Summary-MRI\"> </a><a name=\"hcPCT-GFE-Summary-MRI\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-gfe-summary.html\">PCT Good Faith Estimate  Summary</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTEstimateTypeSummaryCSTemporaryTrialUse estimate-summary}\">Estimate Summary</span></p><p><b>use</b>: Predetermination</p><p><b>patient</b>: <a href=\"Bundle-PCT-AEOB-Packet-1.html#urn-uuid-9c05d948-b931-4bff-8766-18b99b0650d4\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-1234568; type = document; timestamp = 2025-01-10 11:01:00+0500</a></p><p><b>billablePeriod</b>: 2021-10-31 --&gt; (ongoing)</p><p><b>created</b>: 2021-10-05</p><p><b>insurer</b>: <a href=\"Bundle-PCT-AEOB-Packet-1.html#urn-uuid-2ccf0ff7-2af1-4598-b667-6e35b79529df\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-1234568; type = document; timestamp = 2025-01-10 11:01:00+0500</a></p><p><b>provider</b>: ?rref?</p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Diagnosis[x]</b></td><td><b>Type</b></td><td><b>PackageCode</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><span title=\"Codes:{http://hl7.org/fhir/sid/icd-10-cm S06.30}\">Unspecified focal traumatic brain injury</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosistype principal}\">Principal Diagnosis</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup 400}\">Head trauma - concussion</span></td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Bundle-PCT-AEOB-Packet-1.html#urn-uuid-49fd53a8-7eb7-4319-acc8-04bf8a3cb603\">Bundle: identifier = http://example.com/identifiers/bundle#59688475-2324-3242-1234568; type = document; timestamp = 2025-01-10 11:01:00+0500</a></td></tr></table><h3>Totals</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></div>"
 //* extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
@@ -218,6 +222,7 @@ InstanceOf: PCTGFEInstitutional
 Description: "PCT Institutional GFE for MRI"
 Usage: #example
 
+* id = "914c0b2c-4ce3-4260-965e-4366c174a785"
 * identifier[PLAC].value = "GFEProviderAssignedID0001MRI"
 /* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
@@ -273,12 +278,12 @@ Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
-* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-1"
+* entry[gfe][+].fullUrl = "urn:uuid:3e67b7e5-e15b-4003-802b-79bfc0ba4847"  // "http://example.org/fhir/Claim/PCT-GFE-Summary-1"
 * entry[gfe][=].id = "PCT-GFE-Summary-1"
-* entry[gfe][=].resource = PCT-GFE-Summary-1
-* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
+* entry[gfe][=].resource = 3e67b7e5-e15b-4003-802b-79bfc0ba4847 // PCT-GFE-Summary-1
+* entry[gfe][+].fullUrl = "urn:uuid:aedb6db2-c8a4-41e8-a8e1-722258ff01dd" // "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
 * entry[gfe][=].id = "PCT-GFE-Institutional-1"
-* entry[gfe][=].resource = PCT-GFE-Institutional-1
+* entry[gfe][=].resource = aedb6db2-c8a4-41e8-a8e1-722258ff01dd // PCT-GFE-Institutional-1
 // * entry[gfeInstitutional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Institutional-1"
 // * entry[gfeInstitutional].id = "PCT-GFE-Institutional-1"
 // * entry[gfeInstitutional].resource = PCT-GFE-Institutional-1
@@ -306,12 +311,12 @@ Usage: #example
 * identifier.value = "59688475-2324-3242-23473847"
 * timestamp = "2021-11-09T11:01:00+05:00"
 
-* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Summary-MRI"
+* entry[gfe][+].fullUrl = "urn:uuid:ef5c6c33-aab0-4346-a79c-22b8f1e75ff4" // "http://example.org/fhir/Claim/PCT-GFE-Summary-MRI"
 * entry[gfe][=].id = "PCT-GFE-Summary-MRI"
-* entry[gfe][=].resource = PCT-GFE-Summary-MRI
-* entry[gfe][+].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
+* entry[gfe][=].resource = ef5c6c33-aab0-4346-a79c-22b8f1e75ff4 // PCT-GFE-Summary-MRI
+* entry[gfe][+].fullUrl = "urn:uuid:6369b2f8-1154-4935-a27f-4a578d9e384c" // "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 * entry[gfe][=].id = "PCT-GFE-Professional-MRI"
-* entry[gfe][=].resource = PCT-GFE-Professional-MRI
+* entry[gfe][=].resource = 6369b2f8-1154-4935-a27f-4a578d9e384c // PCT-GFE-Professional-MRI
 // * entry[gfeProfessional].fullUrl = "http://example.org/fhir/Claim/PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].id = "PCT-GFE-Professional-MRI"
 // * entry[gfeProfessional].resource = PCT-GFE-Professional-MRI
@@ -457,7 +462,7 @@ Usage: #example
 * address.state = "CT"
 * address.postalCode = "06155"
 * address.country = "US"
-* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-CT
+//* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-CT
 
 Instance: org1002
 InstanceOf: PCTOrganization
@@ -480,7 +485,7 @@ Usage: #example
 * address.state = "MA"
 * address.postalCode = "02114"
 * address.country = "US"
-* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
+//* address.extension[countrySubdivisionCode].valueCoding = $ISO3166-P2-CSC#US-MA
 
 Instance: coverage1001
 InstanceOf: PCTCoverage

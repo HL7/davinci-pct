@@ -43,9 +43,9 @@ Description: "The PCT Organization profile builds upon the US Core Organization 
 * type 1..*
 * type from PCTOrganizationTypeVS (extensible)
 
-//TODO: add extension for countrySubdivisionCode
-* address.extension contains CountrySubdivisionCode named countrySubdivisionCode 0..1 MS
-* address.extension[countrySubdivisionCode] ^short = "Country Subdivision Code - from Part 2 of ISO 3166"
+
+//* address.extension contains CountrySubdivisionCode named countrySubdivisionCode 0..1 MS
+//* address.extension[countrySubdivisionCode] ^short = "Country Subdivision Code - from Part 2 of ISO 3166"
 
 * address.country MS
 * address.country from $ISO3166-P1-ALPHA2-VS (required)

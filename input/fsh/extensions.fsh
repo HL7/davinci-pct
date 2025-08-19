@@ -312,7 +312,7 @@ Description: "This extension is used to indicate the taxonomy code of the provid
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from $USCPROCROLE (extensible)
-
+/*
 Extension: CountrySubdivisionCode
 Id: countrySubdivisionCode
 Description: "This extension is used to provide the Country Subdivision Code - from Part 2 of ISO 3166."
@@ -321,7 +321,7 @@ Description: "This extension is used to provide the Country Subdivision Code - f
 * value[x] 1..1
 * value[x] only Coding
 * value[x] from $ISO3166-P2-CSC-VS (extensible)
-
+*/
 
 //// For PCTPractitioner Profile ////
 /*

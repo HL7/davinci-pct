@@ -63,27 +63,30 @@ INFORMATION: CodeSystem/PCTTaskStatusReasonCSTemporaryTrialUse: CodeSystem: Most
 
 
 # 05. === Summary of Claim and ExplanationOfBenefit does not allow provider reference or display because it crosses multiple providers. A DAR extension is used instead ===
-WARNING: Claim/PCT-GFE-Summary-1: Claim.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Claim/PCT-GFE-Summary-MRI: Claim.provider: A Reference without an actual reference or identifier should have a display
 WARNING: ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60: ExplanationOfBenefit.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[1].resource/*ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60*/.provider: A Reference without an actual reference or identifier should have a display
+
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
+WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
+WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
+WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
+WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
+WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b: Bundle.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563: Bundle.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4: Claim.provider: A Reference without an actual reference or identifier should have a display
+
+
+
 
 
 # 06. ===  The version of US Core was chosen on purpose. It was reviewed to support the needs and 8.0.0 came out towards the end of ballot reconciliation and will not be needed for some time. ===
 The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
 
-# 07. === EOB Summary does not include a provider and does not allow a display (by design) ===
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
-WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
-WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
-WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
-WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b: Bundle.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563: Bundle.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[1].resource/*ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60*/.provider: A Reference without an actual reference or identifier should have a display
 
 # 08. === Warning about pattern discriminator being deprecated - Inherited from US Core requirements ===
 INFORMATION: StructureDefinition/davinci-pct-coverage: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -125,8 +128,7 @@ This element does not match any known slice defined in the profile http://hl7.or
 
 
 
-# 15. === Warning that the entry matches multiple profiles. The profiles however are distinct and this instance only matches one. ===
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[0].resource/*Composition/PCT-AEOB-Composition-1*/.section[2].entry[0]: Found multiple matching profiles for urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b among choices: http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0, http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0
+# 15. === Warning that the entry matches multiple profiles. The profiles however are distinct and this instance only matches one. This also generated a warning that ===
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[0].resource/*Composition/PCT-GFE-Composition-Inst-1*/.section[1].entry[0]: Found multiple matching profiles for urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b among choices: http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0, http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0
 WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[0].resource/*Composition/PCT-GFE-Composition-Prof-1*/.section[1].entry[0]: Found multiple matching profiles for urn:uuid:f8c054ba-e496-4230-b74e-a3ad871fb563 among choices: http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0, http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0
 
@@ -145,8 +147,8 @@ INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pct
 
 # 19. === INFORMATIONAL issue about automatically version pinned references. This IG pins most version where there are multiple options, but these automatically pinned versions are either from unpinned inherited requirements are from those that FSH does not provide a simple mechanism to define. ===
 INFORMATION: StructureDefinition.snapshot.element[122].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
-INFORMATION: StructureDefinition.snapshot.element[66].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[60].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[117].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.differential.element[14].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.snapshot.element[24].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
@@ -158,7 +160,6 @@ INFORMATION: StructureDefinition.snapshot.element[76].binding.valueSet: Pinned t
 INFORMATION: StructureDefinition.differential.element[17].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[85].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
-INFORMATION: StructureDefinition.snapshot.element[68].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[53].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.snapshot.element[213].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.differential.element[9].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
@@ -200,6 +201,9 @@ INFORMATION: StructureDefinition.snapshot.element[29].type[0].targetProfile[4]: 
 INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[34].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.snapshot.element[67].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition​.snapshot​.element[69]​.binding​.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[45].binding.valueSet: Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
+
 
 
 # 20. === New DA VINCI Warning that does not apply. Requirements to things that do not exist (version 0.1.0 was the initial ballot version and tickets did not exist, SubscriptionTopic does not exist in R4) ===
