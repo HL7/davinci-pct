@@ -49,6 +49,8 @@ By using the FHIR standard and implementing this guide, providers and payers can
 
 FHIR is being used for consumer access to healthcare related data at significant scale today, and there are regulatory requirements in the form of the CMS Patient Access API for FHIR support for the related use case of post adjudicated claims. Use of an industry standard would keep the barrier to stakeholder adoption relatively low.
 
+> Note: The scope of this guide does not include coordination of benefits or more than one coverage. This does not serve as a replacement for eligibility, scheduling, prior authorization or other financial and administrative use cases.
+
 Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of this IG should become familiar with these before reading this IG. 
 
 ### General Workflow ###
@@ -77,6 +79,7 @@ This guide breaks the process into two main parts in support of the patient cost
 5. The patient and provider may receive a notification of availability of the AEOB Packet and can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
 > Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
+
 
 
 ### Content and Organization
