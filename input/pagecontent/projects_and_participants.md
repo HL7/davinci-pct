@@ -47,12 +47,29 @@
 **This IG was developed under the auspices of the Financial Management Work Group.**
 
 Special thanks go to the numerous Da Vinci members and community   who have participated on conference calls, provided reviews and feedback, supported sample data gathering, reference implementation development, and testing including, but not limited to:
+*	Aegis (Carie Hammond)
+*	Aetna CVS Health (Megan Meyer, Joel E. Hansen, …) 
+*	American Hospital Association (Terrence Cunningham, Andrea Preisler)  
+*	American Medical Association (Celine Lefebvre, Emma Andelson, Heather McComas) 
+*	B.well (Adam Culbertson, Logan Edwards) 
 *	Blue Cross Blue Shield Association (Patricia B Taylor, Samuel Undine, Michael Gould, Gail Kocher)
+*	Cambia Health Solutions (Hong Huang, Pat Waller)
+*	Careviso (Brandon Blais,  Rachelle Galant, Perry Dimas, Andrew Mignatti)  
+*	Cleveland Clinic (Jaime Lampshire)
+*	Consumers' Checkbook/Center for the Study of Services (Eric Ellsworth) 
+*	Elevance Health (Chris Cioffi, Ranjith Kandur) 
+*	Epic (Jacob Woodford, Spencer Utley) 
+*	Flexpa (Joshua Kelly) 
+*	Florida Blue
+*	HealthLX (David Riddle) 
+*	Hospital for Special Surgery (Sarah Cutcliffe, Ross Sadler) 
+*	Kryruus Health (Kevin Rill) 
+*	Nachimson Advisors (Stanley Nachimson) 
+*	Optum (Linda Michaelson, David Potochniak) 
 *	Smile CDR Inc. (Cait O'Donnell, Joseph Quinn, and Sophie Tekeste)
 *	The MITRE Corporation (FHIR Shorthand Team) 
-*	Cambia Health Solutions (Hong Huang, Pat Waller)
 *	Weill Cornell Medicine (Jill Vincente, Jarrett Cox)
-*	Aegis (Carie Hammond)
+
 
 > If you are interested in participating in the PCT project, information about our calls, minutes of past discussions, and other information can be found [here](https://confluence.hl7.org/pages/viewpage.action?pageId=116460399) on our HL7 Confluence page.
 
