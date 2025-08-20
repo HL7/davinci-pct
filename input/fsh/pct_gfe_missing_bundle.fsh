@@ -4,6 +4,7 @@ Id: davinci-pct-gfe-missing-bundle
 Title: "PCT GFE Missing Bundle"
 Description: "PCT GFE Missing Bundle is used to indicate when a GFE Contributor task request was made, but no GFE Bundle was submitted (attached to the ContributorTask)."
 * insert DraftArtifact
+* obeys pct-gfe-missing-bundle-1
 
 * type = #collection (exactly)
 * timestamp 1..1
@@ -64,4 +65,11 @@ Description: "PCT GFE Missing Bundle is used to indicate when a GFE Contributor 
 * entry[requested-items-vision] ^short = "Items the request is about - VisionPrescription"
 * entry[requested-items-vision].resource 1..1
 * entry[requested-items-vision].resource only VisionPrescription
+
+
+
+Invariant: pct-gfe-missing-bundle-1
+Description: "SHALL NOT contain a GFE."
+Expression: "Bundle.entry.resource.ofType(Claim).exists()=false"
+Severity: #error
 
