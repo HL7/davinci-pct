@@ -42,20 +42,20 @@ Usage: #definition
 * base = #Task
 * type = #date
 * expression = "Task.extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod').value"
-* xpath = "f:Task/f:extension[url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod']/f.value"
+* xpath = "f:Task/f:extension[url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod']/f:value"
 * xpathUsage = #normal
 
-// TODO, look to see whether this task replaces needs to be replaced by GFERelatedTask
-Instance: task-replaces
+
+Instance: related-task
 InstanceOf: SearchParameter
-Title: "TaskReplaces"
+Title: "RelatedTask"
 Description: "Completed or terminated task(s) whose function is taken by this new task"
 Usage: #definition
 * extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
 * extension.valueCode = #trial-use
-* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/task-replaces"
+* url = "http://hl7.org/fhir/us/davinci-pct/SearchParameter/related-task"
 * version = "2.0.0"
-* name = "TaskReplaces"
+* name = "RelatedTask"
 * status = #active
 * experimental = false
 * date = "2024-03-24T09:29:23+11:00"
@@ -67,11 +67,11 @@ Usage: #definition
 * contact.telecom[=].value = "fm@lists.HL7.org"
 * description = "Completed or terminated task(s) whose function is taken by this new task"
 * jurisdiction = urn:iso:std:iso:3166#US
-* code = #task-replaces
+* code = #related-task
 * base = #Task
 * type = #reference
-* expression = "Task.extension.where(url='http://hl7.org/fhir/StructureDefinition/task-replaces').value"
-* xpath = "f:Task/f:extension[url='http://hl7.org/fhir/StructureDefinition/task-replaces']/f.value"
+* expression = "Task.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeRelatedTask').extension.where(url='related').value"
+* xpath = "f:Task/f:extension[url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeRelatedTask']/f:extension[url='related']/f:value"
 * xpathUsage = #normal
 * target = #Task
 
@@ -101,8 +101,8 @@ Usage: #definition
 * code = #estimate-initiation-time
 * base = #DocumentReference
 * type = #date
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/requestInitiationTime').value"
-* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/requestInitiationTime']/f.value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/requestInitiationTime').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/requestInitiationTime']/f:value"
 * xpathUsage = #normal
 * target = #DocumentReference
 
@@ -134,8 +134,8 @@ Usage: #definition
 * code = #estimate-service
 * base = #DocumentReference
 * type = #token
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/estimateProcedureOrService').value"
-* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/estimateProcedureOrService']/f.value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/estimateProcedureOrService').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/estimateProcedureOrService']/f:value"
 * xpathUsage = #normal
 * target = #DocumentReference
 
@@ -164,8 +164,8 @@ Usage: #definition
 * code = #estimate-condition
 * base = #DocumentReference
 * type = #token
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/estimateCondition').value"
-* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/estimateCondition']/f.value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/estimateCondition').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/estimateCondition']/f:value"
 * xpathUsage = #normal
 * target = #DocumentReference
 
@@ -203,8 +203,8 @@ Usage: #definition
 * code = #linking-identifier
 * base = #DocumentReference
 * type = #token
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo').extension.where(url='linkingIdentifier').value"
-* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='linkingIdentifier']/f.value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeServiceLinkingInfo').extension.where(url='linkingIdentifier').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='linkingIdentifier']/f:value"
 * xpathUsage = #normal
 * target = #DocumentReference
 
@@ -234,8 +234,8 @@ Usage: #definition
 * code = #planned-period
 * base = #DocumentReference
 * type = #date
-* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo').extension.where(url='plannedPeriodOfService').value"
-* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='plannedPeriodOfService']/f.value"
+* expression = "DocumentReference.extension.where(url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeServiceLinkingInfo').extension.where(url='plannedPeriodOfService').value"
+* xpath = "f:DocumentReference/f:extension[url='http://hl7.org/fhir/us/davinci-pct/StructureDefinition/gfeServiceLinkingInfo']/f:extension[url='plannedPeriodOfService']/f:value"
 * xpathUsage = #normal
 * target = #DocumentReference
 
@@ -265,6 +265,6 @@ Usage: #definition
 * base = #DocumentReference
 * type = #token
 * expression = "DocumentReference.docStatus"
-* xpath = "f:DocumentReference/f.docStatus"
+* xpath = "f:DocumentReference/f:docStatus"
 * xpathUsage = #normal
 * target = #DocumentReference

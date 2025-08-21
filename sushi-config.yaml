@@ -203,10 +203,10 @@ menu:
     Search Parameters: artifacts.html#3
     Profiles: artifacts.html#4
     Subscriptions: artifacts.html#7
-    Extensions: artifacts.html#10
-    Value Sets: artifacts.html#11
-    Code Systems: artifacts.html#12
-    Examples: artifacts.html#13
+    Extensions: artifacts.html#8
+    Value Sets: artifacts.html#9
+    Code Systems: artifacts.html#8
+    Examples: artifacts.html#10
     Terminology Licensure: terminology_licensure.html
 
   Base Specs:
@@ -256,7 +256,15 @@ groups:
     resources:
     - SearchParameter/aeob-date-of-service
     - SearchParameter/task-requested-period
-    - SearchParameter/task-replaces
+    - SearchParameter/related-task
+
+    - SearchParameter/DocumentReference-doc-status
+    - SearchParameter/packet-condition
+    - SearchParameter/packet-request-initiation-time
+    - SearchParameter/packet-linking-identifier
+    - SearchParameter/packet-PlannedPeriodOfService
+    - SearchParameter/packet-procedure-or-service
+
 
 
   General:
@@ -324,8 +332,10 @@ groups:
 
     - StructureDefinition/davinci-pct-gfe-task-update-subscription
     - StructureDefinition/davinci-pct-gfe-available-subject-subscription
+    - StructureDefinition/davinci-pct-gfe-available-author-subscription
     - StructureDefinition/davinci-pct-aeob-available-subject-subscription
     - StructureDefinition/davinci-pct-aeob-available-author-subscription
+    
 
 
  # Base Specs:

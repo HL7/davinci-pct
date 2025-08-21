@@ -179,6 +179,7 @@
 <artifact id="StructureDefinition/providerEventMethodology" key="StructureDefinition-providerEventMethodology" name="ProviderEventMethodology"/>
 <artifact id="StructureDefinition/providerTaxonomy" key="StructureDefinition-providerTaxonomy" name="ProviderTaxonomy"/>
 <artifact id="StructureDefinition/referralNumber" key="StructureDefinition-referralNumber" name="ReferralNumber"/>
+<artifact id="SearchParameter/related-task" key="SearchParameter-related-task" name="RelatedTask"/>
 <artifact id="StructureDefinition/requestInitiationTime" key="StructureDefinition-requestInitiationTime" name="Request Initiation Time"/>
 <artifact id="StructureDefinition/requestOriginationType" key="StructureDefinition-requestOriginationType" name="RequestOriginationType"/>
 <artifact id="OperationDefinition/GFE-retrieve" key="OperationDefinition-GFE-retrieve" name="Retrieve GFE Packet"/>
@@ -200,7 +201,7 @@
 <artifact id="SubscriptionTopic/davinci-pct-gfe-available-author-notification" key="SubscriptionTopic-davinci-pct-gfe-available-author-notification" name="SubscriptionTopic - GFE Available for Author Notification"/>
 <artifact id="SubscriptionTopic/davinci-pct-gfe-available-subject-notification" key="SubscriptionTopic-davinci-pct-gfe-available-subject-notification" name="SubscriptionTopic - GFE Available for Subject Notification"/>
 <artifact id="SubscriptionTopic/davinci-pct-gfe-coordination-task-notification" key="SubscriptionTopic-davinci-pct-gfe-coordination-task-notification" name="SubscriptionTopic - GFE Coordination Task Notification"/>
-<artifact id="SearchParameter/task-replaces" key="SearchParameter-task-replaces" name="TaskReplaces"/>
+<artifact deprecated="true" id="SearchParameter/task-replaces" key="SearchParameter-task-replaces" name="TaskReplaces"/>
 <artifact id="SearchParameter/task-requested-period" key="SearchParameter-task-requested-period" name="TaskRequestedPeriod"/>
 <artifact id="ValueSet/USClaimDRGCodes" key="ValueSet-USClaimDRGCodes" name="US Claim DRG Codes"/>
 <artifact id="SearchParameter/aeob-date-of-service" key="SearchParameter-aeob-date-of-service" name="aeob-date-of-service"/>
