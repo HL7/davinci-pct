@@ -128,16 +128,16 @@
 <artifact id="ValueSet/PCTTaskAttachmentContentType" key="ValueSet-PCTTaskAttachmentContentType" name="PCT Task Attachment Mime Types"/>
 <artifact id="ValueSet/PCTTotal" key="ValueSet-PCTTotal" name="PCT Total Value Set"/>
 <artifact id="ValueSet/PCTBenefitBalanceCategoryVS" key="ValueSet-PCTBenefitBalanceCategoryVS" name="PCT benefitBalance.category codes"/>
-<artifact id="ExplanationOfBenefit/89fdfb03-b700-4e21-a116-bc0658c68a00" key="ExplanationOfBenefit-PCT-AEOB-1" name="PCT-AEOB-1"/>
+<artifact id="ExplanationOfBenefit/PCT-AEOB-1" key="ExplanationOfBenefit-PCT-AEOB-1" name="PCT-AEOB-1"/>
 <artifact id="OperationOutcome/PCT-AEOB-Adjudication-Error-Example-1" key="OperationOutcome-PCT-AEOB-Adjudication-Error-Example-1" name="PCT-AEOB-Adjudication-Error-Example-1"/>
 <artifact deprecated="true" id="Bundle/PCT-AEOB-Bundle-1" key="Bundle-PCT-AEOB-Bundle-1" name="PCT-AEOB-Bundle-1"/>
 <artifact id="OperationOutcome/PCT-AEOB-Complete-Example-1" key="OperationOutcome-PCT-AEOB-Complete-Example-1" name="PCT-AEOB-Complete-Example-1"/>
 <artifact id="DocumentReference/PCT-AEOB-DocumentReference-1" key="DocumentReference-PCT-AEOB-DocumentReference-1" name="PCT-AEOB-DocumentReference-1"/>
 <artifact id="Bundle/PCT-AEOB-Packet-1" key="Bundle-PCT-AEOB-Packet-1" name="PCT-AEOB-Packet-1"/>
-<artifact id="ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60" key="ExplanationOfBenefit-PCT-AEOB-Summary-1" name="PCT-AEOB-Summary-1"/>
+<artifact id="ExplanationOfBenefit/PCT-AEOB-Summary-1" key="ExplanationOfBenefit-PCT-AEOB-Summary-1" name="PCT-AEOB-Summary-1"/>
 <artifact id="DeviceRequest/PCT-DeviceRequest-1" key="DeviceRequest-PCT-DeviceRequest-1" name="PCT-DeviceRequest-1"/>
-<artifact id="Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b" key="Bundle-PCT-GFE-Bundle-Inst-1" name="PCT-GFE-Bundle-Inst-1"/>
-<artifact id="Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563" key="Bundle-PCT-GFE-Bundle-Prof-1" name="PCT-GFE-Bundle-Prof-1"/>
+<artifact id="Bundle/PCT-GFE-Bundle-Inst-1" key="Bundle-PCT-GFE-Bundle-Inst-1" name="PCT-GFE-Bundle-Inst-1"/>
+<artifact id="Bundle/PCT-GFE-Bundle-Prof-1" key="Bundle-PCT-GFE-Bundle-Prof-1" name="PCT-GFE-Bundle-Prof-1"/>
 <artifact deprecated="true" id="Bundle/PCT-GFE-Collection-Bundle-1" key="Bundle-PCT-GFE-Collection-Bundle-1" name="PCT-GFE-Collection-Bundle-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Replacement-Task-1" key="Task-PCT-GFE-Contributor-Replacement-Task-1" name="PCT-GFE-Contributor-Replacement-Task-1"/>
 <artifact id="Task/PCT-GFE-Contributor-Replacement-Task-2" key="Task-PCT-GFE-Contributor-Replacement-Task-2" name="PCT-GFE-Contributor-Replacement-Task-2"/>
@@ -149,15 +149,15 @@
 <artifact id="DocumentReference/PCT-GFE-DocumentReference-Inst-1" key="DocumentReference-PCT-GFE-DocumentReference-Inst-1" name="PCT-GFE-DocumentReference-Inst-1"/>
 <artifact id="DocumentReference/PCT-GFE-DocumentReference-Prof-1" key="DocumentReference-PCT-GFE-DocumentReference-Prof-1" name="PCT-GFE-DocumentReference-Prof-1"/>
 <artifact id="Bundle/PCT-GFE-Information-Bundle-1" key="Bundle-PCT-GFE-Information-Bundle-1" name="PCT-GFE-Information-Bundle-1"/>
-<artifact id="Claim/aedb6db2-c8a4-41e8-a8e1-722258ff01dd" key="Claim-PCT-GFE-Institutional-1" name="PCT-GFE-Institutional-1"/>
-<artifact id="Claim/914c0b2c-4ce3-4260-965e-4366c174a785" key="Claim-PCT-GFE-Institutional-MRI" name="PCT-GFE-Institutional-MRI"/>
-<artifact id="Bundle/e1b566b9-34a6-467b-83d2-8107a5ee987d" key="Bundle-PCT-GFE-Missing-Bundle-1" name="PCT-GFE-Missing-Bundle-1"/>
+<artifact id="Claim/PCT-GFE-Institutional-1" key="Claim-PCT-GFE-Institutional-1" name="PCT-GFE-Institutional-1"/>
+<artifact id="Claim/PCT-GFE-Institutional-MRI" key="Claim-PCT-GFE-Institutional-MRI" name="PCT-GFE-Institutional-MRI"/>
+<artifact id="Bundle/PCT-GFE-Missing-Bundle-1" key="Bundle-PCT-GFE-Missing-Bundle-1" name="PCT-GFE-Missing-Bundle-1"/>
 <artifact id="Bundle/PCT-GFE-Packet-Inst-1" key="Bundle-PCT-GFE-Packet-Inst-1" name="PCT-GFE-Packet-Inst-1"/>
 <artifact id="Bundle/PCT-GFE-Packet-Prof-1" key="Bundle-PCT-GFE-Packet-Prof-1" name="PCT-GFE-Packet-Prof-1"/>
 <artifact deprecated="true" id="Claim/PCT-GFE-Professional-1" key="Claim-PCT-GFE-Professional-1" name="PCT-GFE-Professional-1"/>
-<artifact id="Claim/6369b2f8-1154-4935-a27f-4a578d9e384c" key="Claim-PCT-GFE-Professional-MRI" name="PCT-GFE-Professional-MRI"/>
-<artifact id="Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847" key="Claim-PCT-GFE-Summary-1" name="PCT-GFE-Summary-1"/>
-<artifact id="Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4" key="Claim-PCT-GFE-Summary-MRI" name="PCT-GFE-Summary-MRI"/>
+<artifact id="Claim/PCT-GFE-Professional-MRI" key="Claim-PCT-GFE-Professional-MRI" name="PCT-GFE-Professional-MRI"/>
+<artifact id="Claim/PCT-GFE-Summary-1" key="Claim-PCT-GFE-Summary-1" name="PCT-GFE-Summary-1"/>
+<artifact id="Claim/PCT-GFE-Summary-MRI" key="Claim-PCT-GFE-Summary-MRI" name="PCT-GFE-Summary-MRI"/>
 <artifact id="OperationOutcome/PCT-GFE-Validation-Error-Example-1" key="OperationOutcome-PCT-GFE-Validation-Error-Example-1" name="PCT-GFE-Validation-Error-Example-1"/>
 <artifact id="MedicationRequest/PCT-MedicationRequest-1" key="MedicationRequest-PCT-MedicationRequest-1" name="PCT-MedicationRequest-1"/>
 <artifact id="Location/PCT-ServiceLocation-1" key="Location-PCT-ServiceLocation-1" name="PCT-ServiceLocation-1"/>
@@ -189,8 +189,8 @@
 <artifact id="StructureDefinition/estimateCondition" key="StructureDefinition-estimateCondition" name="Significant condition involved"/>
 <artifact id="StructureDefinition/subjectToMedicalMgmt" key="StructureDefinition-subjectToMedicalMgmt" name="Subject To Medical Management"/>
 <artifact id="OperationDefinition/GFE-submit" key="OperationDefinition-GFE-submit" name="Submit a GFE resource for the creation of an AEOB"/>
-<artifact id="Organization/e7c36e30-edb8-4a0a-8208-c92085663b00" key="Organization-Submitter-Org-1" name="Submitter-Org-1"/>
-<artifact id="Practitioner/2e4341dc-70b8-4709-9fa9-0b6d64cf21bb" key="Practitioner-Submitter-Practitioner-1" name="Submitter-Practitioner-1"/>
+<artifact id="Organization/Submitter-Org-1" key="Organization-Submitter-Org-1" name="Submitter-Org-1"/>
+<artifact id="Practitioner/Submitter-Practitioner-1" key="Practitioner-Submitter-Practitioner-1" name="Submitter-Practitioner-1"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-available-author-subscription" key="StructureDefinition-davinci-pct-aeob-available-author-subscription" name="Subscription - AEOB Available for Author Notification"/>
 <artifact id="StructureDefinition/davinci-pct-aeob-available-subject-subscription" key="StructureDefinition-davinci-pct-aeob-available-subject-subscription" name="Subscription - AEOB Available for Subject Notification"/>
 <artifact id="StructureDefinition/davinci-pct-gfe-available-author-subscription" key="StructureDefinition-davinci-pct-gfe-available-author-subscription" name="Subscription - GFE Available for Author Notification"/>
@@ -206,7 +206,7 @@
 <artifact id="ValueSet/USClaimDRGCodes" key="ValueSet-USClaimDRGCodes" name="US Claim DRG Codes"/>
 <artifact id="SearchParameter/aeob-date-of-service" key="SearchParameter-aeob-date-of-service" name="aeob-date-of-service"/>
 <artifact deprecated="true" id="Contract/contract1001" key="Contract-contract1001" name="contract1001"/>
-<artifact id="Coverage/49fd53a8-7eb7-4319-acc8-04bf8a3cb603" key="Coverage-coverage1001" name="coverage1001"/>
+<artifact id="Coverage/coverage1001" key="Coverage-coverage1001" name="coverage1001"/>
 <artifact deprecated="true" id="Endpoint/endpoint001" key="Endpoint-endpoint001" name="endpoint001"/>
 <artifact id="Subscription/example-aeob-available-author-subscription-full" key="Subscription-example-aeob-available-author-subscription-full" name="example-aeob-available-author-subscription-full"/>
 <artifact id="Subscription/example-aeob-available-author-subscription-id-only" key="Subscription-example-aeob-available-author-subscription-id-only" name="example-aeob-available-author-subscription-id-only"/>
@@ -216,9 +216,9 @@
 <artifact id="Subscription/example-gfe-available-subject-subscription-full" key="Subscription-example-gfe-available-subject-subscription-full" name="example-gfe-available-subject-subscription-full"/>
 <artifact id="Subscription/example-gfe-task-subscription" key="Subscription-example-gfe-task-subscription" name="example-gfe-task-subscription"/>
 <artifact id="Subscription/example-gfe-task-subscription-partof" key="Subscription-example-gfe-task-subscription-partof" name="example-gfe-task-subscription-partof"/>
-<artifact id="Organization/2ccf0ff7-2af1-4598-b667-6e35b79529df" key="Organization-org1001" name="org1001"/>
-<artifact id="Organization/646ce5de-3216-4098-ae71-c96d5f02b088" key="Organization-org1002" name="org1002"/>
-<artifact id="Patient/9c05d948-b931-4bff-8766-18b99b0650d4" key="Patient-patient1001" name="patient1001"/>
+<artifact id="Organization/org1001" key="Organization-org1001" name="org1001"/>
+<artifact id="Organization/org1002" key="Organization-org1002" name="org1002"/>
+<artifact id="Patient/patient1001" key="Patient-patient1001" name="patient1001"/>
 <artifact id="Practitioner/prac001" key="Practitioner-prac001" name="prac001"/>
 <artifact id="Practitioner/prac002" key="Practitioner-prac002" name="prac002"/>
 <artifact deprecated="true" id="PractitionerRole/pracRole002" key="PractitionerRole-pracRole002" name="pracRole002"/>

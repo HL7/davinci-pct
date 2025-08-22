@@ -11,7 +11,7 @@ InstanceOf: PCTAdvancedEOB
 Description: "An example instance of the PCTAdvancedEOB Profile"
 Usage: #example
 
-* id = "89fdfb03-b700-4e21-a116-bc0658c68a00"
+// * id = "89fdfb03-b700-4e21-a116-bc0658c68a00"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 
@@ -20,7 +20,9 @@ Usage: #example
 // * extension[provider-contracting-rate].valueMoney.value = 2000.00
 // * extension[provider-contracting-rate].valueMoney.currency = #USD
 
-* extension[gfeReference].valueReference.reference = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // = Reference(PCT-GFE-Bundle-Inst-1)
+// * extension[gfeReference].valueReference.reference = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // = Reference(PCT-GFE-Bundle-Inst-1)
+* extension[gfeReference].valueReference = Reference(PCT-GFE-Bundle-Inst-1)
+
 * extension[serviceDescription].valueString = "Example service"
 
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.org/out-of-network.html"
@@ -30,12 +32,18 @@ Usage: #example
 * status = #active
 * type = $ClaimTypeCS#institutional "Institutional"
 * use = #predetermination
-* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+// * patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+* patient = Reference(patient1001)
 * created = "2021-10-12"
 
-* insurer.reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+// * insurer.reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* insurer = Reference(org1001)
 
-* provider.reference = "urn:uuid:646ce5de-3216-4098-ae71-c96d5f02b088" // = Reference(org1002)
+
+// * provider.reference = "urn:uuid:646ce5de-3216-4098-ae71-c96d5f02b088" // = Reference(org1002)
+* provider = Reference(org1002)
+
+
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
 
@@ -49,7 +57,10 @@ Usage: #example
 * outcome = #complete
 
 * insurance.focal = true
-* insurance.coverage.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // = Reference(coverage1001)
+
+// * insurance.coverage.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // = Reference(coverage1001)
+
+* insurance.coverage = Reference(coverage1001)
 
 * benefitPeriod.start = "2022-01-01"
 * benefitPeriod.end = "2023-01-01"
@@ -113,17 +124,21 @@ InstanceOf: PCTAdvancedEOBSummary
 Description: "An example instance of the PCTAdvancedEOBSummary Profile"
 Usage: #example
 
-* id = "645c61ac-963d-44c7-b6a2-17f3ec6a5f60"
+// * id = "645c61ac-963d-44c7-b6a2-17f3ec6a5f60"
 * extension[serviceDescription].valueString = "Example service"
 * extension[OutOfNetworkProviderInfo].valueUrl = "http://example.org/out-of-network.html"
 
 * status = #active
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
 * use = #predetermination
-* patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(patient1001) //"urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+
+// * patient.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(patient1001) //"urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+* patient = Reference(patient1001) 
+
 * created = "2021-10-12"
 
-* insurer.reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+// * insurer.reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* insurer = Reference(org1001)
 
 // * provider.extension[contracting-status].valueCoding = #in "In Network"
 // * provider.extension[contracting-rate].valueDecimal = 2000.00
@@ -133,7 +148,10 @@ Usage: #example
 * outcome = #complete
 
 * insurance.focal = true
-* insurance.coverage.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // = Reference(coverage1001)
+
+// * insurance.coverage.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // = Reference(coverage1001)
+
+* insurance.coverage = Reference(coverage1001)
 
 * benefitPeriod.start = "2022-01-01"
 * benefitPeriod.end = "2022-01-01"
@@ -186,44 +204,77 @@ Usage: #example
 
 
 
-* entry[composition].fullUrl = "urn:uuid:3b46e3b7-ea0a-455f-a797-48c2d9faca1d" // "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
-* entry[composition].resource = 3b46e3b7-ea0a-455f-a797-48c2d9faca1d //PCT-AEOB-Composition-1
-* entry[composition].id = "PCT-AEOB-Composition-1"
+// * entry[composition].fullUrl = "urn:uuid:3b46e3b7-ea0a-455f-a797-48c2d9faca1d" // "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
+// * entry[composition].resource = 3b46e3b7-ea0a-455f-a797-48c2d9faca1d //PCT-AEOB-Composition-1
+// * entry[composition].id = "PCT-AEOB-Composition-1"
+* entry[composition].fullUrl = "http://example.org/fhir/Composition/PCT-AEOB-Composition-1"
+* entry[composition].resource = PCT-AEOB-Composition-1
 
-* entry[aeob][+].fullUrl = "urn:uuid:645c61ac-963d-44c7-b6a2-17f3ec6a5f60" // "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
-* entry[aeob][=].resource = 645c61ac-963d-44c7-b6a2-17f3ec6a5f60 // PCT-AEOB-Summary-1
-* entry[aeob][=].id = "PCT-AEOB-Summary-1"
-* entry[aeob][+].fullUrl = "urn:uuid:89fdfb03-b700-4e21-a116-bc0658c68a00" // "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
-* entry[aeob][=].resource = 89fdfb03-b700-4e21-a116-bc0658c68a00  // PCT-AEOB-1
-* entry[aeob][=].id = "PCT-AEOB-1"
-* entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
-* entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4 //patient1001 //9c05d948-b931-4bff-8766-18b99b0650d4
-* entry[patient].id = "patient1001"
-* entry[coverage].fullUrl = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // "http://example.org/fhir/Coverage/coverage1001"
-* entry[coverage].resource = 49fd53a8-7eb7-4319-acc8-04bf8a3cb603
-* entry[coverage].id = "coverage1001"
-* entry[organization][+].fullUrl = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // "http://example.org/fhir/Organization/org1001"
-* entry[organization][=].resource = 2ccf0ff7-2af1-4598-b667-6e35b79529df // org1001
-* entry[organization][=].id = "org1001"
+// * entry[aeob][+].fullUrl = "urn:uuid:645c61ac-963d-44c7-b6a2-17f3ec6a5f60" // "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
+// * entry[aeob][=].resource = 645c61ac-963d-44c7-b6a2-17f3ec6a5f60 // PCT-AEOB-Summary-1
+// * entry[aeob][=].id = "PCT-AEOB-Summary-1"
 
-* entry[organization][+].fullUrl = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[organization][=].resource = e7c36e30-edb8-4a0a-8208-c92085663b00 //Submitter-Org-1
-* entry[organization][=].id = "Submitter-Org-1"
+* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-Summary-1"
+* entry[aeob][=].resource = PCT-AEOB-Summary-1
 
-* entry[organization][+].fullUrl = "urn:uuid:646ce5de-3216-4098-ae71-c96d5f02b088" // "http://example.org/fhir/Organization/Submitter-Org-1"
-* entry[organization][=].resource = 646ce5de-3216-4098-ae71-c96d5f02b088 //org1002
-* entry[organization][=].id = "org1002"
+// * entry[aeob][+].fullUrl = "urn:uuid:89fdfb03-b700-4e21-a116-bc0658c68a00" // "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
+// * entry[aeob][=].resource = 89fdfb03-b700-4e21-a116-bc0658c68a00  // PCT-AEOB-1
+// * entry[aeob][=].id = "PCT-AEOB-1"
 
+* entry[aeob][+].fullUrl = "http://example.org/fhir/ExplanationOfBenefit/PCT-AEOB-1"
+* entry[aeob][=].resource = PCT-AEOB-1
 
-* entry[gfeBundle][+].fullUrl = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
-* entry[gfeBundle][=].resource = b5ff05d5-b645-4676-b8ed-a3937dabac7b //PCT-GFE-Bundle-Inst-1
-* entry[gfeBundle][=].id = "PCT-GFE-Bundle-Inst-1"
+// * entry[patient].fullUrl = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // "http://example.org/fhir/Patient/patient1001"
+// * entry[patient].resource = 9c05d948-b931-4bff-8766-18b99b0650d4 //patient1001 //9c05d948-b931-4bff-8766-18b99b0650d4
+// * entry[patient].id = "patient1001"
 
-* entry[gfeBundle][+].fullUrl = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
-* entry[gfeBundle][=].id = "PCT-GFE-Missing-Bundle-1"
-* entry[gfeBundle][=].resource = e1b566b9-34a6-467b-83d2-8107a5ee987d //PCT-GFE-Missing-Bundle-1
+* entry[patient].fullUrl = "http://example.org/fhir/Patient/patient1001"
+* entry[patient].resource = patient1001
 
 
+// * entry[coverage].fullUrl = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // "http://example.org/fhir/Coverage/coverage1001"
+// * entry[coverage].resource = 49fd53a8-7eb7-4319-acc8-04bf8a3cb603
+// * entry[coverage].id = "coverage1001"
+
+* entry[coverage].fullUrl = "http://example.org/fhir/Coverage/coverage1001"
+* entry[coverage].resource = coverage1001
+
+// * entry[organization][+].fullUrl = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // "http://example.org/fhir/Organization/org1001"
+// * entry[organization][=].resource = 2ccf0ff7-2af1-4598-b667-6e35b79529df // org1001
+// * entry[organization][=].id = "org1001"
+
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1001"
+* entry[organization][=].resource = org1001
+
+// * entry[organization][+].fullUrl = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // "http://example.org/fhir/Organization/Submitter-Org-1"
+// * entry[organization][=].resource = e7c36e30-edb8-4a0a-8208-c92085663b00 //Submitter-Org-1
+// * entry[organization][=].id = "Submitter-Org-1"
+
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/Submitter-Org-1"
+* entry[organization][=].resource = Submitter-Org-1
+
+// * entry[organization][+].fullUrl = "urn:uuid:646ce5de-3216-4098-ae71-c96d5f02b088" // "http://example.org/fhir/Organization/Submitter-Org-1"
+// * entry[organization][=].resource = 646ce5de-3216-4098-ae71-c96d5f02b088 //org1002
+// * entry[organization][=].id = "org1002"
+
+* entry[organization][+].fullUrl = "http://example.org/fhir/Organization/org1002"
+* entry[organization][=].resource = org1002
+
+
+// * entry[gfeBundle][+].fullUrl = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+// * entry[gfeBundle][=].resource = b5ff05d5-b645-4676-b8ed-a3937dabac7b //PCT-GFE-Bundle-Inst-1
+// * entry[gfeBundle][=].id = "PCT-GFE-Bundle-Inst-1"
+
+
+* entry[gfeBundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Bundle-Inst-1"
+* entry[gfeBundle][=].resource = PCT-GFE-Bundle-Inst-1
+
+// * entry[gfeBundle][+].fullUrl = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+// * entry[gfeBundle][=].id = "PCT-GFE-Missing-Bundle-1"
+// * entry[gfeBundle][=].resource = e1b566b9-34a6-467b-83d2-8107a5ee987d //PCT-GFE-Missing-Bundle-1
+
+* entry[gfeBundle][+].fullUrl = "http://example.org/fhir/Bundle/PCT-GFE-Missing-Bundle-1"
+* entry[gfeBundle][=].resource = PCT-GFE-Missing-Bundle-1
 
 
 Instance: PCT-AEOB-Composition-1
@@ -231,40 +282,47 @@ InstanceOf: PCTAdvancedEOBComposition
 Description: "PCT AEOB Composition Example 1"
 Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 
-* id = "3b46e3b7-ea0a-455f-a797-48c2d9faca1d"
+// * id = "3b46e3b7-ea0a-455f-a797-48c2d9faca1d"
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
 * identifier.system = "http://www.example.org/identifiers/composition"
 * identifier.value = "019283475"
 * status = #final
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet "AEOB Packet"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
-* subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
-
-
+// * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+* subject = Reference(patient1001)
 
 * date = "2025-01-10T11:01:00+05:00"
 
 // TODO Discuss who the author is
-* author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
-* author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+// * author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* author[+] = Reference(org1001)
+
+// * author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+* author[+] = Reference(Submitter-Org-1)
 
 * title = "Advanced Explanation of Benefit Packet for Eve Betterhalf - 2025-01-10"
 
 * section[aeob-summary].code = PCTDocumentSection#aeob-summary-section
-* section[aeob-summary].entry.reference = "urn:uuid:645c61ac-963d-44c7-b6a2-17f3ec6a5f60" // = Reference(PCT-AEOB-Summary-1)
+// * section[aeob-summary].entry.reference = "urn:uuid:645c61ac-963d-44c7-b6a2-17f3ec6a5f60" // = Reference(PCT-AEOB-Summary-1)
+* section[aeob-summary].entry = Reference(PCT-AEOB-Summary-1)
 
 
 * section[aeob].code = PCTDocumentSection#aeob-section
-* section[aeob].entry.reference = "urn:uuid:89fdfb03-b700-4e21-a116-bc0658c68a00" // = Reference(PCT-AEOB-1)
+// * section[aeob].entry.reference = "urn:uuid:89fdfb03-b700-4e21-a116-bc0658c68a00" // = Reference(PCT-AEOB-1)
+* section[aeob].entry = Reference(PCT-AEOB-1)
 
 * section[gfeBundle][+].code = PCTDocumentSection#gfe-section
-* section[gfeBundle][=].author.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
-* section[gfeBundle][=].entry.reference = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // = Reference(PCT-GFE-Bundle-Inst-1)
+// * section[gfeBundle][=].author.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+* section[gfeBundle][=].author = Reference(Submitter-Org-1)
+// * section[gfeBundle][=].entry.reference = "urn:uuid:b5ff05d5-b645-4676-b8ed-a3937dabac7b" // = Reference(PCT-GFE-Bundle-Inst-1)
+* section[gfeBundle][=].entry = Reference(PCT-GFE-Bundle-Inst-1)
 
 * section[gfeBundle][+].code = PCTDocumentSection#gfe-section
-* section[gfeBundle][=].entry.reference = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // = Reference(PCT-GFE-Bundle-Inst-1)
-* section[gfeBundle][=].author.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
-
+// * section[gfeBundle][=].entry.reference = "urn:uuid:e1b566b9-34a6-467b-83d2-8107a5ee987d" // = Reference(PCT-GFE-Bundle-Inst-1)
+* section[gfeBundle][=].entry = Reference(PCT-GFE-Missing-Bundle-1)
+// * section[gfeBundle][=].author.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+* section[gfeBundle][=].author = Reference(Submitter-Org-1)
 
 
 
@@ -280,12 +338,15 @@ Usage: #example
 * docStatus = #final
 * type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
-* subject = Reference(patient1001)  //"urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+// * subject = Reference(patient1001)  //"urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
+* subject = Reference(patient1001)
 
 * date = "2025-01-10T11:01:00+05:00"
 
-* author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
-* author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+// * author[+].reference = "urn:uuid:2ccf0ff7-2af1-4598-b667-6e35b79529df" // = Reference(org1001)
+* author[+] = Reference(org1001)
+// * author[+].reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
+* author[+] = Reference(Submitter-Org-1)
 
 * content[+].attachment.url = "http://example.org/fhir/Bundle/PCT-AEOB-Packet-1"
 

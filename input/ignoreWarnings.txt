@@ -63,30 +63,19 @@ INFORMATION: CodeSystem/PCTTaskStatusReasonCSTemporaryTrialUse: CodeSystem: Most
 
 
 # 05. === Summary of Claim and ExplanationOfBenefit does not allow provider reference or display because it crosses multiple providers. A DAR extension is used instead ===
-WARNING: ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60: ExplanationOfBenefit.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[1].resource/*ExplanationOfBenefit/645c61ac-963d-44c7-b6a2-17f3ec6a5f60*/.provider: A Reference without an actual reference or identifier should have a display
 
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
-WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
-WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
-WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b*/.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle|2.0.0 [PCTGFEBundle])
-WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display (validating against http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-missing-bundle|2.0.0 [PCTGFEMissingBundle])
-WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563*/.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/b5ff05d5-b645-4676-b8ed-a3937dabac7b: Bundle.entry[0].resource/*Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Bundle/f8c054ba-e496-4230-b74e-a3ad871fb563: Bundle.entry[0].resource/*Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4*/.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Claim/3e67b7e5-e15b-4003-802b-79bfc0ba4847: Claim.provider: A Reference without an actual reference or identifier should have a display
-WARNING: Claim/ef5c6c33-aab0-4346-a79c-22b8f1e75ff4: Claim.provider: A Reference without an actual reference or identifier should have a display
-
-
-
-
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[1].resource/*ExplanationOfBenefit/PCT-AEOB-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/PCT-GFE-Bundle-Inst-1*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-Inst-1: Bundle.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-Prof-1: Bundle.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Inst-1*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Prof-1*/.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-Summary-1: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-Summary-MRI: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: ExplanationOfBenefit/PCT-AEOB-Summary-1: ExplanationOfBenefit.provider: A Reference without an actual reference or identifier should have a display
 
 # 06. ===  The version of US Core was chosen on purpose. It was reviewed to support the needs and 8.0.0 came out towards the end of ballot reconciliation and will not be needed for some time. ===
 The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.0. This reference is getting old and the more recent version should be considered
-
 
 # 08. === Warning about pattern discriminator being deprecated - Inherited from US Core requirements ===
 INFORMATION: StructureDefinition/davinci-pct-coverage: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
