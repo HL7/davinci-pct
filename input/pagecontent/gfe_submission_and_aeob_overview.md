@@ -209,6 +209,6 @@ Assumptions:<br>
 
 ##### MRI Examples  
 
-[GFE Professional](Claim-6369b2f8-1154-4935-a27f-4a578d9e384c.json.html)<br>
-[GFE Institutional](Claim-914c0b2c-4ce3-4260-965e-4366c174a785.json.html)<br>
-[AEOB](ExplanationOfBenefit-89fdfb03-b700-4e21-a116-bc0658c68a00.json.html)
+[GFE Professional](Claim-PCT-GFE-Professional-MRI.html)<br>
+[GFE Institutional](Claim-PCT-GFE-Institutional-MRI.html)<br>
+[AEOB](ExplanationOfBenefit-PCT-AEOB-1.html)
