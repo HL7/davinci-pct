@@ -206,7 +206,7 @@ WARNING: DA VINCI: The second menu item under Background should have the label U
 ERROR: ImplementationGuide/hl7.fhir.us.davinci-pct: This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' is from version 4.0.0
 WARNING: ImplementationGuide/hl7.fhir.us.davinci-pct: ImplementationGuide.dependsOn[6]: The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
-# 23. === This is a document Bundle, the narrative is in Composition.section.text
+# 23. === These are document Bundles, the narrative is in Composition.section.text
 
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/PCT-GFE-Bundle-Inst-1*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[8].resource/*Bundle/PCT-GFE-Bundle-Inst-1*/.entry[1].resource/*Claim/PCT-GFE-Institutional-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
@@ -219,7 +219,6 @@ WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[9].resource/*Bundle/PCT-GFE-Miss
 WARNING: Bundle/PCT-AEOB-Packet-1: Bundle.entry[9].resource/*Bundle/PCT-GFE-Missing-Bundle-1*/.entry[4].resource/*DeviceRequest/PCT-DeviceRequest-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
 
-# 23. === The individual resources have their narrative generated, but this seems to occur after SUSHI aggregates them into Bundle resources
 
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Inst-1*/.entry[0].resource/*Claim/PCT-GFE-Summary-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Inst-1*/.entry[1].resource/*Claim/PCT-GFE-Institutional-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
@@ -230,6 +229,7 @@ WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[6].resource/*Bundle/PCT-GFE-
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[6].resource/*Bundle/PCT-GFE-Missing-Bundle-1*/.entry[2].resource/*Coverage/coverage1001*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[6].resource/*Bundle/PCT-GFE-Missing-Bundle-1*/.entry[3].resource/*Organization/org1001*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/PCT-GFE-Packet-Inst-1: Bundle.entry[6].resource/*Bundle/PCT-GFE-Missing-Bundle-1*/.entry[4].resource/*DeviceRequest/PCT-DeviceRequest-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+
 WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Prof-1*/.entry[0].resource/*Claim/PCT-GFE-Summary-MRI*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Prof-1*/.entry[1].resource/*Claim/PCT-GFE-Professional-MRI*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-Bundle-Prof-1*/.entry[2].resource/*Practitioner/Submitter-Practitioner-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
