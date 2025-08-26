@@ -116,8 +116,9 @@ INFORMATION: CodeSystem/PCTDocumentSection: CodeSystem: Most code systems define
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 
-# 15. === Warning that the entry matches multiple profiles. The profiles however are distinct and this instance only matches one ===
-
+# 15. === Informational message about an example.org URL intended to be an example of an external provider, which should not generate any messages ===
+INFORMATION: Bundle/PCT-AEOB-Packet-1: Bundle: Can't find 'http://example.org/out-of-network.html' in the bundle (Bundle.entry[1].resource.extension[1].value[x])
+INFORMATION: Bundle/PCT-AEOB-Packet-1: Bundle: Can't find 'http://example.org/out-of-network.html' in the bundle (Bundle.entry[2].resource.extension[2].value[x])
 
 # 16. === Pattern being applied across slices inherited from a base specification ===
 INFORMATION: StructureDefinition/davinci-pct-organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
