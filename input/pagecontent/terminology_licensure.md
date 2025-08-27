@@ -2,7 +2,7 @@
 <h3>Code Systems Requiring Licenses</h3>
 <br>
 <h4>Access to Licensed Code Systems</h4>
-<p>This HL7 specification contains and references intellectual property owned by third parties ("Third-Party IP"). Implementers and testers of this specification SHALL abide by the license requirements for each terminology content artifact used within a functioning implementation. Terminology licenses SHALL be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. Each organization is solely responsible for deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.</p>
+<p>This HL7 specification contains and references intellectual property owned by third parties ("Third-Party IP"). Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact used within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. Each organization is solely responsible for deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.</p>
 <br>
 <h4>Licensed Industry Standard Code Systems</h4>
 This IG includes value set bindings to code systems that reference industry standard codes which require implementers to purchase a license before the coded concepts can be used. The following information summarizes the set of licensed Code Systems required by this IG and provides links to the information about where to go to obtain a license.

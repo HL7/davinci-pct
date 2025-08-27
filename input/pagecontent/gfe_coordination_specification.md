@@ -122,7 +122,7 @@ The [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bun
 The information that applies to all of the tasks **SHALL** be identified in the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html). 
 There **SHALL** be at least one information bundle associated in the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html).
 A GFE Coordination Requester **MAY** create GFE Contributor specific information bundles which **SHALL** be associated to the appropriate [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html).This can be done to provide specific providers  only the information they need to see.
-To associate an information bundle with a Task in the `Task.input`, the GFE Contributor SHOULD encode the bundle as an attachment in `Task.input.valueAttachment`, though they **MAY** associate it through a reference in `Task.input.valueReference`.
+To associate an information bundle with a Task in the `Task.input`, the GFE Contributor **SHOULD** encode the bundle as an attachment in `Task.input.valueAttachment`, though they **MAY** associate it through a reference in `Task.input.valueReference`.
 A [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) associated to a Task through a reference **SHALL** exist on the Coordination Platform and the Task **SHALL** have the `Task.input.valueReference` reference the instance on the Coordination Platform.
 Since the information bundle is fully self-contained and its relevance only extends to the Task in which it is associated, there is no need for the bundle to be written directly to the Coordination Platform. This can simplify the management of the data and has the advantage of not enabling the bundle to be modified outside of the Task. 
 A potential disadvantage of having the information bundle contained in the Task is the size of the resource. An organization that has to manage and search through many [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources may have a notable increase in traffic volume. This may be mitigated by Coordination Platforms that support the `_summary` search parameter
@@ -169,7 +169,7 @@ The GFE Contributor subscription **SHALL** conform to the [Subscription - GFE Co
 
 
 ##### Requirements for GFE Packet Availability Subscriptions #####
-For notifications to patients (GFE Packet subject) the GFE Packet subscription SHALL conform to the [Subscription - GFE Available for Subject Notification](StructureDefinition-davinci-pct-gfe-available-subject-subscription.html) and meet the following requirements:
+For notifications to patients (GFE Packet subject) the GFE Packet subscription **SHALL** conform to the [Subscription - GFE Available for Subject Notification](StructureDefinition-davinci-pct-gfe-available-subject-subscription.html) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.
 * Updates to the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** result in an update to the [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) in order to trigger a notification. 
 
@@ -195,8 +195,8 @@ The GFE Contributor **MAY** include other types of data in output.valueAttachmen
 
 ##### Replacing a GFE Contributor Task
 
-If there is a schedule change, a change to the items or services for which a GFE is being requested, or the context of which has changed such that it may materially affect the GFE of a GFE Contributor, the GFE Coordinator SHOULD cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
-This new replacement [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) SHOULD contain the `task-replaces` extension with a reference to the `cancelled` [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) that the new one replaces. This will enable GFE Contributors to refer back to any previous [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources in the case it may assist them in addressing the new task.
+If there is a schedule change, a change to the items or services for which a GFE is being requested, or the context of which has changed such that it may materially affect the GFE of a GFE Contributor, the GFE Coordinator **SHOULD** cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
+This new replacement [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) **SHOULD** contain the `task-replaces` extension with a reference to the `cancelled` [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) that the new one replaces. This will enable GFE Contributors to refer back to any previous [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources in the case it may assist them in addressing the new task.
 
 The cancellation and creation of a new task, instead of updating tasks, is recommended because there is limited time to provide an estimate and the intent is to provide the best possible estimate at time of the request. There could be any number of modifications during this process that will be difficult to track during this limited time. Closing and opening a new request provides some closure/finality to the interaction that should be easier to track, particularly without requiring systems, both server and client, to support FHIR resource versioning. Modifications of existing tasks would require each GFE contributor be notified of the change, some of which may have already closed out their task, potentially causing additional disruption, avoidable re-work, and errors. 
 
@@ -206,10 +206,10 @@ Replacing a GFE contributor, does not present the same sort of coordination chal
 ##### Replacing a GFE Contributor
 GFE Coordination Requesters **SHALL** be able to replace GFE Contributors regardless of the state of the status of the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) as long as the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) does not have a status of `cancelled`, `failed`, `completed`, or `entered-in-error`.
 
-When replacing a GFE Contributor the GFE Coordination Requester **SHALL** change the target [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) status to `cancelled` if the `status` is not already `rejected` and SHOULD update the `Task.statusReason`. If the `status` = `rejected` it **SHALL** remain so and the statusReason **SHALL** remain unchanged. 
+When replacing a GFE Contributor the GFE Coordination Requester **SHALL** change the target [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) status to `cancelled` if the `status` is not already `rejected` and **SHOULD** update the `Task.statusReason`. If the `status` = `rejected` it **SHALL** remain so and the statusReason **SHALL** remain unchanged. 
 
 When replacing a GFE Contributor, the GFE Coordination Requester **SHALL** write new [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resource(s) for the GFE Contributor(s) that are replacing the previous GFE Contributor(s). The other existing Tasks **SHALL** remain intact (i.e., only replace the Tasks that need replacing as opposed to recreating all tasks). 
-If more than a simple replacement GFE Contributors is required, such as a change in scheduled date or services, the GFE Coordinating Requester SHOULD cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
+If more than a simple replacement GFE Contributors is required, such as a change in scheduled date or services, the GFE Coordinating Requester **SHOULD** cancel the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and create a new one.
 
 
 #### Retrieving the GFE Packet and Closing the Coordination Task
