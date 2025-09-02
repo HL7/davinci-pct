@@ -112,7 +112,7 @@ Description: "Describes the various amount fields used when payers receive and a
 defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem."
 * $HL7AdjudicationCS#submitted 
 * $HL7AdjudicationCS#copay 
-* $HL7AdjudicationCS#eligible
+* $HL7AdjudicationCS#eligible "Eligible Amount" "Amount of the charge which is considered for adjudication." // Updated definition change "change" to "charge"
 * $HL7AdjudicationCS#deductible  
 * $HL7AdjudicationCS#benefit 
 * PCTAdjudication#coinsurance "Coinsurance" 
@@ -319,6 +319,7 @@ Description: "Codes allowed for a GFE Coordination Task status"
 * include $HL7TaskStatus#draft
 * include $HL7TaskStatus#requested
 * include $HL7TaskStatus#in-progress
+* include $HL7TaskStatus#ready
 * include $HL7TaskStatus#cancelled
 * include $HL7TaskStatus#on-hold
 * include $HL7TaskStatus#failed
