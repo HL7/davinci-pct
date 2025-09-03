@@ -88,7 +88,7 @@ This implementation guide (and the menu for it) is organized into the following 
 
 * *Background* - Supporting informative pages that covers the use cases and actors, but does not set conformance expectations
   * [Reading this IG](reading_this_ig.html) points to key pages in the FHIR spec and other source specifications that must be understood to understand this guide
-  * [Use Cases](use_cases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow
+  * [Use Cases and Actors](use_cases.html) describes the intent of the implementation guide, gives examples of its use, and provides a high-level overview of expected process flow as well as a description of the business and technical actors involved.
   
   * [GFE Coordination Overview](gfe_coordination_overview.html) describes the use case and workflow of the Good Faith Estimate (GFE) multiple provider coordination use case that describes how providers using varying technologies can coordinate to gather their constituent GFEs to pull together into a single GFE Packet.
   * [GFE Submission and AEOB Overview](gfe_submission_and_aeob_overview.html) describes the use case and workflow for a provider to submit a GFE Packet to a payer to request an Advanced Explanation of Benefits (AEOB) for their patient and making that AEOB available.

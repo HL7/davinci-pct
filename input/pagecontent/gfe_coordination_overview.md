@@ -1,7 +1,5 @@
 {% include draft_content_note.md content="page" %}
 
-<!--TODO Remove/move all Conformance verbs SHALL SHOULD MAY to Specification page-->
-
 This section of the Implementation Guide focuses on enabling providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider Good Faith Estimates (GFE) are required, either to provide to the patient or, optionally, to submit to a payer (for patients using insurance.)
 
 This guide supports the:
@@ -139,7 +137,7 @@ _Figure 7. GFE Coordination Technical Workflow_
     
 2. GFE Coordinating Requester creates a [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and 1 or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources, creates and attaches one or more [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) resources and includes them in a [GFE Coordination Bundle](StructureDefinition-davinci-pct-gfe-coordination-bundle.html), then uses [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) of the Coordination Platform’s FHIR server.
     * If successful, the content of the bundle will be stored as separate resources on the FHIR server, and notifications will be sent to all GFE Contributors referenced in the Tasks per step 3. The notifications may be sent via FHIR subscriptions, which can be triggered by a create operation, or they may be out of band notifications using whatever mechanism the coordination platform chooses.
-    * If the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) fails, the entire transaction is rolled back, an OperationOutcome resource will be returned indicating the nature of the error(s), and no resources will be stored on the Coordination Platform. The requestor must address any errors and resubmit.
+    * If the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) fails, the entire transaction is rolled back, an OperationOutcome resource will be returned indicating the nature of the error(s), and no resources will be stored on the Coordination Platform. The requester must address any errors and resubmit.
 
 3. Notifications will be sent to all GFE Contributors referenced in the Task resources submitted in step 2.
     * The notifications may be sent via FHIR subscriptions, which can be triggered by a create operation, or they may be out of band notifications using whatever mechanism the Coordination Platform chooses.
