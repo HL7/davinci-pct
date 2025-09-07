@@ -1,10 +1,11 @@
 // TODO, need to adopt most of the documentReference requirements, less the type and context requirements
 // Need US Core Variant Request
 Profile: PCTGFEDocumentReference
-Parent: DocumentReference
+Parent: USCoreDocumentReferenceProfile
 Id: davinci-pct-gfe-documentreference
 Title: "PCT GFE Packet Document Reference"
 Description: "PCT GFE Packet Document Reference that enables searching and subscriptions for GFE Packets."
+* ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0"
 * insert TrialUseArtifact1
 
 * extension contains
@@ -30,26 +31,39 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 * extension[condition].valueCodeableConcept 1..1
 * extension[condition].valueCodeableConcept from PCTDiagnosticCodes (required)
 
-* identifier MS // US Core 6.1 DR Profile
+//* identifier MS // US Core 6.1 DR Profile
 
 
 
-* status MS
+//* status MS
 * docStatus 1..1 MS
-* type 1.. MS
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
 
-* category 1.. MS
-* category ^slicing.discriminator.type = #value
-* category ^slicing.discriminator.path = "$this"
-* category ^slicing.rules = #open
-* category ^short = "(USCDI) Categorization of document"
+* type.coding ^slicing.discriminator.type = #value
+* type.coding ^slicing.discriminator.path = "$this"
+* type.coding ^slicing.rules = #open
+* type.coding ^slicing.description = "Slice defining composition as an estimate - type coding"
+
+* type.coding contains
+  estimate 1..1 MS
+
+
+
+* type.coding[estimate] = $loinc#111480-0 // Good faith estimate
+
+
+
+
+//* category 1.. MS
+//* category ^slicing.discriminator.type = #value
+//* category ^slicing.discriminator.path = "$this"
+//* category ^slicing.rules = #open
+//* category ^short = "(USCDI) Categorization of document"
 * category contains estimate 1..1 MS
 * category[estimate] ^short = "Estimate category"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 
-* subject 1..1 MS
-* subject only Reference(USCorePatientProfile|7.0.0)
+//* subject 1..1 MS
+//* subject only Reference(USCorePatientProfile|7.0.0)
 
 
 * date obeys pct-datetime-to-seconds
@@ -59,8 +73,6 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 * author only Reference(PCTOrganization or PCTPractitioner)
 * author ^short = "All involved authoring parties, including all Good Faith Estimate (GFE) providers"
 
-// DISCUSS, do we want an authenticator requirement? - A participant who has attested to the accuracy of the composition/document.
-// DISCUSS, do we want a custodian requirement? - Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
 
 * relatesTo ^short = "Relationship to other GFE packet. Required if this estimate is replacing another." 
 
@@ -78,11 +90,11 @@ Description: "PCT GFE Packet Document Reference that enables searching and subsc
 
 
 * content 1..1 MS
-* content.attachment MS
-* content.attachment obeys pct-dr-1
-* content.attachment.contentType MS
-* content.attachment.data MS
-* content.attachment.url MS
+//* content.attachment MS
+//* content.attachment obeys pct-dr-1
+//* content.attachment.contentType MS
+//* content.attachment.data MS
+//* content.attachment.url MS
 * content.format = PCTDocumentTypeTemporaryTrialUse#pct-gfe-packet
 
 

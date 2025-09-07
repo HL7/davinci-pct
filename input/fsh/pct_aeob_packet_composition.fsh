@@ -19,7 +19,7 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 * identifier 1..
   * system 1..1
   * value 1..1
-* type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
+* type = $loinc#111479-2 // "Advanced explanation of benefits"
 
 
 

@@ -445,7 +445,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 * identifier[+].system = "http://www.example.org/identifiers/composition"
 * identifier[=].value = "019283476"
 * status = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet "GFE Packet"
+* type = $loinc#111480-0 "Good faith estimate"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 // * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subject = Reference(patient1001)
@@ -497,7 +497,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 * identifier[+].system = "http://www.example.org/identifiers/composition"
 * identifier[=].value = "019283477"
 * status = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet "GFE Packet"
+* type = $loinc#111480-0 "Good faith estimate"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 // * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subject = Reference(patient1001)
@@ -548,7 +548,7 @@ Usage: #example
 * extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * status = #current
 * docStatus = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* type = $loinc#111480-0 "Good faith estimate"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 // * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subject = Reference(patient1001)
@@ -575,7 +575,7 @@ Usage: #example
 * extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * status = #current
 * docStatus = #final
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* type = $loinc#111480-0 "Good faith estimate"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 // * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subject = Reference(patient1001)

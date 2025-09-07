@@ -159,7 +159,7 @@ Add guidance that this may be contained or it may be externals.
 * output contains
    gfe-packet 0..1 MS
 
-* output[gfe-packet].type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* output[gfe-packet].type = $loinc#111480-0 // "Good faith estimate"
 * output[gfe-packet].value[x] only Attachment
 * output[gfe-packet].valueAttachment.contentType 1..1
 * output[gfe-packet].valueAttachment.contentType from PCTTaskAttachmentContentType (required)

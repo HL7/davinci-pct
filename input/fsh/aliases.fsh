@@ -40,6 +40,7 @@ Alias:   APDRG = http://uri.hddaccess.com/cs/apdrg
 Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
 Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication|1.0.1
 Alias:   $HL7TaskStatus = http://hl7.org/fhir/task-status
+Alias:   $loinc = http://loinc.org
 
 Alias:  $MIMETypes = urn:ietf:bcp:13
 

@@ -287,7 +287,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 * identifier.system = "http://www.example.org/identifiers/composition"
 * identifier.value = "019283475"
 * status = #final
-* type = PCTDocumentTypeTemporaryTrialUse#aeob-packet "AEOB Packet"
+* type = $loinc#111479-2 "Advanced explanation of benefits"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 // * subject.reference = "urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subject = Reference(patient1001)
@@ -344,7 +344,7 @@ Usage: #example
 * extension[condition].valueCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
 * status = #current
 * docStatus = #final
-* type = PCTDocumentTypeTemporaryTrialUse#aeob-packet
+* type = $loinc#111479-2 "Advanced explanation of benefits"
 * category[estimate] = PCTDocumentTypeTemporaryTrialUse#estimate
 // * subject = Reference(patient1001)  //"urn:uuid:9c05d948-b931-4bff-8766-18b99b0650d4" // Reference(9c05d948-b931-4bff-8766-18b99b0650d4) // Reference(patient1001)
 * subject = Reference(patient1001)

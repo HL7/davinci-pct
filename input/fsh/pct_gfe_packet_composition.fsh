@@ -2,7 +2,7 @@ Profile: PCTGFEComposition
 Parent: Composition
 Id: davinci-pct-gfe-composition
 Title: "PCT GFE Composition"
-Description: "PCT GFE Composition that assembles the contents of a GFE (represented by one or more individual GFE Bundles) into a single logical package. This version fo the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
+Description: "PCT GFE Composition that assembles the contents of a GFE (represented by one or more individual GFE Bundles) into a single logical package. A Composition for the document type Bundle that enables versioning, signing and being referenced by a DocumentReference for searching and subscription notifications."
 * insert TrialUseArtifact1
 
 * obeys pct-gfe-packet-composition-1
@@ -27,7 +27,7 @@ Description: "PCT GFE Composition that assembles the contents of a GFE (represen
 * identifier 1..
   * system 1..1
   * value 1..1
-* type = PCTDocumentTypeTemporaryTrialUse#gfe-packet
+* type = $loinc#111480-0 //"Good faith estimate"
 
 
 * category ^slicing.discriminator.type = #value
