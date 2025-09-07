@@ -1,15 +1,14 @@
 
-This section of the Implementation Guide focuses on enabling a provider to submit a [Good Faith Estimate (GFE) Packet](StructureDefinition-davinci-pct-gfe-packet.html) including [Good Faith Estimate resource profiles](artifacts.html#structures-gfe-resource-profiles) (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an [Advanced Explanation of Benefit (AEOB) Packet](StructureDefinition-davinci-pct-aeob-packet.html) including [Advanced Explanation of Benefits resource profiles](artifacts.html#structures-aeob-resource-profiles) (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and optionally the provider (GFE submitter on claim resources), can retrieve to get an estimation of costs for expected services as known at a specific point in time.
+This section of the implementation guide (IG) focuses on enabling a provider to submit a [Good Faith Estimate (GFE) Packet](StructureDefinition-davinci-pct-gfe-packet.html) including [Good Faith Estimate resource profiles](artifacts.html#structures-gfe-resource-profiles) (Claim resources of type predetermination) along with supporting data (such as Patient, Coverage, etc.) to a payer. The payer can then use this information to generate an [Advanced Explanation of Benefit (AEOB) Packet](StructureDefinition-davinci-pct-aeob-packet.html) including [Advanced Explanation of Benefits resource profiles](artifacts.html#structures-aeob-resource-profiles) (ExplanationOfBenefit resources of type predetermination) along with supporting data that the patient, and optionally the provider (GFE submitter on claim resources), can retrieve to get an estimation of known costs for expected services at a specific point in time.
 
-A primary goal of this guide is to enable the patient to have access to AEOBs for expected future medical items or services. Sharing this information with the provider is also supported as an option. This enables the provider to have an informed conversation with the patient to support better patient decision making. Payers sharing the same Patient AEOB with Providers will support trust in the Patient-Provider relationship for more informed health decisions and thus improved health outcomes. Sharing the same AEOB with providers also reduces burden for all parties because everyone is working from the same information avoiding miscommunication, inaccuracies, and added stress. If this capability is supported by the implementer, the patient’s AEOB will be provided to the GFE submitting provider using the same profiles in this guide. In this way the provider would receive the same information made available to the patient.
+A primary goal of this guide is to enable the patient to have access to AEOBs for expected future medical items or services. Sharing this information with the provider is also supported as an option. This enables the provider to have an informed conversation with the patient to support better patient decision making. Payers sharing the same patient AEOB with Providers will support trust in the patient-provider relationship for more informed health decisions and thus improved health outcomes. Sharing the same AEOB with providers also reduces burden for all parties because everyone is working from the same information avoiding miscommunication, inaccuracies, and added stress. If this capability is supported by the implementer, the patient’s AEOB will be provided to the GFE submitting provider using the same profiles in this guide. In this way, the provider would receive the same information made available to the patient.
 This guide does not currently specify a means for providers to update or cancel a GFE submission. Rather, if there is new information that may materially affect the estimation, the provider would submit a new [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
 
 ### Workflow at a Glance ###
 ![PCT GFE Submission and AEOB High Level Workflow](PCT_GFE_Submission_HighLevelWorkflow.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
-Figure 1: Advanced EOB Interactions
-Dotted line indicates optional.
+Figure 1: The GFE submission and AEOB process. The dotted line indicates optional capabilities.
 
 **GFE Submission and AEOB Diagram Steps (High Level View)**
 
@@ -17,13 +16,13 @@ Dotted line indicates optional.
 
 2. The collection of GFEs in the form of a FHIR resource bundle ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)) is submitted (via the [gfe-submit operation](OperationDefinition-GFE-submit.html)) to the payer’s endpoint for AEOB creation.
 
-3. The payer would then process, adjudicate, and produce the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
+3. The payer then processes, adjudicates, and produces the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html).
 
 4. The patient and provider may receive a notification of availability of the AEOB Packet and can now request and receive the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) via FHIR query.
 
->Note: Communication to the patient below could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer.
+>Note: Communication to the patient could be through an app by a third-party or provider approved by the patient or directly to the patient by the payer.
 
->Note: The timeline that a payer is required to provide an AEOB is expected to depend on when the payer receives the GFE submission from provider/facility. For scheduled services, payers would determine if the request originated from a scheduled service from the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[requestOriginationType].valueCodeableConcept` and use the service dates/time in the  `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod` to determine the start of the service and the according timeframe they have to provide an AEOB. It is allowed for a planned period of service to be provided for unscheduled services. This may be useful for situations where a service is not scheduled, but the time frame could affect the estimate (e.g. the service is planned in a different plan year).
+>Note: The timeline that a payer is required to provide an AEOB is expected to depend on when the payer receives the GFE submission from provider/facility. For scheduled services, payers would determine if the request originated from a scheduled service from the [GFE Composition]( StructureDefinition-davinci-pct-gfe-composition.html) `Composition.extension[requestOriginationType].valueCodeableConcept` and use the service dates/time in the `Composition.extension[gfeServiceLinkingInfo].extension[plannedPeriodOfService].valueDate|valuePeriod` to determine the start of the service and the timeframe they have to provide an AEOB. It is allowed for a planned period of service to be provided for unscheduled services. This may be useful for situations where a service is not scheduled, but the time frame could affect the estimate (e.g. the service is planned in a different plan year).
 
 
 ### Multi-Provider Good Faith Estimates ###
@@ -55,24 +54,24 @@ If the GFE Coordination Workflow is not an option for gathering all of the GFE B
 
 Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
 
-This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. Support for the FHIR Subscriptions framework is new in this version of the PCT Implementation Guide and is currently optional. However, FHIR Subscriptions are likely be required in a future version of this specification since it offers significant performance benefits. That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subscription.criteria`.
+This IG uses the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. Support for the FHIR Subscriptions framework is new in this version of the PCT IG and is currently optional. However, FHIR Subscriptions will likely be required in a future version of this specification since it offers significant performance benefits. That guide references the SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, subscription topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) are required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic resource defined in this IG as the basis to define the nature of the subscription and may use it as the `Subscription.criteria`.
 
 Notifications of AEOB Packet availability should be sent to the intended recipient (patient or provider(s)). 
-For the patients, this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done through creating a compliant [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription.html) that references the [SubscriptionTopic - AEOB Available for Subject Notification](SubscriptionTopic-davinci-pct-aeob-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-notification`.
+For the patients, this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done by creating a compliant [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription.html) that references the [SubscriptionTopic - AEOB Available for Subject Notification](SubscriptionTopic-davinci-pct-aeob-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-subject-notification`.
 
 For the Author(s) (Provider(s)), this means the creation or update of a [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) for which the author (provider) is the `DocumentReference.author`. This may be done through creating a [Subscription - AEOB Available for Author Notification](StructureDefinition-davinci-pct-aeob-available-author-subscription.html) that references the [SubscriptionTopic - AEOB Available for Author Notification](SubscriptionTopic-davinci-pct-aeob-available-author-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification`.
 
-There may be one or more Author for the AEOB and Notifications can be shared directly to all authors through this means or to one Author (Convening Provider/GFE Submitter) who can then share the Patient AEOB with other contributing/co-providers as needed.
+There may be one or more Authors for the AEOB and Notifications can be shared directly to all authors through this means or to one Author (Convening Provider/GFE Submitter) who can then share the Patient AEOB with other contributing/co-providers as needed.
 
-The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an AEOB Packet (should be replaced). However, if updates are supported and there is a separate Bundle for the AEOB Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
+The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, an AEOB Packet should not be updated but should be replaced. However, if updates are supported and there is a separate Bundle for the AEOB Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
 
 ### Data Structures ###
 
-Below are illustrations showing the relationships between the profiles involved in this workflow.
+The figures below show the relationships between the profiles involved in this workflow.
 > Note: For brevity, not all data elements are shown.
 
 
-Figure 1 shows a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) that is submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)s for processing.
+Figure 1 shows a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)s for processing.
 
 ![Figure 1. GFE Packet](GFE_Packet.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
@@ -80,7 +79,7 @@ Figure 1. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)
 
 
 
-Figure 2 shows the components of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). It contains the Patient, Coverage and Payer if relevant, involved providers, and Claims data with the estimated costs. If the GFE Coordination Workflow was utilized, this is the same [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) as the one provided by a GFE Contributor.
+Figure 2 shows the components of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). It contains the patient, coverage and payer if relevant, involved providers, and claims data with the estimated costs. If the GFE Coordination Workflow was used, this is the same [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) as the one provided by a GFE Contributor.
 All resources (supporting info, etc.) needed to process the GFE and produce the AEOB will be included in the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). Relevant resources referenced by such resources will also be included.
 
 
@@ -99,7 +98,7 @@ The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) includes, at
 
 _Figure 3. A [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)_
 
-The [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) represents the full summary of the estimation including costs and benefits, of all of the Advanced EOB data contained within an Advanced EOB Bundle.
+The [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) represents the full summary of the estimation including costs and benefits, of all of the AEOB data contained within an AEOB Bundle.
 
 
 ### Technical Workflows ###
@@ -114,8 +113,8 @@ The workflow diagram below describes the process of receiving a [GFE Packet](Str
 
 **Figure 4: Payer Perspective: End-to-End Workflow**
 
-1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to this link for more details. Note: This page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
-  * If the payer’s FHIR aware endpoint cannot handle the request (i.e. back-end system is down, etc.) an HTTP status code of 4XX or 5XX may be returned, or the GFE Submitter may receive no response at all if the web server is down or data was submitted to the wrong URL.
+1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Note: Asynchronous Interaction Request Pattern page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
+  * If the payer’s FHIR aware endpoint cannot handle the request (i.e. back-end system is down, etc.) an HTTP status code of 4XX or 5XX may be returned, or the GFE Submitter may receive no response at all if the web server is down or data were submitted to the wrong URL.
   * If the gfe-submit operation is successfully invoked, the request will move to Step 2. 
 2. The payer system validates the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) against the FHIR R4 core specification and the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) profile and other appropriate profiles in this guide (e.g. using the core FHIR [validate](http://hl7.org/fhir/resource-operation-validate.html) operation). 
   * If any validation errors or other issues are encountered, an HTTP status code of 400 Bad Request is returned along with an OperationOutcome resource containing information about the encountered issues.
@@ -153,9 +152,9 @@ A patient schedules a service and this triggers the composition of a collection 
 
 **Figure 5: Provider Perspective**
 
-1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Please refer to that page for more details. Note: that page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
+1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Note: The Asynchronous Interaction Request Pattern page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
   * If successful this request will return an HTTP status code of 202 Accepted with a Content-Location header containing the absolute URL of an endpoint for subsequent status requests (polling location). 
-  * If the operation fails it will return an HTTP status code of 4XX or 5XX and an OperationOutcome resource containing the error details (such as a 412 Precondition Failed if the content of the POST was not a valid [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)), provided the operation was successfully invoked (i.e. if the POST was submitted to a non-existent URL, the submitter would likely receive a 404 Not Found status code with no OperationOutcome). 
+  * If the operation fails it will return an HTTP status code of 4XX or 5XX and an OperationOutcome resource containing the error details (such as a 412 Precondition Failed if the content of the POST was not a valid [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)), provided the operation was successfully invoked (i.e., if the POST was submitted to a non-existent URL, the submitter would likely receive a 404 Not Found status code with no OperationOutcome). 
 
 2. If Step 1 resulted in a 202 Accepted return code and a valid URL in the Content-Location header, the provider may now poll for the status of the request. The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is created asynchronously since GFE processing has not taken place yet. The url returned in Step 1 can now be used to check the status of the AEOB process. 
   * If the response is in-progress, this request will return an HTTP status code of 202 Accepted, indicating that the provider should poll again later. The payer system should return a Retry-After header with each in-progress polling response, and the client should use this information to inform the timing of the next polling request. 
@@ -186,18 +185,11 @@ The diagram below  shows examples of how a patient may provide or withhold conse
 
 **MRI Scenario**
 
-Assumptions:<br>
-• Patient has single commercial insurance coverage and plans to use it.<br>
-• This  is clinically appropriate (Clinical Decision Support [CDS] Score). <br>
-• Service location is known (e.g., address). <br>
-• All providers are in network - PCP, imaging facility, and reading radiologist.<br>
-• While medical management techniques (such as prior authorization) will be included as a disclaimer when applicable in the AEOB returned to the member, the actual process of meeting medical management requirements is separate from the process of creating an AEOB. For details, see the Terms and Concepts section of this IG.
-
 1.  Eve Betterhalf sees Dr. Patricia Primary (PCP) at ABC Medical Group on Monday with a prolonged migraine headache lasting over a 4-month period. Dr. Primary recommends a brain MRI (CPT 70551).
-2.  She  walks to the PCP front desk; they  enter the order into the EMR system and direct the patient to ABC’s Radiology department.
+2.  Eve walks to the PCP front desk; they  enter the order into the EMR system and direct the patient to ABC’s Radiology department.
 3.  Radiology reviews the order for completeness and accuracy and confirms all needed information is present.
 4.  The next day, Eve calls the radiology center (ABC Radiology, NPI - 1234567893) to schedule her brain MRI, CPT 70551, and provide her coverage information, which she plans to use .
-5.  The MRI is scheduled for 9 days from today. The GFE Submit and AEOB process is started if an estimate is wanted or needed.
+5.  The MRI is scheduled for nine days from today. The GFE Submit and AEOB process is started if an estimate is wanted or needed.
 6.  Optionally, Eve can also login to the Radiology’s site to download the information about her expected services, should she want to request an estimate separately.
 7.  The ABC Radiology’s Office Administrator enters the services and coverage information, initiates the process with other potential providers to generate the GFE for the expected charges with the expected billing and diagnostic codes.
 8.  This information is sent to the payer.

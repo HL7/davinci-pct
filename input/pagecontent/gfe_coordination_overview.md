@@ -1,16 +1,18 @@
 {% include draft_content_note.md content="page" %}
 
-This section of the Implementation Guide focuses on enabling providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider Good Faith Estimates (GFE) are required, either to provide to the patient or, optionally, to submit to a payer (for patients using insurance.)
+This section of the implementation guide (IG) focuses on enabling providers and facilities to coordinate cost and planned service(s) or item(s) information for a patient’s period of care for which multi-provider GFE are required, either to provide to the patient or, optionally, to submit to a payer (for patients using insurance.)
 
 This guide supports the:
 
-- Ability for a convening provider, acting as a coordination requester, to notify co-providers, acting as contributors, and request data to inform Good Faith Estimates (GFEs) for expected items and services.
+- Ability for a convening provider, acting as a coordination requester, to notify co-providers, acting as contributors, and request data to inform GFE for expected items and services.
 
 - Ability for contributors to respond to a request for data back to a coordination requester with cost and planned items and services information.
 
-- Ability for a Coordination Platform to communicate a GFE to payer (leveraging an existing PCT IG workflow) and to other providers in the care team, prior to scheduled a service or upon request.
+- Ability for a coordination platform to communicate a GFE to payer (leveraging an existing PCT IG workflow) and to other providers in the care team, prior to scheduled a service or upon request.
 
-The Coordination Platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
+- The role a provider plays in this collaboration will change from case to case. In some cases, a provider will be a GFE Coordination Requester because the patient’s care is starting with them - the service was scheduled with this provider. If this provider is also providing items and services to be included in the GFE, they will also play the role of a GFE Contributor. For other patients, the same provider may be a co-provider supporting a different provider or facility with a patient’s period of care, in which case they will only act as a GFE Contributor. In either role, the IG provides tools to support the collaboration effort and the production of a single GFE. Certain state regulations may also inform which role a provider plays. 
+
+The coordination platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
 
 Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [Systems and Actors](use_cases.html#actors) for more detail on acronyms and new terms.  
 
@@ -19,8 +21,8 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 ![PCT GFE Coordination High Level Workflow](PCT_GFE_Coordination_HighLevelWorkflow.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
 **GFE Coordination Diagram Steps (High Level View)**
-> Pre-Step: A patient schedules a service or requests an estimate for a service which triggers the collection of one or more GFEs. 
-> Note: This workflow is used when there is need for a standard means of coordinating on a GFE with multiple providers.
+> Pre-step: A patient schedules a service or requests an estimate for a service which triggers the collection of one or more GFEs. 
+> Note: This workflow is used as a standard means of coordinating a GFE with multiple providers.
 
 
 1. A GFE Coordination Requester identifies all of the co-providers and retrieves their FHIR identifiers from the Coordination Platform.
@@ -30,7 +32,7 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 
 3. GFE Contributors are notified of a new task assignment.
 
-4. The GFE Contributor retrieves the task and request information (GFE Information Bundle)
+4. The GFE Contributor retrieves the Task and request information (GFE Information Bundle)
    The GFE Contributor can then decide to accept or reject the request and update the task appropriately.
     >Note: GFE Contributors should not reject a Task because of insufficient information to produce a GFE and instead should contact the GFE requester for the necessary information.
 
@@ -49,20 +51,20 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 ### Notifications ###
 
 Notifications may be handled using FHIR Subscriptions or other methods such as unsolicited notification or messaging. This IG provides requirements and guidance for the use of FHIR Subscriptions.
-This IG utilizes the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. Support for the FHIR Subscriptions framework is new in this version of the PCT Implementation Guide and is currently optional. However, FHIR Subscriptions are likely be required in a future version of this specification since it offers significant performance benefits.That guide references a resource called SubscriptionTopic to express topics, or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subcription.criteria`. 
+This IG uses the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) as a basis to support FHIR subscriptions. Support for the FHIR Subscriptions framework is new in this version of the PCT IG and is currently optional. However, FHIR Subscriptions will likely be required in a future version of this specification since it offers significant performance benefits. That guide references the SubscriptionTopic resource to express topics; or events that other systems can search for and subscribe to notifications of. The SubscriptionTopic resource is not supported by FHIR R4 systems. Instead, Subscription Topics in R4 can be defined using a Basic resource with extensions that represent the elements of the FHIR R5 resource. Neither standards-based subscription topic discovery with the support of SubscriptionTopic nor the equivalent Basic resource versions described in the [Subscriptions R5 Backport IG]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) is required by this guide to support subscriptions. Regardless of whether the SubscriptionTopic or R4 Basic resource equivalent is supported, a system wanting to support subscriptions can still use the canonical URL of the SubscriptionTopic defined in this IG as the basis to define the nature of the subscription and may use it as the `Subcription.criteria`. 
 
 
 #### Task Creation and Updates ####
-Notifications should be sent to participants whenever a change is made that the participant may need to act upon. For the Coordination Requester, this means any updates to (or the creation of) the Coordination Task or Contributor Tasks for which they are the `requester`. For the Contributor, this means any updates to (or the creation of) a non-draft Contributor Task for which they are the `owner` as well as any updates to a Coordination Task of which such Contributor Tasks are `partOf`. This may be done through creating a compliant [Subscription - GFE Coordination Task Update Notification](StructureDefinition-davinci-pct-gfe-task-update-subscription.html) that references the [SubscriptionTopic - GFE Coordination Task Notification](SubscriptionTopic-davinci-pct-gfe-coordination-task-notification.html) canonical URL. 
+Notifications should be sent to participants whenever a change is made that the participant may need to act upon. For the Coordination Requester, this means any updates to (or the creation of) the Coordination Task or Contributor Tasks for which they are the `requester`. For the Contributor, this means any updates to (or the creation of) a non-draft Contributor Task for which they are the `owner` as well as any updates to a Coordination Task of which such Contributor Tasks are `partOf`. This may be done by creating a compliant [Subscription - GFE Coordination Task Update Notification](StructureDefinition-davinci-pct-gfe-task-update-subscription.html) that references the [SubscriptionTopic - GFE Coordination Task Notification](SubscriptionTopic-davinci-pct-gfe-coordination-task-notification.html) canonical URL. 
 
 #### GFE Packet Availability ####
-Providers may need to make the GFE Packet available to the patient or other contributing providers. This may need to be done as part of the coordination workflow with multiple providers or separately with a single provider. In either scenario, this could be handled by the provider directly or through an intermediary like the Coordination Platform. Notifications of the availability of a new or updated GFE Packet should be sent to the patient, their authorized representative, or other providers. 
+Providers may need to make the GFE Packet available to the patient or other contributing providers. This may need to be done as part of the coordination workflow with multiple providers or separately with a single provider. In either scenario, this could be handled by the provider directly or through an intermediary such as the Coordination Platform. Notifications of the availability of a new or updated GFE Packet should be sent to the patient, their authorized representative, or other providers. 
 
 For the patients, this means the creation or update of a [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) for which the patient is the `DocumentReference.subject`. This may be done through creating a compliant [Subscription - GFE Available for Subject Notification](StructureDefinition-davinci-pct-gfe-available-subject-subscription.html) that references the [SubscriptionTopic - GFE Available for Subject Notification](SubscriptionTopic-davinci-pct-gfe-available-subject-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-subject-notification`. 
 
 For the Authors (Contributing Providers), this means the creation or update of a [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) for which the author (provider) is the `DocumentReference.author`. This may be done through creating a compliant [Subscription - GFE Available for Author Notification](StructureDefinition-davinci-pct-gfe-available-author-subscription.html) that references the [SubscriptionTopic - GFE Available for Subject Notification](SubscriptionTopic-davinci-pct-gfe-available-author-notification.html) canonical URL of `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-author-notification`.
 
-The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an GFE Packet (should be replaced). However, if updates are supported and there is a separate Bundle for the GFE Packet content that is updated, the associated DocumentReference should be updated to trigger a notification. 
+The subscriptions defined for Packet availability defined in this IG are for the DocumentReference resource. Generally, there should not be updates to an GFE Packet (should be replaced). However, if updates are supported and  a separate Bundle for the GFE Packet content that is updated exists, the associated DocumentReference should be updated to trigger a notification. 
 
 
 

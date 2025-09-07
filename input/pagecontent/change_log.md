@@ -1,3 +1,262 @@
+This is a log of the significant changes that have happened to this specification since it was first released.  For each release, changes are expressed with respect to the prior publication (snapshot, ballot, or official release) and are organized into the following categories:
+  *  Breaking changes: Those that will cause instances from prior releases to no potentially no longer be conformant in the newer version of the specification. These changes are denoted in recent version history
+  *  Substantive changes: Changes that change the expectations on conformant systems.  I.e. systems will likely need to modify their code to continue complying with the guide.
+  *  Non-substantive changes: These are changes that do not necessarily require the change of code, but may add clarification or optional features.
+
+> NOTE: This categorization is with respect to the standard, not any particular implementation. Changes that are non-breaking from a standards perspective might still break existing implementations. Non-substantive changes might still result in a need to add or change software code.
+ This change list is not exhaustive. Changes to formatting and layout, as well as corrections to spelling, grammar, hyperlinks, etc. are not called out here. Changes mentioned for older versions may no longer be relevant due to changes in subsequent versions. 
+
+### Changes in Version 2.0.0
+
+#### Changes to GFE and AEOB Estimate Bundles
+
+* Changed GFE Collection Bundle and the AEOB Bundle from collection bundles to document bundles and renamed the profile to Packet ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) and [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)) and added DocumentReference profiles ([GFE Packet Document Reference](StructureDefinition-davinci-pct-gfe-documentreference.html) and [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html)) to enable searching and subscriptions. This included adding the [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) and [AEOB Composition](StructureDefinition-davinci-pct-aeob-composition.html) profiles and a way to relate estimations. Added a number of improvements in the guidance.
+  * [FHIR-49786](https://jira.hl7.org/browse/FHIR-49786) – Change the GFE Collection Bundle to be a document Bundle and add a Document reference to adequately address search and subscriptions ⚠️ **(Non-compatible change)**  
+  * [FHIR-49761](https://jira.hl7.org/browse/FHIR-49761) – Change the AEOB Bundle to be a document Bundle and add a Document reference to adequately address search and subscriptions ⚠️ **(Non-compatible change)**  
+  * [FHIR-45760](https://jira.hl7.org/browse/FHIR-45760) – Add information on frequency of resubmission ⚠️ **(Non-compatible change)**  
+  * [FHIR-45868](https://jira.hl7.org/browse/FHIR-45868) – Add guidance on GFE Collection Bundle differences for coordination workflow and submission  
+  * [FHIR-48826](https://jira.hl7.org/browse/FHIR-48826) – Improve wording on GFE Collection Bundle Initiating Provider/Organization slice  
+  * [FHIR-46402](https://jira.hl7.org/browse/FHIR-46402) – The GFE Collection Bundle example does not have a GFE Bundle in it  
+  * [FHIR-52301](https://jira.hl7.org/browse/FHIR-52301) - Change the gfe-packet and aeob-packet codes to the newly assigned LOINC codes
+  
+
+* Added slices to the [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) and [AEOB Composition](StructureDefinition-davinci-pct-aeob-composition.html) profiles to provide full referenceability to all expected bundle resources from the Composition resource.
+  * [FHIR-51740](https://jira.hl7.org/browse/FHIR-51740) – Add GFE Missing Bundle entries to Composition profiles ⚠️ **(Non-compatible change)
+
+* Provide specific definition and guidance on the what is considered as a request initiation time for the specific estimate type ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) and [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)) and their referencing DocumentReference ([GFE Packet Document Reference](StructureDefinition-davinci-pct-gfe-documentreference.html) and [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html))
+  * [FHIR-51554](https://jira.hl7.org/browse/FHIR-51554) – Add request initiation time to GFE and AEOB Composition profiles ⚠️ **(Non-compatible change)**  
+  * [FHIR-51553](https://jira.hl7.org/browse/FHIR-51553) – AEOB DocumentReference request initiation time does not make clear what "request" event it is for  
+  
+
+* Restrict estimate document types from being changed in the estimate Packet Compositions and DocumentReferences ([GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) and [AEOB Composition](StructureDefinition-davinci-pct-aeob-composition.html)) and their referencing DocumentReference ([GFE Packet Document Reference](StructureDefinition-davinci-pct-gfe-documentreference.html) and [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html))
+  * [FHIR-49640](https://jira.hl7.org/browse/FHIR-49640) – Require that the Document type cannot be changed to or from the type code provided ⚠️ **(Non-compatible change)**  
+
+  
+#### Searching and Subscriptions
+
+* Add searching capabilities for the estimate documents from patients and providers by creating searchable DocumentReference profiles ([GFE Packet Document Reference](StructureDefinition-davinci-pct-gfe-documentreference.html) and [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html)) that contain or reference document bundles ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) and [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)). And added [Search parameters](artifacts.html#3)
+  * [FHIR-45936](https://jira.hl7.org/browse/FHIR-45936) – why are is the patient system polling   
+  * [FHIR-36316](https://jira.hl7.org/browse/FHIR-36316) – Please add subscriptions in addition to polling...  
+  * [FHIR-45939](https://jira.hl7.org/browse/FHIR-45939) – why polling?  
+  * [FHIR-45935](https://jira.hl7.org/browse/FHIR-45935) – why is the patient having to make the request  
+  * [FHIR-51901](https://jira.hl7.org/browse/FHIR-51901) – Correct Search Parameter expressions and update to reflect other changes ⚠️ **(Non-compatible change)**  
+
+* Added estimate availability [subscription capabilities](artifacts.html#7) for patients and providers
+  * [FHIR-45738](https://jira.hl7.org/browse/FHIR-45738) – Consider referencing the Da Vinci Notifications IG  
+
+
+* Added coordination task update subscriptions [subscription capabilities](artifacts.html#7) for coordination requester and coordination contributors
+  * [FHIR-45894](https://jira.hl7.org/browse/FHIR-45894) – Consider adding more guidance on Coordination workflow notifications  
+  
+
+#### Patient Access
+
+* Added guidance detailing patient access and subscriptions to estimates that includes [Search parameters](artifacts.html#3) and [subscription capabilities](artifacts.html#7)
+  * [FHIR-45380](https://jira.hl7.org/browse/FHIR-45380) – Clarify means of sending AEOB to patient  
+  * [FHIR-51543](https://jira.hl7.org/browse/FHIR-51543) – Narrative Improvement Needed for Patient Access systems  
+  * [FHIR-44862](https://jira.hl7.org/browse/FHIR-44862) – Add ability for patient to receive GFEs in the event the payer cannot provide an AEOB  
+  * [FHIR-45933](https://jira.hl7.org/browse/FHIR-45933) – Missing bundle resources question   
+
+
+#### Coordination Workflow and Tasks
+
+* Update the gfe-retrieve operation to only support `completed` [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)
+  * [FHIR-48781](https://jira.hl7.org/browse/FHIR-48781) – Change the gfe-retrieve operation to only include GFE Bundles attached to GFE Contributor tasks that have a status of completed ⚠️ **(Non-compatible change)**  
+
+* Add ability to attach input and output parameters to the associated tasks
+  * [FHIR-45806](https://jira.hl7.org/browse/FHIR-45806) – Add Task.input and Task.output constraints ⚠️ **(Non-compatible change)**  
+  * [FHIR-45859](https://jira.hl7.org/browse/FHIR-45859) – Question re Task Status ⚠️ **(Non-compatible change)**  
+  * [FHIR-45823](https://jira.hl7.org/browse/FHIR-45823) – Change the automated status update requirement for the Contributor task ⚠️ **(Non-compatible change)**  
+
+
+* Added a means to link associated tasks
+  * [FHIR-46352](https://jira.hl7.org/browse/FHIR-46352) – Add a way to link previously related GFE Coordination Request Tasks  
+
+* Updates to [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)s will update associated [Contributor Task]()StructureDefinition-davinci-pct-gfe-contributor-task.html.
+  * [FHIR-45823](https://jira.hl7.org/browse/FHIR-45823) – Change the automated status update requirement for the Contributor task ⚠️ **(Non-compatible change)**  
+
+* Updated [Actor based access](gfe_coordination_specification.html#actor-based-acces)
+  * [FHIR-45943](https://jira.hl7.org/browse/FHIR-45943) – Can a contributor read after completion?  
+
+* Added several non-substantive capabilities to the [GFE Coordination Workflow](gfe_coordination_overview.htm)
+  * [FHIR-45895](https://jira.hl7.org/browse/FHIR-45895) – Add more guidance about out of band activities for the Coordination Workflow  
+
+* Add guidance in the [workflow at a glance](gfe_coordination_overview.html#workflow-at-a-glance) that a GFE requestor that also need to provide a GFE will act as a GFE Contributor
+  * [FHIR-45735](https://jira.hl7.org/browse/FHIR-45735) – GFE Coordination Requesters GFE getting to Coordination platform  
+  
+* Added guidance to the [GFE Overview](gfe_coordination_overview.html#workflow-at-a-glance) and [GFE Specification](gfe_coordination_specification.html#gfe-contributor-actions) pages that a Task should not be rejected if more information is required
+  * [FHIR-45893](https://jira.hl7.org/browse/FHIR-45893) – Add Guidance stating that a contributor task should not be rejected if more info is required  
+
+
+* Added guidance for cancelling and [replacing of GFE contributor tasks](gfe_coordination_specification.html#replacing-a-gfe-contributor-task)
+  * [FHIR-45858](https://jira.hl7.org/browse/FHIR-45858) – Coordinating Requestor Capabilities to Amend Tasks  
+  * [FHIR-45892](https://jira.hl7.org/browse/FHIR-45892) – Add guidance regarding the updating of tasks  
+  * [FHIR-45857](https://jira.hl7.org/browse/FHIR-45857) – GFE Coordinator Capabilities  
+  
+* Add guidance to [Full GFE Coordination: End-to-End Workflow](gfe_coordination_overview.html#full-gfe-coordination-end-to-end-workflow) that if the contributor declines the task, `Task.status` shall be changed to rejected and the reason for the rejection should be placed in Task.statusReason.
+  * [FHIR-45942](https://jira.hl7.org/browse/FHIR-45942) – is a rejection reason provided?  
+
+#### Coverage Related 
+
+* Updated the [PCT Coverage](StructureDefinition-davinci-pct-coverage.html) profile to enable the expression of self-pay or uninsured patient. 
+  * [FHIR-45855](https://jira.hl7.org/browse/FHIR-45855) – Create a self-pay/uninsured Coverage profile and make Coverage required for the information bundle ⚠️ **(Non-compatible change)**  
+  * [FHIR-51648](https://jira.hl7.org/browse/FHIR-51648) – Create a single Coverage profile for both insured and self/pay/uninsured ⚠️ **(Non-compatible change)**  
+  * [FHIR-49752](https://jira.hl7.org/browse/FHIR-49752) – Coverage extension for kind valueset is not showing  
+
+* Removed duplicative requirement for multiple references to the payer organization (removed Claim.insurer reference in the [Good Faith Estimate Professional](StructureDefinition-davinci-pct-gfe-professional.html) and [Good Faith Estimate Institutional](StructureDefinition-davinci-pct-gfe-institutional.html) profiles.
+  * [FHIR-51649](https://jira.hl7.org/browse/FHIR-51649) – Remove Duplicative Insurer requirement from GFE (keep Coverage payer)  
+
+
+#### Moved several CodeSystems and ValueSets to the HL7 Terminology IG.
+
+* Moved the CodeSystem PCTSubjectToMedicalMgmtReasonCS to the THO [Medical Management Type]({{site.data.fhir.ver.tho}}/
+CodeSystem-medical-management-type.html)
+  * [FHIR-35549](https://jira.hl7.org/browse/FHIR-35549) – Defining URL should be anchored in THO not hl7.org/fhir.13
+
+* Moved the CodeSystem and ValueSet PCTDiagnosisType to the THO [Diagnosis Type CodeSystem]({{site.data.fhir.ver.tho}}/CodeSystem-diagnosistype.html) and [Diagnosis Type ValueSet]({{site.data.fhir.ver.tho}}/ValueSet-diagnosistype.html)
+  * [FHIR-35540](https://jira.hl7.org/browse/FHIR-3554) – Defining URL should be anchored in THO not hl7.org/fhir.4 for CodeSystem-PCTDiagnosisType.html ⚠️ **(Non-compatible change)**  
+
+* Removed the PCTOrgIdentifierCS from the IG and added codes to the to [THO identifierType CodeSystem]({{site.data.fhir.ver.tho}}/CodeSystem-v2-0203.html)
+  * [FHIR-35545](https://jira.hl7.org/browse/FHIR-35545) – Defining URL should be anchored in THO not hl7.org/fhir.9 for CodeSystem-PCTOrgIdentifierTypeCS.html ⚠️ **(Non-compatible change)**  
+  * [FHIR-51601](https://jira.hl7.org/browse/FHIR-51601) – Remove the PCTIdentifierType Code system and move to THO ⚠️ **(Non-compatible change)**  
+  * [FHIR-45860](https://jira.hl7.org/browse/FHIR-45860) – Add a means to identify bundle purpose ⚠️ **(Non-compatible change)**  
+  * [FHIR-51075](https://jira.hl7.org/browse/FHIR-51075) – Remove INTER identifier type code from the PCT IG ⚠️ **(Non-compatible change)**  
+
+* Removed the Codesystem PCTCareTeamRole and adopted the codes in [Claim Care Team Role Codes]({{site.data.fhir.ver.tho}}/CodeSystem-claimcareteamrole.html)
+  * [FHIR-35538](https://jira.hl7.org/browse/FHIR-35538) – Defining URL should be anchored in THO not hl7.org/fhir.2 for CodeSystem-PCTCareTeamRole.html ⚠️ **(Non-compatible change)**  
+  
+* Remove the PCTAEOBTypeVS ValueSet and change binding of [PCT Advanced EOB](StructureDefinition-davinci-pct-aeob.html) `ExplanationOfBenefit.type` to [THO Claim Type Codes]({{site.data.fhir.ver.tho}}/ValueSet-claim-type.html)
+  * [FHIR-45819](https://jira.hl7.org/browse/FHIR-45819) – Consider anchoring the valuesets in THO (terminology.hl7.org). 3
+
+
+
+#### Support US Core 7.0.0 and 6.1.0
+
+* Added support and alignment to use Core 7.0.0 and US Core 6.1.0
+  * [FHIR-45836](https://jira.hl7.org/browse/FHIR-45836) – Add support for US Core 6.1 ⚠️ **(Non-compatible change)**  
+  * [FHIR-46187](https://jira.hl7.org/browse/FHIR-46187) – NAIC Code Number Identifier system not registered in THO ⚠️ **(Non-compatible change)**  
+  * [FHIR-36638](https://jira.hl7.org/browse/FHIR-36638) – Patient Profile state can either be US state or out of US subdivision code.  
+    * Changed to US Core profile and removed the extension
+  
+
+
+#### Updates to Estimate Element Requirements and Guidance
+
+* Add an additional Process Note Class of `conditional` to the code system and value set to the [Process Note Class Extension](StructureDefinition-processNoteClass.html) valueCodeableConcept binding
+  * [FHIR-46228](https://jira.hl7.org/browse/FHIR-46228) – How should we represent the conditional aspects of an estimate?  
+  
+* Add requirement for [PCT Advanced EOB](StructureDefinition-davinci-pct-aeob.html) `ExplanationOfBenefit.benefitBalance.category.text` as MS
+  * [FHIR-42828](https://jira.hl7.org/browse/FHIR-42828) – Add requirement for EoB.benefitBalance Category text ⚠️ **(Non-compatible change)**
+
+* Add the [Remaining Benefit Extension](StructureDefinition-remaining-benefit.html) to the [Advanced EOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) profile
+  * [FHIR-50082](https://jira.hl7.org/browse/FHIR-50082) – Add remaining extension to Summary ExplanationOfBenefit.benefitBalance.financial  
+  
+* Added guidance to several entries to the [Advanced EOB Notes on Fields](StructureDefinition-davinci-pct-aeob.html#notes-on-fields) and [Summary Advanced EOB Notes on Fields](StructureDefinition-davinci-pct-aeob-summary.html#notes-on-fields)to improve guidance for elements
+  * [FHIR-51541](https://jira.hl7.org/browse/FHIR-51541) – Review bullet on AEOB Profile: Notes on Fields: .total.amount  
+  * [FHIR-42706](https://jira.hl7.org/browse/FHIR-42706) – Add description for benefit balance  
+  * [FHIR-38769](https://jira.hl7.org/browse/FHIR-38769) – Add Operational requirement that there is a 1 to 1 relationship between a GFE and an AEOB  
+  * [FHIR-51619](https://jira.hl7.org/browse/FHIR-51619) – Add Notes to AEOB Summary Profile regarding Totals  
+  * [FHIR-46227](https://jira.hl7.org/browse/FHIR-46227) – Add guidance for AEOBs with examples for Prior Auth, Out of Network,  
+  
+  
+* Added the ability to indicate an estimate request is for a scheduled or non-scheduled service and the time of the request to the [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html)
+  * [FHIR-45759](https://jira.hl7.org/browse/FHIR-45759) – Add 'shopping vs scheduled service' flag ⚠️ **(Non-compatible change)**  
+
+* Update the [GFE Service Linking Information Extension](StructureDefinition-gfeServiceLinkingInfo.html) to address several needs for linking separately submitted GFEs
+  * [FHIR-34959](https://jira.hl7.org/browse/FHIR-34959) – gfeServiceLinkingInfo Comments ⚠️ **(Non-compatible change)**  
+  
+* Require member liability and eligible slices to the `ExplanationOfBenefit.total` element in the [Advanced EOB](StructureDefinition-davinci-pct-aeob.html) and [Advanced EOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) profiles.
+  * [FHIR-51542](https://jira.hl7.org/browse/FHIR-51542) – Require Total Member Liability and Total Eligible on the AEOB Summary ⚠️ **(Non-compatible change)**  
+
+* Require [CPT Consumer Friendly Descriptor](https://www.ama-assn.org/health-care-advocacy/advocating-public-health/cpt-descriptors-comply-transparency-rule-health-plans) in the [Good Faith Estimate Institutional](StructureDefinition-davinci-pct-gfe-institutional.html), [Good Faith Estimate Professional](StructureDefinition-davinci-pct-gfe-professional.html), and [Advanced EOB](StructureDefinition-davinci-pct-aeob.html) profiles where a CPT code is used.
+  * [FHIR-45909](https://jira.hl7.org/browse/FHIR-45909) – require use of CPT friendly descriptors  ⚠️ **(Non-compatible change)**  
+
+* Removed the CountrySubdivisionCode From the [PCT Organization](StructureDefinition-davinci-pct-organization.html) `address` element.
+  * [FHIR-51747](https://jira.hl7.org/browse/FHIR-51747) – Remove CountrySubdivisionCode extension ⚠️ **(Non-compatible change)**  
+  
+* Change Claim Frequency code binding from an IG defined CodeSystem to the [NUBC Uniform Billing Type ValueSet](ValueSet-PCTGFETypeOfBillVS.html) in the [Good Faith Estimate Professional](StructureDefinition-davinci-pct-gfe-professional.html) profile 
+  * [FHIR-51072](https://jira.hl7.org/browse/FHIR-51072) – Remove Claim Frequency Supporting Info slice from Professional GFE Profile ⚠️ **(Non-compatible change)**  
+
+* Remove the requirement to always include the diagnosis code in the [Good Faith Estimate Professional](StructureDefinition-davinci-pct-gfe-professional.html) profile.
+  * [FHIR-45178](https://jira.hl7.org/browse/FHIR-45178) – Diagnosis is required but not always known  
+  * [FHIR-46091](https://jira.hl7.org/browse/FHIR-46091) – Add guidance regarding the inclusion of Diagnosis codes in GFEs  
+
+Removed NPI as an identifier type in [PCT Organization](StructureDefinition-davinci-pct-organization.html) and [PCT Practitioner](StructureDefinition-davinci-pct-practitioner.html)
+  * [FHIR-50457](https://jira.hl7.org/browse/FHIR-50457) – NPI isn't a valid identifier type ⚠️ **(Non-compatible change)**  
+
+* Updated the description for the [Advanced EOB](StructureDefinition-davinci-pct-aeob.html) and [Advanced EOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) profiles `ExplanationOfBenefit.total:negotiated`
+  * [FHIR-51544](https://jira.hl7.org/browse/FHIR-51544) – Update definition for the ExplanationOfBenefit.total:negotiated  
+
+* Added guidance to the estimation Profiles ([Good Faith Estimate Institutional](StructureDefinition-davinci-pct-gfe-institutional.html), [Good Faith Estimate Professional](StructureDefinition-davinci-pct-gfe-professional.html), and [GFE Summary](StructureDefinition-davinci-pct-gfe-summary.html), [Advanced EOB](StructureDefinition-davinci-pct-aeob.html) and [Advanced EOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) ) for including additional information for medical management
+  * [FHIR-45862](https://jira.hl7.org/browse/FHIR-45862) – Add guidance about where to place medical management/prior auth and other contextual info  
+
+#### Updates to Request and Submission Workflow and Operations 
+
+* Create a [gfe-coordination-request operation](/OperationDefinition-GFE-coordination-request.html)
+  * [FHIR-45737](https://jira.hl7.org/browse/FHIR-45737) – May support individual resource posting seems incongruent with SHOULD statement for Requestor ⚠️ **(Non-compatible change)**  
+
+* Updates to the GFE Submission workflow to allow for early error response in the [Full GFE Coordination: End-to-End Workflow](gfe_coordination_overview.html#full-gfe-coordination-end-to-end-workflow) and [AEOB Response](gfe_submission_and_aeob_specification.html#aeob-response)
+  * [FHIR-49778](https://jira.hl7.org/browse/FHIR-49778) – Update gfe-submit operation workflow to support providing error status as early in the process as possible ⚠️ **(Non-compatible change)**  
+  * [FHIR-45856](https://jira.hl7.org/browse/FHIR-45856) – Error Messages    
+  * [FHIR-45938](https://jira.hl7.org/browse/FHIR-45938) – work quetsion regarding AEOB with errors
+  * [FHIR-45937](https://jira.hl7.org/browse/FHIR-45937) – Error information should be actionable   
+
+* Added guidance that the AEOB should be made available to the submitting provider
+  * [FHIR-45901](https://jira.hl7.org/browse/FHIR-45901) – require that the AEOB be returned to the provider   
+
+* Note that the Coordination Workflow is an option, not a requirement, for submission of the GFE Packet in the [Overview](index.html#overview) and [GFE Submit Workflow](gfe-submit-workflow) sections of the index page and [Business Actors of the Use Cases page](use_cases.html#business-actors)
+  * [FHIR-45928](https://jira.hl7.org/browse/FHIR-45928) – Do not presume convening provider model for insured patients
+  * [FHIR-45853](https://jira.hl7.org/browse/FHIR-45853) – Purpose of IG  
+  * [FHIR-45851](https://jira.hl7.org/browse/FHIR-45851) – Clarification regarding convening provider  
+  * [FHIR-45854](https://jira.hl7.org/browse/FHIR-45854) – Issue with information flow between business actors  
+
+* Change the GFE Task operation to be resource ID based
+  * [FHIR-48357](https://jira.hl7.org/browse/FHIR-48357) – Change Retrieve GFE Collection Bundle Operation from a global operation to a Task instance operation ⚠️ **(Non-compatible change)** 
+
+* Update to the correct term (GFE Packet and GFE Bundle) in numerous places in the IG
+  * [FHIR-45381](https://jira.hl7.org/browse/FHIR-45381) - Some instances of bundle should be collection bundle
+
+#### General Narrative Requirements and Guidance for Submissions to Payers
+
+* Added guidance on addressing submissions that relate to a previous submission.
+  * [FHIR-51746](https://jira.hl7.org/browse/FHIR-51746) – Add Guidance to the AEOB request for a relatesTo document that has already been processed.  
+
+* Added requirements and guidance for collation of of multiple GFE Bundles
+  * [FHIR-51078](https://jira.hl7.org/browse/FHIR-51078) – Add more narrative guidance on the two means to collate GFE Bundles ⚠️ **(Non-compatible change)**  
+
+
+
+#### Updates to the CapabilityStatements
+
+* Updated the [Coordination Platform CapabilityStatement](CapabilityStatement-davinci-pct-coordination-platform.html), [Coordination Requester CapabilityStatement](CapabilityStatement-davinci-pct-coordination-requester.html), [GFE Provider CapabilityStatement](CapabilityStatement-davinci-pct-gfe-provider.html), and [Payer CapabilityStatement](CapabilityStatement-davinci-pct.html)
+  * [FHIR-51684](https://jira.hl7.org/browse/FHIR-51684) – Add CapabilityStatements & requirements for the GFE & AEOB DocumentReference profiles, searching, and notification ⚠️ **(Non-compatible change)**  
+  * [FHIR-52528](https://jira.hl7.org/browse/FHIR-52528) - Add CapabilityStatement requirements for providers that create GFEs for patients
+
+* Add a requirement in the [Formal Specifications page CapabilityStatement Requirements](formal_specification.html#capabilitystatement-requirements) that servers conforming to the IG indicate the the version (e.g. STU1 or STU2) of the profile being supporting in `CapabilityStatement.instantiates`
+  * [FHIR-45861](https://jira.hl7.org/browse/FHIR-45861) – Add guidance for implementers to detect the difference between STU1 and STU2  usage ⚠️ **(Non-compatible change)**  
+
+
+#### Other Changes
+
+* Added a Section [About Data Retention and Access](formal_specification.html#ongoing-data-retention-and-access)
+  * [FHIR-45941](https://jira.hl7.org/browse/FHIR-45941) – Coordination Platform question   
+  
+* Create a means to better distinguish Bundles 
+  * [FHIR-45860](https://jira.hl7.org/browse/FHIR-45860) – Add a means to identify bundle purpose ⚠️ **(Non-compatible change)**  
+
+* Remove the unused PCT Endpoint extension
+  * [FHIR-51692](https://jira.hl7.org/browse/FHIR-51692) – Remove the orphaned PCTEndpoint extension  ⚠️ **(Non-compatible change)**  
+
+* Clarified the relation of the role of the convening and submitting providers
+  * [FHIR-45852](https://jira.hl7.org/browse/FHIR-45852) – Misapplication of convening provider requirement  
+
+* Removed term definition for terms already defined in CodeSystem from the [Terms and Concepts section](index.html#terms-and-concepts)
+  * [FHIR-45373](https://jira.hl7.org/browse/FHIR-45373) – Glossary could include a few related terms  
+
+* Added requirements and guidance for adjudication
+  * [FHIR-45377](https://jira.hl7.org/browse/FHIR-45377) – Clarify scope of adjudication  
+
+
 
 
 ### High Level Changes 2.0.0-ballot
