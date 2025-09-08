@@ -110,7 +110,7 @@ Figure 5 shows the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-miss
 _Figure 5. A [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) created by the Coordination Platform_
 
 
-Figure 6 shows the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created by the Coordination Platform when the GFE Coordination Requester calls the `gfe-retrieve` operation. In response to the `gre-retrieve` operation the provider (Practitioner or Organization). As part of the [GFE Submission and AEOB Workflow](gfe_submission_and_aeob_overview.html), this represents the GFE submitter (which can be changed before the submission if necessary).
+Figure 6 shows the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created by the Coordination Platform when the GFE Coordination Requester calls the `gfe-retrieve` operation. In response to the `$gre-retrieve` operation the provider (Practitioner or Organization). As part of the [GFE Submission and AEOB Workflow](gfe_submission_and_aeob_overview.html), this represents the GFE submitter (which can be changed before the submission if necessary).
 
 
 ![Figure 6. GFE Packet created by the Coordination Platform](GFE_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
