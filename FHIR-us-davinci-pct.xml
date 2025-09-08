@@ -230,10 +230,11 @@
 <page deprecated="true" key="credits" name="Credits"/>
 <page key="downloads" name="Downloads"/>
 <page key="formal_specification" name="Formal Specification"/>
-<page key="gfe_coordination_overview" name="Good Faith Estimate (GFE) Coordination Overview"/>
-<page key="gfe_coordination_specification" name="Good Faith Estimate (GFE) Coordination Specification"/>
+<page key="gfe_coordination_overview" name="Good Faith Estimate (GFE) Coordination Overview (Multi-Provider)"/>
+<page key="gfe_coordination_specification" name="Good Faith Estimate (GFE) Coordination Specification (Multi-Provider)"/>
 <page key="gfe_submission_and_aeob_overview" name="Good Faith Estimate (GFE) Submission and AEOB Overview"/>
 <page key="gfe_submission_and_aeob_specification" name="Good Faith Estimate (GFE) Submission and AEOB Specification"/>
+<page key="patient_access_support" name="Patient Access to GFE and AEOB"/>
 <page key="index" name="Patient Cost Transparency Implementation Guide Home Page"/>
 <page key="projects_and_participants" name="Project and Participants"/>
 <page key="reading_this_ig" name="Reading This IG"/>
