@@ -181,7 +181,7 @@ Note: If GFE processing fails, the payer may use existing business processes to 
 
 **Waive NSA Rights Consent Example Scenario**
 
-The diagram below  shows examples of how a patient may provide or withhold consent for No Surprises act Act protections using the balanceBilling extension on the GFE and how that could change the resulting AEOB from the payer.  
+The diagram below  shows examples of how a patient may provide or withhold consent for No Surprises Act protections using the balanceBilling extension on the GFE and how that could change the resulting AEOB from the payer.  
 
 ![Balance Billing](GFEbalanceBilling.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
