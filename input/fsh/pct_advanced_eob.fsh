@@ -203,29 +203,29 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * total[submitted].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * total[submitted] ^short = "Total provider submitted amount"
 
-* total[memberliability] ^short = "Total member liability - Must include in non-zero total across all AEoBs"
+* total[memberliability] ^short = "Total member liability"
 * total[memberliability].category = PCTAdjudicationCategoryCS#memberliability
 
-* total[innetwork] ^short = "Total in network amount - Must include in non-zero total across all AEoBs"
+* total[innetwork] ^short = "Total in network amount"
 * total[innetwork].category = PCTNetworkStatusCS#innetwork
 
-* total[outofnetwork] ^short = "Total out of network amount - Must include in non-zero total across all AEoBs"
+* total[outofnetwork] ^short = "Total out of network amount"
 * total[outofnetwork].category = PCTNetworkStatusCS#outofnetwork
 
 * total[negotiated] ^short = "Total negotiated amount - Total for special negotiated status for a service or product in relation to a patient's coverage that is established outside of a formal network contract"
 * total[negotiated].category = PCTNetworkStatusCS#negotiated
 
 
-* total[noncovered] ^short = "Total noncovered amount - Must include in non-zero total across all AEoBs"
+* total[noncovered] ^short = "Total noncovered amount"
 * total[noncovered].category = PCTAdjudication#noncovered
 
 
 
-* total[eligible] ^short = "Total eligible amount - Must include in non-zero total across all AEoBs"
+* total[eligible] ^short = "Total eligible amount"
 * total[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
 * total[eligible] ^comment = "Eligible is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
 
-* total[benefit] ^short = "Total benefit amount - Must include in non-zero total across all AEoBs"
+* total[benefit] ^short = "Total benefit amount"
 * total[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
 * total[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
 
