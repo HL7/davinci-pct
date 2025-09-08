@@ -112,13 +112,13 @@ Description: "Describes the various amount fields used when payers receive and a
 defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem."
 * $HL7AdjudicationCS#submitted 
 * $HL7AdjudicationCS#copay 
-* $HL7AdjudicationCS#eligible "Eligible Amount" "Amount of the charge which is considered for adjudication." // Updated definition change "change" to "charge"
+* $HL7AdjudicationCS#eligible
 * $HL7AdjudicationCS#deductible  
 * $HL7AdjudicationCS#benefit 
-* PCTAdjudication#coinsurance "Coinsurance" 
-* PCTAdjudication#noncovered "Noncovered" 
-* PCTAdjudication#memberliability "Member liability" 
-* PCTAdjudication#discount "Discount" 
+* PCTAdjudication#coinsurance
+* PCTAdjudication#noncovered
+* PCTAdjudication#memberliability
+* PCTAdjudication#discount
 * ^copyright = "This Valueset is not copyrighted."
 * ^experimental = false
 
