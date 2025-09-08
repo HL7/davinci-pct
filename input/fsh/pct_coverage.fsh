@@ -11,7 +11,7 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|7.0.0"
 
 * extension contains
-    $R5CoverageKind named coverage-kind 1..1 and
+    $R5CoverageKind named coverage-kind 1..1 MS and
     SelfPayDeclared named self-pay-declared 0..1 MS
 
 * extension[coverage-kind]
