@@ -42,6 +42,7 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 
 
 //* period 1..1
+* beneficiary ^short = "Patient or Plan Beneficiary"
 
 * costToBeneficiary
 * costToBeneficiary.type from http://terminology.hl7.org/ValueSet/coverage-copay-type (required)
