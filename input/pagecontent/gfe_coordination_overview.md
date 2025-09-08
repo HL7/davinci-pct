@@ -8,11 +8,11 @@ This guide supports the:
 
 - Ability for contributors to respond to a request for data back to a coordination requester with cost and planned items and services information.
 
-- Ability for a coordination platform to communicate a GFE to payer (leveraging an existing PCT IG workflow) and to other providers in the care team, prior to scheduled a service or upon request.
+- Ability for a Coordination Platform to communicate a GFE to payer (leveraging an existing PCT IG workflow) and to other providers in the care team, prior to scheduled a service or upon request.
 
 - The role a provider plays in this collaboration will change from case to case. In some cases, a provider will be a GFE Coordination Requester because the patient’s care is starting with them - the service was scheduled with this provider. If this provider is also providing items and services to be included in the GFE, they will also play the role of a GFE Contributor. For other patients, the same provider may be a co-provider supporting a different provider or facility with a patient’s period of care, in which case they will only act as a GFE Contributor. In either role, the IG provides tools to support the collaboration effort and the production of a single GFE. Certain state regulations may also inform which role a provider plays. 
 
-The coordination platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE coordination platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
+The Coordination Platform is introduced in this guide to act as the system designated by the convening provider to aggregate the GFE information across providers when multiple providers are engaged in a service. This allows for variability in the role of “convening” providers and data for the GFE. Some examples of systems that could serve as GFE Coordination Platforms include a: practice management system, electronic health record (EHR) system, cost estimator, clearinghouse, billing services, or payer system. 
 
 Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [Systems and Actors](use_cases.html#actors) for more detail on acronyms and new terms.  
 
@@ -138,7 +138,7 @@ _Figure 7. GFE Coordination Technical Workflow_
     <!--TODO Still need a fail early mechanism, App ack in initial communication-->
     
 2. GFE Coordinating Requester creates a [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and 1 or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resources, creates and attaches one or more [GFE Information Bundle](StructureDefinition-davinci-pct-gfe-information-bundle.html) resources and includes them in a [GFE Coordination Bundle](StructureDefinition-davinci-pct-gfe-coordination-bundle.html), then uses [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) of the Coordination Platform’s FHIR server.
-    * If successful, the content of the bundle will be stored as separate resources on the FHIR server, and notifications will be sent to all GFE Contributors referenced in the Tasks per step 3. The notifications may be sent via FHIR subscriptions, which can be triggered by a create operation, or they may be out of band notifications using whatever mechanism the coordination platform chooses.
+    * If successful, the content of the bundle will be stored as separate resources on the FHIR server, and notifications will be sent to all GFE Contributors referenced in the Tasks per step 3. The notifications may be sent via FHIR subscriptions, which can be triggered by a create operation, or they may be out of band notifications using whatever mechanism the Coordination Platform chooses.
     * If the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) fails, the entire transaction is rolled back, an OperationOutcome resource will be returned indicating the nature of the error(s), and no resources will be stored on the Coordination Platform. The requester must address any errors and resubmit.
 
 3. Notifications will be sent to all GFE Contributors referenced in the Task resources submitted in step 2.
