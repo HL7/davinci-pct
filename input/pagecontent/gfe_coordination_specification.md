@@ -261,7 +261,7 @@ GFE Contributors **MAY** access the Tasks of other participants whose assigned T
 
 ##### Task status based access
 [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s **SHALL NOT** be able to be modified by a GFE Contributor if the `status` is `cancelled`, `rejected`, `entered-in-error`, or `completed`. 
-Tasks marked as `completed`, `rejected`, or `entered-in-error` **SHOULD NOT** be able to be modified by GFE Contributors..
+Tasks marked as `completed`, `rejected`, or `entered-in-error` **SHOULD NOT** be able to be modified by GFE Contributors.
 
 
 #### Patient Access to GFEs
