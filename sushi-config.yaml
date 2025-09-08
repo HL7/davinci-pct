@@ -120,6 +120,14 @@ pages:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: informative
+
+  patient_access_support.md:
+    title: Patient Access to GFE and AEOB
+    extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
+  
   projects_and_participants.md:
     title: Project and Participants
     extension:
@@ -188,7 +196,9 @@ menu:
     Use Case and Actors: use_cases.html
     GFE Coordination Overview (Multi-Provider): gfe_coordination_overview.html
     GFE Submission and AEOB Overview: gfe_submission_and_aeob_overview.html
+    Patient Access Support: patient_access_support.html
     Project and Participants: projects_and_participants.html
+    
 
   Specification:
     Conformance Expectations: formal_specification.html
