@@ -109,7 +109,7 @@ pages:
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: informative
   gfe_coordination_overview.md:
-    title: Good Faith Estimate (GFE) Coordination Overview
+    title: Good Faith Estimate (GFE) Coordination Overview (Multi-Provider)
     extension:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
@@ -133,7 +133,7 @@ pages:
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: trial-use
   gfe_coordination_specification.md:
-    title: Good Faith Estimate (GFE) Coordination Specification
+    title: Good Faith Estimate (GFE) Coordination Specification (Multi-Provider)
     extension:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
@@ -186,13 +186,13 @@ menu:
   Background:
     Reading this IG: reading_this_ig.html
     Use Case and Actors: use_cases.html
-    GFE Coordination Overview: gfe_coordination_overview.html
+    GFE Coordination Overview (Multi-Provider): gfe_coordination_overview.html
     GFE Submission and AEOB Overview: gfe_submission_and_aeob_overview.html
     Project and Participants: projects_and_participants.html
 
   Specification:
     Conformance Expectations: formal_specification.html
-    GFE Coordination Specification: gfe_coordination_specification.html
+    GFE Coordination Specification (Multi-Provider): gfe_coordination_specification.html
     GFE Submission and AEOB Specification: gfe_submission_and_aeob_specification.html
     Privacy, Safety, and Security: security.html
 
