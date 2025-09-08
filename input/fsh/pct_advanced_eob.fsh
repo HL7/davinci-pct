@@ -206,17 +206,17 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * total[memberliability] ^short = "Total member liability"
 * total[memberliability].category = PCTAdjudicationCategoryCS#memberliability
 
-* total[innetwork] ^short = "Total in network amount"
+* total[innetwork] ^short = "Total in network amount - only include when total type is applicable"
 * total[innetwork].category = PCTNetworkStatusCS#innetwork
 
-* total[outofnetwork] ^short = "Total out of network amount"
+* total[outofnetwork] ^short = "Total out of network amount - only include when total type is applicable"
 * total[outofnetwork].category = PCTNetworkStatusCS#outofnetwork
 
 * total[negotiated] ^short = "Total negotiated amount - Total for special negotiated status for a service or product in relation to a patient's coverage that is established outside of a formal network contract"
 * total[negotiated].category = PCTNetworkStatusCS#negotiated
 
 
-* total[noncovered] ^short = "Total noncovered amount"
+* total[noncovered] ^short = "Total noncovered amount - only include when total type is applicable"
 * total[noncovered].category = PCTAdjudication#noncovered
 
 
@@ -225,7 +225,7 @@ Description: "The No Surprises Act requires that group health plans and insurers
 * total[eligible].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
 * total[eligible] ^comment = "Eligible is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
 
-* total[benefit] ^short = "Total benefit amount"
+* total[benefit] ^short = "Total benefit amount - only include when total type is applicable"
 * total[benefit].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
 * total[benefit] ^comment = "Benefit is similar to allowed amount. Eligible amount and Benefit amount may be different or the same, but if they are different the payer can supply both for the full picture of the estimate."
 
