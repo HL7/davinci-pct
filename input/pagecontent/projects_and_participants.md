@@ -48,7 +48,7 @@
 
 Special thanks to the numerous Da Vinci members and community who have participated on conference calls, provided reviews and feedback, supported sample data gathering, reference implementation development, and testing including, but not limited to:
 *	Aegis (Carie Hammond)
-*	Aetna CVS Health (Megan Meyer, Joel E. Hansen, …) 
+*	Aetna, a CVS Health company (Office of Interoperability)
 *	American Hospital Association (Terrence Cunningham, Andrea Preisler)  
 *	American Medical Association (Celine Lefebvre, Emma Andelson, Heather McComas) 
 *	b.well (Adam Culbertson, Logan Edwards) 
@@ -57,7 +57,7 @@ Special thanks to the numerous Da Vinci members and community who have participa
 *	careviso (Brandon Blais,  Rachelle Galant, Perry Dimas, Andrew Mignatti)  
 *	Cleveland Clinic (Jaime Lampshire)
 *	Consumers' Checkbook/Center for the Study of Services (Eric Ellsworth) 
-*   Edifecs (Kevin Day, Artem Sopin, Maxim Abramsky) 
+*   Edifecs (Kevin Day, Artem Sopin, Maxim Abramsky)
 *	Elevance Health (Chris Cioffi, Ranjith Kandur) 
 *	Epic (Jacob Woodford, Spencer Utley) 
 *	Flexpa (Joshua Kelly) 
