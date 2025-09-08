@@ -180,7 +180,7 @@ For notifications to authors (GFE Contributors) the GFE Packet subscription **SH
 To support the access and ability to provide notifications appropriately, a GFE Packet DocumentReference and PCT GFE Composition **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the GFE Packet DocumentReference `documentReferece.status` and PCT GFE Composition `Composition.status` **SHALL** be set to `entered-in-error`.
 
 #### Searching for and Retrieving Tasks
-Both GFE Coordination Requesters and GFE Contributors need to be able to search for Tasks related to their role in the GFE Coordination workflow. Searching requirements are detailed the CapabilityStatements in this guide and **SHALL** be followed for a system to claim conformance to this guide.
+Both GFE Coordination Requesters and GFE Contributors need to be able to search for Tasks related to their role in the GFE Coordination workflow. Searching requirements are detailed in the CapabilityStatements in this guide and **SHALL** be followed for a system to claim conformance to this guide.
 
 
 #### GFE Contributor Actions

@@ -75,10 +75,10 @@ This is a log of the significant changes that have happened to this specificatio
 * Updates to [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)s will update associated [Contributor Task]()StructureDefinition-davinci-pct-gfe-contributor-task.html.
   * [FHIR-45823](https://jira.hl7.org/browse/FHIR-45823) – Change the automated status update requirement for the Contributor task ⚠️ **(Non-compatible change)**  
 
-* Updated [Actor based access](gfe_coordination_specification.html#actor-based-acces)
+* Updated [Actor based access](gfe_coordination_specification.html#actor-based-access)
   * [FHIR-45943](https://jira.hl7.org/browse/FHIR-45943) – Can a contributor read after completion?  
 
-* Added several non-substantive capabilities to the [GFE Coordination Workflow](gfe_coordination_overview.htm)
+* Added several non-substantive capabilities to the [GFE Coordination Workflow](gfe_coordination_overview.html)
   * [FHIR-45895](https://jira.hl7.org/browse/FHIR-45895) – Add more guidance about out of band activities for the Coordination Workflow  
 
 * Add guidance in the [workflow at a glance](gfe_coordination_overview.html#workflow-at-a-glance) that a GFE requestor that also need to provide a GFE will act as a GFE Contributor
@@ -109,8 +109,7 @@ This is a log of the significant changes that have happened to this specificatio
 
 #### Moved several CodeSystems and ValueSets to the HL7 Terminology IG.
 
-* Moved the CodeSystem PCTSubjectToMedicalMgmtReasonCS to the THO [Medical Management Type]({{site.data.fhir.ver.tho}}/
-CodeSystem-medical-management-type.html)
+* Moved the CodeSystem PCTSubjectToMedicalMgmtReasonCS to the THO [Medical Management Type]({{site.data.fhir.ver.tho}}/CodeSystem-medical-management-type.html)
   * [FHIR-35549](https://jira.hl7.org/browse/FHIR-35549) – Defining URL should be anchored in THO not hl7.org/fhir.13
 
 * Moved the CodeSystem and ValueSet PCTDiagnosisType to the THO [Diagnosis Type CodeSystem]({{site.data.fhir.ver.tho}}/CodeSystem-diagnosistype.html) and [Diagnosis Type ValueSet]({{site.data.fhir.ver.tho}}/ValueSet-diagnosistype.html)
@@ -204,7 +203,7 @@ Removed NPI as an identifier type in [PCT Organization](StructureDefinition-davi
 * Added guidance that the AEOB should be made available to the submitting provider
   * [FHIR-45901](https://jira.hl7.org/browse/FHIR-45901) – require that the AEOB be returned to the provider   
 
-* Note that the Coordination Workflow is an option, not a requirement, for submission of the GFE Packet in the [Overview](index.html#overview) and [GFE Submit Workflow](gfe-submit-workflow) sections of the index page and [Business Actors of the Use Cases page](use_cases.html#business-actors)
+* Note that the Coordination Workflow is an option, not a requirement, for submission of the GFE Packet in the [Overview](index.html#overview) and [GFE Submit Workflow](index.html#gfe-submit-workflow) sections of the index page and [Business Actors of the Use Cases page](use_cases.html#business-actors)
   * [FHIR-45928](https://jira.hl7.org/browse/FHIR-45928) – Do not presume convening provider model for insured patients
   * [FHIR-45853](https://jira.hl7.org/browse/FHIR-45853) – Purpose of IG  
   * [FHIR-45851](https://jira.hl7.org/browse/FHIR-45851) – Clarification regarding convening provider  
@@ -283,7 +282,7 @@ This ballot version includes a new use case addressing the need to coordinate GF
 * Created the [Retrieve GFE Collection Bundle (GFE-Retrieve) operation](https://hl7.org/fhir/us/davinci-pct/2024May/OperationDefinition-GFE-retrieve.html) to support the collection of GFE Bundles contributed through the GFE Coordination workflow.
 * Updated the [GFE Submit](https://hl7.org/fhir/us/davinci-pct/2024May/OperationDefinition-GFE-submit.html) operation to take a [GFE Collection Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-collection-bundle.html) instead of the [GFE Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-bundle.html) (which is now contained in the GFE Collection Bundle)
 * Added the [AEOB Summary](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-aeob-summary.html) and [GFE Summary](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-summary.html) profiles and requirements for their presence in the [AEOB Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-aeob-bundle.html) and [GFE Bundle](https://hl7.org/fhir/us/davinci-pct/2024May/StructureDefinition-davinci-pct-gfe-bundle.html) respectively
-* Assign a standards status to all artifacts and pages.
+* Assign a standard status to all artifacts and pages.
 * Small presentation and example changes.
 
 

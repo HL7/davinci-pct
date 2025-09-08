@@ -73,8 +73,8 @@ The subscriptions defined for Packet availability defined in this IG are for the
 Below are illustrations showing the relationships between the profiles involved in this workflow.
 > Note: For brevity, not all data elements are shown.
 
-Figure 1 shows a GFE Coordination Bundle which is a transaction Bundle is used by a GFE Coordination Requester to submit all resources involved in a GFE coordination request through the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html). It includes a single [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), and one or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s. The [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) must have a GFE Information Bundle associated to it. This information bundle is used to express all of the generally applicable information needed for GFE Contributors to make their estimates. Optionally, the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s may also have a GFE Information Bundle associated to them to convey any provider specific information, such as specific services or to share specific contextual clinical information.A GFE Information Bundle is preferably associated to its respective Task resource by encoding it in the `Task.input.valueAttachment`. 
-The Task references to Practitioner and Organization must point to the instances on the Coordination Platform.
+Figure 1 shows a GFE Coordination Bundle which is a transaction Bundle is used by a GFE Coordination Requester to submit all resources involved in a GFE coordination request through the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html). It includes a single [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), and one or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s. The [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) must have a GFE Information Bundle associated with it. This information bundle is used to express all of the generally applicable information needed for GFE Contributors to make their estimates. Optionally, the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s may also have a GFE Information Bundle associated to them to convey any provider specific information, such as specific services or to share specific contextual clinical information.A GFE Information Bundle is preferably associated to its respective Task resource by encoding it in the `Task.input.valueAttachment`. 
+The Task references to Practitioner and Organization instances on the Coordination Platform.
 
 ![Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester](GFE_Coordination_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
@@ -103,7 +103,7 @@ Figure 4 shows the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)
 _Figure 4. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) created by the GFE Contributor_
 
 
-Figure 5 shows the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) which is used to convey that a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) did not have a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) attached when a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) was compiled. The purpose of this bundle is to provide an indication that a GFE collection is incomplete and what is missing, including the GFE Contributor and the items and services that an estimate requested for. 
+Figure 5 shows the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) which is used to convey that a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) did not have a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) attached when a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) was compiled. The purpose of this bundle is to provide an indication that a GFE collection is incomplete and what is missing, including the GFE is requested for. 
 
 ![Figure 5. A GFE Missing bundle created by the Coordination Platform](GFE_Missing_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
 
@@ -196,18 +196,18 @@ _Figure 8. Request Timeline Example_
 > Note: This is one example scenario. Providers and facilities will determine what role they play. Providers and facilities may need to be prepared to play the convening provider or co-provider, depending on their role in the patient’s service and in accordance with federal, state, and local regulations.
 
 Assumptions:
-* Patient does not have health insurance and will self-pay for the expected services.
-* This is clinically appropriate (Clinical Decision Support [CDS] Score).
-* Service location is known (e.g., address).
+* Patient does not have health insurance and will self-pay for the expected services
+* This is clinically appropriate (Clinical Decision Support [CDS] Score)
+* Service location is known (e.g., address)
 * Surgeon is external to Hospital
 * Providers all respond with their data in a timely manner
 
 
 1. On Monday, Adam Everyman is seen by Dr. Carla Cutter, a surgeon, and is advised a surgical procedure is needed. Adam Everyman presents as self-pay for the surgery and associated services in the period of care. 
 
-2. Dr. Carla Cutter requests a surgical case time from Good Health Hospital (Convening Facility) 
+2. Dr. Carla Cutter requests a surgical case time from Good Health Hospital (Convening Facility).
 
-3. On Tuesday, Good Health Hospital (Convening Facility) confirms and schedules the surgery, booking the OR for 8 days from today (clock starts here)
+3. On Tuesday, Good Health Hospital (Convening Facility) confirms and schedules the surgery, booking the OR for 8 days from today (clock starts here).
 
 4. Good Health Hospital (Convening Facility) identifies the co-providers needed for the procedure and triggers a request for price estimate from the ordering surgeon, Dr. Carla Cutter (co-provider 1), Sleeper Anesthesiologist Group (co-provider 2), through their designated Coordination Platform. 
 
@@ -217,7 +217,7 @@ Assumptions:
 
 7. Good Health Hospital’s assigned Coordination Platform aggregates all convening and co-provider estimates into a single GFE, with the summary total for the surgery across providers as well as the details per provider and the associated facility charges.
 
-7. GFE is posted to API available to the Patient by Tuesday (within one business day from time of scheduling)
+7. GFE is posted to API available to the Patient by Tuesday (within one business day from time of scheduling).
 
 
 ### Multi-Provider Coordination Workflow Alternative ###

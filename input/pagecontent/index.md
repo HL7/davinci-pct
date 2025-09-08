@@ -53,7 +53,7 @@ Acronyms used in this IG can be found [here](#terms-and-concepts). The reader of
 This guide breaks the process into two main parts in support of the patient cost transparency use case: 
 1. [GFE Coordination Workflow (Multi-Provider) ](gfe_coordination_overview.html) -  Supports the ability for a provider to notify, request, and collect one or more GFEs from other providers that may participate in a set of procedures related to patient’s period of care for which a GFE is required, either to provide to the patient and/or to submit to a payer.
 
-2. [GFE Submission and AEOB Workflow ](gfe_submission_and_aeob_overview.html) - Supports the ability for a provider to submit GFE Packets to a payer for them to process and produce an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) to the patient and optionally to the provider. This submission may include GFEs from multiple providers gathered using FHIR separately or a consolidated GFE that were gathered in the [GFE Coordination Workflow ](gfe_coordination_overview.html).
+2. [GFE Submission and AEOB Workflow ](gfe_submission_and_aeob_overview.html) - Supports the ability for a provider to submit GFE Packets to a payer for them to process and produce an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) to the patient and optionally to the provider. This submission may include GFEs from multiple providers gathered using FHIR separately or a consolidated GFE is gathered in the [GFE Coordination Workflow](gfe_coordination_overview.html).
 
 
 **Good Faith Estimate and Advanced Explanation of Benefit High Level Workflow**
@@ -76,8 +76,6 @@ This guide breaks the process into two main parts in support of the patient cost
 > Note: Communication to the patient could be direct from the provider or the payer or through a third-party app via an API.
 
 
-
-### Content and Organization
 ### Content and Organization
 This implementation guide (and the menu for it) is organized into the following sections:
 
@@ -114,7 +112,7 @@ This implementation guide (and the menu for it) is organized into the following 
 | AEOB | The Consolidated Appropriations Act includes provisions whereby group health plans and health insurance issuers, based on charges, billing and diagnostic codes provided by the provider(s), provide an Advanced Explanation of Benefits  for scheduled services or upon request to give patients transparency into their estimated healthcare costs. AEOBs need to include which providers are expected to provide treatment, the network status of providers, good faith estimates of cost, cost-sharing and progress towards meeting deductibles and out-of-pocket maximums, as well as whether a service is subject to medical management and relevant disclaimers of estimates; for example, the disclaimer might state that the information provided in the notification is only an estimate based on the items and services reasonably expected, at the time of scheduling (or requesting) and is subject to change. For a complete breakdown of what needs to be included in the AEOB see 42 U.S. Code 300gg-111(f)(1)(A) through (H).|
 | CAA <br> Consolidated Appropriations Act | Also called ["H.R. 133".](https://www.ftc.gov/legal-library/browse/statutes/no-surprises-act-2021-consolidated-appropriations-act)<br>The CARES (Coronavirus Aid, Relief, and Economic Security) Act implemented a variety of programs to address issues related to the onset of the COVID-19 pandemic. <br><br> The Consolidated Appropriations Act continued many of these programs by adding new phases, new allocations, and new guidance to address issues related to the continuation of the COVID-19 pandemic. Title I (the No Surprises Act) of Division BB of the Consolidated Appropriations Act, 2021 establishes new protections from surprise billing and excessive cost sharing for consumers receiving healthcare items/services. <br><br>The Consolidated Appropriations Act (2021) was passed by Congress on December 21, 2020 and signed into law on December 27, 2020. |
 | GFE | The Good Faith Estimate is a notification of reasonably expected charges and billing codes for a scheduled or requested item or service. For a complete breakdown of what needs to be included in the GFE see [42 U.S. Code 300gg-136](https://www.law.cornell.edu/uscode/text/42/300gg-136)|
-| HIPAA |The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that required the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge. The US Department of Health and Human Services (HHS) issued the HIPAA Privacy Rule to implement the requirements of HIPAA. The HIPAA Security Rule protects a subset of information covered by the Privacy Rule. |
+| HIPAA |The Health Insurance Portability and Accountability Act of 1996 (HIPAA) is a federal law that requires the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge. The US Department of Health and Human Services (HHS) issued the HIPAA Privacy Rule to implement the requirements of HIPAA. The HIPAA Security Rule protects a subset of information covered by the Privacy Rule. |
 {: .grid }
 
 

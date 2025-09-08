@@ -41,4 +41,4 @@ There are different terms used for an individual or patient in the health plan i
 
 - **Client** - Typically billing management systems, revenue cycle management systems, or other client systems responsible for requesting AEOBs.
 
-- **Intermediary** - The payer or the provider may have the relationship with the intermediary, i.e, clearinghouse. Some payers do not contract with a clearinghouse; others do. Providers can either contract with a Practice Management system who has the relationship with the clearinghouse or in some cases contracts directly with the clearinghouse through their Practice Management software
+- **Intermediary** - The payer or the provider may have a relationship with the intermediary, i.e, clearinghouse. Some payers do not contract with a clearinghouse; others do. Providers can either contract with a Practice Management system who has the relationship with the clearinghouse or in some cases contracts directly with the clearinghouse through their Practice Management software.

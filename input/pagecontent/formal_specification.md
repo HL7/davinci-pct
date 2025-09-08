@@ -32,7 +32,7 @@ Sender:
 * The sender **SHALL** send the data element if the sender maintains the data element and is authorized to share it.
     * Data elements that the sender maintains includes data elements available in the systems under the sender’s control.
 
-    * If the sender does not capture/store the data, the data are not available, or sharing of the data is not authorized, the system **SHOULD NOT** send the element if the element is not marked as mandatory (lower cardinality of 0).
+    * If the sender does not capture/store the data, the data is not available, or sharing of the data is not authorized, the system **SHOULD NOT** send the element if the element is not marked as mandatory (lower cardinality of 0).
  
 Receiver:
 
@@ -70,8 +70,8 @@ The full set of profiles defined in this IG can be found by following the links 
 
 ## Workflow Specific Specifications
 
-Additional Specifications for the two workflows in this guide can be found on the following pages:
+Additional specifications for the two workflows in this guide can be found on the following pages:
 
 - [GFE Coordination Specification](gfe_coordination_specification.html) -  Requirements to support the ability for a provider to request and collect one or more GFEs from other providers that may participate in a set of procedures related to patient’s period of care for which a GFE is required, either to provide to the patient and/or to submit to a payer.
 
-- [GFE Submission and AEOB Specification](gfe_submission_and_aeob_specification.html) - Requirements to supports the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) to the patient and optionally to the provider.
+- [GFE Submission and AEOB Specification](gfe_submission_and_aeob_specification.html) - Requirements to support the ability for a provider to submit a collection of one or more GFEs to a payer for them to process and produce an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) to the patient and optionally to the provider.

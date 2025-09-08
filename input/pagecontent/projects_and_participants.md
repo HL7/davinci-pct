@@ -46,7 +46,7 @@
 
 **This IG was developed under the auspices of the Financial Management Work Group.**
 
-Special thanks go to the numerous Da Vinci members and community   who have participated on conference calls, provided reviews and feedback, supported sample data gathering, reference implementation development, and testing including, but not limited to:
+Special thanks to the numerous Da Vinci members and community who have participated on conference calls, provided reviews and feedback, supported sample data gathering, reference implementation development, and testing including, but not limited to:
 *	Aegis (Carie Hammond)
 *	Aetna CVS Health (Megan Meyer, Joel E. Hansen, …) 
 *	American Hospital Association (Terrence Cunningham, Andrea Preisler)  
