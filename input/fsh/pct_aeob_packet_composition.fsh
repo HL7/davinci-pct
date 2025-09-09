@@ -7,7 +7,7 @@ Description: "PCT AEOB Composition that assembles the contents of an AEOB (repre
 
 
 * extension contains
-    RequestInitiationTime named requestInitiationTime 1..1    
+    RequestInitiationTime named requestInitiationTime 1..1 MS   
     
 * extension[requestInitiationTime] ^short = "Estimate Request instant (instance GFE Packet submitted to payer)"
 * extension[requestInitiationTime] ^comment = "Instant from which the request is being initiated. The time of the AEOB request made to a payer to fulfill, this is the time in which the GFE submission was made to the payer."
