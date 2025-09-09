@@ -58,11 +58,13 @@ dependencies:
     version: 6.5.0
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
     id: tho
-  hl7.fhir.uv.subscriptions-backport.r4: 1.1.0
-
+  hl7.fhir.uv.subscriptions-backport.r4:
+    version: 1.1.0
+    uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
+    id: subs
 
 copyrightYear: 2025+
-releaseLabel: STU 2 - Draft
+releaseLabel: STU 2
 jurisdiction: urn:iso:std:iso:3166#US
 
 parameters:   

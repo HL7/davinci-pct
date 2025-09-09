@@ -18,7 +18,7 @@ This implementation guide uses terminology, notations and design principles that
 
 This implementation guide supports the [R4]({{site.data.fhir.path}}index.html) version of the FHIR standard and builds on the US Core [3.1.1 (USCDI v1)]({{site.data.fhir.ver.uscore3}}), [6.1 (USCDI v3)]({{site.data.fhir.ver.uscore6}}) and [7.0 (USCDI v4)]({{site.data.fhir.ver.uscore}}) implementation guides and implementers need to familiarize themselves with the profiles in those guides. The profiles in this IG conform with all three releases of US Core. 
 
-This IG also draws on content from the [Davinci Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}})  and [Subscriptions R5 Backport]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}) implementation guides.
+This IG also draws on content from the [Davinci Health Record Exchange (HRex)]({{site.data.fhir.ver.hrex}})  and [Subscriptions R5 Backport]({{site.data.fhir.ver.subs}}) implementation guides.
 
 Implementers should also familiarize themselves with the FHIR resources used within the guide:
 

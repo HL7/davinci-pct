@@ -141,7 +141,7 @@ Notifications may take the form of FHIR Subscription (as defined in this IG), un
 Coordination Platforms **SHALL** be able to notify GFE Contributors when a new [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) is assigned to them or is marked as `cancelled`.
 Coordination Platforms **SHALL** be able to notify GFE Coordination Requesters when a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) they created has had their `status` updated to `rejected`, `accepted`, or `completed`.
 
-Implementers **MAY** support the R4 Subscriptions referenced in the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.hl7_fhir_uv_subscriptions-backport}}).
+Implementers **MAY** support the R4 Subscriptions referenced in the [FHIR Subscriptions R5 Backport Implementation Guide]({{site.data.fhir.ver.subs}}).
 
 
 This IG defines the following minimal requirements for the support of subscriptions for systems conforming to this IG that choose to support subscriptions:
