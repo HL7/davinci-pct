@@ -50,14 +50,14 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 
 Invariant: pct-coverage-1
 Description: "Coverage: class element SHALL be present if coverage-0kind is insurance"
-Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and valueCode = 'insurance').exists() implies class.exists()"
+Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and value = 'insurance').exists() implies class.exists()"
 Severity: #error
 
 
 
 Invariant: pct-coverage-2
 Description: "Coverage: period element SHALL be present if coverage-0kind is insurance"
-Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and valueCode = 'insurance').exists() implies period.exists()"
+Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and value = 'insurance').exists() implies period.exists()"
 Severity: #error
 
 /*
