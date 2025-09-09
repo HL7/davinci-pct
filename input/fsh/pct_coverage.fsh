@@ -6,6 +6,8 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 * insert TrialUseArtifact
 * ^baseDefinition = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|7.0.0"
 
+* obeys pct-coverage-1 and pct-coverage-2
+
 * extension contains
     $R5CoverageKind named coverage-kind 1..1 MS and
     SelfPayDeclared named self-pay-declared 0..1 MS
@@ -53,7 +55,7 @@ Severity: #error
 
 
 
-Invariant: pct-coverage-1
+Invariant: pct-coverage-2
 Description: "Coverage: period element SHALL be present if coverage-0kind is insurance"
 Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and valueCode = 'insurance').exists() implies period.exists()"
 Severity: #error
