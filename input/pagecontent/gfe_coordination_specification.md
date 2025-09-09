@@ -12,18 +12,15 @@ In addition to the requirements specified in this section, GFE Coordination Requ
 
 
 
-<!-- TODO Review the sections below for duplicate requirements-->
-
-
-
 ### Task Workflow Requirements
 
 This section describes the minimal workflow requirements and task transitions for both the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html). Except were specifically stated, this IG does not disallow other states or transitions. However, implementers should not expect other systems to recognize or understand variances from this process without prior agreement.
 
 #### The Coordination Task Workflow
 
-![PCT GFE Coordination Task Workflow](Task_flowChart-Coordinator.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 1: PCT GFE Coordination Task Workflow](Task_flowChart-Coordinator.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
+_Figure 1: PCT GFE Coordination Task Workflow Diagram_
 
 1. **Start** - This workflow starts with the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), and relevant [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) created by the Coordination Requester, all with the same `status`.
 2. **Draft** (Optional) - The Coordination and associated [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), **MAY** optionally be placed in a `draft` `status`.
@@ -55,7 +52,9 @@ This section describes the minimal workflow requirements and task transitions fo
 
 #### The Contributor Task Workflow
 
-![PCT GFE Coordination Task Workflow](Task_flowChart-Contributor.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 2: PCT GFE Coordination Task Workflow](Task_flowChart-Contributor.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+
+_Figure 2: PCT GFE Coordination Task Workflow Diagram_
 
 1. **Optional Precondition** – _(not in diagram)_ Prior to the start of this workflow a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) **MAY** exist with a `draft` `status`.
     a. Creation and editing of a `draft` `status` [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) **SHOULD NOT** trigger a notification to the GFE Contributor it is assigned to.

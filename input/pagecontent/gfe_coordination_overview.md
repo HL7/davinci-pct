@@ -18,7 +18,9 @@ Additionally, see the [Terms and Concepts](index.html#terms-and-concepts) and [S
 
 
 ### Workflow at a Glance ###
-![PCT GFE Coordination High Level Workflow](PCT_GFE_Coordination_HighLevelWorkflow.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 1: PCT GFE Coordination High Level Workflow](PCT_GFE_Coordination_HighLevelWorkflow.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+
+_Figure 1. GFE Coordination High Level Workflow_
 
 **GFE Coordination Diagram Steps (High Level View)**
 > Pre-step: A patient schedules a service or requests an estimate for a service which triggers the collection of one or more GFEs. 
@@ -73,49 +75,49 @@ The subscriptions defined for Packet availability defined in this IG are for the
 Below are illustrations showing the relationships between the profiles involved in this workflow.
 > Note: For brevity, not all data elements are shown.
 
-Figure 1 shows a GFE Coordination Bundle which is a transaction Bundle is used by a GFE Coordination Requester to submit all resources involved in a GFE coordination request through the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html). It includes a single [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), and one or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s. The [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) must have a GFE Information Bundle associated with it. This information bundle is used to express all of the generally applicable information needed for GFE Contributors to make their estimates. Optionally, the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s may also have a GFE Information Bundle associated to them to convey any provider specific information, such as specific services or to share specific contextual clinical information.A GFE Information Bundle is preferably associated to its respective Task resource by encoding it in the `Task.input.valueAttachment`. 
+Figure 2 shows a GFE Coordination Bundle which is a transaction Bundle is used by a GFE Coordination Requester to submit all resources involved in a GFE coordination request through the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html). It includes a single [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), and one or more [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s. The [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) must have a GFE Information Bundle associated with it. This information bundle is used to express all of the generally applicable information needed for GFE Contributors to make their estimates. Optionally, the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)s may also have a GFE Information Bundle associated to them to convey any provider specific information, such as specific services or to share specific contextual clinical information.A GFE Information Bundle is preferably associated to its respective Task resource by encoding it in the `Task.input.valueAttachment`. 
 The Task references to Practitioner and Organization instances on the Coordination Platform.
 
-![Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester](GFE_Coordination_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 2. GFE Coordination Bundle as created by the GFE Coordination Requester](GFE_Coordination_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-_Figure 1. GFE Coordination Bundle as created by the GFE Coordination Requester_
-
-
-Figure 2 shows the relationships of the resources involved in GFE coordination request as they exist on the Coordination Platform whether they be written individually or through the GFE Coordination Bundle transaction. If the GFE Information Bundles are not contained in the Task, they would exist as Bundle resources that would be individually retrievable from the Coordination Platform.
-
-![Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform](GFE_Coordination_Platform_Resources.png){:style="float: none;width: 600px;display: block;margin: auto;"}
-
-_Figure 2. GFE Coordination Bundle content as stored on the Coordination Platform_
+_Figure 2. GFE Coordination Bundle as created by the GFE Coordination Requester_
 
 
-Figure 3 shows the GFE Information Bundle is created by the GFE Coordination Requester and is meant to contain the information needed for GFE Contributors to make their estimate. This includes the Patient, Coverage and Payer if applicable, specific providers or roles being asked for (not the same as those on the Coordination Platform), requested items (including items and services), and any additional documentation. Additional resources that provide important contextual information that could affect needed items, services, or costs, such as Conditions or Observations, are also allowed.
+Figure 3 shows the relationships of the resources involved in GFE coordination request as they exist on the Coordination Platform whether they be written individually or through the GFE Coordination Bundle transaction. If the GFE Information Bundles are not contained in the Task, they would exist as Bundle resources that would be individually retrievable from the Coordination Platform.
+
+![Figure 3. GFE Coordination Bundle content as stored on the Coordination Platform](GFE_Coordination_Platform_Resources.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+
+_Figure 3. GFE Coordination Bundle content as stored on the Coordination Platform_
 
 
-![Figure 3. GFE Information Bundle created by the GFE Coordination Requester](GFE_Information_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
-
-_Figure 3. GFE Information Bundle created by the GFE Coordination Requester_
+Figure 4 shows the GFE Information Bundle is created by the GFE Coordination Requester and is meant to contain the information needed for GFE Contributors to make their estimate. This includes the Patient, Coverage and Payer if applicable, specific providers or roles being asked for (not the same as those on the Coordination Platform), requested items (including items and services), and any additional documentation. Additional resources that provide important contextual information that could affect needed items, services, or costs, such as Conditions or Observations, are also allowed.
 
 
-Figure 4 shows the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) which is created by the GFE Contributor and attached to their [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html). It contains the Patient, Coverage and Payer if relevant, involved providers, and Claims data with the estimated costs.
+![Figure 4. GFE Information Bundle created by the GFE Coordination Requester](GFE_Information_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-![Figure 4. A GFE Bundle created by the GFE Contributor](GFE_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
-
-_Figure 4. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) created by the GFE Contributor_
+_Figure 4. GFE Information Bundle created by the GFE Coordination Requester_
 
 
-Figure 5 shows the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) which is used to convey that a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) did not have a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) attached when a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) was compiled. The purpose of this bundle is to provide an indication that a GFE collection is incomplete and what is missing, including the GFE is requested for. 
+Figure 5 shows the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) which is created by the GFE Contributor and attached to their [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html). It contains the Patient, Coverage and Payer if relevant, involved providers, and Claims data with the estimated costs.
 
-![Figure 5. A GFE Missing bundle created by the Coordination Platform](GFE_Missing_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
+![Figure 5. A GFE Bundle created by the GFE Contributor](GFE_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
 
-_Figure 5. A [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) created by the Coordination Platform_
-
-
-Figure 6 shows the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created by the Coordination Platform when the GFE Coordination Requester calls the `gfe-retrieve` operation. In response to the `$gfe-retrieve` operation the provider (Practitioner or Organization). As part of the [GFE Submission and AEOB Workflow](gfe_submission_and_aeob_overview.html), this represents the GFE submitter (which can be changed before the submission if necessary).
+_Figure 5. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) created by the GFE Contributor_
 
 
-![Figure 6. GFE Packet created by the Coordination Platform](GFE_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+Figure 6 shows the [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) which is used to convey that a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) did not have a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) attached when a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) was compiled. The purpose of this bundle is to provide an indication that a GFE collection is incomplete and what is missing, including the GFE is requested for. 
 
-_Figure 6. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created by the Coordination Platform_
+![Figure 6. A GFE Missing bundle created by the Coordination Platform](GFE_Missing_Bundle.png){:style="float: none;width: 400px;display: block;margin: auto;"}
+
+_Figure 6. A [GFE Missing Bundle](StructureDefinition-davinci-pct-gfe-missing-bundle.html) created by the Coordination Platform_
+
+
+Figure 7 shows the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created by the Coordination Platform when the GFE Coordination Requester calls the `gfe-retrieve` operation. In response to the `$gfe-retrieve` operation the provider (Practitioner or Organization). As part of the [GFE Submission and AEOB Workflow](gfe_submission_and_aeob_overview.html), this represents the GFE submitter (which can be changed before the submission if necessary).
+
+
+![Figure 7. GFE Packet created by the Coordination Platform](GFE_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+
+_Figure 7. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created by the Coordination Platform_
 
 
 
@@ -127,9 +129,9 @@ _Figure 6. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) created
 
 TODO This visio workflow diagram needs to be updated, specifically for "closing" and possibly other places. and update the names of the resources/bundles e.g. as "packets"
 -->
-![GFE Coordination Technical Workflow](PCTCoordinationWorkflow.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
+![Figure 8: GFE Coordination Technical Workflow](PCTCoordinationWorkflow.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
-_Figure 7. GFE Coordination Technical Workflow_
+_Figure 8. GFE Coordination Technical Workflow_
 
 
 1. GFE Coordinating Requester performs a FHIR search for [Practitioner](StructureDefinition-davinci-pct-practitioner.html), [PractitionerRole]({{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-practitionerrole.html), or [Organization](StructureDefinition-davinci-pct-organization.html) resources. If successful (200 OK), the search will return 0 or more resources.
@@ -189,8 +191,9 @@ Note: This is a replacement of the Task not the GFE or GFE Bundles.
 **Timeline Example Scenario**
 The diagram below demonstrates use of the available date elements to meet turnaround times to provide Good Faith Estimates (GFE)
 
-![Request Timeline Example](Timeline_Example.png){:style="float: none;width: 800px;display: block;margin: auto;"}
-_Figure 8. Request Timeline Example_
+![Figure 9: Request Timeline Example](Timeline_Example.png){:style="float: none;width: 800px;display: block;margin: auto;"}
+
+_Figure 9. Request Timeline Example_
 
 
 > Note: This is one example scenario. Providers and facilities will determine what role they play. Providers and facilities may need to be prepared to play the convening provider or co-provider, depending on their role in the patient’s service and in accordance with federal, state, and local regulations.

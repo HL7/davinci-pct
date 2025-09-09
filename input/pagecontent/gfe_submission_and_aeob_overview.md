@@ -8,7 +8,7 @@ This guide does not currently specify a means for providers to update or cancel 
 ### Workflow at a Glance ###
 ![PCT GFE Submission and AEOB High Level Workflow](PCT_GFE_Submission_HighLevelWorkflow.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
-Figure 1: The GFE submission and AEOB process. The dotted line indicates optional capabilities.
+_Figure 1: The GFE submission and AEOB process. The dotted line indicates optional capabilities._
 
 **GFE Submission and AEOB Diagram Steps (High Level View)**
 
@@ -71,32 +71,32 @@ The figures below show the relationships between the profiles involved in this w
 > Note: For brevity, not all data elements are shown.
 
 
-Figure 1 shows a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)s for processing.
+Figure 2 shows a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) submitted in the gfe-submit operation. It contains information about the patient, the payer and coverage information, and the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)s for processing.
 
-![Figure 1. GFE Packet](GFE_Packet.png){:style="float: none;width: 800px;display: block;margin: auto;"}
+![Figure 2. GFE Packet](GFE_Packet.png){:style="float: none;width: 800px;display: block;margin: auto;"}
 
-Figure 1. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)
+_Figure 2. [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html)_
 
 
 
-Figure 2 shows the components of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). It contains the patient, coverage and payer if relevant, involved providers, and claims data with the estimated costs. If the GFE Coordination Workflow was used, this is the same [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) as the one provided by a GFE Contributor.
+Figure 3 shows the components of the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). It contains the patient, coverage and payer if relevant, involved providers, and claims data with the estimated costs. If the GFE Coordination Workflow was used, this is the same [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) as the one provided by a GFE Contributor.
 All resources (supporting info, etc.) needed to process the GFE and produce the AEOB will be included in the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html). Relevant resources referenced by such resources will also be included.
 
 
-![Figure 2. A GFE Bundle](GFE_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 3. A GFE Bundle](GFE_Bundle.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-_Figure 2. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)_
+_Figure 3. A [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html)_
 
 
 
-Figure 3 shows an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) created by a payer in response to a GFE-submit operation.
+Figure 4 shows an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) created by a payer in response to a GFE-submit operation.
 The [AEOB Packet](StructureDefinition-davinci-pct-gfe-packet.html) will contain one or more AEOBs. Each AEOB will contain a reference to the original [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) (i.e., an exact copy of the originally submitted GFE).
 
 The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) includes, at a minimum, the full estimation based on the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) received in the GFE submission. If the payer or intermediary supports linking across submissions, the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) may include estimates across linked GFE submissions (e.g. through a [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) [GFE Service Linking Info](StructureDefinition-gfeServiceLinkingInfo.html)).
 
-![Figure 3. A AEOB Packet](AEOB_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 4. A AEOB Packet](AEOB_Packet.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-_Figure 3. A [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)_
+_Figure 4. A [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)_
 
 The [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) represents the full summary of the estimation including costs and benefits, of all of the AEOB data contained within an AEOB Bundle.
 
@@ -109,9 +109,9 @@ The [AEOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) represents
 
 The workflow diagram below describes the process of receiving a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) from the submitting provider and returning the completed AEOB asynchronously (or acknowledgement that the process was completed if the AEOB will not be returned to the provider), as well as the process for a patient app to query for and retrieve their completed AEOB.
 
-![Payer Perspective](PCTWorkflowPayer.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
+![Figure 5: Payer Perspective](PCTWorkflowPayer.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
 
-**Figure 4: Payer Perspective: End-to-End Workflow**
+_Figure 5: Payer Perspective: End-to-End Workflow_
 
 1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Note: Asynchronous Interaction Request Pattern page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
   * If the payer’s FHIR-aware endpoint cannot handle the request (i.e. back-end system is down, etc.) an HTTP status code of 4XX or 5XX may be returned, or the GFE Submitter may receive no response at all if the web server is down or data were submitted to the wrong URL.
@@ -150,9 +150,9 @@ The individual steps from the provider and patient perspective are detailed in t
 
 A patient schedules a service and this triggers the composition of a collection of one or more GFEs, which the provider then submits to the payer for processing.
 
-![Provider Perspective](PCTWorkflowProvider.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 6: Provider Perspective](PCTWorkflowProvider.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-**Figure 5: Provider Perspective**
+_Figure 6: Provider Perspective_
 
 1. The provider uses the gfe-submit operation to submit the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the payer endpoint. This is a POST request that follows the [Asynchronous Interaction Request Pattern](https://hl7.org/fhir/R5/async-bundle.html). Note: The Asynchronous Interaction Request Pattern page is part of the FHIR R5 current build, but uses no R5 resources, this guide is simply pre-adopting that HTTP request pattern. 
   * If successful, this request will return an HTTP status code of `202 Accepted` with a Content-Location header containing the absolute URL of an endpoint for subsequent status requests (polling location). 
@@ -167,12 +167,13 @@ A patient schedules a service and this triggers the composition of a collection 
 
 The patient has scheduled the service(s) with the provider(s). The payer may return the completed AEOB to the patient in many ways such as via mail, the payer patient portal, mobile app, or other technology to connect to the AEOB API. The only method in scope for this guide is the FHIR-based API approach inspired by the Patient Access API defined in the [CARIN Consumer Directed Payer Data Exchange](https://hl7.org/fhir/us/carin-bb/Use_Case.html#use-case---consumer-access-to-their-claims-data) guide (CARIN IG for Blue Button). If the payer does implement both this API and the Patient Access API defined in the CARIN IG, it is up to the payer to determine if those APIs use the same or different endpoints. 
 
-![Patient Perspective](PCTWorkflowPatient.png){:style="float: none;width: 600px;display: block;margin: auto;"}
+![Figure 7: Patient Perspective](PCTWorkflowPatient.png){:style="float: none;width: 600px;display: block;margin: auto;"}
 
-**Figure 6: Patient Perspective**
 
-1. A third party app used by the patient authorizes/authenticates and receives an access token. The app requests the AEOB by using the access token using a GET request for ExplanationOfBenefit resources in the patient's compartment. For example, GET [base]/ExplanationOfBenefit?patient=[patient-id]. Payer systems need to implement appropriate access controls to ensure that AEOBs are only accessible by the authenticated patient. 
-  * If successful, the system will return 200 OK, and the body will contain a [Bundle resource of type searchset]({{site.data.fhir.path}}codesystem-bundle-type.html#bundle-type-searchset), containing zero or more ExplanationOfBenefit resources. Once the desired AEOB is found, the third-party app may use the same API to query for other resources referenced by the AEOB, such as Patient, Practitioner, Organization, and Coverage resources if those referenced resources are not contained in the AEOB itself. New AEOBs (either for new services or new updates to an existing AEOB) would have a different identifier and a created date later than previous AEOBs. 
+_Figure 7: Patient Perspective_
+
+1. A third party app used by the patient authorizes/authenticates and receives an access token. The app requests the AEOB by using the access token using a GET request for ExplanationOfBenefit resources in the patient's compartment. For example, `GET [base]/ExplanationOfBenefit?patient=[patient-id]`. Payer systems need to implement appropriate access controls to ensure that AEOBs are only accessible by the authenticated patient. 
+  * If successful, the system will return `200 OK`, and the body will contain a [Bundle resource of type searchset]({{site.data.fhir.path}}codesystem-bundle-type.html#bundle-type-searchset), containing zero or more ExplanationOfBenefit resources. Once the desired AEOB is found, the third-party app may use the same API to query for other resources referenced by the AEOB, such as Patient, Practitioner, Organization, and Coverage resources if those referenced resources are not contained in the AEOB itself. New AEOBs (either for new services or new updates to an existing AEOB) would have a different identifier and a created date later than previous AEOBs. 
   
 Note: If GFE processing fails, the payer may use existing business processes to notify the patient, but this is out of scope for this guide. 
 
@@ -183,7 +184,9 @@ Note: If GFE processing fails, the payer may use existing business processes to 
 
 The diagram below  shows examples of how a patient may provide or withhold consent for No Surprises Act protections using the balanceBilling extension on the GFE and how that could change the resulting AEOB from the payer.  
 
-![Balance Billing](GFEbalanceBilling.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
+![Figure 8: Balance Billing Example](GFEbalanceBilling.png){:style="float: none;width: 1000px;display: block;margin: auto;"}
+
+_Figure 8: Balance Billing Example_
 
 **MRI Scenario**
 
