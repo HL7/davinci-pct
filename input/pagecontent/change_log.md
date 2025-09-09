@@ -21,7 +21,7 @@ This is a log of the significant changes that have happened to this specificatio
   
 
 * Added slices to the [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) and [AEOB Composition](StructureDefinition-davinci-pct-aeob-composition.html) profiles to provide full referenceability to all expected bundle resources from the Composition resource.
-  * [FHIR-51740](https://jira.hl7.org/browse/FHIR-51740) – Add GFE Missing Bundle entries to Composition profiles ⚠️ **(Non-compatible change)
+  * [FHIR-51740](https://jira.hl7.org/browse/FHIR-51740) – Add GFE Missing Bundle entries to Composition profiles ⚠️ **(Non-compatible change)**
 
 * Provide specific definition and guidance on the what is considered as a request initiation time for the specific estimate type ([GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) and [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html)) and their referencing DocumentReference ([GFE Packet Document Reference](StructureDefinition-davinci-pct-gfe-documentreference.html) and [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html))
   * [FHIR-51554](https://jira.hl7.org/browse/FHIR-51554) – Add request initiation time to GFE and AEOB Composition profiles ⚠️ **(Non-compatible change)**  
@@ -72,7 +72,7 @@ This is a log of the significant changes that have happened to this specificatio
 * Added a means to link associated tasks
   * [FHIR-46352](https://jira.hl7.org/browse/FHIR-46352) – Add a way to link previously related GFE Coordination Request Tasks  
 
-* Updates to [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)s will update associated [Contributor Task]()StructureDefinition-davinci-pct-gfe-contributor-task.html.
+* Updates to [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html)s will update associated [Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html).
   * [FHIR-45823](https://jira.hl7.org/browse/FHIR-45823) – Change the automated status update requirement for the Contributor task ⚠️ **(Non-compatible change)**  
 
 * Updated [Actor based access](gfe_coordination_specification.html#actor-based-access)
