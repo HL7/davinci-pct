@@ -1,7 +1,3 @@
-// TODO JIRA FHIR-45001 - Pre-adopt Coverage.kind into PCT Coverage profile and add declaration
-// TODO  Check to make sure the descriptions are in the differential
-
-
 Profile: PCTCoverage
 Parent: USCoreCoverageProfile|7.0.0
 Id: davinci-pct-coverage
@@ -19,6 +15,8 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 //  * valueCode from http://hl7.org/fhir/ValueSet/coverage-kind
 //  * valueCode ^short = "insurance only"
 
+* type ^short = "Coverage category such as medical or accident. A coverage.type of `81` (Self-pay) MAY be used to imply that the patient has no coverage or that an individual or organization other than an insurer is taking responsibility for payment for a portion of the health care costs."
+
 * subscriber
 * subscriber ^short = "Required if subscriber is a person that is not the beneficiary. When date of birth or gender are not known, omit Patient.birthDate and set Patient.gender to unknown."
 * subscriber.display ^short = "Provide the name of the subscriber in Coverage.subscriber.display concatenating the subscriber's prefix, given name, family name and suffix (in this order), each separated by a single space. If discrete name parts are required, a Patient resource SHALL be pointed to in Coverage.subscriber.reference."
@@ -35,7 +33,7 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 
 
 * payor only Reference (PCTOrganization or USCorePatientProfile|7.0.0 or USCoreRelatedPersonProfile|7.0.0)
-* payor ^short = "For Self-pay or uninsured this should be a reference to a patient or related person resource"
+* payor ^short = "Issuer of the policy. For Self-pay or uninsured this should be a reference to a patient or related person resource"
 
 * class 0..*
 * class.name 1..1
@@ -46,6 +44,20 @@ Description: "PCT Coverage is a profile for capturing data that reflect a payer'
 
 * costToBeneficiary
 * costToBeneficiary.type from http://terminology.hl7.org/ValueSet/coverage-copay-type (required)
+
+
+Invariant: pct-coverage-1
+Description: "Coverage: class element SHALL be present if coverage-0kind is insurance"
+Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and valueCode = 'insurance').exists() implies class.exists()"
+Severity: #error
+
+
+
+Invariant: pct-coverage-1
+Description: "Coverage: period element SHALL be present if coverage-0kind is insurance"
+Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and valueCode = 'insurance').exists() implies period.exists()"
+Severity: #error
+
 /*
 
 
