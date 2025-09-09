@@ -250,6 +250,7 @@ groups:
     - CapabilityStatement/davinci-pct-coordination-platform
     - CapabilityStatement/davinci-pct-coordination-requester
     - CapabilityStatement/davinci-pct-gfe-contributor
+    - CapabilityStatement/davinci-pct-gfe-provider
 
 
   Operations:

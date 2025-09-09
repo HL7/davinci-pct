@@ -50,6 +50,7 @@ In order to conform to this implementation guide, in addition to adhering to any
 * [PCT Coordination Platform](CapabilityStatement-davinci-pct-coordination-platform.html) - Coordination Platform Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
 * [PCT Coordination Requester](CapabilityStatement-davinci-pct-coordination-requester.html) - Coordination Requester Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
 * [PCT GFE Contributor](CapabilityStatement-davinci-pct-gfe-contributor.html) - GFE Contributor Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
+* [PCT GFE Provider](CapabilityStatement-davinci-pct-gfe-provider.html) - GFE Provider Capability Statement for the Da Vinci Patient Cost Transparency Implementation Guide
 * [PCT Payer](CapabilityStatement-davinci-pct.html) - Payer capability statement for the Da Vinci Patient Cost Transparency Implementation Guide
 
 

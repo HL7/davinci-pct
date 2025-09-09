@@ -172,6 +172,7 @@
 <artifact id="CapabilityStatement/davinci-pct-coordination-requester" key="CapabilityStatement-davinci-pct-coordination-requester" name="Patient Cost Transparency Implementation Guide Coordination Requester Capability Statement"/>
 <artifact id="CapabilityStatement/davinci-pct-gfe-contributor" key="CapabilityStatement-davinci-pct-gfe-contributor" name="Patient Cost Transparency Implementation Guide GFE Contributor Capability Statement"/>
 <artifact id="CapabilityStatement/davinci-pct" key="CapabilityStatement-davinci-pct" name="Patient Cost Transparency Implementation Guide Payer Capability Statement"/>
+<artifact id="CapabilityStatement/davinci-pct-gfe-provider" key="CapabilityStatement-davinci-pct-gfe-provider" name="Patient Cost Transparency Implementation Guide Provider Capability Statement"/>
 <artifact id="StructureDefinition/plannedServicePeriod" key="StructureDefinition-plannedServicePeriod" name="Planned Service Period"/>
 <artifact id="StructureDefinition/processNoteClass" key="StructureDefinition-processNoteClass" name="ProcessNote Class"/>
 <artifact id="ValueSet/PCTContributorTaskStatusCodes" key="ValueSet-PCTContributorTaskStatusCodes" name="Provider GFE Contributor Task Status Codes"/>
