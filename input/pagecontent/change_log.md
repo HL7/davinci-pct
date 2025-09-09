@@ -180,7 +180,7 @@ This is a log of the significant changes that have happened to this specificatio
   * [FHIR-45178](https://jira.hl7.org/browse/FHIR-45178) – Diagnosis is required but not always known  
   * [FHIR-46091](https://jira.hl7.org/browse/FHIR-46091) – Add guidance regarding the inclusion of Diagnosis codes in GFEs  
 
-Removed NPI as an identifier type in [PCT Organization](StructureDefinition-davinci-pct-organization.html) and [PCT Practitioner](StructureDefinition-davinci-pct-practitioner.html)
+* Removed NPI as an identifier type in [PCT Organization](StructureDefinition-davinci-pct-organization.html) and [PCT Practitioner](StructureDefinition-davinci-pct-practitioner.html)
   * [FHIR-50457](https://jira.hl7.org/browse/FHIR-50457) – NPI isn't a valid identifier type ⚠️ **(Non-compatible change)**  
 
 * Updated the description for the [Advanced EOB](StructureDefinition-davinci-pct-aeob.html) and [Advanced EOB Summary](StructureDefinition-davinci-pct-aeob-summary.html) profiles `ExplanationOfBenefit.total:negotiated`
