@@ -1,9 +1,9 @@
 {
     "package-id": "hl7.fhir.us.davinci-pct",
-    "version": "2.0.0-ballot",
-    "path": "http://hl7.org/fhir/us/davinci-pct/2024May",
+    "version": "2.0.0",
+    "path": "http://hl7.org/fhir/us/davinci-pct/STU2",
     "mode": "working",
-    "status": "ballot",
+    "status": "trial-use",
     "sequence": "STU 2",
-    "desc": "Da Vinci Patient Cost Transparency Implementation Guide Edition 2, 2.0.0 Ballot - US Realm STU"
+    "desc": "Da Vinci Patient Cost Transparency Implementation Guide Edition 2, 2.0.0 - US Realm STU"
 }

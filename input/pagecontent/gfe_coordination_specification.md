@@ -176,7 +176,7 @@ For notifications to authors (GFE Contributors) the GFE Packet subscription **SH
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?author=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the GFE Contributor.
 * Updates to the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** result in an update to the [GFE Packet DocumentReference](StructureDefinition-davinci-pct-gfe-documentreference.html) in order to trigger a notification. 
 
-To support the access and ability to provide notifications appropriately, a GFE Packet DocumentReference and PCT GFE Composition **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the GFE Packet DocumentReference `documentReferece.status` and PCT GFE Composition `Composition.status` **SHALL** be set to `entered-in-error`.
+To support the access and ability to provide notifications appropriately, a GFE Packet DocumentReference and PCT GFE Composition **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the GFE Packet DocumentReference `documentReference.status` and PCT GFE Composition `Composition.status` **SHALL** be set to `entered-in-error`.
 
 #### Searching for and Retrieving Tasks
 Both GFE Coordination Requesters and GFE Contributors need to be able to search for Tasks related to their role in the GFE Coordination workflow. Searching requirements are detailed in the CapabilityStatements in this guide and **SHALL** be followed for a system to claim conformance to this guide.
@@ -186,7 +186,7 @@ Both GFE Coordination Requesters and GFE Contributors need to be able to search 
 
 GFE Contributors **SHOULD NOT** reject a Task because there is insufficient information to provide a GFE. Instead, the GFE Contributor **SHOULD** request the necessary information from the GFE Requester (the means of this communication is not defined by this specification). GFE Contributors **MAY** reject a Task if they are still unable to receive the necessary information after attempting to do so.
 
-When submitting a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html), GFE Contributors **SHALL** update the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)  with the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) contained in `Task.output.valueAttachement` and **SHALL** set that `Task.status` to `completed` when the Task is considered complete.
+When submitting a [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html), GFE Contributors **SHALL** update the [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html)  with the [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) contained in `Task.output.valueAttachment` and **SHALL** set that `Task.status` to `completed` when the Task is considered complete.
 The GFE Contributor **MAY** include other types of data in output.valueAttachment, but such data **SHALL** be in a FHIR Resource format and fully contained with no external references that can’t be resolved internally.
 
 

@@ -220,7 +220,7 @@ This is a log of the significant changes that have happened to this specificatio
 * Added guidance on addressing submissions that relate to a previous submission.
   * [FHIR-51746](https://jira.hl7.org/browse/FHIR-51746) – Add Guidance to the AEOB request for a relatesTo document that has already been processed.  
 
-* Added requirements and guidance for collation of of multiple GFE Bundles
+* Added requirements and guidance for collation of multiple GFE Bundles
   * [FHIR-51078](https://jira.hl7.org/browse/FHIR-51078) – Add more narrative guidance on the two means to collate GFE Bundles ⚠️ **(Non-compatible change)**  
 
 
