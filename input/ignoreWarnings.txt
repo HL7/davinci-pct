@@ -95,7 +95,7 @@ WARNING: StructureDefinition/davinci-pct-organization: StructureDefinition.snaps
 WARNING: StructureDefinition/davinci-pct-aeob-documentreference: StructureDefinition.snapshot: The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 WARNING: StructureDefinition/davinci-pct-gfe-documentreference: StructureDefinition.snapshot: The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
-# 09. === Information Message regarding a deprecated extensions, that was inherited through the FHIR R4 standard itself and other IGs. ===
+# 09. === Information Message regarding deprecated extensions, that were inherited through the FHIR R4 standard itself and other IGs. ===
 INFORMATION: StructureDefinition/davinci-pct-aeob-adjudication-error: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
 The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
 INFORMATION: StructureDefinition/davinci-pct-aeob-documentreference: StructureDefinition.snapshot.element[17].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated
@@ -121,7 +121,7 @@ INFORMATION: CodeSystem/PCTDocumentSection: CodeSystem: Most code systems define
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.2.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 
-# 14. === Informational message about an example.org URL intended to be an example of an external provider, which should not generate any messages ===
+# 14. === Informational message about an example.org URL intended to be an example of an external provider. Informational warning considered and current design is intentional. ===
 INFORMATION: Bundle/PCT-AEOB-Packet-1: Bundle: Can't find 'http://example.org/out-of-network.html' in the bundle (Bundle.entry[1].resource.extension[1].value[x])
 INFORMATION: Bundle/PCT-AEOB-Packet-1: Bundle: Can't find 'http://example.org/out-of-network.html' in the bundle (Bundle.entry[2].resource.extension[2].value[x])
 
