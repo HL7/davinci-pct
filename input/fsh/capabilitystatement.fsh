@@ -248,7 +248,7 @@ Usage: #definition
 
 
 
-* rest.resource[0].type = #DocumentReference
+* rest.resource[+].type = #DocumentReference
 * rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHOULD
 * rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-aeob-documentreference"
