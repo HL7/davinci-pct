@@ -22,64 +22,51 @@ This IG also draws on content from the [Da Vinci Health Record Exchange (HRex)](
 
 Implementers should also familiarize themselves with the FHIR resources used within the guide:
 
-<table vlass="grid">
-  <thead>
-    <tr>
-      <th>Resource</th>
-      <th>Relevance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td><td>Used when delivering collections of resources in several API calls</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}capabilitystatement.html">CapabilityStatement</a></td><td>Used to define conformance expectations for this guide</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}claim.html">Claim</a></td><td>The resource type used by a providers to provide a Good Faith Estimate of services or products</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}codesystem.html">CodeSystem</a></td><td>Used to define custom codes specific to this guide</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}composition.html">Composition</a></td><td>Used in document bundles to provide a single coherent statement of meaning of what is in the document and the relationship of top-level resources in the bundle</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}coverage.html">Coverage</a></td><td>Used to identify the member and the relevant insurance coverage to a payer</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}devicerequest.html">DeviceRequest</a></td><td>One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}documentreference.html">DocumentReference</a></td><td>A reference to estimate documents that provides metadata about the document so that the document can be discovered, managed, and notifications can be subscribed to</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}explanationofbenefit.html">ExplanationOfBenefit</a></td><td>The resource type used by a payer to provide the Advanced Explanation Of Benefit for insured members</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}location.html">Location</a></td><td>Supporting information used to identify a proposed location for services or products to be performed or delivered</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}organization.html">Organization</a></td><td>Used when identifying organizational providers or facilities in GFE Coordination Tasks and involved in the services or products listed in the GFEs, and payers for which an AEOB is being requested</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}medication.html">Medication</a></td><td>Supporting information for medication requests</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a></td><td>One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}nutritionorder.html">NutritionOrder</a></td><td>One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}operationdefinition.html">OperationDefinition</a></td><td>Defines the parameters and requirements for an operation. THis guide defined a few use case specific operations</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}operationoutcome.html">OperationOutcome</a></td><td>Provides sets of error, warning and information messages that provide detailed information about the outcome of an attempted system operation.</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}patient.html">Patient</a></td><td>Demographic information relevant to all requests</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}practitioner.html">Practitioner</a></td><td>Used when identifying individual practitioner providers or facilities in GFE Coordination Tasks and involved in the services or products listed in the GFEs</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}practitionerrole.html">PractitionerRole</a></td><td>Used when identifying practitioner provider roles in GFE Coordination Tasks</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}searchparameter.html">SearchParameter</a></td><td>Defines the a searchable element defined by this IG used for searching and subscriptions</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a></td><td>One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}structuredefinition.html">StructureDefinition</a></td><td>Used when profiling resources and defining extensions</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}subscription.html">Subscription</a></td><td>A resource used to define a push-based subscription from a server to another system.</td></tr>
-    <tr><td><a href="https://hl7.org/fhir/R5/subscriptiontopic.html">SubscriptionTopic</a></td><td>A resource used define a set of events that a client can subscribe to. This resource is defined in FHIR 4B and later versions. Be aware that this resource is not supported by FHIR R4 systems. Subscription Topics in R4 can be defined using a Basic profile resource with extensions.</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}task.html">Task</a></td><td>Used to manage dispatching to GFE contributing providers</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}valueset.html">ValueSet</a></td><td>Used to define collections of codes used by PCT profiles</td></tr>
-    <tr><td><a href="{{site.data.fhir.path}}visionprescription.html">VisionPrescription</a></td><td>One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed</td></tr>
-  </tbody>
-</table>
+
+| Resource | Relevance |
+|---|---|---|
+| [Bundle]({{site.data.fhir.path}}bundle.html) | Used when delivering collections of resources in several API calls |
+| [CapabilityStatement]({{site.data.fhir.path}}capabilitystatement.html) | Used to define conformance expectations for this guide |
+| [Claim]({{site.data.fhir.path}}claim.html) | The resource type used by a providers to provide a Good Faith Estimate of services or products |
+| [CodeSystem]({{site.data.fhir.path}}codesystem.html) | Used to define custom codes specific to this guide |
+| [Composition]({{site.data.fhir.path}}composition.html)[Composition] | Used in document bundles to provide a single coherent statement of meaning of what is in the document and the relationship of top-level resources in the bundle |
+| [Coverage]({{site.data.fhir.path}}coverage.html) | Used to identify the member and the relevant insurance coverage to a payer |
+| [DeviceRequest]({{site.data.fhir.path}}devicerequest.html) | One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed |
+| [DocumentReference]({{site.data.fhir.path}}documentreference.html) | A reference to estimate documents that provides metadata about the document so that the document can be discovered, managed, and notifications can be subscribed to |
+| [ExplanationOfBenefit]({{site.data.fhir.path}}explanationofbenefit.html) | The resource type used by a payer to provide the Advanced Explanation Of Benefit for insured members |
+| [Location]({{site.data.fhir.path}}location.html) | Supporting information used to identify a proposed location for services or products to be performed or delivered |
+| [Organization]({{site.data.fhir.path}}organization.html) | Used when identifying organizational providers or facilities in GFE Coordination Tasks and involved in the services or products listed in the GFEs, and payers for which an AEOB is being requested |
+| [Medication]({{site.data.fhir.path}}medication.html) | Supporting information for medication requests |
+| [MedicationRequest]({{site.data.fhir.path}}medicationrequest.html) | One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed |
+| [NutritionOrder]({{site.data.fhir.path}}nutritionorder.html) | One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed |
+| [OperationDefinition]({{site.data.fhir.path}}operationdefinition.html) | Defines the parameters and requirements for an operation. THis guide defined a few use case specific operations |
+| [OperationOutcome]({{site.data.fhir.path}}operationoutcome.html) | Provides sets of error, warning and information messages that provide detailed information about the outcome of an attempted system operation. |
+| [Patient]({{site.data.fhir.path}}patient.html) | Demographic information relevant to all requests |
+| [Practitioner]({{site.data.fhir.path}}practitioner.html) | Used when identifying individual practitioner providers or facilities in GFE Coordination Tasks and involved in the services or products listed in the GFEs |
+| [PractitionerRole]({{site.data.fhir.path}}practitionerrole.html) | Used when identifying practitioner provider roles in GFE Coordination Tasks |
+| [SearchParameter]({{site.data.fhir.path}}searchparameter.html) | Defines the a searchable element defined by this IG used for searching and subscriptions |
+| [ServiceRequest]({{site.data.fhir.path}}servicerequest.html) | One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed |
+| [StructureDefinition]({{site.data.fhir.path}}structuredefinition.html) | Used when profiling resources and defining extensions |
+| [Subscription]({{site.data.fhir.path}}subscription.html) | A resource used to define a push-based subscription from a server to another system. |
+| [SubscriptionTopic](https://hl7.org/fhir/R5/subscriptiontopic.html) | A resource used define a set of events that a client can subscribe to. This resource is defined in FHIR 4B and later versions. Be aware that this resource is not supported by FHIR R4 systems. Subscription Topics in R4 can be defined using a Basic profile resource with extensions. |
+| [Task]({{site.data.fhir.path}}task.html) | Used to manage dispatching to GFE contributing providers |
+| [ValueSet]({{site.data.fhir.path}}valueset.html) | Used to define collections of codes used by PCT profiles |
+| [VisionPrescription]({{site.data.fhir.path}}visionprescription.html) | One of the resources that may be used in a request to contribute a GFE explaining what services or products are needed |
 
 
 ## Relationship to Other Implementation Guides
 
 ### Good Faith Estimate Coordination Relationships
 
-<figure>
 {% include gfe_coordination.svg %}
-</figure>
 
 ### Good Faith Estimate Relationships
 
-<figure>
 {% include gfe.svg %}
-</figure>
 
 ### Advanced Explanation Of Benefit Relationships
 
-<figure>
 {% include aeob.svg %}
-</figure>
 
 ### US Core
 Provider billing and payer claims adjudication systems for those profiles defined by US Core **SHALL** use the specification defined by [US Core]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.

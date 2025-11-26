@@ -16,17 +16,17 @@ The following package file includes an NPM  (Node Package Manager) package file 
 
 #### Cross Version Analysis
 
-{% include cross-version-analysis.xhtml %}
+{% lang-fragment cross-version-analysis.xhtml %}
 
 #### Dependency Table
 
-{% include dependency-table.xhtml %}
+{% lang-fragment dependency-table.xhtml %}
 
 #### Globals Table
 
-{% include globals-table.xhtml %}
+{% lang-fragment globals-table.xhtml %}
 
 #### IP Statements
 
-{% include ip-statements.xhtml %}
+{% lang-fragment ip-statements.xhtml %}
 

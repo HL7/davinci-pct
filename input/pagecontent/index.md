@@ -2,7 +2,7 @@
 <p>
 This specification is a Standard for Trial Use. It is expected to continue to evolve and improve through HL7® FHIR® Connectathon testing and feedback from early adopters. 
 </p>
-<p>This IG has two workflows that can be sequenced together. The first is focused on a payer receiving a good faith estimate (GFE) from a provider and returning an Advanced Explanation of Benefits (AEOB) to a patient. With STU2, this specification includes guidance on how multiple providers can work together to provide one collective GFE for easier patient understanding of their overall estimated cost for a planned service including all related services or items that may be billed by a different provider. See [Change Log](change_log.html) for additional information. The IG STU2 content relating to the GFE Coordination is marked as DRAFT throughout this guide. The Da Vinci PCT open community of providers, payers, health IT including EHRs, revenue cycle experts, billing specialists, cost estimator experts, clearinghouse experts, and others that have provided requirements and vetted design decisions, recognize that the GFE coordination process is new. Testing this content provides the opportunity to gain feedback broadly and enable better insights as the business process evolves to advance a standard for trial use.
+<p>This IG has two workflows that can be sequenced together. The first is focused on a payer receiving a good faith estimate (GFE) from a provider and returning an Advanced Explanation of Benefits (AEOB) to a patient. With STU2, this specification includes guidance on how multiple providers can work together to provide one collective GFE for easier patient understanding of their overall estimated cost for a planned service including all related services or items that may be billed by a different provider. See <a href="change_log.html">Change Log</a> for additional information. The IG STU2 content relating to the GFE Coordination is marked as DRAFT throughout this guide. The Da Vinci PCT open community of providers, payers, health IT including EHRs, revenue cycle experts, billing specialists, cost estimator experts, clearinghouse experts, and others that have provided requirements and vetted design decisions, recognize that the GFE coordination process is new. Testing this content provides the opportunity to gain feedback broadly and enable better insights as the business process evolves to advance a standard for trial use.
 </p>
 <p>
 Feedback is welcome and may be submitted through the <a href="http://hl7.org/fhir-issues">FHIR change tracker</a> indicating "US Da Vinci Patient Cost Transparency (PCT)(FHIR)" as the specification.
@@ -122,11 +122,11 @@ This guide is based on the [FHIR R4]({{site.data.fhir.path}}) specification that
 
 In addition, this guide also relies on several ancestor implementation guides:
 
-{% include dependency-table-nontech.xhtml %}
+{% lang-fragment dependency-table-nontech.xhtml %}
 
 This implementation guide defines additional constraints and usage expectations above and beyond the information found in these base specifications.
 
 ### Intellectual Property Considerations
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license]({{site.data.fhir.path}}license.html#license). The license page also describes rules for the use of the FHIR name and logo.
 
-{% include ip-statements.xhtml %}
+{% lang-fragment ip-statements.xhtml %}
