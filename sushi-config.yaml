@@ -54,7 +54,7 @@ parameters:
   # excludettl: true
   # excludemap: true
   # tabbed-snapshots: false
-  path-liquid: liquid
+  #path-liquid: liquid
   #propagate-status: true
   auto-oid-root: 2.16.840.1.113883.4.642.40.4 
   version-comparison-master: 1.1.0

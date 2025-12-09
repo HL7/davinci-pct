@@ -142,7 +142,7 @@ Usage: #definition
 
 Instance: packet-condition
 InstanceOf: SearchParameter
-Title: "Packet Procedure or Service"
+Title: "Packet Condition"
 Description: "Significant condition involved in an estimate."
 Usage: #definition
 * extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
