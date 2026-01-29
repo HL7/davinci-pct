@@ -6,6 +6,11 @@ This is a log of the significant changes that have happened to this specificatio
 > NOTE: This categorization is with respect to the standard, not any particular implementation. Changes that are non-breaking from a standards perspective might still break existing implementations. Non-substantive changes might still result in a need to add or change software code.
  This change list is not exhaustive. Changes to formatting and layout, as well as corrections to spelling, grammar, hyperlinks, etc. are not called out here. Changes mentioned for older versions may no longer be relevant due to changes in subsequent versions. 
 
+### Changes in Version 2.0.1
+* Corrected the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) code, output parameters, and description [FHIR-53657](https://jira.hl7.org/browse/FHIR-53657) ⚠️ **(Non-compatible change)** 
+* Corrected the [Payer CapabilityStatement](CapabilityStatement-davinci-pct.html) to re-add the Bundle rest resource requirements [FHIR-53541](https://jira.hl7.org/browse/FHIR-53541)
+* Added the CPT IP statement to the [index page](index.html#intellectual-property-considerations) [FHIR-53596](https://jira.hl7.org/browse/FHIR-53596)
+
 ### Changes in Version 2.0.0
 
 #### Changes to GFE and AEOB Estimate Bundles
