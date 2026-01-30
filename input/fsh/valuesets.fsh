@@ -226,8 +226,8 @@ Statement of Understanding between AHA and HL7 can be found [here](http://www.hl
 The UB-04 Manual has a 12-month subscription period from June 30 through July 1.
 
 For frequently asked questions, see here [here](https://www.nubc.org/nubc-faqs)"
-* codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNonnewborn
-* codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPointOfOriginNewborn 
+* codes from system https://www.nubc.org/CodeSystem/PointOfOrigin
+* codes from system https://www.nubc.org/CodeSystem/PointOfOriginNewborn
 * ^experimental = false
 
 
