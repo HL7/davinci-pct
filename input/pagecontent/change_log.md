@@ -10,6 +10,7 @@ This is a log of the significant changes that have happened to this specificatio
 * Corrected the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) code, output parameters, and description [FHIR-53657](https://jira.hl7.org/browse/FHIR-53657) ⚠️ **(Non-compatible change)** 
 * Corrected the [Payer CapabilityStatement](CapabilityStatement-davinci-pct.html) to re-add the Bundle rest resource requirements [FHIR-53541](https://jira.hl7.org/browse/FHIR-53541)
 * Added the CPT IP statement to the [index page](index.html#intellectual-property-considerations) [FHIR-53596](https://jira.hl7.org/browse/FHIR-53596)
+* Changed the CodeSystem URL in the [NUBC Point of Origin ValueSet](ValueSet-AHANUBCPointOfOriginVS.html) to match the official URLs in THO [FHIR-55528](https://jira.hl7.org/browse/FHIR-55528) ⚠️ **(Non-compatible change)** 
 
 ### Changes in Version 2.0.0
 
