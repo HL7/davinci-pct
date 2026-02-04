@@ -255,7 +255,7 @@ This Code system is referenced in the content logical definition of the followin
 This CodeSystem is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
 
 This code system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit defines many codes, but they are not represented here"
-* codes from system http://terminology.hl7.org/CodeSystem/AHANUBCPriorityTypeOfAdmitOrVisit 
+* codes from system https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit
 * ^experimental = false
 
 ValueSet: PCTPayerProviderNetworkStatusVS
