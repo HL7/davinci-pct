@@ -11,7 +11,7 @@ Usage: #definition
 * kind = #operation
 * description = "This operation is used by an entity to submit one or multiple GFEs as a Bundle containing the GFE(s) and other referenced resources for processing. The only input parameter is the single Bundle resource with one or multiple GFE(s) - each of which is based on the Claim resource (along with other referenced resources). The output is a url in the Content-Location header for subsequent polling and optionally an OperationOutcome resource per [async pattern](https://hl7.org/fhir/R5/async-bundle.html). If after polling the response is complete, then the result will either be a single Bundle with the AEOB - which is based on the ExplanationOfBenefit resource, (and other referenced resources) or an OperationOutcome resource indicating the AEOB will be sent directly to the patient."
 * code = #gfe-submit
-* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-submit"
+//* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-submit"
 * resource = #Claim
 * system = false
 * type = true
@@ -78,7 +78,7 @@ Usage: #definition
 * kind = #operation
 * description = "This operation is used by an entity to retrieve a GFE Packet containing the GFE Bundle(s) and other referenced resources based on a GFE Coordination Task. There are no input parameters and the only output is a GFE Packet."
 * code = #gfe-retrieve
-* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
+//* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-retrieve"
 * resource = #Task
 * system = false
 * type = false
@@ -115,7 +115,7 @@ Usage: #definition
 * kind = #operation
 * description = "This operation is used by an entity to start the GFE Coordination Workflow to request GFE Bundles from GFE Contributors. The input is a GFE Coordination Bundle containing a Coordination Task and one or more Contributor Tasks. The output may be a transaction-bundle providing information about the success of the operation or an OperationOutcome detailing any issues with the operation."
 * code = #gfe-coordination-request
-* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-coordination-request"
+//* base = "http://hl7.org/fhir/us/davinci-pct/OperationDefinition/GFE-coordination-request"
 //* resource = #Claim
 * system = true
 * type = false

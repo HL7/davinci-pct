@@ -49,7 +49,11 @@ dependencies:
     id: uscore3
     reason: |
       Needed for systems supporting USCDI v1
-  hl7.fhir.extensions.r5: 5.2.0
+  hl7.fhir.extensions.r5:
+    id: extr5
+    version: 4.0.1
+    reason: |
+      Makes available certain R5 elements for use as part of this R4 IG
   hl7.fhir.us.davinci-hrex: 
     version: 1.1.0
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
@@ -62,6 +66,14 @@ dependencies:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
     id: subs
+  hl7.fhir.uv.tools.r4:
+#  hl7.fhir.uv.tools:
+    id: tools
+    uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
+#    version: current
+    version: current
+    reason: |
+      For SNOMED US expansion parameter
 
 copyrightYear: 2025+
 releaseLabel: STU 2
@@ -76,6 +88,7 @@ parameters:
   apply-version: true
   show-inherited-invariants: false
   pin-canonicals: pin-multiples
+  globals-in-artifacts: true
   # usage-stats-opt-out: true
   # excludexml: false
   # excludejson: false
