@@ -199,7 +199,7 @@ This is a log of the significant changes that have happened to this specificatio
 #### Updates to Request and Submission Workflow and Operations 
 
 * Create a [gfe-coordination-request operation](/OperationDefinition-GFE-coordination-request.html)
-  * [FHIR-45737](https://jira.hl7.org/browse/FHIR-45737) – May support individual resource posting seems incongruent with SHOULD statement for Requestor ⚠️ **(Non-compatible change)**  
+  * [FHIR-45737](https://jira.hl7.org/browse/FHIR-45737) – May support individual resource posting seems incongruent with should statement for Requestor. ⚠️ **(Non-compatible change)**  
 
 * Updates to the GFE Submission workflow to allow for early error response in the [Full GFE Coordination: End-to-End Workflow](gfe_coordination_overview.html#full-gfe-coordination-end-to-end-workflow) and [AEOB Response](gfe_submission_and_aeob_specification.html#aeob-response)
   * [FHIR-49778](https://jira.hl7.org/browse/FHIR-49778) – Update gfe-submit operation workflow to support providing error status as early in the process as possible ⚠️ **(Non-compatible change)**  

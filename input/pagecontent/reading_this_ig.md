@@ -69,11 +69,11 @@ Implementers should also familiarize themselves with the FHIR resources used wit
 {% include aeob.svg %}
 
 ### US Core
-Provider billing and payer claims adjudication systems for those profiles defined by US Core **SHALL** use the specification defined by [US Core]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
+<span class="fhir-conformance">Provider billing and payer claims adjudication systems for those profiles defined by US Core **SHALL** use the specification defined by [US Core]({{site.data.fhir.ver.hl7_fhir_us_core}}/index.html) in exchanging information with payers</span>. Implementers must be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.
 
-Da Vinci PCT implementations **SHALL** conform to the US Core IG [General Guidance]({{site.data.fhir.ver.uscore}}/general-guidance.html) requirements where US Core IG resources are used.
+<span class="fhir-conformance">Da Vinci PCT implementations **SHALL** conform to the US Core IG [General Guidance]({{site.data.fhir.ver.uscore}}/general-guidance.html) requirements where US Core IG resources are used</span>.
 
 
 ### Da Vinci HRex
-Provider billing and payer systems **SHALL** use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG]({{site.data.fhir.ver.hl7_fhir_us_davinci_hrex}}/index.html) when exchanging information, as defined by [the Privacy and Security section of this IG](security.html). Implementers should be familiar with this specification.
+<span class="fhir-conformance">Provider billing and payer systems **SHALL** use the specification defined by the Da Vinci HRex IG [Da Vinci HRex IG]({{site.data.fhir.ver.hl7_fhir_us_davinci_hrex}}/index.html) when exchanging information, as defined by [the Privacy and Security section of this IG](security.html)</span>. Implementers must be familiar with this specification.
 

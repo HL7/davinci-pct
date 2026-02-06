@@ -1,5 +1,9 @@
 == Suppressed Messages == 
 
+# The change log lists historical conformance verb changes, and need not necessarily apply to the current version of the IG. 
+INFORMATION: change_log.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'Create a gfe-coordination-request operation FHIR-45737 – May support individual resource posting seems incongruent with SHOULD statement for Requestor ⚠️ (Non-compatible change) '
+INFORMATION: change_log.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' change SHOULD to SHALL  '
+
 # 01. === Warning: Code Systems and Value Sets that are referenced in the guide or examples but are not expanded and validatable because they are part of proprietary code systems that require special license or are otherwise not included in tx.fhir.org. ===
 
 A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the code cannot be validated
