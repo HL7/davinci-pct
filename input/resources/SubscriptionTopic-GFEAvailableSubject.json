@@ -2,7 +2,7 @@
   "resourceType": "SubscriptionTopic",
   "id": "davinci-pct-gfe-available-subject-notification",
   "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-available-subject-notification",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "status": "active",
   "name": "PCTGFEAvailableSubjectSubscriptionTopic",
   "title": "SubscriptionTopic - GFE Available for Subject Notification",

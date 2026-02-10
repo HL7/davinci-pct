@@ -15,8 +15,8 @@ A definition for CodeSystem 'http://www.ama-assn.org/go/cpt' could not be found,
 
 Unable to check whether the code is in the value set '' because the code system https://x12.org/codes/service-type-codes was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/USClaimMedicalProductOrServiceCodes|2.0.0' because the code system http://www.ama-assn.org/go/cpt was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemCptHcpcsVS|2.0.0' because the code system http://www.ama-assn.org/go/cpt was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/USClaimMedicalProductOrServiceCodes|2.0.1' because the code system http://www.ama-assn.org/go/cpt was not found
+Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemCptHcpcsVS|2.0.1' because the code system http://www.ama-assn.org/go/cpt was not found
 Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/TypeOfBill was not found
 Unable to check whether the code is in the value set '' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
 

@@ -54,7 +54,7 @@ In order to conform to this implementation guide, in addition to adhering to any
 * [PCT Payer](CapabilityStatement-davinci-pct.html) - Payer capability statement for the Da Vinci Patient Cost Transparency Implementation Guide
 
 
-Additionally, any servers claiming conformance to this guide **SHALL** include provide CapabilityStatement at `/metadata` that has a `CapabilityStatement.instantiates` with one or more Canonical values of the associated CapabilityStatement canonical, according to the role or roles it is supporting along with the version (e.g. `http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct-coordination-platform|2.0.0`). 
+Additionally, any servers claiming conformance to this guide **SHALL** include provide CapabilityStatement at `/metadata` that has a `CapabilityStatement.instantiates` with one or more Canonical values of the associated CapabilityStatement canonical, according to the role or roles it is supporting along with the version (e.g. `http://hl7.org/fhir/us/davinci-pct/CapabilityStatement/davinci-pct-coordination-platform|2.0.1`). 
 
 
 

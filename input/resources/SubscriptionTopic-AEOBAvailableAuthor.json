@@ -2,7 +2,7 @@
   "resourceType": "SubscriptionTopic",
   "id": "davinci-pct-aeob-available-author-notification",
   "url": "http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-aeob-available-author-notification",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "status": "active",
   "name": "PCTAEOBAvailableAuthorSubscriptionTopic",
   "title": "SubscriptionTopic - AEOB Available for Author Notification",
