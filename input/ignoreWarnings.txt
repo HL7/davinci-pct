@@ -30,6 +30,8 @@ Unable to check whether the code is in the value set '' because the code system 
 
 # 02. === CodeSystems that are draft in THO, will need to be changed in future versions of THO ===
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|1.0.0
+
 
 
 
