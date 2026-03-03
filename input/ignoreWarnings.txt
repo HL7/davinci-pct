@@ -1,7 +1,7 @@
 == Suppressed Messages == 
 
 # The change log lists historical conformance verb changes, and need not necessarily apply to the current version of the IG. 
-INFORMATION: change_log.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'Create a gfe-coordination-request operation FHIR-45737 – May support individual resource posting seems incongruent with SHOULD statement for Requestor ⚠️ (Non-compatible change) '
+
 INFORMATION: change_log.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' change SHOULD to SHALL  '
 
 # 01. === Warning: Code Systems and Value Sets that are referenced in the guide or examples but are not expanded and validatable because they are part of proprietary code systems that require special license or are otherwise not included in tx.fhir.org. ===
@@ -9,19 +9,20 @@ INFORMATION: change_log.html: The html source contains the word 'SHALL' but it i
 A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ama-assn.org/go/cpt' could not be found, so the code cannot be validated
+WARNING: MedicationRequest/PCT-MedicationRequest-1: MedicationRequest.medication.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://www.nlm.nih.gov/research/umls/rxnorm' version '05062024' could not be found, so the code cannot be validated. Valid versions: 02032025
 
 
-Unable to check whether the code is in the value set '' because the code system https://x12.org/codes/service-type-codes was not found
-Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/RevenueCodes was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/USClaimMedicalProductOrServiceCodes|2.0.1' because the code system http://www.ama-assn.org/go/cpt was not found
-Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pct/ValueSet/PCTGFEItemCptHcpcsVS|2.0.1' because the code system http://www.ama-assn.org/go/cpt was not found
-Unable to check whether the code is in the value set '' because the code system https://www.nubc.org/CodeSystem/TypeOfBill was not found
-Unable to check whether the code is in the value set '' because the code system http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets was not found
+Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded
 
-
-
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PointOfOrigin' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/PriorityTypeOfAdmitOrVisit' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://x12.org/codes/claim-adjustment-reason-codes' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: The code System "http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated directly
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded
+Error from https://tx.fhir.org/r4: Error: The code system definition for http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets has no content property, so this expansion cannot be performed
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software' could not be found, so the value set cannot be expanded
 
 
 
@@ -30,7 +31,6 @@ Unable to check whether the code is in the value set '' because the code system 
 
 # 02. === CodeSystems that are draft in THO, will need to be changed in future versions of THO ===
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|1.0.0
 
 
 
@@ -172,27 +172,25 @@ INFORMATION: StructureDefinition.snapshot.element[26].type[0].targetProfile[0]: 
 INFORMATION: StructureDefinition.snapshot.element[49].constraint[1].source: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 INFORMATION: StructureDefinition.snapshot.element[65].type[0].targetProfile[0]: Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)
 
-
-
-
-INFORMATION: StructureDefinition.snapshot.element[122].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[67].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[109].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[76].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.differential.element[20].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[60].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes to 2.1.0 from choices of 1.0.0 (hl7.terminology.r4#5.0.0), 2.0.0 (hl7.terminology.r4#5.5.0), 2.1.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[66].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[279].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[204].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[217].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[80].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[16].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#7.0.1)
-
 INFORMATION: StructureDefinition.snapshot.element[24].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
 INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.2.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0)
+
+
+INFORMATION: StructureDefinition.snapshot.element[122].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[67].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[60].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes to 2.1.0 from choices of 1.0.0 (hl7.terminology.r4#5.0.0), 2.0.0 (hl7.terminology.r4#5.5.0), 2.1.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[66].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[109].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[76].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.differential.element[20].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[279].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[204].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[217].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[80].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[16].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
+INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 
 
 
@@ -224,12 +222,8 @@ No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureD
 INFORMATION: StructureDefinition-davinci-pct-aeob-packet.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' PCT AEOB Packet that contains necessary resources for one or more an AEOBs.  Organizations for both the payer and provider SHALL be included.   An AEOB Summary SHALL be included and reflect the total estimate for the patient, including all AEOB resources within the Bundle. This version of the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications.  '
 INFORMATION: StructureDefinition-davinci-pct-gfe-bundle.html: The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' PCT GFE Bundle that contains all resources for a Good faith estimate submitted by a single GFE contributing provider. Organizations for both the provider and payer MAY be included. This single contributing provider GFE Bundle may be included in a set of GFE bundles from other providers in a GFE Packet that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits for more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases.  '
 INFORMATION: artifacts.html: The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' PCT GFE Bundle that contains all resources for a Good faith estimate submitted by a single GFE contributing provider. Organizations for both the provider and payer MAY be included. This single contributing provider GFE Bundle may be included in a set of GFE bundles from other providers in a GFE Packet that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits for more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases. '
-INFORMATION: change_log.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'Create a gfe-coordination-request operation            FHIR-45737 – May support individual resource posting seems incongruent with SHOULD statement for Requestor ⚠️ (Non-compatible change)        '
 INFORMATION: formal_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses specific terminology such as SHALL, SHOULD, MAY to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the mustSupport requirement.  Base expectations for the interpretation of these terms are set in the FHIR core specification and general Da Vinci-wide expectations are defined in HRex.'
-INFORMATION: gfe_coordination_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'In addition to the requirements specified in this section, GFE Coordination Requesters, Coordination Platforms, and GFE Contributors SHALL meet the requirements as specified in their respective requirements CapabilityStatements and sections defined in this IG.'
 INFORMATION: gfe_submission_and_aeob_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'In addition to the requirements specified in this section, GFE Submitters, and Payers SHALL meet the requirements as specified in their respective requirements CapabilityStatements and sections defined in this IG.'
-INFORMATION: reading_this_ig.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'Provider billing and payer claims adjudication systems for those profiles defined by US Core SHALL use the specification defined by US Core in exchanging information with payers. Implementers should be familiar with this specification. Claim, ExplanationOfBenefit and Coverage resource profiles are not defined by US Core.'
-INFORMATION: security.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: 'To access information about an AEOB, the provider system will need to access the payer system. This will require that the provider system authenticates to the payer system or an intermediary. The Da Vinci HRex Implementation guide specifies how this authentication is handled. PCT servers SHOULD support server-server OAuth and MAY support mutually authenticated TLS. In a future release of this guide, direction will limit the option to server-server OAuth. Every system claiming conformance to this IG SHALL meet the requirements defined in the Security and Privacy section of the Da Vinci HRex IG. The FHIR implementer’s Security Principles, Security & Privacy Module, and Implementer's Checklist helps implementers be sure that they have considered all the parts of FHIR that impact their system design regarding privacy, security, provenance, and safety.'
 INFORMATION: terminology_licensure.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This HL7 specification contains and references intellectual property owned by third parties ("Third-Party IP"). Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact used within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. Each organization is solely responsible for deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.'
 
 

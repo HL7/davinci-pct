@@ -273,7 +273,7 @@ Usage: #example
 // TODO, how do we create a subscription for a subject or author
 
 Instance: aeob-available-subject-subscription
-InstanceOf: Subscription
+InstanceOf: http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2025-01-15T10:50:28.4906421-05:00"
@@ -293,7 +293,7 @@ Usage: #example
 
 
 Instance: aeob-available-author-subscription
-InstanceOf: Subscription
+InstanceOf: http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription
 Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2025-01-15T10:50:28.4906421-05:00"

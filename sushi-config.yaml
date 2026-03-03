@@ -66,14 +66,14 @@ dependencies:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
     id: subs
-  hl7.fhir.uv.tools.r4:
-#  hl7.fhir.uv.tools:
-    id: tools
-    uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
-#    version: current
-    version: current
-    reason: |
-      For SNOMED US expansion parameter
+#   hl7.fhir.uv.tools.r4:
+# #  hl7.fhir.uv.tools:
+#     id: tools
+#     uri: http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools
+# #    version: current
+#     version: current
+#     reason: |
+#       For SNOMED US expansion parameter
 
 copyrightYear: 2025+
 releaseLabel: STU 2
