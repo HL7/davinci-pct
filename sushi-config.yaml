@@ -49,17 +49,23 @@ dependencies:
     id: uscore3
     reason: |
       Needed for systems supporting USCDI v1
-  hl7.fhir.extensions.r5:
-    id: extr5
-    version: 4.0.1
+  hl7.fhir.uv.xver-r5.r4:
+    id: xver
+    version: 0.1.0
     reason: |
       Makes available certain R5 elements for use as part of this R4 IG
+  # hl7.fhir.uv.xver-r5:
+  # #hl7.fhir.extensions.r5:
+  #    id: extr5
+  #    version: 4.0.1
+  #    reason: |
+  #      Makes available certain R5 elements for use as part of this R4 IG
   hl7.fhir.us.davinci-hrex: 
     version: 1.1.0
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
     id: hrex
   hl7.terminology.r4:
-    version: 6.5.0
+    version: 7.1.0
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
     id: tho
   hl7.fhir.uv.subscriptions-backport.r4:
@@ -81,6 +87,7 @@ jurisdiction: urn:iso:std:iso:3166#US
 
 parameters:   
   path-expansion-params: '../../input/exp-params.json'  # for using US ed of SNOMED
+  #path-liquid: input/includes/liquid
   active-tables: false
   apply-contact: true
   apply-jurisdiction: true
@@ -191,6 +198,12 @@ pages:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: informative
+  confexpectations.md:
+    title: Conformance Expectations
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+
 #  credits.md:
 #    title: Credits
   

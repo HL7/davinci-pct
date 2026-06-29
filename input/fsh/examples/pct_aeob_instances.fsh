@@ -15,6 +15,9 @@ Usage: #example
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
 
+* identifier[uniqueclaimid].type
+* identifier[uniqueclaimid].value = "f000fb40-2113-4679-9338-53a9a51e96a9"
+
 // * extension[provider-contracting-status].valueCoding = #in "In Network"
 // * extension[provider-contracting-rate].valueDecimal = 2000.00
 // * extension[provider-contracting-rate].valueMoney.value = 2000.00

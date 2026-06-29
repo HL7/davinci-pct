@@ -1,18 +1,3 @@
-Alias: ICD10 = http://hl7.org/fhir/sid/icd-10-cm
-Alias: PKGCODE = http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup
-Alias: Hl7FhirAdminGender = http://hl7.org/fhir/administrative-gender
-Alias: Hl7V3MS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
-Alias: LANGVALSET = urn:ietf:bcp:47
-Alias: PRO-ROLE = http://nucc.org/provider-taxonomy
-Alias: SPECIALTY = http://nucc.org/provider-taxonomy
-Alias: V2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
-Alias: RELATE = http://terminology.hl7.org/CodeSystem/subscriber-relationship
-Alias: CONTRACTTYPE = http://terminology.hl7.org/CodeSystem/contract-type
-Alias: COPAYTYPE = http://terminology.hl7.org/CodeSystem/coverage-copay-type
-Alias: COVCLASS = http://terminology.hl7.org/CodeSystem/coverage-class
-Alias: PAYLOADTYPE = http://hl7.org/fhir/resource-types
-Alias: ENDPOINTCONNECTIONTYPE = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
-
 ////////////////////////////////////////////
 
 Instance: PCT-GFE-Institutional-1
@@ -25,7 +10,7 @@ Usage: #example
 // * identifier[ETIN].value = "ETIN-10010001"
 //* text.status = #additional
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PCT-GFE-Institutional-1\"> </a><a name=\"hcPCT-GFE-Institutional-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-gfe-institutional.html\">PCT Good Faith Estimate Institutional</a></p></div><p><b>ProviderEventMethodology</b>: EEMM1021</p><p><b>GFEDisclaimer</b>: For estimation purposes only</p><blockquote><p><b>GFEServiceLinkingInfo</b></p><ul><li>linkingIdentifier: <code>http://example.org/Claim/identifiers</code>/223452-2342-2435-008001</li><li>plannedPeriodOfService: 2021-10-31</li></ul></blockquote><p><b>identifier</b>: Placer Identifier/GFEProviderAssignedID0001</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/claim-type institutional}\">Institutional</span></p><p><b>use</b>: Predetermination</p><p><b>patient</b>: <a href=\"Patient-patient1001.html\">Eve Betterhalf Female, DoB: 1955-07-23 ( http://example.com/identifiers/patient#1001)</a></p><p><b>created</b>: 2021-10-05</p><p><b>insurer</b>: <a href=\"Organization-org1001.html\">Organization Umbrella Insurance Company</a></p><p><b>provider</b>: <a href=\"Organization-Submitter-Org-1.html\">Organization GFE Service Help INC.</a></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><h3>Payees</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/payeetype provider}\">Provider</span></td></tr></table><p><b>referral</b>: Referral Number</p><h3>SupportingInfos</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Category</b></td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><span title=\"Codes:{http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTSupportingInfoType typeofbill}\">Type of Bill</span></td><td><span title=\"Codes:{https://www.nubc.org/CodeSystem/TypeOfBill 011X}\">Hospital Inpatient (Part A)</span></td></tr></table><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Diagnosis[x]</b></td><td><b>Type</b></td><td><b>PackageCode</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><span title=\"Codes:{http://hl7.org/fhir/sid/icd-10-cm S06.30}\">Unspecified focal traumatic brain injury</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosistype principal}\">Principal Diagnosis</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup 400}\">Head trauma - concussion</span></td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Coverage-coverage1001.html\">Coverage: extension = insurance; status = active; subscriberId = PFP123450000; relationship = Self; period = 2021-01-01 --&gt; 2022-01-01</a></td></tr></table><blockquote><p><b>item</b></p><p><b>Service Description</b>: Imaging</p><p><b>sequence</b>: 1</p><p><b>revenue</b>: <span title=\"Codes:{https://www.nubc.org/CodeSystem/RevenueCodes 0611}\">Magnetic Resonance Technology (MRT) - Brain/brain stem</span></p><p><b>productOrService</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70551}\">Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material</span></p><p><b>modifier</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70551}\">Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material</span></p><p><b>serviced</b>: 2021-10-31</p><p><b>quantity</b>: 1</p><h3>Nets</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></blockquote><h3>Totals</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></div>"
-* identifier[PLAC].system = V2-0203
+* identifier[PLAC].system = $V2-0203
 * identifier[PLAC].value = "GFEProviderAssignedID0001"
 /* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Org-1)
@@ -45,7 +30,7 @@ Usage: #example
 * insurer = Reference(org1001)
 // * provider.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
 * provider = Reference(Submitter-Org-1)
-* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = $NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * provider.extension[consentForBalanceBilling].valueBoolean = true
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
@@ -58,8 +43,8 @@ Usage: #example
 * insurance.focal = true
 // * insurance.coverage.reference = "urn:uuid:49fd53a8-7eb7-4319-acc8-04bf8a3cb603" // = Reference(coverage1001)
 * insurance.coverage = Reference(coverage1001)
-* diagnosis[principal].diagnosisCodeableConcept = ICD10#S06.30 "Unspecified focal traumatic brain injury"
-* diagnosis[principal].packageCode = PKGCODE#400 "Head trauma - concussion"
+* diagnosis[principal].diagnosisCodeableConcept = $ICD10CM#S06.30 "Unspecified focal traumatic brain injury"
+* diagnosis[principal].packageCode = $PKGCODE#400 "Head trauma - concussion"
 * item.extension[ServiceDescription].valueString = "Imaging"
 * item.sequence = 1
 * item.revenue = $NUBCREVENUE#0611 "Magnetic Resonance Technology (MRT) - Brain/brain stem"
@@ -101,7 +86,7 @@ Usage: #example
 * insurer = Reference(org1001)
 
 //* provider = Reference(Submitter-Org-1)
-//* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+//* provider.extension[ProviderTaxonomy].valueCodeableConcept = $NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 //* provider.extension[consentForBalanceBilling].valueBoolean = true
 * priority = $PROCPRIORITY#normal
 //* payee.type.coding = $PAYEETYPE#provider
@@ -143,7 +128,7 @@ Usage: #example
 //* text.status = #additional 
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PCT-GFE-Professional-MRI\"> </a><a name=\"hcPCT-GFE-Professional-MRI\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-davinci-pct-gfe-professional.html\">PCT Good Faith Estimate Professional</a></p></div><p><b>ProviderEventMethodology</b>: EEMM1022</p><blockquote><p><b>GFEServiceLinkingInfo</b></p><ul><li>linkingIdentifier: <code>http://example.org/Claim/identifiers</code>/223452-2342-2435-008001</li><li>plannedPeriodOfService: 2021-10-31</li></ul></blockquote><p><b>identifier</b>: Placer Identifier/GFEProviderAssignedID0002</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/claim-type professional}\">Professional</span></p><p><b>use</b>: Predetermination</p><p><b>patient</b>: <a href=\"Patient-patient1001.html\">Eve Betterhalf Female, DoB: 1955-07-23 ( http://example.com/identifiers/patient#1001)</a></p><p><b>created</b>: 2021-10-05</p><p><b>insurer</b>: <a href=\"Organization-org1001.html\">Organization Umbrella Insurance Company</a></p><p><b>provider</b>: <a href=\"Practitioner-Submitter-Practitioner-1.html\">Practitioner Nora Ologist</a></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><h3>Payees</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/payeetype provider}\">Provider</span></td></tr></table><p><b>referral</b>: Referral Number</p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Diagnosis[x]</b></td><td><b>Type</b></td><td><b>PackageCode</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><span title=\"Codes:{http://hl7.org/fhir/sid/icd-10-cm S06.30}\">Unspecified focal traumatic brain injury</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/diagnosistype principal}\">Principal Diagnosis</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup 400}\">Head trauma - concussion</span></td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Coverage-coverage1001.html\">Coverage: extension = insurance; status = active; subscriberId = PFP123450000; relationship = Self; period = 2021-01-01 --&gt; 2022-01-01</a></td></tr></table><blockquote><p><b>item</b></p><p><b>Service Description</b>: Imaging</p><p><b>GFEBillingProviderLineItemCtrlNum</b>: GFEBillingProviderLineItemCtrlNum-0001</p><p><b>sequence</b>: 1</p><p><b>productOrService</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70551}\">Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material</span></p><p><b>modifier</b>: <span title=\"Codes:{http://www.ama-assn.org/go/cpt 70551}\">Magnetic resonance (eg, proton) imaging, brain (including brain stem); without contrast material</span></p><p><b>serviced</b>: 2021-10-31</p><p><b>location</b>: <span title=\"Codes:{https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set 21}\">Inpatient Hospital</span></p><p><b>quantity</b>: 1</p><h3>UnitPrices</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table><h3>Nets</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></blockquote><h3>Totals</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>200</td><td>United States dollar</td></tr></table></div>"
 
-* identifier[PLAC].system = V2-0203
+* identifier[PLAC].system = $V2-0203
 * identifier[PLAC].value = "GFEProviderAssignedID0002"
 /* Remove GFE Submitter
 * extension[gfeSubmitter].valueReference = Reference(Submitter-Practitioner-1)
@@ -162,7 +147,7 @@ Usage: #example
 * insurer = Reference(org1001)
 // * provider.reference = "urn:uuid:2e4341dc-70b8-4709-9fa9-0b6d64cf21bb" // = Reference(Submitter-Practitioner-1)
 * provider = Reference(Submitter-Practitioner-1)
-* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = $NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-122"
@@ -216,7 +201,7 @@ Usage: #example
 
 * provider.extension[dataAbsentReason].valueCode = #not-applicable
 //* provider = Reference(Submitter-Practitioner-1)
-//* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+//* provider.extension[ProviderTaxonomy].valueCodeableConcept = $NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 //* payee.type.coding = $PAYEETYPE#provider
 //* referral.extension[referralNumber].valueString = "REF12022002-122"
@@ -269,7 +254,7 @@ Usage: #example
 * insurer = Reference(org1001)
 // * provider.reference = "urn:uuid:e7c36e30-edb8-4a0a-8208-c92085663b00" // = Reference(Submitter-Org-1)
 * provider = Reference(Submitter-Org-1)
-* provider.extension[ProviderTaxonomy].valueCodeableConcept = NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
+* provider.extension[ProviderTaxonomy].valueCodeableConcept = $NUCC#2085D0003X "Diagnostic Neuroimaging (Radiology) Physician"
 * priority = $PROCPRIORITY#normal
 * payee.type.coding = $PAYEETYPE#provider
 * referral.extension[referralNumber].valueString = "REF12022002-122"

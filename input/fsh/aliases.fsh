@@ -8,7 +8,7 @@
 //Alias:   $USCoreProviderSpecialty = http://hl7.org/fhir/us/core/ValueSet/us-core-provider-specialty
 
 //// Code systems ////
-Alias:   NUCC = http://nucc.org/provider-taxonomy
+Alias:   $NUCC = http://nucc.org/provider-taxonomy
 Alias:   $TAXCodeCS = urn:oid:2.16.840.1.113883.4.4
 Alias:   $ClaimTypeCS = http://terminology.hl7.org/CodeSystem/claim-type
 Alias:   $CMSPOSCS = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
@@ -34,7 +34,7 @@ Alias:   $PAYEETYPE = http://terminology.hl7.org/CodeSystem/payeetype
 Alias:   $PROCPRIORITY = http://terminology.hl7.org/CodeSystem/processpriority
 Alias:   $NUBCREVENUE = https://www.nubc.org/CodeSystem/RevenueCodes
 Alias:   $CLAIMUSECS = http://hl7.org/fhir/claim-use
-Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0
+Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias:   MSDRG = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 Alias:   APDRG = http://uri.hddaccess.com/cs/apdrg
 Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
@@ -73,8 +73,24 @@ Alias:   $AHANUBCTypeOfBill = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCTy
 Alias: $WG = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
 Alias: $requestedPeriodExtensionUrl = http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod
 Alias: $taskReplacesExtensionUrl = http://hl7.org/fhir/StructureDefinition/task-replaces
-Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0
+Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.3.0
 Alias: $R5CoverageKind = http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind
+
+
+
+//Alias: ICD10 = http://hl7.org/fhir/sid/icd-10-cm
+Alias: $PKGCODE = http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup
+Alias: Hl7FhirAdminGender = http://hl7.org/fhir/administrative-gender
+Alias: Hl7V3MS = http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
+Alias: LANGVALSET = urn:ietf:bcp:47
+//Alias: PRO-ROLE = http://nucc.org/provider-taxonomy
+//Alias: SPECIALTY = http://nucc.org/provider-taxonomy
+Alias: RELATE = http://terminology.hl7.org/CodeSystem/subscriber-relationship
+//Alias: CONTRACTTYPE = http://terminology.hl7.org/CodeSystem/contract-type
+Alias: COPAYTYPE = http://terminology.hl7.org/CodeSystem/coverage-copay-type
+Alias: COVCLASS = http://terminology.hl7.org/CodeSystem/coverage-class
+//Alias: PAYLOADTYPE = http://hl7.org/fhir/resource-types
+//Alias: ENDPOINTCONNECTIONTYPE = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
 
 
 
@@ -92,3 +108,15 @@ Alias: $R5SubTop_canFilterBy = http://hl7.org/fhir/5.0/StructureDefinition/exten
 Alias: $R5SubTop_notificationShape = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.notificationShape
 Alias: $R5SubTop_status = http://hl7.org/fhir/5.0/StructureDefinition/extension-SubscriptionTopic.status
 */
+
+
+
+Alias: $provider-taxonomy = http://nucc.org/provider-taxonomy
+Alias: $RevenueCodes = https://www.nubc.org/CodeSystem/RevenueCodes
+Alias: $Place_of_Service_Code_Set = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
+Alias: $HCPCSReleaseCodeSets = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+Alias: $processpriority = http://terminology.hl7.org/CodeSystem/processpriority
+Alias: $icd-10-cm = http://hl7.org/fhir/sid/icd-10-cm
+Alias: $PCTSupportingInfoType = http://hl7.org/fhir/us/davinci-pct/CodeSystem/PCTSupportingInfoType
+Alias: $cpt = http://www.ama-assn.org/go/cpt
+Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
