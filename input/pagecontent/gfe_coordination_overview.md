@@ -188,7 +188,7 @@ Note: This is a replacement of the Task not the GFE or GFE Bundles.
 
 #### Examples
 
-**Timeline Example Scenario**
+##### Timeline Example Scenario
 The diagram below demonstrates use of the available date elements to meet turnaround times to provide Good Faith Estimates (GFE)
 
 ![Figure 9: Request Timeline Example](Timeline_Example.png){:style="float: none;width: 800px;display: block;margin: auto;"}
@@ -221,6 +221,97 @@ Assumptions:
 7. Good Health Hospital’s assigned Coordination Platform aggregates all convening and co-provider estimates into a single GFE, with the summary total for the surgery across providers as well as the details per provider and the associated facility charges.
 
 7. GFE is posted to API available to the Patient by Tuesday (within one business day from time of scheduling).
+
+##### Total Knee Replacement Example Scenario
+
+**Scenario**
+
+1. Jane Smith, a 64-year-old patient with chronic right knee pain, has been experiencing progressive limitations in mobility over the past several years, including difficulty walking, climbing stairs, and participating in daily activities.
+2. Jane initially pursued conservative treatment options with her PCP and later her orthopedic specialist, including physical therapy, anti-inflammatory medications, and corticosteroid injections, with only temporary or minimal relief.
+3. Jane returns to Dr. Roberto  Ortho (Orthopedic Surgeon) at Springfield General Hospital after her symptoms worsen and begin to significantly impact her quality of life, including disrupted sleep and inability to remain active.
+4. During the visit, Dr. Ortho reviews imaging confirming advanced osteoarthritis of the right knee (M17.11) and discusses treatment options, including continued conservative management versus surgical intervention.
+5. Together, Jane and Dr. Ortho engage in shared decision-making, considering clinical factors (severity of joint degeneration), functional limitations, surgical risks, expected outcomes, and recovery expectations.
+6. After understanding the expected benefits (pain relief, improved function) and trade-offs (surgical risks, rehabilitation), Jane agrees to proceed with a total knee arthroplasty (CPT 27447).
+7. Jane proceeds to the orthopedic clinic front desk where the surgery order is entered into the hospital EHR system and routed for surgical scheduling.
+8. The surgical coordination team reviews the order for completeness, ensuring required clinical documentation, imaging, and coverage information are available to support scheduling and authorization processes.
+9. Jane is contacted by the scheduling team to select a surgery date (planned service date: 09/15/2026) and confirm her insurance coverage and eligibility.
+10. As part of this process, Jane expresses interest in understanding what the surgery will cost her out-of-pocket, given her deductible status and uncertainty about post-surgical expenses.
+11. Springfield General Hospital is identified as the convening provider responsible for coordinating the Good Faith Estimate (GFE) across all expected services.
+12. Based on the planned inpatient procedure, the hospital anticipates involvement from multiple providers, including the facility, orthopedic surgeon, and anesthesiology.
+13. The hospital initiates the GFE process by identifying contributing providers and expected services, including:
+    * Inpatient hospital stay and operating room services
+    * Implantable knee prosthesis and supplies
+    * Orthopedic surgeon services
+    * Anesthesiology services
+    * Post-operative care and therapy
+14. The hospital (convening provider) compiles and/or requests GFEs from:
+    * Orthopedic surgery (Dr. Roberto  Ortho)
+    * Anesthesiology (Dr. Ana Esthesia)
+    * Hospital facility services (Springfield General Hospital)
+15. Each provider generates their portion of the GFE using expected billing and diagnostic codes (e.g., CPT 27447, anesthesia CPT 01402, DRG 470, revenue codes), based on typical clinical workflow and expected length of stay.
+16. The coordinated GFEs are assembled into a single bundled GFE and submitted to the payer.
+17. The payer receives the GFE bundle and adjudicates expected costs, incorporating:
+    * Contracted rates
+    * Jane’s remaining deductible and coinsurance
+    * Progress toward out-of-pocket maximum
+    * Any coverage rules or medical management considerations
+18. The payer generates an Advanced Explanation of Benefits (AEOB) and sends it to Jane, outlining:
+    * Estimated total cost of the procedure
+    * Expected patient financial responsibility
+    * How the costs map to her benefits
+19. Optionally, the AEOB is also made available to the hospital to support patient financial counseling.
+20. Jane receives the AEOB (via payer portal or mail) and uses this information to finalize her decision to move forward with surgery, including planning for time off work and post-operative recovery support.
+21. Optionally, Jane may access the AEOB via a third-party app or provider portal using FHIR APIs (if supported).
+
+
+
+##### Colonoscopy with Anticipated Polypectomy Example Scenario
+
+**Assumptions**:
+* Patient has a single active commercial insurance coverage through Northwest Health Plan and intends to use that coverage for all expected services.
+* The screening colonoscopy is clinically appropriate and has been recommended in accordance with preventive screening guidelines[CS1.1].
+* All expected providers and organizations are known before the procedure is scheduled.
+* All participating providers and facilities are in the patient's network.
+The procedure is scheduled to occur at Evergreen Endoscopy Center on October 8, 2026.
+* During the procedure, the gastroenterologist anticipates that one or more polyps may be identified and removed if clinically indicated. Any specimens obtained are expected to be submitted for pathology examination.
+* While medical management techniques (such as prior authorization) may be referenced in payer communications, the process of obtaining a Good Faith Estimate (GFE) and Advanced Explanation of Benefits (AEOB) is separate from any medical management activities.
+* Disclaimer: All of the data in this example, including prices, is fictitious and does not represent real world data.
+Scenario
+
+**Scenario**
+1. Alex Morgan, a 52-year-old resident of Portland, Oregon, is enrolled in the Northwest Health Plan PPO-250 benefit plan through employer-sponsored coverage. Alex's annual wellness visit includes a discussion of recommended colorectal cancer screening.
+2. Alex's primary care practitioner recommends a screening colonoscopy and refers Alex to Digestive Health Associates for evaluation and scheduling.
+3. Digestive Health Associates reviews the referral and schedules a consultation with Dr. Jordan Lee, MD, a gastroenterologist affiliated with the practice.
+4. During the consultation, Dr. Lee reviews Alex's medical history and screening needs and recommends a screening colonoscopy. Dr. Lee explains that while the primary intent is preventive screening, polyps are sometimes discovered and removed during the same procedure. If that occurs, pathology services may also be required.
+5. Alex decides to proceed and schedules the procedure at Evergreen Endoscopy Center for October 8, 2026.
+6. During scheduling, Alex provides insurance information associated with Northwest Health Plan PPO-250 and indicates a desire to understand anticipated out-of-pocket costs before the procedure.
+7. Digestive Health Associates initiates the Good Faith Estimate process on September 15, 2026. A service-linking identifier, COLON-2026-LINK-00017, is assigned so that all expected estimates related to the scheduled procedure can be coordinated.
+8. Dr. Jordan Lee and Digestive Health Associates prepare a GFE for the expected professional gastroenterology services associated with the colonoscopy, including the anticipated screening colonoscopy (CPT 45378) and potential polypectomy (CPT 45385).
+9. Because multiple organizations are expected to participate in the patient's care, contributor GFEs are requested from the other known participants in the scheduled episode of care.
+10. Evergreen Endoscopy Center prepares a facility GFE describing the expected facility resources and charges associated with the outpatient procedure.
+11. Northwest Anesthesia Group, represented by Dr. Riley Chen, MD, prepares a contributor GFE for the anesthesia services expected to be provided during the colonoscopy.
+12. Regional Pathology Services, represented by Dr. Samira Patel, MD, prepares a contributor GFE for the examination of any specimens that may be collected if a polypectomy is performed.
+13. Each participating organization generates both detailed service estimates and a summary GFE. The resulting contributor GFEs are assembled into a coordinated GFE Packet representing the expected costs associated with the scheduled colonoscopy episode of care.
+14. The integrated GFE Packet includes:
+    * Patient information for Alex Morgan
+    * Coverage information for Northwest Health Plan PPO-250
+    * The gastroenterology professional services GFE from Digestive Health Associates
+    * The facility services GFE from Evergreen Endoscopy Center
+    * The anesthesia services GFE from Northwest Anesthesia Group
+    * The pathology services GFE from Regional Pathology Services
+15.	The completed GFE Packet is submitted to the payer for processing.
+16.	Northwest Health Plan receives the coordinated estimates and evaluates the expected services against Alex's coverage, deductible status, cost-sharing requirements, and benefit design.
+17.	Within the required timeframe, Northwest Health Plan generates an Advanced Explanation of Benefits (AEOB) that includes estimated allowed amounts, expected patient responsibility, deductible application, and applicable coverage information for the anticipated gastroenterology, facility, anesthesia, and pathology services.
+18.	The AEOB is securely delivered to Alex Morgan before the scheduled procedure date, allowing Alex to understand the anticipated financial impact of the planned colonoscopy.
+19.	Optionally, Northwest Health Plan may also communicate estimate information to the scheduling staff at Digestive Health Associates so that they can discuss expected costs with Alex before the procedure.
+20.	Optionally, Alex or an authorized third-party application may retrieve the AEOB through payer-supported APIs.
+    * Patient has a single active commercial insurance coverage through Northwest Health Plan and intends to use that coverage for all expected services.
+    * The screening colonoscopy is clinically appropriate and has been recommended in accordance with preventive screening guidelines[CS1.1].
+    * All expected providers and organizations are known before the procedure is scheduled.
+    * All participating providers and facilities are in the patient's network.
+
+
+
 
 
 ### Multi-Provider Coordination Workflow Alternative ###
