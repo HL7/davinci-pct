@@ -24,8 +24,8 @@ Description: "PCT GFE Packet that contains GFE Bundles from GFE contributors. Th
     composition 1..1 MS and
     patient 1..2 and
     coverage 0..1 MS and
-    organization ..2 MS and
-    practitioner 0..1 MS and
+    organization ..* MS and
+    practitioner 0..* MS and
     gfeBundle 0..* MS and
     attachment 0..* MS
 
