@@ -12,10 +12,10 @@ Alias:   $NUCC = http://nucc.org/provider-taxonomy
 Alias:   $TAXCodeCS = urn:oid:2.16.840.1.113883.4.4
 Alias:   $ClaimTypeCS = http://terminology.hl7.org/CodeSystem/claim-type
 Alias:   $CMSPOSCS = https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set
-Alias:   $ISO3166-P1-ALPHA2 = http://terminology.hl7.org/CodeSystem/iso3166-1edition2alpha2|7.0.0
+Alias:   $ISO3166-P1-ALPHA2 = http://terminology.hl7.org/CodeSystem/iso3166-1edition2alpha2
 Alias:   $ISO3166-P2-CSC = 	urn:iso:std:iso:3166:-2
-Alias:   $CARETEAMROLECS = http://terminology.hl7.org/CodeSystem/claimcareteamrole|1.0.1
-Alias:   $ContactPurposeCS = http://terminology.hl7.org/CodeSystem/contactentity-type|1.0.0
+Alias:   $CARETEAMROLECS = http://terminology.hl7.org/CodeSystem/claimcareteamrole
+Alias:   $ContactPurposeCS = http://terminology.hl7.org/CodeSystem/contactentity-type
 Alias:   $USNPI = http://hl7.org/fhir/sid/us-npi
 Alias:   $TOBFL-04 = https://www.nubc.org/CodeSystem/TypeOfBill
 Alias:   $CPT = http://www.ama-assn.org/go/cpt
@@ -26,8 +26,8 @@ Alias:   $HIPPS = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/
 Alias:   $NDC = http://hl7.org/fhir/sid/ndc
 Alias:   $V2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 //Alias:   $DIAGTYPECS = http://terminology.hl7.org/CodeSystem/ex-diagnosistype
-Alias:   $PROCTYPECS = http://terminology.hl7.org/CodeSystem/ex-procedure-type|1.0.1
-Alias:   $ADJUDCS = http://terminology.hl7.org/CodeSystem/adjudication|1.0.1
+Alias:   $PROCTYPECS = http://terminology.hl7.org/CodeSystem/ex-procedure-type
+Alias:   $ADJUDCS = http://terminology.hl7.org/CodeSystem/adjudication
 Alias:   $ICD10CM = http://hl7.org/fhir/sid/icd-10-cm
 Alias:   $ORGTYPE = http://terminology.hl7.org/CodeSystem/organization-type
 Alias:   $PAYEETYPE = http://terminology.hl7.org/CodeSystem/payeetype
@@ -38,7 +38,7 @@ Alias:   $DAR = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias:   MSDRG = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software
 Alias:   APDRG = http://uri.hddaccess.com/cs/apdrg
 Alias:   APRDRG = http://uri.hddaccess.com/cs/aprdrg
-Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication|1.0.1
+Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication
 Alias:   $HL7TaskStatus = http://hl7.org/fhir/task-status
 Alias:   $loinc = http://loinc.org
 
@@ -58,7 +58,7 @@ Alias:   $PROCPRIORITYVS = http://hl7.org/fhir/ValueSet/process-priority
 Alias:   $AMACPTALL = http://hl7.org/fhir/ValueSet/cpt-all
 Alias:   $CLAIMUSEVS = http://hl7.org/fhir/ValueSet/claim-use
 
-Alias:   $v3ActRelationship = http://terminology.hl7.org/CodeSystem/v3-ActRelationshipType|4.0.0
+Alias:   $v3ActRelationship = http://terminology.hl7.org/CodeSystem/v3-ActRelationshipType
 
 //// CARIN-BB ////
 Alias:   $AHANUBCRevenueCodes = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCRevenueCodes
@@ -73,7 +73,7 @@ Alias:   $AHANUBCTypeOfBill = http://hl7.org/fhir/us/carin-bb/ValueSet/AHANUBCTy
 Alias: $WG = http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
 Alias: $requestedPeriodExtensionUrl = http://hl7.org/fhir/5.0/StructureDefinition/extension-Task.requestedPeriod
 Alias: $taskReplacesExtensionUrl = http://hl7.org/fhir/StructureDefinition/task-replaces
-Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.3.0
+Alias: $DARExtensionUrl = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 Alias: $R5CoverageKind = http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind
 
 
