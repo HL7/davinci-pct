@@ -132,6 +132,6 @@ This implementation guide defines additional constraints and usage expectations 
 ### Intellectual Property Considerations
 This implementation guide and the underlying FHIR specification are licensed as public domain under the [FHIR license]({{site.data.fhir.path}}license.html#license). The license page also describes rules for the use of the FHIR name and logo.
 
-* Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved
+* This material contains content from CPT® Copyright 2026 American Medical Association. All rights reserved. AMA and CPT are registered trademarks of the American Medical Association.
 
 {% lang-fragment ip-statements.xhtml %}
