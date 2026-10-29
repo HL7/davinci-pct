@@ -111,7 +111,7 @@ After the GFE Coordination Requester, expectedly a Convening provider, determine
 #### Creating and Submitting a GFE Coordination Request
 
 ##### References to Participants and Bundles #####
-<span class="fhir-conformance">The GFE Coordination Requester **SHALL** use the FHIR resource IDs in all references to providers in both the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resource(s)</span>. These references include the `Task.requester` and the assigned `Task.owner`. 
+<span class="fhir-conformance">The GFE Coordination Requester **SHALL** use the FHIR resource ids in all references to providers in both the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resource(s)</span>. These references include the `Task.requester` and the assigned `Task.owner`. 
 
 <span class="fhir-conformance">When creating new Tasks, GFE Coordination Requesters **SHALL** reference only Coordination Participants where active=`true`</span>.
 <span class="fhir-conformance">If the GFE Coordination Requester must also contribute a GFE, they **SHALL** also create a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) assigned to themselves for that purpose</span>. This is done to enable a full set of GFEs to be made available for the Coordination Platform to put together into a complete [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
