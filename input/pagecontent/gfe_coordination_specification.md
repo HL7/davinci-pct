@@ -156,12 +156,12 @@ This IG defines the following minimal requirements for the support of subscripti
 
 ##### Requirements for GFE Coordination Task Subscriptions #####
 <span class="fhir-conformance">The Coordination Requester subscription **SHALL** conform to the [Subscription - GFE Coordination Task Update Notification](StructureDefinition-davinci-pct-gfe-task-update-subscription.html) and meet the following requirements</span>:
-* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic`</span>
+* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-notification`</span>
 * <span class="fhir-conformance">**SHALL** have the `Subscription.criteria.extension[filterCriteria].valueString` = `Task?requester=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the Coordination Requester</span>.
 
 <span class="fhir-conformance">The GFE Contributor subscription **SHALL** conform to the [Subscription - GFE Coordination Task Update Notification](StructureDefinition-davinci-pct-gfe-task-update-subscription.html) and meet the following requirements</span>:
-* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic`</span>
-* <span class="fhir-conformance">**SHALL** have one of the following, but not both (contributors should have a subscription for each</span>
+* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-notification`</span>
+* <span class="fhir-conformance">**SHALL** have one of the following, but not both (contributors should have a subscription for each)</span>
     * <span class="fhir-conformance">**SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `Task?owner=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the GFE Contributor</span>.
     * <span class="fhir-conformance">**SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `Task?_has:Task:part-of:owner=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the Coordination Contributor</span>.
     >Note: This will enable the notification when the Coordination Task that is parent to the Contributor Task, is updated.
