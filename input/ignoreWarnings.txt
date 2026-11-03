@@ -274,6 +274,7 @@ INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned t
 WARNING: DA VINCI: The Change Log page (change_log.html) does not include any Jira tracker items links for the section with title Version 0.1.0
 WARNING: DA VINCI: The How to Read page (reading_this_ig.html) needs to include a reference to the http://hl7.org/fhir/R4/subscriptiontopic.html because this IG uses the subscriptiontopic resource.
 
+
 # 20. === New DA VINCI Warning stating the menu item should be "Use Cases". We chose "Use Case and Actors", Da Vinci approved on 8/25 ===
 WARNING: DA VINCI: The second menu item under Background should have the label Use Cases.
 
@@ -340,3 +341,7 @@ INFORMATION: Coverage/coverage-HC123456789: Coverage.identifier[0]: This element
 
 # 28. === Inherited sliced binding.
 INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[319]: The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, ReferenceINFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[319]: The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, Reference
+
+
+# 29. === Da Vinci Template warning - Requiring HRex 1.2.0, but this is a technical correction that has a continued dependency on HRex 1.1.0
+WARNING: DA VINCI: The Base Specs menu item must have a child called HRex 1.2.0.
