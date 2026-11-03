@@ -1,7 +1,7 @@
 
 Instance: patient1001
-Description: "An instance of Patient"
 InstanceOf: USCorePatientProfile|7.0.0
+Description: "Example USCorePatientProfile instance for Eve Betterhalf."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
 // * id = "9c05d948-b931-4bff-8766-18b99b0650d4"
@@ -27,7 +27,7 @@ Usage: #example
 
 Instance: prac001
 InstanceOf: PCTPractitioner
-Description: "An instance of PCTPractitioner"
+Description: "Example PCTPractitioner instance for Patricia Primary."
 Usage: #example
 
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
@@ -45,7 +45,7 @@ Usage: #example
 
 Instance: prac002
 InstanceOf: PCTPractitioner
-Description: "An instance of PCTPractitioner"
+Description: "Example PCTPractitioner instance for Christine Curie."
 Usage: #example
 
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
@@ -62,7 +62,7 @@ Usage: #example
 
 Instance: Submitter-Practitioner-1
 InstanceOf: PCTPractitioner
-Description: "Professional GFE Submitter 1"
+Description: "Example PCTPractitioner instance for Nora Ologist."
 Usage: #example
 
 // * id = "2e4341dc-70b8-4709-9fa9-0b6d64cf21bb"

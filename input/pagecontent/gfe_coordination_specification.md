@@ -111,7 +111,7 @@ After the GFE Coordination Requester, expectedly a Convening provider, determine
 #### Creating and Submitting a GFE Coordination Request
 
 ##### References to Participants and Bundles #####
-<span class="fhir-conformance">The GFE Coordination Requester **SHALL** use the FHIR resource IDs in all references to providers in both the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resource(s)</span>. These references include the `Task.requester` and the assigned `Task.owner`. 
+<span class="fhir-conformance">The GFE Coordination Requester **SHALL** use the FHIR resource ids in all references to providers in both the [GFE Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html) and [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) resource(s)</span>. These references include the `Task.requester` and the assigned `Task.owner`. 
 
 <span class="fhir-conformance">When creating new Tasks, GFE Coordination Requesters **SHALL** reference only Coordination Participants where active=`true`</span>.
 <span class="fhir-conformance">If the GFE Coordination Requester must also contribute a GFE, they **SHALL** also create a [GFE Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html) assigned to themselves for that purpose</span>. This is done to enable a full set of GFEs to be made available for the Coordination Platform to put together into a complete [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
@@ -156,12 +156,12 @@ This IG defines the following minimal requirements for the support of subscripti
 
 ##### Requirements for GFE Coordination Task Subscriptions #####
 <span class="fhir-conformance">The Coordination Requester subscription **SHALL** conform to the [Subscription - GFE Coordination Task Update Notification](StructureDefinition-davinci-pct-gfe-task-update-subscription.html) and meet the following requirements</span>:
-* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic`</span>
+* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-notification`</span>
 * <span class="fhir-conformance">**SHALL** have the `Subscription.criteria.extension[filterCriteria].valueString` = `Task?requester=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the Coordination Requester</span>.
 
 <span class="fhir-conformance">The GFE Contributor subscription **SHALL** conform to the [Subscription - GFE Coordination Task Update Notification](StructureDefinition-davinci-pct-gfe-task-update-subscription.html) and meet the following requirements</span>:
-* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-subscriptiontopic`</span>
-* <span class="fhir-conformance">**SHALL** have one of the following, but not both (contributors should have a subscription for each</span>
+* <span class="fhir-conformance">**SHALL** have the `Subscription.criteria` = `http://hl7.org/fhir/us/davinci-pct/SubscriptionTopic/davinci-pct-gfe-coordination-task-notification`</span>
+* <span class="fhir-conformance">**SHALL** have one of the following, but not both (contributors should have a subscription for each)</span>
     * <span class="fhir-conformance">**SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `Task?owner=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the GFE Contributor</span>.
     * <span class="fhir-conformance">**SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `Task?_has:Task:part-of:owner=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the Coordination Contributor</span>.
     >Note: This will enable the notification when the Coordination Task that is parent to the Contributor Task, is updated.

@@ -9,7 +9,7 @@ INFORMATION: change_log.html: The html source contains the word 'SHALL' but it i
 A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the code cannot be validated
-WARNING: MedicationRequest/PCT-MedicationRequest-1: MedicationRequest.medication.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://www.nlm.nih.gov/research/umls/rxnorm' version '05062024' could not be found, so the code cannot be validated. Valid versions: 02032025
+WARNING: MedicationRequest/PCT-MedicationRequest-1: MedicationRequest.medication.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://www.nlm.nih.gov/research/umls/rxnorm' version '05062024' could not be found, so the code cannot be validated. Valid versions: 03022026
 
 
 Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded
@@ -21,7 +21,6 @@ Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://x
 Error from https://tx.fhir.org/r4: Error: The code System "http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated directly
 Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the value set cannot be expanded
 Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded
-Error from https://tx.fhir.org/r4: Error: The code system definition for http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets has no content property, so this expansion cannot be performed
 Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software' could not be found, so the value set cannot be expanded
 
 
@@ -30,7 +29,8 @@ Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://w
 
 
 # 02. === CodeSystems that are draft in THO, will need to be changed in future versions of THO ===
-Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
+Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1%
+
 
 
 
@@ -63,11 +63,35 @@ WARNING: Bundle/PCT-GFE-Packet-Prof-1: Bundle.entry[5].resource/*Bundle/PCT-GFE-
 WARNING: Claim/PCT-GFE-Summary-1: Claim.provider: A Reference without an actual reference or identifier should have a display
 WARNING: Claim/PCT-GFE-Summary-MRI: Claim.provider: A Reference without an actual reference or identifier should have a display
 WARNING: ExplanationOfBenefit/PCT-AEOB-Summary-1: ExplanationOfBenefit.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-Colon-Anesthesia: Bundle.entry[0].resource/*Claim/PCT-GFE-Colon-Anesthesia-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-Colon-Facility: Bundle.entry[0].resource/*Claim/PCT-GFE-Colon-Facility-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-Colon-GI: Bundle.entry[0].resource/*Claim/PCT-GFE-Colon-GI-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-Colon-Pathology: Bundle.entry[0].resource/*Claim/PCT-GFE-Colon-Pathology-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-TKR-Inst: Bundle.entry[0].resource/*Claim/PCT-GFE-TKR-Inst-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-TKR-Prof-Anes: Bundle.entry[0].resource/*Claim/PCT-GFE-TKR-Prof-Anes-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Bundle-TKR-Prof-Surg: Bundle.entry[0].resource/*Claim/PCT-GFE-TKR-Prof-Surg-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Colonoscopy-Integrated: Bundle.entry[11].resource/*Bundle/PCT-GFE-Bundle-Colon-GI*/.entry[0].resource/*Claim/PCT-GFE-Colon-GI-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Colonoscopy-Integrated: Bundle.entry[12].resource/*Bundle/PCT-GFE-Bundle-Colon-Facility*/.entry[0].resource/*Claim/PCT-GFE-Colon-Facility-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Colonoscopy-Integrated: Bundle.entry[13].resource/*Bundle/PCT-GFE-Bundle-Colon-Anesthesia*/.entry[0].resource/*Claim/PCT-GFE-Colon-Anesthesia-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-Colonoscopy-Integrated: Bundle.entry[14].resource/*Bundle/PCT-GFE-Bundle-Colon-Pathology*/.entry[0].resource/*Claim/PCT-GFE-Colon-Pathology-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-TKR-Integrated: Bundle.entry[7].resource/*Bundle/PCT-GFE-Bundle-TKR-Inst*/.entry[0].resource/*Claim/PCT-GFE-TKR-Inst-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-TKR-Integrated: Bundle.entry[8].resource/*Bundle/PCT-GFE-Bundle-TKR-Prof-Surg*/.entry[0].resource/*Claim/PCT-GFE-TKR-Prof-Surg-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Bundle/PCT-GFE-Packet-TKR-Integrated: Bundle.entry[9].resource/*Bundle/PCT-GFE-Bundle-TKR-Prof-Anes*/.entry[0].resource/*Claim/PCT-GFE-TKR-Prof-Anes-Summary-001*/.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-Colon-Anesthesia-Summary-001: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-Colon-Facility-Summary-001: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-Colon-GI-Summary-001: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-Colon-Pathology-Summary-001: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-TKR-Prof-Anes-Summary-001: Claim.provider: A Reference without an actual reference or identifier should have a display
+WARNING: Claim/PCT-GFE-TKR-Prof-Surg-Summary-001: Claim.provider: A Reference without an actual reference or identifier should have a display
 
 
-# 06. ===  The version of US Core and THO is what was used in the main version of this technical correction. Will consider changing these versions on the next significant update. ===
+# 06. ===  The version of US Core, THO, and other sources is what was used in the main version of this technical correction. Will consider changing these versions on the next significant update. ===
 The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered
 The ImplementationGuide uses package hl7.terminology.r4#6.5.0 released on 2025-07-07, but the most recent appropriate version is 7.1.0. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.fhir.us.davinci-hrex#1.1.0 released on 2024-12-10, but the most recent appropriate version is 1.2.0. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.terminology.r4#7.1.0 released on 2026-03-08, but the most recent appropriate version is 7.5.0. This reference is getting old and the more recent version should be considered
+The ImplementationGuide is based on FHIR version 4.0.1 but package hl7.fhir.uv.subscriptions-backport.r4#1.1.0 is based on FHIR version 4.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
 
 # 07. === Warning about pattern discriminator being deprecated - Inherited from US Core requirements ===
 INFORMATION: StructureDefinition/davinci-pct-coverage: StructureDefinition.snapshot.element[15].slicing.discriminator[0]: The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
@@ -88,9 +112,9 @@ WARNING: StructureDefinition/davinci-pct-aeob-documentreference: StructureDefini
 WARNING: StructureDefinition/davinci-pct-gfe-documentreference: StructureDefinition.snapshot: The slice 'uscore' on path 'DocumentReference.category' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 
 # 09. === Information Message regarding deprecated extensions, that were inherited through the FHIR R4 standard itself and other IGs. ===
-INFORMATION: StructureDefinition/davinci-pct-aeob-adjudication-error: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
-The extension http://hl7.org/fhir/StructureDefinition/regex|5.2.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
-INFORMATION: StructureDefinition/davinci-pct-aeob-documentreference: StructureDefinition.snapshot.element[17].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet|5.2.0 is deprecated
+INFORMATION: StructureDefinition/davinci-pct-aeob-adjudication-error: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet%
+INFORMATION: StructureDefinition/davinci-pct-aeob-documentreference: StructureDefinition.snapshot.element[17].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueSet%
+The extension http://hl7.org/fhir/StructureDefinition/regex%
 
 
 # 10. === Information message about jurisdiction valueset that was deprecated. This valueset is pulled from the base FHIR spec ===
@@ -119,6 +143,7 @@ INFORMATION: Bundle/PCT-AEOB-Packet-1: Bundle: Can't find 'http://example.org/ou
 
 # 15. === Pattern being applied across slices inherited from a base specification ===
 INFORMATION: StructureDefinition/davinci-pct-organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
 
 
 # 17. === Informational notice that there is not an explicitly linked example. However, given that there is a bundle aggregation requirement, these examples cannot be separately linked example. The introduction to the profiles note this. ===
@@ -192,6 +217,57 @@ INFORMATION: StructureDefinition.snapshot.element[80].binding.valueSet: Pinned t
 INFORMATION: StructureDefinition.snapshot.element[16].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#6.5.0)
 
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/adjudication to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.1.0)
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/claimcareteamrole to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.1.0)
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://hl7.org/fhir/task-status to 4.0.1 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.0.0 (hl7.fhir.uv.xver-r5.r4#0.1.0)
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/v3-ActRelationshipType to 5.0.0 from choices of 3.1.0 (hl7.terminology.r4#5.0.0), 4.0.0 (hl7.terminology.r4#5.5.0), 5.0.0 (hl7.terminology.r4#7.1.0)
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/contactentity-type to 2.0.0 from choices of 0.5.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 2.0.0 (hl7.terminology.r4#7.1.0)
+INFORMATION: ValueSet.compose.include[0]: Pinned the version of http://terminology.hl7.org/CodeSystem/ex-procedure-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.1.0)
+INFORMATION: ValueSet.compose.include[4]: Pinned the version of http://terminology.hl7.org/CodeSystem/data-absent-reason to 1.0.0 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0)
+
+
+
+
+
+INFORMATION: StructureDefinition.snapshot.element[122].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[67].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[60].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes to 2.1.0 from choices of 1.0.0 (hl7.terminology.r4#5.0.0), 2.0.0 (hl7.terminology.r4#5.5.0), 2.1.0 (hl7.terminology.r4#7.1.0)
+INFORMATION: StructureDefinition.snapshot.element[66].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[109].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.differential.element[12].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[38].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[76].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.1.0)
+INFORMATION: StructureDefinition.differential.element[10].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.differential.element[20].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/coverage-copay-type to 1.0.1 from choices of 0.1.0 (hl7.terminology.r4#5.0.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#7.1.0)
+INFORMATION: StructureDefinition.snapshot.element[69].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[60].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes to 2.1.0 from choices of 1.0.0 (hl7.terminology.r4#5.0.0), 2.0.0 (hl7.terminology.r4#5.5.0), 2.1.0 (hl7.terminology.r4#7.1.0)
+INFORMATION: StructureDefinition.snapshot.element[66].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[266].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[279].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.differential.element[89].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[191].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[204].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.differential.element[62].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[24].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[217].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.differential.element[11].type[0].profile[0]: Pinned the version of http://hl7.org/fhir/StructureDefinition/data-absent-reason to 5.4.0 from choices of 1.0.0 (hl7.fhir.uv.extensions.r4#1.0.0), 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.1.0 (hl7.fhir.uv.extensions.r4#5.1.0), 5.1.0-cibuild (hl7.fhir.uv.extensions.r4#5.1.0-snapshot1), 5.2.0 (hl7.fhir.uv.extensions.r4#5.2.0), 5.4.0 (hl7.fhir.uv.extensions.r4#5.4.0)
+INFORMATION: StructureDefinition.snapshot.element[19].binding.valueSet: Pinned the version of http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4 to 20240606 from choices of 20170601 (us.nlm.vsac#0.18.0), 20240606 (us.nlm.vsac#0.19.0)
+INFORMATION: StructureDefinition.snapshot.element[79].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[80].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[11].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v2-0116 to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.5.0), 3.0.0 (hl7.terminology.r4#7.1.0)
+INFORMATION: StructureDefinition.snapshot.element[16].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+INFORMATION: StructureDefinition.snapshot.element[32].binding.valueSet: Pinned the version of http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType to 3.0.0 from choices of 2.0.0 (hl7.terminology.r4#5.0.0), 3.0.0 (hl7.terminology.r4#5.5.0)
+
+
+
+
+
+
+
+
+
+
 
 
 # 19. === New DA VINCI Warning that does not apply. Requirements to things that do not exist (version 0.1.0 was the initial ballot version and tickets did not exist, SubscriptionTopic does not exist in R4; Added a link on this page to the R5 SubscriptionTopic instead), Da Vinci approved on 8/25 ===
@@ -218,14 +294,17 @@ None of the codings provided are in the value set 'US Core DocumentReference Typ
 # 24. === This error will be present until the publication team can address it.  See this Zulip chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/Publisher.20v2.2E0.2E24.20-.20error.20in.20local.20build/with/547712458 ===
 No definition could be found for URL value 'http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters'
 
-# 25. === Conformance Verbs not marked as being in a conformance clause. Will address in next non-TC update ===
+# 25. === Conformance Verbs not marked as being in a conformance clause. Either are part of conformance explanation, change log, licensure, or will address in next non-TC update ===
 INFORMATION: StructureDefinition-davinci-pct-aeob-packet.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' PCT AEOB Packet that contains necessary resources for one or more an AEOBs.  Organizations for both the payer and provider SHALL be included.   An AEOB Summary SHALL be included and reflect the total estimate for the patient, including all AEOB resources within the Bundle. This version of the Bundle is a document type that will enable versioning, signing and being referenced by a DocumentReference for searching and subscription notifications.  '
 INFORMATION: StructureDefinition-davinci-pct-gfe-bundle.html: The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' PCT GFE Bundle that contains all resources for a Good faith estimate submitted by a single GFE contributing provider. Organizations for both the provider and payer MAY be included. This single contributing provider GFE Bundle may be included in a set of GFE bundles from other providers in a GFE Packet that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits for more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases.  '
 INFORMATION: artifacts.html: The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' PCT GFE Bundle that contains all resources for a Good faith estimate submitted by a single GFE contributing provider. Organizations for both the provider and payer MAY be included. This single contributing provider GFE Bundle may be included in a set of GFE bundles from other providers in a GFE Packet that can then be made available to the patient or sent to a payer for insurance estimation. The scope of this guide does not include coordination of benefits for more than one coverage. This does not serve as a replacement for eligibility, prior authorization or other financial and administrative use cases. '
 INFORMATION: formal_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses specific terminology such as SHALL, SHOULD, MAY to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the mustSupport requirement.  Base expectations for the interpretation of these terms are set in the FHIR core specification and general Da Vinci-wide expectations are defined in HRex.'
 INFORMATION: gfe_submission_and_aeob_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'In addition to the requirements specified in this section, GFE Submitters, and Payers SHALL meet the requirements as specified in their respective requirements CapabilityStatements and sections defined in this IG.'
 INFORMATION: terminology_licensure.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This HL7 specification contains and references intellectual property owned by third parties ("Third-Party IP"). Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact used within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. Each organization is solely responsible for deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.'
-
+INFORMATION: en/change_log.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' change SHOULD to SHALL  '
+INFORMATION: en/formal_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This implementation guide uses specific terminology such as SHALL, SHOULD, MAY to flag statements that have relevance for the evaluation of conformance with the guide.  As well, profiles in this implementation guide make use of the mustSupport requirement.  Base expectations for the interpretation of these terms are set in the FHIR core specification and general Da Vinci-wide expectations are defined in HRex.'
+INFORMATION: en/gfe_submission_and_aeob_specification.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'In addition to the requirements specified in this section, GFE Submitters, and Payers SHALL meet the requirements as specified in their respective requirements CapabilityStatements and sections defined in this IG.'
+INFORMATION: en/terminology_licensure.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'This HL7 specification contains and references intellectual property owned by third parties ("Third-Party IP"). Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact used within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. Each organization is solely responsible for deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.'
 
 # 26. === Bundles contained in Document Bundles. The narrative is to be included in the Document Bundles Composition.section.text ===
 %.resource/*Claim/PCT-GFE-Summary-1*/: Constraint failed: dom-6: 'A resource should have narrative for robust management (text.`div`.exists())' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)%
@@ -243,3 +322,21 @@ INFORMATION: terminology_licensure.html: The html source contains the word 'SHAL
 
 
 
+# 26. === Search Parameter Combination extension purposefully used in the Capability Statement
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[0].extension[1].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[0].extension[2].extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[0].extension[3].extension[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[0].extension[4].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[2].extension[1].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[3].extension[1].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[4].extension[1].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[4].extension[2].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: CapabilityStatement/davinci-pct-coordination-platform: CapabilityStatement.rest[0].resource[4].extension[3].extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.4.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+
+# 27. === Example Coverage identifier purposefully added
+INFORMATION: Coverage/Coverage-NHP-PPO-250: Coverage.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-coverage|2.0.2 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Coverage/coverage-HC123456789: Coverage.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-coverage|2.0.2 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# 28. === Inherited sliced binding.
+INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[319]: The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, ReferenceINFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinition.snapshot.element[319]: The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, Reference

@@ -8,12 +8,15 @@ Alias: CPT4 = http://www.ama-assn.org/go/cpt
 
 Instance: PCT-AEOB-1
 InstanceOf: PCTAdvancedEOB
-Description: "An example instance of the PCTAdvancedEOB Profile"
+Description: "Example PCTAdvancedEOB instance for PCT AEOB 1 (Example service)."
 Usage: #example
 
 // * id = "89fdfb03-b700-4e21-a116-bc0658c68a00"
 //* identifier[ETIN].system = "http://hl7.org/fhir/us/pacio-rat"
 //* identifier[ETIN].value = "ETIN-10010001"
+
+* identifier[uniqueclaimid].type
+* identifier[uniqueclaimid].value = "f000fb40-2113-4679-9338-53a9a51e96a9"
 
 // * extension[provider-contracting-status].valueCoding = #in "In Network"
 // * extension[provider-contracting-rate].valueDecimal = 2000.00
@@ -121,7 +124,7 @@ Usage: #example
 
 Instance: PCT-AEOB-Summary-1
 InstanceOf: PCTAdvancedEOBSummary
-Description: "An example instance of the PCTAdvancedEOBSummary Profile"
+Description: "Example PCTAdvancedEOBSummary instance for PCT AEOB Summary 1 (Example service)."
 Usage: #example
 
 // * id = "645c61ac-963d-44c7-b6a2-17f3ec6a5f60"
@@ -196,7 +199,7 @@ Usage: #example
 
 Instance: PCT-AEOB-Packet-1
 InstanceOf: PCTAEOBPacket
-Description: "PCT AEOB Packet Example 1"
+Description: "Example PCTAEOBPacket instance for PCT AEOB Packet 1."
 Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234568"
@@ -279,7 +282,7 @@ Usage: #example
 
 Instance: PCT-AEOB-Composition-1
 InstanceOf: PCTAdvancedEOBComposition
-Description: "PCT AEOB Composition Example 1"
+ Description: "Example PCTAdvancedEOBComposition instance for Advanced Explanation of Benefit Packet for Eve Betterhalf - 2025-01-10."
 Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 
 // * id = "3b46e3b7-ea0a-455f-a797-48c2d9faca1d"
@@ -336,7 +339,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 
 Instance: PCT-AEOB-DocumentReference-1
 InstanceOf: PCTAdvancedEOBDocumentReference
-Description: "PCT AEOB DocumentReference Example 1"
+Description: "Example PCTAdvancedEOBDocumentReference instance for PCT AEOB DocumentReference 1."
 Usage: #example
 
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
@@ -363,7 +366,7 @@ Usage: #example
 /*
 Instance: PCT-AEOB-Bundle-1
 InstanceOf: PCTAEOBBundle
-Description: "PCT AEOB Bundle Example 1"
+Description: "Example PCTAEOBBundle instance for PCT AEOB Bundle 1."
 Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-1234567"

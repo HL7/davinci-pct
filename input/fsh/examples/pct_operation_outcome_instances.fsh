@@ -1,6 +1,6 @@
 Instance: PCT-AEOB-Adjudication-Error-Example-1
 InstanceOf: AEOBAdjudicationError
-Description: "PCT AEOB Adjudication Error Example 1"
+Description: "Example AEOBAdjudicationError instance for PCT AEOB Adjudication Error Example 1."
 Usage: #example
 
 * issue.severity = #error
@@ -10,7 +10,7 @@ Usage: #example
 
 Instance: PCT-AEOB-Complete-Example-1
 InstanceOf: AEOBComplete
-Description: "PCT AEOB Complete Example 1"
+Description: "Example AEOBComplete instance for PCT AEOB Complete Example 1."
 Usage: #example
 
 * issue.severity = #information
@@ -20,7 +20,7 @@ Usage: #example
 
 Instance: PCT-GFE-Validation-Error-Example-1
 InstanceOf: GFEValidationError
-Description: "PCT GFE Validation Error Example 1"
+Description: "Example GFEValidationError instance for PCT GFE Validation Error Example 1."
 Usage: #example
 
 * issue.severity = #error

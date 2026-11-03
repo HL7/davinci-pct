@@ -56,7 +56,7 @@ Severity: #error
 
 
 Invariant: pct-coverage-2
-Description: "Coverage: period element SHALL be present if coverage-0kind is insurance"
+Description: "Coverage: period element SHALL be present if coverage-kind is insurance"
 Expression: "extension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind'and value = 'insurance').exists() implies period.exists()"
 Severity: #error
 

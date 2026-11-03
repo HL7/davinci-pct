@@ -21,7 +21,7 @@ PCTGFECollectionBundle
 
 Instance: PCT-GFE-Coordination-Bundle-1
 InstanceOf: PCTGFECoordinationBundle
-Description: "PCT GFE Coordination Bundle Example 1"
+Description: "Example PCTGFECoordinationBundle instance for PCT GFE Coordination Bundle 1."
 Usage: #example
 * identifier.system = "http://example.com/identifiers/bundle"
 * identifier.value = "59688475-2324-3242-2347384710"
@@ -46,7 +46,7 @@ Usage: #example
 
 Instance: PCT-GFE-Coordination-Task-1
 InstanceOf: PCTGFECoordinationTask
-Description: "PCT GFE Coordination Task example 1"
+Description: "Example PCTGFECoordinationTask instance for PCT GFE Coordination Task 1."
 Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-30T11:01:00+05:00"
@@ -73,7 +73,7 @@ Usage: #example
 
 Instance: PCT-GFE-Contributor-Task-1
 InstanceOf: PCTGFEContributorTask
-Description: "PCT GFE Contributor Task example 1"
+Description: "Example PCTGFEContributorTask instance for PCT GFE Contributor Task 1."
 Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-30T11:01:00+05:00"
@@ -96,7 +96,7 @@ Usage: #example
 
 Instance: PCT-GFE-Contributor-Task-2
 InstanceOf: PCTGFEContributorTask
-Description: "PCT GFE Contributor Task example 2"
+Description: "Example PCTGFEContributorTask instance for PCT GFE Contributor Task 2."
 Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-30T11:01:00+05:00"
@@ -119,7 +119,7 @@ Usage: #example
 
 Instance: PCT-GFE-Information-Bundle-1
 InstanceOf: PCTGFEInformationBundle
-Description: "PCT GFE Information Bundle Example 1"
+Description: "Example PCTGFEInformationBundle instance for PCT GFE Information Bundle 1."
 Usage: #example
 
 * identifier.system = "http://example.com/identifiers/bundle"
@@ -162,7 +162,7 @@ Usage: #example
 
 Instance: PCT-GFE-Missing-Bundle-1
 InstanceOf: PCTGFEMissingBundle
-Description: "PCT GFE Missing Bundle Example 1"
+Description: "Example PCTGFEMissingBundle instance for PCT GFE Missing Bundle 1."
 Usage: #example
 
 // * id = "e1b566b9-34a6-467b-83d2-8107a5ee987d"
@@ -215,7 +215,7 @@ Usage: #example
 
 Instance: PCT-GFE-Coordination-Replacement-Task-1
 InstanceOf: PCTGFECoordinationTask
-Description: "PCT GFE Coordination Task replacement example 1"
+Description: "Example PCTGFECoordinationTask instance for PCT GFE Coordination Replacement Task 1."
 Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-31T11:01:00+05:00"
@@ -247,7 +247,7 @@ Usage: #example
 
 Instance: PCT-GFE-Contributor-Replacement-Task-1
 InstanceOf: PCTGFEContributorTask
-Description: "PCT GFE Contributor Task replacement example 1"
+Description: "Example PCTGFEContributorTask instance for PCT GFE Contributor Replacement Task 1."
 Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-31T11:01:00+05:00"
@@ -276,7 +276,7 @@ Usage: #example
 
 Instance: PCT-GFE-Contributor-Replacement-Task-2
 InstanceOf: PCTGFEContributorTask
-Description: "PCT GFE Contributor Task replacement example 2"
+Description: "Example PCTGFEContributorTask instance for PCT GFE Contributor Replacement Task 2."
 Usage: #example
 
 * extension[requested-period].valuePeriod.end = "2024-03-31T11:01:00+05:00"
@@ -310,7 +310,7 @@ Usage: #example
 
 Instance: PCT-GFE-Packet-Inst-1
 InstanceOf: PCTGFEPacket
-Description: "PCT GFE Packet Institutional Example 1"
+Description: "Example PCTGFEPacket instance for PCT GFE Packet Inst 1."
 Usage: #example
 
 * identifier.system = "http://example.com/identifiers/bundle"
@@ -371,7 +371,7 @@ Usage: #example
 
 Instance: PCT-GFE-Packet-Prof-1
 InstanceOf: PCTGFEPacket
-Description: "PCT GFE Packet Professional Example 1"
+Description: "Example PCTGFEPacket instance for PCT GFE Packet Prof 1."
 Usage: #example
 
 * identifier.system = "http://example.com/identifiers/bundle"
@@ -432,7 +432,7 @@ Usage: #example
 
 Instance: PCT-GFE-Composition-Inst-1
 InstanceOf: PCTGFEComposition
-Description: "PCT GFE Composition Institutional Example 1"
+Description: "Example PCTGFEComposition instance for Institutional Good Faith Estimate Packet for Eve Betterhalf - 2025-01-10."
 Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 // Usage: #example
 
@@ -486,7 +486,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 
 Instance: PCT-GFE-Composition-Prof-1
 InstanceOf: PCTGFEComposition
-Description: "PCT GFE Composition Professional Example 1"
+Description: "Example PCTGFEComposition instance for Professional Good Faith Estimate Packet for Eve Betterhalf - 2025-01-10."
 Usage: #inline // has to be inline because of the aggregation requirement. As example, it produces and error because it looks like an external reference and produces an IG Publisher error
 // Usage: #example
 * extension[GFEServiceLinkingInfo].extension[linkingIdentifier].valueIdentifier.value = "223452-2342-2435-008003"
@@ -540,7 +540,7 @@ Usage: #inline // has to be inline because of the aggregation requirement. As ex
 
 Instance: PCT-GFE-DocumentReference-Inst-1
 InstanceOf: PCTGFEDocumentReference
-Description: "PCT GFE DocumentReference Institutional Example 1"
+Description: "Example PCTGFEDocumentReference instance for PCT GFE DocumentReference Inst 1."
 Usage: #example
 
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
@@ -567,7 +567,7 @@ Usage: #example
 
 Instance: PCT-GFE-DocumentReference-Prof-1
 InstanceOf: PCTGFEDocumentReference
-Description: "PCT GFE DocumentReference Professional Example 1"
+Description: "Example PCTGFEDocumentReference instance for PCT GFE DocumentReference Prof 1."
 Usage: #example
 
 * extension[requestInitiationTime].valueInstant = "2025-01-08T09:01:00+05:00"
@@ -595,7 +595,7 @@ Usage: #example
 
 Instance: PCT-ServiceRequest-1
 InstanceOf: PCTServiceRequest
-Description: "PCT ServiceRequest Example 1"
+Description: "Example PCTServiceRequest instance for PCT ServiceRequest 1."
 Usage: #example
 
 * status = #active
@@ -610,7 +610,7 @@ Usage: #example
 
 Instance: PCT-MedicationRequest-1
 InstanceOf: PCTMedicationRequest
-Description: "PCT MedicationRequest Example 1"
+Description: "Example PCTMedicationRequest instance for PCT MedicationRequest 1."
 Usage: #example
 
 * status = #active
@@ -624,7 +624,7 @@ Usage: #example
 
 Instance: PCT-DeviceRequest-1
 InstanceOf: PCTDeviceRequest
-Description: "PCT DeviceRequest Example 1"
+Description: "Example PCTDeviceRequest instance for PCT DeviceRequest 1."
 Usage: #example
 
 //* text.status = #generated
@@ -641,7 +641,7 @@ Usage: #example
 
 Instance: PCT-ServiceLocation-1
 InstanceOf: PCTServiceLocation
-Description: "PCT ServiceLocation Example 1"
+Description: "Example PCTServiceLocation instance for Hospital."
 Usage: #example
 
 * status = #active
@@ -656,7 +656,7 @@ Usage: #example
 /*
 Instance: PCT-GFE-Collection-Bundle-Inst-1
 InstanceOf: PCTGFECollectionBundle
-Description: "PCT GFE Collection Bundle Institutional Example 1"
+Description: "Example PCTGFECollectionBundle instance for PCT GFE Collection Bundle Inst 1."
 Usage: #example
 
 * identifier.system = "http://example.com/identifiers/bundle"
@@ -690,7 +690,7 @@ Usage: #example
 
 Instance: PCT-GFE-Collection-Bundle-Prof-1
 InstanceOf: PCTGFECollectionBundle
-Description: "PCT GFE Collection Bundle Professional Example 1"
+Description: "Example PCTGFECollectionBundle instance for PCT GFE Collection Bundle Prof 1."
 Usage: #example
 
 * identifier.system = "http://example.com/identifiers/bundle"

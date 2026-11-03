@@ -6,6 +6,12 @@ This is a log of the significant changes that have happened to this specificatio
 > NOTE: This categorization is with respect to the standard, not any particular implementation. Changes that are non-breaking from a standards perspective might still break existing implementations. Non-substantive changes might still result in a need to add or change software code.
  This change list is not exhaustive. Changes to formatting and layout, as well as corrections to spelling, grammar, hyperlinks, etc. are not called out here. Changes mentioned for older versions may no longer be relevant due to changes in subsequent versions. 
 
+### Changes in Version 2.0.2
+* Reduced the restrictions on the Practitioner and Organization in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to allow all practitioners and organizations to be present in the bundle. [FHIR-57705](https://jira.hl7.org/browse/FHIR-57705)
+* Removed the fixed CareTeam CodeSystem version from the PCT GFE [Summary](StructureDefinition-davinci-pct-gfe-summary.html), [Professional](StructureDefinition-davinci-pct-gfe-professional.html), and [Institutional](StructureDefinition-davinci-pct-gfe-institutional.html) profiles; and the and Placer Identifier display requirement from the PCT GFE [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), [Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), [Professional](StructureDefinition-davinci-pct-gfe-professional.html), and [Institutional](StructureDefinition-davinci-pct-gfe-institutional.html) profiles. [FHIR-56934](https://jira.hl7.org/browse/FHIR-56934)
+* Corrected the narrative requirement r the subscription criteria to use the correct URL in [Requirements for GFE Coordination Task Subscriptions](gfe_coordination_specification.html#requirements-for-gfe-coordination-task-subscriptions). [FHIR-56019](https://jira.hl7.org/browse/FHIR-56019)
+* Corrected the operation name in [Coordination Platform Capability Statement](CapabilityStatement-davinci-pct-coordination-platform.html), [Coordination Requester Capability Statement](CapabilityStatement-davinci-pct-coordination-requester.html), and [Payer Capability Statement](CapabilityStatement-davinci-pct.html). [FHIR-56018](https://jira.hl7.org/browse/FHIR-56018)
+
 ### Changes in Version 2.0.1
 * Corrected the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) code, output parameters, and description [FHIR-53657](https://jira.hl7.org/browse/FHIR-53657) ⚠️ **(Non-compatible change)** 
 * Changed the CodeSystem URL in the [NUBC Point of Origin ValueSet](ValueSet-AHANUBCPointOfOriginVS.html) to match the official URLs in THO [FHIR-55528](https://jira.hl7.org/browse/FHIR-55528) ⚠️ **(Non-compatible change)** 
@@ -295,7 +301,7 @@ This ballot version includes a new use case addressing the need to coordinate GF
 
 #### Detailed Changes 2.0.0-ballot (JIRA Change Requests)
 
-<table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+<table id="issuetable_2_0_0_ballot"  border="1" cellpadding="3" cellspacing="1" width="100%">
 <thead>
 <tr class="rowHeader">
 
@@ -516,7 +522,7 @@ This STU Update includes a number of changes addressing some critical and minor 
 
 #### Detailed Changes 1.1.0 (JIRA Change Requests)
 
-<table id="issuetable"  border="1" cellpadding="3" cellspacing="1" width="100%">
+<table id="issuetable_1_1_0"  border="1" cellpadding="3" cellspacing="1" width="100%">
 <thead>
 <tr class="rowHeader">
 
@@ -689,7 +695,7 @@ There were many changes to all the profiles, value sets, etc. since the last bal
 
 #### Detailed Changes 1.0.0 (JIRA Change Requests)
 
-<table id="issuetable" border="1" cellpadding="3" cellspacing="1" width="100%">
+<table id="issuetable_1_0_0" border="1" cellpadding="3" cellspacing="1" width="100%">
 <thead>
 <tr class="rowHeader">
 

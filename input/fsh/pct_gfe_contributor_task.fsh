@@ -36,7 +36,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 * identifier contains
    PLAC 0..1 //and
 //   INTER 0..*
-* identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
+* identifier[PLAC].type = $V2-0203#PLAC
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1
 * identifier[PLAC] ^short = "GFE Coordination Requester Assigned Identifier for GFE Request"
@@ -45,7 +45,7 @@ Description: "The PCT GFE Contributor Task is used by a GFE coordinator   to ass
 
 /* Removed because a GFE Coordination Task was deemed to be the approach to take, instead of individual tasks associated through an ID.
 * groupIdentifier 1..1
-* groupIdentifier.type = $V2-0203#PLAC "Placer Identifier"
+* groupIdentifier.type = $V2-0203#PLAC
 * groupIdentifier.system MS
 * groupIdentifier.value 1..1
 * groupIdentifier ^short = "Requesting Provider Task Identifier (DRAFT: used for grouping the sub-tasks together, may be the means to correlate tasks if the primary task goes away)"

@@ -1,14 +1,14 @@
 This section of the implementation guide (IG) defines the specific conformance requirements for systems wishing to conform to this Patient Cost Transparency (PCT) IG GFE Submit Workflow. It focuses on Good Faith Estimate (GFE) submission [$gfe-submit](OperationDefinition-GFE-submit.html) and an Advanced Explanation of Benefits (AEOB) query, though it also provides guidance on privacy, security, and other implementation requirements.
 
-## Detailed Requirements
+### Detailed Requirements
 
-### Summary
+#### Summary
 FHIR uses a pair of resources called [Claim]({{site.data.fhir.path}}claim.html) and [EOB]({{site.data.fhir.path}}explanationofbenefit.html) for multiple purposes they are used for actual claim submission, but they are also used for managing prior authorizations and pre-determinations. These uses are distinguished by the `Claim.use` and `ExplanationOfBenefit.use` code. This guide requires `predetermination` for both `Claim.use` and `ExplanationOfBenefits.use`. All references to Claim and EOB in this IG are referring to the AEOB.
 
 In addition to the requirements specified in this section, GFE Submitters, and Payers **SHALL** meet the requirements as specified in their respective requirements CapabilityStatements and sections defined in this IG.
 
 
-### Submitting a GFE and Polling for an AEOB
+#### Submitting a GFE and Polling for an AEOB
 
 One of the primary interactions supported by this IG is submitting a GFE and receiving an AEOB in response. To perform this, a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) resource is constructed by the client (e.g., Billing Management Software) system. The response is an [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html).
 
@@ -31,8 +31,8 @@ AEOBs will often not be complete and the calling client (or other interested sys
   * The AEOB Packet **SHOULD** be made available to patients and their providers through an API. The AEOB Packet the provider receives **SHOULD** have the same information as the one the patient receives.
 
 
-#### AEOB Request
-The [$gfe-submit](OperationDefinition-GFE-submit.html) operation is executed by POSTing a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the [$gfe-submit](OperationDefinition-GFE-submit.html) endpoint. The server **SHALL** support JSON encoding and **MAY** support XML. The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) will include one or more [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources for one patient. The GFE profiles used for the claim resources can be [found here](artifacts.html#structures-gfe-resource-profiles). Additional Bundle entries **SHALL** be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once, e.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance is created, referenced from multiple places as appropriate.
+##### AEOB Request
+The [$gfe-submit](OperationDefinition-GFE-submit.html) operation is executed by POSTing a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to the [$gfe-submit](OperationDefinition-GFE-submit.html) endpoint. The server **SHALL** support JSON encoding and **MAY** support XML. The [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) will include one or more [GFE Bundle](StructureDefinition-davinci-pct-gfe-bundle.html) resources for one patient. The GFE profiles used for the claim resources can be [found here](artifacts.html?categories=Structures:%20GFE%20Resource%20Profiles). Additional Bundle entries **SHALL** be populated with any resources referenced by the GFE resource (and any resources referenced by those resources, fully traversing all references, and complying with all identified profiles). Note that even if a given resource instance is referenced multiple times, it **SHALL** only appear in the Bundle once, e.g., if the same Practitioner information is referenced in multiple places, only one Practitioner instance is created, referenced from multiple places as appropriate.
 
 The submitted [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** have a unique identifier (by combination of the system and value) in the `Composition.identifier` which uniquely identifies the document. If the submitted [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) is meant to replace a previously submitted [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) (for the same patient and intended purpose), the submitted [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) **SHALL** have a `Composition.relatesTo` with a `replaces` code and the `targetIdentifier` matching the `Composition.identifier` of the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) it is replacing. 
 *  If a payer receives a [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) with the `relatesTo[replaces].identifier` matching a previous GFE submission (`Composition.identifier`) by the same submitter for which an AEOB is not yet complete, it **MAY** assume that an AEOB response is no longer needed for the previous request and process the new request instead.
@@ -53,7 +53,7 @@ To attach PDFs, CDAs, JPGs, a DocumentReference instance should be used. The GFE
 
 All resources **SHALL** comply with their respective profiles. FHIR elements not required (minimum cardinality of 1) or marked as "must support" **MAY** be included in resources within the Bundle, but client systems should have no expectation of such elements being processed by the payer unless prior arrangements have been made. Systems that do not process such elements **SHALL** ignore unsupported elements unless they are "modifier" elements, in which case the system **MAY** treat the presence of the element as an error.
 
-#### AEOB Response
+##### AEOB Response
 
 The [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** include, at a minimum, the full estimation based on the GFE Packet received in the GFE submission. Optionally, it may include estimates across linked GFE submissions (e.g., through a [GFE Composition](StructureDefinition-davinci-pct-gfe-composition.html) [GFE Service Linking Info](StructureDefinition-gfeServiceLinkingInfo.html) if the payer or intermediary supports linking across submissions).
 
@@ -62,9 +62,9 @@ Just like the `$gfe-submit` operation, additional Bundle entries must be present
 It is possible that the incoming Bundle cannot be processed due to validation errors, other non-business errors, or quick automated business errors. In these instances, the receiving system **SHALL** return OperationOutcome instances that detail why the Bundle could not be processed and no AEOB response will be returned.
 
 
-### Notifications of AEOB Availability ###
+#### Notifications of AEOB Availability ###
 
-#### General Requirements for Notifications of AEOB Availability ####
+##### General Requirements for Notifications of AEOB Availability ####
 Notifications may take the form of FHIR Subscription (as defined in this IG), unsolicited notification, messaging or other method.
 Payers **SHALL** be able to notify patients when an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is made available. Payers **MAY** be able to notify related GFE author(s) when an [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) is made available.
 
@@ -80,7 +80,7 @@ This IG defines the following minimal requirements for the support of subscripti
 
 To support the access and ability to provide notifications appropriately, an AEOB Packet Document Reference and PCT [AEOB Composition](StructureDefinition-davinci-pct-aeob-composition.html) **SHALL NOT** have their `documentReference.type` and `Composition.type` elements, respectively, modified. If either of these elements was entered in error, the [AEOB Packet DocumentReference](StructureDefinition-davinci-pct-aeob-documentreference.html) `documentReference.status` and [AEOB Composition](StructureDefinition-davinci-pct-aeob-composition.html) `Composition.status` **SHALL** be set to `entered-in-error`
 
-#### Requirements for AEOB Packet Availability Subscriptions ####
+##### Requirements for AEOB Packet Availability Subscriptions ####
 For notifications to patients (AEOB Packet `subject`) the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) subscription **SHALL** conform to the [Subscription - AEOB Available for Subject Notification](StructureDefinition-davinci-pct-aeob-available-subject-subscription.html) and meet the following requirements:
 * **SHALL** have a `Subscription.criteria.extension[filterCriteria].valueString` = `DocumentReference?subject=[FHIR-ID]` where `[FHIR-ID]` is the FHIR logical identifier for the patient.
 * Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) to trigger a notification. 
@@ -90,7 +90,7 @@ For notifications to author(s) (providers), the [AEOB Packet](StructureDefinitio
 * Updates to the [AEOB Packet](StructureDefinition-davinci-pct-aeob-packet.html) **SHALL** result in an update to the [AEOB Packet Document Reference](StructureDefinition-davinci-pct-aeob-documentreference.html) to trigger a notification. 
 
 
-### Patient Access to AEOBs
+#### Patient Access to AEOBs
 
 > Note: Although technically possible, conveying the AEOB to the patient via FHIR API is optional and the workflow is contingent upon the payer opting to expose the API to the patient. The payer must return the completed AEOB to the patient, but this may be done in many ways such as via mail, the payer benefits portal, or via an API. The only method in scope for this guide is the FHIR-based API approach inspired by the Patient Access API defined in the [CARIN Consumer Directed Payer Data Exchange](https://build.fhir.org/ig/HL7/carin-bb/Use_Case.html#use-case---consumer-access-to-their-claims-data) guide. Use of an API is optional for the payer, and if the payer does implement both this API and the Patient Access API defined in the CARIN IG, it is up to the payer to determine if those APIs use the same or different endpoints. 
 

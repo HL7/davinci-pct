@@ -1,7 +1,7 @@
 
 Instance: coverage1001
 InstanceOf: PCTCoverage
-Description: "An instance of PCTCoverage"
+Description: "Example PCTCoverage instance for coverage1001."
 Usage: #example
 
 // * id = "49fd53a8-7eb7-4319-acc8-04bf8a3cb603"
@@ -32,7 +32,7 @@ Usage: #example
 
 Instance: selfpaycoverage2001
 InstanceOf: PCTCoverage
-Description: "An instance of PCTCoverage"
+Description: "Example PCTCoverage instance for selfpaycoverage2001."
 Usage: #example
 
 //* text.status = #additional

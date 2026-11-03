@@ -1,7 +1,7 @@
 
 Instance: Submitter-Org-1
 InstanceOf: PCTOrganization
-Description: "Institutional GFE Submitter 1"
+Description: "Example PCTOrganization instance for GFE Service Help INC."
 Usage: #example
 
 // * id = "e7c36e30-edb8-4a0a-8208-c92085663b00"
@@ -21,7 +21,7 @@ Usage: #example
 
 Instance: org1001
 InstanceOf: PCTOrganization
-Description: "An instance of PCTOrganization as a payer"
+Description: "Example PCTOrganization instance for Umbrella Insurance Company."
 Usage: #example
 
 // * id = "2ccf0ff7-2af1-4598-b667-6e35b79529df"
@@ -43,7 +43,7 @@ Usage: #example
 
 Instance: org1002
 InstanceOf: PCTOrganization
-Description: "An instance of PCTOrganization as a healthcare provider"
+Description: "Example PCTOrganization instance for Boston Radiology Center."
 Usage: #example
 
 // * id = "646ce5de-3216-4098-ae71-c96d5f02b088"

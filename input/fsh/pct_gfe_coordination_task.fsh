@@ -57,7 +57,7 @@ https://hl7.org/fhir/extensions/StructureDefinition-task-replaces.html
 * identifier contains
    PLAC 0..1 //and
 //   INTER 0..*
-* identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
+* identifier[PLAC].type = $V2-0203#PLAC
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1
 * identifier[PLAC] ^short = "GFE Coordination Requester Assigned Identifier for GFE Request"

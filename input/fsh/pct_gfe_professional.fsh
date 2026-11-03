@@ -8,7 +8,7 @@ Description: "PCT Good Faith Estimate Professional is a profile for an professio
 * identifier contains
    PLAC 1..1 //and
 //   INTER 0..*
-* identifier[PLAC].type = $V2-0203#PLAC "Placer Identifier"
+* identifier[PLAC].type = $V2-0203#PLAC
 * identifier[PLAC].system MS
 * identifier[PLAC].value 1..1
 * identifier[PLAC] ^short = "Provider Assigned Identifier for GFE Claim"
