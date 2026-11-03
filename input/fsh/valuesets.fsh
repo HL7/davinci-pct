@@ -187,7 +187,10 @@ Description: "CPT - HCPCS - HIPPS - CDT codes to report medical procedures and s
 * codes from system $HIPPS
 * $DAR#not-applicable "Not Applicable"
 // * ^copyright = "This Valueset is not copyrighted."
-* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved."
+* ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved
+
+This artifact incorporates content from ANSI/ADA Standard No. 218, Dentistry—Designation Systems for Teeth and Areas of the Oral Cavity, the ADA Dental Claim Form (Version 2024), and the Code on Dental Procedures and Nomenclature (CDT Code), all of which are copyrighted works of, and owned exclusively by, the American Dental Association (ADA). Implementers and users of this artifact assume full responsibility for obtaining and maintaining all necessary rights and licenses from the ADA for any use of ADA-proprietary content. For licensing information, refer to: https://www.ada.org/en/publications/ada-catalog/cdt-products/licensing-for-commercial-users"
+
 * ^experimental = false
 
 // TODO replace with THO VS
