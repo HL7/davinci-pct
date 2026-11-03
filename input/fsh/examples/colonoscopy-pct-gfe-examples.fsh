@@ -1,5 +1,3 @@
-/*
-
 Instance: Patient-Alex-Morgan
 InstanceOf: USCorePatientProfile|7.0.0
 Description: "Example USCorePatientProfile instance for Alex Morgan."
@@ -908,5 +906,3 @@ Usage: #example
 * careTeam.provider = Reference(Practitioner-Samira-Patel)
 * careTeam.role = $CARETEAMROLECS#primary "Primary provider"
 * careTeam.qualification = $NUCC#"246Q00000X" "Pathology Specialist/Technologist"
-
-*/

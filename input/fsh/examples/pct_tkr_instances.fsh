@@ -1,4 +1,3 @@
-/*
 
 Instance: Jane-Smith
 InstanceOf: USCorePatientProfile|7.0.0
@@ -817,5 +816,3 @@ Usage: #example
 * identifier.type = $v2-0203#PLAC "Placer Identifier"
 * identifier.system = "http://springfield-general.example.org/gfe-claim-id"
 * identifier.value = "PCT-GFE-TKR-Prof-Anes-001"
-
-*/
