@@ -13,7 +13,7 @@ name: PatientCostTransparency
 title: Patient Cost Transparency Implementation Guide
 description: To support the request for cost information for specific items and services from the payer and return them in near real-time to allow effective decision making by the patient in consultation with the 'ordering' provider.
 status: active
-version: 2.0.1
+version: 2.0.2
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  #<<< must include a http://hl7.org/fhir/StructureDefinition/structuredefinition-wg extension that identifies the workgroup responsible for the IG. This is the authoritative element.
     valueCode: fm  # <<< The value must be the code for the workgroup
@@ -96,6 +96,7 @@ parameters:
   show-inherited-invariants: false
   pin-canonicals: pin-multiples
   globals-in-artifacts: true
+  shownav: true
   # usage-stats-opt-out: true
   # excludexml: false
   # excludejson: false
@@ -235,18 +236,18 @@ menu:
     Privacy, Safety, and Security: security.html
 
 
-  FHIR Artifacts:
-    Capability Statements: artifacts.html#1
-    Operations: artifacts.html#2
-    Search Parameters: artifacts.html#3
-    Profiles: artifacts.html#4
-    Subscriptions: artifacts.html#7
-    Extensions: artifacts.html#8
-    Value Sets: artifacts.html#9
-    Code Systems: artifacts.html#10
-    Examples: artifacts.html#11
-    Terminology Licensure: terminology_licensure.html
-
+  FHIR Artifacts: artifacts.html
+    # Capability Statements: "artifacts.html?categories=Behavior:%20Capability%20Statements"
+    # Operations: "artifacts.html?categories=Behavior:%20Operation%20Definitions "
+    # Search Parameters: "artifacts.html?categories=Behavior:%20Search%20Parameters"
+    # Profiles: "artifacts.html?categories=Structures:%20General%20Resource%20Profiles,Structures:%20GFE%20Resource%20Profiles,Structures:%20AEOB%20Resource%20Profiles"
+    # Subscriptions: "artifacts.html?categories=Subscriptions"
+    # Extensions: "artifacts.html?categories=Structures:%20Extension%20Definitions"
+    # Value Sets: "artifacts.html?categories=Terminology:%20Value%20Sets"
+    # Code Systems: "artifacts.html?categories=Terminology:%20Code%20Systems"
+    # Examples: "artifacts.html?categories=Example:%20Example%20Instances"
+    # Terminology Licensure: "terminology_licensure.html"
+  
   Base Specs:
     FHIR R4 Spec: https://hl7.org/fhir/R4/
     HRex 1.1.0: https://hl7.org/fhir/us/davinci-hrex/STU1.1/
