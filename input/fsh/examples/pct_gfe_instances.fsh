@@ -2,7 +2,7 @@
 
 Instance: PCT-GFE-Institutional-1
 InstanceOf: PCTGFEInstitutional
-Description: "PCT Institutional GFE Example 1"
+Description: "Example PCTGFEInstitutional instance for PCT GFE Institutional 1."
 Usage: #example
 
 // * id = "aedb6db2-c8a4-41e8-a8e1-722258ff01dd"
@@ -64,7 +64,7 @@ Usage: #example
 
 Instance: PCT-GFE-Summary-1
 InstanceOf: PCTGFESummary
-Description: "PCT Summary GFE Example 1"
+Description: "Example PCTGFESummary instance for PCT GFE Summary 1."
 Usage: #example
 
 // * id = "3e67b7e5-e15b-4003-802b-79bfc0ba4847"
@@ -121,7 +121,7 @@ Usage: #example
 
 Instance: PCT-GFE-Professional-MRI
 InstanceOf: PCTGFEProfessional
-Description: "PCT Professional GFE Example 1"
+Description: "Example PCTGFEProfessional instance for PCT GFE Professional MRI."
 Usage: #example
 
 // * id = "6369b2f8-1154-4935-a27f-4a578d9e384c"
@@ -175,7 +175,7 @@ Usage: #example
 
 Instance: PCT-GFE-Summary-MRI
 InstanceOf: PCTGFESummary
-Description: "PCT Summary MRI GFE"
+Description: "Example PCTGFESummary instance for PCT GFE Summary MRI."
 Usage: #example
 
 // * id = "ef5c6c33-aab0-4346-a79c-22b8f1e75ff4"
@@ -232,7 +232,7 @@ Usage: #example
 
 Instance: PCT-GFE-Institutional-MRI
 InstanceOf: PCTGFEInstitutional
-Description: "PCT Institutional GFE for MRI"
+Description: "Example PCTGFEInstitutional instance for PCT GFE Institutional MRI."
 Usage: #example
 
 // * id = "914c0b2c-4ce3-4260-965e-4366c174a785"
@@ -289,7 +289,7 @@ Usage: #example
 
 Instance: PCT-GFE-Bundle-Inst-1
 InstanceOf: PCTGFEBundle
-Description: "PCT GFE Bundle Institutional Example 1"
+Description: "Example PCTGFEBundle instance for PCT GFE Bundle Inst 1."
 Usage: #example
 
 // * id = "b5ff05d5-b645-4676-b8ed-a3937dabac7b"
@@ -346,7 +346,7 @@ Usage: #example
 
 Instance: PCT-GFE-Bundle-Prof-1
 InstanceOf: PCTGFEBundle
-Description: "PCT GFE Bundle Professional Example 1"
+Description: "Example PCTGFEBundle instance for PCT GFE Bundle Prof 1."
 Usage: #example
 
 // * id = "f8c054ba-e496-4230-b74e-a3ad871fb563"

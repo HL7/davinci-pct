@@ -1,4 +1,4 @@
-<h4 class="x_MsoNormal">Notes on Fields</h4>
+<h3 class="x_MsoNormal">Notes on Fields</h3>
 <ul>
 <li class="x_MsoNormal">.created: .created values convey the date and time the estimate was calculated, based on what was known about the state of the member’s benefits and accumulators for a given benefit period/plan year at that point in time (the .created date and time). </li>
 <li class="x_MsoNormal">The gfeReference Extension is used to point to the GFE Bundle for which the originating GFE is contained. This along with the .claim.identifier can be used to identify the originating GFE this AEOB addresses. Note that it is common for there to be a one-to-one relationship between an AEOB and a GFE, however, this is not always the case.</li>

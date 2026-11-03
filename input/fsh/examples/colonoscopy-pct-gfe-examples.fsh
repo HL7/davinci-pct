@@ -2,6 +2,7 @@
 
 Instance: Patient-Alex-Morgan
 InstanceOf: USCorePatientProfile|7.0.0
+Description: "Example USCorePatientProfile instance for Alex Morgan."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
 * identifier[0].system = "http://example.org/fhir/sid/mrn"
@@ -20,6 +21,7 @@ Usage: #example
 
 Instance: Org-Northwest-Health-Plan
 InstanceOf: PCTOrganization
+Description: "Example PCTOrganization instance for Northwest Health Plan."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-organization"
 * identifier.system = "http://example.org/fhir/sid/payer-id"
@@ -35,6 +37,7 @@ Usage: #example
 
 Instance: Org-Evergreen-Endoscopy-Center
 InstanceOf: PCTOrganization
+Description: "Example PCTOrganization instance for Evergreen Endoscopy Center."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-organization"
 * identifier[0].system = $USNPI
@@ -52,6 +55,7 @@ Usage: #example
 
 Instance: Org-Digestive-Health-Associates
 InstanceOf: PCTOrganization
+Description: "Example PCTOrganization instance for Digestive Health Associates."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-organization"
 * identifier[0].system = $USNPI
@@ -69,6 +73,7 @@ Usage: #example
 
 Instance: Org-Northwest-Anesthesia-Group
 InstanceOf: PCTOrganization
+Description: "Example PCTOrganization instance for Northwest Anesthesia Group."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-organization"
 * identifier[0].system = $USNPI
@@ -86,6 +91,7 @@ Usage: #example
 
 Instance: Org-Regional-Pathology-Services
 InstanceOf: PCTOrganization
+Description: "Example PCTOrganization instance for Regional Pathology Services."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-organization"
 * identifier[0].system = $USNPI
@@ -103,6 +109,7 @@ Usage: #example
 
 Instance: Practitioner-Jordan-Lee
 InstanceOf: PCTPractitioner
+Description: "Example PCTPractitioner instance for Jordan Lee."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-practitioner"
 * identifier.system = $USNPI
@@ -117,6 +124,7 @@ Usage: #example
 
 Instance: Practitioner-Riley-Chen
 InstanceOf: PCTPractitioner
+Description: "Example PCTPractitioner instance for Riley Chen."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-practitioner"
 * identifier.system = $USNPI
@@ -131,6 +139,7 @@ Usage: #example
 
 Instance: Practitioner-Samira-Patel
 InstanceOf: PCTPractitioner
+Description: "Example PCTPractitioner instance for Samira Patel."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-practitioner"
 * identifier.system = $USNPI
@@ -145,6 +154,7 @@ Usage: #example
 
 Instance: Coverage-NHP-PPO-250
 InstanceOf: PCTCoverage
+Description: "Example PCTCoverage instance for Coverage NHP PPO 250."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-coverage"
 * extension.url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-Coverage.kind"
@@ -168,6 +178,7 @@ Usage: #example
 
 Instance: PCT-GFE-Packet-Colonoscopy-Integrated
 InstanceOf: PCTGFEPacket
+Description: "Example PCTGFEPacket instance for PCT GFE Packet Colonoscopy Integrated."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-packet"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -207,6 +218,7 @@ Usage: #example
 
 Instance: PCT-GFE-Composition-Colonoscopy-Integrated
 InstanceOf: PCTGFEComposition
+Description: "Example PCTGFEComposition instance for Screening colonoscopy with anticipated polypectomy integrated Good Faith Estimate packet."
 Usage: #inline
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-composition"
 * extension[0].url = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/requestInitiationTime"
@@ -265,6 +277,7 @@ Usage: #inline
 
 Instance: PCT-GFE-Bundle-Colon-GI
 InstanceOf: PCTGFEBundle
+Description: "Example PCTGFEBundle instance for PCT GFE Bundle Colon GI."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -288,6 +301,7 @@ Usage: #example
 
 Instance: PCT-GFE-Bundle-Colon-Facility
 InstanceOf: PCTGFEBundle
+Description: "Example PCTGFEBundle instance for PCT GFE Bundle Colon Facility."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -309,6 +323,7 @@ Usage: #example
 
 Instance: PCT-GFE-Bundle-Colon-Anesthesia
 InstanceOf: PCTGFEBundle
+Description: "Example PCTGFEBundle instance for PCT GFE Bundle Colon Anesthesia."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -332,6 +347,7 @@ Usage: #example
 
 Instance: PCT-GFE-Bundle-Colon-Pathology
 InstanceOf: PCTGFEBundle
+Description: "Example PCTGFEBundle instance for PCT GFE Bundle Colon Pathology."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-bundle"
 * identifier.system = "urn:ietf:rfc:3986"
@@ -355,6 +371,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-GI-Summary-001
 InstanceOf: PCTGFESummary
+Description: "Example PCTGFESummary instance for PCT GFE Colon GI Summary 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-summary"
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
@@ -394,6 +411,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-GI-001
 InstanceOf: PCTGFEProfessional
+Description: "Example PCTGFEProfessional instance for PCT GFE Colon GI 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-professional"
 * type = $ClaimTypeCS#professional "Professional"
@@ -487,6 +505,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-Facility-Summary-001
 InstanceOf: PCTGFESummary
+Description: "Example PCTGFESummary instance for PCT GFE Colon Facility Summary 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-summary"
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
@@ -526,6 +545,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-Facility-001
 InstanceOf: PCTGFEInstitutional
+Description: "Example PCTGFEInstitutional instance for PCT GFE Colon Facility 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-institutional"
 * type = $ClaimTypeCS#institutional "Institutional"
@@ -647,6 +667,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-Anesthesia-Summary-001
 InstanceOf: PCTGFESummary
+Description: "Example PCTGFESummary instance for PCT GFE Colon Anesthesia Summary 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-summary"
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
@@ -686,6 +707,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-Anesthesia-001
 InstanceOf: PCTGFEProfessional
+Description: "Example PCTGFEProfessional instance for PCT GFE Colon Anesthesia 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-professional"
 * type = $ClaimTypeCS#professional "Professional"
@@ -767,6 +789,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-Pathology-Summary-001
 InstanceOf: PCTGFESummary
+Description: "Example PCTGFESummary instance for PCT GFE Colon Pathology Summary 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-summary"
 * type = PCTEstimateTypeSummaryCSTemporaryTrialUse#estimate-summary "Estimate Summary"
@@ -806,6 +829,7 @@ Usage: #example
 
 Instance: PCT-GFE-Colon-Pathology-001
 InstanceOf: PCTGFEProfessional
+Description: "Example PCTGFEProfessional instance for PCT GFE Colon Pathology 001."
 Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/davinci-pct/StructureDefinition/davinci-pct-gfe-professional"
 * type = $ClaimTypeCS#professional "Professional"

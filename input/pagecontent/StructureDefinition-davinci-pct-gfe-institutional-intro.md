@@ -1,4 +1,4 @@
-<h4 class="x_MsoNormal">Notes on Fields</h4>
+<h3 class="x_MsoNormal">Notes on Fields</h3>
 <ul>
 <li class="x_MsoNormal">The estimated service date, when available at the header level, is placed in Claim.billablePeriod. If the estimated date of service is available at the line level is placed in Claim.item.serviced[x]. </li>
 
@@ -6,9 +6,8 @@
 </ul>
 
 
-<h4 class="x_MsoNormal">Examples of .providerEventMethodology usage examples below:</h4>
-<h5 class="x_MsoNormal">Example 1 –  A provider is offering both a surgical and a drug therapy-based option to the patient. The provider can add text such as "Surgical care option" and "Drug therapy option" to the Good Faith Estimate (GFE) so that the patient could easily understand the options without having to understand different CPT codes.</h5>
+<h3 class="x_MsoNormal">Examples of .providerEventMethodology usage examples below:</h3>
 <ul>
-
-
-<h5 class="x_MsoNormal">Example 2 – A provider added services to a previously submitted GFE. They would be able to add "Added physical therapist on Sep 18, ignore estimates submitted on Sep 17".</h5>
+    <li>Example 1 –  A provider is offering both a surgical and a drug therapy-based option to the patient. The provider can add text such as "Surgical care option" and "Drug therapy option" to the Good Faith Estimate (GFE) so that the patient could easily understand the options without having to understand different CPT codes.</li>
+    <li>Example 2 – A provider added services to a previously submitted GFE. They would be able to add "Added physical therapist on Sep 18, ignore estimates submitted on Sep 17".</li>
+</ul>
