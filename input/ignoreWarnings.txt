@@ -345,3 +345,7 @@ INFORMATION: StructureDefinition/davinci-pct-gfe-institutional: StructureDefinit
 
 # 29. === Da Vinci Template warning - Requiring HRex 1.2.0, but this is a technical correction that has a continued dependency on HRex 1.1.0
 WARNING: DA VINCI: The Base Specs menu item must have a child called HRex 1.2.0.
+
+
+# 30. === Duplicate IDs caused by inclusion of mermaid diagrams that have the same actor names
+WARNING: C:\dev\fhir\ig\davinci\davinci-pct\output\en\reading_this_ig.html: The html source has duplicate element ids: elem_gfe,elem_hrexorganization,elem_pctcoverage,elem_pctorganization,elem_pctpractitioner,elem_uscorecoverage,elem_uscoreorganization,elem_uscorepatient,elem_uscorepractitioner,hrexorganization-backto-pctorganization,link_aeob_pctorganization,link_gfe_pctorganization,link_gfe_pctpractitioner,link_hrexorganization_pctorganization,link_uscorecoverage_pctcoverage,link_uscoreorganization_hrexorganization,link_uscorepractitioner_pctpractitioner,uscorecoverage-backto-pctcoverage,uscoreorganization-backto-hrexorganization,uscorepractitioner-backto-pctpractitioner. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML

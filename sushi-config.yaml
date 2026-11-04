@@ -97,6 +97,7 @@ parameters:
   pin-canonicals: pin-multiples
   globals-in-artifacts: true
   shownav: true
+  old-artifacts: true
   # usage-stats-opt-out: true
   # excludexml: false
   # excludejson: false
