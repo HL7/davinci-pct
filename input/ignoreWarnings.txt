@@ -277,11 +277,10 @@ WARNING: DA VINCI: The Base Specs menu item must have a child called HRex 1.2.0.
 
 
 # 23. === Duplicate IDs caused by inclusion of mermaid diagrams that have the same actor names
-WARNING: C:\dev\fhir\ig\davinci\davinci-pct\output\en\reading_this_ig.html: The html source has duplicate element ids: elem_gfe,elem_hrexorganization,elem_pctcoverage,elem_pctorganization,elem_pctpractitioner,elem_uscorecoverage,elem_uscoreorganization,elem_uscorepatient,elem_uscorepractitioner,hrexorganization-backto-pctorganization,link_aeob_pctorganization,link_gfe_pctorganization,link_gfe_pctpractitioner,link_hrexorganization_pctorganization,link_uscorecoverage_pctcoverage,link_uscoreorganization_hrexorganization,link_uscorepractitioner_pctpractitioner,uscorecoverage-backto-pctcoverage,uscoreorganization-backto-hrexorganization,uscorepractitioner-backto-pctpractitioner. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
-
+%reading_this_ig.html: The html source has duplicate element ids: elem_gfe,elem_hrexorganization,elem_pctcoverage,elem_pctorganization,elem_pctpractitioner,elem_uscorecoverage,elem_uscoreorganization,elem_uscorepatient,elem_uscorepractitioner,hrexorganization-backto-pctorganization,link_aeob_pctorganization,link_gfe_pctorganization,link_gfe_pctpractitioner,link_hrexorganization_pctorganization,link_uscorecoverage_pctcoverage,link_uscoreorganization_hrexorganization,link_uscorepractitioner_pctpractitioner,uscorecoverage-backto-pctcoverage,uscoreorganization-backto-hrexorganization,uscorepractitioner-backto-pctpractitioner. An id must be unique in a page - a link to one of these is ambiguous, and it is invalid HTML
 
 # 24. === Warning about a valid OIG parameter to use the older artifacts page
-WARNING: C:\dev\fhir\ig\davinci\davinci-pct\fsh-generated\resources\ImplementationGuide-hl7.fhir.us.davinci-pct: Unknown Parameters: [old-artifacts=true]
+%fsh-generated/resources/ImplementationGuide-hl7.fhir.us.davinci-pct: Unknown Parameters: [old-artifacts=true]
 
 # 25. === 
 The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, Reference
