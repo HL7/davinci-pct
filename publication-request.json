@@ -1,7 +1,7 @@
 {
     "package-id": "hl7.fhir.us.davinci-pct",
     "version": "2.0.2",
-    "path": "http://hl7.org/fhir/us/davinci-pct/STU2.0.2",
+    "path": "http://hl7.org/fhir/us/davinci-pct/2.0.2",
     "mode": "technical-correction",
     "status": "trial-use",
     "sequence": "STU 2",
