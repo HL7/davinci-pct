@@ -20,7 +20,7 @@ Error from https://tx.fhir.org/r4: Error: The code System "http://www.ama-assn.o
 Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/RevenueCodes' could not be found, so the value set cannot be expanded
 Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.nubc.org/CodeSystem/TypeOfBill' could not be found, so the value set cannot be expanded
 Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/MS-DRG-Classifications-and-Software' could not be found, so the value set cannot be expanded
-
+Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'http://www.ada.org/cdt' could not be found, so the value set cannot be expanded
 
 
 
@@ -284,3 +284,5 @@ WARNING: DA VINCI: The Base Specs menu item must have a child called HRex 1.2.0.
 
 # 25. === 
 The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, Reference
+
+
