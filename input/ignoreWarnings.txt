@@ -88,7 +88,7 @@ INFORMATION: StructureDefinition/davinci-pct-aeob-documentreference: StructureDe
 The extension http://hl7.org/fhir/StructureDefinition/regex%
 
 
-# 9. === Information message about jurisdiction valueset that was deprecated. This valueset is pulled from the base FHIR spec ===
+# 09. === Information message about jurisdiction valueset that was deprecated. This valueset is pulled from the base FHIR spec ===
 INFORMATION: SubscriptionTopic/davinci-pct-aeob-available-author-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 INFORMATION: SubscriptionTopic/davinci-pct-aeob-available-subject-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
 INFORMATION: SubscriptionTopic/davinci-pct-gfe-available-author-notification: SubscriptionTopic.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
@@ -282,5 +282,5 @@ WARNING: DA VINCI: The Base Specs menu item must have a child called HRex 1.2.0.
 # 24. === Warning about a valid OIG parameter to use the older artifacts page
 %ImplementationGuide-hl7.fhir.us.davinci-pct: Unknown Parameters: [old-artifacts=true]
 
-# 25. === 
+# 25. === The binding does apply to all slices.
 The Binding on the type slicer Claim.item.location[x] applies to all its slices, but it only makes sense for some of its types, so it has no effect on the slices for Address, Reference

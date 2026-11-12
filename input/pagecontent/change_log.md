@@ -7,10 +7,18 @@ This is a log of the significant changes that have happened to this specificatio
  This change list is not exhaustive. Changes to formatting and layout, as well as corrections to spelling, grammar, hyperlinks, etc. are not called out here. Changes mentioned for older versions may no longer be relevant due to changes in subsequent versions. 
 
 ### Changes in Version 2.0.2
+
+**Summary:** This errata release addresses corrections needed to meet requirements for the GFE Packet (number of Practitioners and Organizations if more than 1 or 2 respectively), removal of the requirement for some fixed values on coding elements, and documentation corrections in the narrative and CapabilityStatement resources.
+
+#### Compatible, Substantive
 * Reduced the restrictions on the Practitioner and Organization in the [GFE Packet](StructureDefinition-davinci-pct-gfe-packet.html) to allow all practitioners and organizations to be present in the bundle. [FHIR-57705](https://jira.hl7.org/browse/FHIR-57705)
+
+
+#### Non-Substantive
 * Removed the fixed CareTeam CodeSystem version from the PCT GFE [Summary](StructureDefinition-davinci-pct-gfe-summary.html), [Professional](StructureDefinition-davinci-pct-gfe-professional.html), and [Institutional](StructureDefinition-davinci-pct-gfe-institutional.html) profiles; and the and Placer Identifier display requirement from the PCT GFE [Coordination Task](StructureDefinition-davinci-pct-gfe-coordination-task.html), [Contributor Task](StructureDefinition-davinci-pct-gfe-contributor-task.html), [Professional](StructureDefinition-davinci-pct-gfe-professional.html), and [Institutional](StructureDefinition-davinci-pct-gfe-institutional.html) profiles. [FHIR-56934](https://jira.hl7.org/browse/FHIR-56934)
 * Corrected the narrative requirement for the subscription criteria to use the correct URL in [Requirements for GFE Coordination Task Subscriptions](gfe_coordination_specification.html#requirements-for-gfe-coordination-task-subscriptions). [FHIR-56019](https://jira.hl7.org/browse/FHIR-56019)
 * Corrected the operation name in [Coordination Platform Capability Statement](CapabilityStatement-davinci-pct-coordination-platform.html), [Coordination Requester Capability Statement](CapabilityStatement-davinci-pct-coordination-requester.html), and [Payer Capability Statement](CapabilityStatement-davinci-pct.html). [FHIR-56018](https://jira.hl7.org/browse/FHIR-56018)
+
 
 ### Changes in Version 2.0.1
 * Corrected the [$gfe-coordination-request operation](OperationDefinition-GFE-coordination-request.html) code, output parameters, and description [FHIR-53657](https://jira.hl7.org/browse/FHIR-53657) ⚠️ **(Non-compatible change)** 
